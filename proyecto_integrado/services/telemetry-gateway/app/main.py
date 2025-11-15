@@ -6,7 +6,12 @@ import sqlite3
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Sequence
 
-import psycopg2  # type: ignore
+# psycopg2 es opcional: si no está instalado y no se define TG_DB_URL,
+# permitimos que el servicio funcione con SQLite (usado en CI/tests).
+try:  # pragma: no cover - path de import opcional
+    import psycopg2  # type: ignore
+except Exception:  # ModuleNotFoundError o similar
+    psycopg2 = None  # type: ignore
 from fastapi import FastAPI, HTTPException, Header, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -14,6 +19,8 @@ from pydantic import BaseModel, Field
 
 DB_PATH = os.getenv("TG_DB_PATH", "/tmp/telemetry.db")
 DB_URL = os.getenv("TG_DB_URL")
+# Usamos Postgres solo si hay URL y el módulo está disponible
+USE_POSTGRES = bool(DB_URL) and psycopg2 is not None
 
 
 class Position(BaseModel):
@@ -91,14 +98,14 @@ def startup() -> None:
 def init_db() -> None:
     columns = {
         "robot_id": "TEXT",
-        "position_lat": "DOUBLE PRECISION" if DB_URL else "REAL",
-        "position_lng": "DOUBLE PRECISION" if DB_URL else "REAL",
-        "position_alt": "DOUBLE PRECISION" if DB_URL else "REAL",
+        "position_lat": "DOUBLE PRECISION" if USE_POSTGRES else "REAL",
+        "position_lng": "DOUBLE PRECISION" if USE_POSTGRES else "REAL",
+        "position_alt": "DOUBLE PRECISION" if USE_POSTGRES else "REAL",
         "environment": "TEXT",
         "status": "TEXT",
     }
 
-    if DB_URL:
+    if USE_POSTGRES:
         conn = psycopg2.connect(DB_URL)
         try:
             cur = conn.cursor()
@@ -193,7 +200,7 @@ def ingest(payload: TelemetryIn, x_api_key: Optional[str] = Header(default=None,
         position.alt if position else None,
     )
 
-    if DB_URL:
+    if USE_POSTGRES:
         conn = psycopg2.connect(DB_URL)
         try:
             cur = conn.cursor()
@@ -273,7 +280,7 @@ def live(limit_per_robot: int = Query(10, ge=1, le=100)) -> LiveResponse:
 
 
 def fetch_one(robot_id: Optional[str]) -> Optional[Sequence[Any]]:
-    if DB_URL:
+    if USE_POSTGRES:
         conn = psycopg2.connect(DB_URL)
         try:
             cur = conn.cursor()
