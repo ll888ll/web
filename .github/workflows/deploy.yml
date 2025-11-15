@@ -17,12 +17,6 @@ jobs:
       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
       DEPLOY_PORT: ${{ secrets.DEPLOY_PORT || '22' }}
-    if: >-
-      github.ref == 'refs/heads/main'
-      && secrets.DEPLOY_HOST != ''
-      && secrets.DEPLOY_USER != ''
-      && secrets.DEPLOY_KEY != ''
-      && secrets.DEPLOY_PATH != ''
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,6 +25,7 @@ jobs:
         run: tar -c -z --ignore-failed-read -f telematicache.tar.gz .
 
       - name: Upload bundle to server
+        if: ${{ env.DEPLOY_HOST != '' && env.DEPLOY_USER != '' && env.DEPLOY_KEY != '' && env.DEPLOY_PATH != '' }}
         uses: appleboy/scp-action@master
         with:
           host: ${{ env.DEPLOY_HOST }}
@@ -38,9 +33,10 @@ jobs:
           key: ${{ env.DEPLOY_KEY }}
           port: ${{ env.DEPLOY_PORT }}
           source: telematicache.tar.gz
-          target: ${{ secrets.DEPLOY_PATH }}/telematicache.tar.gz
+          target: ${{ env.DEPLOY_PATH }}/telematicache.tar.gz
 
       - name: Deploy on server
+        if: ${{ env.DEPLOY_HOST != '' && env.DEPLOY_USER != '' && env.DEPLOY_KEY != '' && env.DEPLOY_PATH != '' }}
         uses: appleboy/ssh-action@master
         with:
           host: ${{ env.DEPLOY_HOST }}
@@ -49,7 +45,7 @@ jobs:
           port: ${{ env.DEPLOY_PORT }}
           script: |
             set -euo pipefail
-            DEPLOY_ROOT="${{ secrets.DEPLOY_PATH }}"
+            DEPLOY_ROOT="${{ env.DEPLOY_PATH }}"
             ARCHIVE="$DEPLOY_ROOT/telematicache.tar.gz"
             REPO_DIR="$DEPLOY_ROOT/repo"
             BACKUP_ENV="$DEPLOY_ROOT/.env.backup"
