@@ -1,0 +1,4 @@
+7 objects imported automatically (use -v 2 for details).
+
+ResolverMatch(func=landing.views.HomeView, args=(), kwargs={}, url_name='home', app_names=['landing'], namespaces=['landing'], route='')
+ResolverMatch(func=django.contrib.admin.sites.index, args=(), kwargs={}, url_name='index', app_names=['admin'], namespaces=['admin'], route='admin/')

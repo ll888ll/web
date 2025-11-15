@@ -1,0 +1,12 @@
+[Unit]
+Description=CICF tcpdump Capture (bridge o interfaz)
+After=network-online.target cicf-bridge.service
+Wants=network-online.target cicf-bridge.service
+
+[Service]
+ExecStart=/usr/local/bin/cicf-capture.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+== telemetry ingest (token) ==
+{"detail":"API key inválida o ausente"}
+== telemetry last ==
+{"id":4,"ts":"2025-11-10T02:18:24.088903","data":{"TEMP":25.1,"HUM":55.5}}
+== ids predict (token) ==
+{"detail":"API key inválida o ausente"}
+== telemetry ingest (token, retry) ==
+{"id":5,"ts":"2025-11-10T02:18:37.474965","data":{"TEMP":26.1,"HUM":50.2}}
+== ids predict (token, retry) ==
+{"predictions":[1],"model":{"path":null}}

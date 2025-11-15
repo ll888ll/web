@@ -1,0 +1,19 @@
+services:
+  gateway:
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+      - ./gateway/nginx.prod.conf:/etc/nginx/conf.d/default.conf:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    entrypoint: sh
+    command: -c "trap 'exit 0' INT TERM; sleep infinity"
+
+volumes:
+  letsencrypt:
+  certbot-www:
+

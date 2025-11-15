@@ -1,0 +1,48 @@
+## Interfaces físicas
+# Lado atacante
+IFACE_LEFT=eth1
+# Lado víctima
+IFACE_RIGHT=eth2
+
+# Bridge
+BRIDGE_NAME=br0
+# on|off
+BRIDGE_STP=off
+# IP de gestión opcional (CIDR), p.ej. 192.168.10.10/24
+#BRIDGE_ADMIN_IP=
+
+## Rutas de datos
+PCAP_DIR=/var/log/cicf/pcap
+FLOWS_DIR=/var/log/cicf/flows
+
+## Captura
+# Rotación por tiempo en segundos (si >0)
+CAP_ROTATE_SECONDS=60
+# Rotación por tamaño en MB (si >0 tiene prioridad sobre segundos)
+#CAP_ROTATE_SIZE_MB=0
+# Snaplen 0 = completo
+CAP_SNAPLEN=0
+# Filtro BPF opcional, p.ej. "not port 22"
+#CAP_BPF=
+# Interfaz de captura (si no usas bridge), ej.: eth0
+#CAP_INTERFACE=eth0
+
+## CICFlowMeter (ruta de instalación destino)
+CICF_HOME=/opt/cicflowmeter
+CICF_JAR=/opt/cicflowmeter/CICFlowMeter.jar
+CICF_JNI_DIR=/opt/cicflowmeter/jnetpcap/linux/jnetpcap-1.4.r1425
+CICF_JNETPCAP_JAR=/opt/cicflowmeter/jnetpcap/linux/jnetpcap-1.4.r1425/jnetpcap.jar
+
+## Watcher
+WATCH_INTERVAL_SECONDS=10
+
+## DNS Guard / Monitor
+# Coma-separado: IPs de DNS permitidos (resolvers)
+ALLOWED_DNS=8.8.8.8,1.1.1.1
+# Modo de defensa: off | allowlist
+DNS_GUARD_MODE=allowlist
+# Directorio para logs/alertas de DNS
+ALERT_DIR=/var/log/cicf/alerts
+# Umbrales del monitor
+DNS_TIME_WINDOW_S=5
+DNS_LOW_TTL=60

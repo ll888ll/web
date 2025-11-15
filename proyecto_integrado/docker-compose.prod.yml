@@ -1,0 +1,82 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: db_new
+    environment:
+      - POSTGRES_USER=croody
+      - POSTGRES_PASSWORD=croody
+      - POSTGRES_DB=croody
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  croody:
+    environment:
+      - DJANGO_SETTINGS_MODULE=croody.settings
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=false
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - DATABASE_URL=${DATABASE_URL}
+      - GUNICORN_WORKERS=3
+      - GUNICORN_THREADS=4
+    entrypoint: ["/bin/sh", "/entrypoint.prod.sh"]
+    volumes:
+      - ./Croody/docker-entrypoint.prod.sh:/entrypoint.prod.sh:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    mem_limit: 512m
+    cpus: "0.50"
+
+  telemetry-gateway:
+    environment:
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - TG_DB_URL=${TG_DB_URL}
+      - TG_INGEST_TOKEN=${TG_INGEST_TOKEN}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9000/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 512m
+    cpus: "0.50"
+
+  ids-ml:
+    environment:
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - IDS_API_TOKEN=${IDS_API_TOKEN}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9100/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 512m
+    cpus: "0.50"
+
+  gateway:
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 256m
+    cpus: "0.50"
+
+volumes:
+  db_data:

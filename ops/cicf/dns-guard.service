@@ -1,0 +1,13 @@
+[Unit]
+Description=CICF DNS Guard (nftables allowlist)
+After=network-online.target cicf-bridge.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/dns-guard.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+

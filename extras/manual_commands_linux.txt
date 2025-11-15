@@ -1,0 +1,50 @@
+# Manual commands (Linux) — instalación desde cero y arranque rápido
+
+# 0) Clonar el repositorio
+git clone <GIT_URL> repo && cd repo
+
+# 1) Instalar dependencias del sistema (Ubuntu/Debian)
+sudo apt-get update -y
+sudo apt-get install -y git curl jq python3 ca-certificates gnupg lsb-release
+
+# 2) Instalar Docker Engine + Compose plugin
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo $ID)/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/$(. /etc/os-release; echo $ID) $(. /etc/os-release; echo $VERSION_CODENAME) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update -y
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER  # cerrar y reabrir sesión
+
+# 3) Preparar variables de entorno
+cd proyecto_integrado
+cp .env.production.sample .env
+sed -i "s/^ENV=.*/ENV=production/" .env
+sed -i "s/^ALLOWED_HOSTS=.*/ALLOWED_HOSTS=localhost/" .env
+SECRET_KEY=$(openssl rand -base64 64 | tr -d '\n') && sed -i "s/^SECRET_KEY=.*/SECRET_KEY=${SECRET_KEY}/" .env
+
+# 4) Arranque rápido (dev)
+docker compose up -d --build
+curl -I http://localhost:8080/
+curl -sS -o /dev/null -w "telemetry_docs=%{http_code}\n" http://localhost:8080/api/telemetry/docs
+curl -sS -o /dev/null -w "ids_docs=%{http_code}\n" http://localhost:8080/api/ids/docs
+
+# 5) Pruebas API (dev — sin token por defecto)
+curl -sS -X POST http://localhost:8080/api/telemetry/ingest -H 'Content-Type: application/json' -d '{"data":{"TEMP":25.0,"HUM":55.0}}'
+curl -sS http://localhost:8080/api/telemetry/last
+curl -sS -X POST http://localhost:8080/api/ids/predict -H 'Content-Type: application/json' -d '{"rows":[{"src_bytes":600}]}'
+
+# 6) Arranque prod local (TLS dev en 80/443)
+docker compose -f docker-compose.yml -f docker-compose.prod.yml --env-file .env up -d --build
+curl -k -I https://localhost/
+
+# 7) Pruebas API (prod local — con tokens desde .env)
+set -a; . ./.env; set +a
+curl -sS -X POST http://localhost/api/telemetry/ingest \
+  -H "X-API-Key: $TG_INGEST_TOKEN" -H 'Content-Type: application/json' \
+  -d '{"data":{"TEMP":26.0,"HUM":50.0}}'
+curl -sS http://localhost/api/telemetry/last
+curl -sS -X POST http://localhost/api/ids/predict \
+  -H "X-API-Key: $IDS_API_TOKEN" -H 'Content-Type: application/json' \
+  -d '{"rows":[{"src_bytes":600}]}'
+

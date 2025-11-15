@@ -1,0 +1,11 @@
+{"moved":[
+{"original":"EXTRAS_INDEX.md","new":"extras/EXTRAS_INDEX.md","size":832,"sha256":"e93dd0d00e7f3d219917b38332c2b33bca9cccc4c4e74b90440cc55601c46888","type":"text/plain"},
+{"original":"EXTRAS_MANIFEST.json","new":"extras/EXTRAS_MANIFEST.json","size":179,"sha256":"11ce9d282025ba2cc565e72b0af500035e0be825fa14622cecb4eedf20c1c75d","type":"text/plain"},
+{"original":"i18n_nav_labels_p2.txt","new":"extras/i18n_nav_labels_p2.txt","size":523,"sha256":"52e9ad51184f995618a5d234a211e31f9ec2bd761e5a07cc7d5d62c530bc5c74","type":"text/plain"},
+{"original":"manual_commands_linux.txt","new":"extras/manual_commands_linux.txt","size":2558,"sha256":"26f6d454eb234750c73561aa1b6b8007f4a511806e3d90bb8f7fdfcd0d4c7b5d","type":"text/plain"},
+{"original":"manual_commands_windows.txt","new":"extras/manual_commands_windows.txt","size":2258,"sha256":"ad09b56a34bad68bf6af39cdfd2e314bebaba3a9e0a424e800b7e531aafeb9d5","type":"text/plain"},
+{"original":"post_deploy_tests.txt","new":"extras/post_deploy_tests.txt","size":423,"sha256":"1e1f9d1a811172cfcf43386b804a86076d2b13b31b4335653d33e4db9cde2832","type":"text/plain"},
+{"original":"quick_smoke_results.txt","new":"extras/quick_smoke_results.txt","size":8150,"sha256":"561c86f76b33995c828b6049c6a14703676e5db172bb88e1cbae367292c1af54","type":"text/plain"},
+{"original":"sanity_urls_p1.txt","new":"extras/sanity_urls_p1.txt","size":345,"sha256":"41ceb8708a255e1d787ea4d10392bd58e436064ae63beea8b716eba452413513","type":"text/plain"},
+{"original":"smoke_dev.txt","new":"extras/smoke_dev.txt","size":825,"sha256":"8870f5a1d4d6d3d76e17d606e613dee5b941561c6139e06ae074d0fd92b5e3d3","type":"text/plain"},
+{"original":"smoke_prod.txt","new":"extras/smoke_prod.txt","size":825,"sha256":"60225899619a0f711c48519f2f64c33494a9dc8de42c33f24b5b5a232afe3050","type":"text/plain"}]}

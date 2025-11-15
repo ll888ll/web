@@ -1,0 +1,259 @@
+
+8
+Protocolo DNS
+• DNS es un protocolo recursivo y jerárquico
+9
+Protocolo DNS
+• Los tipos de registros DNS son las entradas de datos que se 
+almacenan en los servidores DNS autoritativos y que 
+definen los recursos y servicios asociados a un nombre de 
+dominio. Cada registro es una "línea" de información que le dice 
+a un servidor DNS cómo responder a una consulta específica.
+• A
+• AAAA
+• CNAME
+• MX
+• ...
+https://toolbox.googleapps.com/apps/dig/#A/
+https://dnschecker.org/#A/www.eafit.edu.co
+10
+Instalación de un servidor DNS
+• Recordando el entorno de experimentación:
+11
+Instalación de un servidor DNS
+• Recordando el entorno de experimentación:
+12
+Instalación de un servidor DNS
+• En el entorno de experimentación actualizar los paquetes 
+disponibles en los repositorios y actualizar los paquetes instalados• sudo apt update && sudo apt upgrade –y #Recuerde que la clave es "srv"
+• Instalar el paquete bind9 (servidor DNS)• sudo apt install bind9 bind9utils bind9-doc –y
+• Revisar el estado del servicio: sudo systemctl status bind9
+• Agregar el registro del cual el servidor va a ser la fuente autorizada 
+de información de una zona.• sudo nano /etc/bind/named.conf.local
+• Agregar la ruta al archivo: • zone "cerveza.com" {
+    type master; 
+    file "/etc/bind/db.cerveza.com";
+};
+13
+Instalación de un servidor DNS
+• Crear el archivo de zona
+• sudo cp /etc/bind/db.local /etc/bind/db.cerveza.com #Crea una copia del archivo de muestra
+• sudo nano /etc/bind/db.cerveza.com 
+• $TTL    604800
+@       IN      SOA     ns1.cerveza.com. admin.cerveza.com. (
+                             3         ; Serial
+                        604800         ; Refresh
+                         86400         ; Retry
+                       2419200         ; Expire
+                        604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ns1.cerveza.com.
+ns1     IN      A       192.168.56.112
+www     IN      A       192.168.56.112
+@       IN      A       192.168.56.112
+• Revisar que la configuración esté bien hecha
+• sudo named-checkconf
+• sudo named-checkzone cerveza.com /etc/bind/db.cerveza.com
+• Reiniciar el servicio de bind9 y revisar su estado
+• sudo systemctl restart bind9
+• sudo systemctl status bind9
+• Verificar que resuelva el dominio
+• dig @127.0.0.1 cerveza.com
+14
+Instalación de un servidor DNS - Recursivo
+• Editar el archivo de options• sudo nano /etc/bind/named.conf.options
+• options {
+    directory "/var/cache/bind";
+    recursion yes;
+    forwarders {
+        8.8.8.8;
+        1.1.1.1;
+    };
+    dnssec-validation auto;
+    auth-nxdomain no;    # conform to RFC1035
+    listen-on { any; };
+};
+• sudo systemctl restart bind9
+15
+Recomendaciones
+• Si las consultas se hacen en la misma máquina, se recomienda 
+desactivar el servicio resolved• sudo systemctl disable --now systemd-resolved 
+• Reemplaza resolv.conf por uno estático que apunte a tu Bind 
+    sudo rm /etc/resolv.conf echo "nameserver 127.0.0.1" | sudo tee /etc/resolv.conf
+• Es un servicio que gestiona la resolución de nombres 
+localmente en sistemas basados en systemd. Este servicio 
+intercepta consultas DNS y responde desde su caché o las 
+reenvía, y típicamente escucha en 127.0.0.53:53, no en 
+127.0.0.1.
+16
+Tarea
+• Modifique el código de la aplicación "hora de la cerveza" para 
+que permita el uso de nombres de dominio en el cliente. Utilice 
+la implementación del servidor DNS en el entorno de 
+experimentación. Capture la petición y la respuesta en 
+wireshark y analice cada uno de los campos en la capa de DNS
+• Modifique los archivos de configuración necesarios para que el 
+servidor DNS responda la consulta inversa (dada una IP 
+devuelva el dominio). Revise el flujo de esta solicitud utilizando 
+wireshark.
+17
+Anotaciones adicionales
+• Tutorial de comandos linux: 
+https://www.youtube.com/watch?v=gd7BXuUQ91w
+• Tutorial virtualBox: 
+https://www.youtube.com/watch?v=bIoVtXiG9xc&t=1349s
+• Tutorial bind9: 
+https://www.youtube.com/watch?v=MPDXVkwUehs
+
+
+Domain Name System Protocol
+3
+Modelo cliente servidor (recordando)
+• El modelo cliente-servidor organiza la comunicación en la red en dos 
+roles: uno que solicita (cliente) y otro que responde (servidor)
+Cliente Servidor
+Inicia la comunicación Espera conexiones
+Solicita servicios (o 
+datos)
+Ofrece servicios (o 
+respuestas)
+Se conecta a un puerto 
+conocido
+"Escucha" en un puerto 
+específico
+4
+Internet como infraestructura para servicios 
+(recordando)
+5
+Internet como infraestructura para servicios 
+(recordando)
+• Protocolos para manejo de aplicaciones de clientes finales 
+(HTTP)
+• Protocolos para asignación de direcciones IP (DHCP)
+• Protocolos para resolución de nombres (DNS)
+• Protocolos para multiplexación, transmisión confiable, control de 
+flujo y control de errores (TCP – UDP)
+• Protocolos para definición de rutas de envio de información entre 
+redes (OSPF, IS-IS)
+• Protocolos para definir direccionamiento (IP)
+• Protocolos para envío de información en la red local (Ethernet)
+6
+Protocolo DNS
+• Su función principal es traducir los nombres de dominio que 
+son fáciles de recordar para los humanos (ej. 
+www.google.com) a las direcciones IP numéricas que las 
+computadoras usan para identificarse y comunicarse entre sí 
+(ej. 142.250.191.142)
+7
+Protocolo DNS
+• Legilibilidad para humanos
+• Abstracción y flexibilidad (internet más robusto)
+8
+Protocolo DNS
+• DNS es un protocolo recursivo y jerárquico
+9
+Protocolo DNS
+• Los tipos de registros DNS son las entradas de datos que se 
+almacenan en los servidores DNS autoritativos y que 
+definen los recursos y servicios asociados a un nombre de 
+dominio. Cada registro es una "línea" de información que le 
+dice a un servidor DNS cómo responder a una consulta 
+específica.
+• A
+• AAAA
+• CNAME
+• MX
+• ...
+https://toolbox.googleapps.com/apps/dig/#A/
+https://dnschecker.org/#A/www.eafit.edu.co
+
+
+
+...
+
+
+13
+HTTP – Usos
+• El uso de HTTP se ha extendido a otros ambientes más allá de la navegación:
+oComunicación con APIs
+oCarga o descarga de archivos
+oStreaming
+• REST es una arquitectura que basa su funcionamiento en los principios de 
+HTTP.
+oEn REST todo es un recurso (url)
+oREST mapea las operaciones fundamentales de datos (CRUD: Crear, Leer, Actualizar, 
+Borrar) directamente a los métodos de HTTP
+oRESTful APIs son  stateless
+oRESTful APIs son inherentemente sin estado
+oREST utiliza los encabezados de HTTP para especificar el formato de los datos que se 
+intercambian
+oREST utiliza los códigos de estado de HTTP para comunicar el resultado de una operación
+Despliegue de un servidor HTTP
+15
+HTTP – Apache
+• Apache HTTP Server, es un software de servidor web de 
+código abierto y gratuito desarrollado por la Apache Software 
+Foundation. Su función principal es servir archivos web, como 
+páginas HTML, imágenes y videos, a los clientes 
+(navegadores web) que los solicitan a través del protocolo 
+HTTP.
+16
+HTTP – Apache
+• El paquete de Apache en Ubuntu, llamado apache2, se instala y 
+gestiona a través del sistema de gestión de paquetes APT. La 
+instalación crea una estructura de directorios estándar que organiza 
+el código, los archivos de configuración y los sitios web.
+• Archivo de configuración principal: 
+/etc/apache2/apache2.conf.
+• Directorio de sitios web habilitados: /etc/apache2/sites-
+enabled/.
+• Directorio de sitios web disponibles: /etc/apache2/sites-
+available/.
+• Directorio raíz de documentos por defecto: /var/www/html/.
+17
+HTTP – Apache - Características
+• Los VirtualHost permiten que un solo servidor físico aloje 
+múltiples sitios web, cada uno con su propio dominio, contenido y 
+configuraciones.
+oEn el archivo /etc/apache2/sites-available/ se crea un archivo de 
+configuración para cada sitio web. CONSULTAR!!
+• Apache es modular. Se puede extender su funcionalidad instalando y 
+habilitando módulos (e.g. mod_rewrite, mod_ssl)
+• Apache utiliza un modelo de procesos para manejar las peticiones. 
+Existen varios modelos (Multi-Processing Module), pero el más 
+común en las versiones modernas es el event.
+oUn proceso principal lanza procesos hijos, y cada proceso hijo puede tener 
+varios hilos. Cada hilo puede manejar múltiples conexiones al mismo tiempo
+18
+HTTP – Apache - Procesamiento
+19
+HTTP – Apache - Instalación
+1. Actualizar la lista de paquetes: sudo apt update
+2. Instalar Apache2: sudo apt install apache2
+3. Verificar el estado de la instalación (que el servicio esté active/running): 
+sudo systemctl status apache2
+4. Verificar el acceso utilizando un navegador, digitar la url del servidor y 
+revisar que al menos la página por defecto se esté mostrando.
+5. La carpeta por defecto para los archivos web de Apache es 
+/var/www/html. Aquí es donde se debe colocar el archivo 
+index.html del frontend.
+• Después de cualquier cambio en la configuración de Apache, es necesario 
+reiniciar el servicio para que los cambios surtan 
+efecto: sudo systemctl restart apache2
+20
+HTTP – Apache - Entorno de experimentación
+21
+HTTP – Apache - Entorno de experimentación
+22
+Tarea
+1. Configurar el servidor DNS para que resuelva el dominio 
+paginadeprueba.com y devuelva la IP asociada al servidor web. 
+Verifique desde un navegador.
+2. Consulte la funcionalidad de proxy reverso. Configure el servidor 
+web Apache para que responda a peticiones de dos nombres de 
+dominio distintos, sirviendo contenido diferente para cada uno (uno 
+de ellos puede ser la página por defecto de apache). Revise las 
+peticiones para cada uno de los sitios utilizando wireshark.
+3. Consulte cómo se habilita el servicio https en Apache. Si es posible, 
+configurelo en el entorno de pruebas. Verifique qué cambia en las 
+transacciones entre cliente y servidor frente a los puntos anteriores.

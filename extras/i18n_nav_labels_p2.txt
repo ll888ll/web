@@ -1,0 +1,6 @@
+7 objects imported automatically (use -v 2 for details).
+
+ES primary: ['Buddy', 'Luks', 'Tienda', 'Integraciones']
+ES search: ['Croody · Inicio', 'Croody · Ejes', 'Croody · Roadmap', 'Buddy · Producto', 'Buddy · Suscripciones', 'Luks · Infraestructura', 'Tienda Buddy', 'Buddy Checkout']
+EN primary: ['Buddy', 'Luks', 'Store', 'Integrations']
+EN search: ['Croody · Home', 'Croody · Axes', 'Croody · Roadmap', 'Buddy · Product', 'Buddy · Subscriptions', 'Luks · Infrastructure', 'Buddy Store', 'Buddy Checkout']

@@ -1,0 +1,13 @@
+[Unit]
+Description=CICF DNS Monitor (spoof detection)
+After=cicf-capture.service
+Requires=cicf-capture.service
+
+[Service]
+ExecStart=/usr/local/bin/cicf-dnsmon.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+

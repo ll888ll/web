@@ -1,0 +1,92 @@
+
+1
+
+Tamaño automático
+Proyecto: Simulaci ́on de control de congesti ́on de TCP
+en un Enlace Compartido
+29 de agosto de 2025
+Resumen
+Este documento describe los par ́ametros de una actividad pr ́actica para compa-
+rar el rendimiento de los algoritmos de control de congesti ́on TCP: Reno, CUBIC
+y BBR. La actividad consiste en implementar una simulaci ́on en Python para mo-
+delar el comportamiento de m ́ultiples clientes que compiten por un ancho de banda
+limitado en un enlace compartido. El objetivo es analizar c ́omo cada algoritmo ges-
+tiona la ventana de congesti ́on en presencia de p ́erdidas causadas por la saturaci ́on
+del b ́ufer del enlace.
+ ́Indice
+1. Introducci ́on 2
+2. Escenario de Simulaci ́on en Python 2
+2.1. Par ́ametros de la Simulaci ́on . . . . . . . . . . . . . . . . . . . . . . . . . 2
+3. Actividad 2
+3.1. Parte 1: Implementaci ́on de la Simulaci ́on . . . . . . . . . . . . . . . . . 2
+3.2. Parte 2: An ́alisis Comparativo . . . . . . . . . . . . . . . . . . . . . . . . 3
+3.3. Parte 3: Propuesta de Optimizaci ́on del throughput . . . . . . . . . . . . 3
+4. Entregables 3
+1
+1. Introducci ́on
+El control de congesti ́on es un mecanismo fundamental en la capa de transporte de
+TCP, dise ̃nado para que un emisor tome acciones ante eventos que indiquen degradaci ́on
+en la calidad del enlace. A lo largo de los a ̃nos, se han desarrollado diversos algoritmos
+para optimizar este proceso. En este proyecto, se implementar ́a una simulaci ́on en Python
+para estudiar el comportamiento de tres algoritmos: Reno, CUBIC y BBR. A diferencia
+de los simuladores de eventos discretos, esta actividad se centra en una implementaci ́on
+simplificada para resaltar el funcionamiento b ́asico de los algoritmos en un escenario de
+contenci ́on por un recurso compartido.
+2. Escenario de Simulaci ́on en Python
+La simulaci ́on se construir ́a en un entorno de Python, utilizando los siguientes com-
+ponentes para emular una red simple (se sugiere que sean modelados como clases):
+Enlace compartido: Representar ́a el enlace de red compartido. Este componente
+tendr ́a un b ́ufer (cola) de tama ̃no limitado y una capacidad de procesamiento fija.
+Si el b ́ufer se llena, cualquier paquete adicional ser ́a descartado.
+Cliente: Representar ́a cada uno de los flujos de datos. Cada cliente estar ́a asociado
+a un algoritmo de control de congesti ́on espec ́ıfico y gestionar ́a su propia ventana
+de congesti ́on (cwnd), RTT y temporizadores de paquetes.
+Algoritmos de Congesti ́on: Se implementar ́an las l ́ogicas de Reno, CUBIC y
+BBR. Estos algoritmos modificar ́an la cwnd del cliente bas ́andose en los eventos de
+la simulaci ́on, como la recepci ́on de ACKs y la detecci ́on de p ́erdidas.
+2.1. Par ́ametros de la Simulaci ́on
+Capacidad del Enlace: 10 y 100 paquetes por segundo (p/s).
+Tama ̃no del B ́ufer del Enlace: 10 y 30 paquetes.
+N ́umero de Clientes: 9 clientes en total: 3 con TCP Reno, 3 con TCP CUBIC y
+3 con TCP BBR.
+Flujo de Datos: Cada cliente intentar ́a enviar un flujo continuo de paquetes du-
+rante toda la simulaci ́on.
+Tiempo de Simulaci ́on: 100 segundos.
+3. Actividad
+3.1. Parte 1: Implementaci ́on de la Simulaci ́on
+1. Implemente el enlace compartido con los par ́ametros de capacidad y tama ̃no de
+b ́ufer especificados.
+2
+2. Implemente el c ́odigo para los algoritmos TCPReno, TCPCUBIC y TCPBBR. Cada al-
+goritmo debe gestionar la l ́ogica de su cwnd.
+3. Escriba el bucle principal de la simulaci ́on, que debe:
+Simular el env ́ıo de paquetes de cada cliente al enlace compartido (hasta su
+cwnd).
+Procesar los paquetes en el enlace compartido y detectar si alguno se pierde
+por desbordamiento del b ́ufer.
+Simular el retardo de la red (RTT) y la recepci ́on de ACKs.
+Actualizar la cwnd de cada cliente bas ́andose en los eventos (ACK o p ́erdida).
+3.2. Parte 2: An ́alisis Comparativo
+1. Medici ́on de M ́etricas: Durante la simulaci ́on, registre el throughput instant ́aneo
+(paquetes por segundo) y el RTT para cada uno de los 9 clientes en cada paso de
+la simulaci ́on.
+2. Visualizaci ́on y An ́alisis:
+Gr ́afico de Throughput: Genere un gr ́afico de l ́ıneas que muestre el through-
+put de cada cliente a lo largo del tiempo. Analice el comportamiento: ¿Qu ́e
+algoritmo es m ́as agresivo? ¿Se observa una mayor equidad en el reparto del
+ancho de banda entre los clientes?
+Gr ́afico de RTT: Genere un gr ́afico que muestre el RTT de cada cliente.
+¿C ́omo se relaciona el RTT con la saturaci ́on del b ́ufer del enlace? ¿Se comporta
+de manera diferente el RTT de BBR en comparaci ́on con Reno y CUBIC?
+3.3. Parte 3: Propuesta de Optimizaci ́on del throughput
+Crea una nueva t ́ecnica, por ejemplo, TCPCustom, que implemente tu propia estra-
+tegia de control de congesti ́on. Esta clase debe definir c ́omo se ajusta la cwnd bas ́andose
+en las m ́etricas de la simulaci ́on (RTT, p ́erdidas, etc.). Compara el rendimiento de tu
+t ́ecnica propuesta con los otros 3 algoritmos. Escoja un escenario de comparaci ́on.
+4. Entregables
+C ́odigo fuente de la simulaci ́on en Python.
+Un informe en formato PDF que debe ser sustentado
+•Los gr ́aficos de throughput y RTT generados.
+•Un an ́alisis detallado de los resultados observados.
+•La descripci ́on de la estrategia de optimizaci ́on propuesta.
+3

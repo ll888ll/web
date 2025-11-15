@@ -1,0 +1,13 @@
+[Unit]
+Description=CICF PCAP to Flow Converter
+After=cicf-capture.service
+Requires=cicf-capture.service
+
+[Service]
+ExecStart=/usr/local/bin/cicf-watch.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,41 @@
+# Manual commands (Windows, PowerShell) — instalación desde cero y arranque rápido
+
+# 0) Clonar el repositorio
+git clone <GIT_URL> repo; Set-Location repo
+
+# 1) Instalar dependencias (si faltan)
+wsl --install; wsl --set-default-version 2
+winget install -e --id Git.Git -h
+winget install -e --id Docker.DockerDesktop -h
+
+# 2) Preparar variables de entorno
+Set-Location proyecto_integrado
+Copy-Item .env.production.sample .env
+(Get-Content .env) -replace '^ENV=.*','ENV=production' | Set-Content .env
+(Get-Content .env) -replace '^ALLOWED_HOSTS=.*','ALLOWED_HOSTS=localhost' | Set-Content .env
+$secret = [Convert]::ToBase64String([byte[]](1..64 | ForEach-Object { Get-Random -Minimum 0 -Maximum 256 }));
+(Get-Content .env) -replace '^SECRET_KEY=.*',"SECRET_KEY=$secret" | Set-Content .env
+
+# 3) Arranque rápido (dev)
+docker compose up -d --build
+curl.exe -I http://localhost:8080/
+(Invoke-WebRequest -UseBasicParsing 'http://localhost:8080/api/telemetry/docs').StatusCode
+(Invoke-WebRequest -UseBasicParsing 'http://localhost:8080/api/ids/docs').StatusCode
+
+# 4) Pruebas API (dev)
+curl.exe -s -X POST http://localhost:8080/api/telemetry/ingest -H "Content-Type: application/json" -d '{"data":{"TEMP":25.0,"HUM":55.0}}'
+curl.exe -s http://localhost:8080/api/telemetry/last
+curl.exe -s -X POST http://localhost:8080/api/ids/predict -H "Content-Type: application/json" -d '{"rows":[{"src_bytes":600}]}'
+
+# 5) Arranque prod local (TLS dev en 80/443)
+docker compose -f docker-compose.yml -f docker-compose.prod.yml --env-file .env up -d --build
+curl.exe -k -I https://localhost/
+
+# 6) Pruebas API (prod local — con tokens .env)
+$envfile = Get-Content .env | Where-Object { $_ -match '^(TG_INGEST_TOKEN|IDS_API_TOKEN)=' }
+$tg = ($envfile | Where-Object { $_ -like 'TG_INGEST_TOKEN=*' }) -replace '^TG_INGEST_TOKEN=',''
+$ids = ($envfile | Where-Object { $_ -like 'IDS_API_TOKEN=*' }) -replace '^IDS_API_TOKEN=',''
+curl.exe -s -X POST http://localhost/api/telemetry/ingest -H "X-API-Key: $tg" -H "Content-Type: application/json" -d '{"data":{"TEMP":26.0,"HUM":50.0}}'
+curl.exe -s http://localhost/api/telemetry/last
+curl.exe -s -X POST http://localhost/api/ids/predict -H "X-API-Key: $ids" -H "Content-Type: application/json" -d '{"rows":[{"src_bytes":600}]}'
+

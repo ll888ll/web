@@ -1,0 +1,112 @@
+
+Protocolos de enrutamiento
+9
+• Los routers necesitan saber a dónde enviar los paquetes. Las rutas estáticas son 
+inmanejables en redes grandes.
+• Protocolos de Enrutamiento Dinámico: Permiten que los routers compartan 
+información y construyan automáticamente las tablas de enrutamiento
+• Los protocolos de enrutamiento se clasifican, por ejemplo, según su alcance.
+▪ Interior Gateway Protocols: Funcionan dentro de un mismo Sistema Autónomo (AS) (e.g. RIP, OSPF)
+▪ Exterior Gateway Protocols: Funcionan entre diferentes Sistemas Autónomos (e.g. BGP)
+• También se pueden clasificar según el algoritmo que utilizan para determinar la 
+ruta más corta entre cada par de nodos
+▪ Vector distancia
+▪ Estado de enlace
+Routing Information Protocol
+10
+• Tipo: Protocolo de Vector Distancia. Los routers solo conocen a sus vecinos y 
+la distancia a las redes.
+• Métrica: Conteo de Saltos (Hop Count). El camino con menos routers 
+intermedios es el mejor.
+• Límite: Tiene un límite de 15 saltos. Esto lo hace inadecuado para redes muy 
+grandes.
+• Actualizaciones: Envía la tabla de enrutamiento completa a sus vecinos cada 
+30 segundos.
+• Ventaja: Muy simple de configurar y entender.
+• Desventaja: Convergencia lenta y alto tráfico de actualizaciones periódicas.
+Routing Information Protocol
+11
+Routing Information Protocol
+12
+Routing Information Protocol
+13
+Open Shortest Path First
+14
+• Tipo: Protocolo de Estado de Enlace. Los routers conocen el mapa completo de 
+la topología de la red.
+• Métrica: Costo. Es una métrica basada en el ancho de banda (mayor ancho de 
+banda = menor costo).
+• Algoritmo: Utiliza el algoritmo de Dijkstra (SPF) para calcular el camino más 
+corto a todas las redes.
+• Actualizaciones: Envía mensajes de Estado de Enlace (LSA) solo cuando hay 
+un cambio en la red (más eficiente).
+• Escalabilidad (Áreas): Utiliza un diseño jerárquico con Áreas:
+• Área 0 (Backbone): El núcleo de la red.
+• Áreas Regulares: Se conectan al Backbone. Este diseño reduce la carga de 
+procesamiento y el tráfico de LSA.
+Open Shortest Path First
+15
+Open Shortest Path First
+16
+Open Shortest Path First
+17
+Border Gateway Protocol
+18
+• Tipo: Protocolo de Puerta de enlace exterior. Se utiliza para enrutar entre sistemas autónomos. Es el protocolo de Internet.
+• Métrica: No utiliza una única métrica numérica simple (como el conteo de saltos en RIP o el costo en OSPF). En cambio, toma sus decisiones de enrutamiento basándose en un conjunto complejo de Atributos de Ruta.oPreferencia Local (Local Preference): Se prefiere la ruta con la Preferencia Local más Alta. (Influye en el tráfico de salida de tu Sistema Autónomo - AS).
+oRuta de Origen Local (Locally Originated): Se prefiere la ruta que fue originada localmente (inyectada) en este router BGP.
+oLongitud del Camino AS (AS Path Length): Se prefiere la ruta con el Camino AS más Corto (menor número de Sistemas Autónomos a atravesar).
+oTipo de Origen (Origin Type): Se prefiere el tipo de origen más bajo: IGP (ruta interna) > EGP (ruta externa) > Incomplete (ruta redistribuida).
+oDiscriminador de Salida Múltiple (MED): Se prefiere el valor MED más Bajo.(Influye en la decisión de un AS vecino sobre por dónde entrar a tu AS).
+oeBGP sobre iBGP: Se prefiere la ruta aprendida de un vecino eBGP (externo) sobre una de iBGP (interno).
+oMétrica IGP: Se prefiere la ruta con la métrica IGP más baja para llegar al siguiente salto (Next-Hop).
+oID del Router (Router ID): Se prefiere la ruta anunciada por el router BGP con el ID más Bajo.
+oLongitud de la Lista de Clúster (Cluster List Length): Se prefiere la ruta con la lista de clústeres más corta (usado en Reflectores de Ruta).
+oDirección IP del Vecino: Se prefiere la ruta del peer con la dirección IP más baja.
+• Algoritmo: Vector de Ruta (Path Vector). Esto significa que la métrica clave para BGP es la ruta completa (la secuencia de Sistemas Autónomos o AS) que un paquete debe atravesar.
+
+
+
+Programación de sockets
+3
+Definición de socket
+• En ARPANET: "A socket is defined to be the unique identification to or from which information is transmitted in the network. 
+The socket is specified as a 32 bit number with even sockets identifying receiving sockets and odd sockets identifying 
+sending sockets. A socket is also identified by the host in which the sending or receiving processer is located".
+• En la actualidad: 
+o"Un socket es una abstracción de software que representa un extremo (endpoint) de un canal de comunicación en una red de 
+computadoras. Proporciona la interfaz a través de la cual un programa puede enviar o recibir datos, utilizando una dirección IP, un número 
+de puerto y un protocolo (por ejemplo, TCP o UDP)."
+oIdentificado por: (Protocolo, Dirección IP local, Puerto local , Dirección IP remota, Puerto remoto)
+oEndpoint, Bidireccional, Único, Dependiente del protocolo
+https://www.rfc-editor.org/rfc/rfc147
+Computer Networking: A Top-Down Approach
+4
+Modelo cliente servidor
+• El modelo cliente-servidor organiza la comunicación en la red en dos 
+roles: uno que solicita (cliente) y otro que responde (servidor)
+https://www.rfc-editor.org/rfc/rfc147
+Computer Networking: A Top-Down Approach
+Cliente Servidor
+Inicia la comunicación Espera conexiones
+Solicita servicios (o 
+datos)
+Ofrece servicios (o 
+respuestas)
+Se conecta a un puerto 
+conocido
+"Escucha" en un puerto 
+específico
+5
+Programación de sockets (server)
+6
+Programación de sockets (server)
+7
+Tarea
+• Consulte las excepciones que pueden presentarse al 
+establecer comunicación utilizando sockets. Implemente 
+métodos para manejarlas. 
+• Adapte el código para que el servidor pueda recibir un número 
+definido de conexiones simultáneas. Demuestre su 
+funcionamiento al abrir varios clientes y conectarlos al mismo 
+tiempo al servidor

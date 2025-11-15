@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Server: nginx/1.29.2
+Date: Mon, 10 Nov 2025 02:25:21 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 16703
+Connection: keep-alive
+X-Frame-Options: DENY
+Vary: Cookie, Accept-Language
+Content-Language: es
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+Set-Cookie: csrftoken=wrtn9r1GyelnO9GYXwRZfUKmAVQtnS6z; expires=Mon, 09 Nov 2026 02:25:21 GMT; Max-Age=31449600; Path=/; SameSite=Lax; Secure
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: no-referrer-when-downgrade
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Request-ID: 02df59e1703e56d406b04b7a9740600a
+Content-Security-Policy: default-src 'self' 'unsafe-inline' data: https:; object-src 'none'; frame-ancestors 'self';
+

@@ -1,0 +1,12 @@
+git
+maven
+openjdk-17-jdk
+tcpdump
+ethtool
+inotify-tools
+tshark
+nftables
+python3
+python3-scapy
+libpcap0.8
+libpcap-dev

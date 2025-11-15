@@ -1,0 +1,10 @@
+[Unit]
+Description=CICF cleanup old PCAP/CSV files
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/cicf-clean.sh
+
+[Install]
+WantedBy=multi-user.target
+
