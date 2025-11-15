@@ -35,8 +35,10 @@ services:
     restart: unless-stopped
     environment:
       - DJANGO_SETTINGS_MODULE=croody.settings
+      - DATABASE_URL=sqlite:////data/croody.db
     volumes:
       - ./Croody:/app
+      - croody_data:/data
     expose:
       - "8000"
     mem_limit: 512m
@@ -97,3 +99,6 @@ services:
       - ROBOT_ID=robot-clases
     depends_on:
       - telemetry-gateway
+
+volumes:
+  croody_data:
