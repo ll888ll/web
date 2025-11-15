@@ -71,6 +71,18 @@ Endpoints
      ```
   3) Crea un `.env` persistente una vez: `/home/ec2-user/.telematicache/.env` con tus variables de producción.
   4) Cada push a `main` hará checkout y ejecutará `docker compose up -d --build ...` con ese `.env`.
+
+### Integración con Cloudflare (gratis)
+- Cambia los nameservers del dominio a los asignados por Cloudflare (desactiva DNSSEC en el registrador; re‑actívalo luego en CF si quieres).
+- En Cloudflare DNS:
+  - A `@` → `18.118.22.122` (Proxy ON)
+  - CNAME `www` → `croody.app` (Proxy ON)
+- SSL/TLS: "Full (strict)" (ya hay Let’s Encrypt en el origen).
+- WAF y seguridad: activa WAF básico, Bot Fight Mode y un rate limit para `/api/telemetry/ingest`.
+- Purga de caché automática (opcional): añade secrets en GitHub → Actions → Secrets:
+  - `CF_API_TOKEN` (Token con permisos Zone:Cache Purge=Write limitado a la zona)
+  - `CF_ZONE_ID` (ID de la zona en Cloudflare)
+  El workflow `deploy-selfhosted.yml` purgará la caché al finalizar el deploy si estos secrets existen.
 - Asegúrate de que el servidor tenga Docker + Docker Compose instalados y que `proyecto_integrado/.env` exista con los secretos reales (no se versiona).
 
 ### Script manual
