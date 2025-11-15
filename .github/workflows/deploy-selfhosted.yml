@@ -3,6 +3,8 @@ name: Deploy (Self-Hosted)
 on:
   push:
     branches: [ main ]
+permissions:
+  contents: read
 
 jobs:
   deploy:

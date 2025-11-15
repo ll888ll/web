@@ -49,15 +49,28 @@ Endpoints
 ## Despliegue automatizado
 
 ### GitHub Actions
-- Workflow: `.github/workflows/deploy.yml` (push a `main`).
+- Workflow SSH manual: `.github/workflows/deploy.yml` (workflow_dispatch). Úsalo sólo si tienes SSH abierto desde GitHub.
 - Secretos necesarios en el repositorio:
   - `DEPLOY_HOST`: IP o dominio del servidor (ej. `18.224.180.61`).
   - `DEPLOY_USER`: usuario SSH (ej. `ec2-user`).
   - `DEPLOY_KEY`: clave privada en formato PEM (contenido completo).
   - `DEPLOY_PATH`: carpeta raíz donde vive el proyecto (ej. `/home/ec2-user`).
   - `DEPLOY_PORT` (opcional, default 22).
-- Hasta que los cuatro secretos obligatorios estén definidos, el job se omite automáticamente para evitar fallos.
 - El workflow empaqueta el repo (`git archive`), lo copia a `$DEPLOY_PATH`, preserva `proyecto_integrado/.env` si ya existe y ejecuta `docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway`.
+
+### Runner self‑hosted (recomendado)
+- Workflow: `.github/workflows/deploy-selfhosted.yml` (push a `main`). No requiere abrir SSH.
+- Pasos (en la instancia):
+  1) GitHub → Settings → Actions → Runners → New self-hosted runner → Linux x64 → copia token/comandos.
+  2) En la EC2 (ec2-user):
+     ```bash
+     GH_URL=https://github.com/ll333ll/telematicache \
+     RUNNER_TOKEN=TOKEN_DEL_PASO_1 \
+     RUNNER_LABELS=deploy \
+     bash scripts/setup_self_hosted_runner.sh
+     ```
+  3) Crea un `.env` persistente una vez: `/home/ec2-user/.telematicache/.env` con tus variables de producción.
+  4) Cada push a `main` hará checkout y ejecutará `docker compose up -d --build ...` con ese `.env`.
 - Asegúrate de que el servidor tenga Docker + Docker Compose instalados y que `proyecto_integrado/.env` exista con los secretos reales (no se versiona).
 
 ### Script manual
