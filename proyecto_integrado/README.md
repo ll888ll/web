@@ -56,6 +56,7 @@ Endpoints
   - `DEPLOY_KEY`: clave privada en formato PEM (contenido completo).
   - `DEPLOY_PATH`: carpeta raíz donde vive el proyecto (ej. `/home/ec2-user`).
   - `DEPLOY_PORT` (opcional, default 22).
+- Hasta que los cuatro secretos obligatorios estén definidos, el job se omite automáticamente para evitar fallos.
 - El workflow empaqueta el repo (`git archive`), lo copia a `$DEPLOY_PATH`, preserva `proyecto_integrado/.env` si ya existe y ejecuta `docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway`.
 - Asegúrate de que el servidor tenga Docker + Docker Compose instalados y que `proyecto_integrado/.env` exista con los secretos reales (no se versiona).
 
