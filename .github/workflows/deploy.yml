@@ -20,7 +20,7 @@ jobs:
         run: tar -czf telematicache.tar.gz .
 
       - name: Upload bundle to server
-        uses: appleboy/scp-action@v0.1.8
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
@@ -30,7 +30,7 @@ jobs:
           target: ${{ secrets.DEPLOY_PATH }}/telematicache.tar.gz
 
       - name: Deploy on server
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}

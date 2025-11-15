@@ -50,7 +50,7 @@ jobs:
           bandit -q -r proyecto_integrado/services || true
           pip-audit -r proyecto_integrado/Croody/requirements.txt || true
       - name: Gitleaks
-        uses: zricethezav/gitleaks-action@v2
+        uses: zricethezav/gitleaks-action@master
         continue-on-error: true
         with:
-          args: detect --no-git --redact
+          args: detect --no-git --redact --exclude-file .gitleaksignore
