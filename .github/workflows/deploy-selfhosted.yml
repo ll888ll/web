@@ -109,3 +109,37 @@ jobs:
             --data '{"value":"on"}' || true
 
           echo "Cloudflare DNS + SSL configured."
+
+      - name: Promote Cloudflare proxy + Strict when ready (optional)
+        if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v jq >/dev/null 2>&1; then
+            sudo dnf install -y jq || sudo apt-get update -y && sudo apt-get install -y jq || true
+          fi
+          ZONE=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID | jq -r '.result.status // empty')
+          if [ "$ZONE" != "active" ]; then
+            echo "CF zone not active yet ($ZONE). Skipping proxy+strict promotion."
+            exit 0
+          fi
+          # Check for active edge certificate packs
+          CERT_ACTIVE=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" \
+            https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/ssl/certificate_packs | jq -r '[.result[] | select(.status=="active")] | length')
+          if [ "$CERT_ACTIVE" -eq 0 ]; then
+            echo "No active edge certificate yet. Skipping proxy+strict promotion."
+            exit 0
+          fi
+          # Promote DNS records to proxied=true
+          ZONE_NAME=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID | jq -r '.result.name')
+          ROOT_ID=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records?type=A&name=$ZONE_NAME" | jq -r '.result[0].id // empty')
+          [ -n "$ROOT_ID" ] && curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
+            "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records/$ROOT_ID" --data '{"proxied":true}' || true
+          WWW_NAME="www.$ZONE_NAME"
+          WWW_ID=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records?type=CNAME&name=$WWW_NAME" | jq -r '.result[0].id // empty')
+          [ -n "$WWW_ID" ] && curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
+            "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records/$WWW_ID" --data '{"proxied":true}' || true
+          # Switch SSL to Full (strict)
+          curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
+            "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/settings/ssl" --data '{"value":"strict"}' || true
+          echo "Promoted Cloudflare proxy to orange + SSL Strict."
