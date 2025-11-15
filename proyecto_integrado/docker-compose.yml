@@ -58,7 +58,7 @@ services:
     environment:
       - TG_DB_PATH=/data/telemetry.db
     volumes:
-      - ./services/telemetry-gateway/data:/data
+      - telemetry_data:/data
     expose:
       - "9000"
     mem_limit: 512m
@@ -102,3 +102,4 @@ services:
 
 volumes:
   croody_data:
+  telemetry_data:
