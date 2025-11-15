@@ -77,11 +77,11 @@ jobs:
           if [ -n "$ROOT_REC_ID" ]; then
             curl -fsSL -X PUT -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records/$ROOT_REC_ID" \
-              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":true}" || true
+              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":false}" || true
           else
             curl -fsSL -X POST -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records" \
-              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":true}" || true
+              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":false}" || true
           fi
 
           # Upsert CNAME for www
@@ -90,17 +90,17 @@ jobs:
           if [ -n "$WWW_REC_ID" ]; then
             curl -fsSL -X PUT -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records/$WWW_REC_ID" \
-              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":true}" || true
+              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":false}" || true
           else
             curl -fsSL -X POST -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records" \
-              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":true}" || true
+              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":false}" || true
           fi
 
           # SSL Strict
           curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
             "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/settings/ssl" \
-            --data '{"value":"strict"}' || true
+            --data '{"value":"full"}' || true
 
           # Bot Fight Mode ON
           curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
