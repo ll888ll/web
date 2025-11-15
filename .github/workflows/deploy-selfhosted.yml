@@ -1,0 +1,20 @@
+name: Deploy (Self-Hosted)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, deploy]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build & Restart stack
+        working-directory: ${{ github.workspace }}/proyecto_integrado
+        run: |
+          docker compose down || true
+          docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway
+          docker compose ps
+
