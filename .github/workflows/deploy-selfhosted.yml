@@ -7,9 +7,30 @@ on:
 jobs:
   deploy:
     runs-on: [self-hosted, linux, deploy]
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Prepare environment file
+        shell: bash
+        run: |
+          set -euo pipefail
+          PERSIST_DIR="$HOME/.telematicache"
+          LEGACY_ENV="$HOME/repo/proyecto_integrado/.env"
+          mkdir -p "$PERSIST_DIR"
+          # Seed from legacy path if exists
+          if [ -f "$LEGACY_ENV" ]; then
+            cp "$LEGACY_ENV" "$PERSIST_DIR/.env"
+          fi
+          # Ensure .env exists in persistent dir
+          if [ -f "$PERSIST_DIR/.env" ]; then
+            cp "$PERSIST_DIR/.env" "$GITHUB_WORKSPACE/proyecto_integrado/.env"
+          else
+            echo "WARNING: No persistent .env found; using defaults if any" >&2
+          fi
 
       - name: Build & Restart stack
         working-directory: ${{ github.workspace }}/proyecto_integrado
@@ -17,4 +38,3 @@ jobs:
           docker compose down || true
           docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway
           docker compose ps
-
