@@ -37,11 +37,12 @@ jobs:
             echo "WARNING: No persistent .env found; using defaults if any" >&2
           fi
 
-      - name: Build & Restart stack
+      - name: Build & Restart stack (prod + ACME)
         working-directory: ${{ github.workspace }}/proyecto_integrado
         run: |
           docker compose down || true
-          docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway
+          # Use prod overrides and ACME volumes so gateway uses LE certs
+          docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.acme.yml --env-file .env up -d --build telemetry-gateway ids-ml robot-sim croody gateway
           docker compose ps
 
       - name: Purge Cloudflare cache (optional)
