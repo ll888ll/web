@@ -60,6 +60,16 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="map-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="map-title">Mapa en tiempo real</h2>
+          <p>Muestra la posición reportada por cada robot (si envía lat/lng).</p>
+        </div>
+        <div id="telemetry-map" style="height: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;"></div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="live-grid-title">
       <div class="container">
         <div class="section__header">
@@ -103,6 +113,40 @@
 {% block body_scripts %}
   {{ block.super }}
   <script>
+    // Leaflet map globals
+    let map, markers = {};
+    function ensureMap() {
+      if (map) return map;
+      map = L.map('telemetry-map', { zoomControl: true, scrollWheelZoom: true });
+      const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      });
+      tiles.addTo(map);
+      map.setView([19.4326, -99.1332], 13); // CDMX por defecto
+      return map;
+    }
+
+    function updateMap(robots) {
+      if (!document.getElementById('telemetry-map')) return;
+      const m = ensureMap();
+      let firstPos = null;
+      robots.forEach(r => {
+        if (!r.last || !r.last.position) return;
+        const { lat, lng } = r.last.position;
+        if (typeof lat !== 'number' || typeof lng !== 'number') return;
+        const key = r.robot_id;
+        const label = `${key} @ ${new Date(r.last.ts).toLocaleTimeString()}`;
+        if (!markers[key]) {
+          markers[key] = L.marker([lat, lng]).addTo(m).bindPopup(label);
+        } else {
+          markers[key].setLatLng([lat, lng]).setPopupContent(label);
+        }
+        if (!firstPos) firstPos = [lat, lng];
+      });
+      if (firstPos) m.setView(firstPos, m.getZoom() < 5 ? 13 : m.getZoom());
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const grid = document.getElementById('monitor-grid');
       if (!grid) return;
@@ -121,6 +165,7 @@
           const alerts = data.robots.filter(r => r.last.status === 'alert');
           alertCount.textContent = alerts.length;
           grid.innerHTML = data.robots.map(robot => renderRobot(robot)).join('');
+          updateMap(data.robots);
         } catch (err) {
           console.error('monitor', err);
         }
@@ -144,4 +189,7 @@
       setInterval(refresh, 4000);
     });
   </script>
+  <!-- Leaflet (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 {% endblock %}
