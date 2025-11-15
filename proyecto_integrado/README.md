@@ -46,5 +46,31 @@ Endpoints
 - Ejecuta `python services/ids-ml/training/train_ids_model.py` (requiere pandas/scikit-learn) para regenerar `services/ids-ml/models/best_model.joblib` y `model_metadata.json`.
 - El front de monitor muestra Accuracy/F1 leídos de `model_metadata.json`.
 
+## Despliegue automatizado
+
+### GitHub Actions
+- Workflow: `.github/workflows/deploy.yml` (push a `main`).
+- Secretos necesarios en el repositorio:
+  - `DEPLOY_HOST`: IP o dominio del servidor (ej. `18.224.180.61`).
+  - `DEPLOY_USER`: usuario SSH (ej. `ec2-user`).
+  - `DEPLOY_KEY`: clave privada en formato PEM (contenido completo).
+  - `DEPLOY_PATH`: carpeta raíz donde vive el proyecto (ej. `/home/ec2-user`).
+  - `DEPLOY_PORT` (opcional, default 22).
+- El workflow empaqueta el repo (`git archive`), lo copia a `$DEPLOY_PATH`, preserva `proyecto_integrado/.env` si ya existe y ejecuta `docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway`.
+- Asegúrate de que el servidor tenga Docker + Docker Compose instalados y que `proyecto_integrado/.env` exista con los secretos reales (no se versiona).
+
+### Script manual
+- `scripts/deploy_remote.sh` reproduce la misma lógica desde tu máquina local.
+- Requiere las variables `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_KEY` (ruta al PEM), `DEPLOY_PATH` y opcionalmente `DEPLOY_PORT`.
+- Ejemplo:
+  ```bash
+  DEPLOY_HOST=18.224.180.61 \
+  DEPLOY_USER=ec2-user \
+  DEPLOY_KEY=~/croody.pem \
+  DEPLOY_PATH=/home/ec2-user \
+  ./scripts/deploy_remote.sh
+  ```
+- El script preserva `proyecto_integrado/.env` y relanza el stack completo.
+
 Notas
 - Esta carpeta es independiente del resto del repositorio. Puedes borrar el stack previo cuando valides que esto te funciona.

@@ -1,0 +1,62 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create release archive
+        run: tar -czf telematicache.tar.gz .
+
+      - name: Upload bundle to server
+        uses: appleboy/scp-action@v0.1.8
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: ${{ secrets.DEPLOY_PORT || '22' }}
+          source: telematicache.tar.gz
+          target: ${{ secrets.DEPLOY_PATH }}/telematicache.tar.gz
+
+      - name: Deploy on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: ${{ secrets.DEPLOY_PORT || '22' }}
+          script: |
+            set -euo pipefail
+            DEPLOY_ROOT="${{ secrets.DEPLOY_PATH }}"
+            ARCHIVE="$DEPLOY_ROOT/telematicache.tar.gz"
+            REPO_DIR="$DEPLOY_ROOT/repo"
+            BACKUP_ENV="$DEPLOY_ROOT/.env.backup"
+
+            if [ -f "$REPO_DIR/proyecto_integrado/.env" ]; then
+              cp "$REPO_DIR/proyecto_integrado/.env" "$BACKUP_ENV"
+            fi
+
+            rm -rf "$REPO_DIR"
+            mkdir -p "$REPO_DIR"
+            tar -xzf "$ARCHIVE" -C "$REPO_DIR"
+            rm -f "$ARCHIVE"
+            if [ -f "$BACKUP_ENV" ]; then
+              mv "$BACKUP_ENV" "$REPO_DIR/proyecto_integrado/.env"
+            fi
+
+            cd "$REPO_DIR/proyecto_integrado"
+            docker compose down
+            docker compose up -d --build telemetry-gateway ids-ml robot-sim croody gateway
+
+            docker compose ps
