@@ -1,0 +1,249 @@
+# French translations for Croody project.
+# Copyright (C) 2024 Croody
+#
+msgid ""
+msgstr ""
+
+"Project-Id-Version: Croody 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"PO-Revision-Date: 2025-01-06 16:30+0000\n"
+"Last-Translator: Croody Team\n"
+"Language-Team: French <hola@croody.app>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+msgid "Croody · Precisión cósmica con corazón"
+msgstr ""
+
+msgid "Saltar al contenido principal"
+msgstr "Passer au contenu principal"
+
+msgid "Abrir menú"
+msgstr "Ouvrir le menu"
+
+msgid "Buscar en Croody"
+msgstr "Rechercher dans Croody"
+
+msgid "Buscar (pulsa /)"
+msgstr ""
+
+msgid "Seleccionar idioma"
+msgstr "Sélectionner la langue"
+
+msgid "Cambiar tema"
+msgstr "Changer le thème"
+
+msgid "Empezar"
+msgstr "Commencer"
+
+msgid "Salir"
+msgstr "Déconnexion"
+
+msgid "Acceder"
+msgstr "Connexion"
+
+msgid "Cerrar sesión"
+msgstr "Se déconnecter"
+
+msgid "Búsqueda"
+msgstr ""
+
+msgid "Contactar"
+msgstr ""
+
+msgid "Accesos rápidos"
+msgstr "Accès rapide"
+
+msgid "Resultados sugeridos"
+msgstr "Résultats suggérés"
+
+msgid "Geometría sagrada"
+msgstr "Géométrie sacrée"
+
+msgid "Legal"
+msgstr "Légal"
+
+msgid "Privacidad"
+msgstr "Confidentialité"
+
+msgid "Términos"
+msgstr "Conditions"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Inicia sesión"
+msgstr "Se connecter"
+
+msgid "Acceso Croody"
+msgstr ""
+
+msgid "Conecta tu cuenta para continuar."
+msgstr "Connectez votre compte pour continuer."
+
+msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
+msgstr ""
+
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr ""
+
+msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
+msgstr ""
+
+msgid "Ingresar"
+msgstr "Se connecter"
+
+msgid "Croody · Conecta, Entrena y Destaca"
+msgstr ""
+
+msgid "Volvamos a ser humanos"
+msgstr "Redevenons humains"
+
+msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
+msgstr ""
+
+msgid "Ir a la tienda Buddy"
+msgstr ""
+
+msgid "Conocer a Buddy"
+msgstr ""
+
+msgid "Logo de Croody representando conexión y tecnología humanizada"
+msgstr ""
+
+msgid "rutinas ajustadas automáticamente cada semana"
+msgstr ""
+
+msgid "personas mantienen su plan mensual con Buddy activo"
+msgstr ""
+
+msgid "7 regiones"
+msgstr ""
+
+msgid "operación sincronizada con soporte localizado"
+msgstr ""
+
+msgid "Fitness & Conexión"
+msgstr ""
+
+msgid "Buddy"
+msgstr ""
+
+msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr ""
+
+msgid "Conecta, Entrena y Destaca"
+msgstr "Connectez, Entraînez et Démarquez-vous"
+
+msgid "Economía Digital"
+msgstr ""
+
+msgid "My Luks"
+msgstr ""
+
+msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
+msgstr ""
+
+msgid "Seguridad, Abundancia y Proyección"
+msgstr ""
+
+msgid "Alimentación Real"
+msgstr ""
+
+msgid "Comida Real (Próximamente)"
+msgstr ""
+
+msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
+msgstr ""
+
+msgid "Alivio, Nostalgia y Satisfacción"
+msgstr ""
+
+msgid "Buddy · Conecta, Entrena y Destaca"
+msgstr ""
+
+msgid "Más que entrenar: una conexión contigo y con los tuyos"
+msgstr ""
+
+msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
+msgstr ""
+
+msgid "Ver roadmap"
+msgstr ""
+
+msgid "365 días"
+msgstr ""
+
+msgid "de rutinas nuevas sin reciclar combinaciones"
+msgstr ""
+
+msgid "±5% fatiga"
+msgstr ""
+
+msgid "ajuste automático según tu energía real"
+msgstr ""
+
+msgid "5 estilos"
+msgstr ""
+
+msgid "personajes con tonos y objetivos definidos"
+msgstr ""
+
+msgid "Entrenador con IA y rutinas a tu medida"
+msgstr ""
+
+msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
+msgstr ""
+
+msgid "Biblioteca de ejercicios segura y consistente"
+msgstr ""
+
+msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
+msgstr ""
+
+msgid "Ecosistema de personajes con carisma"
+msgstr ""
+
+msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
+msgstr ""
+
+
+# Navigation and search labels (added)
+msgid "Buddy"
+msgstr "Buddy"
+
+msgid "Luks"
+msgstr "Luks"
+
+msgid "Tienda"
+msgstr "Boutique"
+
+msgid "Integraciones"
+msgstr "Intégrations"
+
+msgid "Croody · Inicio"
+msgstr "Croody · Accueil"
+
+msgid "Croody · Ejes"
+msgstr "Croody · Axes"
+
+msgid "Croody · Roadmap"
+msgstr "Croody · Feuille de route"
+
+msgid "Buddy · Producto"
+msgstr "Buddy · Produit"
+
+msgid "Buddy · Suscripciones"
+msgstr "Buddy · Abonnements"
+
+msgid "Luks · Infraestructura"
+msgstr "Luks · Infrastructure"
+
+msgid "Tienda Buddy"
+msgstr "Boutique Buddy"
+
+msgid "Buddy Checkout"
+msgstr "Buddy Checkout"

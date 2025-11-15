@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Crear cuenta" %} · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="auth-page" aria-labelledby="signup-title">
+      <div class="container auth-page__grid">
+        <div class="auth-page__intro">
+          <div class="chip">{% trans "Registro Croody" %}</div>
+          <h1 id="signup-title">{% trans "Activa tu acceso al universo Croody." %}</h1>
+          <p>{% trans "Configura idioma, tema y recibe un token personal para conectar tus robots al protocolo." %}</p>
+          <ul class="auth-highlights">
+            <li>{% trans "Token de ingestión personal para Telemetry Gateway" %}</li>
+            <li>{% trans "Dashboard de perfil y alertas en tiempo real" %}</li>
+            <li>{% trans "Compatibilidad con Buddy Store y Luks" %}</li>
+          </ul>
+        </div>
+        <form method="post" class="auth-page__form" novalidate>
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="field">
+              <label class="auth-page__label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field }}
+              {% for error in field.errors %}
+                <span class="auth-alert" role="alert">{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% endfor %}
+          {% if form.non_field_errors %}
+            <div class="auth-alert" role="alert">
+              {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <button type="submit" class="btn btn--primary auth-submit">{% trans "Crear cuenta" %}</button>
+          <p class="auth-alt">{% trans "¿Ya tienes cuenta?" %} <a href="{% url 'landing:login' %}">{% trans "Inicia sesión" %}</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+{% endblock %}

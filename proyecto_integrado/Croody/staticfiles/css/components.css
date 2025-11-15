@@ -1,0 +1,69 @@
+/* Language selector */
+.language-selector{position:relative;display:inline-flex}
+.language-selector__trigger{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;background:var(--surface-2);border:1px solid color-mix(in oklab,var(--brand-base),transparent 70%);border-radius:8px;color:var(--fg-primary);font-size:14px;font-weight:500;cursor:pointer;transition:all 233ms cubic-bezier(.2,.8,.2,1)}
+.language-selector__trigger:hover{background:var(--surface-3);border-color:var(--brand-base)}
+.language-selector__trigger[aria-expanded="true"]{background:var(--surface-3);border-color:var(--brand-base)}
+.language-selector__icon{font-size:18px;line-height:1}
+.language-selector__current{text-transform:uppercase;letter-spacing:0.5px}
+.language-selector__dropdown{position:absolute;top:calc(100% + 8px);right:0;background:var(--surface-2);border:1px solid color-mix(in oklab,var(--brand-base),transparent 70%);border-radius:12px;box-shadow:var(--shadow);min-width:200px;z-index:100;animation:languageDropdownFadeIn 233ms cubic-bezier(.2,.8,.2,1)}
+.language-selector__dropdown[hidden]{display:none}
+.language-selector__form{padding:8px}
+.language-selector__option{display:flex;align-items:center;gap:12px;width:100%;padding:10px 13px;background:transparent;border:none;border-radius:8px;color:var(--fg-primary);font-size:14px;font-weight:500;text-align:left;cursor:pointer;transition:background 144ms ease}
+.language-selector__option:hover{background:var(--surface-3)}
+.language-selector__option.active{background:color-mix(in oklab,var(--brand-base),transparent 90%);color:var(--brand-base)}
+.language-selector__flag{font-size:20px;line-height:1}
+
+@keyframes languageDropdownFadeIn{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media (max-width:767.98px){
+  .language-selector__trigger{padding:6px 10px;font-size:13px}
+  .language-selector__icon{font-size:16px}
+  .language-selector__dropdown{min-width:180px;right:-8px}
+  .language-selector__option{padding:8px 10px;font-size:13px}
+  .language-selector__flag{font-size:18px}
+}
+
+/* Toggle de tema */
+.theme-toggle{display:inline-flex;align-items:center;gap:8px}
+.theme-toggle__checkbox{width:33px;height:21px;appearance:none;background:var(--surface-2);border-radius:21px;position:relative;border:1px solid color-mix(in oklab,var(--brand-base),transparent 70%)}
+.theme-toggle__checkbox::after{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:var(--brand-base);transition:left 233ms cubic-bezier(.2,.8,.2,1)}
+.theme-toggle__checkbox:checked::after{left:14px}
+
+/* Chips, badges (variantes) */
+.chip--outline{background:transparent;border-color:color-mix(in oklab,var(--brand-base),transparent 60%)}
+.chip--glow{box-shadow:0 0 0 6px color-mix(in oklab,var(--brand-base),transparent 92%)}
+
+/* Vector card keywords */
+.vector-card__keywords{font-size:0.9rem;color:var(--brand-base);margin-top:8px;font-style:italic;opacity:0.9;font-weight:500;letter-spacing:0.01em}
+
+/* Improved cards with better elevation */
+.vector-card,
+.product-card{
+  transition:transform 300ms cubic-bezier(0.4,0,0.2,1),box-shadow 300ms cubic-bezier(0.4,0,0.2,1),border-color 200ms ease;
+}
+
+.vector-card:hover,
+.product-card:hover{
+  transform:translateY(-4px) scale(1.01);
+  box-shadow:var(--shadow-lg);
+  border-color:color-mix(in oklab,var(--brand-base),transparent 50%);
+}
+
+.vector-card:active,
+.product-card:active{
+  transform:translateY(-2px) scale(1.005);
+  transition-duration:100ms;
+}
+
+/* Cards showcase extras */
+.product-card__badge{align-self:flex-start}
+.product-card__variants{display:flex;gap:8px;flex-wrap:wrap}
+.product-card__variants .chip{height:34px;padding:0 13px}
+.product-card__meta{display:flex;justify-content:space-between;align-items:center;color:var(--fg-tertiary)}
+
+/* Modal / toast (esqueleto) */
+.modal{background:var(--surface-2);border:1px solid color-mix(in oklab,var(--brand-base),transparent 80%);border-radius:18px;padding:21px;box-shadow:var(--shadow)}
+.toast{background:var(--surface-3);border:1px solid color-mix(in oklab,var(--brand-base),transparent 80%);border-radius:12px;padding:13px 21px;box-shadow:var(--shadow)}

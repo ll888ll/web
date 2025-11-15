@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Monitor · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="landing-hero" aria-labelledby="monitor-title">
+      <div class="container landing-hero__grid">
+        <div class="landing-hero__content">
+          <div class="chip">{% trans "Croody Protocol" %}</div>
+          <h1 id="monitor-title">{{ monitor_meta.hero.title }}</h1>
+          <p>{{ monitor_meta.hero.lead }}</p>
+          <div class="landing-hero__cta">
+            <a class="btn btn--primary" href="mailto:hola@croody.app">{% trans "Conectar mi robot" %}</a>
+            <a class="btn btn--ghost" href="{% url 'landing:profile' %}">{% trans "Ver token personal" %}</a>
+          </div>
+        </div>
+        <div class="landing-hero__metrics">
+          {% for metric in monitor_meta.metrics %}
+            <article class="metric-card">
+              <span class="metric-card__label">{{ metric.label }}</span>
+              <span class="metric-card__value" id="{{ metric.id }}">{{ metric.value }}</span>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="live-grid-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="live-grid-title">{% trans "Robots conectados" %}</h2>
+          <p>{% trans "Cada tarjeta resume posición, atmósfera y estado transmitido por el protocolo" %}</p>
+        </div>
+        <div id="monitor-grid" class="telemetry-stream" data-live-endpoint="{{ live_endpoint }}"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="protocol-title">
+      <div class="container spec-grid">
+        <div>
+          <h2 id="protocol-title">{% trans "Cómo funciona" %}</h2>
+          <p>{% trans "El gateway acepta POST JSON seguros con token personal y expone endpoints GET para visualización y auditoría." %}</p>
+          <ul>
+            <li><code>POST {{ ingest_endpoint }}</code> {% trans "para telemetría" %}</li>
+            <li><code>GET {{ live_endpoint }}</code> {% trans "para dashboards" %}</li>
+            <li><code>GET {{ history_endpoint }}?limit=100</code> {% trans "para históricos" %}</li>
+          </ul>
+        </div>
+        <div>
+          <h3>{% trans "Ejemplo de carga" %}</h3>
+<pre><code>{
+  "robot_id": "robot-alpha",
+  "ts": "2025-11-13T03:55:00Z",
+  "position": {"lat": 19.43, "lng": -99.13},
+  "data": {
+    "TEMP": 23.4,
+    "HUM": 40.2,
+    "AQI": 18,
+    "STATUS": "navigating"
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block body_scripts %}
+  {{ block.super }}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('monitor-grid');
+      if (!grid) return;
+      const endpoint = grid.getAttribute('data-live-endpoint');
+      const robotCount = document.getElementById('robot-count');
+      const lastUpdate = document.getElementById('last-update');
+      const alertCount = document.getElementById('alert-count');
+
+      async function refresh() {
+        try {
+          const res = await fetch(endpoint);
+          if (!res.ok) return;
+          const data = await res.json();
+          robotCount.textContent = data.robots.length;
+          lastUpdate.textContent = new Date(data.updated_at).toLocaleTimeString();
+          const alerts = data.robots.filter(r => r.last.status === 'alert');
+          alertCount.textContent = alerts.length;
+          grid.innerHTML = data.robots.map(robot => renderRobot(robot)).join('');
+        } catch (err) {
+          console.error('monitor', err);
+        }
+      }
+
+      function renderRobot(robot) {
+        const coords = robot.last.position ? `${robot.last.position.lat.toFixed(4)}, ${robot.last.position.lng.toFixed(4)}` : '—';
+        return `
+          <article>
+            <header>
+              <strong>${robot.robot_id}</strong>
+              <span>${new Date(robot.last.ts).toLocaleTimeString()}</span>
+            </header>
+            <p><small>POS</small> ${coords}</p>
+            <p><small>DATA</small> ${Object.entries(robot.last.data).map(([k,v]) => `${k}:${v}`).join(' · ')}</p>
+          </article>
+        `;
+      }
+
+      refresh();
+      setInterval(refresh, 4000);
+    });
+  </script>
+{% endblock %}

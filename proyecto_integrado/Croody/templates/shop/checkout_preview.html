@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout Buddy · Croody{% endblock %}
+{% block header_cta_url %}#checkout{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="section" aria-labelledby="checkout-title">
+      <div class="container checkout-preview">
+        <div class="section__header">
+          <h1 id="checkout-title">Checkout Buddy · Paso a paso</h1>
+          <p>Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash verificable. Todo sucede en cuestión de segundos.</p>
+        </div>
+        <ol class="step-list" id="checkout">
+          {% for step in steps %}
+            <li class="step-list__item">
+              <span class="step-list__index">{{ step.step }}</span>
+              <div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+
+        <div class="product-grid product-grid--compact">
+          {% for product in products %}
+            <article class="product-card product-card--compact">
+              <header>
+                <h3>{{ product.name }}</h3>
+              </header>
+              <p>{{ product.teaser }}</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">${{ product.price|floatformat:0 }}</span>
+                <span class="product-card__note">{{ product.delivery_estimate }}</span>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section checkout-notes" aria-labelledby="checkout-notes-title">
+      <div class="container checkout-notes__grid">
+        <div>
+          <h2 id="checkout-notes-title">Protecciones del flujo</h2>
+          <ul>
+            {% for item in checkout_notes %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3>Wallet y pagos</h3>
+          <ul>
+            {% for item in wallet_points %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3>Confianza y transparencia</h3>
+          <ul>
+            {% for note in trust_notes %}
+              <li>{{ note }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

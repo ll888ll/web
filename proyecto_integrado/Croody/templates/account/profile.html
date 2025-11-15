@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Perfil" %} · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="account-shell" aria-labelledby="profile-title">
+      <div class="container account-shell__grid">
+        <header class="account-shell__intro">
+          <div class="chip">{% trans "Perfil" %}</div>
+          <h1 id="profile-title">{% trans "Cuida tu identidad Croody y tus robots" %}</h1>
+          <p>{% trans "Actualiza datos personales, gestiona tokens de ingestión y revisa la telemetría más reciente sin salir del dashboard." %}</p>
+          <dl class="account-metrics">
+            <div>
+              <dt>{% trans "Token activo" %}</dt>
+              <dd>{{ ingest_token|slice:':8' }}…</dd>
+            </div>
+            <div>
+              <dt>{% trans "Modo de alertas" %}</dt>
+              <dd>{% if preferences_form.instance.telemetry_alerts %}{% trans "Activo" %}{% else %}{% trans "Inactivo" %}{% endif %}</dd>
+            </div>
+            <div>
+              <dt>{% trans "Idioma" %}</dt>
+              <dd>{{ preferences_form.instance.preferred_language|upper }}</dd>
+            </div>
+          </dl>
+        </header>
+
+        <section class="card" aria-labelledby="profile-data-title">
+          <h2 id="profile-data-title">{% trans "Datos personales" %}</h2>
+          <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form" value="profile" />
+            {% for field in profile_form %}
+              <div class="field">
+                <label class="auth-page__label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% for error in field.errors %}
+                  <span class="auth-alert" role="alert">{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% endfor %}
+            <button type="submit" class="btn btn--primary">{% trans "Guardar" %}</button>
+          </form>
+        </section>
+
+        <section class="card" aria-labelledby="profile-preferences-title">
+          <h2 id="profile-preferences-title">{% trans "Preferencias" %}</h2>
+          <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form" value="preferences" />
+            {% for field in preferences_form %}
+              <div class="field">
+                <label class="auth-page__label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% for error in field.errors %}
+                  <span class="auth-alert" role="alert">{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% endfor %}
+            <button type="submit" class="btn btn--ghost">{% trans "Actualizar preferencias" %}</button>
+          </form>
+        </section>
+
+        <section class="card" aria-labelledby="token-title">
+          <h2 id="token-title">{% trans "Token de ingestión" %}</h2>
+          <p class="token-value">{{ ingest_token }}</p>
+          <form method="post" class="token-form">
+            {% csrf_token %}
+            <input type="hidden" name="form" value="token" />
+            {{ token_form }}
+            <button type="submit" class="btn btn--ghost">{% trans "Regenerar" %}</button>
+          </form>
+          <p class="token-hint">{% trans "Úsalo como cabecera X-API-Key al enviar telemetría." %}</p>
+        </section>
+
+        <section class="card" aria-labelledby="activity-title">
+          <h2 id="activity-title">{% trans "Actividad" %}</h2>
+          <ul class="activity-list">
+            {% for item in activity_log %}
+              <li>
+                <div>
+                  <strong>{{ item.title }}</strong>
+                  <p>{{ item.subtitle }}</p>
+                </div>
+                <span class="chip chip--outline">{{ item.status }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="telemetry-title">
+          <h2 id="telemetry-title">{% trans "Telemetría en vivo" %}</h2>
+          <div id="live-summary" class="telemetry-summary">
+            <article>
+              <h3>{% trans "Robots activos" %}</h3>
+              <p id="live-robot-count">–</p>
+            </article>
+            <article>
+              <h3>{% trans "Última actualización" %}</h3>
+              <p id="live-last-update">–</p>
+            </article>
+            <article>
+              <h3>{% trans "Alertas" %}</h3>
+              <p id="live-alert-count">0</p>
+            </article>
+          </div>
+          <div class="telemetry-stream" data-live-endpoint="{{ telemetry_live_endpoint }}"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block body_scripts %}
+  {{ block.super }}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const stream = document.querySelector('.telemetry-stream');
+      if (!stream) return;
+      const endpoint = stream.getAttribute('data-live-endpoint');
+      const robotsEl = document.getElementById('live-robot-count');
+      const updateEl = document.getElementById('live-last-update');
+      const alertEl = document.getElementById('live-alert-count');
+
+      async function fetchLive() {
+        try {
+          const res = await fetch(endpoint);
+          if (!res.ok) return;
+          const data = await res.json();
+          robotsEl.textContent = data.robots.length;
+          updateEl.textContent = new Date(data.updated_at).toLocaleTimeString();
+          alertEl.textContent = data.robots.filter(r => r.last.status === 'alert').length;
+          stream.innerHTML = data.robots
+            .map(robot => `
+              <article>
+                <header><strong>${robot.robot_id}</strong><span>${new Date(robot.last.ts).toLocaleTimeString()}</span></header>
+                <p>${JSON.stringify(robot.last.data)}</p>
+              </article>
+            `)
+            .join('');
+        } catch (err) {
+          console.error('live telemetry', err);
+        }
+      }
+      fetchLive();
+      setInterval(fetchLive, 5000);
+    });
+  </script>
+{% endblock %}

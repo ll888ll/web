@@ -1,0 +1,249 @@
+Croody.app — Biblia de Diseño, Ingeniería y Experiencia
+Versión: 0.3 (Green x Black Sacred Max-Precision)
+Autor: Equipo Croody x Buddy
+
+Changelog v0.3
+- Identidad Negro+Verde con reglas cuantificables (px, grados, ms, z-index, porcentajes de uso por pantalla).
+- Inversión light/dark por luminancia con mapeo token↔token exacto (verdes claros↔oscuros; paper↔ink).
+- Geometría sagrada extendida: Φ, Fibonacci, ángulo áureo 137.50776°, motivo 33°, malla hex 60°/30°. Fórmulas y medidas exactas.
+- Navegación y responsive exhaustivo (desktop/tablet/móvil/foldables) con grillas, gutters, contenedores, iconos y tamaños tipificados.
+- Componentes con alturas, paddings, radios, bordes y sombras medidos; animaciones 100% CSS con keyframes y tiempos Fibonacci.
+
+Índice
+1. Identidad y narrativa
+2. Paleta Negro+Verde (tokens) y reglas de uso
+3. Inversión de tema por luminancia (light/dark)
+4. Tipografía, ritmo y escalas matemáticas
+5. Geometría sagrada y layout (macro↔micro)
+6. Grid responsivo incl. foldables (medidas exactas)
+7. Animaciones 100% CSS (estados y sólo acentos)
+8. Componentes UI (botones, inputs, nav, cards) con medidas exactas
+9. Navegación: desktop/móvil/foldables (px y patrones)
+10. Landing Croody (secciones con matemáticas)
+11. Tienda Buddy (catálogo/PDP/checkout)
+12. Búsqueda y filtrado (accesible y precisa)
+13. Arquitectura Django (apps, estáticos, templates)
+14. A11y, SEO, rendimiento (criterios estrictos)
+15. Checklist no-negociable (verificable)
+16. Apéndices (tokens CSS, ejemplos, fórmulas)
+
+1) Identidad y narrativa
+- Croody: universo profundo (negro) con energía vital (verde) y claridad (blanco). Matemática con alma.
+- Buddy: producto estrella, comparte tokens. Acentos no verdes sólo como “chispa” temporal al interactuar.
+- Claim guía (placeholder): “Croody: precisión cósmica con corazón.”
+
+2) Paleta Negro+Verde (tokens) y reglas de uso
+Verdes — familia dual: profundos (base) y eléctricos (foco)
+- Profundos: --g-950:#041008, --g-900:#07170D, --g-800:#0B2215, --g-700:#0F2F1D, --g-600:#144029, --g-500:#1B5436, --g-400:#277A50, --g-300:#35A26D, --g-200:#59C892, --g-100:#A3E5C2, --g-50:#E6FFF3.
+- Eléctricos: --neon-700:#19E05F, --neon-600:#39FF14, --neon-500:#00FF66, --neon-400:#00FFA6, --neon-300:#66FFD1.
+Neutros verdes
+- Negros: --ink-1000:#000000, --ink-950:#050805, --ink-900:#0A0F0A, --ink-800:#0F170F, --ink-700:#151F15.
+- Blancos: --paper-50:#FFFFFF, --paper-100:#F8FFFB, --paper-200:#ECF7F0.
+Estados (solo feedback/animación efímero)
+- Info --c-info-500:#11D1E0; Warn --c-warn-500:#FFC43D; Error --c-error-500:#FF4D4F.
+- Regla: colores no-verdes/no-neutros sólo en: rings de foco, resaltado de texto, indicadores temporales ≤ 2000ms.
+Distribución por pantalla
+- 70–85% negro/ink, 10–25% verde (profundos+eléctricos), 5–10% blanco.
+
+3) Inversión de tema por luminancia (light/dark)
+Principio: misma paleta, invertimos luminancia equivalente.
+- paper-50↔ink-1000; paper-100↔ink-900; paper-200↔ink-800.
+- g-50↔g-950; g-100↔g-900; g-200↔g-800; g-300↔g-700; g-400↔g-600; g-500 pivote (ajustar a 400/600 según contraste requerido).
+- Eléctricos mantienen tono; ajustar alfa y blur de sombras según tema.
+Tokens por tema
+- Light: --bg:paper-50, --fg:ink-900, --surface:paper-100, --brand:g-700, --brand-contrast:paper-50, --elev-1:rgba(27,84,54,.08).
+- Dark: --bg:ink-1000, --fg:paper-200, --surface:ink-900, --brand:g-300, --brand-contrast:ink-1000, --elev-1:rgba(57,255,20,.10).
+
+4) Tipografía, ritmo y escalas matemáticas
+- Fuentes: Baloo 2 (600/700) para titulares y Josefin Sans (400/500/600) para cuerpo y labels.
+- Base: 17px desktop / 16px móvil. Longitud de línea 58–72ch (ideal 65ch).
+- Escala modular Φ + Fibonacci. 
+  • H1: clamp(2.1rem, 1.2rem + 3.3vw, 4.2rem), 700, lh 1.25
+  • H2: clamp(1.7rem, 1.0rem + 2.3vw, 3.2rem), 700, lh 1.28
+  • H3: clamp(1.33rem, .9rem + 1.6vw, 2.4rem), 600, lh 1.30
+  • Body: 1rem/1.0625rem, 400/500, lh 1.55
+- Ritmo vertical: baseline 8px; escalones 8, 13, 21, 34, 55, 89 px.
+- Tracking: títulos -0.5% a -1%; texto 0.
+
+5) Geometría sagrada y layout (macro↔micro)
+- Φ = 1.61803398875; ángulo áureo θ = 137.50776°.
+- Motivo 33°: divisores/badges/indicadores; máximo 2 por pantalla.
+- Rectángulos áureos: héroe 1000×618; tarjetas 5:8; módulos 13:8 o 21:13.
+- Malla hex 60°/30° para patrones sutiles (opacidad 2–4%).
+- Espiral dorada: anclar CTA principal en un punto de la espiral; titular alineado a tangente.
+- Fórmula de columna: ancho_col = (Wc − (n−1)*gutter)/n. n=13 (desktop), gutter 34px.
+- Ratios de imagen: hero 21:9; secciones 16:10; cards 5:8; avatars 1:1. Reservar alto con aspect-ratio para 0 CLS.
+
+6) Grid responsivo incl. foldables (medidas exactas)
+- Breakpoints (vw): xs 320–479, sm 480–767, md 768–1023, lg 1024–1439, xl ≥1440.
+- Contenedores (Wc): xs 100%−2*16px, sm 100%−2*21px, md min(100%−2*34px, 960px), lg min(100%−2*55px, 1200px), xl min(100%−2*55px, 1340/1440px).
+- Columnas y gutters:
+  • Desktop: n=13, gutter 34px, col mín ≥ 54px; layouts 8/13 y 5/13.
+  • Tablet: n=8, gutter 21px, col mín ≥ 48px.
+  • Móvil: n=5, gutter 13px, col mín ≥ 44px.
+- Márgenes exteriores: xs 16px, sm 21px, md 34px, lg/xl 55px.
+- Safe areas: padding-inline += env(safe-area-inset-left/right); header/footer padding con env(safe-area-inset-top/bottom).
+- Foldables (@media (spanning: single-fold-*)): vertical: panel izq 5/13 min 280px; der 8/13; gutter central = seam + 21px. Horizontal: header 72–80px; dos áreas apilables con scroll-snap.
+
+7) Animaciones 100% CSS (estados y sólo acentos)
+- Duraciones Fibonacci (ms): 89, 144, 233, 377, 610. Rápidas 144–233; overlays 377–610.
+- Easing: ease-in-out-prime cubic-bezier(.2,.8,.2,1); ease-emphasis cubic-bezier(.33,1,.68,1).
+- Keyframes: glow-pulse (focus), golden-rotate (CTA), micro-tilt (cards/botones), breathe (logos), slide-in-phi (modals/toasts).
+- Reglas: acentos no-verdes sólo en feedback ≤ 2000ms; focus siempre visible; prefers-reduced-motion: reduce desactiva transiciones complejas.
+
+8) Componentes UI (botones, inputs, nav, cards) con medidas exactas
+Tokens comunes
+- Radius: 6, 9, 12, 18, 27, 33. Bordes: 1px, 1.5px, 2px. Sombras s1/s2/s3 con tinte verde.
+- Iconos: 21px (S/M), 27px (L). Divider: 1px color-mix con brand.
+Botones
+- Tipos: Primary (verde sólido), Secondary (outline), Tertiary (ghost), Quiet (texto), Destructive (error temporal).
+- Alturas: S 34px, M 55px, L 89px (mínimo táctil 44×44).
+- Padding-x: 13/21/34; gap icono 8/13. Forma cápsula: radio = round(altura/3) → 12/18/27–33.
+- Estados: hover levita +2px, sombra neon-500; active hunde −1px, sombra g-600; focus ring 2px neon (offset 3px); disabled opacidad 55% manteniendo AA.
+- Tema: Light fondo g-700 texto paper-50; Dark fondo g-300 texto ink-1000; hover gradiente 33° hacia neon.
+Inputs / Select / Textarea
+- Alturas 40/48/56; padding-x 13px; radius 12; borde 1.5px g-600 (light) / g-400 (dark).
+- Focus ring neon-500/400; error ring c-error-500 ≤ 1500ms tras validar; helper a 8px.
+Cards
+- Fondo surface; padding 21–34px; radius 18; borde 1px g-700@12% (light) / g-300@12% (dark); hover s2 y tilt 0.33°.
+Tabs/Badges/Toasts/Modals
+- Tabs: indicador 33°; Badges verdes por categoría; Modals slide-in-phi 377ms; Toasts elevación 144ms; toasts áreas 344×auto máx 420px ancho.
+Tablas/Listas
+- Rayado con alpha verde 6–8%; headers sticky; colapso a listas en xs/sm.
+
+9) Navegación: desktop/móvil/foldables (px y patrones)
+Desktop
+- Altura 80px (lg/xl), 72px (md). Logo máx 44px alto. Gap entre ítems 34px.
+- Buscador: 40px alto, 360px (lg) / 280px (md); icono 21px; debounce 233ms.
+- CTA M 55px; sticky opacidad fondo 0.85; a scroll>89px reduce a 66px y gap 21px.
+- Border-bottom 1px con mix g-700@12% (light) / g-300@12% (dark); backdrop-blur 8px.
+Móvil
+- Header 56px; botón menú 24px con hit 44×44; panel 100vh grid 3×N gap 21px.
+- Buscador: 44px alto ancho 100%; aparece en panel o debajo del header.
+Foldables
+- Vertical: nav lateral 5/13 min 280px; activo con subrayado 33°; subnav colapsable; accesible por teclado.
+- Horizontal: header superior 72–80px; menús repartidos en dos “pantallas” apilables.
+
+10) Landing Croody (secciones con matemáticas)
+1. Hero: fondo ink-1000 con patrón hex 60°/33° opacidad 2–4%; imagen/video 21:9; CTA dual (primary verde + outline). CTA ubicado en espiral dorada.
+2. Tríada de valor: 3 columnas; headers en g-700 (light) / g-300 (dark); microinteracción neon al hover.
+3. Alma Croody: fondo g-900; arte con conic-gradients a 137.5°; pulso breathe cada 6.66s.
+4. Showcase Buddy: carrusel CSS scroll-snap; tarjetas 5:8; sombras neon en hover.
+5. Social proof: KPIs 3–6–9; badges efímeros info/success.
+6. Roadmap: 3→6→9→12→33; conectores a 33°.
+7. CTA final: inversión correcta (paper↔ink, g-claros↔g-oscuros).
+
+11) Tienda Buddy (catálogo/PDP/checkout)
+Catálogo
+- Grid 13-col desktop; filtros laterales 5/13 en fold vertical; off-canvas en móvil.
+- Card de producto: 5:8, imagen aspect-ratio; precios/variantes con chips con sombras neon sólo en hover/active.
+PDP
+- Galería picture/AVIF con srcset; selector de variantes; specs en acordeones; sección confianza.
+Carrito
+- Panel lateral sticky (desktop); página dedicada en móvil; divisores 1px mix verde; resumen a 5/13 ancho.
+Checkout
+- Pasos 1–3–6; validación clara; botón Pagar gradiente g-600→neon-500; estados envío/stock con warn/info.
+
+12) Búsqueda y filtrado (accesible y precisa)
+- Input con aria-controls y listbox; teclado completo; URL con query persistente; resaltado verde.
+- Tiempos: debounce 233ms, throttle 144ms; mínimo 2 caracteres; 10–20 resultados; paginación 21 ítems/página.
+- Atajos: “/” enfoca, “Esc” limpia/cierra.
+
+13) Arquitectura Django (apps, estáticos, templates)
+- apps/: core, landing, shop, accounts, cms, search, blog(opc).
+- templates/: base.html, components/*.html, secciones landing/tienda; macros/partials.
+- static/: css/ tokens.css, themes.css, components.css, animations.css; js/ mínimo (toggle fallback, búsqueda viva, carrito); img/ logos/patrones.
+- Config: PostgreSQL, whitenoise, compresión, i18n es, SRI, CSP segura.
+
+14) A11y, SEO, rendimiento (criterios estrictos)
+- A11y: focus visible; roles ARIA correctos; navegación por teclado; skip-link; targets ≥ 44×44; lectura de modales/menús.
+- SEO: semántica, OG/Twitter, sitemap, robots, canonical, schema.org (Organization, Product, BreadcrumbList, WebSite+SearchAction).
+- Performance: CSS crítico 6–12KB; LCP < 2.0s; CLS < 0.05; TBT < 100ms; imágenes AVIF/WebP; fonts preload + swap.
+
+15) Checklist no-negociable (verificable)
+- Paleta: 70–85% negro, 10–25% verde, 5–10% blanco; 0 colores no-verdes en superficies/texteo persistente.
+- Inversión: g-50↔g-950, g-100↔g-900, g-200↔g-800, g-300↔g-700, g-400↔g-600; paper↔ink; verificación visual en home, catálogo, PDP, checkout, búsqueda.
+- Contraste: APCA ≥ 60 texto normal; ≥ 75 texto <16px; iconos/bordes ≥ 45.
+- Ritmo/espaciado: baseline 8px; secciones 21/34/55/89 px; sin reflow en hover/focus.
+- Navegación: desktop 80/72→66px al scroll; móvil 56px; buscador debounce 233ms; targets ≥44×44.
+- Grid: 13/8/5 columnas; gutters 34/21/13; márgenes 16/21/34/55 px.
+- Botones: 34/55/89 px; radio = altura/3; focus 2px neon; hover sombra verde; tiempos 144–233ms.
+- Animaciones: keyframes definidos; reduced-motion soportado; no-verdes sólo ≤ 2000ms.
+- Performance: LCP, CLS, TBT en verde en 5 vistas clave en móvil y desktop.
+- A11y: teclado full; ARIA; skip-link; lectura correcta de listbox de búsqueda.
+
+16) Apéndices (tokens CSS, ejemplos, fórmulas)
+A) Tokens CSS base
+:root{
+  --g-950:#041008; --g-900:#07170D; --g-800:#0B2215; --g-700:#0F2F1D; --g-600:#144029; --g-500:#1B5436; --g-400:#277A50; --g-300:#35A26D; --g-200:#59C892; --g-100:#A3E5C2; --g-50:#E6FFF3;
+  --neon-700:#19E05F; --neon-600:#39FF14; --neon-500:#00FF66; --neon-400:#00FFA6; --neon-300:#66FFD1;
+  --ink-1000:#000000; --ink-950:#050805; --ink-900:#0A0F0A; --ink-800:#0F170F; --ink-700:#151F15;
+  --paper-50:#FFFFFF; --paper-100:#F8FFFB; --paper-200:#ECF7F0;
+  --c-info-500:#11D1E0; --c-warn-500:#FFC43D; --c-error-500:#FF4D4F;
+  --space-1:8px; --space-2:13px; --space-3:21px; --space-4:34px; --space-5:55px; --space-6:89px;
+  --radius-1:6px; --radius-2:9px; --radius-3:12px; --radius-4:18px; --radius-5:27px; --radius-6:33px;
+  --border-1:1px; --border-2:1.5px; --border-3:2px;
+  --z-0:0; --z-1:1; --z-10:10; --z-100:100; --z-1000:1000; --z-10000:10000;
+  color-scheme: light dark;
+}
+html[data-theme="light"],:root:not([data-theme="dark"]) {
+  --bg:var(--paper-50); --fg:var(--ink-900); --surface:var(--paper-100);
+  --brand:var(--g-700); --brand-contrast:var(--paper-50);
+  --shadow:0 13px 34px rgba(0,255,102,.12);
+}
+html[data-theme="dark"]{
+  --bg:var(--ink-1000); --fg:var(--paper-200); --surface:var(--ink-900);
+  --brand:var(--g-300); --brand-contrast:var(--ink-1000);
+  --shadow:0 13px 34px rgba(57,255,20,.16);
+}
+
+B) Componentes (extractos CSS exactos)
+/* CTA con ángulo áureo y 33° */
+.btn-cta{
+  display:inline-flex; align-items:center; justify-content:center; height:55px; padding:0 var(--space-4);
+  border-radius:18px; color:var(--brand-contrast);
+  background-image:linear-gradient(33deg,var(--brand),var(--neon-500));
+  border:1.5px solid color-mix(in oklab, var(--brand), var(--neon-500) 20%);
+  box-shadow:var(--shadow);
+  transition:transform 233ms cubic-bezier(.2,.8,.2,1), box-shadow 233ms, background 377ms;
+}
+.btn-cta:hover{ transform:translateY(-2px) rotate(.33deg); background-image:conic-gradient(from 137.5deg at 50% 50%, var(--brand), var(--neon-500)); box-shadow:0 21px 55px rgba(57,255,20,.25); }
+.btn-cta:active{ transform:translateY(-1px); box-shadow:0 13px 34px rgba(27,84,54,.33); }
+.btn-cta:focus-visible{ outline:2px solid var(--neon-400); outline-offset:3px; }
+
+/* Input base */
+.input{ height:48px; padding:0 13px; border-radius:12px; border:1.5px solid color-mix(in oklab, var(--brand), black 40%); background:var(--surface); color:var(--fg); }
+.input:focus-visible{ outline:2px solid var(--neon-500); outline-offset:3px; }
+
+/* Nav sticky */
+.site-header{ position:sticky; top:0; height:80px; display:flex; align-items:center; backdrop-filter:blur(8px); border-bottom:1px solid color-mix(in oklab, var(--brand), transparent 85%); z-index:var(--z-1000); }
+@media (max-width:1023px){ .site-header{ height:72px; } }
+@media (max-width:767px){ .site-header{ height:56px; } }
+
+/* Contenedor y grid 13/8/5 */
+.container{ width:min(100% - 2*55px, 1340px); margin-inline:auto; }
+@media (max-width:1023px){ .container{ width:min(100% - 2*34px, 960px); } }
+@media (max-width:767px){ .container{ width:calc(100% - 2*21px); } }
+.grid-13{ display:grid; grid-template-columns:repeat(13, 1fr); gap:34px; }
+@media (max-width:1023px){ .grid-13{ grid-template-columns:repeat(8,1fr); gap:21px; } }
+@media (max-width:767px){ .grid-13{ grid-template-columns:repeat(5,1fr); gap:13px; } }
+
+C) Keyframes (uso obligatorio según componente)
+@keyframes glow-pulse{ 0%{box-shadow:0 0 0 0 rgba(0,255,102,.0);} 50%{box-shadow:0 0 0 6px rgba(0,255,102,.25);} 100%{box-shadow:0 0 0 0 rgba(0,255,102,.0);} }
+@keyframes golden-rotate{ 0%{background-image:conic-gradient(from 0deg,var(--brand),var(--neon-500));} 100%{background-image:conic-gradient(from 137.5deg,var(--brand),var(--neon-500));} }
+@keyframes micro-tilt{ 0%{transform:rotate(0);} 100%{transform:rotate(.33deg);} }
+@keyframes breathe{ 0%{transform:scale(1);} 50%{transform:scale(1.016);} 100%{transform:scale(1);} }
+@keyframes slide-in-phi{ 0%{transform:translateY(34px); opacity:0;} 100%{transform:translateY(0); opacity:1;} }
+
+D) Fórmulas y guías
+- Φ≈1.618; θ≈137.50776°. Baseline 8px; escalas 8,13,21,34,55,89 px.
+- Cálculo: col = (Wc − (n−1)*gutter)/n; CTA radio ≈ altura/3; header shrink en scroll a 66px.
+- Proporciones: 21:9 héroe; 16:10 secciones; 5:8 cards.
+
+E) Matriz cromática de uso
+- Superficies: ink/paper y verdes profundos. Texto: fg.
+- Links: texto fg + subrayado verde; sin azules.
+- Estados: info/warn/error sólo anillos/indicadores temporales.
+
+Requisitos de implementación inmediata
+- Ajustar tokens a HEX exactos de logo. Implementar header, CTA, grid 13/8/5 y toggle de tema (inversión por luminancia). Activar búsqueda con debounce 233ms y ARIA listbox. Validar checklist (sección 15) en 5 vistas clave.

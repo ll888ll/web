@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}Buddy · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="buddy-title">
+      <div class="container page-hero__grid">
+        <div class="page-hero__content">
+          <div class="chip">{{ hero.eyebrow }}</div>
+          <h1 id="buddy-title">{{ hero.title }}</h1>
+          <p>{{ hero.lead }}</p>
+          <div class="page-hero__cta">
+            <a class="btn btn--primary" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
+            {% if hero.secondary_cta.fragment %}
+              <a class="btn btn--ghost" href="#{{ hero.secondary_cta.fragment }}">{{ hero.secondary_cta.label }}</a>
+            {% else %}
+              <a class="btn btn--ghost" href="{{ hero.secondary_cta.url }}">{{ hero.secondary_cta.label }}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="page-hero__metrics">
+          {% for metric in metrics %}
+            <article class="metric-card">
+              <span class="metric-card__value">{{ metric.value }}</span>
+              <span class="metric-card__label">{{ metric.caption }}</span>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" aria-labelledby="buddy-pillars-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="buddy-pillars-title">Tres pilares que sostienen a Buddy</h2>
+        </div>
+        <div class="spec-cards">
+          {% for pillar in pillars %}
+            <article class="spec-card">
+              <h3>{{ pillar.title }}</h3>
+              <p>{{ pillar.description }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" aria-labelledby="buddy-modules-title">
+      <div class="container spec-grid">
+        <div>
+          <h2 id="buddy-modules-title">Módulos Buddy</h2>
+          <p>Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para que nada se pierda en el camino.</p>
+        </div>
+        {% for module in modules %}
+          <div>
+            <h3>{{ module.title }}</h3>
+            <ul>
+              {% for item in module.items %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="spec-section" aria-labelledby="buddy-journeys-title">
+      <div class="container spec-grid">
+        <div>
+          <h2 id="buddy-journeys-title">Viajes de usuario</h2>
+          <p>Buddy acompaña antes, durante y después de cada sesión para que la rutina no se rompa.</p>
+        </div>
+        {% for journey in journeys %}
+          <div>
+            <h3>{{ journey.title }}</h3>
+            <ul>
+              {% for item in journey.items %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="buddy-roadmap" class="spec-section" aria-labelledby="buddy-roadmap-title">
+      <div class="container spec-grid">
+        <div>
+          <h2 id="buddy-roadmap-title">Roadmap corto</h2>
+          <ul>
+            {% for item in roadmap %}
+              <li><strong>{{ item.label }}:</strong> {{ item.items|join:', ' }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3>Contacta al equipo</h3>
+          <p>¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma de bienestar?</p>
+          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Buddy">Agendar una llamada</a>
+        </div>
+        <div>
+          <h3>Explora Luks</h3>
+          <p>La capa cripto sostiene compras, inventario y marketplace. Transparencia total.</p>
+          <a class="link-inline" href="{% url 'landing:luks' %}">Ver Luks</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="siguientes-pasos" class="section" aria-labelledby="next-steps-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="next-steps-title">Siguientes pasos</h2>
+          <p>Elige tu plan y entra a la tienda cuando estés listo.</p>
+        </div>
+        <div class="landing-hero__cta">
+          <a class="btn btn--primary" href="{% url 'landing:buddy-suscripciones' %}">Ver suscripciones</a>
+          <a class="btn btn--ghost" href="{% url 'shop:catalogue' %}">Ir a la tienda</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block body_scripts %}
+{{ block.super }}
+{% endblock %}

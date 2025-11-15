@@ -1,0 +1,8 @@
+django>=3.2
+djangorestframework>=3.12
+django-sslserver>=0.22
+# Producción
+gunicorn>=21.2.0
+whitenoise>=6.7.0
+dj-database-url>=2.1.0
+psycopg2-binary>=2.9.9

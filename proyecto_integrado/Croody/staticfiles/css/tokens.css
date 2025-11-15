@@ -1,0 +1,134 @@
+/* Croody — Tokens validados (Green x Black) */
+:root{
+  /* Gator (verde) */
+  --gator-950:#06110A; --gator-900:#0A1A0D; --gator-800:#0F2916; --gator-700:#1E5B24; --gator-600:#2F7A33; --gator-500:#5FAF48; --gator-400:#79C65C; --gator-300:#95D881; --gator-200:#BDE9AB; --gator-100:#E3F7D9; --gator-50:#F2FBF0;
+  /* Jungle (neutros verdes) */
+  --jungle-950:#070A08; --jungle-900:#0C1210; --jungle-800:#121C19; --jungle-700:#1A2723; --jungle-600:#23312D; --jungle-500:#2E3D38; --jungle-400:#51615A; --jungle-300:#7A8A83; --jungle-200:#A5B1AC; --jungle-100:#D0D7D4; --jungle-50:#E8ECEB;
+  /* Secundario cálido (uso controlado) */
+  --sand-500:#F5E2B7; --sand-400:#F1D39A; --sand-300:#E9C987; --sand-200:#E1B56D; --sand-100:#EED7A7;
+  /* Acentos efímeros (sólo feedback) */
+  --orchid-700:#6B2E79; --orchid-600:#874399; --orchid-500:#A050B7; --orchid-400:#C568CF; --orchid-300:#E187C7;
+  --teal-700:#158C79; --teal-500:#2BBFA3; --teal-300:#4AD1BE; --lime-700:#9FB431; --lime-500:#C9E04F; --lime-300:#DDEC7B;
+  --info-500:#3BC4F2; --warn-500:#FFC157; --error-500:#FF5A78;
+
+  /* Escalas espaciales y radios (Fibonacci + 8px) */
+  --space-1:8px; --space-2:13px; --space-3:21px; --space-4:34px; --space-5:55px; --space-6:89px;
+  --radius-1:6px; --radius-2:9px; --radius-3:12px; --radius-4:18px; --radius-5:27px; --radius-6:33px;
+  --border-1:1px; --border-2:1.5px; --border-3:2px;
+  --z-0:0; --z-1:1; --z-10:10; --z-100:100; --z-1000:1000; --z-10000:10000;
+
+  /* Contenedores base (se ajustan en breakpoints) */
+  --container-pad:34px;
+  --gutter:21px;
+  --grid-cols:8;
+
+  color-scheme: light dark;
+}
+
+/* Tema oscuro por defecto */
+:root, html[data-theme="dark"]{
+  --bg:var(--jungle-950);
+  --surface-1:var(--jungle-900);
+  --surface-2:var(--jungle-800);
+  --surface-3:var(--jungle-700);
+  --fg:var(--jungle-50);
+  --fg-muted:var(--jungle-200);
+  --fg-tertiary:var(--jungle-300);
+
+  /* Marca (inversión por luminancia) */
+  --brand-strong:var(--gator-700);
+  --brand-base:var(--gator-500);
+  --brand-soft:var(--gator-300);
+
+  --focus-ring:var(--orchid-500); /* efímero */
+  --shadow-strong:0 21px 55px rgba(95,175,72,.25);
+  --shadow:0 13px 34px rgba(95,175,72,.16);
+
+  /* Texto sobre fondos de marca (botones primarios, badges sólidos) */
+  --on-brand: var(--surface-1);
+}
+
+/* Tema claro: invertir luminancia dentro de la misma paleta */
+html[data-theme="light"]{
+  --bg:var(--gator-50);
+  --surface-1:var(--gator-100);
+  --surface-2:var(--gator-200);
+  --surface-3:var(--gator-300);
+  --fg:var(--jungle-900);
+  --fg-muted:var(--jungle-600);
+  --fg-tertiary:var(--jungle-500);
+
+  /* Marca invertida por escala (claros↔oscuros) */
+  --brand-strong:var(--gator-300);
+  --brand-base:var(--gator-500);
+  --brand-soft:var(--gator-700);
+
+  --focus-ring:var(--gator-500);
+  --shadow-strong:0 21px 55px rgba(47,122,51,.20);
+  --shadow:0 13px 34px rgba(47,122,51,.12);
+
+  /* Texto sobre fondos de marca en light */
+  --on-brand: var(--jungle-950);
+}
+
+/* Overrides de marca por sección */
+/* Buddy → rojo (crimson) */
+html[data-theme="dark"][data-brand="crimson"]{
+  --brand-strong:#7A1E2A; /* deep crimson */
+  --brand-base:#E04F56;   /* primary crimson */
+  --brand-soft:#FFA7B5;   /* soft crimson */
+  --shadow-strong:0 21px 55px rgba(224,79,86,.25);
+  --shadow:0 13px 34px rgba(224,79,86,.16);
+  --focus-ring:#E04F56;
+  --on-brand:#0C0A0B; /* texto oscuro sobre rojo en dark */
+}
+html[data-theme="light"][data-brand="crimson"]{
+  --brand-strong:#FFA7B5;
+  --brand-base:#E04F56;
+  --brand-soft:#7A1E2A;
+  --shadow-strong:0 21px 55px rgba(224,79,86,.20);
+  --shadow:0 13px 34px rgba(224,79,86,.12);
+  --focus-ring:#E04F56;
+  --on-brand:#FFFFFF; /* texto blanco sobre rojo en light */
+  /* Ajuste de superficies claras sin tinte verde */
+  --bg:#FCF6F7;            /* fondo cálido rosado muy suave */
+  --surface-1:#F7ECEF;     /* tarjetas base */
+  --surface-2:#F1E2E6;     /* niveles elevados */
+  --surface-3:#E8D6DC;     /* nivel superior */
+  --fg:#201416;            /* texto principal */
+  --fg-muted:#5A3A3F;
+  --fg-tertiary:#7A5A5F;
+}
+
+/* Luks → dorado (gold) */
+html[data-theme="dark"][data-brand="gold"]{
+  --brand-strong:#8A5A00; /* deep gold */
+  --brand-base:#FFC157;   /* main gold */
+  --brand-soft:#FFE6A8;   /* soft gold */
+  --shadow-strong:0 21px 55px rgba(255,193,87,.25);
+  --shadow:0 13px 34px rgba(255,193,87,.16);
+  --focus-ring:#FFC157;
+  --on-brand:#0C0A00; /* texto oscuro sobre dorado en dark */
+}
+html[data-theme="light"][data-brand="gold"]{
+  --brand-strong:#FFE6A8;
+  --brand-base:#FFC157;
+  --brand-soft:#8A5A00;
+  --shadow-strong:0 21px 55px rgba(255,193,87,.20);
+  --shadow:0 13px 34px rgba(255,193,87,.12);
+  --focus-ring:#FFC157;
+  --on-brand:#2A1E00; /* texto oscuro sobre dorado en light */
+  /* Ajuste de superficies claras sin tinte verde */
+  --bg:#FFFBF2;            /* fondo crema cálido */
+  --surface-1:#FFF4DE;     /* tarjetas base */
+  --surface-2:#FFECC6;     /* niveles elevados */
+  --surface-3:#FFE4AE;     /* nivel superior */
+  --fg:#2A1E00;            /* texto principal */
+  --fg-muted:#5C4720;
+  --fg-tertiary:#7A6438;
+}
+
+/* Breakpoints y contenedores */
+@media (min-width:1024px){:root{ --container-pad:55px; --gutter:34px; --grid-cols:13; }}
+@media (min-width:768px) and (max-width:1023.98px){:root{ --container-pad:34px; --gutter:21px; --grid-cols:8; }}
+@media (max-width:767.98px){:root{ --container-pad:21px; --gutter:13px; --grid-cols:5; }}

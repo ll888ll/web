@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }} · Buddy · Croody{% endblock %}
+{% block header_cta_url %}{% url 'shop:checkout-preview' %}?product={{ product.slug }}{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="section" aria-labelledby="product-title">
+      <div class="container product-detail">
+        <div class="product-detail__media" aria-hidden="true">
+          <div class="product-card__img">
+            {% if product.badge_label %}<span class="chip chip--glow">{{ product.badge_label }}</span>{% endif %}
+          </div>
+        </div>
+        <div class="product-detail__content">
+          <h1 id="product-title">{{ product.name }}</h1>
+          <p class="lead">{{ product.teaser }}</p>
+          <div class="product-detail__meta">
+            <span class="product-card__price">${{ product.price|floatformat:0 }}</span>
+            <span class="product-card__note">{{ product.delivery_estimate }}</span>
+          </div>
+          <div class="product-detail__actions">
+            <a class="btn btn--primary" href="{% url 'shop:checkout-preview' %}?product={{ product.slug }}">Comprar ahora</a>
+            <a class="btn btn--ghost" href="{% url 'shop:catalogue' %}">Volver a la tienda</a>
+          </div>
+          {% if product.description %}
+            <div class="product-detail__description">{{ product.description|linebreaks }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-extras" aria-labelledby="product-extras-title">
+      <div class="container product-extras__grid">
+        <div>
+          <h2 id="product-extras-title">Compra con seguridad</h2>
+          <ul>
+            {% for note in purchase_highlights %}
+              <li>{{ note }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3>Después de comprar</h3>
+          <ul>
+            {% for item in post_purchase_steps %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <a class="link-inline" href="{% url 'shop:catalogue' %}#catalogo">Volver al catálogo</a>
+        </div>
+      </div>
+    </section>
+
+    {% if related_products %}
+      <section class="section" aria-labelledby="related-title">
+        <div class="container">
+          <div class="section__header">
+            <h2 id="related-title">También podría interesarte</h2>
+            <p>Tres recomendaciones para seguir creciendo con tu Buddy.</p>
+          </div>
+          <div class="product-grid product-grid--catalogue">
+            {% for item in related_products %}
+              <article class="product-card product-card--catalogue">
+                <header>
+                  {% if item.badge_label %}<span class="chip chip--outline">{{ item.badge_label }}</span>{% endif %}
+                  <h3>{{ item.name }}</h3>
+                </header>
+                <p>{{ item.teaser }}</p>
+                <div class="product-card__footer">
+                  <span class="product-card__price">${{ item.price|floatformat:0 }}</span>
+                  <span class="product-card__note">{{ item.delivery_estimate }}</span>
+                </div>
+                <div class="product-card__actions">
+                  <a class="btn btn--primary" href="{{ item.get_absolute_url }}">Ver detalles</a>
+                  <a class="btn btn--ghost" href="{% url 'shop:checkout-preview' %}?product={{ item.slug }}">Comprar ahora</a>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  </main>
+{% endblock %}

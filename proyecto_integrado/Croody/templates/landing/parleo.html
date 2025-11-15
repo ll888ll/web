@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Parleo · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="parleo-title">
+      <div class="container page-hero__grid">
+        <div class="page-hero__content">
+          <div class="chip">{{ hero.eyebrow }}</div>
+          <h1 id="parleo-title">{{ hero.title }}</h1>
+          <p>{{ hero.lead }}</p>
+          <div class="page-hero__cta">
+            <a class="btn btn--primary" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
+            <a class="btn btn--ghost" href="{{ hero.secondary_cta.url }}">{{ hero.secondary_cta.label }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" aria-labelledby="parleo-signals-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="parleo-signals-title">Lo que define a Parleo</h2>
+        </div>
+        <div class="spec-cards">
+          {% for signal in signals %}
+            <article class="spec-card">
+              <h3>{{ signal.title }}</h3>
+              <p>{{ signal.description }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" aria-labelledby="parleo-milestones-title">
+      <div class="container spec-grid">
+        <div>
+          <h2 id="parleo-milestones-title">Hitos hacia el lanzamiento</h2>
+          <p>Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para mantener todo en sincronía.</p>
+        </div>
+        {% for milestone in milestones %}
+          <div>
+            <h3>{{ milestone.label }}</h3>
+            <p>{{ milestone.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="spec-section" aria-labelledby="parleo-usecases-title">
+      <div class="container spec-grid">
+        <div>
+          <h2 id="parleo-usecases-title">Casos de uso</h2>
+          <ul>
+            {% for item in use_cases %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3>¿Quieres sumarte como beta partner?</h3>
+          <p>Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos y recompensas desde un solo canal.</p>
+          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Parleo%20Beta">Solicitar acceso anticipado</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section id="hero" class="landing-hero" aria-labelledby="hero-title">
+      <div class="container landing-hero__grid">
+        <div class="landing-hero__content">
+          <div class="chip">{{ hero.eyebrow }}</div>
+          <h1 id="hero-title">{{ hero.title }}</h1>
+          <p>{{ hero.lead }}</p>
+          <div class="landing-hero__cta">
+            <a class="btn btn--primary" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
+            <a class="btn btn--ghost" href="{{ hero.secondary_cta.url }}">{{ hero.secondary_cta.label }}</a>
+          </div>
+        </div>
+        <div class="landing-hero__visual" aria-hidden="true">
+          <div class="landing-hero__glow"></div>
+          <img src="{% static hero.image.src %}?v=2" alt="{{ hero.image.alt }}" />
+        </div>
+        <div class="landing-hero__metrics">
+          {% for metric in metrics %}
+            <article class="metric-card">
+              <span class="metric-card__value">{{ metric.value }}</span>
+              <span class="metric-card__label">{{ metric.caption }}</span>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="vectores" class="section landing-vectors" aria-labelledby="vectors-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="vectors-title">Capas del ecosistema Croody</h2>
+          <p>Buddy y Luks funcionan como un mismo sistema: entrenas, mides progreso y recibes recompensas sin perder continuidad.</p>
+        </div>
+        <div class="landing-vectors__grid">
+          {% for vector in vectors %}
+            <article class="vector-card fade-in-up">
+              <span class="vector-card__badge">{{ vector.badge }}</span>
+              <h3>{{ vector.title }}</h3>
+              <p>{{ vector.copy }}</p>
+              {% if vector.keywords %}
+              <p class="vector-card__keywords"><em>{{ vector.keywords }}</em></p>
+              {% endif %}
+              <a class="btn btn--ghost" href="{{ vector.url }}">{{ vector.cta_label }}</a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+    <section id="blueprint" class="section landing-blueprint" aria-labelledby="blueprint-title">
+      <div class="container landing-blueprint__grid">
+        <div class="landing-blueprint__summary">
+          <div class="chip">Tienda Buddy</div>
+          <h2 id="blueprint-title">Blueprint listo para implementar</h2>
+          <p>El MVP de tienda y marketplace está listo para entrar a producción con tiempos, copy y visuales perfectamente definidos.</p>
+          <ul class="landing-blueprint__list">
+            {% for highlight in blueprint_highlights %}
+              <li>
+                <strong>{{ highlight.title }}</strong>
+                <span>{{ highlight.details }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+          <a class="btn btn--primary" href="{% url 'shop:catalogue' %}">Entrar a la tienda</a>
+        </div>
+        <div class="landing-blueprint__cards">
+          {% for product in buddy_products %}
+            <article class="product-card product-card--home">
+              {% if product.badge_label %}<span class="chip chip--outline">{{ product.badge_label }}</span>{% endif %}
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.teaser }}</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">${{ product.price|floatformat:0 }}</span>
+                <span class="product-card__note">{{ product.delivery_estimate }}</span>
+              </div>
+              <a class="link-inline" href="{% url 'shop:detail' product.slug %}">Ver detalle</a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+    <section id="cta-final" class="cta-slim" aria-labelledby="cta-final-title">
+      <div class="container cta-slim__layout">
+        <div>
+          <h2 id="cta-final-title">Conversemos y adaptemos Croody a tu equipo</h2>
+          <p>Diseño, copy, economía y analítica integradas en un despliegue que toma semanas, no meses.</p>
+        </div>
+        <div class="cta-slim__actions">
+          <a class="btn btn--primary" href="mailto:hola@croody.app">Agendar kickoff</a>
+          <a class="link-inline" href="#hero">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,52 @@
+
+Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea de hacerlo encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto.
+
+Entrenador con IA y rutinas a tu medida
+Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA para que cada persona, semana a semana, reciba un plan de entrenamiento pensado exclusivamente para ella. Este plan se basa en los entrenamientos previos, en los datos y en el historial de cada usuario, asegurándose de brindar los mejores consejos y las mejores rutinas ajustadas a su realidad presente. La IA automatiza este proceso a través de conversaciones naturales y solicitudes claras; aun así, el usuario mantiene el control total de su entrenamiento en todo momento. Desarrollado a través de un camino de progreso, para que previsualices tu avance en medida de que entrenas y veas lo que avanzas.
+
+Buddy integra una biblioteca de ejercicios pensada para ejecutar con seguridad y consistencia. Cada movimiento incluye video‑claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar, además de recordatorios prácticos (posición inicial, rango de movimiento y señales para detectar fatiga). Antes de iniciar, puedes revisar la ficha del ejercicio y, si lo prefieres, guardarla como favorita para futuras sesiones.
+
+Para cada ejercicio se ofrece una progresión sugerida con variantes fácil/intermedia/avanzada, de modo que siempre tengas una alternativa acorde a tu nivel y al equipo disponible. La app propone rangos de repeticiones, tempo de ejecución y cargas orientativas cuando aplica, tomando como base tu historial y desempeño reciente; así la progresión es clara, gradual y sostenible.
+
+Durante la sesión, Buddy cuenta repeticiones y series en tiempo real y cada ejercicio comienza cuando confirmas que estás listo para empezar. Al terminar una serie, se activa un temporizador de descanso con recordatorios sutiles que te ayuda a retomar foco sin interrumpir tu concentración. Este temporizador puede autoajustarse si detecta que las series están siendo más intensas o más largas de lo habitual (por ejemplo, si completaste más repeticiones o tardaste más tiempo), modulando el descanso recomendado para mantener la calidad del trabajo.
+
+La app cronometra el tiempo total de la sesión y registra repeticiones, series, descansos, duración de cada bloque y cambios manuales que realices. Todos estos datos alimentan a la IA para diseñar y ajustar tus próximas rutinas, calibrando volumen, densidad y progresiones con el objetivo de que entrenes de forma segura, efectiva y personalizada.
+
+Ecosistema de personajes: estilos y objetivos claros
+Buddy cuenta con un ecosistema de personajes. Cada uno aporta una personalidad propia que se refleja en el modo y el fin del entrenamiento que propone. Así, si el usuario no puede permitirse o no confía en el uso de la IA, puede apoyarse en rutinas predeterminadas (default) que encarnan enfoques distintos.
+
+Estas rutinas default también pueden editarse para cambiar ejercicios según gustos y comodidades; de esta manera, el entrenamiento se personaliza manualmente, sin necesidad de recurrir a la IA, que por su parte ya automatiza ese proceso mediante el diálogo. En suma, el usuario posee el control de todo su entrenamiento.
+
+Personajes configurables, carisma y acompañamiento
+Aunque los personajes de Buddy ofrecen entrenamientos acordes con sus personalidades —a veces con matices distintos según objetivos, con planes predefinidos—, no están limitados a ejecutar solo esos programas. Desde un apartado de ajustes dentro de la aplicación, el usuario puede definir que un solo personaje le entregue todas las rutinas e, incluso, cambiar de personaje dentro de esas mismas rutinas cuando lo desee.
+Cada personaje tiene su carisma, representado mediante gestos y animaciones, mensajes y apoyo constante, para convertir cada sesión en una experiencia cercana, estimulante y coherente con la identidad elegida.
+
+Más que entrenar: una conexión contigo y con los tuyos
+Buddy no es únicamente una app para entrenar; es una herramienta que busca conectar. Más que fomentar la relación con tu entrenador favorito (personaje), queremos fortalecerte a ti contigo mismo, con tu entorno y con tus seres queridos hacia una vida saludable.
+Para ello, Buddy incorpora un apartado social en el que puedes agregar amigos mediante un código QR de forma muy sencilla y visualizar —si cada usuario lo permite— su ubicación en tiempo real cuando tengan la aplicación abierta. También podrás ver su última conexión y enviarles recordatorios para que entrenen, o invitarlos a entrenar juntos en el mismo sitio. Basta con revisar el mapa o leer tus notificaciones para coordinarse: puedes recordarles entrenar o mandar una notificación específica para coincidir en una sesión conjunta.
+
+Mapa de aliados: gimnasios al alcance de un toque
+El mapa de Buddy también te permite ver nuestros gimnasios aliados, factor clave en nuestro desarrollo y columna vertebral del proyecto. Podrás ubicar cada gimnasio, revisar horarios, inscribirte o solicitar un día de prueba (ajustado a términos y condiciones).
+Así que no te preocupes: si tu amigo entrena en un gimnasio X y tú no, y ese gimnasio es uno de nuestros aliados, puedes solicitar el día de prueba con Buddy y entrenar junto a él; o, si prefieres, inscribirte y convertirlo en tu compañero habitual. Pronto verás lo beneficioso que resulta usar Buddy, aunque, por supuesto, no es un requisito para disfrutar de la app.
+
+Recompensas inteligentes: dopamina bien dirigida
+Buddy cuenta con un sistema inteligente de recompensas. Hoy vivimos en un mundo donde la dopamina suele estar mal gestionada. Desde Croody, la empresa madre de estos proyectos, nos enfocamos en volver a lo esencial del ser humano, adaptándonos a las nuevas tendencias. Si el mercado, el sistema y muchos jóvenes —en realidad, todos— convivimos con un sistema dopaminérgico alterado, Buddy se erige como una vía eficaz: ofrece “más dopamina” por hacerle bien a tu salud.
+¿Cómo? Mediante un sistema de rachas para mantener la disciplina y la constancia en los entrenamientos, ofreciendo beneficios a largo plazo que serán un factor clave del proyecto. Además, incorpora logros e insignias/cromos que podrás exhibir con orgullo en tu perfil, tanto por ayudarnos a crecer como empresa como por ayudarte a ti día a día a cuidar tu salud. No fomentamos el exceso de ejercicio: nuestro sistema está diseñado para premiar un entrenamiento saludable y sostenible.
+
+Tecnología, buenas prácticas y propósito
+Con animaciones desarrolladas con las últimas tecnologías, buenas prácticas de desarrollo y mucho cariño desde Croody, presentamos esta propuesta para reconectar con nosotros mismos, con nuestro entorno y con nuestra salud. Nos inspiran grandes compañías con objetivos similares que han sido una referencia valiosa.
+Demostramos nuestro interés por hacer las cosas bien al ofrecer una aplicación gratuita y sin publicidad de terceros, para que realmente hagas, consigas y consumas cosas que te hagan bien.
+Durante las primeras sesiones, aparecen micro‑tutoriales en contexto justo cuando los necesitas: cómo editar una rutina (cambiar un ejercicio, ajustar series/reps), cómo invitar amigos por QR y cómo usar el mapa de aliados para entrenar juntos. Son breves, omisibles y quedan disponibles en un Centro de ayuda para consultarlos más tarde, sin interrumpir tu flujo.
+
+Adicionalmente, sabemos lo importante que es la música durante el entrenamiento; por ello, mientras ves tus ejercicios y se cuentan repeticiones, series y tiempos, podrás controlar desde la interfaz lo que se reproduce en tu celular: tu música, tu podcast favorito o lo que prefieras escuchar en ese momento.
+Buddy integra controles persistentes de audio dentro del flujo de entrenamiento para que no tengas que salir de la rutina: reproducir/pausar, siguiente/anterior. Las acciones se registran sin romper el conteo de repeticiones ni los temporizadores, y puedes retomarlo todo al instante.
+Además, el modo enfoque silencia notificaciones ajenas al entrenamiento y ofrece sincronización con intervalos: durante bloques de trabajo y descanso, recibirás señales auditivas y hápticas que acompañan el ritmo (cuenta atrás, cambio de fase) y, si lo prefieres, podrás alinear la música a tus intervalos para entrar en zona con más facilidad.
+
+El panel de métricas muestra de forma simple y visual tus PRs (récords personales), volumen semanal, consistencia (días activos/semana) y tendencias en ventanas de 7, 28 y 90 días. Verás sparklines, calendarios de calor y comparativas rápidas por grupo muscular o tipo de sesión, además de un resumen inteligente post‑entreno con lo más relevante de la jornada.
+
+Las rachas viven en un panel propio que combina recompensas cuantitativas (puntos, insignias) con reconocimientos cualitativos (mensajes, animaciones, gestos de los personajes). Se prioriza la salud: los descansos planificados no rompen la racha y, si detectamos señales de fatiga, se sugiere reducir volumen sin penalizar tu progreso.
+
+En Buddy, como hemos mencionado, buscamos conectar a las personas; por ello, mediante plantillas personalizadas podrás ver tus estadísticas de entrenamiento con claridad —tu progreso, rachas, mapas y gráficas según tu rendimiento— y compartirlas en redes sociales para mostrar tu evolución a través de plantillas generadas por Buddy, fomentando que tus amigos se unan a la familia Croody y entrenen junto a ti.
+Para compartir sin riesgos, Buddy genera plantillas sociales coherentes con la marca, listas para publicar, que muestran datos clave (progreso, rachas, hitos) sin revelar información sensible por defecto (ubicación, peso corporal, etc.). Puedes personalizarlas con uno o dos toques y añadir un QR opcional para invitar a tus amigos a entrenar contigo.
+
+-Fin MVP-

@@ -1,0 +1,254 @@
+# English translations for Croody project.
+# Copyright (C) 2024 Croody
+# This file is distributed under the same license as the Croody package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Croody 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"PO-Revision-Date: 2025-01-06 16:30+0000\n"
+"Last-Translator: Croody Team\n"
+"Language-Team: English <hola@croody.app>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Base template
+msgid "Croody · Precisión cósmica con corazón"
+msgstr "Croody · Cosmic precision with heart"
+
+msgid "Saltar al contenido principal"
+msgstr "Skip to main content"
+
+msgid "Abrir menú"
+msgstr "Open menu"
+
+msgid "Buscar en Croody"
+msgstr "Search in Croody"
+
+msgid "Buscar (pulsa /)"
+msgstr "Search (press /)"
+
+msgid "Seleccionar idioma"
+msgstr "Select language"
+
+msgid "Cambiar tema"
+msgstr "Change theme"
+
+msgid "Empezar"
+msgstr "Get Started"
+
+msgid "Salir"
+msgstr "Logout"
+
+msgid "Acceder"
+msgstr "Login"
+
+msgid "Cerrar sesión"
+msgstr "Sign out"
+
+msgid "Búsqueda"
+msgstr "Search"
+
+msgid "Contactar"
+msgstr "Contact"
+
+msgid "Accesos rápidos"
+msgstr "Quick access"
+
+msgid "Resultados sugeridos"
+msgstr "Suggested results"
+
+msgid "Geometría sagrada"
+msgstr "Sacred geometry"
+
+msgid "Legal"
+msgstr "Legal"
+
+msgid "Privacidad"
+msgstr "Privacy"
+
+msgid "Términos"
+msgstr "Terms"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+# Login page
+msgid "Inicia sesión"
+msgstr "Sign In"
+
+msgid "Acceso Croody"
+msgstr "Croody Access"
+
+msgid "Conecta tu cuenta para continuar."
+msgstr "Connect your account to continue."
+
+msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
+msgstr "Sign in to shop at the Buddy Store, manage your items and keep your dark or light theme in sync."
+
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr "Forgot your access? Write to us at"
+
+msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
+msgstr "Don't have credentials yet? Request account activation from the Croody team."
+
+msgid "Ingresar"
+msgstr "Sign In"
+
+# Home page
+msgid "Croody · Conecta, Entrena y Destaca"
+msgstr "Croody · Connect, Train and Stand Out"
+
+msgid "Volvamos a ser humanos"
+msgstr "Let's be human again"
+
+msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
+msgstr "Croody is a company with the mindset that the technological world should connect people, not simulate a connection that ultimately disconnects us even from ourselves. Through technological proposals, we seek to create real connections that change the world for a better future as species."
+
+msgid "Ir a la tienda Buddy"
+msgstr "Go to Buddy Store"
+
+msgid "Conocer a Buddy"
+msgstr "Learn about Buddy"
+
+msgid "Logo de Croody representando conexión y tecnología humanizada"
+msgstr "Croody logo representing connection and humanized technology"
+
+msgid "rutinas ajustadas automáticamente cada semana"
+msgstr "routines automatically adjusted every week"
+
+msgid "personas mantienen su plan mensual con Buddy activo"
+msgstr "people maintain their monthly plan with Buddy active"
+
+msgid "7 regiones"
+msgstr "7 regions"
+
+msgid "operación sincronizada con soporte localizado"
+msgstr "synchronized operation with localized support"
+
+# Vectors
+msgid "Fitness & Conexión"
+msgstr "Fitness & Connection"
+
+msgid "Buddy"
+msgstr "Buddy"
+
+msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr "An intuitive, symmetrical app with high aesthetics and great fluidity, designed so that both those who already train and those just starting out find a clear reason every day to build the physique and health habits of their dreams. Connect with your friends, train together and stand out."
+
+msgid "Conecta, Entrena y Destaca"
+msgstr "Connect, Train and Stand Out"
+
+msgid "Economía Digital"
+msgstr "Digital Economy"
+
+msgid "My Luks"
+msgstr "My Luks"
+
+msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
+msgstr "We create a market where you can safely venture into the crypto world, earn extra income and rely on currencies that don't depend on your country's internal politics and prosper even in hostile environments due to government decisions."
+
+msgid "Seguridad, Abundancia y Proyección"
+msgstr "Security, Abundance and Projection"
+
+msgid "Alimentación Real"
+msgstr "Real Food"
+
+msgid "Comida Real (Próximamente)"
+msgstr "Real Food (Coming Soon)"
+
+msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
+msgstr "Through research and nutritional commitment, we offer real food and effective solutions for those who want to eat well but lack time, for all ages. We promote animal and plant-based foods, without harmful chemicals."
+
+msgid "Alivio, Nostalgia y Satisfacción"
+msgstr "Relief, Nostalgia and Satisfaction"
+
+# Buddy page
+msgid "Buddy · Conecta, Entrena y Destaca"
+msgstr "Buddy · Connect, Train and Stand Out"
+
+msgid "Más que entrenar: una conexión contigo y con los tuyos"
+msgstr "More than training: a connection with yourself and your loved ones"
+
+msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
+msgstr "Buddy is an intuitive, symmetrical app with high aesthetics and great fluidity, designed so that both gym-goers and those just considering the idea find every day a clear reason to focus and build the physique and health habits of their dreams. Besides looking and feeling good, Buddy ensures the experience is coherent, pleasant and deeply motivating from the first contact."
+
+msgid "Ver roadmap"
+msgstr "View roadmap"
+
+msgid "365 días"
+msgstr "365 days"
+
+msgid "de rutinas nuevas sin reciclar combinaciones"
+msgstr "of new routines without recycling combinations"
+
+msgid "±5% fatiga"
+msgstr "±5% fatigue"
+
+msgid "ajuste automático según tu energía real"
+msgstr "automatic adjustment according to your real energy"
+
+msgid "5 estilos"
+msgstr "5 styles"
+
+msgid "personajes con tonos y objetivos definidos"
+msgstr "characters with defined tones and objectives"
+
+msgid "Entrenador con IA y rutinas a tu medida"
+msgstr "AI trainer and routines tailored to you"
+
+msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
+msgstr "Buddy offers the opportunity to design routines through a personalized AI trainer. Every week you receive a training plan designed exclusively for you, based on your previous workouts, data and history. AI automates this process through natural conversations, always maintaining full control of your training."
+
+msgid "Biblioteca de ejercicios segura y consistente"
+msgstr "Safe and consistent exercise library"
+
+msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
+msgstr "Each movement includes short key videos with correct technique, breathing guidelines, safety points and common mistakes to avoid. With suggested progressions (easy/intermediate/advanced), you'll always have an alternative according to your level and available equipment."
+
+msgid "Ecosistema de personajes con carisma"
+msgstr "Charismatic character ecosystem"
+
+msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
+msgstr "Buddy has a character ecosystem, each with their unique personality. You can choose preset routines according to each character's style or configure one to deliver all routines. Each character offers gestures, animations and constant support for a close and stimulating experience."
+
+# Navigation and search labels (added)
+msgid "Buddy"
+msgstr "Buddy"
+
+msgid "Luks"
+msgstr "Luks"
+
+msgid "Tienda"
+msgstr "Store"
+
+msgid "Integraciones"
+msgstr "Integrations"
+
+msgid "Croody · Inicio"
+msgstr "Croody · Home"
+
+msgid "Croody · Ejes"
+msgstr "Croody · Axes"
+
+msgid "Croody · Roadmap"
+msgstr "Croody · Roadmap"
+
+msgid "Buddy · Producto"
+msgstr "Buddy · Product"
+
+msgid "Buddy · Suscripciones"
+msgstr "Buddy · Subscriptions"
+
+msgid "Luks · Infraestructura"
+msgstr "Luks · Infrastructure"
+
+msgid "Tienda Buddy"
+msgstr "Buddy Store"
+
+msgid "Buddy Checkout"
+msgstr "Buddy Checkout"

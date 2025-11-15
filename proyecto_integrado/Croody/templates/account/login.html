@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Inicia sesión" %} · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="auth-page" aria-labelledby="login-title">
+      <div class="container auth-page__grid">
+        <div class="auth-page__intro">
+          <div class="chip">{% trans "Acceso Croody" %}</div>
+          <h1 id="login-title">{% trans "Conecta tu cuenta para continuar." %}</h1>
+          <p>
+            {% trans "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado." %}
+          </p>
+          <div class="auth-helpers">
+            <span>{% trans "¿Olvidaste tu acceso? Escríbenos a" %} <a href="mailto:hola@croody.app">hola@croody.app</a>.</span>
+            <span>{% trans "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody." %}</span>
+          </div>
+        </div>
+        <form method="post" class="auth-page__form" novalidate>
+          {% csrf_token %}
+          {% if form.non_field_errors %}
+            <div class="auth-alert" role="alert">
+              {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <div class="field">
+            <label class="auth-page__label" for="{{ form.username.id_for_label }}">Usuario o correo</label>
+            {{ form.username }}
+            {% for error in form.username.errors %}
+              <span class="auth-alert" role="alert">{{ error }}</span>
+            {% endfor %}
+          </div>
+          <div class="field">
+            <label class="auth-page__label" for="{{ form.password.id_for_label }}">Contraseña</label>
+            {{ form.password }}
+            {% for error in form.password.errors %}
+              <span class="auth-alert" role="alert">{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+          {% endif %}
+          <button type="submit" class="btn btn--primary auth-submit">{% trans "Ingresar" %}</button>
+          <p class="auth-alt">{% trans "¿Aún no tienes cuenta?" %} <a href="{{ signup_url }}">{% trans "Crea una" %}</a></p>
+        </form>
+      </div>
+    </section>
+  </main>
+{% endblock %}

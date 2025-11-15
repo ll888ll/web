@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Integraciones · Croody{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="section" aria-labelledby="integrations-title">
+      <div class="container">
+        <div class="section__header">
+          <div class="chip">{% trans "Croody · APIs" %}</div>
+          <h1 id="integrations-title">{% trans "Prueba los endpoints directamente" %}</h1>
+          <p>{% trans "Ingiere muestras, consulta históricos y obtén predicciones IDS desde la misma vista." %}</p>
+        </div>
+        <div class="integration-grid">
+          <article class="card" aria-labelledby="telemetry-card">
+            <h2 id="telemetry-card">Telemetry Gateway</h2>
+            <p>{% trans "Ingresa datos en caliente y revisa la última lectura" %}</p>
+            <div class="integration-actions">
+              <button class="btn btn--primary" data-action="ingest">{% trans "Ingerir muestra" %}</button>
+              <button class="btn btn--ghost" data-action="last">{% trans "Último registro" %}</button>
+            </div>
+            <pre id="telemetry-output" class="integration-output"></pre>
+          </article>
+
+          <article class="card" aria-labelledby="ids-card">
+            <h2 id="ids-card">IDS · ML</h2>
+            <p>{% trans "Simula tráfico y recibe la inferencia" %}</p>
+            <button class="btn btn--primary" data-action="predict">{% trans "Probar predicción" %}</button>
+            <pre id="ids-output" class="integration-output"></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block body_scripts %}
+  {{ block.super }}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const endpoints = {
+        ingest: '{{ telemetry_ingest_endpoint }}',
+        last: '{{ telemetry_last_endpoint }}',
+        predict: '{{ ids_predict_endpoint }}'
+      };
+      const output = document.getElementById('telemetry-output');
+      const idsOutput = document.getElementById('ids-output');
+
+      document.querySelectorAll('[data-action]')?.forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const action = btn.getAttribute('data-action');
+          try {
+            if (action === 'ingest') {
+              const payload = {
+                robot_id: 'demo-web',
+                data: { TEMP: (20 + Math.random() * 5).toFixed(2), HUM: (40 + Math.random() * 10).toFixed(1) }
+              };
+              const res = await fetch(endpoints.ingest, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+              output.textContent = JSON.stringify(await res.json(), null, 2);
+            }
+            if (action === 'last') {
+              const res = await fetch(endpoints.last);
+              output.textContent = JSON.stringify(await res.json(), null, 2);
+            }
+            if (action === 'predict') {
+              const res = await fetch(endpoints.predict, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ rows: [{ src_bytes: 600 }, { src_bytes: 10 }] }) });
+              idsOutput.textContent = JSON.stringify(await res.json(), null, 2);
+            }
+          } catch (err) {
+            (action === 'predict' ? idsOutput : output).textContent = err;
+          }
+        });
+      });
+    });
+  </script>
+{% endblock %}

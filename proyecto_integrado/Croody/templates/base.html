@@ -1,0 +1,260 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" data-theme="dark" data-brand="{{ brand|default:'gator' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0A1A0D"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#F2FBF0"
+    />
+    <title>
+      {% block title %}{% trans "Croody · Precisión cósmica con corazón" %}{% endblock %}
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'img/croodysinfondo.png' %}?v=2"
+    />
+    {% block head_fonts %}
+    <link
+      rel="preload"
+      href="{% static 'fonts/Baloo2-Latin.woff2' %}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="{% static 'fonts/JosefinSans-Variable.woff2' %}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/tokens.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animations.css' %}" />
+    {% block head_extra %}{% endblock %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{% trans "Saltar al contenido principal" %}</a>
+
+    <header class="site-header" role="banner">
+      <div class="container inner">
+        <div class="brand">
+          <a
+            class="brand__home"
+            href="{% url 'landing:home' %}#hero"
+            aria-label="Volver al inicio de Croody"
+          >
+            <img
+              src="{% static 'img/croodycontextoysinfondo.png' %}?v=2"
+              alt="Croody"
+            />
+          </a>
+        </div>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="{% trans 'Abrir menú' %}"
+          aria-expanded="false"
+        >
+          <span></span>
+        </button>
+        <ul class="nav__primary" role="menubar">
+          {% for link in nav_links %}
+          <li role="none">
+            <a
+              role="menuitem"
+              href="{{ link.url }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
+              >{{ link.label }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="header__actions">
+          <div class="search" role="search">
+            <label class="visually-hidden" for="site-search"
+              >{% trans "Buscar en Croody" %}</label
+            >
+            <input
+              data-search-input
+              id="site-search"
+              class="search__input anim-focus-glow"
+              type="search"
+              placeholder="{% trans 'Buscar (pulsa /)' %}"
+              aria-controls="search-list"
+              aria-expanded="false"
+            />
+            <span aria-hidden="true" class="search__icon">⌕</span>
+          </div>
+          
+          <div class="language-selector">
+            <button 
+              class="language-selector__trigger" 
+              type="button" 
+              aria-label="{% trans 'Seleccionar idioma' %}"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="language-selector__icon">🌐</span>
+              <span class="language-selector__current">{{ LANGUAGE_CODE|upper }}</span>
+            </button>
+            <div class="language-selector__dropdown" hidden>
+              <form action="{% url 'set_language' %}" method="post" class="language-selector__form">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                <button type="submit" name="language" value="es" class="language-selector__option {% if LANGUAGE_CODE == 'es' %}active{% endif %}">
+                  <span class="language-selector__flag">🇪🇸</span>
+                  <span>Español</span>
+                </button>
+                <button type="submit" name="language" value="en" class="language-selector__option {% if LANGUAGE_CODE == 'en' %}active{% endif %}">
+                  <span class="language-selector__flag">🇬🇧</span>
+                  <span>English</span>
+                </button>
+                <button type="submit" name="language" value="fr" class="language-selector__option {% if LANGUAGE_CODE == 'fr' %}active{% endif %}">
+                  <span class="language-selector__flag">🇫🇷</span>
+                  <span>Français</span>
+                </button>
+                <button type="submit" name="language" value="pt" class="language-selector__option {% if LANGUAGE_CODE == 'pt' %}active{% endif %}">
+                  <span class="language-selector__flag">🇵🇹</span>
+                  <span>Português</span>
+                </button>
+                <button type="submit" name="language" value="ar" class="language-selector__option {% if LANGUAGE_CODE == 'ar' %}active{% endif %}">
+                  <span class="language-selector__flag">🇸🇦</span>
+                  <span>العربية</span>
+                </button>
+                <button type="submit" name="language" value="zh-hans" class="language-selector__option {% if LANGUAGE_CODE == 'zh-hans' %}active{% endif %}">
+                  <span class="language-selector__flag">🇨🇳</span>
+                  <span>简体中文</span>
+                </button>
+                <button type="submit" name="language" value="ja" class="language-selector__option {% if LANGUAGE_CODE == 'ja' %}active{% endif %}">
+                  <span class="language-selector__flag">🇯🇵</span>
+                  <span>日本語</span>
+                </button>
+                <button type="submit" name="language" value="hi" class="language-selector__option {% if LANGUAGE_CODE == 'hi' %}active{% endif %}">
+                  <span class="language-selector__flag">🇮🇳</span>
+                  <span>हिन्दी</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <label class="theme-toggle" aria-label="{% trans 'Cambiar tema' %}">
+            <input type="checkbox" class="theme-toggle__checkbox" />
+          </label>
+          {% if request.user.is_authenticated %}
+          <a
+            class="btn btn--primary"
+            href="{% block header_cta_url %}{% url 'shop:catalogue' %}{% endblock %}"
+            >{% trans "Empezar" %}</a
+          >
+          <a class="btn btn--ghost" href="{% url 'landing:profile' %}">{% trans "Perfil" %}</a>
+          <a class="btn btn--ghost" href="{% url 'landing:logout' %}">{% trans "Salir" %}</a>
+          {% else %}
+          <a class="btn btn--ghost" href="{% url 'landing:login' %}?next={% url 'shop:catalogue' %}"
+            >{% trans "Acceder" %}</a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="search" role="search">
+        <label class="visually-hidden" for="site-search-mobile"
+          >{% trans "Buscar en Croody" %}</label
+        >
+        <input
+          data-search-input
+          id="site-search-mobile"
+          class="search__input"
+          type="search"
+          placeholder="{% trans 'Buscar (pulsa /)' %}"
+          aria-controls="search-list"
+          aria-expanded="false"
+        />
+        <span aria-hidden="true" class="search__icon">⌕</span>
+      </div>
+      <ul class="nav-drawer__nav">
+        {% for link in nav_links %}
+        <li>
+          <a
+            href="{{ link.url }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
+            >{{ link.label }}</a
+          >
+        </li>
+        {% endfor %}
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'shop:catalogue' %}">{% trans "Empezar" %}</a></li>
+        <li><a href="{% url 'landing:profile' %}">{% trans "Perfil" %}</a></li>
+        <li><a href="{% url 'landing:logout' %}">{% trans "Cerrar sesión" %}</a></li>
+        {% else %}
+        <li>
+          <a href="{% url 'landing:login' %}?next={% url 'shop:catalogue' %}"
+            >{% trans "Acceder" %}</a
+          >
+        </li>
+        {% endif %}
+        <li><a href="{% url 'landing:home' %}#search">{% trans "Búsqueda" %}</a></li>
+        <li><a href="{% url 'landing:home' %}#cta-final">{% trans "Contactar" %}</a></li>
+      </ul>
+    </div>
+
+    {% if messages %}
+    <div class="flash-stack" role="status">
+      {% for message in messages %}
+      <div class="flash flash--{{ message.tags|default:'info' }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if show_global_shortcuts %}
+    <section id="search" class="search-results" aria-label="{% trans 'Accesos rápidos' %}">
+      <div class="container">
+        <ul
+          id="search-list"
+          class="search-results__grid"
+          role="listbox"
+          aria-label="{% trans 'Resultados sugeridos' %}"
+        >
+          {% for item in search_results %}
+          <li role="option">
+            <a href="{{ item.url }}{% if item.fragment %}#{{ item.fragment }}{% endif %}">
+              {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endif %}
+
+    {% block body %}{% endblock %}
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div>© Croody 2024 · {% trans "Geometría sagrada" %} · Φ · 33° · 137.5°</div>
+        <nav aria-label="{% trans 'Legal' %}">
+          <a href="#">{% trans "Privacidad" %}</a>
+          <a href="#">{% trans "Términos" %}</a>
+          <a href="#">{% trans "Cookies" %}</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/theme.js' %}" defer></script>
+    <script src="{% static 'js/language-selector.js' %}" defer></script>
+    {% block body_scripts %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Suscripciones · Buddy{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="subs-title">
+      <div class="container page-hero__grid">
+        <div class="page-hero__content">
+          <div class="chip">{{ hero.eyebrow }}</div>
+          <h1 id="subs-title">{{ hero.title }}</h1>
+          <p>{{ hero.lead }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="plans-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="plans-title">Planes</h2>
+          <p>Pagas mes a mes y puedes cambiar cuando quieras.</p>
+        </div>
+        <div class="product-grid">
+          {% for plan in plans %}
+            <article class="product-card">
+              {% if plan.badge %}<span class="chip chip--outline">{{ plan.badge }}</span>{% endif %}
+              <h3>{{ plan.name }}</h3>
+              <div class="product-card__footer">
+                <span class="product-card__price">${{ plan.price }}/{{ plan.period }}</span>
+              </div>
+              <ul class="product-card__features">
+                {% for f in plan.features %}
+                  <li>{{ f }}</li>
+                {% endfor %}
+              </ul>
+              <a class="btn btn--primary" href="{% url 'shop:catalogue' %}">{{ plan.cta_label }}</a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <div class="faq-grid">
+          {% for item in faq %}
+            <article class="faq-item">
+              <h3>{{ item.q }}</h3>
+              <p>{{ item.a }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
