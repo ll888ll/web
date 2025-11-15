@@ -27,6 +27,39 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="robot-demo-title">
+      <div class="container demo-grid">
+        <article class="card" aria-labelledby="robot-demo-title">
+          <h2 id="robot-demo-title">{% trans "Robot de clases en vivo" %}</h2>
+          <p>{% trans "Bridge automático subscribe el servidor TCP de clases y reenvía cada frame al Telemetry Gateway." %}</p>
+          <ul class="list-skinny">
+            <li><strong>ID</strong> {{ robot_demo.id }}</li>
+            <li><strong>{% trans "Protocolo" %}</strong> {{ robot_demo.protocol }}</li>
+            <li><strong>{% trans "Frecuencia" %}</strong> {{ robot_demo.frequency }}</li>
+          </ul>
+          <a class="link-inline" href="https://github.com/ll333ll/telematicache/tree/main/{{ robot_demo.source_path }}" target="_blank" rel="noreferrer">{% trans "Ver carpeta original" %}</a>
+        </article>
+
+        {% if ids_model_meta %}
+        <article class="card" aria-labelledby="ids-meta-title">
+          <h2 id="ids-meta-title">{% trans "Modelo IDS-ML entrenado" %}</h2>
+          <p>{% trans "Pipeline NSL-KDD portado desde clases/CiberTelepatia." %}</p>
+          <dl class="meta-list">
+            <div>
+              <dt>Accuracy</dt>
+              <dd>{{ ids_model_meta.accuracy|floatformat:3 }}</dd>
+            </div>
+            <div>
+              <dt>F1</dt>
+              <dd>{{ ids_model_meta.f1|floatformat:3 }}</dd>
+            </div>
+          </dl>
+          <small>{% trans "Entrenado" %}: {{ ids_model_meta.generated_at }}</small>
+        </article>
+        {% endif %}
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="live-grid-title">
       <div class="container">
         <div class="section__header">

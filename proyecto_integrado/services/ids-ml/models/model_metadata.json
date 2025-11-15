@@ -1,0 +1,7 @@
+{
+  "generated_at": "2025-11-15T04:21:04.734313+00:00",
+  "train_url": "https://raw.githubusercontent.com/jmnwong/NSL-KDD-Dataset/master/KDDTrain%2B.txt",
+  "test_url": "https://raw.githubusercontent.com/jmnwong/NSL-KDD-Dataset/master/KDDTest%2B.txt",
+  "accuracy": 0.7664123491838183,
+  "f1": 0.7483753822629969
+}

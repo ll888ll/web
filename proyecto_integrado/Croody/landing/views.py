@@ -1,9 +1,12 @@
 """Vistas del módulo landing."""
 from __future__ import annotations
 
+import json
 from decimal import Decimal
+from pathlib import Path
 from typing import Any
 
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -601,4 +604,22 @@ class RobotMonitorView(LandingNavigationMixin, TemplateView):
                 {'label': _('Alertas'), 'value': '0', 'id': 'alert-count'},
             ],
         }
+        ctx['robot_demo'] = {
+            'id': 'robot-clases',
+            'source_path': 'proyecto_integrado/robots/telemetry-robot',
+            'protocol': _('TCP ASCII · LOGIN/GET_DATA/MOVE'),
+            'frequency': _('Emite cada 15 s y el bridge envía a Telemetry Gateway automáticamente.'),
+        }
+        ctx['ids_model_meta'] = self._load_ids_model_meta()
         return ctx
+
+    def _load_ids_model_meta(self) -> dict[str, Any] | None:
+        meta_path = Path(settings.BASE_DIR) / 'services/ids-ml/models/model_metadata.json'
+        if not meta_path.exists():
+            return None
+        try:
+            data = json.loads(meta_path.read_text(encoding='utf-8'))
+            data['evaluation_path'] = str(meta_path.parent / 'evaluation.txt')
+            return data
+        except Exception:
+            return None

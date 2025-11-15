@@ -7,6 +7,8 @@ Instalación (desde cero)
 
 Estructura de carpetas
 - `proyecto_integrado/` → stack contenedorizado (gateway, Croody, servicios)
+  - `robots/telemetry-robot/` → servidor C de clases + bridge hacia Telemetry Gateway.
+  - `services/ids-ml/training/` → script para entrenar el modelo NSL-KDD y exportar `best_model.joblib`.
 - `scripts/` → utilidades (p. ej., `generate_audits.py`)
 - `AUDIT_*.txt` → auditorías por carpeta
 - `*.md` → documentación técnica
@@ -14,6 +16,8 @@ Estructura de carpetas
 Operación básica
 - Arranque/parada: `docker compose up -d` / `docker compose down` (dentro de `proyecto_integrado/`).
 - Logs: `docker compose logs -f <servicio>`.
+- `robot-sim` publica el servidor TCP heredado de clases (puerto 9090) y un bridge Python que reenvía cada frame al Telemetry Gateway.
+- `ids-ml` carga `services/ids-ml/models/best_model.joblib`; regenera el modelo ejecutando `python services/ids-ml/training/train_ids_model.py`.
 - Salud: `/api/telemetry/healthz` (200), home `/` (302 a `/es/`).
 
 Configuración
@@ -31,4 +35,3 @@ Desarrollo
 Seguridad y cumplimiento
 - Activa tokens/headers y CORS restrictivo en prod.
 - Gestiona secretos fuera del repo (Vault/SM).
-

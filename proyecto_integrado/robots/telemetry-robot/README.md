@@ -1,0 +1,103 @@
+# Protocolo de Comunicación - Robot de Telemetría
+
+## 1. Visión General
+
+Esta entrega define el protocolo y presenta un servidor (robot de telemetría) con múltiples clientes. Con esto, se muestra cómo recibir datos de telemetría en tiempo real y cómo controlar el robot con un rol administrador.
+
+- **Capa de Transporte:** Se utilizará TCP (Sockets de flujo `SOCK_STREAM`) para garantizar una comunicación fiable y ordenada.
+- **Formato:** Todos los mensajes son texto plano (ASCII), terminados con un carácter de nueva línea (`\n`).
+
+## 2. Flujo de Operación
+
+1.  Un cliente establece una conexión TCP con el servidor.
+2.  El cliente se autentica. Hay dos roles: `USER` (solo puede recibir datos) y `ADMIN` (puede recibir datos, mover el robot y ver otros usuarios).
+3.  Una vez autenticado, el servidor comienza a enviar datos de telemetría al cliente cada 15 segundos.
+4.  El cliente `ADMIN` puede enviar comandos de movimiento. El servidor responderá si el movimiento fue exitoso o si encontró un obstáculo.
+5.  La conexión finaliza cuando el cliente envía un comando `LOGOUT` o se cierra el socket.
+
+## 3. Formato de Mensajes
+
+### Mensajes del Cliente al Servidor
+
+| Comando           | Parámetros                                       | Descripción                                                                                                                                |
+| ----------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `LOGIN`           | `<rol> <password>`                               | Autentica al cliente. El `<rol>` puede ser `USER` o `ADMIN`. La `password` solo es necesaria para el `ADMIN`. Para `USER`, se puede usar `-`. |
+| `GET_DATA`        | `[variable]`                                     | Solicita una variable específica (ej. `TEMP`, `HUM`). Si no se especifica, el servidor enviará todas las variables.                           |
+| `MOVE`            | `<direction>`                                    | Envía un comando de movimiento. `direction` puede ser `UP`, `DOWN`, `LEFT`, `RIGHT`.                                                       |
+| `LIST_USERS`      | -                                                | Solicita la lista de usuarios conectados.                                                                                                  |
+| `LOGOUT`          | -                                                | Cierra la sesión actual.                                                                                                                   |
+
+### Mensajes del Servidor al Cliente
+
+| Comando           | Parámetros                                           | Descripción                                                                                                                            |
+| ----------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `LOGIN_SUCCESS`   | `<rol>`                                              | Notifica que la autenticación fue exitosa.                                                                                             |
+| `LOGIN_FAIL`      | -                                                    | Notifica que la autenticación falló.                                                                                                   |
+| `DATA`            | `<timestamp> <var1>=<val1>;<var2>=<val2>;...`         | Envía los datos de telemetría. El timestamp es el momento de la lectura.                                                               |
+| `MOVE_SUCCESS`    | `<direction>`                                        | Confirma que el movimiento se realizó con éxito.                                                                                       |
+| `MOVE_FAIL`       | `<direction> OBSTACLE`                               | Informa que el robot no pudo moverse en la dirección indicada debido a un obstáculo.                                                   |
+| `USER_LIST`       | `<user1_ip:port>;<user2_ip:port>;...`                | Envía la lista de clientes conectados.                                                                                                 |
+| `PONG`            | -                                                    | Respuesta a un `PING` del cliente para mantener la conexión activa.                                                                    |
+| `ERROR`           | `<message>`                                          | Envía un mensaje de error si un comando no es válido o no se tienen los permisos.                                                     |
+
+## 4. Ejemplo de Interacción
+
+1.  **Cliente (USER):** `LOGIN USER -\n`
+2.  **Servidor:** `LOGIN_SUCCESS USER\n`
+3.  **Servidor (15s después):** `DATA 1663524890 TEMP=23.5;HUM=60.2;PRES=1012.5;WIND=15.3\n`
+4.  **Cliente (ADMIN):** `LOGIN ADMIN mysecretpassword\n`
+5.  **Servidor:** `LOGIN_SUCCESS ADMIN\n`
+6.  **Cliente (ADMIN):** `MOVE UP\n`
+7.  **Servidor:** `MOVE_SUCCESS UP\n`
+8.  **Cliente (ADMIN):** `MOVE RIGHT\n`
+9.  **Servidor:** `MOVE_FAIL RIGHT OBSTACLE\n`
+10. **Cliente (ADMIN):** `LIST_USERS\n`
+11. **Servidor:** `USER_LIST 192.168.1.10:54321;192.168.1.12:12345\n`
+12. **Cliente (USER):** `LOGOUT\n`
+
+## 5. Seguridad y Configuración
+
+- La contraseña de ADMIN se toma de `ADMIN_PASSWORD` (variable de entorno) o del archivo `.env` con línea `ADMIN_PASSWORD=...`. Si no se define, por defecto es `admin`.
+- El servidor ignora `SIGPIPE` y usa escritura robusta para evitar truncamientos (helper `send_all`).
+- Rate limit simple por cliente: PING/GET_DATA se aceptan como máximo 1 vez por segundo.
+
+## 6. Cómo ejecutar (Servidor y Clientes)
+
+Requisitos:
+- Compilador C (`gcc`) para el servidor.
+- Python 3 para los clientes.
+- (Opcional GUI) `tkinter` para `client_gui.py` (en Debian/Ubuntu: `sudo apt install python3-tk`).
+
+Pasos:
+1) Compilar servidor (C):
+```
+make
+```
+
+2) Ejecutar servidor (requiere puerto y archivo de log):
+```
+./server 9090 logs.txt  # escucha en 0.0.0.0:9090
+```
+
+3) Cliente CLI (Python):
+```
+python3 client_cli.py --host 127.0.0.1 --port 9090 --role USER
+```
+
+4) Cliente GUI (Python + Tk):
+```
+python3 client_gui.py --host 127.0.0.1 --port 9090
+```
+
+5) Cliente de prueba automatizado:
+```
+python3 test_client.py 127.0.0.1 9090
+```
+
+Notas:
+- El servidor admite múltiples clientes concurrentes.
+- La contraseña ADMIN por defecto es `admin` (configurable por `ADMIN_PASSWORD`).
+
+## 7. Rúbrica y Alcance
+
+Se incluye `RUBRICA.md` con una autoevaluación de los criterios (protocolo, concurrencia, seguridad, clientes y pruebas).

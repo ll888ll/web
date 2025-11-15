@@ -10,7 +10,7 @@ services:
       - ./gateway/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./gateway/ssl:/etc/nginx/ssl:ro
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1"]
       interval: 10s
       timeout: 3s
       retries: 5
@@ -82,3 +82,16 @@ services:
       interval: 10s
       timeout: 3s
       retries: 5
+
+  robot-sim:
+    build:
+      context: ./robots/telemetry-robot
+    container_name: robot_sim
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    environment:
+      - TELEMETRY_INGEST_URL=http://telemetry-gateway:9000/api/telemetry/ingest
+      - ROBOT_ID=robot-clases
+    depends_on:
+      - telemetry-gateway

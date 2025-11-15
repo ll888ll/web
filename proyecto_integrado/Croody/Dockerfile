@@ -9,7 +9,10 @@ WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 # Intento instalar requerimientos completos; si falla por dependencias opcionales,
 # instala un subconjunto mínimo para desarrollo.
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends wget \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir -r /app/requirements.txt
 
 COPY . /app
 

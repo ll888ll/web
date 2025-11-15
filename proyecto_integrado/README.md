@@ -5,6 +5,8 @@ Estructura
 - services/
   - telemetry-gateway/ (FastAPI)
   - ids-ml/ (FastAPI)
+- robots/
+  - telemetry-robot/ (servidor TCP legado + bridge HTTP)
 - Croody/ (Django, copia aislada)
 - docker-compose.yml (este stack)
 
@@ -31,6 +33,18 @@ Arranque
 Endpoints
 - Telemetry: POST /api/telemetry/ingest, GET /api/telemetry/last, GET /api/telemetry/query?limit=100
 - IDS-ML: GET /api/ids/model, POST /api/ids/predict
+- Robot demo: servidor TCP heredado (puerto 9090) accesible vía `robot-sim` + bridge automático a Telemetry Gateway.
+
+## Robot heredado (clases)
+- Carpeta: `robots/telemetry-robot/`
+- Construcción: `docker compose up robot-sim`
+- El container compila `server.c`, abre `9090` y ejecuta `bridge_ingest.py` que hace LOGIN USER y reenvía cada frame como JSON a `/api/telemetry/ingest`.
+- Para probar manualmente: `nc localhost 9090` → `LOGIN USER -` → espera `DATA ...`.
+
+## Modelo IDS-ML
+- Script portado desde `clases/CiberTelepatia/run_ids_ml.py`: `services/ids-ml/training/train_ids_model.py`.
+- Ejecuta `python services/ids-ml/training/train_ids_model.py` (requiere pandas/scikit-learn) para regenerar `services/ids-ml/models/best_model.joblib` y `model_metadata.json`.
+- El front de monitor muestra Accuracy/F1 leídos de `model_metadata.json`.
 
 Notas
 - Esta carpeta es independiente del resto del repositorio. Puedes borrar el stack previo cuando valides que esto te funciona.

@@ -71,12 +71,24 @@ services:
       - "443:443"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1"]
       interval: 10s
       timeout: 3s
       retries: 5
     mem_limit: 256m
     cpus: "0.50"
+
+  robot-sim:
+    build:
+      context: ./robots/telemetry-robot
+    restart: unless-stopped
+    environment:
+      - TELEMETRY_INGEST_URL=http://telemetry-gateway:9000/api/telemetry/ingest
+      - ROBOT_ID=croody-class-robot
+      - TG_INGEST_TOKEN=${TG_INGEST_TOKEN}
+    depends_on:
+      telemetry-gateway:
+        condition: service_started
 
 volumes:
   db_data:

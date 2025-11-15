@@ -21,6 +21,9 @@
 - **Clientes y documentación**
   - `clients/python/robot_publisher.py` y `clients/README.md` para pruebas externas.
   - Guía `deploy/aws/README.md` + `user-data.sh` describiendo despliegue en EC2, SGs y validaciones.
+- **Robot de telemetría y modelo IDS (clases)**
+  - Servicio `robot-sim` compila el servidor TCP legado y ejecuta un bridge Python que ingiere cada `DATA` en Telemetry Gateway; el monitor público muestra su estado.
+  - Se portó el pipeline NSL-KDD a `services/ids-ml/training/train_ids_model.py` y se versionó `best_model.joblib` + métricas para que `/api/ids/predict` use el clasificador real.
 
 ## 3. Flujo de usuario completo
 - **Registro**: formulario con nombre completo, email, idioma, tema, aceptación de términos y contraseñas; genera perfil y token personal.

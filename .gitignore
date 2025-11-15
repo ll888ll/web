@@ -4,7 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.so
-.venv/
+.venv*/
 venv/
 .env
 .env.*
@@ -27,6 +27,10 @@ node_modules/
 
 # CICF local artifacts
 var/
+
+# Robot legacy build artifacts
+proyecto_integrado/robots/telemetry-robot/server
+proyecto_integrado/robots/telemetry-robot/logs.txt
 
 # Build
 build/

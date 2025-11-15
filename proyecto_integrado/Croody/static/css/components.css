@@ -101,3 +101,9 @@
 .flash{padding:var(--space-2);border-radius:16px;border:1px solid color-mix(in oklab,var(--brand-base),transparent 80%);background:color-mix(in oklab,var(--brand-base),transparent 90%);color:var(--fg)}
 .flash--success{background:color-mix(in oklab,var(--brand-base),transparent 80%)}
 .flash--error{background:color-mix(in oklab,var(--error-500, #FF5A78),transparent 70%)}
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.list-skinny{list-style:none;padding:0;margin:1rem 0}
+.list-skinny li{margin-bottom:.35rem}
+.meta-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem;margin:1rem 0}
+.meta-list dt{font-size:.85rem;text-transform:uppercase;color:var(--muted)}
+.meta-list dd{font-size:1.25rem;margin:0}

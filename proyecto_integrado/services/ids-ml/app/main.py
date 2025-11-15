@@ -31,6 +31,12 @@ class PredictResponse(BaseModel):
     model: Dict[str, Optional[str]]
 
 
+# Reconstruimos explícitamente los modelos para evitar errores de Pydantic 2 en
+# contextos donde se importan varias veces (ej. tests con TestClient).
+PredictRequest.model_rebuild()
+PredictResponse.model_rebuild()
+
+
 def _load_model():
     try:
         import joblib  # type: ignore
