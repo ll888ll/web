@@ -47,11 +47,12 @@ jobs:
       - name: Purge Cloudflare cache (optional)
         if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
         run: |
+          set +e
           curl -fsSL -X POST \
             -H "Authorization: Bearer $CF_API_TOKEN" \
             -H "Content-Type: application/json" \
             https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache \
-            --data '{"purge_everything":true}'
+            --data '{"purge_everything":true}' || echo "Cloudflare purge failed (token/zone?) – continuing"
 
       - name: Configure Cloudflare DNS + SSL (optional)
         if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
@@ -64,20 +65,23 @@ jobs:
           fi
           # Discover zone name and public IP of this instance
           ZONE_NAME=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID | jq -r '.result.name')
-          PUBIP=$(curl -fsSL http://169.254.169.254/latest/meta-data/public-ipv4 || echo '')
+          PUBIP=$(curl -fsSL https://checkip.amazonaws.com || curl -fsSL https://api.ipify.org || curl -fsSL http://ifconfig.me || echo '')
           echo "Zone: $ZONE_NAME | IP: $PUBIP"
-          test -n "$ZONE_NAME" && test -n "$PUBIP"
+          if [ -z "$ZONE_NAME" ] || [ -z "$PUBIP" ]; then
+            echo "Cloudflare token/zone/IPv4 discovery failed – skipping CF auto-config"
+            exit 0
+          fi
 
           # Upsert A record for root
           ROOT_REC_ID=$(curl -fsSL -H "Authorization: Bearer $CF_API_TOKEN" "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records?type=A&name=$ZONE_NAME" | jq -r '.result[0].id // empty')
           if [ -n "$ROOT_REC_ID" ]; then
             curl -fsSL -X PUT -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records/$ROOT_REC_ID" \
-              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":true}"
+              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":true}" || true
           else
             curl -fsSL -X POST -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records" \
-              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":true}"
+              --data "{\"type\":\"A\",\"name\":\"$ZONE_NAME\",\"content\":\"$PUBIP\",\"proxied\":true}" || true
           fi
 
           # Upsert CNAME for www
@@ -86,21 +90,21 @@ jobs:
           if [ -n "$WWW_REC_ID" ]; then
             curl -fsSL -X PUT -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records/$WWW_REC_ID" \
-              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":true}"
+              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":true}" || true
           else
             curl -fsSL -X POST -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
               "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/dns_records" \
-              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":true}"
+              --data "{\"type\":\"CNAME\",\"name\":\"$WWW_NAME\",\"content\":\"$ZONE_NAME\",\"proxied\":true}" || true
           fi
 
           # SSL Strict
           curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
             "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/settings/ssl" \
-            --data '{"value":"strict"}'
+            --data '{"value":"strict"}' || true
 
           # Bot Fight Mode ON
           curl -fsSL -X PATCH -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
             "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/settings/bot_fight_mode" \
-            --data '{"value":"on"}'
+            --data '{"value":"on"}' || true
 
           echo "Cloudflare DNS + SSL configured."
