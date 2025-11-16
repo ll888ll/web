@@ -31,6 +31,14 @@ has_apt_get() {
   [[ -n "$APT_GET_BIN" ]]
 }
 
+ensure_supported_system() {
+  if has_apt_get; then
+    return
+  fi
+  log "apt-get no disponible; este endurecimiento solo soporta hosts Debian/Ubuntu/Kali. Saliendo sin cambios."
+  exit 0
+}
+
 apt_update() {
   if ! has_apt_get; then
     log "apt-get no disponible; omitiendo actualización automática de paquetes (aplíquela manualmente)."
@@ -238,6 +246,7 @@ obtain_cert() {
 
 main() {
   require_root
+  ensure_supported_system
   log "== Inicio de endurecimiento automático Croody =="
   apt_update
   install_dependencies
