@@ -16,7 +16,7 @@
       content="#F2FBF0"
     />
     <title>
-      {% block title %}{% trans "Croody · Precisión cósmica con corazón" %}{% endblock %}
+      {% block title %}{% trans "Croody · Diseño con propósito" %}{% endblock %}
     </title>
     <link
       rel="icon"
@@ -76,6 +76,8 @@
           <li role="none">
             <a
               role="menuitem"
+              class="nav-link{% if request.path == link.url %} is-active{% endif %}"
+              {% if request.path == link.url %}aria-current="page"{% endif %}
               href="{{ link.url }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
               >{{ link.label }}</a
             >
@@ -190,6 +192,8 @@
         {% for link in nav_links %}
         <li>
           <a
+            class="nav-link{% if request.path == link.url %} is-active{% endif %}"
+            {% if request.path == link.url %}aria-current="page"{% endif %}
             href="{{ link.url }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
             >{{ link.label }}</a
           >
@@ -244,7 +248,7 @@
 
     <footer class="site-footer" role="contentinfo">
       <div class="container">
-        <div>© Croody 2024 · {% trans "Geometría sagrada" %} · Φ · 33° · 137.5°</div>
+        <div>© Croody 2025 · {% trans "Inspirados en valores eternos" %}</div>
         <nav aria-label="{% trans 'Legal' %}">
           <a href="#">{% trans "Privacidad" %}</a>
           <a href="#">{% trans "Términos" %}</a>

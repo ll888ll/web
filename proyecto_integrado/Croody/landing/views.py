@@ -58,7 +58,9 @@ class HomeView(LandingNavigationMixin, TemplateView):
         hero = {
             'eyebrow': _('Croody · Conecta, Entrena y Destaca'),
             'title': _('Volvamos a ser humanos'),
-            'lead': _('Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies.'),
+            'lead': _(
+                'Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies. Ese trabajo se inspira en convicciones internas que priorizan la dignidad humana y el servicio.'
+            ),
             'primary_cta': {'label': _('Ir a la tienda Buddy'), 'url': reverse('shop:catalogue')},
             'secondary_cta': {'label': _('Conocer a Buddy'), 'url': reverse('landing:buddy')},
             'image': {
@@ -116,6 +118,10 @@ class HomeView(LandingNavigationMixin, TemplateView):
             {
                 'title': 'Accesibilidad real',
                 'description': 'Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas culturas y edades.',
+            },
+            {
+                'title': 'Vocación de servicio',
+                'description': 'Nos guía una ética de servicio discreta: cuidamos a las personas primero y dejamos que el diseño lo haga evidente.',
             },
         ]
 
@@ -217,7 +223,7 @@ class BuddyView(LandingNavigationMixin, TemplateView):
             'eyebrow': _('Buddy · Conecta, Entrena y Destaca'),
             'title': _('Más que entrenar: una conexión contigo y con los tuyos'),
             'lead': _(
-                'Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto.'
+                'Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto, con una ética inspirada en nuestras convicciones de servicio que priorizan el cuidado de las personas.'
             ),
             'primary_cta': {'label': _('Ir a la tienda Buddy'), 'url': reverse('shop:catalogue')},
             'secondary_cta': {'label': _('Ver roadmap'), 'fragment': 'buddy-roadmap'},
@@ -352,7 +358,7 @@ class LuksView(LandingNavigationMixin, TemplateView):
         hero = {
             'eyebrow': 'Luks · Economía Buddy',
             'title': 'Token que recompensa la constancia y da confianza a cada transacción.',
-            'lead': 'Pagos, royalties y telemetría on-chain con una experiencia diseñada para usuarios reales y equipos regulados.',
+            'lead': 'Pagos, royalties y telemetría on-chain con una experiencia diseñada para usuarios reales y equipos regulados. La infraestructura nace de principios de transparencia y servicio comunicados con un tono ejecutivo.',
             'primary_cta': {'label': 'Ver tienda Buddy', 'url': reverse('shop:catalogue')},
             'secondary_cta': {'label': 'Contactar equipo Luks', 'url': 'mailto:hola@croody.app?subject=Luks'},
         }

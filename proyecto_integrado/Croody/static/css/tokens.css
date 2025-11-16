@@ -1,26 +1,35 @@
-/* Croody — Tokens validados (Green x Black) */
+/* Croody — Design System 2025 */
 :root{
-  /* Gator (verde) */
-  --gator-950:#06110A; --gator-900:#0A1A0D; --gator-800:#0F2916; --gator-700:#1E5B24; --gator-600:#2F7A33; --gator-500:#5FAF48; --gator-400:#79C65C; --gator-300:#95D881; --gator-200:#BDE9AB; --gator-100:#E3F7D9; --gator-50:#F2FBF0;
-  /* Jungle (neutros verdes) */
-  --jungle-950:#070A08; --jungle-900:#0C1210; --jungle-800:#121C19; --jungle-700:#1A2723; --jungle-600:#23312D; --jungle-500:#2E3D38; --jungle-400:#51615A; --jungle-300:#7A8A83; --jungle-200:#A5B1AC; --jungle-100:#D0D7D4; --jungle-50:#E8ECEB;
-  /* Secundario cálido (uso controlado) */
-  --sand-500:#F5E2B7; --sand-400:#F1D39A; --sand-300:#E9C987; --sand-200:#E1B56D; --sand-100:#EED7A7;
-  /* Acentos efímeros (sólo feedback) */
-  --orchid-700:#6B2E79; --orchid-600:#874399; --orchid-500:#A050B7; --orchid-400:#C568CF; --orchid-300:#E187C7;
-  --teal-700:#158C79; --teal-500:#2BBFA3; --teal-300:#4AD1BE; --lime-700:#9FB431; --lime-500:#C9E04F; --lime-300:#DDEC7B;
-  --info-500:#3BC4F2; --warn-500:#FFC157; --error-500:#FF5A78;
+  /* Paleta corporativa */
+  --gator-950:#041009; --gator-900:#082015; --gator-800:#103924; --gator-700:#1C5C37; --gator-600:#277947; --gator-500:#3C9E5D; --gator-400:#5BB97D; --gator-300:#80D3A0; --gator-200:#B4E5C6; --gator-100:#DDF6E8; --gator-50:#F0FBF5;
+  --jungle-950:#050807; --jungle-900:#0B1311; --jungle-800:#141F1B; --jungle-700:#1E2C26; --jungle-600:#293833; --jungle-500:#374640; --jungle-400:#56655F; --jungle-300:#7A8883; --jungle-200:#A9B4B0; --jungle-100:#D3DAD7; --jungle-50:#EEF1EF;
+  --sand-600:#C18F4A; --sand-500:#E0B771; --sand-400:#F3D398; --sand-300:#F8E1B7; --sand-200:#FBECD1; --sand-100:#FDF5E6;
+  --orchid-600:#975C9B; --orchid-500:#B079B5; --orchid-300:#D6A6DA;
+  --teal-600:#1A8D7C; --teal-400:#2FC1AA; --lime-500:#D7E35A;
+  --info-500:#31BFEA; --warn-500:#F5B454; --error-500:#F06565;
 
-  /* Escalas espaciales y radios (Fibonacci + 8px) */
+  /* Tipografía */
+  --font-sans:"Josefin Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display:"Baloo 2", "Poppins", system-ui, sans-serif;
+  --text-xs:0.78rem; --text-sm:0.9rem; --text-base:1rem; --text-lg:1.15rem; --text-xl:1.33rem; --text-2xl:1.6rem; --text-3xl:2.1rem; --text-4xl:clamp(2.3rem,2vw+2rem,3.6rem);
+  --line-height-tight:1.15; --line-height-base:1.55; --line-height-loose:1.75;
+
+  /* Escalas espaciales (basadas en número áureo ~1.618) */
   --space-1:8px; --space-2:13px; --space-3:21px; --space-4:34px; --space-5:55px; --space-6:89px;
-  --radius-1:6px; --radius-2:9px; --radius-3:12px; --radius-4:18px; --radius-5:27px; --radius-6:33px;
+  --radius-1:6px; --radius-2:10px; --radius-3:16px; --radius-4:24px;
   --border-1:1px; --border-2:1.5px; --border-3:2px;
+  --shadow-xs:0 1px 2px rgba(0,0,0,.08);
+  --shadow-sm:0 4px 12px rgba(20,30,20,.12);
+  --shadow-md:0 10px 30px rgba(20,50,30,.16);
+  --shadow-lg:0 25px 55px rgba(32,80,50,.25);
+  --shadow:var(--shadow-md);
+  --shadow-strong:var(--shadow-lg);
   --z-0:0; --z-1:1; --z-10:10; --z-100:100; --z-1000:1000; --z-10000:10000;
 
-  /* Contenedores base (se ajustan en breakpoints) */
+  /* Contenedores base */
   --container-pad:34px;
-  --gutter:21px;
-  --grid-cols:8;
+  --gutter:24px;
+  --grid-cols:12;
 
   color-scheme: light dark;
 }

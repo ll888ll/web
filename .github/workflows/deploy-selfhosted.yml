@@ -45,6 +45,10 @@ jobs:
           docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.acme.yml --env-file .env up -d --build telemetry-gateway ids-ml robot-sim croody gateway
           docker compose ps
 
+      - name: Apply Croody web hardening
+        working-directory: ${{ github.workspace }}
+        run: sudo scripts/security/hardening_auto.sh
+
       - name: Purge Cloudflare cache (optional)
         if: ${{ env.CF_API_TOKEN != '' && env.CF_ZONE_ID != '' }}
         run: |
