@@ -12,6 +12,7 @@ ADMIN_EMAIL="mnzz.eafit@gmail.com"
 APACHE_SECURITY_CONF="/etc/apache2/conf-available/security.conf"
 MONITOR_SERVICE="/etc/systemd/system/monitor-seguridad.service"
 BACKUP_CRON_ENTRY="0 2 * * * /usr/local/bin/backup_nocturno.sh"
+APT_GET_BIN="$(command -v apt-get || true)"
 
 mkdir -p "$(dirname "$LOG_FILE")"
 
@@ -26,20 +27,32 @@ require_root() {
   fi
 }
 
+has_apt_get() {
+  [[ -n "$APT_GET_BIN" ]]
+}
+
 apt_update() {
+  if ! has_apt_get; then
+    log "apt-get no disponible; omitiendo actualización automática de paquetes (aplíquela manualmente)."
+    return
+  fi
   export DEBIAN_FRONTEND=noninteractive
   log "Actualizando índices y paquetes del sistema"
-  apt-get update -yq
-  apt-get upgrade -yq
+  "$APT_GET_BIN" update -yq
+  "$APT_GET_BIN" upgrade -yq
 }
 
 ensure_package() {
   local pkg="$1"
-  if dpkg -s "$pkg" >/dev/null 2>&1; then
+  if ! has_apt_get; then
+    log "apt-get no disponible; verifica manualmente la presencia de $pkg"
+    return
+  fi
+  if command -v dpkg >/dev/null 2>&1 && dpkg -s "$pkg" >/dev/null 2>&1; then
     log "Paquete $pkg ya instalado"
   else
     log "Instalando paquete $pkg"
-    if ! apt-get install -yq "$pkg"; then
+    if ! "$APT_GET_BIN" install -yq "$pkg"; then
       log "ERROR: no se pudo instalar $pkg"
       exit 1
     fi
@@ -47,6 +60,10 @@ ensure_package() {
 }
 
 install_dependencies() {
+  if ! has_apt_get; then
+    log "apt-get no disponible; omitiendo instalación automática de dependencias"
+    return
+  fi
   local packages=(
     apache2
     ufw
