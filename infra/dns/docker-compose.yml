@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  bind-master:
+    build: .
+    image: croody/bind-master:latest
+    container_name: bind-master
+    environment:
+      DNS_ROLE: master
+      DNS_DOMAIN: example.com
+      TSIG_KEY_NAME: master-xfer
+      TSIG_KEY_SECRET: changeme-base64==
+      NS1_FQDN: ns1.example.com.
+      NS2_FQDN: ns2.example.com.
+      ALLOW_QUERY: "any;"
+      ALLOW_TRANSFER: "10.0.120.10; 10.0.220.10;"
+      NOTIFY_TARGETS: "10.0.220.10;"
+      A_RECORDS: |
+        @  300 IN A 10.0.10.10
+        api 300 IN A 10.0.10.20
+    volumes:
+      - ./bind-master/zones:/zones
+      - ./bind-master/keys:/keys
+      - bind-master-cache:/var/cache/bind
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    networks:
+      - dns-private
+
+  bind-slave:
+    build: .
+    image: croody/bind-slave:latest
+    container_name: bind-slave
+    environment:
+      DNS_ROLE: slave
+      DNS_DOMAIN: example.com
+      TSIG_KEY_NAME: master-xfer
+      TSIG_KEY_SECRET: changeme-base64==
+      MASTER_IP: 10.0.120.10
+      NS1_FQDN: ns1.example.com.
+      NS2_FQDN: ns2.example.com.
+      ALLOW_QUERY: "any;"
+    volumes:
+      - ./bind-slave/zones:/zones
+      - ./bind-slave/keys:/keys
+      - bind-slave-cache:/var/cache/bind
+    expose:
+      - "53/tcp"
+      - "53/udp"
+    networks:
+      - dns-secondary
+
+volumes:
+  bind-master-cache:
+  bind-slave-cache:
+
+networks:
+  dns-private:
+    driver: bridge
+  dns-secondary:
+    driver: bridge

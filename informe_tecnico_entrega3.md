@@ -44,3 +44,20 @@
 - Automatizar despliegue AWS con Terraform/Ansible y emitir certificados válidos (ACM) detrás de un ALB.
 - Conectar CloudWatch / Grafana para métricas del endpoint `/api/telemetry/live`.
 - Añadir pruebas funcionales para el flujo de registro/perfil en Django.
+
+## 7. Cumplimiento de Indicativos y gobierno DNS
+
+| Indicativo | Evidencia | Estado |
+| --- | --- | --- |
+| Dos sitios web (informativo y CRUD) | Croody landing/tienda (`proyecto_integrado/Croody`), panel de cuentas/telemetría (`/cuenta/perfil/`, `/robots/monitor/`). | ✅ |
+| API Telemetría + DB | FastAPI + SQLite/Postgres (`services/telemetry-gateway`), pruebas `tests/e2e/test_gateway_smoke.py`. | ✅ |
+| Despliegue nube | Scripts `deploy_from_scratch.sh`, `deploy/aws/README.md`, runner self-hosted. | ✅ |
+| DNS autoritativo (BIND9 primario/secundario) | `infra/dns/` (Docker + TSIG + AXFR), workflow `bind-deploy`. | 🟡 (pendiente despliegue productivo) |
+| Infraestructura segregada (VPC) | Terraform (`infra/terraform`), outputs consumibles por scripts. | 🟡 (aplicar en AWS y adjuntar outputs) |
+
+## 8. Configuración DNS autoritativa y monitoreo
+
+- **Arquitectura**: `bind-master` (subred privada AZ A) mantiene la zona `croody.app`; `bind-slave` (AZ B) replica vía AXFR protegido con TSIG. Glue records para `ns1`/`ns2` se actualizan en el registrador tras cada despliegue.
+- **Automatización**: `scripts/dns/setup_bind.sh` genera llaves/plantillas; `.github/workflows/bind-deploy.yml` construye imágenes, ejecuta `named-checkconf/named-checkzone`, publica en ECR y reinicia contenedores remoto vía SSH (con `rndc reload`).
+- **Monitoreo**: logs de BIND montados en volúmenes para enviarlos a CloudWatch; validaciones operativas documentadas en `docs/dns_operacion.md` (`dig SOA`, `dig AXFR`, failover maestro/esclavo). Integrar alertas sobre `AXFR failed`, `rndc errors`, spikes de `queries`.
+- **Seguimiento**: `docs/matriz_indicativos.md` actúa como checklist vivo; cada requisito se actualiza con referencias a commits, rutas y evidencias (capturas, logs). Mantenerla sincronizada con cada despliegue mayor.

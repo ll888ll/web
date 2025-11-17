@@ -1,0 +1,42 @@
+name: DNS Lint
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  dns-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build BIND image (lint)
+        run: docker build -t bind-lint infra/dns
+
+      - name: named-checkconf
+        run: |
+          docker run --rm \
+            -e DNS_ROLE=master \
+            -e DNS_DOMAIN=${{ secrets.BIND_DOMAIN || 'example.com' }} \
+            -e TSIG_KEY_NAME=${{ secrets.BIND_TSIG_KEY_NAME || 'dns-test' }} \
+            -e TSIG_KEY_SECRET=${{ secrets.BIND_TSIG_KEY_SECRET || 'ZmFrZQ==' }} \
+            -v "${{ github.workspace }}/infra/dns/bind-master/zones:/zones" \
+            bind-lint named-checkconf /etc/bind/named.conf
+
+      - name: named-checkzone
+        run: |
+          docker run --rm \
+            -e DNS_ROLE=master \
+            -e DNS_DOMAIN=${{ secrets.BIND_DOMAIN || 'example.com' }} \
+            -e TSIG_KEY_NAME=${{ secrets.BIND_TSIG_KEY_NAME || 'dns-test' }} \
+            -e TSIG_KEY_SECRET=${{ secrets.BIND_TSIG_KEY_SECRET || 'ZmFrZQ==' }} \
+            -v "${{ github.workspace }}/infra/dns/bind-master/zones:/zones" \
+            bind-lint named-checkzone ${{ secrets.BIND_DOMAIN || 'example.com' }} /zones/${{ secrets.BIND_DOMAIN || 'example.com' }}.db
+
+      - name: dig @localhost (SOA)
+        run: |
+          docker compose -f infra/dns/docker-compose.yml up -d bind-master
+          sleep 5
+          dig @127.0.0.1 ${{ secrets.BIND_DOMAIN || 'example.com' }} SOA

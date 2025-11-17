@@ -1,0 +1,39 @@
+name: Terraform CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  terraform-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+      - name: Terraform fmt
+        run: terraform fmt -recursive
+        working-directory: infra/terraform
+      - name: Terraform init
+        run: terraform init
+        working-directory: infra/terraform
+      - name: Terraform validate
+        run: terraform validate
+        working-directory: infra/terraform
+
+  tflint:
+    runs-on: ubuntu-latest
+    needs: terraform-validate
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TFLint
+        uses: terraform-linters/setup-tflint@v4
+      - name: TFLint
+        run: |
+          tflint --init
+          tflint
+        working-directory: infra/terraform

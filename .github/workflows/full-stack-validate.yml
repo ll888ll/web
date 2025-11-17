@@ -1,0 +1,32 @@
+name: Full Stack Validate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  validate-full-stack:
+    runs-on: ubuntu-latest
+    env:
+      BIND_DOMAIN: ${{ secrets.BIND_DOMAIN || 'example.com' }}
+      BASE_URL: ${{ secrets.VALIDATION_BASE_URL || 'http://localhost:8080' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 python3-pip docker-compose
+          pip install pytest httpx
+
+      - name: Run validate_full_stack.sh
+        run: |
+          chmod +x scripts/validate_full_stack.sh
+          scripts/validate_full_stack.sh
+
+      - name: Upload evidences
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias-full-stack
+          path: extras/evidencias_finales.md

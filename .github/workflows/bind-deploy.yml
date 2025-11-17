@@ -1,0 +1,188 @@
+name: Bind Deploy
+
+# Despliega servidores autoritativos BIND9 (master/slave) tras validar configuraciones.
+on:
+  push:
+    branches: [main, dev]
+
+permissions:
+  contents: read
+  id-token: write
+
+# Variables globales alimentadas desde GitHub Secrets.
+env:
+  DOMAIN: ${{ secrets.BIND_DOMAIN }}
+  MASTER_IP: ${{ secrets.BIND_MASTER_PRIVATE_IP }}
+  SLAVE_IP: ${{ secrets.BIND_SLAVE_PRIVATE_IP }}
+  TSIG_KEY_NAME: ${{ secrets.BIND_TSIG_KEY_NAME }}
+  TSIG_KEY_SECRET: ${{ secrets.BIND_TSIG_KEY_SECRET }}
+  ECR_REGISTRY: ${{ secrets.AWS_ECR_REGISTRY }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  MASTER_REPO: ${{ secrets.BIND_MASTER_ECR_REPO }}
+  SLAVE_REPO: ${{ secrets.BIND_SLAVE_ECR_REPO }}
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      MASTER_IMAGE: ${{ secrets.AWS_ECR_REGISTRY }}/${{ secrets.BIND_MASTER_ECR_REPO }}:${{ github.sha }}
+      SLAVE_IMAGE: ${{ secrets.AWS_ECR_REGISTRY }}/${{ secrets.BIND_SLAVE_ECR_REPO }}:${{ github.sha }}
+      ZONE_FILE: infra/dns/bind-master/zones/${{ secrets.BIND_DOMAIN }}.db
+    steps:
+      # 1) Checkout del repositorio con la infraestructura DNS.
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 2) Validación temprana: se requiere que exista la zona maestra con registros reales.
+      - name: Ensure zone file exists
+        run: |
+          if [[ ! -f "${ZONE_FILE}" ]]; then
+            echo "Zone file ${ZONE_FILE} not found. Generate it via scripts/dns/setup_bind.sh" >&2
+            exit 1
+          fi
+
+      # 3) Inicio de sesión en Amazon ECR (si se configuró un registro privado).
+      - name: Login to Amazon ECR
+        if: env.ECR_REGISTRY != ''
+        uses: aws-actions/amazon-ecr-login@v2
+        with:
+          registry-type: private
+          mask-password: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
+      # 4) Construcción de la imagen maestro.
+      - name: Build master image
+        run: |
+          docker build \
+            -f infra/dns/Dockerfile \
+            -t "$MASTER_IMAGE" \
+            infra/dns
+
+      # 5) Construcción de la imagen esclavo (reutiliza el mismo Dockerfile).
+      - name: Build slave image
+        run: |
+          docker build \
+            -f infra/dns/Dockerfile \
+            -t "$SLAVE_IMAGE" \
+            infra/dns
+
+      # 6) Validar configuraciones BIND del maestro: named.conf + zona.
+      - name: Validate BIND configs (master)
+        run: |
+          docker run --rm \
+            -e DNS_ROLE=master \
+            -e DNS_DOMAIN="${DOMAIN}" \
+            -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
+            -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
+            -e NS1_FQDN="ns1.${DOMAIN}." \
+            -e NS2_FQDN="ns2.${DOMAIN}." \
+            -e ALLOW_QUERY="any;" \
+            -e ALLOW_TRANSFER="${SLAVE_IP};" \
+            -e NOTIFY_TARGETS="${SLAVE_IP};" \
+            -e MASTER_IP="${MASTER_IP}" \
+            -v "${PWD}/infra/dns/bind-master/zones:/zones" \
+            "$MASTER_IMAGE" \
+            named-checkconf /etc/bind/named.conf
+
+          docker run --rm \
+            -e DNS_ROLE=master \
+            -e DNS_DOMAIN="${DOMAIN}" \
+            -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
+            -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
+            -e NS1_FQDN="ns1.${DOMAIN}." \
+            -e NS2_FQDN="ns2.${DOMAIN}." \
+            -v "${PWD}/infra/dns/bind-master/zones:/zones" \
+            "$MASTER_IMAGE" \
+            named-checkzone "${DOMAIN}" "/zones/${DOMAIN}.db"
+
+      # 7) Validar configuración del esclavo (named.conf); la zona se replica vía AXFR.
+      - name: Validate BIND configs (slave)
+        run: |
+          docker run --rm \
+            -e DNS_ROLE=slave \
+            -e DNS_DOMAIN="${DOMAIN}" \
+            -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
+            -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
+            -e NS1_FQDN="ns1.${DOMAIN}." \
+            -e NS2_FQDN="ns2.${DOMAIN}." \
+            -e MASTER_IP="${MASTER_IP}" \
+            -v "${PWD}/infra/dns/bind-slave/zones:/zones" \
+            "$SLAVE_IMAGE" \
+            named-checkconf /etc/bind/named.conf
+
+      # 8) Publicar imágenes en ECR si corresponde (opcional).
+      - name: Push master image to ECR
+        if: env.ECR_REGISTRY != ''
+        run: docker push "$MASTER_IMAGE"
+
+      - name: Push slave image to ECR
+        if: env.ECR_REGISTRY != ''
+        run: docker push "$SLAVE_IMAGE"
+
+      # 9) Despliegue remoto en el maestro: pull de imagen, recrear contenedor, recargar zona vía rndc.
+      - name: Deploy to master host via SSH (pull from ECR)
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.BIND_MASTER_HOST }}
+          username: ${{ secrets.BIND_SSH_USER }}
+          key: ${{ secrets.BIND_SSH_KEY }}
+          port: ${{ secrets.BIND_SSH_PORT || '22' }}
+          script_stop: true
+          envs: MASTER_IMAGE,DOMAIN,TSIG_KEY_NAME,TSIG_KEY_SECRET,MASTER_IP,SLAVE_IP
+          script: |
+            set -euo pipefail
+            docker pull "$MASTER_IMAGE"
+            docker stop bind-master || true
+            docker rm bind-master || true
+            docker run -d \
+              --name bind-master \
+              --restart unless-stopped \
+              -p 53:53/tcp -p 53:53/udp \
+              -v /etc/bind/master/zones:/zones \
+              -v /etc/bind/master/keys:/keys \
+              -e DNS_ROLE=master \
+              -e DNS_DOMAIN=${DOMAIN} \
+              -e TSIG_KEY_NAME=${TSIG_KEY_NAME} \
+              -e TSIG_KEY_SECRET=${TSIG_KEY_SECRET} \
+              -e NS1_FQDN=ns1.${DOMAIN}. \
+              -e NS2_FQDN=ns2.${DOMAIN}. \
+              -e MASTER_IP=${MASTER_IP} \
+              -e ALLOW_QUERY="any;" \
+              -e ALLOW_TRANSFER="${SLAVE_IP};" \
+              -e NOTIFY_TARGETS="${SLAVE_IP};" \
+              "$MASTER_IMAGE"
+            docker exec bind-master rndc reload || true
+
+      # 10) Despliegue remoto del esclavo y recarga de zona.
+      - name: Deploy to slave host via SSH (pull from ECR)
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.BIND_SLAVE_HOST }}
+          username: ${{ secrets.BIND_SSH_USER }}
+          key: ${{ secrets.BIND_SSH_KEY }}
+          port: ${{ secrets.BIND_SSH_PORT || '22' }}
+          script_stop: true
+          envs: SLAVE_IMAGE,DOMAIN,TSIG_KEY_NAME,TSIG_KEY_SECRET,MASTER_IP,SLAVE_IP
+          script: |
+            set -euo pipefail
+            docker pull "$SLAVE_IMAGE"
+            docker stop bind-slave || true
+            docker rm bind-slave || true
+            docker run -d \
+              --name bind-slave \
+              --restart unless-stopped \
+              -p 53:53/tcp -p 53:53/udp \
+              -v /etc/bind/slave/zones:/zones \
+              -v /etc/bind/slave/keys:/keys \
+              -e DNS_ROLE=slave \
+              -e DNS_DOMAIN=${DOMAIN} \
+              -e TSIG_KEY_NAME=${TSIG_KEY_NAME} \
+              -e TSIG_KEY_SECRET=${TSIG_KEY_SECRET} \
+              -e NS1_FQDN=ns1.${DOMAIN}. \
+              -e NS2_FQDN=ns2.${DOMAIN}. \
+              -e MASTER_IP=${MASTER_IP} \
+              "$SLAVE_IMAGE"
+            docker exec bind-slave rndc reload || true

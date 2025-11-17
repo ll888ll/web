@@ -1,0 +1,280 @@
+En este primer proyecto de curso se pondrán a prueba sus habilidades para la 
+programación de aplicaciones de red que soporten concurrencia, así como sus 
+competencias para diseñar e implementar protocolos de la capa de aplicación. 
+En este curso, un protocolo es simplemente el conjunto de reglas para que dos 
+programas se comuniquen. Dichas reglas incluyen los formatos de mensajes y 
+procedimientos que se generan que controlan el intercambio coordinado de 
+información y de servicios entre entidades que se conectan a una red de datos. 
+Se usará la API de Sockets Berkeley para crear un servidor que reciba peticiones de uno 
+o varios clientes. Tenga en cuenta que este es un proyecto con alta demanda de tiempo, 
+por lo que se recomienda empezar cuanto antes y consultar con el profesor las dudas o 
+dificultades que se presenten en el desarrollo del proyecto.
+Conceptos
+Sockets y Abstracción
+Los desarrolladores de aplicaciones utilizan abstracciones, que son herramientas que 
+ocultan los detalles complejos de un sistema, para simplificar su trabajo. Un socket es 
+precisamente una de estas abstracciones. Se puede entender como un punto de 
+conexión o un mecanismo que permite a las aplicaciones "adherirse" a la arquitectura 
+de red y comunicarse con otras aplicaciones a través de ella. De esta manera, una 
+aplicación escribe datos utilizando su socket y otra aplicación, en otra máquina, los lee 
+desde el suyo.
+Tipos de Sockets en el Proyecto
+Existen diferentes tipos de sockets, pero para este proyecto, se utilizarán dos de la API 
+de Sockets Berkeley:
+• Sockets de flujo (SOCK_STREAM): Proporcionan una conexión fiable, ordenada 
+y orientada a la conexión. Son ideales para aplicaciones que no pueden 
+permitirse la pérdida o el desorden de datos.
+• Sockets de datagrama (SOCK_DGRAM): Ofrecen un servicio más rápido y sin 
+conexión. No garantizan la fiabilidad ni el orden de los datos, lo que los hace 
+adecuados para aplicaciones donde la velocidad es más importante que la 
+precisión.
+Para este proyecto, debe decidir y justificar, basándose en los requerimientos de su
+aplicación y en el diseño de su protocolo, cuál de estos tipos de sockets utilizará y en 
+qué escenarios.
+Contexto
+Un equipo de ingenieros electrónicos ha construido y programado un robot que mide 
+variables atmosféricas, con la intención de facilitar la telemetría de diferentes variables 
+de un entorno. El equipo de desarrollo está interesado en entregar esas variables de 
+forma remota a diferentes usuarios. 
+Usted ha sido asignado para desarrollar e implementar el protocolo de comunicaciones 
+para que varios usuarios puedan obtener las mediciones en “tiempo real” de las 
+variables que mide el robot y, adicionalmente, enviar comandos al mismo (por ejemplo, 
+movimiento a la izquierda, a la derecha, adelante o atrás).
+Requerimientos
+1) El robot debe recibir peticiones de los usuarios que quieren recibir información 
+sobre las variables medidas. Mientras que la conexión esté abierta, el robot debe 
+enviar información cada 15 segundos a todos los usuarios conectados. En este 
+sentido, la aplicación en el robot debe mantener una lista actualizada, añadiendo 
+o removiendo usuarios según el estado de conexión. 
+2) El robot puede recibir comandos para que se mueva en 4 direcciones diferentes 
+(izquierda, derecha, frente, y atrás). En caso de que encuentre un obstáculo, el 
+robot debe responder que no puede moverse en esa dirección.
+3) Solamente un usuario “administrador” puede enviar comandos al robot. Este 
+usuario debe ser correctamente identificado en la aplicación del robot. Usted 
+debe garantizar esto incluso si el cliente cambia su dirección IP. Dicho usuario 
+también puede solicitar una lista de usuarios conectados en ese momento. 
+4) Usted debe diseñar, especificar e implementar del protocolo de la capa de 
+aplicación que permita la lectura de las variables medidas por el robot, el envío 
+de comandos y el control de usuarios. El protocolo debe ser codificado tipo texto. 
+Usted debe describir la especificación del servicio, el vocabulario de mensajes, 
+las reglas de procedimiento y todo lo que usted considere necesario para el buen 
+funcionamiento del protocolo. Para esto se recomienda considerar la estructura, 
+por ejemplo, de un RFC como el 793 (TCP), que, a grandes rasgos, incluye:
+a) Visión General del Protocolo: Se define el propósito del protocolo, su 
+modelo de funcionamiento (por ejemplo, cliente-servidor) y la capa de la 
+arquitectura en la que opera.
+b) Especificación del Servicio: Se describen las primitivas del servicio, que 
+son las operaciones que un usuario del protocolo puede realizar (por 
+ejemplo, GET, MOVE, LIST).
+c) Formato de Mensajes (Encabezado): Se desglosa la estructura del 
+encabezado del protocolo. En este punto, se describen los campos del 
+encabezado, su tamaño, su significado y los valores posibles (por 
+ejemplo, parámetros solicitados, longitud del movimiento, entre otros).
+d) Reglas de Procedimiento (Flujo de Operación): Se detallan los 
+algoritmos y las máquinas de estado para el funcionamiento del 
+protocolo. 
+e) Ejemplos de Implementación: Se pueden incluir ejemplos de código o 
+diagramas de secuencia para ilustrar el funcionamiento del protocolo en 
+escenarios específicos.
+5) Su protocolo se debe integrar a la arquitectura de red TCP/IP a través de la API de 
+sockets y debe ser implementado en las estaciones cliente y servidor. Usted 
+decide qué tipo de protocolo de transporte es el adecuado para el protocolo de 
+aplicación que está implementando.
+6) Su protocolo debe soportar múltiples clientes simultáneos recibiendo 
+información. Para efectos de esta práctica, se permite el uso de hilos para 
+soportar la concurrencia del servidor.
+7) Su protocolo debe implementar control de excepciones. Debe establecer 
+procedimientos para el manejo de conexiones fallidas, mensajes con formato 
+incorrecto y demás situaciones que considere. 
+Detalles de la implementación
+• La aplicación de los clientes debe estar escrita en al menos 2 lenguajes 
+diferentes. Unos clientes pueden estar hechos, por ejemplo, en Python y otros en 
+C o Java. El cliente debe tener una interfaz gráfica (puede ser sencilla) que simule 
+la posición del robot en tiempo real y el espacio (con límites bien definidos) por el 
+que se mueve. Así, los clientes que no son “administradores”, pueden ver los 
+movimientos en tiempo real que realiza el robot una vez el administrador haya 
+enviado los comandos. El usuario administrador también puede visualizar la
+posición del robot y recibirá también los valores de las variables.
+• Usted debe simular la generación de al menos 4 variables atmosféricas en el 
+robot. Puede generar valores aleatorios que serán reportados a los usuarios. Los 
+usuarios, al conectarse, pueden especificar si desean recibir únicamente una 
+medida de una variable, en este caso, el servidor sólo debe reportarle esa variable 
+al usuario. En caso contrario debe reportar todas las medidas.
+• La aplicación del servidor sólo puede estar implementado en C. No se debe 
+utilizar una API diferente a la de Berkeley para construir los sockets.
+• Su servidor debe ejecutar una funcionalidad de “logging”, que muestre en 
+consola las peticiones entrantes y las respuestas enviadas por el servidor. Estas 
+peticiones deben almacenarse también en un archivo de logs.
+• Su servidor se debe ejecutar recibiendo los parámetros por consola “puerto” y 
+“archivoDeLogs”. El primero corresponde al puerto por el que recibe peticiones y 
+el segundo al archivo donde almacena las peticiones y respuesta. Las peticiones 
+y respuestas deben almacenar el identificador de cada cliente (ip y puerto origen 
+de la petición).
+• Se recomienda realizar el proceso de compilación del código del servidor 
+utilizando gcc y la generación de un archivo Makefile.
+Evaluación
+La calificación del proyecto dependerá de varios componentes. Cada uno de ellos será 
+evaluado de manera presencial, sustentando lo desarrollado de forma oral. En la 
+sustentación el estudiante debe ser capaz de explicar de forma clara, precisa y concisa 
+el funcionamiento de su código y las decisiones de diseño. También debe poder 
+responder preguntas sobre aspectos técnicos, teóricos y de implementación del 
+proyecto. Los aspectos por evaluar comprenden:
+1. Programación del Servidor (40%)
+• Implementación de la API de Sockets (5%): El servidor utiliza correctamente la 
+API de Sockets Berkeley para crear, enlazar y poner a la escucha un socket.
+• Manejo de Múltiples Clientes (10%): El servidor puede aceptar y gestionar 
+múltiples peticiones de clientes de forma concurrente, sin bloquearse
+• Lógica del Protocolo (25%): El servidor implementa de forma correcta el 
+protocolo diseñado, procesando los mensajes según las reglas establecidas.
+2. Programación de los Clientes (30%)
+• Conexión y Petición (15%): Los clientes se conectan correctamente al servidor 
+y construyen las peticiones según el formato del protocolo.
+• Manejo de Respuestas (15%): Los clientes procesan y muestran 
+adecuadamente las respuestas del servidor, incluyendo mensajes de éxito y de 
+error.
+3. Funcionamiento y Comunicación (20%)
+• Robustez del Protocolo (10%): El sistema completo (servidor y clientes) 
+funciona de manera estable ante diferentes escenarios (ej. múltiples clientes, 
+peticiones inválidas, desconexiones).
+• Coordinación de Mensajes (10%): El intercambio de mensajes entre las 
+entidades es coordinado y cumple con las reglas de procedimiento del protocolo.
+4. Documentación e Informe (10%)
+• Especificación del Protocolo (10%): Se describe de forma detallada la 
+especificación del protocolo, incluyendo el formato de los mensajes y las reglas 
+de procedimiento
+
+1. 
+Introducción 
+El objetivo de este proyecto es desarrollar las competencias de disen o e 
+implementacio n de servicios y aplicaciones en una red de datos. Por esto, se busca 
+que el estudiante desarrolle una pa gina web sencilla a trave s de la 
+implementacio n de un CMS y proceda a desplegar dicha aplicacio n en una 
+infraestructura de red.  
+2. 
+Objetivo 
+Desplegar una aplicacio n web sobre una infraestructura en nube, con el fin de 
+desarrollar habilidades relacionadas con el disen o e instalacio n de servicios en 
+entornos de TI (tecnologí as de informacio n) 
+3. 
+Descripción de la Problemática 
+Se requiere el despliegue de dos sitios web utilizando servicios de 
+computación en nube. todo esto para contar una infraestructura de TI robusta 
+y escalable que garantice la alta disponibilidad del sitio web, el cual debe 
+soportar mu ltiples usuarios concurrentes. Ambos sitios web responden recursos 
+distintos, uno tiene informacio n general y otro permite gestionar una base de 
+datos de usuarios (Crear, actualizar, borrar, listar). 
+4. 
+Requerimientos 
+Para efectos de la problema tica descrita se requiere que usted realice el disen o 
+e implementacio n de la solucio n descrita en el literal anterior en una nube virtual 
+privada (VPC). Usted utilizara  los recursos de Amazon Web Services (AWS) a su 
+disposicio n en la cuenta estudiantil. Se recomienda consultar el concepto de 
+infraestructura como servicio (IasS) y usarlo en su implementacio n. 
+• En esta usted debe definir una red pu blica y una privada. En la pu blica 
+debe incluir todos los componentes que dara n “la cara” a internet (NAT, 
+balanceador de carga si lo considera). En la privada, debe ubicar los 
+componentes propios de la lo gica de la aplicacio n web. Cada una de las 
+instancias debe ejecutarse en una ma quina virtual separada. 
+• Se recomienda usar un sistema operativo basado en Linux (e.g. Ubuntu 22 
+o ma s reciente) para todas las instancias 
+• Se recomienda utilizar el paquete apache o NGINX para el servidor web 
+1 
+• Si decide utilizar Apache para el servidor web, debe utilizar NGINX para 
+el proxy reverso. Si decide utilizar NGINX para el servidor web, debe 
+utilizar Apache para el proxy reverso. 
+• El motor de base de datos puede ser cualquiera de su preferencia 
+• Se debe configurar un servidor DNS empleando BIND para gestionar los 
+recursos de registros (RR) del nombre de dominio que escoja para su 
+empresa (e.g., miempresa.com). Se deben configurar los registros vistos 
+en clase 
+• Usted define el recurso que debe responder cuando se solicita una url 
+particular. Recuerde que son 2 pa ginas web. 
+• A nivel de DNS se deben tener configurado un servidor primario y uno 
+secundario para la resolucio n de nombres.  
+• El trabajo puede ser en equipos 
+• El estudiante puede definir cualquier aspecto que considere necesario y 
+que no se incluya en este documento. 
+5. 
+Entregables y calificación 
+Se debe desarrollar un documento final donde se describa claramente todos 
+los aspectos relacionados con el disen o, implementacio n y despliegue de la 
+solucio n. Este documento debe incluir las siguientes secciones: 
+• Disen o de la arquitectura: descripcio n de cada uno de los componentes, 
+relaciones y conexiones entre ellos, junto con el direccionamiento 
+utilizado. (20%) 
+• Implementacio n de la separacio n de redes (virtual y pu blica) y de la 
+virtualizacio n de todos los componentes (IaaS). (20%) 
+• Implementacio n de los servidores web y del proxy reverso. (20%) 
+• Implementacio n del servicio de DNS. (20%) 
+• Funcionamiento general: ambos sitios deben funcionar cuando se 
+consultan desde internet y deben soportar usuarios concurrentes. 
+Es importante mencionar que deben quedar bien documentados todos los 
+procesos de disen o, implementacio n y configuracio n.
+
+1. 
+Introducción 
+El objetivo de este proyecto es desarrollar las competencias de disen o e 
+implementacio n de servicios y aplicaciones en una red de datos. Por esto, se busca 
+que el estudiante desarrolle una pa gina web sencilla a trave s de la 
+implementacio n de un CMS y proceda a desplegar dicha aplicacio n en una 
+infraestructura de red.  
+2. 
+Objetivo 
+Desplegar una aplicacio n web sobre una infraestructura en nube, con el fin de 
+desarrollar habilidades relacionadas con el disen o e instalacio n de servicios en 
+entornos de TI (tecnologí as de informacio n) 
+3. 
+Descripción de la Problemática 
+Se requiere el despliegue de dos sitios web utilizando servicios de 
+computación en nube. todo esto para contar una infraestructura de TI robusta 
+y escalable que garantice la alta disponibilidad del sitio web, el cual debe 
+soportar mu ltiples usuarios concurrentes. Ambos sitios web responden recursos 
+distintos, uno tiene informacio n general y otro permite gestionar una base de 
+datos de usuarios (Crear, actualizar, borrar, listar). 
+4. 
+Requerimientos 
+Para efectos de la problema tica descrita se requiere que usted realice el disen o 
+e implementacio n de la solucio n descrita en el literal anterior en una nube virtual 
+privada (VPC). Usted utilizara  los recursos de Amazon Web Services (AWS) a su 
+disposicio n en la cuenta estudiantil. Se recomienda consultar el concepto de 
+infraestructura como servicio (IasS) y usarlo en su implementacio n. 
+• En esta usted debe definir una red pu blica y una privada. En la pu blica 
+debe incluir todos los componentes que dara n “la cara” a internet (NAT, 
+balanceador de carga si lo considera). En la privada, debe ubicar los 
+componentes propios de la lo gica de la aplicacio n web. Cada una de las 
+instancias debe ejecutarse en una ma quina virtual separada. 
+• Se recomienda usar un sistema operativo basado en Linux (e.g. Ubuntu 22 
+o ma s reciente) para todas las instancias 
+• Se recomienda utilizar el paquete apache o NGINX para el servidor web 
+1 
+• Si decide utilizar Apache para el servidor web, debe utilizar NGINX para 
+el proxy reverso. Si decide utilizar NGINX para el servidor web, debe 
+utilizar Apache para el proxy reverso. 
+• El motor de base de datos puede ser cualquiera de su preferencia 
+• Se debe configurar un servidor DNS empleando BIND para gestionar los 
+recursos de registros (RR) del nombre de dominio que escoja para su 
+empresa (e.g., miempresa.com). Se deben configurar los registros vistos 
+en clase 
+• Usted define el recurso que debe responder cuando se solicita una url 
+particular. Recuerde que son 2 pa ginas web. 
+• A nivel de DNS se deben tener configurado un servidor primario y uno 
+secundario para la resolucio n de nombres.  
+• El trabajo puede ser en equipos 
+• El estudiante puede definir cualquier aspecto que considere necesario y 
+que no se incluya en este documento. 
+5. 
+Entregables y calificación 
+Se debe desarrollar un documento final donde se describa claramente todos 
+los aspectos relacionados con el disen o, implementacio n y despliegue de la 
+solucio n. Este documento debe incluir las siguientes secciones: 
+• Disen o de la arquitectura: descripcio n de cada uno de los componentes, 
+relaciones y conexiones entre ellos, junto con el direccionamiento 
+utilizado. (20%) 
+• Implementacio n de la separacio n de redes (virtual y pu blica) y de la 
+virtualizacio n de todos los componentes (IaaS). (20%) 
+• Implementacio n de los servidores web y del proxy reverso. (20%) 
+• Implementacio n del servicio de DNS. (20%) 
+• Funcionamiento general: ambos sitios deben funcionar cuando se 
+consultan desde internet y deben soportar usuarios concurrentes. 
+Es importante mencionar que deben quedar bien documentados todos los 
+procesos de disen o, implementacio n y configuracio n.

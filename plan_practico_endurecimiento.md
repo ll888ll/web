@@ -292,3 +292,15 @@ Para integraciones modernas se puede llamar a `curl -X POST https://hooks.slack.
 3. Mantener revisiones diarias de logs (`journalctl -u apache2`, `/var/log/seguridad_web.log`).
 4. Probar trimestralmente con herramientas como `openvas`, `sslyze` y `k6` en entornos controlados.
 5. Documentar cada cambio (plantillas IaC o Ansible) para facilitar reproducibilidad.
+
+## Endurecimiento DNS autoritativo
+
+| Control | Acción | Evidencia |
+| --- | --- | --- |
+| TSIG | Llaves generadas con `scripts/dns/setup_bind.sh` (HMAC-SHA256), almacenadas fuera del repo y rotadas trimestralmente. | `infra/dns/bind-master/keys/tsig.env` cifrado. |
+| Restricción de AXFR | `allow-transfer { key "<tsig>"; <ip-esclavo>; };` en `named.conf.master.tpl`. | `infra/dns/templates/named.conf.master.tpl`. |
+| Logging | Habilitar canales `queries`, `transfer` y enviar a CloudWatch via agentes o rsyslog. Rotar con logrotate/CloudWatch retention. | Config en `infra/dns/README.md`. |
+| Validación | Pipeline `.github/workflows/bind-deploy.yml` ejecuta `named-checkconf`, `named-checkzone` y `rndc reload`. | Execution logs en GitHub Actions. |
+| Failover | Guía `docs/dns_operacion.md` describe failover maestro/esclavo, pruebas `dig` y lineamientos de glue records. | Documentación actualizada en docs/. |
+
+Integrar estos controles dentro del plan de endurecimiento garantiza que el perímetro DNS cumpla los indicativos y no se convierta en un punto débil frente a suplantaciones o exfiltración de zonas.
