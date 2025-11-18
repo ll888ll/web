@@ -64,7 +64,7 @@ class HomeView(LandingNavigationMixin, TemplateView):
             'primary_cta': {'label': _('Ir a la tienda Buddy'), 'url': reverse('shop:catalogue')},
             'secondary_cta': {'label': _('Conocer a Buddy'), 'url': reverse('landing:buddy')},
             'image': {
-                'src': 'img/croodycontextoysinfondo.png',
+                'src': 'img/completo.png',
                 'alt': _('Logo de Croody representando conexión y tecnología humanizada'),
             },
         }
