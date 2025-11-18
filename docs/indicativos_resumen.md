@@ -19,6 +19,7 @@
 
 ## Pipelines CI/CD
 - Workflows añadidos: `dns-lint`, `bind-deploy`, `terraform-ci`, `full-stack-validate`.
+- `scripts/run_local_ci.sh` simula esos workflows en local (Docker + Terraform) y genera `extras/local_ci_report.md`.
 - `scripts/validate_full_stack.sh` levanta BIND, ejecuta `dig`, `curl`, `pytest` y recopila evidencias en `extras/evidencias_finales.md`.
 - Secrets requeridos documentados (IPs privadas, TSIG, AWS/ECR, SSH, Cloudflare).
 

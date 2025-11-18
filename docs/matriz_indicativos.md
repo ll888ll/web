@@ -28,25 +28,25 @@
 
 ## DNS BIND (Autoritativo primario/secundario)
 
-| Requisito                                      | Estado | Gap detectado                                  | Notas                                                              |
-| ---------------------------------------------- | ------ | ---------------------------------------------- | ------------------------------------------------------------------ |
-| Servidor BIND primario configurado             | ❌     | No existe configuración ni carpeta específica. | Crear `infra/dns/bind-master/` y documentar.                       |
-| Servidor BIND secundario (AXFR/TSIG)           | ❌     | Sin planes de failover ni TSIG definidos.      | Necesario cumplir exigencia de servidor secundario del indicativo. |
-| Procedimientos de operación DNS / validaciones | ❌     | Falta runbook y scripts `dig/named-check*`.    | Añadir guía en `docs/` y automatizar pruebas.                      |
+| Requisito                                      | Estado | Gap detectado | Notas                                                                                                                                              |
+| ---------------------------------------------- | ------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Servidor BIND primario configurado             | ✅     |               | Carpeta `infra/dns/bind-master/` + `setup_bind.sh` generan zona `croody.app` y llaves TSIG (`TSIG_KEY_NAME=croody-app-xfer`).                      |
+| Servidor BIND secundario (AXFR/TSIG)           | ✅     |               | `infra/dns/bind-slave/` replica vía AXFR (IPs 172.31.42.77/172.31.71.231); workflows `bind-deploy.yml` y secretos documentados en `docs/secrets_map.md`. |
+| Procedimientos de operación DNS / validaciones | ✅     |               | Runbook `docs/dns_operacion.md` + `scripts/run_local_ci.sh` / `scripts/validate_full_stack.sh` cubren `named-check*`, `dig`, `docker compose`.      |
 
 ## Infraestructura en VPC (red pública/privada)
 
-| Requisito                                            | Estado | Gap detectado                                                                       | Notas                                                    |
-| ---------------------------------------------------- | ------ | ----------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Definición de topología (pública/privada, roles)     | 🟡     | Diagrama textual en `arquitectura.md` pero requiere mayor detalle (CIDR, SGs, NAT). | Añadir diagrama actualizado y tabla de direccionamiento. |
-| Automatización IaC (Terraform/CloudFormation)        | ❌     | No hay código Terraform para VPC/ALB/EC2.                                           | Crear módulo `infra/terraform` y valídalo en CI.         |
-| Evidencias de despliegue segmentado (logs/diagramas) | ❌     | Falta anexar diagramas y comprobantes de VPC funcionando.                           | Documentar en `informe_tecnico_entrega3.md`.             |
+| Requisito                                            | Estado | Gap detectado                             | Notas                                                                                                                      |
+| ---------------------------------------------------- | ------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Definición de topología (pública/privada, roles)     | ✅     |                                           | `arquitectura.md` + `docs/indicativos_checklist.txt` documentan CIDR, SG `launch-bind` y dependencia con DNS/Bastion.      |
+| Automatización IaC (Terraform/CloudFormation)        | ✅     |                                           | Módulos en `infra/terraform/` + workflow `terraform-ci.yml`; ejecución local con `scripts/run_local_ci.sh` (sección Terraform). |
+| Evidencias de despliegue segmentado (logs/diagramas) | 🟡     | Falta anexar capturas de AWS console.     | `extras/local_ci_report.md` y `extras/evidencias_finales.md` guardan salidas; agregar screenshots antes de la entrega.     |
 
 ## Documentación técnica
 
-| Requisito                              | Estado | Gap detectado                                                              | Notas                                                                                          |
-| -------------------------------------- | ------ | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Manual técnico / operación             | 🟡     | Debe incluir procedimientos DNS/VPC pendientes.                            | `manual_tecnico.md:1-37`.                                                                      |
-| Arquitectura detallada y decisiones    | 🟡     | Falta diagrama actualizado con DNS/VPC.                                    | `arquitectura.md:1-17`.                                                                        |
-| Guías de validación / evidencias / RTM | 🟡     | Necesario anexar resultados de pruebas finales (AWS/DNS).                  | `informe_tecnico_entrega3.md`, `informe_entrega2_telemetria.md`, `docs/matriz_indicativos.md`. |
-| Cumplimiento indicativos documentado   | 🟡     | Esta matriz debe mantenerse actualizada con evidencia (capturas, commits). | Referenciar cambios futuros y commits relevantes.                                              |
+| Requisito                              | Estado | Gap detectado                         | Notas                                                                                                                      |
+| -------------------------------------- | ------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Manual técnico / operación             | ✅     |                                       | `manual_tecnico.md` + `docs/dns_operacion.md` describen despliegues, failover y mantenimiento.                             |
+| Arquitectura detallada y decisiones    | ✅     |                                       | `arquitectura.md` incluye topología VPC, rutas y dependencias; se referencia desde `docs/indicativos_checklist.txt`.       |
+| Guías de validación / evidencias / RTM | 🟡     | Añadir capturas finales (screenshots). | `scripts/run_local_ci.sh`, `scripts/validate_full_stack.sh` generan `extras/local_ci_report.md` y `extras/evidencias_finales.md`. |
+| Cumplimiento indicativos documentado   | ✅     |                                       | `docs/matriz_indicativos.md` + `docs/indicativos_checklist.txt` concentran estados y tareas pendientes.                    |

@@ -1,0 +1,69 @@
+ENTREGA 2  
+Despliegue de Servicios 
+1. 
+Introducción 
+El objetivo de este proyecto es desarrollar las competencias de disen o e 
+implementacio n de servicios y aplicaciones en una red de datos. Por esto, se busca 
+que el estudiante desarrolle una pa gina web sencilla a trave s de la 
+implementacio n de un CMS y proceda a desplegar dicha aplicacio n en una 
+infraestructura de red.  
+2. 
+Objetivo 
+Desplegar una aplicacio n web sobre una infraestructura en nube, con el fin de 
+desarrollar habilidades relacionadas con el disen o e instalacio n de servicios en 
+entornos de TI (tecnologí as de informacio n) 
+3. 
+Descripción de la Problemática 
+Se requiere el despliegue de dos sitios web utilizando servicios de 
+computación en nube. todo esto para contar una infraestructura de TI robusta 
+y escalable que garantice la alta disponibilidad del sitio web, el cual debe 
+soportar mu ltiples usuarios concurrentes. Ambos sitios web responden recursos 
+distintos, uno tiene informacio n general y otro permite gestionar una base de 
+datos de usuarios (Crear, actualizar, borrar, listar). 
+4. 
+Requerimientos 
+Para efectos de la problema tica descrita se requiere que usted realice el disen o 
+e implementacio n de la solucio n descrita en el literal anterior en una nube virtual 
+privada (VPC). Usted utilizara  los recursos de Amazon Web Services (AWS) a su 
+disposicio n en la cuenta estudiantil. Se recomienda consultar el concepto de 
+infraestructura como servicio (IasS) y usarlo en su implementacio n. 
+• En esta usted debe definir una red pu blica y una privada. En la pu blica 
+debe incluir todos los componentes que dara n “la cara” a internet (NAT, 
+balanceador de carga si lo considera). En la privada, debe ubicar los 
+componentes propios de la lo gica de la aplicacio n web. Cada una de las 
+instancias debe ejecutarse en una ma quina virtual separada. 
+• Se recomienda usar un sistema operativo basado en Linux (e.g. Ubuntu 22 
+o ma s reciente) para todas las instancias 
+• Se recomienda utilizar el paquete apache o NGINX para el servidor web 
+1 
+• Si decide utilizar Apache para el servidor web, debe utilizar NGINX para 
+el proxy reverso. Si decide utilizar NGINX para el servidor web, debe 
+utilizar Apache para el proxy reverso. 
+• El motor de base de datos puede ser cualquiera de su preferencia 
+• Se debe configurar un servidor DNS empleando BIND para gestionar los 
+recursos de registros (RR) del nombre de dominio que escoja para su 
+empresa (e.g., miempresa.com). Se deben configurar los registros vistos 
+en clase 
+• Usted define el recurso que debe responder cuando se solicita una url 
+particular. Recuerde que son 2 pa ginas web. 
+• A nivel de DNS se deben tener configurado un servidor primario y uno 
+secundario para la resolucio n de nombres.  
+• El trabajo puede ser en equipos 
+• El estudiante puede definir cualquier aspecto que considere necesario y 
+que no se incluya en este documento. 
+5. 
+Entregables y calificación 
+Se debe desarrollar un documento final donde se describa claramente todos 
+los aspectos relacionados con el disen o, implementacio n y despliegue de la 
+solucio n. Este documento debe incluir las siguientes secciones: 
+• Disen o de la arquitectura: descripcio n de cada uno de los componentes, 
+relaciones y conexiones entre ellos, junto con el direccionamiento 
+utilizado. (20%) 
+• Implementacio n de la separacio n de redes (virtual y pu blica) y de la 
+virtualizacio n de todos los componentes (IaaS). (20%) 
+• Implementacio n de los servidores web y del proxy reverso. (20%) 
+• Implementacio n del servicio de DNS. (20%) 
+• Funcionamiento general: ambos sitios deben funcionar cuando se 
+consultan desde internet y deben soportar usuarios concurrentes. 
+Es importante mencionar que deben quedar bien documentados todos los 
+procesos de disen o, implementacio n y configuracio n.

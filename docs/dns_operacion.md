@@ -13,7 +13,19 @@
      -e TSIG_KEY_NAME=... -e TSIG_KEY_SECRET=... \
      bind-master-test named-checkzone <dominio> /zones/<dominio>.db
    ```
-4. Commit + push → workflow `bind-deploy` construye imágenes, publica cambios y ejecuta `rndc reload` en maestro/esclavo.
+4. Para repetir lo mismo que en GitHub Actions sin depender de la nube, ejecuta `scripts/run_local_ci.sh`. Este script compila las imágenes, corre `named-checkconf`, `named-checkzone`, levanta `docker compose` y genera un reporte en `extras/local_ci_report.md`.
+5. Commit + push → workflow `bind-deploy` construye imágenes, publica cambios y ejecuta `rndc reload` en maestro/esclavo.
+
+## Variables críticas / secrets
+
+| Dato                            | Valor actual | Cómo refrescar                                                                                              |
+| ------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------- |
+| `BIND_DOMAIN`                   | `croody.app` | —                                                                                                           |
+| `BIND_MASTER_PRIVATE_IP` (`ns1`) | `172.31.42.77` | `aws ec2 describe-instances --instance-ids i-0571eebcb74dfcdb7 --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text --region us-east-2` |
+| `BIND_SLAVE_PRIVATE_IP` (`ns2`)  | `172.31.71.231` | `aws ec2 describe-instances --instance-ids i-074507051ca06113e --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text --region us-east-2` |
+| `BIND_TSIG_KEY_NAME/SECRET`     | `croody-app-xfer` / `MIIaa4Xqmccq+sbYfk0O7bTR9BJd1k4/Gsi/rnCEmIk=` | `scripts/dns/setup_bind.sh` genera llaves nuevas si se requiere rotación. |
+
+El resto de secretos (ECR, SSH, Cloudflare) están mapeados en `docs/secrets_map.md`.
 
 ## Failover maestro/esclavo
 
@@ -41,7 +53,7 @@
 ## Checklist post-cambio
 
 1. Serial incrementado y commit documentado.  
-2. Validación `named-checkzone` y `named-checkconf` OK.  
+2. Validación `named-checkzone` y `named-checkconf` OK (`scripts/run_local_ci.sh`).  
 3. Workflow `bind-deploy` finaliza sin errores.  
 4. `dig SOA`, `dig A`, `dig AXFR` apuntando a ambas IPs responde con nuevos datos.  
 5. Dashboard de monitoreo (CloudWatch/ELK) sin eventos críticos posteriores al despliegue.

@@ -1,0 +1,294 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2747 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm ( ) Tj
+1 0 0 1 54 724 Tm (ENTREGA FINAL - TELEMATICACHE) Tj
+1 0 0 1 54 710 Tm (=============================) Tj
+1 0 0 1 54 696 Tm ( ) Tj
+1 0 0 1 54 682 Tm ( ) Tj
+1 0 0 1 54 668 Tm (- *Autor:** Jose Alejandro Jimenez Vasquez) Tj
+1 0 0 1 54 654 Tm (- *Repositorio:** `ll333ll/telematicache` \(https://github.com/ll333ll/telematicache\)) Tj
+1 0 0 1 54 640 Tm (- *Fecha:** 11/11/2025) Tj
+1 0 0 1 54 626 Tm ( ) Tj
+1 0 0 1 54 612 Tm (- --) Tj
+1 0 0 1 54 598 Tm ( ) Tj
+1 0 0 1 54 584 Tm ( ) Tj
+1 0 0 1 54 570 Tm (1. Alcance General) Tj
+1 0 0 1 54 556 Tm (------------------) Tj
+1 0 0 1 54 542 Tm ( ) Tj
+1 0 0 1 54 528 Tm ( ) Tj
+1 0 0 1 54 514 Tm (- Plataforma integral para telemetria y control con tres capas principales:) Tj
+1 0 0 1 54 500 Tm (  1. **Sensores & Gateway \(FastAPI\)**: recibe ingestas y comandos ) Tj
+1 0 0 1 54 486 Tm (\(`proyecto_integrado/services/telemetry-gateway`\).) Tj
+1 0 0 1 54 472 Tm (  2. **Portal web Croody \(Django\)**: UI, reportes y modulos CRUD ) Tj
+1 0 0 1 54 458 Tm (\(`proyecto_integrado/Croody`\).) Tj
+1 0 0 1 54 444 Tm (  3. **DNS autoritativo BIND9**: despliegue maestro/esclavo en AWS \(`infra/dns/`\).) Tj
+1 0 0 1 54 430 Tm (- Infraestructura descrita en `arquitectura.md` y `manual_tecnico.md`: VPC `10.50.0.0/16` ) Tj
+1 0 0 1 54 416 Tm (con subred publica \(NAT/Bastion\) y privada \(servicios\).) Tj
+1 0 0 1 54 402 Tm (- `ns1` \(maestro\) -> instancia _croody v1_ \(`i-0571eebcb74dfcdb7`, IP privada ) Tj
+1 0 0 1 54 388 Tm (`172.31.42.77`\).) Tj
+1 0 0 1 54 374 Tm (- `ns2` \(esclavo\) -> instancia _bind-slave_ \(`i-074507051ca06113e`, IP privada ) Tj
+1 0 0 1 54 360 Tm (`172.31.71.231`\).) Tj
+1 0 0 1 54 346 Tm (- Automatizacion por scripts Bash y GitHub Actions:) Tj
+1 0 0 1 54 332 Tm (  - `dns-lint.yml`, `bind-deploy.yml`, `terraform-ci.yml`, `full-stack-validate.yml`.) Tj
+1 0 0 1 54 318 Tm (  - Evidencias en `extras/evidencias_finales.md` y `extras/local_ci_report.md`.) Tj
+1 0 0 1 54 304 Tm ( ) Tj
+1 0 0 1 54 290 Tm (- --) Tj
+1 0 0 1 54 276 Tm ( ) Tj
+1 0 0 1 54 262 Tm ( ) Tj
+1 0 0 1 54 248 Tm (2. Trazabilidad de Indicativos) Tj
+1 0 0 1 54 234 Tm (------------------------------) Tj
+1 0 0 1 54 220 Tm ( ) Tj
+1 0 0 1 54 206 Tm ( ) Tj
+1 0 0 1 54 192 Tm ( ) Tj
+1 0 0 1 54 178 Tm (2.1 Servidor & Protocolo \(Requisito 1 y 4 del enunciado\)) Tj
+1 0 0 1 54 164 Tm (--------------------------------------------------------) Tj
+1 0 0 1 54 150 Tm ( ) Tj
+1 0 0 1 54 136 Tm ( ) Tj
+1 0 0 1 54 122 Tm (- Implementado en `proyecto_integrado/services/telemetry-gateway/app/main.py`.) Tj
+1 0 0 1 54 108 Tm (- Endpoints:) Tj
+1 0 0 1 54 94 Tm (  - `POST /api/telemetry/ingest`: registra mediciones cada 15 s transmitidas a todos los ) Tj
+1 0 0 1 54 80 Tm (clientes conectados.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2986 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm (  - `GET /api/telemetry/live|last|query`: entrega datos en tiempo real/historicos.) Tj
+1 0 0 1 54 724 Tm (  - `POST /api/telemetry/commands`: admite `LEFT/RIGHT/FORWARD/BACKWARD`, valida ) Tj
+1 0 0 1 54 710 Tm (colisiones.) Tj
+1 0 0 1 54 696 Tm (  - `GET /api/telemetry/clients`: lista clientes activos.) Tj
+1 0 0 1 54 682 Tm (- Concurrencia con asyncio \(queues + background tasks\). Manejo de multiples clientes y ) Tj
+1 0 0 1 54 668 Tm (desconexiones.) Tj
+1 0 0 1 54 654 Tm (- Usuario administrador autenticado via `ADMIN_API_KEY`; comandos solo se aceptan desde el) Tj
+1 0 0 1 54 640 Tm ( incluso si cambia la IP.) Tj
+1 0 0 1 54 626 Tm (- Protocolo tipo texto/JSON documentado en `manual_tecnico.md` e ) Tj
+1 0 0 1 54 612 Tm (`informe_tecnico_entrega3.md` \(formato de mensajes, codigos, secuencia tipo RFC\).) Tj
+1 0 0 1 54 598 Tm ( ) Tj
+1 0 0 1 54 584 Tm ( ) Tj
+1 0 0 1 54 570 Tm (2.2 Clientes \(Indicativo 2\)) Tj
+1 0 0 1 54 556 Tm (---------------------------) Tj
+1 0 0 1 54 542 Tm ( ) Tj
+1 0 0 1 54 528 Tm ( ) Tj
+1 0 0 1 54 514 Tm (- Clientes Python \(`clients/python/`\) usan sockets Berkeley, construyen peticiones segun ) Tj
+1 0 0 1 54 500 Tm (el protocolo y muestran respuestas de exito/error.) Tj
+1 0 0 1 54 486 Tm (- UI Django integra telemetria en `Croody/templates/landing/monitor.html`, consumiendo ) Tj
+1 0 0 1 54 472 Tm (`/api/telemetry/live`.) Tj
+1 0 0 1 54 458 Tm ( ) Tj
+1 0 0 1 54 444 Tm ( ) Tj
+1 0 0 1 54 430 Tm (2.3 Funcionamiento & Comunicacion \(Indicativo 3\)) Tj
+1 0 0 1 54 416 Tm (------------------------------------------------) Tj
+1 0 0 1 54 402 Tm ( ) Tj
+1 0 0 1 54 388 Tm ( ) Tj
+1 0 0 1 54 374 Tm (- **Robustez:** `scripts/validate_full_stack.sh` levanta la pila con Docker Compose, ) Tj
+1 0 0 1 54 360 Tm (ejecuta `dig`, `curl`, `pytest tests/e2e/test_gateway_smoke.py` y recopila logs.) Tj
+1 0 0 1 54 346 Tm (- **Coordinacion:** `scripts/run_local_ci.sh` replica los workflows de GitHub \(lint BIND, ) Tj
+1 0 0 1 54 332 Tm (`named-check*`, `dig`, Terraform fmt/validate/plan\) para validar cada paso antes del push.) Tj
+1 0 0 1 54 318 Tm ( ) Tj
+1 0 0 1 54 304 Tm ( ) Tj
+1 0 0 1 54 290 Tm (2.4 Documentacion \(Indicativo 4\)) Tj
+1 0 0 1 54 276 Tm (--------------------------------) Tj
+1 0 0 1 54 262 Tm ( ) Tj
+1 0 0 1 54 248 Tm ( ) Tj
+1 0 0 1 54 234 Tm (- Manuales:) Tj
+1 0 0 1 54 220 Tm (  - `manual_tecnico.md` \(procedimientos de despliegue y operacion\).) Tj
+1 0 0 1 54 206 Tm (  - `arquitectura.md` \(topologia VPC, decisiones clave\).) Tj
+1 0 0 1 54 192 Tm (  - `docs/dns_operacion.md` \(runbook de BIND + failover\).) Tj
+1 0 0 1 54 178 Tm (  - `plan_practico_endurecimiento.md`, `docs/indicativos_resumen.md`, ) Tj
+1 0 0 1 54 164 Tm (`docs/indicativos_checklist.txt`.) Tj
+1 0 0 1 54 150 Tm (- Matriz de cumplimiento: `docs/matriz_indicativos.md`.) Tj
+1 0 0 1 54 136 Tm ( ) Tj
+1 0 0 1 54 122 Tm (- --) Tj
+1 0 0 1 54 108 Tm ( ) Tj
+1 0 0 1 54 94 Tm ( ) Tj
+1 0 0 1 54 80 Tm (3. DNS Autoritativo y VPC en AWS) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2678 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm (--------------------------------) Tj
+1 0 0 1 54 724 Tm ( ) Tj
+1 0 0 1 54 710 Tm ( ) Tj
+1 0 0 1 54 696 Tm (1. **Generacion de llaves y plantillas:**) Tj
+1 0 0 1 54 682 Tm (   ```bash) Tj
+1 0 0 1 54 668 Tm (   scripts/dns/setup_bind.sh \\) Tj
+1 0 0 1 54 654 Tm (     --domain croody.app \\) Tj
+1 0 0 1 54 640 Tm (     --master-ip 172.31.42.77 \\) Tj
+1 0 0 1 54 626 Tm (     --slave-ip 172.31.71.231) Tj
+1 0 0 1 54 612 Tm (   ```) Tj
+1 0 0 1 54 598 Tm (2. **Zona activa:** `infra/dns/bind-master/zones/croody.app.db` \(serial `2025111800`, ) Tj
+1 0 0 1 54 584 Tm (registros `ns1/ns2` actualizados\).) Tj
+1 0 0 1 54 570 Tm (3. **Variables de entorno:** `infra/dns/bind-master/env.example` y `bind-) Tj
+1 0 0 1 54 556 Tm (slave/env.example` sincronizadas \(ALLOW_TRANSFER, NOTIFY_TARGETS y MASTER_IP correctos\).) Tj
+1 0 0 1 54 542 Tm (4. **Runbook:** `docs/dns_operacion.md` detalla variables criticas, comandos `dig`, planes) Tj
+1 0 0 1 54 528 Tm ( de failover y checklist post-cambio.) Tj
+1 0 0 1 54 514 Tm (5. **Secrets y AWS:**) Tj
+1 0 0 1 54 500 Tm (   - Tabla completa en `docs/secrets_map.md` \(IPs privadas, TSIG, AWS/ECR, SSH, ) Tj
+1 0 0 1 54 486 Tm (Cloudflare\).) Tj
+1 0 0 1 54 472 Tm (   - Terraform \(`infra/terraform/`\) define VPC, subredes, rutas, NAT y bastion. Validado ) Tj
+1 0 0 1 54 458 Tm (en `terraform-ci.yml`.) Tj
+1 0 0 1 54 444 Tm ( ) Tj
+1 0 0 1 54 430 Tm (- --) Tj
+1 0 0 1 54 416 Tm ( ) Tj
+1 0 0 1 54 402 Tm ( ) Tj
+1 0 0 1 54 388 Tm (4. Procedimiento de Despliegue Rapido) Tj
+1 0 0 1 54 374 Tm (-------------------------------------) Tj
+1 0 0 1 54 360 Tm ( ) Tj
+1 0 0 1 54 346 Tm ( ) Tj
+1 0 0 1 54 332 Tm (1. **Preparar entorno local**) Tj
+1 0 0 1 54 318 Tm (   ```bash) Tj
+1 0 0 1 54 304 Tm (   python3 -m venv .venv) Tj
+1 0 0 1 54 290 Tm (   source .venv/bin/activate) Tj
+1 0 0 1 54 276 Tm (   pip install -r proyecto_integrado/requirements.txt) Tj
+1 0 0 1 54 262 Tm (   ```) Tj
+1 0 0 1 54 248 Tm (2. **Servicios de aplicacion**) Tj
+1 0 0 1 54 234 Tm (   ```bash) Tj
+1 0 0 1 54 220 Tm (   cd proyecto_integrado) Tj
+1 0 0 1 54 206 Tm (   cp .env.example .env   # ajustar SECRET_KEY, TG_DB_URL, ADMIN_API_KEY) Tj
+1 0 0 1 54 192 Tm (   docker compose up --build) Tj
+1 0 0 1 54 178 Tm (   ```) Tj
+1 0 0 1 54 164 Tm (   - Verificar `http://localhost:8080`, `/api/telemetry/healthz`, `/api/telemetry/live`.) Tj
+1 0 0 1 54 150 Tm (3. **DNS/BIND local**) Tj
+1 0 0 1 54 136 Tm (   ```bash) Tj
+1 0 0 1 54 122 Tm (   cd infra/dns) Tj
+1 0 0 1 54 108 Tm (   cp bind-master/env.example bind-master/.env) Tj
+1 0 0 1 54 94 Tm (   cp bind-slave/env.example bind-slave/.env) Tj
+1 0 0 1 54 80 Tm (   source bind-master/keys/tsig.env) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3350 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm (   docker compose up -d bind-master bind-slave) Tj
+1 0 0 1 54 724 Tm (   dig @127.0.0.1 croody.app SOA) Tj
+1 0 0 1 54 710 Tm (   dig @127.0.0.1 croody.app AXFR) Tj
+1 0 0 1 54 696 Tm (   ```) Tj
+1 0 0 1 54 682 Tm (4. **Validacion integral**) Tj
+1 0 0 1 54 668 Tm (   ```bash) Tj
+1 0 0 1 54 654 Tm (   scripts/run_local_ci.sh          # genera extras/local_ci_report.md) Tj
+1 0 0 1 54 640 Tm (   scripts/validate_full_stack.sh   # genera extras/evidencias_finales.md) Tj
+1 0 0 1 54 626 Tm (   ```) Tj
+1 0 0 1 54 612 Tm (5. **Produccion**) Tj
+1 0 0 1 54 598 Tm (   - Actualizar secrets en GitHub \(`BIND_*`, `AWS_*`, `BIND_*_ECR_REPO`, `BIND_SSH_*`, ) Tj
+1 0 0 1 54 584 Tm (`VALIDATION_BASE_URL`, `CF_*`\).) Tj
+1 0 0 1 54 570 Tm (   - `git push` y monitorear `dns-lint`, `bind-deploy`, `terraform-ci`, `full-stack-) Tj
+1 0 0 1 54 556 Tm (validate`.) Tj
+1 0 0 1 54 542 Tm ( ) Tj
+1 0 0 1 54 528 Tm (- --) Tj
+1 0 0 1 54 514 Tm ( ) Tj
+1 0 0 1 54 500 Tm ( ) Tj
+1 0 0 1 54 486 Tm (5. Evidencias Generadas) Tj
+1 0 0 1 54 472 Tm (-----------------------) Tj
+1 0 0 1 54 458 Tm ( ) Tj
+1 0 0 1 54 444 Tm ( ) Tj
+1 0 0 1 54 430 Tm (- `extras/local_ci_report.md`: estado de cada etapa \(Terraform, Docker, dig, full-stack\).) Tj
+1 0 0 1 54 416 Tm (- `extras/evidencias_finales.md`: resultados de Terraform fmt/validate/plan, Docker ) Tj
+1 0 0 1 54 402 Tm (Compose, `dig`, `curl`, `pytest` y logs finales.) Tj
+1 0 0 1 54 388 Tm (- `docs/indicativos_resumen.md` + `docs/matriz_indicativos.md`: resumen textual del ) Tj
+1 0 0 1 54 374 Tm (cumplimiento.) Tj
+1 0 0 1 54 360 Tm (- Capturas finales \(pendientes\) deben agregarse en `extras/` si se requieren pruebas ) Tj
+1 0 0 1 54 346 Tm (visuales.) Tj
+1 0 0 1 54 332 Tm ( ) Tj
+1 0 0 1 54 318 Tm (- --) Tj
+1 0 0 1 54 304 Tm ( ) Tj
+1 0 0 1 54 290 Tm ( ) Tj
+1 0 0 1 54 276 Tm (6. Artefactos y Rutas Clave) Tj
+1 0 0 1 54 262 Tm (---------------------------) Tj
+1 0 0 1 54 248 Tm ( ) Tj
+1 0 0 1 54 234 Tm ( ) Tj
+1 0 0 1 54 220 Tm (| Componente                             | Ruta                                                               |) Tj
+1 0 0 1 54 206 Tm (| -------------------------------------- | ------------------------------------------------------------------ |) Tj
+1 0 0 1 54 192 Tm (| Telemetry Gateway \(FastAPI\)            | `proyecto_integrado/services/telemetry-gateway/app/main.py`        |) Tj
+1 0 0 1 54 178 Tm (| Portal Croody \(Django\)                 | `proyecto_integrado/Croody/`                                       |) Tj
+1 0 0 1 54 164 Tm (| Clientes de referencia                 | `clients/python/`                                                  |) Tj
+1 0 0 1 54 150 Tm (| Scripts de despliegue / automatizacion | `deploy.sh`, `deploy_from_scratch.sh`, `scripts/dns/setup_bind.sh` |) Tj
+1 0 0 1 54 136 Tm (| DNS autoritativo \(Docker\)              | `infra/dns/`                                                       |) Tj
+1 0 0 1 54 122 Tm (| Infraestructura como codigo            | `infra/terraform/`                                                 |) Tj
+1 0 0 1 54 108 Tm (| Workflows GitHub Actions               | `.github/workflows/*.yml`                                          |) Tj
+1 0 0 1 54 94 Tm (| Documentacion principal                | `manual_tecnico.md`, `arquitectura.md`, `docs/*.md`                |) Tj
+1 0 0 1 54 80 Tm ( ) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 966 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm (- --) Tj
+1 0 0 1 54 724 Tm ( ) Tj
+1 0 0 1 54 710 Tm ( ) Tj
+1 0 0 1 54 696 Tm (7. Observaciones Finales) Tj
+1 0 0 1 54 682 Tm (------------------------) Tj
+1 0 0 1 54 668 Tm ( ) Tj
+1 0 0 1 54 654 Tm ( ) Tj
+1 0 0 1 54 640 Tm (- Todos los valores sensibles estan documentados sin exponer secretos reales ) Tj
+1 0 0 1 54 626 Tm (\(`docs/secrets_map.md`\).) Tj
+1 0 0 1 54 612 Tm (- Ejecutar `scripts/run_local_ci.sh` antes de cada entrega para adjuntar un reporte ) Tj
+1 0 0 1 54 598 Tm (actualizado.) Tj
+1 0 0 1 54 584 Tm (- Documentos legados no usados fueron archivados en `trash/docs_legacy/` para mantener el ) Tj
+1 0 0 1 54 570 Tm (repositorio limpio.) Tj
+1 0 0 1 54 556 Tm ( ) Tj
+1 0 0 1 54 542 Tm ("**Nota:** Este documento fue redactado en Markdown y convertido a PDF \(`entrega.pdf`\) ) Tj
+1 0 0 1 54 528 Tm (para conservar el formato solicitado.") Tj
+1 0 0 1 54 514 Tm ("**Responsable:** Jose Alejandro Jimenez Vasquez.") Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000267 00000 n 
+0000003065 00000 n 
+0000003192 00000 n 
+0000006229 00000 n 
+0000006356 00000 n 
+0000009085 00000 n 
+0000009213 00000 n 
+0000012615 00000 n 
+0000012744 00000 n 
+0000013761 00000 n 
+trailer << /Size 14 /Root 1 0 R >>
+startxref
+13830
+%%EOF
