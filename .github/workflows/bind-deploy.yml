@@ -26,10 +26,6 @@ env:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    env:
-      MASTER_IMAGE: ${{ format('{0}/{1}:{2}', env.ECR_REGISTRY, env.MASTER_REPO, github.sha) }}
-      SLAVE_IMAGE: ${{ format('{0}/{1}:{2}', env.ECR_REGISTRY, env.SLAVE_REPO, github.sha) }}
-      ZONE_FILE: infra/dns/bind-master/zones/${{ env.DOMAIN }}.db
     steps:
       # 1) Checkout del repositorio con la infraestructura DNS.
       - name: Checkout repo
@@ -48,6 +44,12 @@ jobs:
             echo "Configure the required secrets before running this workflow."
             exit 1
           fi
+
+      - name: Export computed variables
+        run: |
+          echo "ZONE_FILE=infra/dns/bind-master/zones/${DOMAIN}.db" >> "$GITHUB_ENV"
+          echo "MASTER_IMAGE=${ECR_REGISTRY}/${MASTER_REPO}:${GITHUB_SHA}" >> "$GITHUB_ENV"
+          echo "SLAVE_IMAGE=${ECR_REGISTRY}/${SLAVE_REPO}:${GITHUB_SHA}" >> "$GITHUB_ENV"
 
       # 2) Validación temprana: se requiere que exista la zona maestra con registros reales.
       - name: Ensure zone file exists

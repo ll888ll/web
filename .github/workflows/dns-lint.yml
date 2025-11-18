@@ -12,6 +12,7 @@ env:
   TSIG_KEY_SECRET: ${{ secrets.BIND_TSIG_KEY_SECRET != '' && secrets.BIND_TSIG_KEY_SECRET || 'ZmFrZQ==' }}
   NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
   NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
+  SLAVE_IP: ${{ secrets.BIND_SLAVE_PRIVATE_IP != '' && secrets.BIND_SLAVE_PRIVATE_IP || '127.0.0.1' }}
 
 jobs:
   dns-lint:
@@ -39,6 +40,8 @@ jobs:
             -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
             -e NS1_FQDN="${NS1_FQDN}" \
             -e NS2_FQDN="${NS2_FQDN}" \
+            -e ALLOW_TRANSFER="${SLAVE_IP};" \
+            -e ALLOW_QUERY="any;" \
             -v "${PWD}/infra/dns/bind-master/zones:/zones" \
             bind-lint named-checkconf /etc/bind/named.conf
 
