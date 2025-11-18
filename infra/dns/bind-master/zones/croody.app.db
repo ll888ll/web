@@ -10,7 +10,7 @@
 @           IN  NS      ns1.croody.app.
 @           IN  NS      ns2.croody.app.
 ns1    3600 IN A 10.0.120.10
-ns2    3600 IN A 10.0.220.10
+ns2    3600 IN A 172.31.71.231
 
 ; ---- A Records ----
 ; agrega tus registros A aquí
