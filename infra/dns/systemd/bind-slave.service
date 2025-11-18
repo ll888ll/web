@@ -1,0 +1,14 @@
+[Unit]
+Description=BIND9 Slave (croody.app)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/bind/slave.env
+ExecStart=/usr/sbin/named -4 -u bind -c /etc/bind/named.conf -f
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
