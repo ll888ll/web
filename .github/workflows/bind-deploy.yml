@@ -11,7 +11,7 @@ permissions:
 
 # Variables globales alimentadas desde GitHub Secrets.
 env:
-  DOMAIN: ${{ secrets.BIND_DOMAIN }}
+  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}
   MASTER_IP: ${{ secrets.BIND_MASTER_PRIVATE_IP }}
   SLAVE_IP: ${{ secrets.BIND_SLAVE_PRIVATE_IP }}
   TSIG_KEY_NAME: ${{ secrets.BIND_TSIG_KEY_NAME }}
@@ -20,18 +20,34 @@ env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   MASTER_REPO: ${{ secrets.BIND_MASTER_ECR_REPO }}
   SLAVE_REPO: ${{ secrets.BIND_SLAVE_ECR_REPO }}
+  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
+  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     env:
-      MASTER_IMAGE: ${{ secrets.AWS_ECR_REGISTRY }}/${{ secrets.BIND_MASTER_ECR_REPO }}:${{ github.sha }}
-      SLAVE_IMAGE: ${{ secrets.AWS_ECR_REGISTRY }}/${{ secrets.BIND_SLAVE_ECR_REPO }}:${{ github.sha }}
-      ZONE_FILE: infra/dns/bind-master/zones/${{ secrets.BIND_DOMAIN }}.db
+      MASTER_IMAGE: ${{ format('{0}/{1}:{2}', env.ECR_REGISTRY, env.MASTER_REPO, github.sha) }}
+      SLAVE_IMAGE: ${{ format('{0}/{1}:{2}', env.ECR_REGISTRY, env.SLAVE_REPO, github.sha) }}
+      ZONE_FILE: infra/dns/bind-master/zones/${{ env.DOMAIN }}.db
     steps:
       # 1) Checkout del repositorio con la infraestructura DNS.
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        run: |
+          missing=0
+          for var in DOMAIN MASTER_IP SLAVE_IP TSIG_KEY_NAME TSIG_KEY_SECRET ECR_REGISTRY MASTER_REPO SLAVE_REPO; do
+            if [[ -z "${!var}" ]]; then
+              echo "Missing environment variable: $var"
+              missing=1
+            fi
+          done
+          if [[ $missing -eq 1 ]]; then
+            echo "Configure the required secrets before running this workflow."
+            exit 1
+          fi
 
       # 2) Validación temprana: se requiere que exista la zona maestra con registros reales.
       - name: Ensure zone file exists
@@ -77,8 +93,8 @@ jobs:
             -e DNS_DOMAIN="${DOMAIN}" \
             -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
             -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
-            -e NS1_FQDN="ns1.${DOMAIN}." \
-            -e NS2_FQDN="ns2.${DOMAIN}." \
+            -e NS1_FQDN="${NS1_FQDN}" \
+            -e NS2_FQDN="${NS2_FQDN}" \
             -e ALLOW_QUERY="any;" \
             -e ALLOW_TRANSFER="${SLAVE_IP};" \
             -e NOTIFY_TARGETS="${SLAVE_IP};" \
@@ -92,8 +108,8 @@ jobs:
             -e DNS_DOMAIN="${DOMAIN}" \
             -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
             -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
-            -e NS1_FQDN="ns1.${DOMAIN}." \
-            -e NS2_FQDN="ns2.${DOMAIN}." \
+            -e NS1_FQDN="${NS1_FQDN}" \
+            -e NS2_FQDN="${NS2_FQDN}" \
             -v "${PWD}/infra/dns/bind-master/zones:/zones" \
             "$MASTER_IMAGE" \
             named-checkzone "${DOMAIN}" "/zones/${DOMAIN}.db"
@@ -106,8 +122,8 @@ jobs:
             -e DNS_DOMAIN="${DOMAIN}" \
             -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
             -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
-            -e NS1_FQDN="ns1.${DOMAIN}." \
-            -e NS2_FQDN="ns2.${DOMAIN}." \
+            -e NS1_FQDN="${NS1_FQDN}" \
+            -e NS2_FQDN="${NS2_FQDN}" \
             -e MASTER_IP="${MASTER_IP}" \
             -v "${PWD}/infra/dns/bind-slave/zones:/zones" \
             "$SLAVE_IMAGE" \
@@ -131,7 +147,7 @@ jobs:
           key: ${{ secrets.BIND_SSH_KEY }}
           port: ${{ secrets.BIND_SSH_PORT || '22' }}
           script_stop: true
-          envs: MASTER_IMAGE,DOMAIN,TSIG_KEY_NAME,TSIG_KEY_SECRET,MASTER_IP,SLAVE_IP
+          envs: MASTER_IMAGE,DOMAIN,TSIG_KEY_NAME,TSIG_KEY_SECRET,MASTER_IP,SLAVE_IP,NS1_FQDN,NS2_FQDN
           script: |
             set -euo pipefail
             docker pull "$MASTER_IMAGE"
@@ -147,8 +163,8 @@ jobs:
               -e DNS_DOMAIN=${DOMAIN} \
               -e TSIG_KEY_NAME=${TSIG_KEY_NAME} \
               -e TSIG_KEY_SECRET=${TSIG_KEY_SECRET} \
-              -e NS1_FQDN=ns1.${DOMAIN}. \
-              -e NS2_FQDN=ns2.${DOMAIN}. \
+              -e NS1_FQDN=${NS1_FQDN} \
+              -e NS2_FQDN=${NS2_FQDN} \
               -e MASTER_IP=${MASTER_IP} \
               -e ALLOW_QUERY="any;" \
               -e ALLOW_TRANSFER="${SLAVE_IP};" \
@@ -165,7 +181,7 @@ jobs:
           key: ${{ secrets.BIND_SSH_KEY }}
           port: ${{ secrets.BIND_SSH_PORT || '22' }}
           script_stop: true
-          envs: SLAVE_IMAGE,DOMAIN,TSIG_KEY_NAME,TSIG_KEY_SECRET,MASTER_IP,SLAVE_IP
+          envs: SLAVE_IMAGE,DOMAIN,TSIG_KEY_NAME,TSIG_KEY_SECRET,MASTER_IP,SLAVE_IP,NS1_FQDN,NS2_FQDN
           script: |
             set -euo pipefail
             docker pull "$SLAVE_IMAGE"
@@ -181,8 +197,8 @@ jobs:
               -e DNS_DOMAIN=${DOMAIN} \
               -e TSIG_KEY_NAME=${TSIG_KEY_NAME} \
               -e TSIG_KEY_SECRET=${TSIG_KEY_SECRET} \
-              -e NS1_FQDN=ns1.${DOMAIN}. \
-              -e NS2_FQDN=ns2.${DOMAIN}. \
+              -e NS1_FQDN=${NS1_FQDN} \
+              -e NS2_FQDN=${NS2_FQDN} \
               -e MASTER_IP=${MASTER_IP} \
               "$SLAVE_IMAGE"
             docker exec bind-slave rndc reload || true
