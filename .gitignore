@@ -40,3 +40,5 @@ dist/
 # Misc
 *.swp
 *.swo
+
+*.pem
