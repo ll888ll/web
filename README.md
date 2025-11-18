@@ -1,4 +1,4 @@
-# Entrega Final - Telematicache
+# Entrega 2
 
 **Autor:** Jose Alejandro Jimenez Vasquez  
 **Repositorio:** `ll333ll/telematicache` (https://github.com/ll333ll/telematicache)  
