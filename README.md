@@ -33,7 +33,7 @@
   - `GET /api/telemetry/clients`: lista clientes activos.
 - Concurrencia con asyncio (queues + background tasks). Manejo de multiples clientes y desconexiones.
 - Usuario administrador autenticado via `ADMIN_API_KEY`; comandos solo se aceptan desde el incluso si cambia la IP.
-- Protocolo tipo texto/JSON documentado en `manual_tecnico.md` e `informe_tecnico_entrega3.md` (formato de mensajes, codigos, secuencia tipo RFC).
+- Protocolo tipo texto/JSON documentado en `manual_tecnico.md` (formato de mensajes, codigos, secuencia tipo RFC).
 
 ### 2.2 Clientes (Indicativo 2)
 
