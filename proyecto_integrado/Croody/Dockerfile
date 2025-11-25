@@ -10,7 +10,7 @@ COPY requirements.txt /app/requirements.txt
 # Intento instalar requerimientos completos; si falla por dependencias opcionales,
 # instala un subconjunto mínimo para desarrollo.
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends wget \
+    && apt-get install -y --no-install-recommends wget openjdk-17-jre-headless \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir -r /app/requirements.txt
 

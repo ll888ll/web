@@ -17,6 +17,7 @@ from django.urls import include, path
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),  # sin prefijo
+    path('dashboard/', include('telemetry.urls')),
     path('', include('landing.urls', namespace='landing')),  # home sin prefijo
     path('tienda/', include('shop.urls', namespace='shop')),
 ]
@@ -24,6 +25,7 @@ urlpatterns = [
 # Rutas con prefijo para idiomas distintos al por defecto
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
+    path('dashboard/', include('telemetry.urls')),
     path('', include('landing.urls', namespace='landing')),
     path('tienda/', include('shop.urls', namespace='shop')),
     prefix_default_language=False,  # clave para mantener / y /admin/ sin prefijo

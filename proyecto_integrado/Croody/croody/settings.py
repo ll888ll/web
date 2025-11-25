@@ -29,8 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'landing.apps.LandingConfig',
     'shop.apps.ShopConfig',
+    'telemetry.apps.TelemetryConfig',
 ]
 
 if DEBUG and importlib.util.find_spec('sslserver'):

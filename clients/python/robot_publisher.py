@@ -1,61 +1,62 @@
 #!/usr/bin/env python3
-"""Cliente de referencia para publicar telemetría hacia Croody Gateway."""
+"""Cliente de referencia para publicar telemetría hacia Croody Gateway (Dashboard Mission Control)."""
 from __future__ import annotations
 
 import argparse
 import json
 import random
 import time
-from datetime import datetime, timezone
 from typing import Dict, Any
 
 import requests
 
 
-def fake_payload(robot_id: str, base_lat: float | None = None, base_lng: float | None = None, base_alt: float | None = None, jitter: float = 0.0) -> Dict[str, Any]:
-    lat = (base_lat if base_lat is not None else 19.4326) + (random.uniform(-jitter, jitter) if jitter else 0)
-    lng = (base_lng if base_lng is not None else -99.1332) + (random.uniform(-jitter, jitter) if jitter else 0)
+def fake_payload(x_base: float = 50.0, y_base: float = 50.0) -> Dict[str, Any]:
+    # Simulate movement within 0-100 grid
+    x = max(0, min(100, x_base + random.uniform(-5, 5)))
+    y = max(0, min(100, y_base + random.uniform(-5, 5)))
+    
     return {
-        "robot_id": robot_id,
-        "ts": datetime.now(timezone.utc).isoformat(),
-        "position": ({"lat": lat, "lng": lng, **({"alt": base_alt} if base_alt is not None else {})}),
-        "environment": "field",
-        "status": random.choice(["navigating", "idle", "alert"]),
-        "data": {
-            "TEMP": round(random.uniform(19.0, 27.0), 2),
-            "HUM": round(random.uniform(35.0, 55.0), 1),
-            "AQI": random.randint(5, 40),
-            "PRESS": round(random.uniform(990, 1015), 1),
-        },
+        "x": round(x, 2),
+        "y": round(y, 2),
+        "atmosphere": {
+            "temperature": round(random.uniform(19.0, 27.0), 2),
+            "humidity": round(random.uniform(35.0, 55.0), 1),
+            "pressure": round(random.uniform(990, 1015), 1),
+            "status": random.choice(["NOMINAL", "OPTIMAL", "WARNING"])
+        }
     }
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Publica telemetría al endpoint expuesto en AWS/localhost")
-    parser.add_argument('--url', default='https://example.com/api/telemetry/ingest', help='URL completa del endpoint')
-    parser.add_argument('--token', default=None, help='Token X-API-Key si está configurado')
-    parser.add_argument('--robot', default='robot-alpha', help='Identificador del robot')
-    parser.add_argument('--interval', type=float, default=5.0, help='Segundos entre envíos')
-    parser.add_argument('--lat', type=float, default=None, help='Latitud fija del robot (grados decimales)')
-    parser.add_argument('--lng', type=float, default=None, help='Longitud fija del robot (grados decimales)')
-    parser.add_argument('--alt', type=float, default=None, help='Altitud opcional (metros)')
-    parser.add_argument('--jitter', type=float, default=0.0, help='Jitter aleatorio alrededor de lat/lng en grados (p.ej. 0.001)')
+    parser = argparse.ArgumentParser(description="Publica telemetría al endpoint del Dashboard")
+    parser.add_argument('--url', default='http://localhost:8000/dashboard/api/robot-position/', help='URL del endpoint')
+    parser.add_argument('--interval', type=float, default=1.0, help='Segundos entre envíos')
     args = parser.parse_args()
 
     headers = {'Content-Type': 'application/json'}
-    if args.token:
-        headers['X-API-Key'] = args.token
 
-    print(f"Publicando telemetría hacia {args.url} (Ctrl+C para salir)")
+    print(f"Publicando telemetría a {args.url} (Ctrl+C para salir)")
+    
+    # Current pos
+    curr_x, curr_y = 50.0, 50.0
+
     try:
         while True:
-            payload = fake_payload(args.robot, base_lat=args.lat, base_lng=args.lng, base_alt=args.alt, jitter=args.jitter)
-            res = requests.post(args.url, headers=headers, data=json.dumps(payload), timeout=10)
-            if res.status_code >= 300:
-                print('Error', res.status_code, res.text)
-            else:
-                body = res.json()
-                print(f"#{body['id']} -> {body['robot_id']} @ {body['ts']}")
+            payload = fake_payload(curr_x, curr_y)
+            # Drift
+            curr_x = payload['x']
+            curr_y = payload['y']
+            
+            try:
+                res = requests.post(args.url, headers=headers, json=payload, timeout=5)
+                if res.status_code in [200, 201]:
+                    print(f"TX OK: X={payload['x']} Y={payload['y']} Temp={payload['atmosphere']['temperature']}")
+                else:
+                    print(f"Error {res.status_code}: {res.text}")
+            except requests.exceptions.RequestException as e:
+                print(f"Connection Error: {e}")
+
             time.sleep(args.interval)
     except KeyboardInterrupt:
         print('\nDetenido por el usuario')
