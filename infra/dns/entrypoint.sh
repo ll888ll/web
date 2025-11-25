@@ -31,8 +31,8 @@ A_RECORDS="${A_RECORDS:-; add A records via env A_RECORDS}"
 AAAA_RECORDS="${AAAA_RECORDS:-; add AAAA records via env AAAA_RECORDS}"
 CNAME_RECORDS="${CNAME_RECORDS:-; add CNAME records via env CNAME_RECORDS}"
 MX_RECORDS="${MX_RECORDS:-; add MX records via env MX_RECORDS}"
-TXT_RECORDS="${TXT_RECORDS:-; add TXT records via env TXT_RECORDS}"
-GLUE_RECORDS="${GLUE_RECORDS:-; add glue records via env GLUE_RECORDS}"
+TXT_RECORDS="${TXT_RECORDS:-; add TXT records via env TXT_RECORDS}
+GLUE_RECORDS="${GLUE_RECORDS:-; add glue records via env GLUE_RECORDS}
 ZONE_FILE_PATH="${ZONE_FILE}"
 
 export DNS_DOMAIN TSIG_KEY_NAME TSIG_KEY_SECRET ALLOW_QUERY ALLOW_TRANSFER \
@@ -53,7 +53,7 @@ if [[ "${ROLE}" == "master" ]]; then
     echo "Generating initial zone file from template for ${DNS_DOMAIN}"
     # Explicitly generating zone file to ensure valid SOA and no leading whitespace
     cat > "${ZONE_FILE}" <<EOF
-\$TTL ${ZONE_DEFAULT_TTL}
+$TTL ${ZONE_DEFAULT_TTL}
 @ IN SOA ${NS1_FQDN} ${SOA_EMAIL_DNS}. (
     ${SERIAL}   ; Serial
     3600        ; Refresh
