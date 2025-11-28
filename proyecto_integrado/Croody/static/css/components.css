@@ -200,6 +200,7 @@
 .cart-toast{position:fixed;bottom:var(--space-4);right:var(--space-4);background:var(--surface-1);border:1px solid var(--brand-base);border-radius:16px;padding:var(--space-3) var(--space-4);color:var(--fg);font-weight:600;z-index:var(--z-1000);transform:translateX(400px);transition:transform 300ms cubic-bezier(0.4,0,0.2,1);box-shadow:var(--shadow-lg)}
 .cart-toast.show{transform:translateX(0);box-shadow:0 0 20px color-mix(in oklab,var(--brand-base),transparent 60%)}
 @media (max-width:767.98px){
-  .product-grid-ultra{grid-template-columns:1fr}
+  .product-grid-ultra{grid-template-columns:1fr !important}
+  .product-card-ultra{max-width:100%;overflow:hidden}
   .cart-toast{bottom:var(--space-2);right:var(--space-2);left:var(--space-2)}
 }

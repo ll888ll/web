@@ -106,8 +106,6 @@
         }
       });
     }
-  });
-})();
 
     // Interactive ecosystem tabs
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -125,8 +123,6 @@
         });
       });
     }
-  });
-})();
 
     // Beta signup modal
     const betaBtn = document.getElementById('beta-signup-btn');
