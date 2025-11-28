@@ -43,3 +43,23 @@
   }
 }
 
+/* Enhanced animations for testimonials */
+.vector-card:nth-child(4),.testimonial-card:nth-child(4){animation-delay:0.4s}
+
+/* Pulse animation for CTA buttons */
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 0 0 0 color-mix(in oklab,var(--brand-base),transparent 0%)}
+  50%{box-shadow:0 0 0 10px color-mix(in oklab,var(--brand-base),transparent 30%)}
+}
+.btn--primary:hover{animation:pulseGlow 1.5s infinite}
+
+/* Subtle float animation for metric cards */
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+.metric-card:hover{animation:float 2s ease-in-out infinite}
+
+/* Enhanced testimonial hover effects */
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+

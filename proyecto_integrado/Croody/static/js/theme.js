@@ -108,3 +108,69 @@
     }
   });
 })();
+
+    // Interactive ecosystem tabs
+    const tabButtons = document.querySelectorAll('.tab-button');
+    if(tabButtons.length){
+      tabButtons.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const tab = btn.dataset.tab;
+          tabButtons.forEach(b=>b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+          btn.classList.add('active');
+          const targetContent = document.getElementById(`${tab}-tab`);
+          if(targetContent){
+            targetContent.classList.add('active');
+          }
+        });
+      });
+    }
+  });
+})();
+
+    // Beta signup modal
+    const betaBtn = document.getElementById('beta-signup-btn');
+    const betaModal = document.getElementById('beta-modal');
+    const betaClose = document.getElementById('beta-modal-close');
+    if(betaBtn && betaModal){
+      betaBtn.addEventListener('click', ()=>{
+        betaModal.classList.add('active');
+        betaModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const closeModal = ()=>{
+        betaModal.classList.remove('active');
+        betaModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      betaClose.addEventListener('click', closeModal);
+      betaModal.addEventListener('click', (e)=>{
+        if(e.target === betaModal){
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && betaModal.classList.contains('active')){
+          closeModal();
+        }
+      });
+
+      const betaForm = document.getElementById('beta-signup-form');
+      const betaSuccess = document.getElementById('beta-success');
+      if(betaForm){
+        betaForm.addEventListener('submit', (e)=>{
+          e.preventDefault();
+          const formData = new FormData(betaForm);
+          const data = Object.fromEntries(formData);
+          console.log('Beta signup:', data);
+          betaForm.style.display = 'none';
+          betaSuccess.style.display = 'block';
+          setTimeout(closeModal, 3000);
+        });
+      }
+    }
+  });
+})();

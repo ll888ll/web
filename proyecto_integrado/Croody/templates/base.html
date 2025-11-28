@@ -5,15 +5,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{% block meta_description %}Croody conecta personas con tecnología humanizada. Buddy es tu entrenador AI personal con recompensas Luks. Entrena, progresa y destaca.{% endblock %}" />
+    <meta name="keywords" content="buddy, croody, fitness ai, entrenador artificial, luks, entrenamiento personalizado, fitness app" />
+    <meta name="author" content="Croody" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="{% block og_title %}{% trans "Croody · Diseño con propósito" %}{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}Entrena con Buddy AI. Obtén rutinas personalizadas y recompensas Luks. La tecnología que conecta y transforma.{% endblock %}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:image" content="{% static 'img/completo.png' %}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% block twitter_title %}Croody - Buddy AI Trainer{% endblock %}" />
+    <meta name="twitter:description" content="{% block twitter_description %}Entrena, progresa y destaca con Buddy AI.{% endblock %}" />
+    <link rel="canonical" href="{{ request.build_absolute_uri }}" />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="#0A1A0D"
+      content="#050807"
     />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
-      content="#F2FBF0"
+      content="#F0FBF5"
     />
     <title>
       {% block title %}{% trans "Croody · Diseño con propósito" %}{% endblock %}
@@ -21,7 +34,7 @@
     <link
       rel="icon"
       type="image/png"
-      href="{% static 'img/pequeño.png' %}?v=2"
+      href="{% static 'img/favicon.png' %}?v=3"
     />
     {% block head_fonts %}
     <link
@@ -58,7 +71,7 @@
             aria-label="Volver al inicio de Croody"
           >
             <img
-              src="{% static 'img/completo.png' %}?v=2"
+              src="{% static 'img/logo-main.png' %}?v=3"
               alt="Croody"
             />
           </a>
@@ -245,6 +258,39 @@
     {% endif %}
 
     {% block body %}{% endblock %}
+
+    <div id="beta-modal" class="modal" role="dialog" aria-labelledby="beta-modal-title" aria-hidden="true">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h2 class="modal__title" id="beta-modal-title">Únete a la Beta de Buddy</h2>
+          <button class="modal__close" id="beta-modal-close" aria-label="Cerrar">×</button>
+        </div>
+        <form class="modal__form" id="beta-signup-form">
+          <div class="modal__field">
+            <label for="beta-name">Nombre</label>
+            <input type="text" id="beta-name" name="name" required placeholder="Tu nombre">
+          </div>
+          <div class="modal__field">
+            <label for="beta-email">Email</label>
+            <input type="email" id="beta-email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="modal__field">
+            <label for="beta-platform">Plataforma preferida</label>
+            <select id="beta-platform" name="platform" required>
+              <option value="">Selecciona una opción</option>
+              <option value="ios">iOS (iPhone/iPad)</option>
+              <option value="android">Android</option>
+              <option value="web">Aplicación Web</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary modal__submit">¡Unirme a la Beta!</button>
+        </form>
+        <div id="beta-success" style="display:none; text-align:center; padding: var(--space-3);">
+          <h3 style="color: var(--brand-base);">¡Gracias por unirte!</h3>
+          <p>Te notificaremos cuando Buddy esté listo para descargar.</p>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer" role="contentinfo">
       <div class="container">

@@ -11,11 +11,14 @@
           <h1 id="buddy-title">{{ hero.title }}</h1>
           <p>{{ hero.lead }}</p>
           <div class="page-hero__cta">
-            <a class="btn btn--primary" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
+            <button class="btn btn--primary" id="beta-signup-btn">
+              📱 Descargar App (Beta)
+            </button>
+            <a class="btn btn--ghost" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
             {% if hero.secondary_cta.fragment %}
-              <a class="btn btn--ghost" href="#{{ hero.secondary_cta.fragment }}">{{ hero.secondary_cta.label }}</a>
+              <a class="btn btn--outline" href="#{{ hero.secondary_cta.fragment }}">{{ hero.secondary_cta.label }}</a>
             {% else %}
-              <a class="btn btn--ghost" href="{{ hero.secondary_cta.url }}">{{ hero.secondary_cta.label }}</a>
+              <a class="btn btn--outline" href="{{ hero.secondary_cta.url }}">{{ hero.secondary_cta.label }}</a>
             {% endif %}
           </div>
         </div>
@@ -27,6 +30,41 @@
             </article>
           {% endfor %}
         </div>
+      </div>
+    </section>
+
+    <section id="buddy-demo" class="buddy-demo section" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="demo-title">Así funciona Buddy</h2>
+          <p>Tu entrenador personal, impulsado por inteligencia artificial, siempre listo para adaptarte</p>
+        </div>
+        <div class="demo-steps">
+          <div class="demo-step">
+            <div class="demo-step__number">1</div>
+            <h3>Describe tu objetivo</h3>
+            <p>Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar resistencia... Él entiende tu contexto.</p>
+          </div>
+          <div class="demo-step">
+            <div class="demo-step__number">2</div>
+            <h3>Recibe tu rutina</h3>
+            <p>La IA genera ejercicios personalizados basados en tu nivel, equipo disponible y tiempo que tienes.</p>
+          </div>
+          <div class="demo-step">
+            <div class="demo-step__number">3</div>
+            <h3>Entrena y progresa</h3>
+            <p>Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos según tu evolución.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="user-story-highlight" style="margin: var(--space-4) 0;">
+      <div class="container">
+        <blockquote style="background: var(--surface-1); padding: var(--space-3); border-radius: 18px; border-left: 4px solid var(--brand-base); font-size: 1.1rem; font-style: italic;">
+          "Las rutinas personalizadas me han ayudado a mantenerme constante. En 4 meses he desarrollado hábitos que antes intenté durante años sin éxito."
+          <cite style="display: block; margin-top: var(--space-2); font-style: normal; color: var(--fg-tertiary);">— Carlos, México, usuario desde 2024</cite>
+        </blockquote>
       </div>
     </section>
 

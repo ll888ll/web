@@ -11,11 +11,11 @@ def primary_nav_links() -> List[dict[str, str]]:
     """Links principales usados en cabecera y drawer."""
     home_url = reverse('landing:home')
     return [
-        {'label': _('Buddy'), 'url': reverse('landing:buddy')},
-        {'label': _('Luks'), 'url': reverse('landing:luks')},
-        {'label': _('Tienda'), 'url': reverse('shop:catalogue')},
-        {'label': _('Integraciones'), 'url': reverse('landing:integrations')},
-        {'label': _('Monitor en vivo'), 'url': reverse('landing:monitor')},
+        {'label': _('Inicio'), 'url': home_url, 'fragment': None},
+        {'label': _('Nosotros'), 'url': reverse('landing:about'), 'fragment': None},
+        {'label': _('Buddy'), 'url': reverse('landing:buddy'), 'fragment': None},
+        {'label': _('Luks'), 'url': reverse('landing:luks'), 'fragment': None},
+        {'label': _('Tienda'), 'url': reverse('shop:catalogue'), 'fragment': None},
     ]
 
 
@@ -33,5 +33,4 @@ def global_search_entries() -> List[dict[str, str]]:
         {'label': _('Buddy Checkout'), 'url': reverse('shop:checkout-preview')},
         {'label': _('Croody · Registro'), 'url': reverse('landing:signup')},
         {'label': _('Croody · Perfil'), 'url': reverse('landing:profile')},
-        {'label': _('Monitor en vivo'), 'url': reverse('landing:monitor')},
     ]

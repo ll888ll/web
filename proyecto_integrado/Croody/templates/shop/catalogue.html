@@ -6,165 +6,133 @@
 
 {% block body %}
   <main id="main" tabindex="-1">
-    <section id="tienda-home" class="store-hero" aria-labelledby="store-hero-title">
-      <div class="container store-hero__grid">
-        <div class="store-hero__content">
-          <div class="chip">{{ store_hero.eyebrow }}</div>
-          <h1 id="store-hero-title">{{ store_hero.title }}</h1>
-          <p>{{ store_hero.subtitle }}</p>
-          <div class="store-hero__cta">
-            <a class="btn btn--primary" href="{{ store_hero.primary_cta.url }}">{{ store_hero.primary_cta.label }}</a>
-            <a class="btn btn--ghost" href="{{ store_hero.secondary_cta.url }}">{{ store_hero.secondary_cta.label }}</a>
+    <section class="page-hero" aria-labelledby="store-title">
+      <div class="container page-hero__grid">
+        <div class="page-hero__content">
+          <div class="chip">Tienda Buddy</div>
+          <h1 id="store-title">Todo lo que necesitas para entrenar</h1>
+          <p>Cofres, sets, accesorios. Compra directo, recibe al instante.</p>
+          <div class="page-hero__cta">
+            <a class="btn btn--primary" href="#catalogo">Ver Catálogo</a>
           </div>
-          <form method="get" class="store-hero__search" role="search" aria-label="Buscar y filtrar">
-            <label class="visually-hidden" for="store-search">Buscar productos Buddy</label>
-            <div class="store-search__field" style="display:grid;grid-template-columns:1fr repeat(4,auto);gap:13px;align-items:center">
-              <input id="store-search" name="q" value="{{ query }}" class="search__input" placeholder="{{ store_hero.search_placeholder }}" type="search" />
-              <select name="type" class="search__input" style="height:40px">
-                <option value="">Tipo</option>
-                <option value="cofre" {% if selected_type == 'cofre' %}selected{% endif %}>Cofres</option>
-                <option value="set" {% if selected_type == 'set' %}selected{% endif %}>Sets</option>
-                <option value="accesorio" {% if selected_type == 'accesorio' %}selected{% endif %}>Accesorios</option>
-              </select>
-              <input name="min_price" value="{{ min_price }}" class="search__input" style="width:110px" placeholder="Min $" inputmode="decimal" />
-              <input name="max_price" value="{{ max_price }}" class="search__input" style="width:110px" placeholder="Max $" inputmode="decimal" />
-              <select name="order" class="search__input" style="height:40px">
-                <option value="">Orden</option>
-                <option value="price_asc" {% if order == 'price_asc' %}selected{% endif %}>Precio ↑</option>
-                <option value="price_desc" {% if order == 'price_desc' %}selected{% endif %}>Precio ↓</option>
-                <option value="recent" {% if order == 'recent' %}selected{% endif %}>Recientes</option>
-              </select>
-              <button class="btn btn--primary" type="submit">Aplicar</button>
-            </div>
-            {% if query or selected_type or min_price or max_price or order %}
-              <a class="link-inline" href="{% url 'shop:catalogue' %}">Limpiar filtros</a>
-            {% endif %}
-          </form>
-        </div>
-        <div class="store-hero__metrics">
-          {% for metric in store_metrics %}
-            <article class="metric-card">
-              <span class="metric-card__value">{{ metric.value }}</span>
-              <span class="metric-card__label">{{ metric.caption }}</span>
-            </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section class="store-filters" aria-labelledby="store-filters-title">
-      <div class="container">
-        <div class="store-filters__intro">
-          <h2 id="store-filters-title">Explora por categoría</h2>
-          <p>Elige una categoría, revisa probabilidades y añade al instante los ítems oficiales que necesitas.</p>
-        </div>
-        <div class="store-filters__chips">
-          {% for item in quick_filters %}
-            <a class="store-chip" href="{{ item.url }}">
-              <span class="store-chip__label">{{ item.label }}</span>
-              <span class="store-chip__hint">{{ item.hint }}</span>
-            </a>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section class="section store-experience" aria-labelledby="store-experience-title">
-      <div class="container">
-        <div class="section__header">
-          <h2 id="store-experience-title">Cómo comprar en Buddy Store</h2>
-          <p>Tres pasos claros para que tu compra quede confirmada y lista en tu Buddy.</p>
-        </div>
-        <div class="spec-cards">
-          {% for callout in purchase_steps %}
-            <article class="spec-card">
-              <h3>{{ callout.title }}</h3>
-              <p>{{ callout.description }}</p>
-            </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section id="pagos" class="section store-trust" aria-labelledby="store-trust-title">
-      <div class="container store-trust__grid">
-        <div>
-          <h2 id="store-trust-title">Métodos de pago disponibles</h2>
-          <p>Paga de forma segura. Te mostramos el total antes de confirmar y recibes la compra al instante.</p>
-        </div>
-        <ul>
-          {% for item in payment_methods %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-        <ul>
-          {% for promise in support_promises %}
-            <li>{{ promise }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-
-    <section id="catalogo" class="section" aria-labelledby="catalogue-title">
-      <div class="container">
-        <div class="section__header">
-          <h2 id="catalogue-title">Catálogo Buddy</h2>
-          <p>Ítems listos para activar en tu Buddy: cofres, sets, accesorios y experiencias temáticas.</p>
-        </div>
-        {% if is_paginated %}
-        <nav aria-label="Paginación catálogo" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2)">
-          <div>
-            {% if page_obj.has_previous %}
-              <a class="btn btn--ghost" href="?{% if query %}q={{ query }}&{% endif %}{% if selected_type %}type={{ selected_type }}&{% endif %}{% if min_price %}min_price={{ min_price }}&{% endif %}{% if max_price %}max_price={{ max_price }}&{% endif %}{% if order %}order={{ order }}&{% endif %}page={{ page_obj.previous_page_number }}">Anterior</a>
-            {% endif %}
+          <div class="category-chips" style="margin-top: var(--space-3); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <button class="chip active" data-filter="all">Todo</button>
+            <button class="chip" data-filter="cofre">Cofres</button>
+            <button class="chip" data-filter="set">Sets</button>
+            <button class="chip" data-filter="accesorio">Accesorios</button>
           </div>
-          <div> Página {{ page_obj.number }} de {{ paginator.num_pages }} </div>
-          <div>
-            {% if page_obj.has_next %}
-              <a class="btn btn--ghost" href="?{% if query %}q={{ query }}&{% endif %}{% if selected_type %}type={{ selected_type }}&{% endif %}{% if min_price %}min_price={{ min_price }}&{% endif %}{% if max_price %}max_price={{ max_price }}&{% endif %}{% if order %}order={{ order }}&{% endif %}page={{ page_obj.next_page_number }}">Siguiente</a>
-            {% endif %}
-          </div>
-        </nav>
-        {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="section store-catalog-ultra" aria-labelledby="catalogue-title">
+      <div class="container">
+        <h2 id="catalogue-title">Catálogo Buddy</h2>
         {% if products %}
-          <div class="product-grid product-grid--catalogue">
+          <div class="product-grid-ultra">
             {% for product in products %}
-              <article class="product-card product-card--catalogue">
-                <header>
-                  {% if product.badge_label %}<span class="chip chip--outline">{{ product.badge_label }}</span>{% endif %}
-                  <h3>{{ product.name }}</h3>
-                </header>
-                <p>{{ product.teaser }}</p>
-                <div class="product-card__footer">
-                  <span class="product-card__price">${{ product.price|floatformat:0 }}</span>
-                  <span class="product-card__note">{{ product.delivery_estimate }}</span>
+              <article class="product-card-ultra" data-type="{{ product.category|default:'general' }}">
+                <div class="product-image">
+                  <div class="product-emoji">
+                    {% if 'Pro' in product.name %}💎{% elif 'Basic' in product.name %}⭐{% elif 'Skin' in product.name %}🎨{% elif 'Rutina' in product.name %}💪{% elif 'Annual' in product.name %}🏆{% else %}🎯{% endif %}
+                  </div>
+                  {% if product.badge_label %}
+                    <span class="chip chip--outline product-badge">{{ product.badge_label }}</span>
+                  {% endif %}
                 </div>
-                <div class="product-card__actions">
-                  <a class="btn btn--primary" href="{% url 'shop:detail' product.slug %}">Ver detalles</a>
-                  <a class="btn btn--ghost" href="{% url 'shop:checkout-preview' %}?product={{ product.slug }}">Comprar ahora</a>
+                <h3 class="product-title">{{ product.name }}</h3>
+                <p class="product-teaser">{{ product.teaser }}</p>
+                <div class="product-footer">
+                  <span class="product-price">${{ product.price|floatformat:0 }}</span>
+                  <span class="product-delivery">{{ product.delivery_estimate }}</span>
                 </div>
+                <button class="btn btn--primary add-to-cart-btn" data-product-id="{{ product.id }}" data-product-slug="{{ product.slug }}">
+                  Agregar al carrito
+                </button>
               </article>
             {% endfor %}
           </div>
           {% if is_paginated %}
-          <nav aria-label="Paginación catálogo" style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-2)">
-            <div>
-              {% if page_obj.has_previous %}
-                <a class="btn btn--ghost" href="?{% if query %}q={{ query }}&{% endif %}{% if selected_type %}type={{ selected_type }}&{% endif %}{% if min_price %}min_price={{ min_price }}&{% endif %}{% if max_price %}max_price={{ max_price }}&{% endif %}{% if order %}order={{ order }}&{% endif %}page={{ page_obj.previous_page_number }}">Anterior</a>
-              {% endif %}
-            </div>
-            <div> Página {{ page_obj.number }} de {{ paginator.num_pages }} </div>
-            <div>
-              {% if page_obj.has_next %}
-                <a class="btn btn--ghost" href="?{% if query %}q={{ query }}&{% endif %}{% if selected_type %}type={{ selected_type }}&{% endif %}{% if min_price %}min_price={{ min_price }}&{% endif %}{% if max_price %}max_price={{ max_price }}&{% endif %}{% if order %}order={{ order }}&{% endif %}page={{ page_obj.next_page_number }}">Siguiente</a>
-              {% endif %}
-            </div>
+          <nav aria-label="Paginación" class="catalog-pagination">
+            <div>Mostrando {{ products|length }} productos</div>
+            {% if page_obj.has_next %}
+              <a class="btn btn--ghost" href="?page={{ page_obj.next_page_number }}">Ver más →</a>
+            {% endif %}
           </nav>
           {% endif %}
         {% else %}
-          <p>No se encontraron productos para “{{ query }}”. Ajusta la búsqueda o vuelve al catálogo completo.</p>
+          <p>No hay productos disponibles.</p>
         {% endif %}
       </div>
     </section>
   </main>
+{% endblock %}
+
+{% block body_scripts %}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+      addToCartButtons.forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const productId = btn.dataset.productId;
+          const productSlug = btn.dataset.productSlug;
+          const originalText = btn.textContent;
+          btn.textContent = '✓ Agregado';
+          btn.disabled = true;
+
+          try {
+            const response = await fetch('/shop/api/cart/add/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+              },
+              body: JSON.stringify({ product_id: productId })
+            });
+
+            if (response.ok) {
+              showCartToast('Producto agregado al carrito');
+              setTimeout(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+              }, 2000);
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }
+        });
+      });
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+
+      function showCartToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'cart-toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.classList.add('show');
+        }, 10);
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      }
+    });
+  </script>
 {% endblock %}

@@ -4,7 +4,10 @@ from __future__ import annotations
 from typing import Any
 
 from django.db.models import QuerySet
+from django.http import JsonResponse
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
 from django.views.generic import DetailView, ListView, TemplateView
 
 from croody.navigation import global_search_entries, primary_nav_links
@@ -206,3 +209,50 @@ class CheckoutPreviewView(NavContextMixin, TemplateView):
         ]
         context['products'] = Product.objects.published()[:3]
         return context
+
+
+@csrf_exempt
+@require_http_methods(['POST'])
+def cart_add_api(request):
+    """API endpoint para agregar productos al carrito."""
+    import json
+
+    try:
+        data = json.loads(request.body)
+        product_id = data.get('product_id')
+
+        if not product_id:
+            return JsonResponse(
+                {'success': False, 'error': 'product_id es requerido'},
+                status=400
+            )
+
+        product = Product.objects.filter(id=product_id, is_published=True).first()
+
+        if not product:
+            return JsonResponse(
+                {'success': False, 'error': 'Producto no encontrado'},
+                status=404
+            )
+
+        return JsonResponse({
+            'success': True,
+            'message': f'{product.name} agregado al carrito',
+            'product': {
+                'id': product.id,
+                'name': product.name,
+                'price': float(product.price),
+                'slug': product.slug
+            }
+        })
+
+    except json.JSONDecodeError:
+        return JsonResponse(
+            {'success': False, 'error': 'JSON inválido'},
+            status=400
+        )
+    except Exception as e:
+        return JsonResponse(
+            {'success': False, 'error': f'Error del servidor: {str(e)}'},
+            status=500
+        )

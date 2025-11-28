@@ -47,6 +47,17 @@ class LandingNavigationMixin:
         return context
 
 
+class AboutView(LandingNavigationMixin, TemplateView):
+    template_name = 'landing/about.html'
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context.update(
+            page_title=_('Nosotros'),
+        )
+        return context
+
+
 class HomeView(LandingNavigationMixin, TemplateView):
     template_name = 'landing/home.html'
 
@@ -56,16 +67,17 @@ class HomeView(LandingNavigationMixin, TemplateView):
         context['show_global_shortcuts'] = True
 
         hero = {
-            'eyebrow': _('Croody · Conecta, Entrena y Destaca'),
-            'title': _('Volvamos a ser humanos'),
+            'eyebrow': _('Buddy AI · Entrena, Progresa, Destaca'),
+            'title': _('Tu entrenador AI personal'),
             'lead': _(
-                'Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies. Ese trabajo se inspira en convicciones internas que priorizan la dignidad humana y el servicio.'
+                'Rutinas que se adaptan a ti. Recompensas que te motivan. La tecnología que conecta.'
             ),
-            'primary_cta': {'label': _('Ir a la tienda Buddy'), 'url': reverse('shop:catalogue')},
-            'secondary_cta': {'label': _('Conocer a Buddy'), 'url': reverse('landing:buddy')},
+            'primary_cta': {'label': _('🛒 Ir a la Tienda'), 'url': reverse('shop:catalogue')},
+            'secondary_cta': {'label': _('Ver Buddy'), 'url': reverse('landing:buddy')},
+            'tertiary_cta': {'label': _('💎 Luks'), 'url': reverse('landing:luks')},
             'image': {
-                'src': 'img/completo.png',
-                'alt': _('Logo de Croody representando conexión y tecnología humanizada'),
+                'src': 'img/logo-main.png',
+                'alt': _('Croody - Tecnología que conecta'),
             },
         }
 

@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="about-title">
+      <div class="container page-hero__grid">
+        <div class="page-hero__content">
+          <div class="chip">{% trans "Nosotros" %}</div>
+          <h1 id="about-title">{% trans "Cambiar el mundo a través de la tecnología" %}</h1>
+          <p>{% trans "Somos una empresa fundada en la Universidad EAFIT, Medellín, con la convicción de que la tecnología debe servir a la humanidad, no reemplazarla." %}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="story-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="story-title">{% trans "Nuestra Historia" %}</h2>
+          <p>{% trans "Todo comenzó en 2023, cuando dos estudiantes de la Universidad EAFIT decidieron que el mundo del fitness necesitaba una revolución." %}</p>
+        </div>
+        <div class="mvp">
+          <div class="mvp__intro">
+            <p>{% trans "En un mundo cada vez más digital, vimos cómo las personas perdían la conexión consigo mismas y con sus objetivos de salud. Los gimnasios tradicionales no se adaptaron a la nueva realidad, y las aplicaciones existentes trataban a los usuarios como números en lugar de personas." %}</p>
+            <p>{% trans "Decidimos crear algo diferente: un ecosistema que combina tecnología de punta con un entendimiento profundo de la motivación humana. Así nació Croody." %}</p>
+            <p class="mvp__author">{% trans "— Jose Alejandro & Mathias, Fundadores" %}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="founders-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="founders-title">{% trans "Conoce a los Fundadores" %}</h2>
+          <p>{% trans "Dos visiones, un objetivo: transformar la manera en que las personas se conectan con su bienestar." %}</p>
+        </div>
+        <div class="principles-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--gutter)">
+          <article class="principle-card">
+            <div class="principle-card__header">
+              <h3>Jose Alejandro Jimenez</h3>
+              <p class="principle-card__role">{% trans "CEO & Visionario" %}</p>
+            </div>
+            <p>{% trans "Con una visión clara y una pasión inquebrantable por la tecnología humanizada, Jose Alejandro lidera Croody con la experiencia de alguien que entiende que cada línea de código debe servir a un propósito mayor." %}</p>
+            <div class="principle-card__details">
+              <p><strong>{% trans "Enfoque:" %}</strong> {% trans "\"Hace todo\" — desde la estrategia hasta la ejecución, asegurando que cada decisión nos acerque a nuestro objetivo de cambiar el mundo." %}</p>
+              <p><strong>{% trans "Experiencia:" %}</strong> {% trans "Liderazgo empresarial, estrategia de producto y visión a largo plazo." %}</p>
+              <p><strong>{% trans "Filosofía:" %}</strong> {% trans "\"La tecnología sin propósito es solo ruido. Nuestro propósito es servir a la humanidad.\"" %}</p>
+            </div>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-card__header">
+              <h3>Mathias Velez</h3>
+              <p class="principle-card__role">{% trans "CTO & Director de IA" %}</p>
+            </div>
+            <p>{% trans "Como especialista en inteligencia artificial y machine learning, Mathias es el cerebro técnico detrás de Buddy. Su experiencia en algoritmos de personalización convierte cada sesión de entrenamiento en una experiencia única." %}</p>
+            <div class="principle-card__details">
+              <p><strong>{% trans "Especialidad:" %}</strong> {% trans "Inteligencia Artificial, Machine Learning y arquitecturas de software escalables." %}</p>
+              <p><strong>{% trans "Experiencia:" %}</strong> {% trans "Desarrollo de sistemas de IA, optimización de algoritmos y arquitecturas cloud-native." %}</p>
+              <p><strong>{% trans "Filosofía:" %}</strong> {% trans "\"La IA debe ser invisible: si funciona bien, el usuario solo siente que alguien lo entiende.\"" %}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="values-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="values-title">{% trans "Nuestros Valores" %}</h2>
+          <p>{% trans "Los principios que guían cada decisión que tomamos." %}</p>
+        </div>
+        <div class="pillars">
+          <article>
+            <h3>{% trans "Humanidad Primero" %}</h3>
+            <p>{% trans "Cada tecnología que construimos tiene como objetivo servir a las personas, no reemplazarlas. La eficiencia sin humanidad es irrelevante." %}</p>
+          </article>
+          <article>
+            <h3>{% trans "Transparencia Total" %}</h3>
+            <p>{% trans "Operamos con claridad radical. Desde nuestros algoritmos hasta nuestros precios, todo es visible y comprensible." %}</p>
+          </article>
+          <article>
+            <h3>{% trans "Excelencia Sin Compromiso" %}</h3>
+            <p>{% trans "No nos conformamos con \"suficientemente bueno\". Cada detalle importa, desde el código hasta la experiencia del usuario." %}</p>
+          </article>
+          <article>
+            <h3>{% trans "Impacto Real" %}</h3>
+            <p>{% trans "Medimos nuestro éxito por el cambio positivo que generamos en la vida de nuestros usuarios, no por métricas vacías." %}</p>
+          </article>
+          <article>
+            <h3>{% trans "Evolución Constante" %}</h3>
+            <p>{% trans "Somos aprendices permanentes. La tecnología y las necesidades humanas evolucionan, y nosotros evolucionamos con ellas." %}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="vision-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="vision-title">{% trans "Nuestra Visión: 3 → 6 → 9 → 12 → 33" %}</h2>
+          <p>{% trans "Un roadmap basado en la proporción áurea, porque creemos en la armonía entre precisión y humanidad." %}</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item">
+            <span class="timeline__badge">3</span>
+            <div class="timeline__content">
+              <h3>{% trans "Fundamentos Sólidos" %}</h3>
+              <p>{% trans "Establecer las bases técnicas y filosóficas que soportarán todo nuestro ecosistema. Buddy nace como un asistente de IA que realmente comprende." %}</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__badge">6</span>
+            <div class="timeline__content">
+              <h3>{% trans "Ecosistema Conectado" %}</h3>
+              <p>{% trans "La integración de Luks como token utility crea un ciclo de valor donde cada entrenamiento tiene significado y recompensa." %}</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__badge">9</span>
+            <div class="timeline__content">
+              <h3>{% trans "Adopción Global" %}</h3>
+              <p>{% trans "Expansión a múltiples mercados con localización cultural profunda y soporte en 8+ idiomas." %}</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__badge">12</span>
+            <div class="timeline__content">
+              <h3>{% trans "Transformación Social" %}</h3>
+              <p>{% trans "Programas comunitarios, partnerships con gimnasios y ONGs para democratizar el acceso a tecnología de fitness de calidad." %}</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__badge">33</span>
+            <div class="timeline__content">
+              <h3>{% trans "Legacy" %}</h3>
+              <p>{% trans "Haber cambiado fundamentalmente la manera en que la humanidad se conecta con su bienestar, inspirando a toda una industria a seguir nuestro ejemplo." %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-slim" aria-labelledby="contact-title">
+      <div class="container cta-slim__layout">
+        <div>
+          <h2 id="contact-title">{% trans "¿Listo para ser parte del cambio?" %}</h2>
+          <p>{% trans "Si compartes nuestra visión de un futuro donde la tecnología sirve a la humanidad, nos encantaría conocerte." %}</p>
+        </div>
+        <div class="cta-slim__actions">
+          <a class="btn btn--primary" href="mailto:hola@croody.app">{% trans "Contáctanos" %}</a>
+          <a class="link-inline" href="{% url 'landing:home' %}">{% trans "Volver al inicio" %}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block body_scripts %}
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  </script>
+{% endblock %}

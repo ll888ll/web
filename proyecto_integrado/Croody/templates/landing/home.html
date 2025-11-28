@@ -9,9 +9,29 @@
           <div class="chip">{{ hero.eyebrow }}</div>
           <h1 id="hero-title">{{ hero.title }}</h1>
           <p>{{ hero.lead }}</p>
-          <div class="landing-hero__cta">
-            <a class="btn btn--primary" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
-            <a class="btn btn--ghost" href="{{ hero.secondary_cta.url }}">{{ hero.secondary_cta.label }}</a>
+          <div class="hero-cta-group">
+            <a class="btn btn--primary" href="{{ hero.primary_cta.url }}">
+              {{ hero.primary_cta.label }}
+            </a>
+            <a class="btn btn--ghost" href="{{ hero.secondary_cta.url }}">
+              {{ hero.secondary_cta.label }}
+            </a>
+            <a class="btn btn--outline" href="{{ hero.tertiary_cta.url }}">
+              {{ hero.tertiary_cta.label }}
+            </a>
+          </div>
+          <div class="hero-stats">
+            <span>✓ +5,000 usuarios activos</span>
+            <span>✓ Descarga gratuita</span>
+            <span>✓ Disponible en 8 idiomas</span>
+          </div>
+          <div class="hero-trust">
+            <p>✓ Más de 5,000 personas ya entrenan con Buddy</p>
+            <div class="hero-trust__badges">
+              <span>✓ Sin contratos</span>
+              <span>✓ Cancela cuando quieras</span>
+              <span>✓ Soporte 24/7</span>
+            </div>
           </div>
         </div>
         <div class="landing-hero__visual" aria-hidden="true">
@@ -25,6 +45,65 @@
               <span class="metric-card__label">{{ metric.caption }}</span>
             </article>
           {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="ecosistema" class="section interactive-ecosystem" aria-labelledby="ecosystem-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="ecosystem-title">Un ecosistema, dos productos</h2>
+          <p>Descubre cómo Buddy y Luks trabajan juntos para transformar tu experiencia</p>
+        </div>
+        <div class="ecosystem-tabs">
+          <button class="tab-button active" data-tab="buddy" aria-controls="buddy-tab">Buddy</button>
+          <button class="tab-button" data-tab="luks" aria-controls="luks-tab">Luks</button>
+        </div>
+        <div class="ecosystem-content">
+          <div class="tab-content active" id="buddy-tab" role="tabpanel" aria-labelledby="buddy-tab">
+            <div class="landing-vectors__grid">
+              <article class="vector-card">
+                <span class="vector-card__badge">🤖 IA Personalizada</span>
+                <h3>Tu entrenador que te entiende</h3>
+                <p>Rutinas adaptadas a tu nivel, objetivos y tiempo disponible. La IA aprende de cada sesión para ofrecerte siempre lo mejor.</p>
+                <a class="btn btn--ghost" href="{% url 'landing:buddy' %}">Conocer Buddy</a>
+              </article>
+              <article class="vector-card">
+                <span class="vector-card__badge">🎮 Gamificación</span>
+                <h3>Entrenar nunca fue tan motivador</h3>
+                <p>Desafíos diarios, logros desbloqueables y un sistema de recompensas que mantiene tu motivación al máximo.</p>
+                <a class="btn btn--ghost" href="{% url 'landing:buddy' %}">Ver características</a>
+              </article>
+              <article class="vector-card">
+                <span class="vector-card__badge">📱 Multiplataforma</span>
+                <h3>Entrena donde quieras</h3>
+                <p>Sincronización perfecta entre web y móvil. Tu progreso siempre disponible, en cualquier momento.</p>
+                <a class="btn btn--ghost" href="{% url 'landing:buddy' %}">Más información</a>
+              </article>
+            </div>
+          </div>
+          <div class="tab-content" id="luks-tab" role="tabpanel" aria-labelledby="luks-tab">
+            <div class="landing-vectors__grid">
+              <article class="vector-card">
+                <span class="vector-card__badge">💎 Token Utility</span>
+                <h3>Recompensas reales</h3>
+                <p>Gana Luks entrenando y úsalos para desbloquear contenido premium, accesorios y productos exclusivos.</p>
+                <a class="btn btn--ghost" href="{% url 'landing:luks' %}">Explorar Luks</a>
+              </article>
+              <article class="vector-card">
+                <span class="vector-card__badge">🔒 Transparencia</span>
+                <h3>Todo claro, todo visible</h3>
+                <p>Probabilidades públicas, tarifas conocidas y un sistema de recompensas que puedes entender y predecir.</p>
+                <a class="btn btn--ghost" href="{% url 'landing:luks' %}">Ver tokenomics</a>
+              </article>
+              <article class="vector-card">
+                <span class="vector-card__badge">🌍 Economía Digital</span>
+                <h3>Más que una app</h3>
+                <p>Participa en una economía digital propia donde tu constancia tiene valor real y tangible.</p>
+                <a class="btn btn--ghost" href="{% url 'landing:luks' %}">Conocer más</a>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -51,6 +130,129 @@
       </div>
     </section>
 
+    <section id="testimonios" class="section landing-testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="testimonials-title">Lo que dicen los equipos que usan Croody</h2>
+          <p>Historias reales de personas que han transformado su forma de entrenar y conectarse.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-card__rating">
+              <span>★★★★★</span>
+            </div>
+            <blockquote>
+              "Buddy me ayudó a mantener la constancia que siempre me faltó. En 3 meses he progresado más que en todo el año anterior."
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">👨‍💼</div>
+              <div>
+                <strong>María González</strong>
+                <span>Diseñadora UX, Madrid</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__rating">
+              <span>★★★★★</span>
+            </div>
+            <blockquote>
+              "La integración con Luks hace que cada entrenamiento cuente. Es adictivo de la forma correcta."
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">👩‍💻</div>
+              <div>
+                <strong>Carlos Ruiz</strong>
+                <span>Desarrollador, México</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__rating">
+              <span>★★★★★</span>
+            </div>
+            <blockquote>
+              "Finalmente una app que entiende que el fitness es parte de un estilo de vida, no solo ejercicio."
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">🧑‍🎨</div>
+              <div>
+                <strong>Ana Martínez</strong>
+                <span>Coach Fitness, Barcelona</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="historias" class="section user-stories" aria-labelledby="stories-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="stories-title">Historias reales, resultados reales</h2>
+          <p>Conoce a quienes han transformado su vida con Croody</p>
+        </div>
+        <div class="stories-grid">
+          <article class="story-card">
+            <div class="story-card__avatar">👩‍💼</div>
+            <blockquote>"En 3 meses con Buddy logré más que en todo el año anterior. Las rutinas personalizadas marcaron la diferencia."</blockquote>
+            <div class="story-card__meta">
+              <strong>María González</strong>
+              <span>Diseñadora UX, Madrid · Usuario desde Enero 2025</span>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-card__avatar">👨‍💻</div>
+            <blockquote>"La integración con Luks hace que cada entrenamiento cuente. Es adictivo de la forma correcta."</blockquote>
+            <div class="story-card__meta">
+              <strong>Carlos Ruiz</strong>
+              <span>Desarrollador, México · Usuario desde 2024</span>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-card__avatar">🧑‍🎨</div>
+            <blockquote>"Finalmente una app que entiende que el fitness es parte de un estilo de vida, no solo ejercicio."</blockquote>
+            <div class="story-card__meta">
+              <strong>Ana Martínez</strong>
+              <span>Coach Fitness, Barcelona · Usuario desde 2024</span>
+            </div>
+          </article>
+        </div>
+        <div class="section__footer" style="margin-top: var(--space-4); text-align: center;">
+          <a class="btn btn--primary" href="{% url 'landing:buddy' %}">Comienza tu historia</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="section product-showcase" aria-labelledby="productos-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 id="productos-title">Nuestros últimos productos</h2>
+          <p>Diseñados para transformar tu experiencia</p>
+        </div>
+        <div class="landing-blueprint__cards">
+          {% for product in buddy_products %}
+            <article class="product-card product-card--home">
+              {% if product.badge_label %}<span class="chip chip--outline">{{ product.badge_label }}</span>{% endif %}
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.teaser }}</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">${{ product.price|floatformat:0 }}</span>
+                <span class="product-card__note">{{ product.delivery_estimate }}</span>
+              </div>
+              <a class="link-inline" href="{% url 'shop:detail' product.slug %}">Ver detalle</a>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="section__footer" style="margin-top: var(--space-4); text-align: center;">
+          <a class="btn btn--primary" href="{% url 'shop:catalogue' %}">Ver todos los productos →</a>
+        </div>
+      </div>
+    </section>
 
     <section id="blueprint" class="section landing-blueprint" aria-labelledby="blueprint-title">
       <div class="container landing-blueprint__grid">

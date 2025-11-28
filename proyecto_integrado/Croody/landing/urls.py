@@ -2,6 +2,7 @@
 from django.urls import path
 
 from .views import (
+    AboutView,
     BuddyView,
     CroodyLoginView,
     CroodyLogoutView,
@@ -20,6 +21,7 @@ app_name = 'landing'
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+    path('nosotros/', AboutView.as_view(), name='about'),
     path('buddy/', BuddyView.as_view(), name='buddy'),
     path('buddy/suscripciones/', SuscripcionesView.as_view(), name='buddy-suscripciones'),
     path('luks/', LuksView.as_view(), name='luks'),
