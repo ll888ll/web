@@ -22,9 +22,9 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '0.0.0.0']
 # ========================================
 
 INSTALLED_APPS += [
-    'debug_toolbar',
+    # 'debug_toolbar',  # Deshabilitado temporalmente
     'django_extensions',
-    'silk',
+    # 'silk',  # Deshabilitado temporalmente
 ]
 
 # ========================================
@@ -32,8 +32,8 @@ INSTALLED_APPS += [
 # ========================================
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'silk.middleware.SilkyMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',  # Deshabilitado temporalmente
+    # 'silk.middleware.SilkyMiddleware',  # Deshabilitado temporalmente
 ] + MIDDLEWARE
 
 
@@ -63,6 +63,16 @@ DEBUG_TOOLBAR_CONFIG = {
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'console': {
             'level': 'DEBUG',

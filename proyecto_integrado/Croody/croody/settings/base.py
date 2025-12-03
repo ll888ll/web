@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv(
     'django-insecure-change-me-para-produccion'
 )
 
-DEBUG = os.getenv('DEBUG', 'false').lower() in {'1', 'true', 'yes', 'on'}
+DEBUG = os.getenv('DEBUG', 'true').lower() in {'1', 'true', 'yes', 'on'}
 
 ALLOWED_HOSTS = [
     h.strip()
@@ -110,6 +110,7 @@ TEMPLATES = [
 # WSGI
 # ========================================
 
+ROOT_URLCONF = 'croody.urls'
 WSGI_APPLICATION = 'croody.wsgi.application'
 
 

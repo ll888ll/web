@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Croody 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"POT-Creation-Date: 2025-12-03 20:10+0000\n"
 "PO-Revision-Date: 2025-01-06 16:30+0000\n"
 "Last-Translator: Croody Team\n"
 "Language-Team: English <hola@croody.app>\n"
@@ -16,237 +16,1158 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# Base template
-msgid "Croody · Precisión cósmica con corazón"
-msgstr "Croody · Cosmic precision with heart"
+#: croody/navigation.py:14
+msgid "Inicio"
+msgstr ""
 
-msgid "Saltar al contenido principal"
-msgstr "Skip to main content"
+#: croody/navigation.py:15 landing/views.py:56 templates/landing/about.html:10
+msgid "Nosotros"
+msgstr ""
 
-msgid "Abrir menú"
-msgstr "Open menu"
+#: croody/navigation.py:16 landing/views.py:93
+msgid "Buddy"
+msgstr "Buddy"
 
-msgid "Buscar en Croody"
-msgstr "Search in Croody"
+# Navigation and search labels (added)
+#: croody/navigation.py:17
+msgid "Luks"
+msgstr "Luks"
 
-msgid "Buscar (pulsa /)"
-msgstr "Search (press /)"
+#: croody/navigation.py:18
+msgid "Tienda"
+msgstr "Store"
 
-msgid "Seleccionar idioma"
-msgstr "Select language"
+#: croody/navigation.py:26
+msgid "Croody · Inicio"
+msgstr "Croody · Home"
 
-msgid "Cambiar tema"
-msgstr "Change theme"
+#: croody/navigation.py:27
+msgid "Croody · Ejes"
+msgstr "Croody · Axes"
 
-msgid "Empezar"
-msgstr "Get Started"
+#: croody/navigation.py:28
+msgid "Croody · Roadmap"
+msgstr "Croody · Roadmap"
 
-msgid "Salir"
-msgstr "Logout"
+#: croody/navigation.py:29
+msgid "Buddy · Producto"
+msgstr "Buddy · Product"
 
-msgid "Acceder"
-msgstr "Login"
+#: croody/navigation.py:30
+msgid "Buddy · Suscripciones"
+msgstr "Buddy · Subscriptions"
 
-msgid "Cerrar sesión"
-msgstr "Sign out"
+#: croody/navigation.py:31
+msgid "Luks · Infraestructura"
+msgstr "Luks · Infrastructure"
 
-msgid "Búsqueda"
-msgstr "Search"
+#: croody/navigation.py:32
+msgid "Tienda Buddy"
+msgstr "Buddy Store"
 
-msgid "Contactar"
+#: croody/navigation.py:33
+msgid "Buddy Checkout"
+msgstr "Buddy Checkout"
+
+#: croody/navigation.py:34
+#, fuzzy
+#| msgid "Croody · Ejes"
+msgid "Croody · Registro"
+msgstr "Croody · Axes"
+
+#: croody/navigation.py:35
+#, fuzzy
+#| msgid "Croody · Ejes"
+msgid "Croody · Perfil"
+msgstr "Croody · Axes"
+
+#: landing/forms.py:18
+msgid "Usuario o correo"
+msgstr ""
+
+#: landing/forms.py:30
+#, fuzzy
+#| msgid "Contactar"
+msgid "Contraseña"
 msgstr "Contact"
 
-msgid "Accesos rápidos"
-msgstr "Quick access"
+#: landing/forms.py:54
+msgid "Nombre completo"
+msgstr ""
 
-msgid "Resultados sugeridos"
-msgstr "Suggested results"
+#: landing/forms.py:59
+msgid "Nombre y apellidos"
+msgstr ""
 
-msgid "Geometría sagrada"
-msgstr "Sacred geometry"
+#: landing/forms.py:65
+msgid "Correo electrónico"
+msgstr ""
 
-msgid "Legal"
-msgstr "Legal"
+#: landing/forms.py:71
+msgid "Idioma preferido"
+msgstr ""
 
-msgid "Privacidad"
-msgstr "Privacy"
+#: landing/forms.py:76
+msgid "Tema visual"
+msgstr ""
 
-msgid "Términos"
-msgstr "Terms"
+#: landing/forms.py:80
+msgid "Acepto el manifiesto Croody y términos de servicio"
+msgstr ""
 
-msgid "Cookies"
-msgstr "Cookies"
+#: landing/forms.py:89
+msgid "Ya existe una cuenta con este correo."
+msgstr ""
 
-# Login page
-msgid "Inicia sesión"
-msgstr "Sign In"
+#: landing/forms.py:132
+msgid "Nombre"
+msgstr ""
 
-msgid "Acceso Croody"
-msgstr "Croody Access"
+#: landing/forms.py:133
+msgid "Apellidos"
+msgstr ""
 
-msgid "Conecta tu cuenta para continuar."
-msgstr "Connect your account to continue."
+#: landing/models.py:16
+msgid "Sistema"
+msgstr ""
 
-msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
-msgstr "Sign in to shop at the Buddy Store, manage your items and keep your dark or light theme in sync."
+#: landing/models.py:17
+msgid "Oscuro"
+msgstr ""
 
-msgid "¿Olvidaste tu acceso? Escríbenos a"
-msgstr "Forgot your access? Write to us at"
+#: landing/models.py:18
+msgid "Claro"
+msgstr ""
 
-msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
-msgstr "Don't have credentials yet? Request account activation from the Croody team."
+# Buddy page
+#: landing/views.py:70
+#, fuzzy
+#| msgid "Buddy · Conecta, Entrena y Destaca"
+msgid "Buddy AI · Entrena, Progresa, Destaca"
+msgstr "Buddy · Connect, Train and Stand Out"
 
-msgid "Ingresar"
-msgstr "Sign In"
+#: landing/views.py:71
+msgid "Tu entrenador AI personal"
+msgstr ""
 
-# Home page
-msgid "Croody · Conecta, Entrena y Destaca"
-msgstr "Croody · Connect, Train and Stand Out"
+#: landing/views.py:73
+msgid ""
+"Rutinas que se adaptan a ti. Recompensas que te motivan. La tecnología que "
+"conecta."
+msgstr ""
 
-msgid "Volvamos a ser humanos"
-msgstr "Let's be human again"
-
-msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
-msgstr "Croody is a company with the mindset that the technological world should connect people, not simulate a connection that ultimately disconnects us even from ourselves. Through technological proposals, we seek to create real connections that change the world for a better future as species."
-
-msgid "Ir a la tienda Buddy"
+#: landing/views.py:75
+#, fuzzy
+#| msgid "Ir a la tienda Buddy"
+msgid "🛒 Ir a la Tienda"
 msgstr "Go to Buddy Store"
 
-msgid "Conocer a Buddy"
-msgstr "Learn about Buddy"
+#: landing/views.py:76
+#, fuzzy
+#| msgid "Buddy"
+msgid "Ver Buddy"
+msgstr "Buddy"
 
-msgid "Logo de Croody representando conexión y tecnología humanizada"
-msgstr "Croody logo representing connection and humanized technology"
+#: landing/views.py:77
+#, fuzzy
+#| msgid "My Luks"
+msgid "💎 Luks"
+msgstr "My Luks"
 
+#: landing/views.py:80
+msgid "Croody - Tecnología que conecta"
+msgstr ""
+
+#: landing/views.py:85
 msgid "rutinas ajustadas automáticamente cada semana"
 msgstr "routines automatically adjusted every week"
 
+#: landing/views.py:86
 msgid "personas mantienen su plan mensual con Buddy activo"
 msgstr "people maintain their monthly plan with Buddy active"
 
+#: landing/views.py:87
 msgid "7 regiones"
 msgstr "7 regions"
 
+#: landing/views.py:87
 msgid "operación sincronizada con soporte localizado"
 msgstr "synchronized operation with localized support"
 
 # Vectors
+#: landing/views.py:92
 msgid "Fitness & Conexión"
 msgstr "Fitness & Connection"
 
-msgid "Buddy"
-msgstr "Buddy"
+#: landing/views.py:94
+msgid ""
+"Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, "
+"diseñada para que tanto quien ya entrena como quien apenas empieza encuentre "
+"cada día un porqué claro para construir el físico y los hábitos de salud de "
+"sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr ""
+"An intuitive, symmetrical app with high aesthetics and great fluidity, "
+"designed so that both those who already train and those just starting out "
+"find a clear reason every day to build the physique and health habits of "
+"their dreams. Connect with your friends, train together and stand out."
 
-msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
-msgstr "An intuitive, symmetrical app with high aesthetics and great fluidity, designed so that both those who already train and those just starting out find a clear reason every day to build the physique and health habits of their dreams. Connect with your friends, train together and stand out."
-
+#: landing/views.py:95 landing/views.py:97
 msgid "Conecta, Entrena y Destaca"
 msgstr "Connect, Train and Stand Out"
 
+#: landing/views.py:100
 msgid "Economía Digital"
 msgstr "Digital Economy"
 
+#: landing/views.py:101
 msgid "My Luks"
 msgstr "My Luks"
 
-msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
-msgstr "We create a market where you can safely venture into the crypto world, earn extra income and rely on currencies that don't depend on your country's internal politics and prosper even in hostile environments due to government decisions."
+#: landing/views.py:102
+msgid ""
+"Creamos un mercado con el cual puedes de forma segura incursionar en el "
+"mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen "
+"de una política interna de tu país y prosperar incluso en los entornos "
+"hostiles por decisiones de gobiernos."
+msgstr ""
+"We create a market where you can safely venture into the crypto world, earn "
+"extra income and rely on currencies that don't depend on your country's "
+"internal politics and prosper even in hostile environments due to government "
+"decisions."
 
+#: landing/views.py:103 landing/views.py:105
 msgid "Seguridad, Abundancia y Proyección"
 msgstr "Security, Abundance and Projection"
 
+#: landing/views.py:108
 msgid "Alimentación Real"
 msgstr "Real Food"
 
+#: landing/views.py:109
 msgid "Comida Real (Próximamente)"
 msgstr "Real Food (Coming Soon)"
 
-msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
-msgstr "Through research and nutritional commitment, we offer real food and effective solutions for those who want to eat well but lack time, for all ages. We promote animal and plant-based foods, without harmful chemicals."
+#: landing/views.py:110
+msgid ""
+"A través de investigación y compromiso alimenticio ofrecemos comida real y "
+"soluciones eficaces para aquellos que se quieren alimentar bien y carecen de "
+"tiempo, para todas las edades. Promovemos alimentos de origen animal y "
+"vegetal, sin productos químicos dañinos."
+msgstr ""
+"Through research and nutritional commitment, we offer real food and "
+"effective solutions for those who want to eat well but lack time, for all "
+"ages. We promote animal and plant-based foods, without harmful chemicals."
 
+#: landing/views.py:111 landing/views.py:113
 msgid "Alivio, Nostalgia y Satisfacción"
 msgstr "Relief, Nostalgia and Satisfaction"
 
 # Buddy page
+#: landing/views.py:235
 msgid "Buddy · Conecta, Entrena y Destaca"
 msgstr "Buddy · Connect, Train and Stand Out"
 
+#: landing/views.py:236
 msgid "Más que entrenar: una conexión contigo y con los tuyos"
 msgstr "More than training: a connection with yourself and your loved ones"
 
-msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
-msgstr "Buddy is an intuitive, symmetrical app with high aesthetics and great fluidity, designed so that both gym-goers and those just considering the idea find every day a clear reason to focus and build the physique and health habits of their dreams. Besides looking and feeling good, Buddy ensures the experience is coherent, pleasant and deeply motivating from the first contact."
+#: landing/views.py:238
+#, fuzzy
+#| msgid ""
+#| "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran "
+#| "fluidez, diseñada para que tanto quien ya entrena en un gimnasio como "
+#| "quien apenas empieza a considerar la idea encuentre, cada día, un porqué "
+#| "claro para enfocarse y construir el físico y los hábitos de salud de sus "
+#| "sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia "
+#| "sea coherente, agradable y profundamente motivadora desde el primer "
+#| "contacto."
+msgid ""
+"Buddy es una aplicación intuitiva, simétrica, de alta estética y gran "
+"fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien "
+"apenas empieza a considerar la idea encuentre, cada día, un porqué claro "
+"para enfocarse y construir el físico y los hábitos de salud de sus sueños. "
+"Además de verse y sentirse bien, Buddy cuida que la experiencia sea "
+"coherente, agradable y profundamente motivadora desde el primer contacto, "
+"con una ética inspirada en nuestras convicciones de servicio que priorizan "
+"el cuidado de las personas."
+msgstr ""
+"Buddy is an intuitive, symmetrical app with high aesthetics and great "
+"fluidity, designed so that both gym-goers and those just considering the "
+"idea find every day a clear reason to focus and build the physique and "
+"health habits of their dreams. Besides looking and feeling good, Buddy "
+"ensures the experience is coherent, pleasant and deeply motivating from the "
+"first contact."
 
+#: landing/views.py:240
+msgid "Ir a la tienda Buddy"
+msgstr "Go to Buddy Store"
+
+#: landing/views.py:241
 msgid "Ver roadmap"
 msgstr "View roadmap"
 
+#: landing/views.py:244
 msgid "365 días"
 msgstr "365 days"
 
+#: landing/views.py:244
 msgid "de rutinas nuevas sin reciclar combinaciones"
 msgstr "of new routines without recycling combinations"
 
+#: landing/views.py:245
+#, python-format
 msgid "±5% fatiga"
 msgstr "±5% fatigue"
 
+#: landing/views.py:245
 msgid "ajuste automático según tu energía real"
 msgstr "automatic adjustment according to your real energy"
 
+#: landing/views.py:246
 msgid "5 estilos"
 msgstr "5 styles"
 
+#: landing/views.py:246
 msgid "personajes con tonos y objetivos definidos"
 msgstr "characters with defined tones and objectives"
 
+#: landing/views.py:250
 msgid "Entrenador con IA y rutinas a tu medida"
 msgstr "AI trainer and routines tailored to you"
 
-msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
-msgstr "Buddy offers the opportunity to design routines through a personalized AI trainer. Every week you receive a training plan designed exclusively for you, based on your previous workouts, data and history. AI automates this process through natural conversations, always maintaining full control of your training."
+#: landing/views.py:251
+msgid ""
+"Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador "
+"personalizado con IA. Cada semana recibes un plan de entrenamiento pensado "
+"exclusivamente para ti, basado en tus entrenamientos previos, datos e "
+"historial. La IA automatiza este proceso a través de conversaciones "
+"naturales, manteniendo siempre el control total de tu entrenamiento."
+msgstr ""
+"Buddy offers the opportunity to design routines through a personalized AI "
+"trainer. Every week you receive a training plan designed exclusively for "
+"you, based on your previous workouts, data and history. AI automates this "
+"process through natural conversations, always maintaining full control of "
+"your training."
 
+#: landing/views.py:254
 msgid "Biblioteca de ejercicios segura y consistente"
 msgstr "Safe and consistent exercise library"
 
-msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
-msgstr "Each movement includes short key videos with correct technique, breathing guidelines, safety points and common mistakes to avoid. With suggested progressions (easy/intermediate/advanced), you'll always have an alternative according to your level and available equipment."
+#: landing/views.py:255
+msgid ""
+"Cada movimiento incluye video-claves cortos con la técnica correcta, pautas "
+"de respiración, puntos de seguridad y errores comunes a evitar. Con "
+"progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una "
+"alternativa acorde a tu nivel y equipo disponible."
+msgstr ""
+"Each movement includes short key videos with correct technique, breathing "
+"guidelines, safety points and common mistakes to avoid. With suggested "
+"progressions (easy/intermediate/advanced), you'll always have an alternative "
+"according to your level and available equipment."
 
+#: landing/views.py:258
 msgid "Ecosistema de personajes con carisma"
 msgstr "Charismatic character ecosystem"
 
-msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
-msgstr "Buddy has a character ecosystem, each with their unique personality. You can choose preset routines according to each character's style or configure one to deliver all routines. Each character offers gestures, animations and constant support for a close and stimulating experience."
+#: landing/views.py:259
+msgid ""
+"Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad "
+"única. Puedes elegir rutinas predeterminadas según el estilo de cada "
+"personaje o configurar que uno solo te entregue todas las rutinas. Cada "
+"personaje ofrece gestos, animaciones y apoyo constante para una experiencia "
+"cercana y estimulante."
+msgstr ""
+"Buddy has a character ecosystem, each with their unique personality. You can "
+"choose preset routines according to each character's style or configure one "
+"to deliver all routines. Each character offers gestures, animations and "
+"constant support for a close and stimulating experience."
 
-# Navigation and search labels (added)
+#: landing/views.py:534
+msgid "Bienvenido a Croody. Ajusta tu perfil cuando quieras."
+msgstr ""
 
-msgid "Luks"
-msgstr "Luks"
+#: landing/views.py:540
+#, fuzzy
+#| msgid "Buscar en Croody"
+msgid "Crear cuenta Croody"
+msgstr "Search in Croody"
 
-msgid "Tienda"
-msgstr "Store"
+#: landing/views.py:572
+msgid "Perfil actualizado."
+msgstr ""
 
-msgid "Integraciones"
-msgstr "Integrations"
+#: landing/views.py:574
+msgid "Revisa los campos del perfil."
+msgstr ""
 
-msgid "Croody · Inicio"
-msgstr "Croody · Home"
+#: landing/views.py:579
+msgid "Preferencias guardadas."
+msgstr ""
 
-msgid "Croody · Ejes"
-msgstr "Croody · Axes"
+#: landing/views.py:581
+msgid "No pudimos guardar las preferencias."
+msgstr ""
 
-msgid "Croody · Roadmap"
+#: landing/views.py:584
+msgid "Generamos un nuevo token para tus robots."
+msgstr ""
+
+#: landing/views.py:586
+msgid "Acción no reconocida."
+msgstr ""
+
+#: landing/views.py:592
+msgid "Token de ingestión listo"
+msgstr ""
+
+#: landing/views.py:594
+msgid "activo"
+msgstr ""
+
+#: landing/views.py:597
+msgid "Alertas de telemetría"
+msgstr ""
+
+#: landing/views.py:598
+msgid "Recibir notificaciones críticas"
+msgstr ""
+
+#: landing/views.py:598
+msgid "Alertas desactivadas"
+msgstr ""
+
+#: landing/views.py:616
+msgid "Monitoreo en tiempo real"
+msgstr ""
+
+#: landing/views.py:617
+msgid ""
+"Visualiza la posición del robot, variables atmosféricas y estados críticos "
+"en un tablero neofuturista listo para operación global."
+msgstr ""
+
+#: landing/views.py:620 templates/account/profile.html:97
+msgid "Robots activos"
+msgstr ""
+
+#: landing/views.py:621 templates/account/profile.html:101
+msgid "Última actualización"
+msgstr ""
+
+#: landing/views.py:622 templates/account/profile.html:105
+msgid "Alertas"
+msgstr ""
+
+#: landing/views.py:628
+msgid "TCP ASCII · LOGIN/GET_DATA/MOVE"
+msgstr ""
+
+#: landing/views.py:629
+msgid "Emite cada 15 s y el bridge envía a Telemetry Gateway automáticamente."
+msgstr ""
+
+# Login page
+#: templates/account/login.html:4 templates/account/register.html:39
+msgid "Inicia sesión"
+msgstr "Sign In"
+
+#: templates/account/login.html:11
+msgid "Acceso Croody"
+msgstr "Croody Access"
+
+#: templates/account/login.html:12
+msgid "Conecta tu cuenta para continuar."
+msgstr "Connect your account to continue."
+
+#: templates/account/login.html:14
+msgid ""
+"Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener "
+"tu tema oscuro o claro sincronizado."
+msgstr ""
+"Sign in to shop at the Buddy Store, manage your items and keep your dark or "
+"light theme in sync."
+
+#: templates/account/login.html:17
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr "Forgot your access? Write to us at"
+
+#: templates/account/login.html:18
+msgid ""
+"¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
+msgstr ""
+"Don't have credentials yet? Request account activation from the Croody team."
+
+#: templates/account/login.html:47
+msgid "Ingresar"
+msgstr "Sign In"
+
+#: templates/account/login.html:48
+msgid "¿Aún no tienes cuenta?"
+msgstr ""
+
+#: templates/account/login.html:48
+msgid "Crea una"
+msgstr ""
+
+#: templates/account/profile.html:4 templates/account/profile.html:11
+#: templates/base.html:197 templates/base.html:237
+msgid "Perfil"
+msgstr ""
+
+#: templates/account/profile.html:12
+msgid "Cuida tu identidad Croody y tus robots"
+msgstr ""
+
+#: templates/account/profile.html:13
+msgid ""
+"Actualiza datos personales, gestiona tokens de ingestión y revisa la "
+"telemetría más reciente sin salir del dashboard."
+msgstr ""
+
+#: templates/account/profile.html:16
+msgid "Token activo"
+msgstr ""
+
+#: templates/account/profile.html:20
+msgid "Modo de alertas"
+msgstr ""
+
+#: templates/account/profile.html:21
+msgid "Activo"
+msgstr ""
+
+#: templates/account/profile.html:21
+msgid "Inactivo"
+msgstr ""
+
+#: templates/account/profile.html:24
+msgid "Idioma"
+msgstr ""
+
+#: templates/account/profile.html:31
+msgid "Datos personales"
+msgstr ""
+
+#: templates/account/profile.html:44
+msgid "Guardar"
+msgstr ""
+
+#: templates/account/profile.html:49
+msgid "Preferencias"
+msgstr ""
+
+#: templates/account/profile.html:62
+msgid "Actualizar preferencias"
+msgstr ""
+
+#: templates/account/profile.html:67
+msgid "Token de ingestión"
+msgstr ""
+
+#: templates/account/profile.html:73
+msgid "Regenerar"
+msgstr ""
+
+#: templates/account/profile.html:75
+msgid "Úsalo como cabecera X-API-Key al enviar telemetría."
+msgstr ""
+
+#: templates/account/profile.html:79
+#, fuzzy
+#| msgid "Privacidad"
+msgid "Actividad"
+msgstr "Privacy"
+
+#: templates/account/profile.html:94
+msgid "Telemetría en vivo"
+msgstr ""
+
+#: templates/account/register.html:4 templates/account/register.html:38
+msgid "Crear cuenta"
+msgstr ""
+
+#: templates/account/register.html:11
+#, fuzzy
+#| msgid "Acceso Croody"
+msgid "Registro Croody"
+msgstr "Croody Access"
+
+#: templates/account/register.html:12
+msgid "Activa tu acceso al universo Croody."
+msgstr ""
+
+#: templates/account/register.html:13
+msgid ""
+"Configura idioma, tema y recibe un token personal para conectar tus robots "
+"al protocolo."
+msgstr ""
+
+#: templates/account/register.html:15
+msgid "Token de ingestión personal para Telemetry Gateway"
+msgstr ""
+
+#: templates/account/register.html:16
+msgid "Dashboard de perfil y alertas en tiempo real"
+msgstr ""
+
+#: templates/account/register.html:17
+msgid "Compatibilidad con Buddy Store y Luks"
+msgstr ""
+
+#: templates/account/register.html:39
+msgid "¿Ya tienes cuenta?"
+msgstr ""
+
+#: templates/admin/base_site.html:4
+#, fuzzy
+#| msgid "Croody · Roadmap"
+msgid "Croody Admin"
 msgstr "Croody · Roadmap"
 
-msgid "Buddy · Producto"
-msgstr "Buddy · Product"
+#: templates/admin/base_site.html:25
+msgid "Home"
+msgstr ""
 
-msgid "Buddy · Suscripciones"
-msgstr "Buddy · Subscriptions"
+#: templates/admin/base_site.html:35
+msgid "Powered by"
+msgstr ""
 
-msgid "Luks · Infraestructura"
-msgstr "Luks · Infrastructure"
+#: templates/base.html:12 templates/base.html:54
+msgid "Croody · Diseño con propósito"
+msgstr "Croody · Purposeful Design"
 
-msgid "Tienda Buddy"
-msgstr "Buddy Store"
+#: templates/base.html:85
+msgid "Saltar al contenido principal"
+msgstr "Skip to main content"
 
-msgid "Buddy Checkout"
-msgstr "Buddy Checkout"
+#: templates/base.html:104
+msgid "Abrir menú"
+msgstr "Open menu"
+
+#: templates/base.html:125 templates/base.html:211
+msgid "Buscar en Croody"
+msgstr "Search in Croody"
+
+#: templates/base.html:132 templates/base.html:218
+msgid "Buscar (pulsa /)"
+msgstr "Search (press /)"
+
+#: templates/base.html:143
+msgid "Seleccionar idioma"
+msgstr "Select language"
+
+#: templates/base.html:188
+msgid "Cambiar tema"
+msgstr "Change theme"
+
+#: templates/base.html:195 templates/base.html:236
+msgid "Empezar"
+msgstr "Get Started"
+
+#: templates/base.html:198
+msgid "Salir"
+msgstr "Logout"
+
+#: templates/base.html:201 templates/base.html:242
+msgid "Acceder"
+msgstr "Login"
+
+#: templates/base.html:238
+msgid "Cerrar sesión"
+msgstr "Sign out"
+
+#: templates/base.html:246
+msgid "Búsqueda"
+msgstr "Search"
+
+#: templates/base.html:247
+msgid "Contactar"
+msgstr "Contact"
+
+#: templates/base.html:260
+msgid "Accesos rápidos"
+msgstr "Quick access"
+
+#: templates/base.html:266
+msgid "Resultados sugeridos"
+msgstr "Suggested results"
+
+#: templates/base.html:317
+msgid "Inspirados en valores eternos"
+msgstr ""
+
+#: templates/base.html:318
+msgid "Legal"
+msgstr "Legal"
+
+#: templates/base.html:319
+msgid "Privacidad"
+msgstr "Privacy"
+
+#: templates/base.html:320
+msgid "Términos"
+msgstr "Terms"
+
+#: templates/base.html:321
+msgid "Cookies"
+msgstr "Cookies"
+
+#: templates/landing/about.html:11
+msgid "Cambiar el mundo a través de la tecnología"
+msgstr ""
+
+#: templates/landing/about.html:12
+msgid ""
+"Somos una empresa fundada en la Universidad EAFIT, Medellín, con la "
+"convicción de que la tecnología debe servir a la humanidad, no reemplazarla."
+msgstr ""
+
+#: templates/landing/about.html:20
+msgid "Nuestra Historia"
+msgstr ""
+
+#: templates/landing/about.html:21
+msgid ""
+"Todo comenzó en 2025, cuando nace Croody con la convicción de que el mundo "
+"del fitness necesitaba una revolución."
+msgstr ""
+
+#: templates/landing/about.html:25
+msgid ""
+"En un mundo cada vez más digital, vimos cómo las personas perdían la "
+"conexión consigo mismas y con sus objetivos de salud. Los gimnasios "
+"tradicionales no se adaptaron a la nueva realidad, y las aplicaciones "
+"existentes trataban a los usuarios como números en lugar de personas."
+msgstr ""
+
+#: templates/landing/about.html:26
+msgid ""
+"Decidimos crear algo diferente: un ecosistema que combina tecnología de "
+"punta con un entendimiento profundo de la motivación humana. Así nació "
+"Croody, una empresa comprometida con transformar la manera en que las "
+"personas se conectan con su bienestar."
+msgstr ""
+
+#: templates/landing/about.html:27
+msgid "— El Equipo Croody"
+msgstr ""
+
+#: templates/landing/about.html:36
+#, fuzzy
+#| msgid "Cerrar sesión"
+msgid "Nuestra Misión"
+msgstr "Sign out"
+
+#: templates/landing/about.html:37
+msgid "Transformar la industria del fitness a través de tecnología humanizada."
+msgstr ""
+
+#: templates/landing/about.html:42
+#, fuzzy
+#| msgid "Buddy"
+msgid "Buddy AI"
+msgstr "Buddy"
+
+#: templates/landing/about.html:43
+msgid "Tu Entrenador Personal"
+msgstr ""
+
+#: templates/landing/about.html:45
+msgid ""
+"Nuestro asistente de inteligencia artificial comprende tus necesidades "
+"únicas y te guía en cada paso de tu journey fitness. No es solo una app, es "
+"tu compañero digital que entiende tu cuerpo, tu mente y tus objetivos."
+msgstr ""
+
+#: templates/landing/about.html:47
+msgid "Tecnología:"
+msgstr ""
+
+#: templates/landing/about.html:47
+msgid "Algoritmos avanzados de personalización que aprenden de tu progreso."
+msgstr ""
+
+#: templates/landing/about.html:48
+msgid "Enfoque:"
+msgstr ""
+
+#: templates/landing/about.html:48
+msgid "Cada rutina es única, diseñada específicamente para ti."
+msgstr ""
+
+#: templates/landing/about.html:49
+msgid "Compromiso:"
+msgstr ""
+
+#: templates/landing/about.html:49
+msgid "Resultados reales con motivación humana."
+msgstr ""
+
+#: templates/landing/about.html:55
+msgid "Luks Rewards"
+msgstr ""
+
+#: templates/landing/about.html:56
+msgid "Tu Progreso Tiene Valor"
+msgstr ""
+
+#: templates/landing/about.html:58
+msgid ""
+"Luks es nuestro sistema de recompensas que reconoce tu esfuerzo y "
+"dedicación. Cada entrenamiento no solo mejora tu salud, sino que también "
+"acumula valor real en el ecosistema Croody."
+msgstr ""
+
+#: templates/landing/about.html:60
+msgid "Innovación:"
+msgstr ""
+
+#: templates/landing/about.html:60
+msgid "Token utility que crea un ciclo de valor real."
+msgstr ""
+
+#: templates/landing/about.html:61
+msgid "Motivación:"
+msgstr ""
+
+#: templates/landing/about.html:61
+msgid "Cada esfuerzo es reconocido y recompensado."
+msgstr ""
+
+#: templates/landing/about.html:62
+msgid "Futuro:"
+msgstr ""
+
+#: templates/landing/about.html:62
+msgid "Construye tu legacy fitness mientras transformas tu vida."
+msgstr ""
+
+#: templates/landing/about.html:68
+msgid "Tecnología Humanizada"
+msgstr ""
+
+#: templates/landing/about.html:69
+msgid "IA al Servicio de la Humanidad"
+msgstr ""
+
+#: templates/landing/about.html:71
+msgid ""
+"En Croody creemos que la mejor tecnología es aquella que se siente natural. "
+"Nuestra IA no reemplaza el factor humano, lo potencia. Cada interacción está "
+"diseñada para recordarte que eres más que datos: eres una persona única con "
+"objetivos, emociones y sueños."
+msgstr ""
+
+#: templates/landing/about.html:73
+msgid "Filosofía:"
+msgstr ""
+
+#: templates/landing/about.html:73
+msgid "La tecnología debe servir a la humanidad, no reemplazarla."
+msgstr ""
+
+#: templates/landing/about.html:74
+msgid "Método:"
+msgstr ""
+
+#: templates/landing/about.html:74
+msgid "IA invisible que se siente como comprensión humana."
+msgstr ""
+
+#: templates/landing/about.html:75
+msgid "Impacto:"
+msgstr ""
+
+#: templates/landing/about.html:75
+msgid "Transformamos vidas, no solo creamos apps."
+msgstr ""
+
+#: templates/landing/about.html:85
+msgid "Nuestros Valores"
+msgstr ""
+
+#: templates/landing/about.html:86
+msgid "Los principios que guían cada decisión que tomamos."
+msgstr ""
+
+#: templates/landing/about.html:90
+msgid "Humanidad Primero"
+msgstr ""
+
+#: templates/landing/about.html:91
+msgid ""
+"Cada tecnología que construimos tiene como objetivo servir a las personas, "
+"no reemplazarlas. La eficiencia sin humanidad es irrelevante."
+msgstr ""
+
+#: templates/landing/about.html:94
+msgid "Transparencia Total"
+msgstr ""
+
+#: templates/landing/about.html:95
+msgid ""
+"Operamos con claridad radical. Desde nuestros algoritmos hasta nuestros "
+"precios, todo es visible y comprensible."
+msgstr ""
+
+#: templates/landing/about.html:98
+msgid "Excelencia Sin Compromiso"
+msgstr ""
+
+#: templates/landing/about.html:99
+msgid "No nos conformamos con \\"
+msgstr ""
+
+#: templates/landing/about.html:102
+msgid "Impacto Real"
+msgstr ""
+
+#: templates/landing/about.html:103
+msgid ""
+"Medimos nuestro éxito por el cambio positivo que generamos en la vida de "
+"nuestros usuarios, no por métricas vacías."
+msgstr ""
+
+#: templates/landing/about.html:106
+msgid "Evolución Constante"
+msgstr ""
+
+#: templates/landing/about.html:107
+msgid ""
+"Somos aprendices permanentes. La tecnología y las necesidades humanas "
+"evolucionan, y nosotros evolucionamos con ellas."
+msgstr ""
+
+#: templates/landing/about.html:116
+msgid "Nuestra Visión: 3 → 6 → 9 → 12 → 33"
+msgstr ""
+
+#: templates/landing/about.html:117
+msgid ""
+"Un roadmap basado en la proporción áurea, porque creemos en la armonía entre "
+"precisión y humanidad."
+msgstr ""
+
+#: templates/landing/about.html:123
+msgid "Fundamentos Sólidos"
+msgstr ""
+
+#: templates/landing/about.html:124
+msgid ""
+"Establecer las bases técnicas y filosóficas que soportarán todo nuestro "
+"ecosistema. Buddy nace como un asistente de IA que realmente comprende."
+msgstr ""
+
+#: templates/landing/about.html:130
+msgid "Ecosistema Conectado"
+msgstr ""
+
+#: templates/landing/about.html:131
+msgid ""
+"La integración de Luks como token utility crea un ciclo de valor donde cada "
+"entrenamiento tiene significado y recompensa."
+msgstr ""
+
+#: templates/landing/about.html:137
+msgid "Adopción Global"
+msgstr ""
+
+#: templates/landing/about.html:138
+msgid ""
+"Expansión a múltiples mercados con localización cultural profunda y soporte "
+"en 8+ idiomas."
+msgstr ""
+
+#: templates/landing/about.html:144
+msgid "Transformación Social"
+msgstr ""
+
+#: templates/landing/about.html:145
+msgid ""
+"Programas comunitarios, partnerships con gimnasios y ONGs para democratizar "
+"el acceso a tecnología de fitness de calidad."
+msgstr ""
+
+#: templates/landing/about.html:151
+#, fuzzy
+#| msgid "Legal"
+msgid "Legacy"
+msgstr "Legal"
+
+#: templates/landing/about.html:152
+msgid ""
+"Haber cambiado fundamentalmente la manera en que la humanidad se conecta con "
+"su bienestar, inspirando a toda una industria a seguir nuestro ejemplo."
+msgstr ""
+
+#: templates/landing/about.html:162
+msgid "¿Listo para ser parte del cambio?"
+msgstr ""
+
+#: templates/landing/about.html:163
+msgid ""
+"Si compartes nuestra visión de un futuro donde la tecnología sirve a la "
+"humanidad, nos encantaría conocerte."
+msgstr ""
+
+#: templates/landing/about.html:166
+#, fuzzy
+#| msgid "Contactar"
+msgid "Contáctanos"
+msgstr "Contact"
+
+#: templates/landing/about.html:167
+msgid "Volver al inicio"
+msgstr ""
+
+#: templates/landing/integrations.html:11
+#, fuzzy
+#| msgid "Croody · Ejes"
+msgid "Croody · APIs"
+msgstr "Croody · Axes"
+
+#: templates/landing/integrations.html:12
+msgid "Prueba los endpoints directamente"
+msgstr ""
+
+#: templates/landing/integrations.html:13
+msgid ""
+"Ingiere muestras, consulta históricos y obtén predicciones IDS desde la "
+"misma vista."
+msgstr ""
+
+#: templates/landing/integrations.html:18
+msgid "Ingresa datos en caliente y revisa la última lectura"
+msgstr ""
+
+#: templates/landing/integrations.html:20
+msgid "Ingerir muestra"
+msgstr ""
+
+#: templates/landing/integrations.html:21
+msgid "Último registro"
+msgstr ""
+
+#: templates/landing/integrations.html:28
+msgid "Simula tráfico y recibe la inferencia"
+msgstr ""
+
+#: templates/landing/integrations.html:29
+msgid "Probar predicción"
+msgstr ""
+
+#: templates/landing/monitor.html:11
+msgid "Croody Protocol"
+msgstr ""
+
+#: templates/landing/monitor.html:15
+msgid "Conectar mi robot"
+msgstr ""
+
+#: templates/landing/monitor.html:16
+msgid "Ver token personal"
+msgstr ""
+
+#: templates/landing/monitor.html:33
+msgid "Robot de clases en vivo"
+msgstr ""
+
+#: templates/landing/monitor.html:34
+msgid ""
+"Bridge automático subscribe el servidor TCP de clases y reenvía cada frame "
+"al Telemetry Gateway."
+msgstr ""
+
+#: templates/landing/monitor.html:37
+msgid "Protocolo"
+msgstr ""
+
+#: templates/landing/monitor.html:38
+msgid "Frecuencia"
+msgstr ""
+
+#: templates/landing/monitor.html:40
+msgid "Ver carpeta original"
+msgstr ""
+
+#: templates/landing/monitor.html:45
+msgid "Modelo IDS-ML entrenado"
+msgstr ""
+
+#: templates/landing/monitor.html:46
+msgid "Pipeline NSL-KDD portado desde clases/CiberTelepatia."
+msgstr ""
+
+#: templates/landing/monitor.html:57
+msgid "Entrenado"
+msgstr ""
+
+#: templates/landing/monitor.html:76
+msgid "Robots conectados"
+msgstr ""
+
+#: templates/landing/monitor.html:77
+msgid ""
+"Cada tarjeta resume posición, atmósfera y estado transmitido por el protocolo"
+msgstr ""
+
+#: templates/landing/monitor.html:86
+msgid "Cómo funciona"
+msgstr ""
+
+#: templates/landing/monitor.html:87
+msgid ""
+"El gateway acepta POST JSON seguros con token personal y expone endpoints "
+"GET para visualización y auditoría."
+msgstr ""
+
+#: templates/landing/monitor.html:89
+msgid "para telemetría"
+msgstr ""
+
+#: templates/landing/monitor.html:90
+msgid "para dashboards"
+msgstr ""
+
+#: templates/landing/monitor.html:91
+msgid "para históricos"
+msgstr ""
+
+#: templates/landing/monitor.html:95
+msgid "Ejemplo de carga"
+msgstr ""
+
+# Base template
+#~ msgid "Croody · Precisión cósmica con corazón"
+#~ msgstr "Croody · Cosmic precision with heart"
+
+#~ msgid "Geometría sagrada"
+#~ msgstr "Sacred geometry"
+
+# Home page
+#~ msgid "Croody · Conecta, Entrena y Destaca"
+#~ msgstr "Croody · Connect, Train and Stand Out"
+
+#~ msgid "Volvamos a ser humanos"
+#~ msgstr "Let's be human again"
+
+#~ msgid ""
+#~ "Croody es una empresa con la mentalidad de que el mundo tecnológico debe "
+#~ "conectar a las personas, no simular una conexión que al final del día "
+#~ "realmente nos desconecta incluso de nosotros mismos. A través de "
+#~ "propuestas tecnológicas buscamos crear conexiones reales que cambien el "
+#~ "mundo para un mejor futuro como especies."
+#~ msgstr ""
+#~ "Croody is a company with the mindset that the technological world should "
+#~ "connect people, not simulate a connection that ultimately disconnects us "
+#~ "even from ourselves. Through technological proposals, we seek to create "
+#~ "real connections that change the world for a better future as species."
+
+#~ msgid "Conocer a Buddy"
+#~ msgstr "Learn about Buddy"
+
+#~ msgid "Logo de Croody representando conexión y tecnología humanizada"
+#~ msgstr "Croody logo representing connection and humanized technology"
+
+#~ msgid "Integraciones"
+#~ msgstr "Integrations"
