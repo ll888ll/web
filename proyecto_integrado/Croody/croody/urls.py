@@ -11,11 +11,23 @@ y mantiene la compatibilidad con las rutas prefijadas.
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import include, path
+from django.http import JsonResponse
+
+
+# Health check endpoint
+def health_check(request):
+    """Endpoint de salud para monitoreo y CI/CD."""
+    return JsonResponse({
+        'status': 'healthy',
+        'service': 'croody',
+        'version': '1.0.0',
+    })
 
 
 # Rutas sin prefijo (idioma por defecto)
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
+    path('health/', health_check, name='health_check'),
     path('admin/', admin.site.urls),  # sin prefijo
     path('dashboard/', include('telemetry.urls')),
     path('', include('landing.urls', namespace='landing')),  # home sin prefijo
@@ -24,6 +36,7 @@ urlpatterns = [
 
 # Rutas con prefijo para idiomas distintos al por defecto
 urlpatterns += i18n_patterns(
+    path('health/', health_check),
     path('admin/', admin.site.urls),
     path('dashboard/', include('telemetry.urls')),
     path('', include('landing.urls', namespace='landing')),

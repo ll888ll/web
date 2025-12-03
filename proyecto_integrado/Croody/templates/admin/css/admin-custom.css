@@ -1,0 +1,310 @@
+/* ========================================
+   ADMIN CROODY - Temas personalizados
+   ======================================== */
+
+/* Variables CSS admin (sincronizadas con tokens.css) */
+:root {
+  --admin-gator-500: #3C9E5D;
+  --admin-gator-600: #277947;
+  --admin-gator-700: #1C5C37;
+  --admin-gator-100: #DDF6E8;
+  --admin-gator-200: #B4E5C6;
+  --admin-gator-50: #F0FBF5;
+
+  --admin-jungle-50: #EEF1EF;
+  --admin-jungle-600: #374640;
+  --admin-jungle-700: #1E2C26;
+  --admin-jungle-900: #0B1311;
+
+  --admin-orchid-500: #B079B5;
+  --admin-sand-500: #E0B771;
+}
+
+/* Header admin personalizado */
+.admin-header {
+  background: linear-gradient(135deg, var(--admin-gator-500) 0%, var(--admin-gator-600) 100%);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 12px rgba(60, 158, 93, 0.2);
+  margin-bottom: var(--space-4);
+}
+
+/* Branding personalizado */
+.admin-header h1 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.admin-header a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 233ms ease;
+}
+
+.admin-header a:hover {
+  opacity: 0.9;
+}
+
+/* Sidebar Unfold personalizada */
+.sidebar {
+  background: var(--admin-jungle-50) !important;
+  border-right: 2px solid var(--admin-gator-200);
+}
+
+.sidebar__logo {
+  background: var(--admin-gator-500) !important;
+  color: white !important;
+}
+
+/* Botones primarios admin */
+.button, .btn {
+  background: var(--admin-gator-500) !important;
+  border-color: var(--admin-gator-500) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  transition: all 233ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 600 !important;
+}
+
+.button:hover, .btn:hover {
+  background: var(--admin-gator-600) !important;
+  border-color: var(--admin-gator-600) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(60, 158, 93, 0.3) !important;
+}
+
+/* Botones secundarios */
+.button.secondary, .btn.secondary {
+  background: transparent !important;
+  color: var(--admin-gator-500) !important;
+  border: 2px solid var(--admin-gator-500) !important;
+}
+
+.button.secondary:hover, .btn.secondary:hover {
+  background: var(--admin-gator-100) !important;
+  color: var(--admin-gator-700) !important;
+}
+
+/* Tablas admin */
+.table {
+  border-radius: 12px !important;
+  overflow: hidden;
+  border: 1px solid var(--admin-gator-200);
+}
+
+.table thead th {
+  background: var(--admin-gator-100) !important;
+  color: var(--admin-jungle-700) !important;
+  font-weight: 700 !important;
+  padding: 14px 16px !important;
+  border-bottom: 2px solid var(--admin-gator-200) !important;
+}
+
+.table tbody tr {
+  transition: background 144ms ease;
+}
+
+.table tbody tr:hover {
+  background: color-mix(in oklab, var(--admin-gator-50), white 20%) !important;
+}
+
+/* Formularios */
+.form-group, .form-row {
+  margin-bottom: 20px;
+  background: var(--admin-gator-50);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-gator-200);
+}
+
+.form-group label, .form-row label {
+  font-weight: 600;
+  color: var(--admin-jungle-700);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-control, input[type="text"], input[type="email"],
+input[type="password"], select, textarea {
+  border: 1.5px solid var(--admin-gator-200) !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  font-size: 14px;
+  transition: all 233ms ease;
+  background: white;
+}
+
+.form-control:focus, input[type="text"]:focus, input[type="email"]:focus,
+input[type="password"]:focus, select:focus, textarea:focus {
+  border-color: var(--admin-gator-500) !important;
+  box-shadow: 0 0 0 3px rgba(60, 158, 93, 0.1) !important;
+  outline: none;
+}
+
+/* Alertas admin */
+.alert {
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  border: none !important;
+  font-weight: 500;
+}
+
+.alert-success {
+  background: color-mix(in oklab, var(--admin-gator-500), white 85%) !important;
+  color: var(--admin-jungle-700) !important;
+}
+
+.alert-error, .alert-danger {
+  background: color-mix(in oklab, #F06565, white 85%) !important;
+  color: var(--admin-jungle-700) !important;
+}
+
+.alert-warning {
+  background: color-mix(in oklab, var(--admin-sand-500), white 85%) !important;
+  color: var(--admin-jungle-700) !important;
+}
+
+.alert-info {
+  background: color-mix(in oklab, #31BFEA, white 85%) !important;
+  color: var(--admin-jungle-700) !important;
+}
+
+/* Navegación breadcrumbs */
+.breadcrumbs {
+  background: var(--admin-gator-50) !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--admin-gator-200) !important;
+  margin-bottom: 16px;
+}
+
+.breadcrumbs a {
+  color: var(--admin-gator-500) !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Object-tools (botones de acción) */
+.object-tools {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.object-tools li {
+  margin: 0;
+}
+
+.object-tools a {
+  background: var(--admin-orchid-500) !important;
+  color: white !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 233ms ease;
+}
+
+.object-tools a:hover {
+  background: #975C9B !important;
+  transform: translateY(-1px);
+}
+
+/* Pagination */
+.paginator {
+  background: var(--admin-gator-50) !important;
+  padding: 16px !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--admin-gator-200) !important;
+}
+
+.paginator a, .paginator span {
+  background: white !important;
+  color: var(--admin-jungle-700) !important;
+  border: 1px solid var(--admin-gator-200) !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  text-decoration: none;
+  margin: 0 2px;
+  font-weight: 500;
+}
+
+.paginator a:hover {
+  background: var(--admin-gator-100) !important;
+  border-color: var(--admin-gator-500);
+}
+
+.paginator .this-page {
+  background: var(--admin-gator-500) !important;
+  color: white !important;
+  border-color: var(--admin-gator-500) !important;
+}
+
+/* Mensajes del sistema */
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.messages li {
+  background: var(--admin-gator-50) !important;
+  border-left: 4px solid var(--admin-gator-500) !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px;
+  color: var(--admin-jungle-700) !important;
+}
+
+/* Responsive admin */
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 16px;
+  }
+
+  .admin-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .form-group, .form-row {
+    padding: 12px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+
+  .object-tools {
+    flex-direction: column;
+  }
+}
+
+/* Admin footer */
+.admin-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--admin-jungle-600);
+  font-size: 13px;
+  background: var(--admin-gator-50);
+  border-top: 2px solid var(--admin-gator-200);
+  margin-top: 40px;
+}
+
+.admin-footer a {
+  color: var(--admin-gator-500);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-footer a:hover {
+  text-decoration: underline;
+}

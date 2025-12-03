@@ -1,0 +1,105 @@
+# ========================================
+# Pre-commit hooks para Croody
+# ========================================
+# Instalar pre-commit: pip install pre-commit
+# Activar hooks: pre-commit install
+# Ejecutar: pre-commit run --all-files
+
+repos:
+  # Verificar YAML
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: debug-statements
+      - id: check-docstring-first
+
+  # Verificar Python
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: pretty-format-json
+        args: ['--autofix']
+      - id: check-toml
+      - id: check-xml
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # isort - Organizar imports
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+
+  # black - Formatear código
+  - repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+      - id: black
+        args: ['--line-length=88']
+
+  # flake8 - Linter
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+        args: ['--max-line-length=88', '--extend-ignore=E203,W503']
+
+  # Bandit - Seguridad
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ['-r', '.', '-f', 'json']
+        exclude: ^tests/
+
+  # django check - Validar Django
+  - repo: https://github.com/django/django
+    rev: stable/5.0.x
+    hooks:
+      - id: django-check
+        args: ['--fail-level=WARNING']
+
+  # safety - Verificar vulnerabilidades
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.2
+    hooks:
+      - id: python-safety-dependencies-check
+        args: ['--ignore=51668']
+
+  # Verificar secretos
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: package.lock.json
+
+# Configuración global
+default_language_version:
+  python: python3.11
+
+default_stages: [commit, push]
+
+# Archivos a excluir
+exclude: |
+  (?x)^(
+      migrations/\.py|
+      \.venv/|
+      venv/|
+      build/|
+      dist/|
+      node_modules/|
+      staticfiles/
+  )

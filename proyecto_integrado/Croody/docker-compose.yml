@@ -1,0 +1,124 @@
+# ========================================
+# DOCKER COMPOSE - Croody Local Development
+# ========================================
+
+version: '3.8'
+
+services:
+  # Base de datos PostgreSQL
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=croody
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - croody-network
+
+  # Aplicación Django
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DJANGO_SETTINGS_MODULE=croody.settings
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/croody
+      - SECRET_KEY=django-insecure-dev-key-change-in-production
+      - DEBUG=true
+      - ALLOWED_HOSTS=*
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - croody-network
+    restart: unless-stopped
+
+  # Redis para cache (opcional)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - croody-network
+
+  # Nginx (para pruebas de producción local)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - static_volume:/var/www/static
+      - media_volume:/var/www/media
+    depends_on:
+      - web
+    networks:
+      - croody-network
+    profiles:
+      - production
+
+  # Monitoring con Prometheus (opcional)
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - croody-network
+    profiles:
+      - monitoring
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+
+networks:
+  croody-network:
+    driver: bridge
+
+# ========================================
+# COMANDOS ÚTILES:
+# ========================================
+#
+# Desarrollo:
+#   docker-compose up db web
+#
+# Con Nginx (producción local):
+#   docker-compose --profile production up -d
+#
+# Con monitoreo:
+#   docker-compose --profile monitoring up -d
+#
+# Reiniciar servicios:
+#   docker-compose restart web
+#
+# Ver logs:
+#   docker-compose logs -f web
+#
+# Acceder al shell del contenedor:
+#   docker-compose exec web bash
+#
+# Ejecutar comandos Django:
+#   docker-compose exec web python manage.py migrate
+#   docker-compose exec web python manage.py createsuperuser
+#   docker-compose exec web python manage.py collectstatic --noinput

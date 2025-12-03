@@ -1,0 +1,88 @@
+# ========================================
+# DOCKERIGNORE - Optimizar build
+# ========================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache
+.coverage
+htmlcov/
+.tox/
+.venv/
+env/
+venv/
+ENV/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+/static/
+/logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Documentación
+*.md
+README*
+docs/
+
+# Testing
+/tests/
+/test_*.py
+*_test.py
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Deployment
+deploy-aws.sh
+.ebextensions/
+.elasticbeanstalk/
+
+# GitHub
+.github/
+
+# Node modules (si hay)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos grandes de imágenes
+*.png
+!static/img/*.png
+
+# Archivos temporales
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig

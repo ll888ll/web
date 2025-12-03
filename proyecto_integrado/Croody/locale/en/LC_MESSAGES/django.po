@@ -217,8 +217,6 @@ msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalida
 msgstr "Buddy has a character ecosystem, each with their unique personality. You can choose preset routines according to each character's style or configure one to deliver all routines. Each character offers gestures, animations and constant support for a close and stimulating experience."
 
 # Navigation and search labels (added)
-msgid "Buddy"
-msgstr "Buddy"
 
 msgid "Luks"
 msgstr "Luks"

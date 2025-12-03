@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}" data-theme="dark" data-brand="{{ brand|default:'gator' }}">
+<html lang="{{ LANGUAGE_CODE }}" data-theme="auto" data-brand="{{ brand|default:'gator' }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,6 +18,28 @@
     <meta name="twitter:title" content="{% block twitter_title %}Croody - Buddy AI Trainer{% endblock %}" />
     <meta name="twitter:description" content="{% block twitter_description %}Entrena, progresa y destaca con Buddy AI.{% endblock %}" />
     <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+
+    <!-- CRÍTICO: Script blocking para evitar FOUC (Flash of Unstyled Content) -->
+    <script>
+      (function() {
+        try {
+          const KEY = 'theme';
+          const saved = localStorage.getItem(KEY);
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = saved || (systemDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+
+          // Toggle checkbox sincronizado
+          const checkbox = document.querySelector('.theme-toggle__checkbox');
+          if (checkbox) {
+            checkbox.checked = (theme === 'dark');
+          }
+        } catch(e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
@@ -115,9 +137,9 @@
           </div>
           
           <div class="language-selector">
-            <button 
-              class="language-selector__trigger" 
-              type="button" 
+            <button
+              class="language-selector__trigger"
+              type="button"
               aria-label="{% trans 'Seleccionar idioma' %}"
               aria-haspopup="true"
               aria-expanded="false"
@@ -126,42 +148,40 @@
               <span class="language-selector__current">{{ LANGUAGE_CODE|upper }}</span>
             </button>
             <div class="language-selector__dropdown" hidden>
-              <form action="{% url 'set_language' %}" method="post" class="language-selector__form">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                <button type="submit" name="language" value="es" class="language-selector__option {% if LANGUAGE_CODE == 'es' %}active{% endif %}">
+              <div class="language-selector__list">
+                <a href="/es/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'es' %}active{% endif %}">
                   <span class="language-selector__flag">🇪🇸</span>
                   <span>Español</span>
-                </button>
-                <button type="submit" name="language" value="en" class="language-selector__option {% if LANGUAGE_CODE == 'en' %}active{% endif %}">
+                </a>
+                <a href="/en/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'en' %}active{% endif %}">
                   <span class="language-selector__flag">🇬🇧</span>
                   <span>English</span>
-                </button>
-                <button type="submit" name="language" value="fr" class="language-selector__option {% if LANGUAGE_CODE == 'fr' %}active{% endif %}">
+                </a>
+                <a href="/fr/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'fr' %}active{% endif %}">
                   <span class="language-selector__flag">🇫🇷</span>
                   <span>Français</span>
-                </button>
-                <button type="submit" name="language" value="pt" class="language-selector__option {% if LANGUAGE_CODE == 'pt' %}active{% endif %}">
+                </a>
+                <a href="/pt/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'pt' %}active{% endif %}">
                   <span class="language-selector__flag">🇵🇹</span>
                   <span>Português</span>
-                </button>
-                <button type="submit" name="language" value="ar" class="language-selector__option {% if LANGUAGE_CODE == 'ar' %}active{% endif %}">
+                </a>
+                <a href="/ar/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'ar' %}active{% endif %}">
                   <span class="language-selector__flag">🇸🇦</span>
                   <span>العربية</span>
-                </button>
-                <button type="submit" name="language" value="zh-hans" class="language-selector__option {% if LANGUAGE_CODE == 'zh-hans' %}active{% endif %}">
+                </a>
+                <a href="/zh-hans/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'zh-hans' %}active{% endif %}">
                   <span class="language-selector__flag">🇨🇳</span>
                   <span>简体中文</span>
-                </button>
-                <button type="submit" name="language" value="ja" class="language-selector__option {% if LANGUAGE_CODE == 'ja' %}active{% endif %}">
+                </a>
+                <a href="/ja/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'ja' %}active{% endif %}">
                   <span class="language-selector__flag">🇯🇵</span>
                   <span>日本語</span>
-                </button>
-                <button type="submit" name="language" value="hi" class="language-selector__option {% if LANGUAGE_CODE == 'hi' %}active{% endif %}">
+                </a>
+                <a href="/hi/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'hi' %}active{% endif %}">
                   <span class="language-selector__flag">🇮🇳</span>
                   <span>हिन्दी</span>
-                </button>
-              </form>
+                </a>
+              </div>
             </div>
           </div>
           

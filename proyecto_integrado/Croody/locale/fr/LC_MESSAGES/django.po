@@ -129,10 +129,7 @@ msgstr ""
 msgid "Fitness & Conexión"
 msgstr ""
 
-msgid "Buddy"
-msgstr ""
-
-msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgid "Una aplicación intuitive, symétrique, de haute esthétique et gran fluidité, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
 msgstr ""
 
 msgid "Conecta, Entrena y Destaca"

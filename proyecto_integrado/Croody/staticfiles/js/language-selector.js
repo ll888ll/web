@@ -19,14 +19,14 @@
 
     const trigger = selector.querySelector('.language-selector__trigger');
     const dropdown = selector.querySelector('.language-selector__dropdown');
-    
+
     if (!trigger || !dropdown) return;
 
     // Toggle dropdown al hacer click en el trigger
     trigger.addEventListener('click', function(e) {
       e.stopPropagation();
       const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-      
+
       if (isExpanded) {
         closeDropdown();
       } else {
@@ -52,7 +52,7 @@
     function openDropdown() {
       trigger.setAttribute('aria-expanded', 'true');
       dropdown.removeAttribute('hidden');
-      
+
       // Focus en el primer botón activo o el primero disponible
       const activeOption = dropdown.querySelector('.language-selector__option.active');
       const firstOption = dropdown.querySelector('.language-selector__option');
@@ -88,6 +88,14 @@
         e.preventDefault();
         options[options.length - 1].focus();
       }
+    });
+
+    // Cerrar dropdown al hacer click en un enlace de idioma
+    const links = dropdown.querySelectorAll('.language-selector__option');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        closeDropdown();
+      });
     });
   }
 })();
