@@ -7,11 +7,11 @@ on:
     branches: [main, dev]
 
 env:
-  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}
+  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}
   TSIG_KEY_NAME: ${{ secrets.BIND_TSIG_KEY_NAME != '' && secrets.BIND_TSIG_KEY_NAME || 'lint-key' }}
   TSIG_KEY_SECRET: ${{ secrets.BIND_TSIG_KEY_SECRET != '' && secrets.BIND_TSIG_KEY_SECRET || 'ZmFrZQ==' }}
-  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
-  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
+  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}.
+  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}.
   SLAVE_IP: ${{ secrets.BIND_SLAVE_PRIVATE_IP != '' && secrets.BIND_SLAVE_PRIVATE_IP || '127.0.0.1' }}
 
 jobs:
@@ -59,6 +59,19 @@ jobs:
 
       - name: dig @localhost (SOA)
         run: |
-          docker compose -f infra/dns/docker-compose.yml up -d bind-master
+          docker run -d --name bind-lint-test \
+            -p 5353:53/udp -p 5353:53/tcp \
+            -e DNS_ROLE=master \
+            -e DNS_DOMAIN="${DOMAIN}" \
+            -e TSIG_KEY_NAME="${TSIG_KEY_NAME}" \
+            -e TSIG_KEY_SECRET="${TSIG_KEY_SECRET}" \
+            -e NS1_FQDN="${NS1_FQDN}" \
+            -e NS2_FQDN="${NS2_FQDN}" \
+            -e ALLOW_TRANSFER="${SLAVE_IP};" \
+            -e ALLOW_QUERY="any;" \
+            -v "${PWD}/infra/dns/bind-master/zones:/zones" \
+            bind-lint
           sleep 5
-          dig @127.0.0.1 "${DOMAIN}" SOA
+          dig @127.0.0.1 -p 5353 "${DOMAIN}" SOA +short
+          docker stop bind-lint-test || true
+          docker rm bind-lint-test || true
