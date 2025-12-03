@@ -1,16 +1,16 @@
- 3600
+$TTL 3600
 @   IN  SOA ns1.croody.app. hostmaster.croody.app. (
-        2025111800   ; Serial
-        3600        ; Refresh
-        900         ; Retry
-        1209600     ; Expire
-        86400       ; Minimum
+        2025120301   ; Serial
+        3600         ; Refresh
+        900          ; Retry
+        1209600      ; Expire
+        86400        ; Minimum
 )
 
 @           IN  NS      ns1.croody.app.
 @           IN  NS      ns2.croody.app.
-ns1    3600 IN A 172.31.42.77
-ns2    3600 IN A 172.31.71.231
+ns1    3600 IN  A       172.31.42.77
+ns2    3600 IN  A       172.31.71.231
 
 ; ---- A Records ----
 ; agrega tus registros A aquí
