@@ -11,7 +11,7 @@ permissions:
 
 # Variables globales alimentadas desde GitHub Secrets.
 env:
-  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}
+  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}
   MASTER_IP: ${{ secrets.BIND_MASTER_PRIVATE_IP != '' && secrets.BIND_MASTER_PRIVATE_IP || '127.0.0.1' }}
   SLAVE_IP: ${{ secrets.BIND_SLAVE_PRIVATE_IP != '' && secrets.BIND_SLAVE_PRIVATE_IP || '127.0.0.1' }}
   TSIG_KEY_NAME: ${{ secrets.BIND_TSIG_KEY_NAME != '' && secrets.BIND_TSIG_KEY_NAME || 'lint-key' }}
@@ -20,8 +20,8 @@ env:
   AWS_REGION: ${{ secrets.AWS_REGION != '' && secrets.AWS_REGION || 'us-east-1' }}
   MASTER_REPO: ${{ secrets.BIND_MASTER_ECR_REPO != '' && secrets.BIND_MASTER_ECR_REPO || 'bind-master' }}
   SLAVE_REPO: ${{ secrets.BIND_SLAVE_ECR_REPO != '' && secrets.BIND_SLAVE_ECR_REPO || 'bind-slave' }}
-  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
-  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
+  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}.
+  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}.
 
 jobs:
   build-deploy:
