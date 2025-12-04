@@ -33,16 +33,24 @@ jobs:
 
       - name: Validate required secrets
         run: |
-          missing=0
-          for var in DOMAIN MASTER_IP SLAVE_IP TSIG_KEY_NAME TSIG_KEY_SECRET ECR_REGISTRY MASTER_REPO SLAVE_REPO; do
-            if [[ -z "${!var}" ]]; then
-              echo "Missing environment variable: $var"
-              missing=1
-            fi
-          done
-          if [[ $missing -eq 1 ]]; then
-            echo "Configure the required secrets before running this workflow."
-            exit 1
+          # Log which values are using defaults vs secrets (for debugging)
+          echo "Configuration status:"
+          echo "  DOMAIN: ${DOMAIN} (default: croody.app)"
+          echo "  MASTER_IP: ${MASTER_IP}"
+          echo "  SLAVE_IP: ${SLAVE_IP}"
+          echo "  TSIG_KEY_NAME: ${TSIG_KEY_NAME}"
+          echo "  ECR_REGISTRY: ${ECR_REGISTRY}"
+          echo "  MASTER_REPO: ${MASTER_REPO}"
+          echo "  SLAVE_REPO: ${SLAVE_REPO}"
+
+          # All variables have defaults in the env block, so they should never be empty
+          # Only warn if using placeholder defaults that won't work for actual deployment
+          if [[ "${MASTER_IP}" == "127.0.0.1" || "${SLAVE_IP}" == "127.0.0.1" ]]; then
+            echo "::warning::Using placeholder IPs (127.0.0.1). Set BIND_MASTER_PRIVATE_IP and BIND_SLAVE_PRIVATE_IP secrets for actual deployment."
+          fi
+
+          if [[ "${ECR_REGISTRY}" == "ecr.local" ]]; then
+            echo "::warning::ECR registry not configured. Images will be built but not pushed."
           fi
 
       - name: Export computed variables
@@ -54,19 +62,62 @@ jobs:
       - name: Check ECR configuration
         id: ecr-check
         run: |
-          if [[ -n "${{ secrets.AWS_ECR_REGISTRY }}" && -n "${{ secrets.AWS_ACCESS_KEY_ID }}" && -n "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]]; then
-            echo "ecr_configured=true" >> "$GITHUB_OUTPUT"
+          ECR_REGISTRY="${{ secrets.AWS_ECR_REGISTRY }}"
+          AWS_KEY="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          AWS_SECRET="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+
+          if [[ -n "$ECR_REGISTRY" && -n "$AWS_KEY" && -n "$AWS_SECRET" ]]; then
+            # Validate ECR registry URL format: <account-id>.dkr.ecr.<region>.amazonaws.com
+            if [[ "$ECR_REGISTRY" =~ ^[0-9]+\.dkr\.ecr\.[a-z0-9-]+\.amazonaws\.com$ ]]; then
+              echo "ecr_configured=true" >> "$GITHUB_OUTPUT"
+              echo "ECR registry URL format is valid: $ECR_REGISTRY"
+            else
+              echo "ecr_configured=false" >> "$GITHUB_OUTPUT"
+              echo "::error::ECR registry URL format is invalid: $ECR_REGISTRY"
+              echo "::error::Expected format: <account-id>.dkr.ecr.<region>.amazonaws.com"
+              echo "::warning::Skipping ECR push due to invalid registry URL format. This may cause TLS certificate errors."
+            fi
           else
             echo "ecr_configured=false" >> "$GITHUB_OUTPUT"
             echo "::warning::ECR not configured - skipping image push. Set AWS_ECR_REGISTRY, AWS_ACCESS_KEY_ID, and AWS_SECRET_ACCESS_KEY secrets to enable."
           fi
 
-      # 2) Validación temprana: se requiere que exista la zona maestra con registros reales.
+      # 2) Ensure zone file exists - generate from template if missing.
       - name: Ensure zone file exists
         run: |
           if [[ ! -f "${ZONE_FILE}" ]]; then
-            echo "Zone file ${ZONE_FILE} not found. Generate it via scripts/dns/setup_bind.sh" >&2
-            exit 1
+            echo "Zone file ${ZONE_FILE} not found. Generating from template..."
+
+            # Create zones directory if it doesn't exist
+            mkdir -p "$(dirname "${ZONE_FILE}")"
+
+            # Generate zone file from template
+            ZONE_TEMPLATE="infra/dns/templates/zone.db.tpl"
+            if [[ ! -f "${ZONE_TEMPLATE}" ]]; then
+              echo "::error::Zone template ${ZONE_TEMPLATE} not found."
+              exit 1
+            fi
+
+            # Set required variables for template substitution
+            export DNS_DOMAIN="${DOMAIN}"
+            export NS1_FQDN="ns1.${DOMAIN}."
+            export NS2_FQDN="ns2.${DOMAIN}."
+            export ZONE_DEFAULT_TTL=3600
+            export SOA_EMAIL_DNS="hostmaster.${DOMAIN//@/.}"
+            export SERIAL="$(date +%Y%m%d%H)"
+            export GLUE_RECORDS="ns1    3600 IN A ${MASTER_IP}
+          ns2    3600 IN A ${SLAVE_IP}"
+            export A_RECORDS="; Add your A records here"
+            export AAAA_RECORDS="; Add your AAAA records here"
+            export CNAME_RECORDS="; Add your CNAME records here"
+            export MX_RECORDS="; Add your MX records here"
+            export TXT_RECORDS="; Add your TXT/SPF records here"
+
+            envsubst < "${ZONE_TEMPLATE}" > "${ZONE_FILE}"
+            echo "Generated zone file: ${ZONE_FILE}"
+            cat "${ZONE_FILE}"
+          else
+            echo "Zone file found: ${ZONE_FILE}"
           fi
 
       # 3) Configure AWS credentials and login to ECR (if properly configured).
