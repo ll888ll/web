@@ -1,18 +1,22 @@
 """Vistas para la tienda Buddy."""
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Dict
 
-from django.db.models import QuerySet
-from django.http import JsonResponse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseBadRequest, HttpResponseRedirect, JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import DetailView, FormView, ListView, TemplateView, View
 
 from croody.navigation import global_search_entries, primary_nav_links
 
-from .models import Product
+from .forms import Cart, CheckoutForm, PaymentForm
+from .models import Order, OrderItem, OrderStatus, PaymentStatus, Product, Transaction
 
 
 class NavContextMixin:
@@ -38,7 +42,7 @@ class ProductListView(NavContextMixin, ListView):
     context_object_name = 'products'
     paginate_by = 12
 
-    def get_queryset(self) -> QuerySet[Product]:
+    def get_queryset(self):
         queryset = Product.objects.published()
         q = self.request.GET.get('q', '').strip()
         item_type = self.request.GET.get('type', '').strip().lower()
@@ -98,7 +102,7 @@ class ProductListView(NavContextMixin, ListView):
             'subtitle': (
                 'Explora cofres, sets y accesorios listos para usar. Compra en dos pasos: elige y confirma.'
             ),
-            'primary_cta': {'label': 'Ir al checkout', 'url': reverse('shop:checkout-preview')},
+            'primary_cta': {'label': 'Ir al checkout', 'url': reverse('shop:cart')},
             'secondary_cta': {'label': 'Ver categorías', 'url': '#catalogo'},
             'search_placeholder': 'Busca cofres, sets, personajes o temporadas',
         }
@@ -161,7 +165,7 @@ class ProductDetailView(NavContextMixin, DetailView):
     slug_field = 'slug'
     slug_url_kwarg = 'slug'
 
-    def get_queryset(self) -> QuerySet[Product]:
+    def get_queryset(self):
         return Product.objects.published()
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:  # type: ignore[override]
@@ -181,6 +185,243 @@ class ProductDetailView(NavContextMixin, DetailView):
             'Consulta el hash de la transacción y tu factura cuando lo necesites.',
             'Activa el ítem en la app Buddy o prográmalo para tu próxima rutina.',
         ]
+        return context
+
+
+# ===== VISTAS DE CARRITO =====
+
+class CartView(NavContextMixin, TemplateView):
+    """Vista del carrito de compras."""
+    template_name = 'shop/cart.html'
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:  # type: ignore[override]
+        context = super().get_context_data(**kwargs)
+        cart = Cart(self.request)
+        
+        context['cart'] = cart
+        context['cart_items'] = list(cart)
+        context['cart_total'] = cart.get_total_price()
+        context['item_count'] = cart.get_item_count()
+        
+        return context
+
+
+@require_http_methods(['POST'])
+def add_to_cart_view(request):
+    """Vista para agregar productos al carrito (HTMX)."""
+    product_id = request.POST.get('product_id')
+    quantity = int(request.POST.get('quantity', 1))
+    
+    if not product_id:
+        return HttpResponseBadRequest('Product ID is required')
+    
+    product = get_object_or_404(Product, id=product_id, is_published=True)
+    
+    cart = Cart(request)
+    cart.add(product_id, quantity)
+    
+    if request.headers.get('HX-Request'):
+        # Respuesta para HTMX
+        cart_count = cart.get_item_count()
+        cart_total = cart.get_total_price()
+        
+        return render(request, 'shop/partials/cart-indicator.html', {
+            'cart_count': cart_count,
+            'cart_total': cart_total,
+        })
+    else:
+        # Respuesta normal
+        messages.success(
+            request,
+            f'{product.name} agregado al carrito'
+        )
+        return redirect('shop:cart')
+
+
+@require_http_methods(['POST'])
+def update_cart_item_view(request):
+    """Vista para actualizar cantidad de un item en el carrito."""
+    product_id = request.POST.get('product_id')
+    quantity = int(request.POST.get('quantity', 1))
+    
+    if not product_id:
+        return HttpResponseBadRequest('Product ID is required')
+    
+    cart = Cart(request)
+    cart.update_quantity(product_id, quantity)
+    
+    if request.headers.get('HX-Request'):
+        # Respuesta HTMX - recargar carrito
+        context = {
+            'cart': cart,
+            'cart_items': list(cart),
+            'cart_total': cart.get_total_price(),
+            'item_count': cart.get_item_count(),
+        }
+        return render(request, 'shop/partials/cart-items.html', context)
+    else:
+        return redirect('shop:cart')
+
+
+@require_http_methods(['POST'])
+def remove_from_cart_view(request):
+    """Vista para remover un item del carrito."""
+    product_id = request.POST.get('product_id')
+    
+    if not product_id:
+        return HttpResponseBadRequest('Product ID is required')
+    
+    cart = Cart(request)
+    cart.remove(product_id)
+    
+    if request.headers.get('HX-Request'):
+        # Respuesta HTMX - recargar carrito
+        context = {
+            'cart': cart,
+            'cart_items': list(cart),
+            'cart_total': cart.get_total_price(),
+            'item_count': cart.get_item_count(),
+        }
+        return render(request, 'shop/partials/cart-items.html', context)
+    else:
+        return redirect('shop:cart')
+
+
+# ===== VISTAS DE CHECKOUT =====
+
+@method_decorator(login_required, name='dispatch')
+class CheckoutView(NavContextMixin, FormView):
+    """Vista del formulario de checkout."""
+    template_name = 'shop/checkout.html'
+    form_class = CheckoutForm
+    
+    def dispatch(self, request, *args, **kwargs):
+        cart = Cart(request)
+        if not cart:
+            messages.warning(request, 'Tu carrito está vacío.')
+            return redirect('shop:catalogue')
+        return super().dispatch(request, *args, **kwargs)
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:  # type: ignore[override]
+        context = super().get_context_data(**kwargs)
+        cart = Cart(self.request)
+        
+        context['cart_items'] = list(cart)
+        context['cart_total'] = cart.get_total_price()
+        context['item_count'] = cart.get_item_count()
+        
+        return context
+    
+    def form_valid(self, form: CheckoutForm) -> HttpResponseRedirect:
+        """Procesar datos de checkout."""
+        cart = Cart(self.request)
+        
+        if not cart:
+            messages.error(self.request, 'Tu carrito está vacío.')
+            return redirect('shop:catalogue')
+        
+        # Crear orden
+        order_data = form.cleaned_data.copy()
+        order_data['user'] = self.request.user
+        
+        order = Order.objects.create(**order_data)
+        
+        # Agregar items a la orden
+        for item_data in cart:
+            product = item_data['product']
+            quantity = item_data['quantity']
+            price = product.price
+            
+            OrderItem.objects.create(
+                order=order,
+                product=product,
+                quantity=quantity,
+                price_at_purchase=price,
+                subtotal=price * quantity
+            )
+        
+        # Calcular total final
+        order.calculate_total()
+        order.save()
+        
+        # Limpiar carrito
+        cart.clear()
+        
+        # Redirigir a pago
+        messages.success(
+            self.request,
+            f'Orden #{order.id} creada exitosamente. Continúa con el pago.'
+        )
+        return redirect('shop:payment', order_id=order.id)
+
+
+@method_decorator(login_required, name='dispatch')
+class PaymentView(NavContextMixin, FormView):
+    """Vista para procesar el pago."""
+    template_name = 'shop/payment.html'
+    form_class = PaymentForm
+    
+    def dispatch(self, request, *args, **kwargs):
+        self.order = get_object_or_404(
+            Order,
+            id=kwargs['order_id'],
+            user=request.user
+        )
+        return super().dispatch(request, *args, **kwargs)
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:  # type: ignore[override]
+        context = super().get_context_data(**kwargs)
+        context['order'] = self.order
+        context['order_items'] = self.order.items.all()
+        
+        return context
+    
+    def form_valid(self, form: PaymentForm) -> HttpResponseRedirect:
+        """Procesar pago (simulado)."""
+        # Crear transacción
+        transaction = Transaction.objects.create(
+            order=self.order,
+            amount=self.order.total,
+            status=PaymentStatus.COMPLETED,
+            provider='stripe',
+            provider_id=f'sim_{self.order.id}',
+            provider_response={
+                'card_last4': form.cleaned_data['card_number'][-4:],
+                'status': 'succeeded'
+            }
+        )
+        
+        # Actualizar estado de la orden
+        self.order.payment_status = PaymentStatus.COMPLETED
+        self.order.status = OrderStatus.CONFIRMED
+        self.order.save()
+        
+        messages.success(
+            self.request,
+            f'Pago exitoso para la orden #{self.order.id}'
+        )
+        
+        return redirect('shop:order-confirmation', order_id=self.order.id)
+
+
+@method_decorator(login_required, name='dispatch')
+class OrderConfirmationView(NavContextMixin, TemplateView):
+    """Vista de confirmación de orden."""
+    template_name = 'shop/order_confirmation.html'
+    
+    def dispatch(self, request, *args, **kwargs):
+        self.order = get_object_or_404(
+            Order,
+            id=kwargs['order_id'],
+            user=request.user
+        )
+        return super().dispatch(request, *args, **kwargs)
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:  # type: ignore[override]
+        context = super().get_context_data(**kwargs)
+        context['order'] = self.order
+        context['order_items'] = self.order.items.all()
+        
         return context
 
 
@@ -234,6 +475,9 @@ def cart_add_api(request):
                 {'success': False, 'error': 'Producto no encontrado'},
                 status=404
             )
+
+        cart = Cart(request)
+        cart.add(product_id, 1)
 
         return JsonResponse({
             'success': True,

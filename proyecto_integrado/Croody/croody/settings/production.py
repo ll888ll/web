@@ -26,7 +26,7 @@ ALLOWED_HOSTS = [
 
 # HSTS
 SECURE_HSTS_SECONDS = int(os.getenv('SECURE_HSTS_SECONDS', '31536000'))
-SECURE_HSTS_INCLUDE_SUDDOMAINS = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
 # Cookies
@@ -45,7 +45,7 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
 # DATABASE (Production)
 # ========================================
 
-# Si se usa RDS
+# RDS PostgreSQL Configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -54,15 +54,24 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
         'CONN_MAX_AGE': 600,
+        'CONN_HEALTH_CHECKS': True,
         'OPTIONS': {
-            'charset': 'utf8',
+            'sslmode': os.getenv('DB_SSL_MODE', 'require'),
+            'connect_timeout': 10,
         },
     }
 }
+
+# Override with DATABASE_URL if provided (Heroku-style)
+import dj_database_url
+if os.getenv('DATABASE_URL'):
+    DATABASES['default'] = dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+        ssl_require=True,
+    )
 
 # ========================================
 # STATIC FILES (Production)

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Suscripciones · Buddy{% endblock %}
+{% block title %}{% trans "Suscripciones · Buddy" %}{% endblock %}
 
 {% block body %}
   <main id="main" tabindex="-1">
@@ -17,8 +18,8 @@
     <section class="section" aria-labelledby="plans-title">
       <div class="container">
         <div class="section__header">
-          <h2 id="plans-title">Planes</h2>
-          <p>Pagas mes a mes y puedes cambiar cuando quieras.</p>
+          <h2 id="plans-title">{% trans "Planes" %}</h2>
+          <p>{% trans "Pagas mes a mes y puedes cambiar cuando quieras." %}</p>
         </div>
         <div class="product-grid">
           {% for plan in plans %}
@@ -42,7 +43,7 @@
 
     <section class="section section--tight" aria-labelledby="faq-title">
       <div class="container">
-        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <h2 id="faq-title">{% trans "Preguntas frecuentes" %}</h2>
         <div class="faq-grid">
           {% for item in faq %}
             <article class="faq-item">

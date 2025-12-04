@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     # Local apps
     'landing.apps.LandingConfig',
     'shop.apps.ShopConfig',
-    'telemetry.apps.TelemetryConfig',
+    'accounts.apps.AccountsConfig',
+    # 'telemetry.apps.TelemetryConfig',  # Temporarily disabled - no migrations
 ]
 
 if DEBUG and importlib.util.find_spec('sslserver'):
@@ -170,10 +171,14 @@ LANGUAGES = [
     ('fr', 'Français'),
     ('pt', 'Português'),
     ('ar', 'العربية'),
-    ('zh-hans', '简体中文'),
+    ('zh-hans', '简体中文'),  # Django normaliza a zh_Hans internamente
     ('ja', '日本語'),
     ('hi', 'हिन्दी'),
 ]
+
+# Permitir que Django detecte el idioma de cookies y headers
+LANGUAGE_COOKIE_NAME = 'django_language'
+LANGUAGE_COOKIE_AGE = 365 * 24 * 60 * 60  # 1 año
 
 LOCALE_PATHS = [BASE_DIR / 'locale']
 
@@ -216,7 +221,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 from django.urls import reverse_lazy
 
 LOGIN_URL = reverse_lazy('landing:login')
-LOGIN_REDIRECT_URL = reverse_lazy('shop:catalogue')
+LOGIN_REDIRECT_URL = reverse_lazy('accounts:dashboard')  # Post-login ecosystem
 LOGOUT_REDIRECT_URL = reverse_lazy('landing:home')
 
 

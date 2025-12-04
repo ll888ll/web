@@ -3,10 +3,9 @@
 #
 msgid ""
 msgstr ""
-
 "Project-Id-Version: Croody 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"POT-Creation-Date: 2025-12-04 00:57+0000\n"
 "PO-Revision-Date: 2025-01-06 16:30+0000\n"
 "Last-Translator: Croody Team\n"
 "Language-Team: Japanese <hola@croody.app>\n"
@@ -15,198 +14,3503 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-msgid "Croody · Precisión cósmica con corazón"
-msgstr ""
 
-msgid "Saltar al contenido principal"
-msgstr "メインコンテンツへスキップ"
+#: accounts/admin.py:33 accounts/admin.py:138 accounts/models.py:90
+#: accounts/models.py:283 accounts/models.py:347 accounts/models.py:454
+#| msgid "Usuario o correo"
+msgid "Usuario"
+msgstr "ユーザー"
 
-msgid "Abrir menú"
-msgstr "メニューを開く"
+#: accounts/admin.py:36
+#| msgid "Datos personales"
+msgid "Datos Físicos"
+msgstr "物理データ"
 
-msgid "Buscar en Croody"
-msgstr "Croo dyで検索"
+#: accounts/admin.py:40
+msgid "Avatar"
+msgstr "アバター"
 
-msgid "Buscar (pulsa /)"
-msgstr ""
+#: accounts/admin.py:43 templates/accounts/dashboard.html:62
+#: templates/accounts/profile.html:120 templates/accounts/wallet.html:6
+msgid "Wallet Solana"
+msgstr "ソラナウォレット"
 
-msgid "Seleccionar idioma"
-msgstr "言語を選択"
+#: accounts/admin.py:46
+#| msgid "🎮 Gamificación"
+msgid "Gamificación"
+msgstr "ゲーミフィケーション"
 
-msgid "Cambiar tema"
-msgstr "テーマを変更"
+#: accounts/admin.py:49 accounts/admin.py:150 accounts/admin.py:253
+msgid "Metadata"
+msgstr "メタデータ"
 
-msgid "Empezar"
-msgstr "始める"
+#: accounts/admin.py:70 accounts/models.py:170
+msgid "Rango"
+msgstr "範囲"
 
-msgid "Salir"
-msgstr "ログアウト"
+#: accounts/admin.py:83
+msgid "Completitud"
+msgstr "完全"
 
-msgid "Acceder"
-msgstr "ログイン"
+#: accounts/admin.py:98 templates/accounts/base_accounts.html:64
+#| msgid "Wallet y pagos"
+msgid "Wallet"
+msgstr "財布"
 
-msgid "Cerrar sesión"
-msgstr "サインアウト"
+#: accounts/admin.py:102
+msgid "Recalcular estadísticas de usuarios"
+msgstr "ユーザー統計を再計算する"
 
-msgid "Búsqueda"
-msgstr ""
+#: accounts/admin.py:106
+msgid "Estadísticas recalculadas correctamente."
+msgstr "統計が正しく再計算されました。"
 
-msgid "Contactar"
-msgstr ""
+#: accounts/admin.py:141 accounts/models.py:62 accounts/models.py:386
+#: accounts/models.py:493
+#| msgid "Ver suscripciones"
+msgid "Suscripción"
+msgstr "サブスクリプション"
 
-msgid "Accesos rápidos"
-msgstr "クイックアクセス"
+#: accounts/admin.py:144
+msgid "Fechas"
+msgstr "日付"
 
-msgid "Resultados sugeridos"
-msgstr "提案された結果"
+#: accounts/admin.py:147
+msgid "Pago"
+msgstr "支払う"
 
-msgid "Geometría sagrada"
-msgstr "神聖幾何学"
+#: accounts/admin.py:170 accounts/models.py:350
+msgid "Nivel"
+msgstr "レベル"
 
-msgid "Legal"
-msgstr "法的"
+#: accounts/admin.py:186 accounts/admin.py:278 accounts/models.py:356
+#: accounts/models.py:480 templates/accounts/wallet.html:121
+msgid "Estado"
+msgstr "州"
 
-msgid "Privacidad"
-msgstr "プライバシー"
+#: accounts/admin.py:202
+msgid "Días restantes"
+msgstr "残り日数"
 
-msgid "Términos"
-msgstr "利用規約"
+#: accounts/admin.py:206
+msgid "Activar suscripciones seleccionadas"
+msgstr "選択したサブスクリプションをアクティブ化する"
 
-msgid "Cookies"
-msgstr "クッキー"
+#: accounts/admin.py:210
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones activadas."
+msgstr "サブスクリプションが有効になりました。"
 
-msgid "Inicia sesión"
-msgstr "サインイン"
+#: accounts/admin.py:212
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripciones seleccionadas"
+msgstr "選択したサブスクリプションをキャンセルする"
 
-msgid "Acceso Croody"
-msgstr ""
+#: accounts/admin.py:216
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones canceladas."
+msgstr "キャンセルされたサブスクリプション。"
 
-msgid "Conecta tu cuenta para continuar."
-msgstr "アカウントを接続して続行してください。"
+#: accounts/admin.py:239
+msgid "Transacción"
+msgstr "取引"
 
-msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
-msgstr ""
+#: accounts/admin.py:242
+#| msgid "Preferencias"
+msgid "Referencias"
+msgstr "参考文献"
 
-msgid "¿Olvidaste tu acceso? Escríbenos a"
-msgstr ""
+#: accounts/admin.py:246
+#| msgid "Wallet y pagos"
+msgid "Wallets"
+msgstr "財布"
 
-msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
-msgstr ""
+#: accounts/admin.py:249
+#| msgid "🎮 Gamificación"
+msgid "Verificación"
+msgstr "検証"
 
-msgid "Ingresar"
-msgstr "サインイン"
+#: accounts/admin.py:262
+msgid "TX Signature"
+msgstr "送信署名"
 
-msgid "Croody · Conecta, Entrena y Destaca"
-msgstr ""
+#: accounts/admin.py:282
+msgid "Marcar como verificadas"
+msgstr "確認済みとしてマークする"
 
-msgid "Volvamos a ser humanos"
-msgstr "もう一度人間になろう"
+#: accounts/admin.py:286
+msgid "Transacciones marcadas como verificadas."
+msgstr "トランザクションは検証済みとしてマークされています。"
 
-msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
-msgstr ""
+#: accounts/admin.py:288
+msgid "Marcar como fallidas"
+msgstr "失敗としてマークする"
 
-msgid "Ir a la tienda Buddy"
-msgstr ""
+#: accounts/admin.py:292
+msgid "Transacciones marcadas como fallidas."
+msgstr "失敗としてマークされたトランザクション。"
 
-msgid "Conocer a Buddy"
-msgstr ""
+#: accounts/apps.py:11
+#| msgid "Viajes de usuario"
+msgid "Cuentas de Usuario"
+msgstr "ユーザーアカウント"
 
-msgid "Logo de Croody representando conexión y tecnología humanizada"
-msgstr ""
+#: accounts/forms.py:43
+msgid "Cuéntanos sobre ti..."
+msgstr "あなた自身について教えてください..."
 
-msgid "rutinas ajustadas automáticamente cada semana"
-msgstr ""
+#: accounts/forms.py:49 templates/accounts/profile_edit.html:69
+msgid "Ej: 70.5"
+msgstr "例: 70.5"
 
-msgid "personas mantienen su plan mensual con Buddy activo"
-msgstr ""
+#: accounts/forms.py:58 templates/accounts/profile_edit.html:87
+msgid "Ej: 175"
+msgstr "例: 175"
 
-msgid "7 regiones"
-msgstr ""
+#: accounts/forms.py:77
+msgid "El peso debe estar entre 20 y 300 kg."
+msgstr "体重は20kgから300kgの間である必要があります。"
 
-msgid "operación sincronizada con soporte localizado"
-msgstr ""
+#: accounts/forms.py:85
+msgid "La altura debe estar entre 100 y 250 cm."
+msgstr "高さは100〜250cmの間である必要があります。"
 
-msgid "Fitness & Conexión"
-msgstr ""
+#: accounts/forms.py:94
+msgid "La imagen no puede superar 5MB."
+msgstr "画像は 5MB を超えることはできません。"
 
+#: accounts/forms.py:99
+msgid "Solo se permiten imágenes JPEG, PNG, GIF o WebP."
+msgstr "JPEG、PNG、GIF、または WebP 画像のみが許可されます。"
+
+#: accounts/forms.py:114
+msgid "Tu llave pública de Solana..."
+msgstr "あなたの Solana 公開鍵..."
+
+#: accounts/forms.py:130
+msgid "La llave pública debe tener entre 32 y 44 caracteres."
+msgstr "公開キーは 32 ～ 44 文字である必要があります。"
+
+#: accounts/forms.py:137
+msgid "La llave pública contiene caracteres inválidos."
+msgstr "公開キーに無効な文字が含まれています。"
+
+#: accounts/forms.py:147 accounts/models.py:296 accounts/models.py:457
+msgid "Firma de transacción"
+msgstr "トランザクション署名"
+
+#: accounts/forms.py:152
+msgid "Pega aquí la firma de tu transacción..."
+msgstr "ここに取引署名を貼り付けてください..."
+
+#: accounts/forms.py:155
+msgid "La firma de la transacción de Solana (88 caracteres)."
+msgstr "Solana のトランザクション署名 (88 文字)。"
+
+#: accounts/forms.py:163
+msgid "La firma de transacción es requerida."
+msgstr "トランザクションの署名が必要です。"
+
+#: accounts/forms.py:168
+msgid "La firma debe tener exactamente 88 caracteres."
+msgstr "署名は正確に 88 文字である必要があります。"
+
+#: accounts/forms.py:175
+msgid "La firma contiene caracteres inválidos."
+msgstr "署名に無効な文字が含まれています。"
+
+#: accounts/forms.py:185
+msgid "Perder peso"
+msgstr "体重を減らす"
+
+#: accounts/forms.py:186
+msgid "Ganar músculo"
+msgstr "筋肉を増やす"
+
+#: accounts/forms.py:187
+msgid "Mejorar resistencia"
+msgstr "抵抗力の向上"
+
+#: accounts/forms.py:188
+msgid "Mejorar flexibilidad"
+msgstr "柔軟性の向上"
+
+#: accounts/forms.py:189
+msgid "Salud general"
+msgstr "一般的な健康状態"
+
+#: accounts/forms.py:190
+msgid "Reducir estrés"
+msgstr "ストレスを軽減する"
+
+#: accounts/forms.py:191
+msgid "Mejorar sueño"
+msgstr "睡眠を改善する"
+
+#: accounts/forms.py:195 accounts/models.py:120
+#: templates/accounts/profile.html:106
+msgid "Objetivos de fitness"
+msgstr "フィットネスの目標"
+
+#: accounts/models.py:31 templates/accounts/profile_edit.html:112
+msgid "Masculino"
+msgstr "男"
+
+#: accounts/models.py:32 templates/accounts/profile_edit.html:113
+msgid "Femenino"
+msgstr "女性"
+
+#: accounts/models.py:33 templates/accounts/profile_edit.html:114
+msgid "No binario"
+msgstr "ノンバイナリー"
+
+#: accounts/models.py:34 templates/accounts/profile_edit.html:115
+#| msgid "Preferencias"
+msgid "Prefiero no decir"
+msgstr "言わない方がいいです"
+
+#: accounts/models.py:39
+msgid "Starter - €19.99/mes"
+msgstr "スターター - 月額 19.99 ユーロ"
+
+#: accounts/models.py:40
+msgid "Pro - €59.99/mes"
+msgstr "プロ - 月額 59.99 ユーロ"
+
+#: accounts/models.py:41
+msgid "Elite - €199.99/mes"
+msgstr "エリート - 月額 199.99 ユーロ"
+
+#: accounts/models.py:46 templates/accounts/subscriptions.html:15
+#| msgid "Actividad"
+msgid "Activa"
+msgstr "アクティブ"
+
+#: accounts/models.py:47 templates/accounts/subscriptions.html:44
+msgid "Pendiente de pago"
+msgstr "支払い保留中"
+
+#: accounts/models.py:48 accounts/models.py:57
+msgid "Expirada"
+msgstr "期限切れ"
+
+#: accounts/models.py:49
+msgid "Cancelada"
+msgstr "キャンセル"
+
+#: accounts/models.py:54
+msgid "Pendiente de verificación"
+msgstr "検証待ち"
+
+#: accounts/models.py:55 templates/accounts/profile.html:126
+#: templates/accounts/wallet.html:15
+msgid "Verificada"
+msgstr "確認済み"
+
+#: accounts/models.py:56
+msgid "Fallida"
+msgstr "失敗した"
+
+#: accounts/models.py:63
+#| msgid "Un ecosistema, dos productos"
+msgid "Compra de producto"
+msgstr "商品購入"
+
+#: accounts/models.py:64
+msgid "Propina/Donación"
+msgstr "チップ/寄付"
+
+#: accounts/models.py:69
+msgid "Novato"
+msgstr "ルーキー"
+
+#: accounts/models.py:70
+msgid "Aprendiz"
+msgstr "見習い"
+
+#: accounts/models.py:71
+msgid "Guerrero"
+msgstr "戦士"
+
+#: accounts/models.py:72
+msgid "Maestro"
+msgstr "教師"
+
+#: accounts/models.py:73
+#| msgid "Tienda"
+msgid "Leyenda"
+msgstr "伝説"
+
+#: accounts/models.py:95 templates/accounts/profile_edit.html:59
+msgid "Peso (kg)"
+msgstr "重量(kg)"
+
+#: accounts/models.py:102 templates/accounts/profile_edit.html:77
+msgid "Altura (cm)"
+msgstr "身長(cm)"
+
+#: accounts/models.py:109 templates/accounts/profile.html:90
+#: templates/accounts/profile_edit.html:95
+msgid "Fecha de nacimiento"
+msgstr "生年月日"
+
+#: accounts/models.py:114
+msgid "Género"
+msgstr "性別"
+
+#: accounts/models.py:125
+msgid "Biografía"
+msgstr "バイオグラフィー"
+
+#: accounts/models.py:132 accounts/views.py:381
+#: templates/accounts/points.html:114 templates/accounts/points.html:119
+#: templates/accounts/profile_edit.html:21
+#| msgid "Croody · Perfil"
+msgid "Foto de perfil"
+msgstr "プロフィール写真"
+
+#: accounts/models.py:143 accounts/views.py:382
+#: templates/accounts/inventory.html:57 templates/accounts/points.html:126
+#: templates/accounts/profile.html:33
+msgid "Personaje activo"
+msgstr "アクティブなキャラクター"
+
+#: accounts/models.py:144
+msgid "Debe ser un item del inventario del usuario"
+msgstr "ユーザーのインベントリ内のアイテムである必要があります"
+
+#: accounts/models.py:149
+msgid "Llave pública Solana"
+msgstr "ソラナ公開鍵"
+
+#: accounts/models.py:152
+msgid "Dirección de wallet Solana (base58)"
+msgstr "Solana ウォレット アドレス (base58)"
+
+#: accounts/models.py:155 accounts/views.py:380
+#: templates/accounts/points.html:102 templates/accounts/points.html:107
+#: templates/accounts/profile.html:48
+msgid "Wallet verificada"
+msgstr "認証されたウォレット"
+
+#: accounts/models.py:159
+msgid "Fecha de conexión de wallet"
+msgstr "ウォレット接続日"
+
+#: accounts/models.py:166 templates/accounts/base_accounts.html:69
+#: templates/accounts/base_accounts.html:76 templates/accounts/profile.html:60
+msgid "Puntos"
+msgstr "ポイント"
+
+#: accounts/models.py:176
+msgid "Completitud del perfil (%)"
+msgstr "プロファイルの完全性 (%)"
+
+#: accounts/models.py:185
+#| msgid "Viajes de usuario"
+msgid "Perfil de usuario"
+msgstr "ユーザープロフィール"
+
+#: accounts/models.py:186
+#| msgid "Viajes de usuario"
+msgid "Perfiles de usuario"
+msgstr "ユーザープロフィール"
+
+#: accounts/models.py:289 accounts/models.py:501
+#| msgid "productos"
+msgid "Producto"
+msgstr "製品"
+
+#: accounts/models.py:292
+msgid "Fecha de adquisición"
+msgstr "取得日"
+
+#: accounts/models.py:299
+msgid "Signature de la transacción Solana"
+msgstr "Solana トランザクションの署名"
+
+#: accounts/models.py:302
+msgid "Descargas"
+msgstr "ダウンロード"
+
+#: accounts/models.py:306
+msgid "Es regalo"
+msgstr "贈り物です"
+
+#: accounts/models.py:310
+msgid "Notas"
+msgstr "グレード"
+
+#: accounts/models.py:315
+msgid "Item de inventario"
+msgstr "在庫品目"
+
+#: accounts/models.py:316
+msgid "Items de inventario"
+msgstr "在庫品目"
+
+#: accounts/models.py:362
+msgid "Fecha de inicio"
+msgstr "開始日"
+
+#: accounts/models.py:367
+msgid "Fecha de expiración"
+msgstr "有効期限"
+
+#: accounts/models.py:372
+msgid "Renovación automática"
+msgstr "自動更新"
+
+#: accounts/models.py:376
+msgid "Firma de transacción de pago"
+msgstr "支払い取引の署名"
+
+#: accounts/models.py:387 templates/accounts/subscriptions.html:5
+#| msgid "Ver suscripciones"
+msgid "Suscripciones"
+msgstr "定期購入"
+
+#: accounts/models.py:460
+msgid "Transaction signature de Solana"
+msgstr "ソラナのトランザクション署名"
+
+#: accounts/models.py:463
+msgid "Cantidad (SOL)"
+msgstr "数量（SOL）"
+
+#: accounts/models.py:468
+msgid "Cantidad (USD)"
+msgstr "数量 (米ドル)"
+
+#: accounts/models.py:475
+msgid "Propósito"
+msgstr "目的"
+
+#: accounts/models.py:506
+msgid "Wallet origen"
+msgstr "オリジンウォレット"
+
+#: accounts/models.py:511
+msgid "Wallet destino"
+msgstr "宛先ウォレット"
+
+#: accounts/models.py:514 templates/accounts/wallet.html:97
+#| msgid "Parleo · Croody"
+msgid "Wallet de Croody"
+msgstr "クルーディウォレット"
+
+#: accounts/models.py:517
+msgid "Tiempo de bloque"
+msgstr "ブロックタイム"
+
+#: accounts/models.py:522
+msgid "Datos de verificación"
+msgstr "検証データ"
+
+#: accounts/models.py:530
+msgid "Fecha de verificación"
+msgstr "検証日"
+
+#: accounts/models.py:536
+msgid "Transacción de wallet"
+msgstr "ウォレット取引"
+
+#: accounts/models.py:537
+msgid "Transacciones de wallet"
+msgstr "ウォレット取引"
+
+#: accounts/views.py:88
+#| msgid "Perfil actualizado."
+msgid "Perfil actualizado correctamente."
+msgstr "プロファイルが正常に更新されました。"
+
+#: accounts/views.py:135
+#, python-format
+msgid "Descarga iniciada para \"%(name)s\""
+msgstr "「%(name)s」のダウンロードが開始されました"
+
+#: accounts/views.py:156
+#, python-format
+msgid "Personaje activo cambiado a \"%(name)s\""
+msgstr "アクティブなキャラクターが「%(name)s」に変更されました"
+
+#: accounts/views.py:227
+#| msgid "Accesos rápidos"
+msgid "Acceso básico"
+msgstr "基本的なアクセス"
+
+#: accounts/views.py:228
+msgid "5 descargas/mes"
+msgstr "5 ダウンロード/月"
+
+#: accounts/views.py:229
+msgid "Soporte por email"
+msgstr "電子メールサポート"
+
+#: accounts/views.py:237
+#| msgid "Nombre completo"
+msgid "Acceso completo"
+msgstr "フルアクセス"
+
+#: accounts/views.py:238
+msgid "Descargas ilimitadas"
+msgstr "無制限のダウンロード"
+
+#: accounts/views.py:239 landing/views.py:483
+msgid "Soporte prioritario"
+msgstr "優先サポート"
+
+#: accounts/views.py:240
+msgid "Personajes exclusivos"
+msgstr "限定キャラクター"
+
+#: accounts/views.py:249
+msgid "Todo lo de Pro"
+msgstr "すべてプロ"
+
+#: accounts/views.py:250
+#| msgid "Solicitar acceso anticipado"
+msgid "Acceso anticipado"
+msgstr "早期アクセス"
+
+#: accounts/views.py:251
+msgid "NFTs exclusivos"
+msgstr "独占的なNFT"
+
+#: accounts/views.py:252
+msgid "Sesiones 1-on-1"
+msgstr "1対1セッション"
+
+#: accounts/views.py:253
+msgid "Badge Elite"
+msgstr "エリートバッジ"
+
+#: accounts/views.py:265
+msgid "Plan de suscripción no válido."
+msgstr "無効なサブスクリプション プランです。"
+
+#: accounts/views.py:279
+msgid "Por favor, completa el pago para activar tu suscripción."
+msgstr "支払いを完了してサブスクリプションを有効にしてください。"
+
+#: accounts/views.py:290
+msgid "Suscripción cancelada."
+msgstr "サブスクリプションをキャンセルしました。"
+
+#: accounts/views.py:292
+msgid "No tienes una suscripción activa."
+msgstr "アクティブなサブスクリプションがありません。"
+
+#: accounts/views.py:334
+msgid "Wallet conectada. Pendiente de verificación."
+msgstr "接続されたウォレット。検証待ちです。"
+
+#: accounts/views.py:336
+msgid "Error al conectar wallet."
+msgstr "ウォレットの接続中にエラーが発生しました。"
+
+#: accounts/views.py:351
+#| msgid "Alertas desactivadas"
+msgid "Wallet desconectada."
+msgstr "ウォレットが切断されました。"
+
+#: accounts/views.py:379
+#| msgid "Nombre completo"
+msgid "Perfil completo"
+msgstr "完全なプロフィール"
+
+#: accounts/views.py:383
+msgid "Cada item en inventario"
+msgstr "在庫内のすべてのアイテム"
+
+#: accounts/views.py:384
+msgid "Suscripción Starter"
+msgstr "スターターサブスクリプション"
+
+#: accounts/views.py:385
+msgid "Suscripción Pro"
+msgstr "プロのサブスクリプション"
+
+#: accounts/views.py:386
+msgid "Suscripción Elite"
+msgstr "エリートサブスクリプション"
+
+#: croody/navigation.py:14
+msgid "Inicio"
+msgstr "ホーム"
+
+#: croody/navigation.py:15 landing/views.py:58 templates/landing/about.html:10
+msgid "Nosotros"
+msgstr "概要"
+
+#: croody/navigation.py:16 landing/views.py:95
 msgid "Buddy"
-msgstr ""
+msgstr "バディ"
 
-msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
-msgstr ""
+#: croody/navigation.py:17
+msgid "Luks"
+msgstr "ルクス"
 
+#: croody/navigation.py:18 templates/accounts/base_accounts.html:54
+#: templates/accounts/shop.html:5 templates/accounts/shop.html:6
+msgid "Tienda"
+msgstr "ショップ"
+
+#: croody/navigation.py:26
+msgid "Croody · Inicio"
+msgstr "クローディ · ホーム"
+
+#: croody/navigation.py:27
+msgid "Croody · Ejes"
+msgstr "クローディ · 主要分野"
+
+#: croody/navigation.py:28
+msgid "Croody · Roadmap"
+msgstr "クローディ · ロードマップ"
+
+#: croody/navigation.py:29
+msgid "Buddy · Producto"
+msgstr "バディ · 製品"
+
+#: croody/navigation.py:30 landing/views.py:444
+msgid "Buddy · Suscripciones"
+msgstr "バディ · サブスクリプション"
+
+#: croody/navigation.py:31
+msgid "Luks · Infraestructura"
+msgstr "ルクス · インフラ"
+
+#: croody/navigation.py:32 landing/views.py:411
+#: templates/landing/home.html:262 templates/shop/catalogue.html:14
+msgid "Tienda Buddy"
+msgstr "バディショップ"
+
+#: croody/navigation.py:33
+msgid "Buddy Checkout"
+msgstr "バディチェックアウト"
+
+#: croody/navigation.py:34
+msgid "Croody · Registro"
+msgstr "クローディ · 登録"
+
+#: croody/navigation.py:35
+msgid "Croody · Perfil"
+msgstr "クローディ · プロフィール"
+
+#: landing/forms.py:18
+msgid "Usuario o correo"
+msgstr "ユーザー名またはメール"
+
+#: landing/forms.py:30
+msgid "Contraseña"
+msgstr "パスワード"
+
+#: landing/forms.py:54
+msgid "Nombre completo"
+msgstr "フルネーム"
+
+#: landing/forms.py:59
+msgid "Nombre y apellidos"
+msgstr "名前と姓"
+
+#: landing/forms.py:65
+msgid "Correo electrónico"
+msgstr "メールアドレス"
+
+#: landing/forms.py:71
+msgid "Idioma preferido"
+msgstr "希望言語"
+
+#: landing/forms.py:76
+msgid "Tema visual"
+msgstr "ビジュアルテーマ"
+
+#: landing/forms.py:80
+msgid "Acepto el manifiesto Croody y términos de servicio"
+msgstr "クローディ宣言と利用規約に同意します"
+
+#: landing/forms.py:89
+msgid "Ya existe una cuenta con este correo."
+msgstr "このメールアカウントは既に存在します。"
+
+#: landing/forms.py:132
+msgid "Nombre"
+msgstr "名前"
+
+#: landing/forms.py:133
+msgid "Apellidos"
+msgstr "姓"
+
+#: landing/models.py:21
+msgid "Sistema"
+msgstr "システム"
+
+#: landing/models.py:22
+msgid "Oscuro"
+msgstr "ダーク"
+
+#: landing/models.py:23
+msgid "Claro"
+msgstr "ライト"
+
+#: landing/views.py:72
+msgid "Buddy AI · Entrena, Progresa, Destaca"
+msgstr "バディAI · トレーニング、進歩、エキサイティング"
+
+#: landing/views.py:73
+msgid "Tu entrenador AI personal"
+msgstr "あなたの個人AIトレーナー"
+
+#: landing/views.py:75
+msgid ""
+"Rutinas que se adaptan a ti. Recompensas que te motivan. La tecnología que "
+"conecta."
+msgstr "あなたに適応するルーチン。モチベーションを高めるご褒美。つなぐテクノロジー。"
+
+#: landing/views.py:77
+msgid "🛒 Ir a la Tienda"
+msgstr "🛒 ショップへ"
+
+#: landing/views.py:78
+msgid "Ver Buddy"
+msgstr "バディを見る"
+
+#: landing/views.py:79
+msgid "💎 Luks"
+msgstr "💎 ルクス"
+
+#: landing/views.py:82
+msgid "Croody - Tecnología que conecta"
+msgstr "クローディ - 繋ぐ技術"
+
+#: landing/views.py:87
+msgid "rutinas ajustadas automáticamente cada semana"
+msgstr "毎週自動調整されるトレーニング"
+
+#: landing/views.py:88
+msgid "personas mantienen su plan mensual con Buddy activo"
+msgstr "人はアクティブバディで月間プランを維持"
+
+#: landing/views.py:89
+msgid "7 regiones"
+msgstr "7地域"
+
+#: landing/views.py:89
+msgid "operación sincronizada con soporte localizado"
+msgstr "ローカライズされたサポートと同期 операция"
+
+#: landing/views.py:94
+msgid "Fitness & Conexión"
+msgstr "フィットネスと接続"
+
+#: landing/views.py:96
+msgid ""
+"Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, "
+"diseñada para que tanto quien ya entrena como quien apenas empieza encuentre"
+" cada día un porqué claro para construir el físico y los hábitos de salud de"
+" sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr ""
+"高い美観と優れた流動性を備えた直感的で対称的なアプリケーションは、すでにトレーニングを行っている人も、これからトレーニングを始める人も、夢のような体型と健康習慣を構築するための明確な理由を毎日見つけられるように設計されています。友達とつながり、一緒にトレーニングして目立ちましょう。"
+
+#: landing/views.py:97 landing/views.py:99
 msgid "Conecta, Entrena y Destaca"
 msgstr "接続、トレーニング、目立つ"
 
+#: landing/views.py:102
 msgid "Economía Digital"
-msgstr ""
+msgstr "デジタル経済"
 
+#: landing/views.py:103
 msgid "My Luks"
-msgstr ""
+msgstr "私のルクス"
 
-msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
+#: landing/views.py:104
+msgid ""
+"Creamos un mercado con el cual puedes de forma segura incursionar en el "
+"mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen "
+"de una política interna de tu país y prosperar incluso en los entornos "
+"hostiles por decisiones de gobiernos."
 msgstr ""
+"私たちは、安全に暗号通貨の世界に足を踏み入れ、追加収入を得ることができ、国の国内政策に依存せず、政府の決定による厳しい環境下でも繁栄できる通貨に依存できる市場を構築します。"
 
+#: landing/views.py:105 landing/views.py:107
 msgid "Seguridad, Abundancia y Proyección"
-msgstr ""
+msgstr "安全、豊富、投影"
 
+#: landing/views.py:110
 msgid "Alimentación Real"
-msgstr ""
+msgstr "リアルフード"
 
+#: landing/views.py:111
 msgid "Comida Real (Próximamente)"
-msgstr ""
+msgstr "リアルフード（近日公開）"
 
-msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
+#: landing/views.py:112
+msgid ""
+"A través de investigación y compromiso alimenticio ofrecemos comida real y "
+"soluciones eficaces para aquellos que se quieren alimentar bien y carecen de"
+" tiempo, para todas las edades. Promovemos alimentos de origen animal y "
+"vegetal, sin productos químicos dañinos."
 msgstr ""
+"研究と栄養への取り組みを通じて、私たちはすべての年齢層を対象に、しっかりと食事をしたいが時間がない人に本物の食品と効果的なソリューションを提供します。私たちは、有害な化学物質を含まない、動物および植物由来の食品を推進します。"
 
+#: landing/views.py:113 landing/views.py:115
 msgid "Alivio, Nostalgia y Satisfacción"
-msgstr ""
+msgstr "安堵、郷愁、満足"
 
+#: landing/views.py:121
+msgid "Claridad en cada decisión"
+msgstr "あらゆる決断を明確に"
+
+#: landing/views.py:122
+msgid ""
+"Interfaces limpias, métricas visibles y lenguaje directo para que cualquier "
+"equipo entienda qué sigue."
+msgstr "クリーンなインターフェイス、目に見える指標、直接的な表現により、どのチームも次に何が起こるかを理解できます。"
+
+#: landing/views.py:125
+msgid "Motivación sostenible"
+msgstr "持続的なモチベーション"
+
+#: landing/views.py:126
+msgid ""
+"Personajes, mensajes y animaciones que elevan la energía sin perder "
+"profesionalismo."
+msgstr "プロ意識を失わずにエネルギーを高めるキャラクター、メッセージ、アニメーション。"
+
+#: landing/views.py:129
+#| msgid "Economía Digital"
+msgid "Economía justa"
+msgstr "公正な経済"
+
+#: landing/views.py:130
+msgid ""
+"Probabilidades, tarifas y recompensas públicas. Sin sorpresas ni ventajas "
+"pay-to-win."
+msgstr "公開オッズ、レート、報酬。驚きやペイ・トゥ・ウィンのメリットはありません。"
+
+#: landing/views.py:133
+msgid "Accesibilidad real"
+msgstr "本当のアクセシビリティ"
+
+#: landing/views.py:134
+msgid ""
+"Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas"
+" culturas y edades."
+msgstr "フルキーボードのサポート、AA/AAA のコントラスト、さまざまな文化や年齢向けに設計された物語。"
+
+#: landing/views.py:137
+msgid "Vocación de servicio"
+msgstr "奉仕の使命"
+
+#: landing/views.py:138
+msgid ""
+"Nos guía una ética de servicio discreta: cuidamos a las personas primero y "
+"dejamos que el diseño lo haga evidente."
+msgstr "当社は、控えめなサービスの倫理に基づいて行動しています。まず人々を大切にし、それをデザインで明らかにします。"
+
+#: landing/views.py:144
+msgid "Compras sin fricción"
+msgstr "スムーズなショッピング"
+
+#: landing/views.py:145
+msgid ""
+"Checkout Luks en segundos con costos claros y asignación inmediata al "
+"inventario."
+msgstr "明確なコストと在庫への即時割り当てにより、数秒で Luks をチェックアウトできます。"
+
+#: landing/views.py:148
+msgid "Inventario conectado"
+msgstr "接続されたインベントリ"
+
+#: landing/views.py:149
+msgid ""
+"Abre packs, equipa rutinas o lista ítems desde web y móvil con el mismo "
+"estado."
+msgstr "パックを開いたり、ルーチンを装備したり、Web やモバイルから同じステータスのアイテムをリストしたりできます。"
+
+#: landing/views.py:152
+msgid "Eventos que mueven"
+msgstr "動く出来事"
+
+#: landing/views.py:153
+msgid ""
+"Temporadas y recompensas tokenizadas con métricas claras para sostener la "
+"constancia."
+msgstr "一貫性を維持するための明確な指標を使用してトークン化されたシーズンと報酬。"
+
+#: landing/views.py:159 landing/views.py:318
+msgid "Semana 1"
+msgstr "1週目"
+
+#: landing/views.py:160
+msgid "Narrativa alineada"
+msgstr "整合性のある物語"
+
+#: landing/views.py:162
+msgid "Landing Croody con la historia Buddy + Luks lista para stakeholders."
+msgstr "関係者向けにバディ + ルクスのストーリーを備えたクルーディを着陸させます。"
+
+#: landing/views.py:163
+msgid ""
+"Formularios conectados y analítica básica para medir interés desde el día "
+"uno."
+msgstr "接続されたフォームと基本的な分析により、初日から関心を測定します。"
+
+#: landing/views.py:167 landing/views.py:325
+msgid "Semana 3"
+msgstr "3週目"
+
+#: landing/views.py:168
+#| msgid "Alertas desactivadas"
+msgid "Ventas activas"
+msgstr "積極的な販売"
+
+#: landing/views.py:170
+msgid ""
+"Catálogo, PDP y checkout Luks operando con seguimiento de conversiones."
+msgstr "Luks カタログ、PDP、チェックアウトはコンバージョン トラッキングで動作します。"
+
+#: landing/views.py:171
+msgid "Inventario y marketplace en beta controlada para refinar procesos."
+msgstr "制御されたベータ版の在庫とマーケットプレイスでプロセスを洗練します。"
+
+#: landing/views.py:175 landing/views.py:332
+msgid "Semana 6"
+msgstr "第6週"
+
+#: landing/views.py:176
+msgid "Expansión tokenizada"
+msgstr "トークン化された拡張"
+
+#: landing/views.py:178
+msgid ""
+"Eventos temáticos con recompensas en vivo y retos medidos en paneles de "
+"datos."
+msgstr "データ ダッシュボードで測定されるライブ報酬と課題を伴うテーマ イベント。"
+
+#: landing/views.py:179
+msgid "Dashboard de datos listo para alianzas y marcas aliadas."
+msgstr "アライアンスや提携ブランドに対応したデータ ダッシュボード。"
+
+#: landing/views.py:237
 msgid "Buddy · Conecta, Entrena y Destaca"
-msgstr ""
+msgstr "バディ · 接続、トレーニング、エキサイティング"
 
+#: landing/views.py:238
 msgid "Más que entrenar: una conexión contigo y con los tuyos"
-msgstr ""
+msgstr "トレーニング以上：あなたと愛する人々との接続"
 
-msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
+#: landing/views.py:240
+msgid ""
+"Buddy es una aplicación intuitiva, simétrica, de alta estética y gran "
+"fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien "
+"apenas empieza a considerar la idea encuentre, cada día, un porqué claro "
+"para enfocarse y construir el físico y los hábitos de salud de sus sueños. "
+"Además de verse y sentirse bien, Buddy cuida que la experiencia sea "
+"coherente, agradable y profundamente motivadora desde el primer contacto, "
+"con una ética inspirada en nuestras convicciones de servicio que priorizan "
+"el cuidado de las personas."
 msgstr ""
+"Buddy "
+"は、直感的で、対称的で、非常に美的で流動的なアプリケーションであり、すでにジムでトレーニングしている人も、そのアイデアを検討し始めたばかりの人も、毎日、夢の体格と健康習慣に集中して構築するための明確な理由を見つけられるように設計されています。"
+" Buddy "
+"は、見た目や気分が良いだけでなく、人々への配慮を優先するサービスの信念に触発された倫理に基づいて、最初の接触からその体験が一貫性があり、快適で、深く動機づけられるものであることを保証します。"
 
+#: landing/views.py:242
+msgid "Ir a la tienda Buddy"
+msgstr "バディショップへ行く"
+
+#: landing/views.py:243
 msgid "Ver roadmap"
-msgstr ""
+msgstr "ロードマップを見る"
 
+#: landing/views.py:246
 msgid "365 días"
-msgstr ""
+msgstr "365日"
 
+#: landing/views.py:246
 msgid "de rutinas nuevas sin reciclar combinaciones"
-msgstr ""
+msgstr "組み合わせをリサイクルしない新しいトレーニング"
 
+#: landing/views.py:247
+#, python-format
+#| msgid "±5% fatiga"
 msgid "±5% fatiga"
-msgstr ""
+msgstr "±5%の疲労"
 
+#: landing/views.py:247
 msgid "ajuste automático según tu energía real"
-msgstr ""
+msgstr "あなたの実際のエネルギーに基づく自動調整"
 
+#: landing/views.py:248
 msgid "5 estilos"
-msgstr ""
+msgstr "5スタイル"
 
+#: landing/views.py:248
 msgid "personajes con tonos y objetivos definidos"
-msgstr ""
+msgstr "明確なトーンと目標を持つキャラクター"
 
+#: landing/views.py:252
 msgid "Entrenador con IA y rutinas a tu medida"
-msgstr ""
+msgstr "AIトレーナーとカスタムトレーニング"
 
-msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
+#: landing/views.py:253
+msgid ""
+"Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador "
+"personalizado con IA. Cada semana recibes un plan de entrenamiento pensado "
+"exclusivamente para ti, basado en tus entrenamientos previos, datos e "
+"historial. La IA automatiza este proceso a través de conversaciones "
+"naturales, manteniendo siempre el control total de tu entrenamiento."
 msgstr ""
+"Buddy は、パーソナライズされた AI "
+"トレーナーを使用してルーチンを設計する機会を提供します。以前のトレーニング、データ、履歴に基づいて、あなた専用に設計されたトレーニング "
+"プランを毎週受け取ります。 AI は自然な会話を通じてこのプロセスを自動化し、常にトレーニングを完全に制御します。"
 
+#: landing/views.py:256
 msgid "Biblioteca de ejercicios segura y consistente"
-msgstr ""
+msgstr "安全で一貫した 운동ライブラリ"
 
-msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
+#: landing/views.py:257
+msgid ""
+"Cada movimiento incluye video-claves cortos con la técnica correcta, pautas "
+"de respiración, puntos de seguridad y errores comunes a evitar. Con "
+"progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una "
+"alternativa acorde a tu nivel y equipo disponible."
 msgstr ""
+"各動作には、正しいテクニック、呼吸ガイドライン、安全上のポイント、避けるべきよくある間違いを説明した短いビデオキーが含まれています。推奨される進行状況 "
+"(初級/中級/上級) により、自分のレベルと利用可能な装備に応じた選択肢が常に用意されています。"
 
+#: landing/views.py:260
 msgid "Ecosistema de personajes con carisma"
+msgstr "魅力的なキャラクターエコシステム"
+
+#: landing/views.py:261
+msgid ""
+"Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad "
+"única. Puedes elegir rutinas predeterminadas según el estilo de cada "
+"personaje o configurar que uno solo te entregue todas las rutinas. Cada "
+"personaje ofrece gestos, animaciones y apoyo constante para una experiencia "
+"cercana y estimulante."
+msgstr ""
+"Buddy "
+"にはキャラクターのエコシステムがあり、それぞれが独自の個性を持っています。各キャラクターのスタイルに応じてあらかじめ決められたルーチンを選択することも、1"
+" "
+"人のキャラクターにすべてのルーチンを提供するように設定することもできます。各キャラクターはジェスチャー、アニメーションを提供し、緊密で刺激的な体験を継続的にサポートします。"
+
+#: landing/views.py:266
+msgid "App móvil"
+msgstr "モバイルアプリ"
+
+#: landing/views.py:268
+msgid "Diálogo natural para crear rutinas y ajustar bloques en segundos."
+msgstr "自然な対話により、数秒でルーチンを作成し、ブロックを調整します。"
+
+#: landing/views.py:269
+msgid ""
+"Conteo automático de series, descansos inteligentes y feedback háptico."
+msgstr "自動セットカウント、スマートブレイク、触覚フィードバック。"
+
+#: landing/views.py:270
+msgid "Modo compañero para entrenar con tus contactos o personaje favorito."
+msgstr "コンパニオン モードでは、連絡先やお気に入りのキャラクターと一緒にトレーニングできます。"
+
+#: landing/views.py:274
+#| msgid "Buddy"
+msgid "Buddy Web"
+msgstr "バディウェブ"
+
+#: landing/views.py:276
+msgid "Inventario vivo para abrir packs, equipar sets y listar ítems."
+msgstr "ライブインベントリでパックを開け、セットを装備し、アイテムをリストします。"
+
+#: landing/views.py:277
+msgid "Reproductor de sesiones, biblioteca extendida y guardado de favoritos."
+msgstr "セッションプレーヤー、拡張ライブラリ、お気に入りの保存。"
+
+#: landing/views.py:278
+msgid "Telemetría lista para equipos, coaches o marcas aliadas."
+msgstr "チーム、コーチ、または関連ブランド向けのテレメトリーが用意されています。"
+
+#: landing/views.py:282
+#| msgid "Conocer Buddy"
+msgid "Economía Buddy"
+msgstr "バディエコノミー"
+
+#: landing/views.py:284
+msgid "Sets temáticos, accesorios y cofres con probabilidades públicas."
+msgstr "公開オッズを備えたテーマ付きのセット、アクセサリー、チェスト。"
+
+#: landing/views.py:285
+msgid "Luks como moneda única con recompensas por constancia y eventos."
+msgstr "一貫性とイベントに対する報酬を備えた単一通貨としての Luks。"
+
+#: landing/views.py:286
+msgid "Marketplace integrado para vender o intercambiar sin salir de Buddy."
+msgstr "Buddy を離れることなく販売または取引できる統合マーケットプレイス。"
+
+#: landing/views.py:292
+msgid "Antes de entrenar"
+msgstr "トレーニング前"
+
+#: landing/views.py:294
+msgid "Escaneo rápido de energía y movilidad."
+msgstr "エネルギーとモビリティの素早いスキャン。"
+
+#: landing/views.py:295
+msgid "Recomendaciones de personajes, sets y accesorios según tu meta."
+msgstr "目的に応じたキャラクター、セット、アクセサリーのおすすめをご紹介します。"
+
+#: landing/views.py:296
+msgid ""
+"Recordatorios contextuales desde la app y sincronía con tus calendarios "
+"habituales."
+msgstr "アプリからの状況に応じたリマインダーと、通常のカレンダーとの同期。"
+
+#: landing/views.py:300
+#| msgid "Inicia sesión"
+msgid "Durante la sesión"
+msgstr "セッション中"
+
+#: landing/views.py:302
+msgid "Conteo automático de repeticiones y control de tempo."
+msgstr "自動繰り返しカウントとテンポ制御。"
+
+#: landing/views.py:303
+msgid "Feedback visual y de voz sobre técnica, respiración y seguridad."
+msgstr "テクニック、呼吸、安全性に関する視覚と音声のフィードバック。"
+
+#: landing/views.py:304
+msgid "Notas rápidas, clips y variaciones disponibles en un toque."
+msgstr "ワンタッチでクイックノート、クリップ、バリエーションを利用できます。"
+
+#: landing/views.py:308
+#| msgid "Después de comprar"
+msgid "Después del entrenamiento"
+msgstr "トレーニング後"
+
+#: landing/views.py:310
+msgid "Resumen claro con métricas, descanso sugerido y próximos pasos."
+msgstr "メトリクスを含む明確な概要、推奨される休憩と次のステップ。"
+
+#: landing/views.py:311
+msgid "Recompensas Luks y retos desbloqueados según tu constancia."
+msgstr "Luks の報酬とチャレンジは、あなたの忍耐力に応じてアンロックされます。"
+
+#: landing/views.py:312
+msgid "Historial listo para compartir con tu entrenador o comunidad."
+msgstr "履歴をコーチやコミュニティと共有する準備ができています。"
+
+#: landing/views.py:320
+msgid "Piloto interno con rutinas adaptativas y biblioteca completa."
+msgstr "適応ルーチンと完全なライブラリを備えた内部パイロット。"
+
+#: landing/views.py:321
+msgid "Configuración de personajes base y mensajes personalizados."
+msgstr "基本キャラクター構成とカスタムメッセージ。"
+
+#: landing/views.py:327
+msgid "Inventario web conectado para abrir packs y equipar sets."
+msgstr "ウェブインベントリに接続してパックを開いてセットを装備します。"
+
+#: landing/views.py:328
+msgid "Alertas inteligentes en móvil y correo para mantener la constancia."
+msgstr "一貫性を維持するためのモバイルと電子メールのスマート アラート。"
+
+#: landing/views.py:334
+msgid "Marketplace activo con recompensas y eventos temáticos."
+msgstr "テーマ別の報酬やイベントが行われるアクティブなマーケットプレイス。"
+
+#: landing/views.py:335
+msgid "Dashboard de telemetría para coaches, squads y marcas."
+msgstr "コーチ、チーム、ブランド向けのテレメトリ ダッシュボード。"
+
+#: landing/views.py:373
+#| msgid "Luks · Croody"
+msgid "Luks · Economía Buddy"
+msgstr "ラックス エコノミー バディ"
+
+#: landing/views.py:374
+msgid "Token que recompensa la constancia y da confianza a cada transacción."
+msgstr "一貫性を評価し、各トランザクションに信頼性を与えるトークン。"
+
+#: landing/views.py:375
+msgid ""
+"Pagos, royalties y telemetría on-chain con una experiencia diseñada para "
+"usuarios reales y equipos regulados. La infraestructura nace de principios "
+"de transparencia y servicio comunicados con un tono ejecutivo."
+msgstr ""
+"実際のユーザーと規制対象チーム向けに設計されたエクスペリエンスを備えたオンチェーン支払い、ロイヤルティ、テレメトリ。このインフラストラクチャは、透明性とエグゼクティブな口調で伝えられるサービスの原則から生まれました。"
+
+#: landing/views.py:376
+#| msgid "Tienda Buddy"
+msgid "Ver tienda Buddy"
+msgstr "バディストアを見る"
+
+#: landing/views.py:377
+#| msgid "Contacta al equipo"
+msgid "Contactar equipo Luks"
+msgstr "Luks チームに連絡する"
+
+#: landing/views.py:380
+msgid "≤2s"
+msgstr "≤2秒"
+
+#: landing/views.py:380
+msgid "finalidad promedio de las transacciones"
+msgstr "取引の平均的な目的"
+
+#: landing/views.py:381
+msgid "disponibilidad de la bóveda custodial"
+msgstr "保管庫の利用可能性"
+
+#: landing/views.py:382
+msgid "catálogo con probabilidades visibles"
+msgstr "確率が目に見えるカタログ"
+
+#: landing/views.py:386
+#| msgid "🔒 Transparencia"
+msgid "Transparencia total"
+msgstr "完全な透明性"
+
+#: landing/views.py:388
+msgid "Probabilidades, tarifas y royalties visibles antes de confirmar."
+msgstr "オッズ、レート、ロイヤルティは確認前に確認できます。"
+
+#: landing/views.py:389
+msgid "Recibos con hash verificable y seguimiento en tu panel."
+msgstr "ダッシュボードで検証可能なハッシュ化と追跡が行われた領収書。"
+
+#: landing/views.py:390
+msgid "Historial público de drops especiales y ajustes de rareza."
+msgstr "特別なドロップとレアリティ調整の公開履歴。"
+
+#: landing/views.py:394
+msgid "Seguridad por defecto"
+msgstr "デフォルトのセキュリティ"
+
+#: landing/views.py:396
+msgid "Custodia con 2FA, límites dinámicos y alertas en tiempo real."
+msgstr "2FA、動的制限、リアルタイムアラートによる保管。"
+
+#: landing/views.py:397
+msgid "Escrow inteligente y cooldowns para frenar especulación."
+msgstr "インテリジェントなエスクローとクールダウンで投機を阻止します。"
+
+#: landing/views.py:398
+msgid "Monitoreo anti-bot y protección ante picos de red."
+msgstr "アンチボット監視とネットワークスパイクからの保護。"
+
+#: landing/views.py:402
+msgid "Medición constante"
+msgstr "常時測定"
+
+#: landing/views.py:404
+msgid "Dashboards con conversión, listados y salud de la red."
+msgstr "コンバージョン、リスト、ネットワークの健全性を示すダッシュボード。"
+
+#: landing/views.py:405
+msgid "Eventos trazables para campañas y recompensas por consistencia."
+msgstr "キャンペーンの追跡可能なイベントと一貫性に対する報酬。"
+
+#: landing/views.py:406
+msgid "Exportación de datos para socios, auditorías y reguladores."
+msgstr "パートナー、監査、規制当局向けのデータのエクスポート。"
+
+#: landing/views.py:411
+msgid "Checkout en segundos"
+msgstr "数秒でチェックアウト"
+
+#: landing/views.py:411
+msgid "Packs con pity visible"
+msgstr "目に見える哀れみを伴うパック"
+
+#: landing/views.py:411
+msgid "Asignación inmediata al inventario."
+msgstr "在庫への即時割り当て。"
+
+#: landing/views.py:412
+msgid "Inventario web"
+msgstr "ウェブインベントリ"
+
+#: landing/views.py:412
+#| msgid "Resultados sugeridos"
+msgid "Estados sincronizados"
+msgstr "同期状態"
+
+#: landing/views.py:412
+msgid "Listado instantáneo"
+msgstr "インスタントリスト"
+
+#: landing/views.py:412
+msgid "Eventos y bonos por temporada."
+msgstr "イベントと季節のボーナス。"
+
+#: landing/views.py:413
+msgid "Marketplace P2P"
+msgstr "P2P マーケットプレイス"
+
+#: landing/views.py:413
+msgid "Royalties configurables"
+msgstr "設定可能なロイヤルティ"
+
+#: landing/views.py:413
+msgid "Escrow automático"
+msgstr "自動エスクロー"
+
+#: landing/views.py:413
+msgid "Historial de precios y volumen."
+msgstr "価格と出来高の履歴。"
+
+#: landing/views.py:416
+msgid "KYC/AML opcional para límites de retiro elevados."
+msgstr "オプションのKYC/AMLで高い出金限度額を実現。"
+
+#: landing/views.py:417
+msgid "Políticas anti loot-box con fiat: todo pasa primero por Luks."
+msgstr "法定通貨による反ルートボックス ポリシー: すべては最初に Luks を経由します。"
+
+#: landing/views.py:418
+msgid "Age gate configurable y reportes regionales listos para reguladores."
+msgstr "設定可能な年齢ゲートと地域レポートを規制当局に提供します。"
+
+#: landing/views.py:421
+msgid ""
+"SDK ligero para apps y gimnasios que quieran ofrecer recompensas Buddy."
+msgstr "バディ特典を提供したいアプリやジム向けの軽量 SDK。"
+
+#: landing/views.py:422
+msgid "Webhooks firmados para sincronizar inventario con partners externos."
+msgstr "在庫を外部パートナーと同期するための署名済み Webhook。"
+
+#: landing/views.py:423
+msgid "Panel operativo con métricas de conversión, uso y salud de red."
+msgstr "コンバージョン、使用状況、ネットワーク健全性のメトリクスを含む運用ダッシュボード。"
+
+#: landing/views.py:445
+msgid "Elige un plan para empezar hoy"
+msgstr "今日から始めるプランを選択してください"
+
+#: landing/views.py:447
+msgid ""
+"Planes simples que activan rutinas con IA, biblioteca de ejercicios y "
+"progreso vivo. Cámbialos o cancélalos cuando quieras."
+msgstr "AI ルーチン、エクササイズ ライブラリ、ライブ進捗状況を有効にするシンプルなプラン。いつでも変更またはキャンセルできます。"
+
+#: landing/views.py:454
+msgid "Starter"
+msgstr "スターター"
+
+#: landing/views.py:456 landing/views.py:467 landing/views.py:479
+#: templates/accounts/subscriptions.html:70
+msgid "mes"
+msgstr "月"
+
+#: landing/views.py:458
+msgid "Rutinas con IA (básico)"
+msgstr "AIを活用したルーティン（基本）"
+
+#: landing/views.py:459
+#| msgid "Biblioteca de ejercicios segura y consistente"
+msgid "Biblioteca de ejercicios con video‑claves"
+msgstr "ビデオキーを備えたエクササイズライブラリ"
+
+#: landing/views.py:460
+msgid "Progreso semanal y temporizador de descansos"
+msgstr "毎週の進行状況と休憩タイマー"
+
+#: landing/views.py:462
+msgid "Comenzar"
+msgstr "始める"
+
+#: landing/views.py:465
+msgid "Focus"
+msgstr "集中"
+
+#: landing/views.py:469
+msgid "Rutinas con IA (avanzado)"
+msgstr "AI を使用したルーチン (上級)"
+
+#: landing/views.py:470
+msgid "Ajustes por personaje y objetivos"
+msgstr "キャラクターと目標の調整"
+
+#: landing/views.py:471
+msgid "Recordatorios inteligentes y tendencias mensuales"
+msgstr "スマートなリマインダーと毎月の傾向"
+
+#: landing/views.py:473
+msgid "Activar Focus"
+msgstr "フォーカスを有効にする"
+
+#: landing/views.py:474
+msgid "Recomendado"
+msgstr "推奨"
+
+#: landing/views.py:477
+msgid "Crew"
+msgstr "クルー"
+
+#: landing/views.py:481
+msgid "Todo Focus + 3 perfiles"
+msgstr "すべてのフォーカス + 3 つのプロファイル"
+
+#: landing/views.py:482
+msgid "Retos y tableros para equipo/familia"
+msgstr "チーム/家族向けのチャレンジとボード"
+
+#: landing/views.py:485
+#| msgid "Probar predicción"
+msgid "Probar Crew"
+msgstr "トライクルー"
+
+#: landing/views.py:491
+#| msgid "✓ Cancela cuando quieras"
+msgid "¿Puedo cancelar cuando quiera?"
+msgstr "いつでもキャンセルできますか?"
+
+#: landing/views.py:492
+msgid "Sí, gestionas tu plan desde tu cuenta. Sin permanencias."
+msgstr "はい、プランはアカウントから管理します。永続性はありません。"
+
+#: landing/views.py:495
+msgid "¿Qué incluye la prueba?"
+msgstr "テストには何が含まれますか?"
+
+#: landing/views.py:496
+msgid "7 días con funciones Focus para que sientas el flujo completo."
+msgstr "7 日間のフォーカス機能により、完全な流れを感じられます。"
+
+#: landing/views.py:536
+msgid "Bienvenido a Croody. Ajusta tu perfil cuando quieras."
+msgstr "クローディへようこそ。いつでもプロフィールを調整してください。"
+
+#: landing/views.py:542
+msgid "Crear cuenta Croody"
+msgstr "Croo dyで検索"
+
+#: landing/views.py:574
+msgid "Perfil actualizado."
+msgstr "プロフィールが更新されました。"
+
+#: landing/views.py:576
+msgid "Revisa los campos del perfil."
+msgstr "プロフィールフィールドを確認してください。"
+
+#: landing/views.py:581
+msgid "Preferencias guardadas."
+msgstr "設定が保存されました。"
+
+#: landing/views.py:583
+msgid "No pudimos guardar las preferencias."
+msgstr "設定を保存できませんでした。"
+
+#: landing/views.py:586
+msgid "Generamos un nuevo token para tus robots."
+msgstr "あなたの 로봇のために新しいトークンを生成しました。"
+
+#: landing/views.py:588
+msgid "Acción no reconocida."
+msgstr "認識されないアクション。"
+
+#: landing/views.py:594
+msgid "Token de ingestión listo"
+msgstr "インジェストトークン準備完了"
+
+#: landing/views.py:596
+msgid "activo"
+msgstr "アクティブ"
+
+#: landing/views.py:599
+msgid "Alertas de telemetría"
+msgstr "テレメトリアルート"
+
+#: landing/views.py:600
+msgid "Recibir notificaciones críticas"
+msgstr "重要な通知を受け取る"
+
+#: landing/views.py:600
+msgid "Alertas desactivadas"
+msgstr "ルートがオフになりました"
+
+#: landing/views.py:618
+msgid "Monitoreo en tiempo real"
+msgstr "リアルタイム監視"
+
+#: landing/views.py:619
+msgid ""
+"Visualiza la posición del robot, variables atmosféricas y estados críticos "
+"en un tablero neofuturista listo para operación global."
+msgstr "ロボットの位置、大気の変数、危険な状態を、グローバルな運用に備えた近未来的なダッシュボード上で視覚化します。"
+
+#: landing/views.py:622 templates/account/profile.html:98
+msgid "Robots activos"
+msgstr "アクティブロボット"
+
+#: landing/views.py:623 templates/account/profile.html:102
+msgid "Última actualización"
+msgstr "最後の更新"
+
+#: landing/views.py:624 templates/account/profile.html:106
+msgid "Alertas"
+msgstr "ルート"
+
+#: landing/views.py:630
+msgid "TCP ASCII · LOGIN/GET_DATA/MOVE"
+msgstr "TCP ASCII · LOGIN/GET_DATA/MOVE"
+
+#: landing/views.py:631
+msgid "Emite cada 15 s y el bridge envía a Telemetry Gateway automáticamente."
+msgstr "15 秒ごとにブロードキャストされ、ブリッジは自動的にテレメトリ ゲートウェイに送信します。"
+
+#: templates/account/login.html:5 templates/account/register.html:40
+msgid "Inicia sesión"
+msgstr "サインイン"
+
+#: templates/account/login.html:12
+msgid "Acceso Croody"
+msgstr "クローディアクセス"
+
+#: templates/account/login.html:13
+msgid "Conecta tu cuenta para continuar."
+msgstr "アカウントを接続して続行してください。"
+
+#: templates/account/login.html:15
+msgid ""
+"Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener"
+" tu tema oscuro o claro sincronizado."
+msgstr "サインインすると、Buddy Store で買い物をしたり、アイテムを管理したり、ダークまたはライトのテーマを同期したりできます。"
+
+#: templates/account/login.html:18
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr "アクセスを忘れましたか？ написать нам"
+
+#: templates/account/login.html:19
+msgid ""
+"¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo "
+"Croody."
+msgstr ""
+"まだ資格情報をお持ちでない場合は、 Request to activate your account with the Croody team."
+
+#: templates/account/login.html:48
+msgid "Ingresar"
+msgstr "サインイン"
+
+#: templates/account/login.html:49
+msgid "¿Aún no tienes cuenta?"
+msgstr "アカウントをお持ちでないですか？"
+
+#: templates/account/login.html:49
+msgid "Crea una"
+msgstr "作成する"
+
+#: templates/account/profile.html:5 templates/account/profile.html:12
+#: templates/base.html:219 templates/base.html:259
+msgid "Perfil"
+msgstr "プロフィール"
+
+#: templates/account/profile.html:13
+msgid "Cuida tu identidad Croody y tus robots"
+msgstr "クローディアイデンティティとロボットを大切にする"
+
+#: templates/account/profile.html:14
+msgid ""
+"Actualiza datos personales, gestiona tokens de ingestión y revisa la "
+"telemetría más reciente sin salir del dashboard."
+msgstr "ダッシュボードを離れることなく、個人データを更新し、取り込みトークンを管理し、最新のテレメトリを確認します。"
+
+#: templates/account/profile.html:17
+msgid "Token activo"
+msgstr "アクティブなトークン"
+
+#: templates/account/profile.html:21
+msgid "Modo de alertas"
+msgstr "アラートモード"
+
+#: templates/account/profile.html:22 templates/accounts/inventory.html:48
+msgid "Activo"
+msgstr "資産"
+
+#: templates/account/profile.html:22
+msgid "Inactivo"
+msgstr "アイドル状態"
+
+#: templates/account/profile.html:25
+msgid "Idioma"
+msgstr "言語"
+
+#: templates/account/profile.html:32
+msgid "Datos personales"
+msgstr "個人データ"
+
+#: templates/account/profile.html:45
+msgid "Guardar"
+msgstr "保存"
+
+#: templates/account/profile.html:50
+msgid "Preferencias"
+msgstr "設定"
+
+#: templates/account/profile.html:63
+msgid "Actualizar preferencias"
+msgstr "設定を更新する"
+
+#: templates/account/profile.html:68
+msgid "Token de ingestión"
+msgstr "インジェストトークン"
+
+#: templates/account/profile.html:74
+msgid "Regenerar"
+msgstr "再生成"
+
+#: templates/account/profile.html:76
+msgid "Úsalo como cabecera X-API-Key al enviar telemetría."
+msgstr "テレメトリを送信するときに、X-API-Key ヘッダーとして使用します。"
+
+#: templates/account/profile.html:80
+msgid "Actividad"
+msgstr "プライバシー"
+
+#: templates/account/profile.html:95
+msgid "Telemetría en vivo"
+msgstr "ライブテレメトリ"
+
+#: templates/account/register.html:5 templates/account/register.html:39
+msgid "Crear cuenta"
+msgstr "アカウント作成"
+
+#: templates/account/register.html:12
+msgid "Registro Croody"
+msgstr "クローディ登録"
+
+#: templates/account/register.html:13
+msgid "Activa tu acceso al universo Croody."
+msgstr "Croody ユニバースへのアクセスを有効にします。"
+
+#: templates/account/register.html:14
+msgid ""
+"Configura idioma, tema y recibe un token personal para conectar tus robots "
+"al protocolo."
+msgstr "言語、テーマを設定し、ロボットをプロトコルに接続するための個人トークンを受け取ります。"
+
+#: templates/account/register.html:16
+msgid "Token de ingestión personal para Telemetry Gateway"
+msgstr "テレメトリ ゲートウェイの個人取り込みトークン"
+
+#: templates/account/register.html:17
+msgid "Dashboard de perfil y alertas en tiempo real"
+msgstr "プロファイルダッシュボードとリアルタイムアラート"
+
+#: templates/account/register.html:18
+msgid "Compatibilidad con Buddy Store y Luks"
+msgstr "Buddy Store および Luks との互換性"
+
+#: templates/account/register.html:40
+msgid "¿Ya tienes cuenta?"
+msgstr "すでにアカウントをお持ちですか？"
+
+#: templates/accounts/base_accounts.html:5
+#: templates/accounts/base_accounts.html:99
+msgid "Mi Cuenta"
+msgstr "私のアカウント"
+
+#: templates/accounts/base_accounts.html:35
+msgid "Navegaci\\u00f3n de cuenta"
+msgstr "アカウントのナビゲーション"
+
+#: templates/accounts/base_accounts.html:39
+#: templates/accounts/dashboard.html:5 templates/accounts/dashboard.html:6
+#| msgid "para dashboards"
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: templates/accounts/base_accounts.html:44 templates/accounts/profile.html:5
+#: templates/accounts/profile.html:6
+#| msgid "Perfil"
+msgid "Mi Perfil"
+msgstr "私のプロフィール"
+
+#: templates/accounts/base_accounts.html:49
+msgid "Inventario"
+msgstr "在庫"
+
+#: templates/accounts/base_accounts.html:59
+#: templates/accounts/dashboard.html:75
+msgid "Suscripci\\u00f3n"
+msgstr "サブスクリプション"
+
+#: templates/accounts/base_accounts.html:80 templates/accounts/profile.html:68
+msgid "Items"
+msgstr "アイテム"
+
+#: templates/accounts/base_accounts.html:92
+#| msgid "Cerrar sesión"
+msgid "Cerrar"
+msgstr "近い"
+
+#: templates/accounts/dashboard.html:13
+#, python-format
+msgid "Hola, %(name)s"
+msgstr "こんにちは、%(名前)s"
+
+#: templates/accounts/dashboard.html:14
+msgid "Bienvenido a tu espacio personal en Croody."
+msgstr "Croody のあなたの個人スペースへようこそ。"
+
+#: templates/accounts/dashboard.html:20 templates/accounts/points.html:30
+#: templates/accounts/points.html:64
+msgid "puntos"
+msgstr "ポイント"
+
+#: templates/accounts/dashboard.html:34
+#| msgid "Perfil actualizado."
+msgid "Perfil completado"
+msgstr "完成したプロフィール"
+
+#: templates/accounts/dashboard.html:47 templates/accounts/points.html:134
+msgid "Items en inventario"
+msgstr "在庫品目"
+
+#: templates/accounts/dashboard.html:49 templates/accounts/dashboard.html:87
+#| msgid "Ver Catálogo"
+msgid "Ver todo"
+msgstr "全て見る"
+
+#: templates/accounts/dashboard.html:56
+msgid "Conectada"
+msgstr "接続済み"
+
+#: templates/accounts/dashboard.html:58 templates/accounts/wallet.html:17
+msgid "Pendiente"
+msgstr "イヤリング"
+
+#: templates/accounts/dashboard.html:60 templates/accounts/wallet.html:19
+#| msgid "✓ Sin contratos"
+msgid "Sin conectar"
+msgstr "接続されていません"
+
+#: templates/accounts/dashboard.html:64
+msgid "Configurar"
+msgstr "設定"
+
+#: templates/accounts/dashboard.html:72
+msgid "d\\u00edas restantes"
+msgstr "残り日数"
+
+#: templates/accounts/dashboard.html:74
+msgid "Sin plan"
+msgstr "計画なし"
+
+#: templates/accounts/dashboard.html:78
+#| msgid "Ver detalles"
+msgid "Ver planes"
+msgstr "プランを見る"
+
+#: templates/accounts/dashboard.html:86
+#| msgid "Preguntas frecuentes"
+msgid "Items recientes"
+msgstr "最近のアイテム"
+
+#: templates/accounts/dashboard.html:97
+msgid "Ver"
+msgstr "見る"
+
+#: templates/accounts/dashboard.html:107
+msgid "Acciones r\\u00e1pidas"
+msgstr "クイックアクション"
+
+#: templates/accounts/dashboard.html:111 templates/accounts/profile.html:10
+msgid "Editar perfil"
+msgstr "プロフィールの編集"
+
+#: templates/accounts/dashboard.html:115 templates/accounts/inventory.html:10
+#: templates/landing/buddy.html:158
+msgid "Ir a la tienda"
+msgstr "ショップへ行く"
+
+#: templates/accounts/dashboard.html:119 templates/accounts/wallet.html:74
+#| msgid "Conectar mi robot"
+msgid "Conectar wallet"
+msgstr "ウォレットを接続する"
+
+#: templates/accounts/dashboard.html:123
+#| msgid "Ver Luks"
+msgid "Ver puntos"
+msgstr "ポイントを見る"
+
+#: templates/accounts/inventory.html:5 templates/accounts/inventory.html:6
+msgid "Mi Inventario"
+msgstr "私の在庫"
+
+#: templates/accounts/inventory.html:24
+#| msgid "Legal"
+msgid "Regalo"
+msgstr "贈り物"
+
+#: templates/accounts/inventory.html:32
+msgid "Adquirido"
+msgstr "取得した"
+
+#: templates/accounts/inventory.html:36
+msgid "descargas"
+msgstr "ダウンロード"
+
+#: templates/accounts/inventory.html:43
+#| msgid "✓ Descarga gratuita"
+msgid "Descargar"
+msgstr "放電"
+
+#: templates/accounts/inventory.html:50
+#| msgid "Robots activos"
+msgid "Usar como activo"
+msgstr "資産として使用する"
+
+#: templates/accounts/inventory.html:66 templates/accounts/shop.html:42
+msgid "Paginaci\\u00f3n"
+msgstr "ページネーション"
+
+#: templates/accounts/inventory.html:68 templates/accounts/shop.html:44
+#, python-format
+msgid ""
+"\n"
+"      P\\u00e1gina %(current)s de %(total)s\n"
+"      "
+msgstr ""
+"\n"
+"ページ %(current)s / %(total)s\n"
+"      "
+
+#: templates/accounts/inventory.html:75 templates/accounts/shop.html:51
+msgid "Anterior"
+msgstr "前者"
+
+#: templates/accounts/inventory.html:80 templates/accounts/shop.html:56
+#| msgid "Siguientes pasos"
+msgid "Siguiente"
+msgstr "続く"
+
+#: templates/accounts/inventory.html:91
+msgid "Tu inventario est\\u00e1 vac\\u00edo"
+msgstr "インベントリは空です"
+
+#: templates/accounts/inventory.html:93
+msgid ""
+"A\\u00fan no has adquirido ning\\u00fan producto. Explora nuestra tienda "
+"para encontrar algo que te guste."
+msgstr "まだ商品を購入していません。当店を探索してお気に入りのものを見つけてください。"
+
+#: templates/accounts/inventory.html:96
+#| msgid "Entrar a la tienda"
+msgid "Explorar tienda"
+msgstr "ストアを探索する"
+
+#: templates/accounts/points.html:5
+msgid "Mis Puntos"
+msgstr "マイポイント"
+
+#: templates/accounts/points.html:6
+msgid "Sistema de Puntos"
+msgstr "ポイント制度"
+
+#: templates/accounts/points.html:15
+#| msgid "Datos personales"
+msgid "puntos totales"
+msgstr "合計ポイント"
+
+#: templates/accounts/points.html:29
+msgid "Progreso hacia"
+msgstr "に向けて進歩する"
+
+#: templates/accounts/points.html:38
+#, python-format
+msgid "Faltan %(remaining)s puntos"
+msgstr "%(残り)s ポイントがありません"
+
+#: templates/accounts/points.html:51
+#| msgid "No hay productos disponibles."
+msgid "Rangos disponibles"
+msgstr "使用可能範囲"
+
+#: templates/accounts/points.html:67
+msgid "Actual"
+msgstr "現在"
+
+#: templates/accounts/points.html:78
+msgid "C\\u00f3mo ganar puntos"
+msgstr "ポイントの貯め方"
+
+#: templates/accounts/points.html:91
+msgid "Desglose de tus puntos"
+msgstr "ポイントの内訳"
+
+#: templates/accounts/points.html:94
+msgid "Completitud del perfil"
+msgstr "プロファイルの完全性"
+
+#: templates/accounts/points.html:108 templates/accounts/points.html:120
+msgid "(pendiente)"
+msgstr "（イヤリング）"
+
+#: templates/accounts/profile.html:64
+msgid "Completado"
+msgstr "満たされた"
+
+#: templates/accounts/profile.html:75 templates/accounts/profile_edit.html:56
+msgid "Datos f\\u00edsicos"
+msgstr "物理データ"
+
+#: templates/accounts/profile.html:78
+msgid "Peso"
+msgstr "重さ"
+
+#: templates/accounts/profile.html:84
+msgid "Altura"
+msgstr "身長"
+
+#: templates/accounts/profile.html:96 templates/accounts/profile_edit.html:109
+msgid "G\\u00e9nero"
+msgstr "性別"
+
+#: templates/accounts/profile.html:114
+msgid "No has definido objetivos a\\u00fan."
+msgstr "まだ目標を定義していません。"
+
+#: templates/accounts/profile.html:128
+msgid "Pendiente de verificaci\\u00f3n"
+msgstr "検証待ち"
+
+#: templates/accounts/profile.html:134
+msgid "No has conectado una wallet a\\u00fan."
+msgstr "まだウォレットに接続していません。"
+
+#: templates/accounts/profile.html:135
+#| msgid "Comprar ahora"
+msgid "Conectar ahora"
+msgstr "今すぐ接続してください"
+
+#: templates/accounts/profile.html:142
+msgid "Informaci\\u00f3n de cuenta"
+msgstr "アカウント情報"
+
+#: templates/accounts/profile.html:145
+msgid "Miembro desde"
+msgstr "以来のメンバー"
+
+#: templates/accounts/profile.html:149
+msgid "\\u00daltimo acceso"
+msgstr "\\u00最後のアクセス"
+
+#: templates/accounts/profile_edit.html:5
+#: templates/accounts/profile_edit.html:6
+#| msgid "Perfil"
+msgid "Editar Perfil"
+msgstr "プロフィールの編集"
+
+#: templates/accounts/profile_edit.html:10
+#: templates/accounts/profile_edit.html:150
+msgid "Cancelar"
+msgstr "キャンセル"
+
+#: templates/accounts/profile_edit.html:37
+#| msgid "Cambiar tema"
+msgid "Cambiar foto"
+msgstr "写真を変更する"
+
+#: templates/accounts/profile_edit.html:46
+msgid "JPG, PNG, GIF o WebP. M\\u00e1x 5MB."
+msgstr "JPG、PNG、GIF、または WebP。 M\\u00e1x 5MB。"
+
+#: templates/accounts/profile_edit.html:111
+#| msgid "Seleccionar idioma"
+msgid "Seleccionar..."
+msgstr "選択してください..."
+
+#: templates/accounts/profile_edit.html:126
+msgid "Biograf\\u00eda"
+msgstr "バイオグラフィー"
+
+#: templates/accounts/profile_edit.html:128
+msgid "Cu\\u00e9ntanos sobre ti"
+msgstr "あなた自身について教えてください"
+
+#: templates/accounts/profile_edit.html:135
+msgid "Cu\\u00e9ntanos sobre ti..."
+msgstr "あなた自身について教えてください..."
+
+#: templates/accounts/profile_edit.html:137
+msgid "M\\u00e1ximo 500 caracteres"
+msgstr "最大500文字"
+
+#: templates/accounts/profile_edit.html:147
+#| msgid "Guardar"
+msgid "Guardar cambios"
+msgstr "変更を保存する"
+
+#: templates/accounts/shop.html:10
+#| msgid "productos"
+msgid "productos adquiridos"
+msgstr "購入した製品"
+
+#: templates/accounts/shop.html:33 templates/shop/detail.html:78
+msgid "Ver detalles"
+msgstr "詳細を見る"
+
+#: templates/accounts/shop.html:67
+#| msgid "Ver todos los productos →"
+msgid "\\u00a1Tienes todos los productos!"
+msgstr "\\u00a1すべての製品が揃っています。"
+
+#: templates/accounts/shop.html:69
+msgid ""
+"Ya has adquirido todos los productos disponibles. Vuelve pronto para ver "
+"novedades."
+msgstr "利用可能なすべての製品をすでに購入しています。最新情報については、すぐにチェックしてください。"
+
+#: templates/accounts/shop.html:72
+msgid "Ver mi inventario"
+msgstr "在庫を見る"
+
+#: templates/accounts/subscriptions.html:6
+msgid "Planes de Suscripci\\u00f3n"
+msgstr "定期購入プラン"
+
+#: templates/accounts/subscriptions.html:14
+msgid "Tu suscripci\\u00f3n actual"
+msgstr "現在のサブスクリプション"
+
+#: templates/accounts/subscriptions.html:25
+msgid "Expira"
+msgstr "有効期限が切れます"
+
+#: templates/accounts/subscriptions.html:26
+msgid "D\\u00edas restantes"
+msgstr "残り日数"
+
+#: templates/accounts/subscriptions.html:28
+msgid "Renovaci\\u00f3n autom\\u00e1tica activada"
+msgstr "自動更新が有効になりました"
+
+#: templates/accounts/subscriptions.html:35
+msgid "\\u00bfEst\\u00e1s seguro de cancelar tu suscripci\\u00f3n?"
+msgstr "サブスクリプションをキャンセルしてもよろしいですか?"
+
+#: templates/accounts/subscriptions.html:36
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripci\\u00f3n"
+msgstr "サブスクリプションをキャンセルする"
+
+#: templates/accounts/subscriptions.html:43
+msgid "Suscripci\\u00f3n pendiente"
+msgstr "サブスクリプションは保留中です"
+
+#: templates/accounts/subscriptions.html:47
+#| msgid "Ver suscripciones"
+msgid "Tu suscripci\\u00f3n"
+msgstr "あなたのサブスクリプション"
+
+#: templates/accounts/subscriptions.html:47
+msgid "est\\u00e1 pendiente de pago."
+msgstr "支払いは保留中です。"
+
+#: templates/accounts/subscriptions.html:49
+#| msgid "Comprar ahora"
+msgid "Completar pago"
+msgstr "支払いを完了する"
+
+#: templates/accounts/subscriptions.html:57
+msgid "Elige tu plan"
+msgstr "プランを選択してください"
+
+#: templates/accounts/subscriptions.html:62
+msgid "M\\u00e1s popular"
+msgstr "最も人気のある"
+
+#: templates/accounts/subscriptions.html:85
+#| msgid "Perfil actualizado."
+msgid "Plan actual"
+msgstr "現在の計画"
+
+#: templates/accounts/subscriptions.html:88
+msgid "Suscribirse"
+msgstr "購読する"
+
+#: templates/accounts/subscriptions.html:99
+msgid "Informaci\\u00f3n de pago"
+msgstr "お支払い情報"
+
+#: templates/accounts/subscriptions.html:104
+msgid "Pago con Solana"
+msgstr "ソラナでのお支払い"
+
+#: templates/accounts/subscriptions.html:105
+msgid "Aceptamos pagos en SOL a trav\\u00e9s de tu wallet conectada."
+msgstr "接続されたウォレットを通じて SOL での支払いを受け付けます。"
+
+#: templates/accounts/subscriptions.html:109
+msgid ""
+"Al suscribirte, ser\\u00e1s redirigido a la p\\u00e1gina de wallet para "
+"completar el pago."
+msgstr "購読すると、支払いを完了するためにウォレット ページにリダイレクトされます。"
+
+#: templates/accounts/wallet.html:5
+msgid "Mi Wallet"
+msgstr "私の財布"
+
+#: templates/accounts/wallet.html:13
+msgid "Estado de tu wallet"
+msgstr "ウォレットのステータス"
+
+#: templates/accounts/wallet.html:26
+msgid "Direcci\\u00f3n p\\u00fablica"
+msgstr "パブリックアドレス"
+
+#: templates/accounts/wallet.html:29 templates/accounts/wallet.html:100
+msgid "Copiar"
+msgstr "コピー"
+
+#: templates/accounts/wallet.html:35
+msgid "Conectada el"
+msgstr "接続しました"
+
+#: templates/accounts/wallet.html:42
+msgid "\\u00bfDesconectar tu wallet?"
+msgstr "\\u00bfウォレットを切断しますか?"
+
+#: templates/accounts/wallet.html:43
+msgid "Desconectar wallet"
+msgstr "ウォレットを切断する"
+
+#: templates/accounts/wallet.html:51
+msgid ""
+"Conecta tu wallet de Solana para realizar pagos y verificar transacciones."
+msgstr "Solana ウォレットに接続して支払いを行い、取引を確認します。"
+
+#: templates/accounts/wallet.html:58
+msgid "Llave p\\u00fablica de Solana"
+msgstr "ソラナ公開鍵"
+
+#: templates/accounts/wallet.html:65
+msgid "Tu llave p\\u00fablica de Solana..."
+msgstr "あなたの Solana 公開鍵..."
+
+#: templates/accounts/wallet.html:70
+msgid "32-44 caracteres en formato base58"
+msgstr "Base58 形式の 32 ～ 44 文字"
+
+#: templates/accounts/wallet.html:79
+msgid "\\u00bfC\\u00f3mo obtener tu llave p\\u00fablica?"
+msgstr "公開鍵を取得するにはどうすればよいですか?"
+
+#: templates/accounts/wallet.html:81
+msgid "Abre tu wallet de Solana (Phantom, Solflare, etc.)"
+msgstr "Solana ウォレット (Phantom、Solflare など) を開きます。"
+
+#: templates/accounts/wallet.html:82
+msgid "Busca la opci\\u00f3n 'Copiar direcci\\u00f3n' o 'Receive'"
+msgstr "「アドレスをコピー」または「受信」オプションを探します"
+
+#: templates/accounts/wallet.html:83
+msgid "Pega la direcci\\u00f3n en el campo de arriba"
+msgstr "上のフィールドにアドレスを貼り付けてください"
+
+#: templates/accounts/wallet.html:93
+msgid "Realizar pago"
+msgstr "支払いをする"
+
+#: templates/accounts/wallet.html:95
+msgid "Para completar pagos, env\\u00eda SOL a la siguiente direcci\\u00f3n:"
+msgstr "支払いを完了するには、SOL を次の住所に送信してください。"
+
+#: templates/accounts/wallet.html:104
+msgid ""
+"Despu\\u00e9s de enviar, guarda la firma de transacci\\u00f3n para "
+"verificaci\\u00f3n."
+msgstr "送信後、検証のためにトランザクション署名を保存します。"
+
+#: templates/accounts/wallet.html:113
+msgid "Historial de transacciones"
+msgstr "取引履歴"
+
+#: templates/accounts/wallet.html:118
+msgid "Firma"
+msgstr "サイン"
+
+#: templates/accounts/wallet.html:119
+msgid "Cantidad"
+msgstr "額"
+
+#: templates/accounts/wallet.html:120
+msgid "Prop\\u00f3sito"
+msgstr "目的"
+
+#: templates/accounts/wallet.html:122
+msgid "Fecha"
+msgstr "日付"
+
+#: templates/accounts/wallet.html:149
+msgid "Seguridad"
+msgstr "安全"
+
+#: templates/accounts/wallet.html:154
+msgid "Solo llave p\\u00fablica"
+msgstr "公開鍵のみ"
+
+#: templates/accounts/wallet.html:155
+msgid "Nunca te pediremos tu llave privada ni frase semilla."
+msgstr "秘密キーやシードフレーズを尋ねることは決してありません。"
+
+#: templates/accounts/wallet.html:161
+msgid "Verificaci\\u00f3n on-chain"
+msgstr "オンチェーン検証"
+
+#: templates/accounts/wallet.html:162
+msgid ""
+"Todas las transacciones se verifican directamente en la blockchain de "
+"Solana."
+msgstr "すべてのトランザクションは Solana ブロックチェーン上で直接検証されます。"
+
+#: templates/accounts/wallet.html:174
+msgid "Copiado al portapapeles"
+msgstr "クリップボードにコピーされました"
+
+#: templates/admin/base_site.html:4
+msgid "Croody Admin"
+msgstr "クローディ管理"
+
+#: templates/admin/base_site.html:25
+msgid "Home"
+msgstr "ホーム"
+
+#: templates/admin/base_site.html:35
+msgid "Powered by"
+msgstr " Powered by"
+
+#: templates/base.html:13 templates/base.html:55
+msgid "Croody · Diseño con propósito"
+msgstr "クローディ · 目的のあるデザイン"
+
+#: templates/base.html:86
+msgid "Saltar al contenido principal"
+msgstr "メインコンテンツへスキップ"
+
+#: templates/base.html:105
+msgid "Abrir menú"
+msgstr "メニューを開く"
+
+#: templates/base.html:126 templates/base.html:233
+msgid "Buscar en Croody"
+msgstr "Croo dyで検索"
+
+#: templates/base.html:133 templates/base.html:240
+msgid "Buscar (pulsa /)"
+msgstr "検索（/を押す）"
+
+#: templates/base.html:144
+msgid "Seleccionar idioma"
+msgstr "言語を選択"
+
+#: templates/base.html:210
+msgid "Cambiar tema"
+msgstr "テーマを変更"
+
+#: templates/base.html:217 templates/base.html:258
+msgid "Empezar"
+msgstr "始める"
+
+#: templates/base.html:220
+msgid "Salir"
+msgstr "ログアウト"
+
+#: templates/base.html:223 templates/base.html:264
+msgid "Acceder"
+msgstr "ログイン"
+
+#: templates/base.html:260
+msgid "Cerrar sesión"
+msgstr "サインアウト"
+
+#: templates/base.html:268
+msgid "Búsqueda"
+msgstr "検索"
+
+#: templates/base.html:269
+msgid "Contactar"
+msgstr "連絡"
+
+#: templates/base.html:282
+msgid "Accesos rápidos"
+msgstr "クイックアクセス"
+
+#: templates/base.html:288
+msgid "Resultados sugeridos"
+msgstr "提案された結果"
+
+#: templates/base.html:339
+msgid "Inspirados en valores eternos"
+msgstr "永遠の価値観に触発"
+
+#: templates/base.html:340
+msgid "Legal"
+msgstr "法的"
+
+#: templates/base.html:341
+msgid "Privacidad"
+msgstr "プライバシー"
+
+#: templates/base.html:342
+msgid "Términos"
+msgstr "利用規約"
+
+#: templates/base.html:343
+msgid "Cookies"
+msgstr "クッキー"
+
+#: templates/landing/about.html:11
+msgid "Cambiar el mundo a través de la tecnología"
+msgstr "テクノロジーで世界を変える"
+
+#: templates/landing/about.html:12
+msgid ""
+"Somos una empresa fundada en la Universidad EAFIT, Medellín, con la "
+"convicción de que la tecnología debe servir a la humanidad, no reemplazarla."
+msgstr ""
+"当社は、テクノロジーは人類に取って代わるものではなく、人類に貢献すべきであるという信念のもと、メデジンのEAFIT大学で設立された企業です。"
+
+#: templates/landing/about.html:20
+msgid "Nuestra Historia"
+msgstr "私たちの沿革"
+
+#: templates/landing/about.html:21
+msgid ""
+"Todo comenzó en 2025, cuando nace Croody con la convicción de que el mundo "
+"del fitness necesitaba una revolución."
+msgstr "すべては 2025 年に始まり、フィットネスの世界には革命が必要であるという信念を持って Croody が生まれました。"
+
+#: templates/landing/about.html:25
+msgid ""
+"En un mundo cada vez más digital, vimos cómo las personas perdían la "
+"conexión consigo mismas y con sus objetivos de salud. Los gimnasios "
+"tradicionales no se adaptaron a la nueva realidad, y las aplicaciones "
+"existentes trataban a los usuarios como números en lugar de personas."
+msgstr ""
+"デジタル化が進む世界では、人々が自分自身や自分の健康目標とのつながりを失いつつあることがわかりました。従来のジムは新しい現実に適応できず、既存のアプリはユーザーを人ではなく数字として扱っていました。"
+
+#: templates/landing/about.html:26
+msgid ""
+"Decidimos crear algo diferente: un ecosistema que combina tecnología de "
+"punta con un entendimiento profundo de la motivación humana. Así nació "
+"Croody, una empresa comprometida con transformar la manera en que las "
+"personas se conectan con su bienestar."
+msgstr ""
+"私たちは、何か違うもの、つまり最先端のテクノロジーと人間の動機に対する深い理解を組み合わせたエコシステムを作成することにしました。こうして、人々が幸福とつながる方法を変革することに取り組む会社"
+" Croody が誕生しました。"
+
+#: templates/landing/about.html:27
+msgid "— El Equipo Croody"
+msgstr "— クルーディチーム"
+
+#: templates/landing/about.html:36
+msgid "Nuestra Misión"
+msgstr "サインアウト"
+
+#: templates/landing/about.html:37
+msgid ""
+"Transformar la industria del fitness a través de tecnología humanizada."
+msgstr "人間化されたテクノロジーを通じてフィットネス業界を変革します。"
+
+#: templates/landing/about.html:42
+msgid "Buddy AI"
+msgstr "バディAI"
+
+#: templates/landing/about.html:43
+msgid "Tu Entrenador Personal"
+msgstr "あなたのパーソナルトレーナー"
+
+#: templates/landing/about.html:45
+msgid ""
+"Nuestro asistente de inteligencia artificial comprende tus necesidades "
+"únicas y te guía en cada paso de tu journey fitness. No es solo una app, es "
+"tu compañero digital que entiende tu cuerpo, tu mente y tus objetivos."
+msgstr ""
+"当社の AI "
+"アシスタントは、お客様固有のニーズを理解し、フィットネスへの取り組みのあらゆる段階をガイドします。これは単なるアプリではなく、あなたの体、心、目標を理解するデジタルコンパニオンです。"
+
+#: templates/landing/about.html:47
+msgid "Tecnología:"
+msgstr "テクノロジー："
+
+#: templates/landing/about.html:47
+msgid "Algoritmos avanzados de personalización que aprenden de tu progreso."
+msgstr "進歩から学習する高度なカスタマイズ アルゴリズム。"
+
+#: templates/landing/about.html:48
+msgid "Enfoque:"
+msgstr "アプローチ："
+
+#: templates/landing/about.html:48
+msgid "Cada rutina es única, diseñada específicamente para ti."
+msgstr "それぞれのルーチンはユニークで、あなた専用に設計されています。"
+
+#: templates/landing/about.html:49
+msgid "Compromiso:"
+msgstr "献身："
+
+#: templates/landing/about.html:49
+msgid "Resultados reales con motivación humana."
+msgstr "人間のモチベーションによって真の結果が得られます。"
+
+#: templates/landing/about.html:55
+msgid "Luks Rewards"
+msgstr "ルクスの報酬"
+
+#: templates/landing/about.html:56
+msgid "Tu Progreso Tiene Valor"
+msgstr "あなたの進歩には価値があります"
+
+#: templates/landing/about.html:58
+msgid ""
+"Luks es nuestro sistema de recompensas que reconoce tu esfuerzo y "
+"dedicación. Cada entrenamiento no solo mejora tu salud, sino que también "
+"acumula valor real en el ecosistema Croody."
+msgstr ""
+"Luks は、あなたの努力と献身を評価する当社の報酬システムです。それぞれのワークアウトは健康を改善するだけでなく、Croody "
+"エコシステムに真の価値を蓄積します。"
+
+#: templates/landing/about.html:60
+msgid "Innovación:"
+msgstr "革新："
+
+#: templates/landing/about.html:60
+msgid "Token utility que crea un ciclo de valor real."
+msgstr "本当の価値のサイクルを生み出すトークンユーティリティ。"
+
+#: templates/landing/about.html:61
+msgid "Motivación:"
+msgstr "モチベーション："
+
+#: templates/landing/about.html:61
+msgid "Cada esfuerzo es reconocido y recompensado."
+msgstr "あらゆる努力が認められ、報われます。"
+
+#: templates/landing/about.html:62
+msgid "Futuro:"
+msgstr "未来："
+
+#: templates/landing/about.html:62
+msgid "Construye tu legacy fitness mientras transformas tu vida."
+msgstr "あなたの人生を変えながら、フィットネスの伝統を築きましょう。"
+
+#: templates/landing/about.html:68
+msgid "Tecnología Humanizada"
+msgstr "人間化されたテクノロジー"
+
+#: templates/landing/about.html:69
+msgid "IA al Servicio de la Humanidad"
+msgstr "人類のために役立つ AI"
+
+#: templates/landing/about.html:71
+msgid ""
+"En Croody creemos que la mejor tecnología es aquella que se siente natural. "
+"Nuestra IA no reemplaza el factor humano, lo potencia. Cada interacción está"
+" diseñada para recordarte que eres más que datos: eres una persona única con"
+" objetivos, emociones y sueños."
+msgstr ""
+"Croody では、最高のテクノロジーとは自然に感じられるテクノロジーであると信じています。私たちの AI "
+"は人間の要素を置き換えるのではなく、人間の要素を強化します。すべてのインタラクションは、あなたがデータ以上のものであること、つまり目標、感情、夢を持つユニークな人間であることを思い出させるように設計されています。"
+
+#: templates/landing/about.html:73
+msgid "Filosofía:"
+msgstr "哲学："
+
+#: templates/landing/about.html:73
+msgid "La tecnología debe servir a la humanidad, no reemplazarla."
+msgstr "テクノロジーは人類に取って代わるものではなく、人類に役立つべきです。"
+
+#: templates/landing/about.html:74
+msgid "Método:"
+msgstr "方法："
+
+#: templates/landing/about.html:74
+msgid "IA invisible que se siente como comprensión humana."
+msgstr "人間を理解しているような目に見えないAI。"
+
+#: templates/landing/about.html:75
+msgid "Impacto:"
+msgstr "インパクト："
+
+#: templates/landing/about.html:75
+msgid "Transformamos vidas, no solo creamos apps."
+msgstr "私たちは単にアプリを作成するだけではなく、生活を変革します。"
+
+#: templates/landing/about.html:85
+msgid "Nuestros Valores"
+msgstr "私たちの価値観"
+
+#: templates/landing/about.html:86
+msgid "Los principios que guían cada decisión que tomamos."
+msgstr "私たちが下すあらゆる決定の指針となる原則。"
+
+#: templates/landing/about.html:90
+msgid "Humanidad Primero"
+msgstr "人類第一"
+
+#: templates/landing/about.html:91
+msgid ""
+"Cada tecnología que construimos tiene como objetivo servir a las personas, "
+"no reemplazarlas. La eficiencia sin humanidad es irrelevante."
+msgstr ""
+"私たちが構築するすべてのテクノロジーは、人々に役立つことを目的としており、人々に取って代わるものではありません。人間味のない効率は意味がありません。"
+
+#: templates/landing/about.html:94
+msgid "Transparencia Total"
+msgstr "完全な透明性"
+
+#: templates/landing/about.html:95
+msgid ""
+"Operamos con claridad radical. Desde nuestros algoritmos hasta nuestros "
+"precios, todo es visible y comprensible."
+msgstr "私たちは徹底した明確性を持って業務を遂行します。アルゴリズムから価格まで、すべてが目に見えて理解できます。"
+
+#: templates/landing/about.html:98
+msgid "Excelencia Sin Compromiso"
+msgstr "妥協のない卓越性"
+
+#: templates/landing/about.html:99
+msgid "No nos conformamos con \\"
+msgstr "私たちは\\に満足していません"
+
+#: templates/landing/about.html:102
+msgid "Impacto Real"
+msgstr "実際の影響"
+
+#: templates/landing/about.html:103
+msgid ""
+"Medimos nuestro éxito por el cambio positivo que generamos en la vida de "
+"nuestros usuarios, no por métricas vacías."
+msgstr "私たちは、空虚な指標ではなく、ユーザーの生活にもたらすポジティブな変化によって成功を評価します。"
+
+#: templates/landing/about.html:106
+msgid "Evolución Constante"
+msgstr "絶え間ない進化"
+
+#: templates/landing/about.html:107
+msgid ""
+"Somos aprendices permanentes. La tecnología y las necesidades humanas "
+"evolucionan, y nosotros evolucionamos con ellas."
+msgstr "私たちは生涯学習者です。テクノロジーと人間のニーズは進化し、私たちもそれらとともに進化します。"
+
+#: templates/landing/about.html:116
+msgid "Nuestra Visión: 3 → 6 → 9 → 12 → 33"
+msgstr "私たちのビジョン: 3 → 6 → 9 → 12 → 33"
+
+#: templates/landing/about.html:117
+msgid ""
+"Un roadmap basado en la proporción áurea, porque creemos en la armonía entre"
+" precisión y humanidad."
+msgstr "私たちは精度と人間性の調和を信じているため、黄金比に基づいたロードマップを作成します。"
+
+#: templates/landing/about.html:123
+msgid "Fundamentos Sólidos"
+msgstr "確かな基礎"
+
+#: templates/landing/about.html:124
+msgid ""
+"Establecer las bases técnicas y filosóficas que soportarán todo nuestro "
+"ecosistema. Buddy nace como un asistente de IA que realmente comprende."
+msgstr "エコシステム全体をサポートする技術的および哲学的基盤を確立します。 Buddyは本当に理解するAIアシスタントとして誕生しました。"
+
+#: templates/landing/about.html:130
+msgid "Ecosistema Conectado"
+msgstr "つながるエコシステム"
+
+#: templates/landing/about.html:131
+msgid ""
+"La integración de Luks como token utility crea un ciclo de valor donde cada "
+"entrenamiento tiene significado y recompensa."
+msgstr "Luks をトークン ユーティリティとして統合すると、各ワークアウトに意味と報酬が与えられる価値のサイクルが生まれます。"
+
+#: templates/landing/about.html:137
+msgid "Adopción Global"
+msgstr "世界的な導入"
+
+#: templates/landing/about.html:138
+msgid ""
+"Expansión a múltiples mercados con localización cultural profunda y soporte "
+"en 8+ idiomas."
+msgstr "文化的なローカリゼーションと 8 か国語以上のサポートにより、複数の市場に拡大します。"
+
+#: templates/landing/about.html:144
+msgid "Transformación Social"
+msgstr "社会変革"
+
+#: templates/landing/about.html:145
+msgid ""
+"Programas comunitarios, partnerships con gimnasios y ONGs para democratizar "
+"el acceso a tecnología de fitness de calidad."
+msgstr "高品質のフィットネス テクノロジーへのアクセスを民主化するためのコミュニティ プログラム、ジムや NGO とのパートナーシップ。"
+
+#: templates/landing/about.html:151
+msgid "Legacy"
+msgstr "法的"
+
+#: templates/landing/about.html:152
+msgid ""
+"Haber cambiado fundamentalmente la manera en que la humanidad se conecta con"
+" su bienestar, inspirando a toda una industria a seguir nuestro ejemplo."
+msgstr "人類が幸福とつながる方法を根本的に変え、業界全体が私たちの例に倣うよう促しました。"
+
+#: templates/landing/about.html:162
+msgid "¿Listo para ser parte del cambio?"
+msgstr "変化に参加する準備はできていますか?"
+
+#: templates/landing/about.html:163
+msgid ""
+"Si compartes nuestra visión de un futuro donde la tecnología sirve a la "
+"humanidad, nos encantaría conocerte."
+msgstr "テクノロジーが人類に役立つ未来という私たちのビジョンに共感していただけましたら、ぜひお会いしたいと思います。"
+
+#: templates/landing/about.html:166
+msgid "Contáctanos"
+msgstr "お問い合わせ"
+
+#: templates/landing/about.html:167 templates/landing/home.html:301
+msgid "Volver al inicio"
+msgstr "ホームに戻る"
+
+#: templates/landing/buddy.html:5
+msgid "Buddy · Croody"
+msgstr "Croo dyで検索"
+
+#: templates/landing/buddy.html:17
+msgid "📱 Descargar App (Beta)"
+msgstr "📱 アプリをダウンロード（ベータ）"
+
+#: templates/landing/buddy.html:41
+msgid "Así funciona Buddy"
+msgstr "バディの動作"
+
+#: templates/landing/buddy.html:42
+msgid ""
+"Tu entrenador personal, impulsado por inteligencia artificial, siempre listo"
+" para adaptarte"
+msgstr "人工知能を活用したあなたのパーソナルトレーナーは、常に適応する準備ができています"
+
+#: templates/landing/buddy.html:47
+msgid "Describe tu objetivo"
+msgstr "目標を説明"
+
+#: templates/landing/buddy.html:48
+msgid ""
+"Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar "
+"resistencia... Él entiende tu contexto."
+msgstr "あなたが達成したいことをバディに伝えてください: 体重を減らす、筋肉を増やす、持久力を向上させる... 彼はあなたの状況を理解しています。"
+
+#: templates/landing/buddy.html:52
+msgid "Recibe tu rutina"
+msgstr "トレーニングを受ける"
+
+#: templates/landing/buddy.html:53
+msgid ""
+"La IA genera ejercicios personalizados basados en tu nivel, equipo "
+"disponible y tiempo que tienes."
+msgstr "AI は、ユーザーのレベル、利用可能な機器、時間に基づいて、パーソナライズされたエクササイズを生成します。"
+
+#: templates/landing/buddy.html:57
+msgid "Entrena y progresa"
+msgstr "トレーニングと進歩"
+
+#: templates/landing/buddy.html:58
+msgid ""
+"Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos "
+"según tu evolución."
+msgstr "リアルタイムモニタリング、テクニックのフィードバック、進化に応じた自動調整。"
+
+#: templates/landing/buddy.html:67 templates/landing/home.html:147
+#: templates/landing/home.html:163 templates/landing/home.html:179
+#: templates/landing/home.html:202 templates/landing/home.html:211
+#: templates/landing/home.html:220 templates/landing/luks.html:58
+msgid "\\"
 msgstr ""
 
-msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
-msgstr ""
+#: templates/landing/buddy.html:68
+msgid "— Carlos, México, usuario desde 2024"
+msgstr "— Carlos、メキシコ、2024年からユーザー"
 
+#: templates/landing/buddy.html:76
+msgid "Tres pilares que sostienen a Buddy"
+msgstr "バディを支える3つの柱"
+
+#: templates/landing/buddy.html:92
+msgid "Módulos Buddy"
+msgstr "バディモジュール"
+
+#: templates/landing/buddy.html:93
+msgid ""
+"Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para "
+"que nada se pierda en el camino."
+msgstr "同じ Buddy DNA がアプリ、ウェブ、トークン化経済の間で分散されるため、途中で何も失われることはありません。"
+
+#: templates/landing/buddy.html:111
+msgid "Viajes de usuario"
+msgstr "ユーザージャーニー"
+
+#: templates/landing/buddy.html:112
+msgid ""
+"Buddy acompaña antes, durante y después de cada sesión para que la rutina no"
+" se rompa."
+msgstr "バディは、ルーチンが崩れないように、各セッションの前後に同行します。"
+
+#: templates/landing/buddy.html:130
+msgid "Roadmap corto"
+msgstr "短いロードマップ"
+
+#: templates/landing/buddy.html:138
+msgid "Contacta al equipo"
+msgstr "チームに連絡"
+
+#: templates/landing/buddy.html:139
+msgid ""
+"¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma "
+"de bienestar?"
+msgstr "Buddy を組織で有効化しますか、それともウェルネス プラットフォームと統合しますか?"
+
+#: templates/landing/buddy.html:140
+msgid "Agendar una llamada"
+msgstr "通話をスケジュール"
+
+#: templates/landing/buddy.html:143
+msgid "Explora Luks"
+msgstr "ルクスを探索"
+
+#: templates/landing/buddy.html:144
+msgid ""
+"La capa cripto sostiene compras, inventario y marketplace. Transparencia "
+"total."
+msgstr "暗号層は購入、在庫、マーケットプレイスをサポートします。完全な透明性。"
+
+#: templates/landing/buddy.html:145
+msgid "Ver Luks"
+msgstr "ルクスを見る"
+
+#: templates/landing/buddy.html:153
+msgid "Siguientes pasos"
+msgstr "次のステップ"
+
+#: templates/landing/buddy.html:154
+msgid "Elige tu plan y entra a la tienda cuando estés listo."
+msgstr "計画を選択し、準備ができたらショップに入ります。"
+
+#: templates/landing/buddy.html:157
+msgid "Ver suscripciones"
+msgstr "サブスクリプションを見る"
+
+#: templates/landing/home.html:26
+msgid "✓ +5,000 usuarios activos"
+msgstr "✓ +5,000アクティブユーザー"
+
+#: templates/landing/home.html:27
+msgid "✓ Descarga gratuita"
+msgstr "✓ 無料ダウンロード"
+
+#: templates/landing/home.html:28
+msgid "✓ Disponible en 8 idiomas"
+msgstr "✓ 8言語対応"
+
+#: templates/landing/home.html:31
+msgid "✓ Más de 5,000 personas ya entrenan con Buddy"
+msgstr "✓ すでに 5,000 人以上が Buddy と一緒にトレーニングしています"
+
+#: templates/landing/home.html:33
+msgid "✓ Sin contratos"
+msgstr "✓ 契約不要"
+
+#: templates/landing/home.html:34
+msgid "✓ Cancela cuando quieras"
+msgstr "✓ いつでもキャンセル可能"
+
+#: templates/landing/home.html:35
+msgid "✓ Soporte 24/7"
+msgstr "✓ 24/7サポート"
+
+#: templates/landing/home.html:57
+msgid "Un ecosistema, dos productos"
+msgstr "1つのエコシステム、2つの製品"
+
+#: templates/landing/home.html:58
+msgid ""
+"Descubre cómo Buddy y Luks trabajan juntos para transformar tu experiencia"
+msgstr "Buddy と Luks がどのように連携してエクスペリエンスを変革するかをご覧ください"
+
+#: templates/landing/home.html:68
+msgid "🤖 IA Personalizada"
+msgstr "🤖 パーソナライズドAI"
+
+#: templates/landing/home.html:69
+msgid "Tu entrenador que te entiende"
+msgstr "あなたを理解するトレーナー"
+
+#: templates/landing/home.html:70
+msgid ""
+"Rutinas adaptadas a tu nivel, objetivos y tiempo disponible. La IA aprende "
+"de cada sesión para ofrecerte siempre lo mejor."
+msgstr "あなたのレベル、目的、利用可能な時間に合わせたルーチン。 AI は各セッションから学習し、常に最高のものを提供します。"
+
+#: templates/landing/home.html:71
+msgid "Conocer Buddy"
+msgstr "バ迪について詳しく"
+
+#: templates/landing/home.html:74
+msgid "🎮 Gamificación"
+msgstr "🎮 ゲーミフィケーション"
+
+#: templates/landing/home.html:75
+msgid "Entrenar nunca fue tan motivador"
+msgstr "トレーニング从未如此激励"
+
+#: templates/landing/home.html:76
+msgid ""
+"Desafíos diarios, logros desbloqueables y un sistema de recompensas que "
+"mantiene tu motivación al máximo."
+msgstr "毎日のチャレンジ、ロック解除可能な実績、そしてモチベーションを最高に保つ報酬システム。"
+
+#: templates/landing/home.html:77
+msgid "Ver características"
+msgstr "機能を見る"
+
+#: templates/landing/home.html:80
+msgid "📱 Multiplataforma"
+msgstr "📱 マルチプラットフォーム"
+
+#: templates/landing/home.html:81
+msgid "Entrena donde quieras"
+msgstr "どこででもトレーニング"
+
+#: templates/landing/home.html:82
+msgid ""
+"Sincronización perfecta entre web y móvil. Tu progreso siempre disponible, "
+"en cualquier momento."
+msgstr "ウェブとモバイル間の完璧な同期。進捗状況をいつでも確認できます。"
+
+#: templates/landing/home.html:83
+msgid "Más información"
+msgstr "詳細情報"
+
+#: templates/landing/home.html:90
+msgid "💎 Token Utility"
+msgstr "💎 ユーティリティトークン"
+
+#: templates/landing/home.html:91
+msgid "Recompensas reales"
+msgstr "実際の報酬"
+
+#: templates/landing/home.html:92
+msgid ""
+"Gana Luks entrenando y úsalos para desbloquear contenido premium, accesorios"
+" y productos exclusivos."
+msgstr "トレーニングによって Luks を獲得し、それを使用してプレミアム コンテンツ、アクセサリー、限定製品のロックを解除します。"
+
+#: templates/landing/home.html:93
+msgid "Explorar Luks"
+msgstr "ルクスを探索"
+
+#: templates/landing/home.html:96
+msgid "🔒 Transparencia"
+msgstr "🔒 透明性"
+
+#: templates/landing/home.html:97
+msgid "Todo claro, todo visible"
+msgstr "すべて明確、すべて表示"
+
+#: templates/landing/home.html:98
+msgid ""
+"Probabilidades públicas, tarifas conocidas y un sistema de recompensas que "
+"puedes entender y predecir."
+msgstr "公開オッズ、既知のレート、理解し予測できる報酬システム。"
+
+#: templates/landing/home.html:99
+msgid "Ver tokenomics"
+msgstr "トークノミクスを見る"
+
+#: templates/landing/home.html:102
+msgid "🌍 Economía Digital"
+msgstr "🌍 デジタル経済"
+
+#: templates/landing/home.html:103
+msgid "Más que una app"
+msgstr "単なるアプリ人以上"
+
+#: templates/landing/home.html:104
+msgid ""
+"Participa en una economía digital propia donde tu constancia tiene valor "
+"real y tangible."
+msgstr "あなたの忍耐力が現実的かつ具体的な価値を持つ、あなた自身のデジタル経済に参加してください。"
+
+#: templates/landing/home.html:105
+msgid "Conocer más"
+msgstr "詳しく知る"
+
+#: templates/landing/home.html:116
+msgid "Capas del ecosistema Croody"
+msgstr "クローディエコシステムのレイヤー"
+
+#: templates/landing/home.html:117
+msgid ""
+"Buddy y Luks funcionan como un mismo sistema: entrenas, mides progreso y "
+"recibes recompensas sin perder continuidad ni los valores que nos inspiran."
+msgstr ""
+"Buddy と Luks "
+"は同じシステムとして機能します。継続性や私たちにインスピレーションを与える価値観を失うことなく、トレーニングし、進歩を測定し、報酬を受け取ります。"
+
+#: templates/landing/home.html:138
+msgid "Lo que dicen los equipos que usan Croody"
+msgstr "クローディを使用するチームの声"
+
+#: templates/landing/home.html:139
+msgid ""
+"Historias reales de personas que han transformado su forma de entrenar y "
+"conectarse."
+msgstr "トレーニングとつながりの方法を変えた人々からのリアルな物語。"
+
+#: templates/landing/home.html:152 templates/landing/home.html:204
+msgid "María González"
+msgstr "María González"
+
+#: templates/landing/home.html:153
+msgid "Diseñadora UX, Madrid"
+msgstr "UXデザイナー、マドリード"
+
+#: templates/landing/home.html:168 templates/landing/home.html:213
+msgid "Carlos Ruiz"
+msgstr "Carlos Ruiz"
+
+#: templates/landing/home.html:169
+msgid "Desarrollador, México"
+msgstr "開発者、メキシコ"
+
+#: templates/landing/home.html:184 templates/landing/home.html:222
+msgid "Ana Martínez"
+msgstr "Ana Martínez"
+
+#: templates/landing/home.html:185
+msgid "Coach Fitness, Barcelona"
+msgstr "フィットネスコーチ、バルセロナ"
+
+#: templates/landing/home.html:196
+msgid "Historias reales, resultados reales"
+msgstr "実際の物語、実際の結果"
+
+#: templates/landing/home.html:197
+msgid "Conoce a quienes han transformado su vida con Croody"
+msgstr "クローディで人生を変えた人々と知り合う"
+
+#: templates/landing/home.html:205
+msgid "Diseñadora UX, Madrid · Usuario desde Enero 2025"
+msgstr "UX デザイナー、マドリッド · 2025 年 1 月からのユーザー"
+
+#: templates/landing/home.html:214
+msgid "Desarrollador, México · Usuario desde 2024"
+msgstr "開発者、メキシコ · 2024 年以降のユーザー"
+
+#: templates/landing/home.html:223
+msgid "Coach Fitness, Barcelona · Usuario desde 2024"
+msgstr "Coach Fitness、バルセロナ · 2024 年からのユーザー"
+
+#: templates/landing/home.html:228
+msgid "Comienza tu historia"
+msgstr "あなたの物語を始める"
+
+#: templates/landing/home.html:236
+msgid "Nuestros últimos productos"
+msgstr "最新の製品"
+
+#: templates/landing/home.html:237
+msgid "Diseñados para transformar tu experiencia"
+msgstr "あなたの体験をを変えるために設計"
+
+#: templates/landing/home.html:249 templates/landing/home.html:285
+msgid "Ver detalle"
+msgstr "詳細を見る"
+
+#: templates/landing/home.html:254
+msgid "Ver todos los productos →"
+msgstr "すべての製品を見る →"
+
+#: templates/landing/home.html:263
+msgid "Blueprint listo para implementar"
+msgstr "ブループリントのデプロイ準備完了"
+
+#: templates/landing/home.html:264
+msgid ""
+"El MVP de tienda y marketplace está listo para entrar a producción con "
+"tiempos, copy y visuales perfectamente definidos, manteniendo un trasfondo "
+"de fe comunicado con sobriedad."
+msgstr ""
+"ストアとマーケットプレイスの MVP "
+"は、完璧に定義された時間、コピー、ビジュアルを備え、冷静に伝えられる信仰の背景を維持しながら、本番に入る準備ができています。"
+
+#: templates/landing/home.html:273
+msgid "Entrar a la tienda"
+msgstr "ショップに入る"
+
+#: templates/landing/home.html:296
+msgid "Conversemos y adaptemos Croody a tu equipo"
+msgstr "話し合ってクルーディをあなたのチームに適応させましょう"
+
+#: templates/landing/home.html:297
+msgid ""
+"Diseño, copy, economía y analítica integradas en un despliegue que toma "
+"semanas, no meses, reflejando nuestros valores fundacionales con un tono "
+"profesional."
+msgstr ""
+"デザイン、コピー、経済性、分析を統合した展開は、数か月ではなく数週間で完了し、当社の創業時の価値観がプロフェッショナルな雰囲気で反映されています。"
+
+#: templates/landing/home.html:300
+msgid "Agendar kickoff"
+msgstr "キックオフをスケジュール"
+
+#: templates/landing/integrations.html:11
+msgid "Croody · APIs"
+msgstr "クローディ · API"
+
+#: templates/landing/integrations.html:12
+msgid "Prueba los endpoints directamente"
+msgstr "エンドポイントを直接テスト"
+
+#: templates/landing/integrations.html:13
+msgid ""
+"Ingiere muestras, consulta históricos y obtén predicciones IDS desde la "
+"misma vista."
+msgstr "サンプルを取り込み、履歴を表示し、同じビューから IDS 予測を取得します。"
+
+#: templates/landing/integrations.html:18
+msgid "Ingresa datos en caliente y revisa la última lectura"
+msgstr "データを直接入力し、最新の測定値を確認します"
+
+#: templates/landing/integrations.html:20
+msgid "Ingerir muestra"
+msgstr "サンプルを取得"
+
+#: templates/landing/integrations.html:21
+msgid "Último registro"
+msgstr "最後の記録"
+
+#: templates/landing/integrations.html:28
+msgid "Simula tráfico y recibe la inferencia"
+msgstr "トラフィックをシミュレートし、推論を受け取る"
+
+#: templates/landing/integrations.html:29
+msgid "Probar predicción"
+msgstr "予測をテスト"
+
+#: templates/landing/luks.html:5
+msgid "Luks · Croody"
+msgstr "Croo dyで検索"
+
+#: templates/landing/luks.html:34
+msgid "¿Cómo funciona Luks?"
+msgstr "ルクスはどのように動作しますか？"
+
+#: templates/landing/luks.html:35
+msgid ""
+"El token que recompensa tu constancia y hace que cada entrenamiento cuente"
+msgstr "あなたの忍耐力に報酬を与え、あらゆるワークアウトを価値のあるものにするトークン"
+
+#: templates/landing/luks.html:40
+msgid "Entrena con Buddy"
+msgstr "バディと一緒にトレーニングする"
+
+#: templates/landing/luks.html:41
+msgid "Completa rutinas, mantén tu constancia y gana Luks automáticamente"
+msgstr "ルーチンを完了し、一貫性を保ち、Luk を自動的に獲得します"
+
+#: templates/landing/luks.html:46
+msgid "Gana Recompensas"
+msgstr "報酬を獲得"
+
+#: templates/landing/luks.html:47
+msgid "Acumula Luks por cada sesión completada, sin límites ni restricciones"
+msgstr "制限や制限なしで、完了したセッションごとに Luk を蓄積します"
+
+#: templates/landing/luks.html:52
+msgid "Compra en la tienda"
+msgstr "ショップで購入"
+
+#: templates/landing/luks.html:53
+msgid ""
+"Usa tus Luks para desbloquear productos, accesorios y contenido premium"
+msgstr "Luks を使用して製品、アクセサリ、プレミアム コンテンツのロックを解除します"
+
+#: templates/landing/luks.html:59
+msgid "— Alejandro, Colombia, usuario desde 2024"
+msgstr "— Alejandro、コロンビア、2024年からユーザー"
+
+#: templates/landing/luks.html:68
+msgid "Pilares de Luks"
+msgstr "ルクスの柱"
+
+#: templates/landing/luks.html:69
+msgid ""
+"Confianza visible, seguridad activa y métricas listas para auditar cada "
+"movimiento, inspiradas en una ética de servicio discreta."
+msgstr "目に見える信頼、アクティブなセキュリティ、そして控えめなサービス倫理にインスピレーションを得た、あらゆる動きを監査するための指標。"
+
+#: templates/landing/luks.html:87
+msgid "Economía sobre Luks"
+msgstr "ルクス経済"
+
+#: templates/landing/luks.html:88
+msgid ""
+"Cada módulo del ecosistema Buddy habla el mismo idioma: tokens, "
+"probabilidades y royalties auditables alineados con nuestros valores "
+"fundacionales."
+msgstr "Buddy エコシステムのすべてのモジュールは同じ言語、つまり監査可能なトークン、確率、設立の価値観に沿ったロイヤルティを話します。"
+
+#: templates/landing/luks.html:106
+msgid "Cumplimiento & operación"
+msgstr "コンプライアンスと運用"
+
+#: templates/landing/luks.html:114
+msgid "Integraciones"
+msgstr "統合"
+
+#: templates/landing/luks.html:122
+msgid "¿Quieres construir sobre Luks?"
+msgstr "ルクスの上に構築したいですか？"
+
+#: templates/landing/luks.html:123
+msgid ""
+"API, webhooks y paneles están listos. Podemos adaptar los flujos a tu "
+"organización o producto preservando esa visión de servicio que nos "
+"caracteriza."
+msgstr ""
+"API、Webhook、ダッシュボードが用意されています。当社の特徴であるサービスのビジョンを維持しながら、フローをお客様の組織や製品に適応させることができます。"
+
+#: templates/landing/luks.html:124
+msgid "Habla con nosotros"
+msgstr "我們と話す"
+
+#: templates/landing/monitor.html:11
+msgid "Croody Protocol"
+msgstr "クローディプロトコル"
+
+#: templates/landing/monitor.html:15
+msgid "Conectar mi robot"
+msgstr "我的ロボットを接続"
+
+#: templates/landing/monitor.html:16
+msgid "Ver token personal"
+msgstr "個人トークンを表示"
+
+#: templates/landing/monitor.html:33
+msgid "Robot de clases en vivo"
+msgstr "ライブクラスのロボット"
+
+#: templates/landing/monitor.html:34
+msgid ""
+"Bridge automático subscribe el servidor TCP de clases y reenvía cada frame "
+"al Telemetry Gateway."
+msgstr "自動ブリッジは TCP クラス サーバーをサブスクライブし、各フレームをテレメトリ ゲートウェイに転送します。"
+
+#: templates/landing/monitor.html:37
+msgid "Protocolo"
+msgstr "プロトコル"
+
+#: templates/landing/monitor.html:38
+msgid "Frecuencia"
+msgstr "周波数"
+
+#: templates/landing/monitor.html:40
+msgid "Ver carpeta original"
+msgstr "元のフォルダを表示"
+
+#: templates/landing/monitor.html:45
+msgid "Modelo IDS-ML entrenado"
+msgstr "訓練されたIDS-MLモデル"
+
+#: templates/landing/monitor.html:46
+msgid "Pipeline NSL-KDD portado desde clases/CiberTelepatia."
+msgstr "NSL-KDD パイプラインは、classes/CiberTelepathy から移植されました。"
+
+#: templates/landing/monitor.html:57
+msgid "Entrenado"
+msgstr "訓練済み"
+
+#: templates/landing/monitor.html:76
+msgid "Robots conectados"
+msgstr "接続されたロボット"
+
+#: templates/landing/monitor.html:77
+msgid ""
+"Cada tarjeta resume posición, atmósfera y estado transmitido por el "
+"protocolo"
+msgstr "各カードは、プロトコルによって送信される位置、雰囲気、ステータスを要約します。"
+
+#: templates/landing/monitor.html:86
+msgid "Cómo funciona"
+msgstr "どのように動作するか"
+
+#: templates/landing/monitor.html:87
+msgid ""
+"El gateway acepta POST JSON seguros con token personal y expone endpoints "
+"GET para visualización y auditoría."
+msgstr "ゲートウェイは個人トークンを含む安全な JSON POST を受け入れ、表示および監査のために GET エンドポイントを公開します。"
+
+#: templates/landing/monitor.html:89
+msgid "para telemetría"
+msgstr "テレメトリー用"
+
+#: templates/landing/monitor.html:90
+msgid "para dashboards"
+msgstr "ダッシュボード用"
+
+#: templates/landing/monitor.html:91
+msgid "para históricos"
+msgstr "履歴用"
+
+#: templates/landing/monitor.html:95
+msgid "Ejemplo de carga"
+msgstr "荷示例"
+
+#: templates/landing/parleo.html:4
+msgid "Parleo · Croody"
+msgstr "Croo dyで検索"
+
+#: templates/landing/parleo.html:25
+msgid "Lo que define a Parleo"
+msgstr "パレロを定義するもの"
+
+#: templates/landing/parleo.html:41
+msgid "Hitos hacia el lanzamiento"
+msgstr "発売に向けたマイルストーン"
+
+#: templates/landing/parleo.html:42
+msgid ""
+"Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para "
+"mantener todo en sincronía."
+msgstr "Parleo は同じ Buddy DNA を共有し、Buddy と Luks に直接接続してすべてを同期させます。"
+
+#: templates/landing/parleo.html:56
+msgid "Casos de uso"
+msgstr "使用例"
+
+#: templates/landing/parleo.html:64
+msgid "¿Quieres sumarte como beta partner?"
+msgstr "ベータパートナーとして参加したいですか？"
+
+#: templates/landing/parleo.html:65
+msgid ""
+"Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos "
+"y recompensas desde un solo canal."
+msgstr "私たちは、単一のチャネルからトレーニング、課題、報酬を調整する必要があるチームを選択しています。"
+
+#: templates/landing/parleo.html:66
+msgid "Solicitar acceso anticipado"
+msgstr "早期アクセスをリクエスト"
+
+#: templates/landing/suscripciones.html:4
+msgid "Suscripciones · Buddy"
+msgstr "サブスクリプション · バ迪"
+
+#: templates/landing/suscripciones.html:21
+msgid "Planes"
+msgstr "プラン"
+
+#: templates/landing/suscripciones.html:22
+msgid "Pagas mes a mes y puedes cambiar cuando quieras."
+msgstr "お支払いは月ごとに行われ、いつでも変更できます。"
+
+#: templates/landing/suscripciones.html:46
+msgid "Preguntas frecuentes"
+msgstr "よくある質問"
+
+#: templates/shop/cart.html:5
+#| msgid "Tienda Buddy"
+msgid "Carrito · Tienda Buddy"
+msgstr "カートバディストア"
+
+#: templates/shop/cart.html:12
+msgid "Tu carrito"
+msgstr "あなたのカート"
+
+#: templates/shop/cart.html:13
+msgid "Revisa tu selección"
+msgstr "選択内容を確認してください"
+
+#: templates/shop/cart.html:14
+msgid "Verifica los productos y continúa al checkout cuando estés listo."
+msgstr "製品を確認し、準備ができたらチェックアウトに進みます。"
+
+#: templates/shop/cart.html:31
+msgid "Items en el carrito"
+msgstr "カート内の商品"
+
+#: templates/shop/cart.html:41
+msgid "Resumen del pedido"
+msgstr "注文概要"
+
+#: templates/shop/cart.html:44
+msgid "Subtotal"
+msgstr "小計"
+
+#: templates/shop/cart.html:48
+msgid "Envío"
+msgstr "出荷"
+
+#: templates/shop/cart.html:49
+msgid "Gratis"
+msgstr "無料"
+
+#: templates/shop/cart.html:52
+msgid "Total"
+msgstr "合計"
+
+#: templates/shop/cart.html:59
+msgid "Continuar al checkout"
+msgstr "チェックアウトを続ける"
+
+#: templates/shop/cart.html:63
+#| msgid "Inicia sesión"
+msgid "Iniciar sesión para comprar"
+msgstr "購入するにはサインインしてください"
+
+#: templates/shop/cart.html:68
+msgid "Seguir comprando"
+msgstr "買い物を続ける"
+
+#: templates/shop/cart.html:73
+#, python-format
+msgid "Pago 100%% seguro"
+msgstr "100%% 安全な支払い"
+
+#: templates/shop/cart.html:74
+msgid "Confirmación instantánea"
+msgstr "即時確認"
+
+#: templates/shop/cart.html:83
+msgid "Tu carrito está vacío"
+msgstr "カートは空です"
+
+#: templates/shop/cart.html:84
+msgid "Explora nuestros productos y encuentra algo que te guste."
+msgstr "当社の製品を調べて、お気に入りのものを見つけてください。"
+
+#: templates/shop/cart.html:86
+#| msgid "Ver Catálogo"
+msgid "Ver catálogo"
+msgstr "カタログを見る"
+
+#: templates/shop/catalogue.html:6
+msgid "Tienda Buddy · Croody"
+msgstr "バ迪ショップ · クローディ"
+
+#: templates/shop/catalogue.html:15
+msgid "Todo lo que necesitas para entrenar"
+msgstr "トレーニングに必要なすべて"
+
+#: templates/shop/catalogue.html:16
+msgid "Cofres, sets, accesorios. Compra directo, recibe al instante."
+msgstr "チェスト、セット、アクセサリー。直接購入してすぐに受け取ります。"
+
+#: templates/shop/catalogue.html:18
+msgid "Ver Catálogo"
+msgstr "カタログを見る"
+
+#: templates/shop/catalogue.html:21
+msgid "Todo"
+msgstr "すべて"
+
+#: templates/shop/catalogue.html:22
+msgid "Cofres"
+msgstr "宝箱"
+
+#: templates/shop/catalogue.html:23
+msgid "Sets"
+msgstr "セット"
+
+#: templates/shop/catalogue.html:24
+msgid "Accesorios"
+msgstr "クイックアクセス"
+
+#: templates/shop/catalogue.html:32
+msgid "Catálogo Buddy"
+msgstr "バ迪カタログ"
+
+#: templates/shop/catalogue.html:52
+msgid "Agregar al carrito"
+msgstr "カートに追加"
+
+#: templates/shop/catalogue.html:59
+msgid "Mostrando"
+msgstr "表示中"
+
+#: templates/shop/catalogue.html:59
+msgid "productos"
+msgstr "製品"
+
+#: templates/shop/catalogue.html:61
+msgid "Ver más →"
+msgstr "もっと見る →"
+
+#: templates/shop/catalogue.html:66
+msgid "No hay productos disponibles."
+msgstr "利用可能な製品はありません。"
+
+#: templates/shop/checkout_preview.html:4
+msgid "Checkout Buddy · Croody"
+msgstr "バ迪チェックアウト · クローディ"
+
+#: templates/shop/checkout_preview.html:12
+msgid "Checkout Buddy · Paso a paso"
+msgstr "バ迪チェックアウト · ステップバイステップ"
+
+#: templates/shop/checkout_preview.html:13
+msgid ""
+"Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash"
+" verificable. Todo sucede en cuestión de segundos."
+msgstr "ウォレットに接続し、概要を確認し、署名して検証可能なハッシュを含む領収書を受け取ります。すべてはほんの数秒で起こります。"
+
+#: templates/shop/checkout_preview.html:47
+msgid "Protecciones del flujo"
+msgstr "フロー保護"
+
+#: templates/shop/checkout_preview.html:55
+msgid "Wallet y pagos"
+msgstr "ウォレットと支払い"
+
+#: templates/shop/checkout_preview.html:63
+msgid "Confianza y transparencia"
+msgstr "信頼と透明性"
+
+#: templates/shop/detail.html:26 templates/shop/detail.html:79
+msgid "Comprar ahora"
+msgstr "今すぐ購入"
+
+#: templates/shop/detail.html:27
+msgid "Volver a la tienda"
+msgstr "ショップに戻る"
+
+#: templates/shop/detail.html:39
+msgid "Compra con seguridad"
+msgstr "安全に購入"
+
+#: templates/shop/detail.html:47
+msgid "Después de comprar"
+msgstr "購入後"
+
+#: templates/shop/detail.html:53
+msgid "Volver al catálogo"
+msgstr "カタログに戻る"
+
+#: templates/shop/detail.html:62
+msgid "También podría interesarte"
+msgstr "あなたも Interested"
+
+#: templates/shop/detail.html:63
+msgid "Tres recomendaciones para seguir creciendo con tu Buddy."
+msgstr "バ迪と共に成長し續けるための3つの推奨。"
+
+#~ msgid "Geometría sagrada"
+#~ msgstr "神聖幾何学"
+
+#~ msgid "Volvamos a ser humanos"
+#~ msgstr "もう一度人間になろう"

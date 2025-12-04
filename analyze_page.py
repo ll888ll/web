@@ -12,8 +12,8 @@ async def analyze_page():
     page = await browser.newPage()
     await page.setViewport({'width': 1440, 'height': 900})
 
-    print("🎯 Navegando a http://localhost:3000...")
-    await page.goto('http://localhost:3000', {'waitUntil': 'networkidle0'})
+    print("🎯 Navegando a http://localhost:8001...")
+    await page.goto('http://localhost:8001', {'waitUntil': 'networkidle0'})
 
     # Take full page screenshot
     print("📸 Capturando página completa...")
@@ -64,7 +64,7 @@ async def analyze_page():
     # Check mobile responsiveness
     print("\n📱 Verificando responsive design...")
     await page.setViewport({'width': 375, 'height': 667})
-    await page.goto('http://localhost:3000', {'waitUntil': 'networkidle0'})
+    await page.goto('http://localhost:8001', {'waitUntil': 'networkidle0'})
     await page.screenshot({'path': '/tmp/croody_mobile.png'})
     print("   ✓ Screenshot mobile guardado")
 

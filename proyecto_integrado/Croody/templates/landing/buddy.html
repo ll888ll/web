@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load i18n_urls %}
 
-{% block title %}Buddy · Croody{% endblock %}
+{% block title %}{% trans "Buddy · Croody" %}{% endblock %}
 
 {% block body %}
   <main id="main" tabindex="-1">
@@ -12,7 +14,7 @@
           <p>{{ hero.lead }}</p>
           <div class="page-hero__cta">
             <button class="btn btn--primary" id="beta-signup-btn">
-              📱 Descargar App (Beta)
+              {% trans "📱 Descargar App (Beta)" %}
             </button>
             <a class="btn btn--ghost" href="{{ hero.primary_cta.url }}">{{ hero.primary_cta.label }}</a>
             {% if hero.secondary_cta.fragment %}
@@ -36,24 +38,24 @@
     <section id="buddy-demo" class="buddy-demo section" aria-labelledby="demo-title">
       <div class="container">
         <div class="section__header">
-          <h2 id="demo-title">Así funciona Buddy</h2>
-          <p>Tu entrenador personal, impulsado por inteligencia artificial, siempre listo para adaptarte</p>
+          <h2 id="demo-title">{% trans "Así funciona Buddy" %}</h2>
+          <p>{% trans "Tu entrenador personal, impulsado por inteligencia artificial, siempre listo para adaptarte" %}</p>
         </div>
         <div class="demo-steps">
           <div class="demo-step">
             <div class="demo-step__number">1</div>
-            <h3>Describe tu objetivo</h3>
-            <p>Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar resistencia... Él entiende tu contexto.</p>
+            <h3>{% trans "Describe tu objetivo" %}</h3>
+            <p>{% trans "Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar resistencia... Él entiende tu contexto." %}</p>
           </div>
           <div class="demo-step">
             <div class="demo-step__number">2</div>
-            <h3>Recibe tu rutina</h3>
-            <p>La IA genera ejercicios personalizados basados en tu nivel, equipo disponible y tiempo que tienes.</p>
+            <h3>{% trans "Recibe tu rutina" %}</h3>
+            <p>{% trans "La IA genera ejercicios personalizados basados en tu nivel, equipo disponible y tiempo que tienes." %}</p>
           </div>
           <div class="demo-step">
             <div class="demo-step__number">3</div>
-            <h3>Entrena y progresa</h3>
-            <p>Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos según tu evolución.</p>
+            <h3>{% trans "Entrena y progresa" %}</h3>
+            <p>{% trans "Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos según tu evolución." %}</p>
           </div>
         </div>
       </div>
@@ -62,8 +64,8 @@
     <section class="user-story-highlight" style="margin: var(--space-4) 0;">
       <div class="container">
         <blockquote style="background: var(--surface-1); padding: var(--space-3); border-radius: 18px; border-left: 4px solid var(--brand-base); font-size: 1.1rem; font-style: italic;">
-          "Las rutinas personalizadas me han ayudado a mantenerme constante. En 4 meses he desarrollado hábitos que antes intenté durante años sin éxito."
-          <cite style="display: block; margin-top: var(--space-2); font-style: normal; color: var(--fg-tertiary);">— Carlos, México, usuario desde 2024</cite>
+          {% trans "\"Las rutinas personalizadas me han ayudado a mantenerme constante. En 4 meses he desarrollado hábitos que antes intenté durante años sin éxito.\"" %}
+          <cite style="display: block; margin-top: var(--space-2); font-style: normal; color: var(--fg-tertiary);">{% trans "— Carlos, México, usuario desde 2024" %}</cite>
         </blockquote>
       </div>
     </section>
@@ -71,7 +73,7 @@
     <section class="spec-section" aria-labelledby="buddy-pillars-title">
       <div class="container">
         <div class="section__header">
-          <h2 id="buddy-pillars-title">Tres pilares que sostienen a Buddy</h2>
+          <h2 id="buddy-pillars-title">{% trans "Tres pilares que sostienen a Buddy" %}</h2>
         </div>
         <div class="spec-cards">
           {% for pillar in pillars %}
@@ -87,8 +89,8 @@
     <section class="spec-section" aria-labelledby="buddy-modules-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="buddy-modules-title">Módulos Buddy</h2>
-          <p>Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para que nada se pierda en el camino.</p>
+          <h2 id="buddy-modules-title">{% trans "Módulos Buddy" %}</h2>
+          <p>{% trans "Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para que nada se pierda en el camino." %}</p>
         </div>
         {% for module in modules %}
           <div>
@@ -106,8 +108,8 @@
     <section class="spec-section" aria-labelledby="buddy-journeys-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="buddy-journeys-title">Viajes de usuario</h2>
-          <p>Buddy acompaña antes, durante y después de cada sesión para que la rutina no se rompa.</p>
+          <h2 id="buddy-journeys-title">{% trans "Viajes de usuario" %}</h2>
+          <p>{% trans "Buddy acompaña antes, durante y después de cada sesión para que la rutina no se rompa." %}</p>
         </div>
         {% for journey in journeys %}
           <div>
@@ -125,7 +127,7 @@
     <section id="buddy-roadmap" class="spec-section" aria-labelledby="buddy-roadmap-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="buddy-roadmap-title">Roadmap corto</h2>
+          <h2 id="buddy-roadmap-title">{% trans "Roadmap corto" %}</h2>
           <ul>
             {% for item in roadmap %}
               <li><strong>{{ item.label }}:</strong> {{ item.items|join:', ' }}</li>
@@ -133,14 +135,14 @@
           </ul>
         </div>
         <div>
-          <h3>Contacta al equipo</h3>
-          <p>¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma de bienestar?</p>
-          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Buddy">Agendar una llamada</a>
+          <h3>{% trans "Contacta al equipo" %}</h3>
+          <p>{% trans "¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma de bienestar?" %}</p>
+          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Buddy">{% trans "Agendar una llamada" %}</a>
         </div>
         <div>
-          <h3>Explora Luks</h3>
-          <p>La capa cripto sostiene compras, inventario y marketplace. Transparencia total.</p>
-          <a class="link-inline" href="{% url 'landing:luks' %}">Ver Luks</a>
+          <h3>{% trans "Explora Luks" %}</h3>
+          <p>{% trans "La capa cripto sostiene compras, inventario y marketplace. Transparencia total." %}</p>
+          <a class="link-inline" href="{% lang_url 'landing:luks' %}">{% trans "Ver Luks" %}</a>
         </div>
       </div>
     </section>
@@ -148,12 +150,12 @@
     <section id="siguientes-pasos" class="section" aria-labelledby="next-steps-title">
       <div class="container">
         <div class="section__header">
-          <h2 id="next-steps-title">Siguientes pasos</h2>
-          <p>Elige tu plan y entra a la tienda cuando estés listo.</p>
+          <h2 id="next-steps-title">{% trans "Siguientes pasos" %}</h2>
+          <p>{% trans "Elige tu plan y entra a la tienda cuando estés listo." %}</p>
         </div>
         <div class="landing-hero__cta">
-          <a class="btn btn--primary" href="{% url 'landing:buddy-suscripciones' %}">Ver suscripciones</a>
-          <a class="btn btn--ghost" href="{% url 'shop:catalogue' %}">Ir a la tienda</a>
+          <a class="btn btn--primary" href="{% lang_url 'landing:buddy-suscripciones' %}">{% trans "Ver suscripciones" %}</a>
+          <a class="btn btn--ghost" href="{% lang_url 'shop:catalogue' %}">{% trans "Ir a la tienda" %}</a>
         </div>
       </div>
     </section>

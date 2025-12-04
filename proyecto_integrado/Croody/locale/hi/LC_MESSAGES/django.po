@@ -3,10 +3,9 @@
 #
 msgid ""
 msgstr ""
-
 "Project-Id-Version: Croody 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"POT-Creation-Date: 2025-12-04 00:57+0000\n"
 "PO-Revision-Date: 2025-01-06 16:30+0000\n"
 "Last-Translator: Croody Team\n"
 "Language-Team: Hindi <hola@croody.app>\n"
@@ -15,198 +14,3673 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-msgid "Croody · Precisión cósmica con corazón"
-msgstr ""
 
-msgid "Saltar al contenido principal"
-msgstr "मुख्य सामग्री पर जाएं"
+#: accounts/admin.py:33 accounts/admin.py:138 accounts/models.py:90
+#: accounts/models.py:283 accounts/models.py:347 accounts/models.py:454
+#| msgid "Usuario o correo"
+msgid "Usuario"
+msgstr "उपयोगकर्ता"
 
-msgid "Abrir menú"
-msgstr "मेनू खोलें"
+#: accounts/admin.py:36
+#| msgid "Datos personales"
+msgid "Datos Físicos"
+msgstr "भौतिक डेटा"
 
-msgid "Buscar en Croody"
-msgstr "Croody में खोजें"
+#: accounts/admin.py:40
+msgid "Avatar"
+msgstr "अवतार"
 
-msgid "Buscar (pulsa /)"
-msgstr ""
+#: accounts/admin.py:43 templates/accounts/dashboard.html:62
+#: templates/accounts/profile.html:120 templates/accounts/wallet.html:6
+msgid "Wallet Solana"
+msgstr "सोलाना वॉलेट"
 
-msgid "Seleccionar idioma"
-msgstr "भाषा चुनें"
+#: accounts/admin.py:46
+#| msgid "🎮 Gamificación"
+msgid "Gamificación"
+msgstr "gamification"
 
-msgid "Cambiar tema"
-msgstr "थीम बदलें"
+#: accounts/admin.py:49 accounts/admin.py:150 accounts/admin.py:253
+msgid "Metadata"
+msgstr "मेटाडाटा"
 
-msgid "Empezar"
-msgstr "शुरू करें"
+#: accounts/admin.py:70 accounts/models.py:170
+msgid "Rango"
+msgstr "श्रेणी"
 
-msgid "Salir"
-msgstr "लॉग आउट"
+#: accounts/admin.py:83
+msgid "Completitud"
+msgstr "संपूर्णता"
 
-msgid "Acceder"
-msgstr "लॉग इन करें"
+#: accounts/admin.py:98 templates/accounts/base_accounts.html:64
+#| msgid "Wallet y pagos"
+msgid "Wallet"
+msgstr "बटुआ"
 
-msgid "Cerrar sesión"
-msgstr "साइन आउट"
+#: accounts/admin.py:102
+msgid "Recalcular estadísticas de usuarios"
+msgstr "उपयोगकर्ता आंकड़ों की पुनर्गणना करें"
 
-msgid "Búsqueda"
-msgstr ""
+#: accounts/admin.py:106
+msgid "Estadísticas recalculadas correctamente."
+msgstr "आँकड़ों की सही ढंग से पुनर्गणना की गई।"
 
-msgid "Contactar"
-msgstr ""
+#: accounts/admin.py:141 accounts/models.py:62 accounts/models.py:386
+#: accounts/models.py:493
+#| msgid "Ver suscripciones"
+msgid "Suscripción"
+msgstr "सदस्यता"
 
-msgid "Accesos rápidos"
-msgstr "त्वरित पहुंच"
+#: accounts/admin.py:144
+msgid "Fechas"
+msgstr "खजूर"
 
-msgid "Resultados sugeridos"
-msgstr "सुझाए गए परिणाम"
+#: accounts/admin.py:147
+msgid "Pago"
+msgstr "वेतन"
 
-msgid "Geometría sagrada"
-msgstr "पवित्र ज्यामिति"
+#: accounts/admin.py:170 accounts/models.py:350
+msgid "Nivel"
+msgstr "स्तर"
 
-msgid "Legal"
-msgstr "कानूनी"
+#: accounts/admin.py:186 accounts/admin.py:278 accounts/models.py:356
+#: accounts/models.py:480 templates/accounts/wallet.html:121
+msgid "Estado"
+msgstr "राज्य"
 
-msgid "Privacidad"
-msgstr "गोपनीयता"
+#: accounts/admin.py:202
+msgid "Días restantes"
+msgstr "शेष दिनों"
 
-msgid "Términos"
-msgstr "शर्तें"
+#: accounts/admin.py:206
+msgid "Activar suscripciones seleccionadas"
+msgstr "चयनित सदस्यताएँ सक्रिय करें"
 
-msgid "Cookies"
-msgstr "कुकीज़"
+#: accounts/admin.py:210
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones activadas."
+msgstr "सदस्यताएँ सक्रिय हो गईं."
 
-msgid "Inicia sesión"
-msgstr "साइन इन करें"
+#: accounts/admin.py:212
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripciones seleccionadas"
+msgstr "चयनित सदस्यताएँ रद्द करें"
 
-msgid "Acceso Croody"
-msgstr ""
+#: accounts/admin.py:216
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones canceladas."
+msgstr "रद्द की गई सदस्यताएँ."
 
-msgid "Conecta tu cuenta para continuar."
-msgstr "जारी रखने के लिए अपना खाता कनेक्ट करें।"
+#: accounts/admin.py:239
+msgid "Transacción"
+msgstr "लेन-देन"
 
-msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
-msgstr ""
+#: accounts/admin.py:242
+#| msgid "Preferencias"
+msgid "Referencias"
+msgstr "संदर्भ"
 
-msgid "¿Olvidaste tu acceso? Escríbenos a"
-msgstr ""
+#: accounts/admin.py:246
+#| msgid "Wallet y pagos"
+msgid "Wallets"
+msgstr "पर्स"
 
-msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
-msgstr ""
+#: accounts/admin.py:249
+#| msgid "🎮 Gamificación"
+msgid "Verificación"
+msgstr "सत्यापन"
 
-msgid "Ingresar"
-msgstr "साइन इन करें"
+#: accounts/admin.py:262
+msgid "TX Signature"
+msgstr "TX हस्ताक्षर"
 
-msgid "Croody · Conecta, Entrena y Destaca"
-msgstr ""
+#: accounts/admin.py:282
+msgid "Marcar como verificadas"
+msgstr "सत्यापित के रूप में चिह्नित करें"
 
-msgid "Volvamos a ser humanos"
-msgstr "आइए फिर से इंसान बनें"
+#: accounts/admin.py:286
+msgid "Transacciones marcadas como verificadas."
+msgstr "लेनदेन को सत्यापित के रूप में चिह्नित किया गया."
 
-msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
-msgstr ""
+#: accounts/admin.py:288
+msgid "Marcar como fallidas"
+msgstr "विफल के रूप में चिह्नित करें"
 
-msgid "Ir a la tienda Buddy"
-msgstr ""
+#: accounts/admin.py:292
+msgid "Transacciones marcadas como fallidas."
+msgstr "लेन-देन विफल के रूप में चिह्नित किया गया."
 
-msgid "Conocer a Buddy"
-msgstr ""
+#: accounts/apps.py:11
+#| msgid "Viajes de usuario"
+msgid "Cuentas de Usuario"
+msgstr "उपयोगकर्ता खाते"
 
-msgid "Logo de Croody representando conexión y tecnología humanizada"
-msgstr ""
+#: accounts/forms.py:43
+msgid "Cuéntanos sobre ti..."
+msgstr "अपने बारे में हमें बताएं..."
 
-msgid "rutinas ajustadas automáticamente cada semana"
-msgstr ""
+#: accounts/forms.py:49 templates/accounts/profile_edit.html:69
+msgid "Ej: 70.5"
+msgstr "उदाहरण: 70.5"
 
-msgid "personas mantienen su plan mensual con Buddy activo"
-msgstr ""
+#: accounts/forms.py:58 templates/accounts/profile_edit.html:87
+msgid "Ej: 175"
+msgstr "उदाहरण: 175"
 
-msgid "7 regiones"
-msgstr ""
+#: accounts/forms.py:77
+msgid "El peso debe estar entre 20 y 300 kg."
+msgstr "वजन 20 से 300 किलो के बीच होना चाहिए."
 
-msgid "operación sincronizada con soporte localizado"
-msgstr ""
+#: accounts/forms.py:85
+msgid "La altura debe estar entre 100 y 250 cm."
+msgstr "ऊंचाई 100 से 250 सेमी के बीच होनी चाहिए."
 
-msgid "Fitness & Conexión"
-msgstr ""
+#: accounts/forms.py:94
+msgid "La imagen no puede superar 5MB."
+msgstr "छवि 5एमबी से अधिक नहीं हो सकती."
 
+#: accounts/forms.py:99
+msgid "Solo se permiten imágenes JPEG, PNG, GIF o WebP."
+msgstr "केवल JPEG, PNG, GIF या WebP छवियों की अनुमति है।"
+
+#: accounts/forms.py:114
+msgid "Tu llave pública de Solana..."
+msgstr "आपकी सोलाना सार्वजनिक कुंजी..."
+
+#: accounts/forms.py:130
+msgid "La llave pública debe tener entre 32 y 44 caracteres."
+msgstr "सार्वजनिक कुंजी 32 से 44 अक्षरों के बीच होनी चाहिए।"
+
+#: accounts/forms.py:137
+msgid "La llave pública contiene caracteres inválidos."
+msgstr "सार्वजनिक कुंजी में अमान्य वर्ण हैं."
+
+#: accounts/forms.py:147 accounts/models.py:296 accounts/models.py:457
+msgid "Firma de transacción"
+msgstr "लेन-देन हस्ताक्षर"
+
+#: accounts/forms.py:152
+msgid "Pega aquí la firma de tu transacción..."
+msgstr "अपने लेन-देन हस्ताक्षर यहां चिपकाएँ..."
+
+#: accounts/forms.py:155
+msgid "La firma de la transacción de Solana (88 caracteres)."
+msgstr "सोलाना के लेनदेन हस्ताक्षर (88 अक्षर)।"
+
+#: accounts/forms.py:163
+msgid "La firma de transacción es requerida."
+msgstr "लेनदेन हस्ताक्षर आवश्यक है."
+
+#: accounts/forms.py:168
+msgid "La firma debe tener exactamente 88 caracteres."
+msgstr "हस्ताक्षर बिल्कुल 88 अक्षर का होना चाहिए।"
+
+#: accounts/forms.py:175
+msgid "La firma contiene caracteres inválidos."
+msgstr "हस्ताक्षर में अमान्य अक्षर हैं."
+
+#: accounts/forms.py:185
+msgid "Perder peso"
+msgstr "वजन कम करें"
+
+#: accounts/forms.py:186
+msgid "Ganar músculo"
+msgstr "मांसपेशियों को प्राप्त करें"
+
+#: accounts/forms.py:187
+msgid "Mejorar resistencia"
+msgstr "प्रतिरोध में सुधार करें"
+
+#: accounts/forms.py:188
+msgid "Mejorar flexibilidad"
+msgstr "लचीलेपन में सुधार करें"
+
+#: accounts/forms.py:189
+msgid "Salud general"
+msgstr "सामान्य स्वास्थ्य"
+
+#: accounts/forms.py:190
+msgid "Reducir estrés"
+msgstr "तनाव को कम करें"
+
+#: accounts/forms.py:191
+msgid "Mejorar sueño"
+msgstr "नींद में सुधार करें"
+
+#: accounts/forms.py:195 accounts/models.py:120
+#: templates/accounts/profile.html:106
+msgid "Objetivos de fitness"
+msgstr "फिटनेस लक्ष्य"
+
+#: accounts/models.py:31 templates/accounts/profile_edit.html:112
+msgid "Masculino"
+msgstr "पुरुष"
+
+#: accounts/models.py:32 templates/accounts/profile_edit.html:113
+msgid "Femenino"
+msgstr "महिला"
+
+#: accounts/models.py:33 templates/accounts/profile_edit.html:114
+msgid "No binario"
+msgstr "नॉनबाइनरी"
+
+#: accounts/models.py:34 templates/accounts/profile_edit.html:115
+#| msgid "Preferencias"
+msgid "Prefiero no decir"
+msgstr "मैं न कहना पसंद करता हूँ"
+
+#: accounts/models.py:39
+msgid "Starter - €19.99/mes"
+msgstr "स्टार्टर - €19.99/माह"
+
+#: accounts/models.py:40
+msgid "Pro - €59.99/mes"
+msgstr "प्रो - €59.99/माह"
+
+#: accounts/models.py:41
+msgid "Elite - €199.99/mes"
+msgstr "अभिजात वर्ग - €199.99/माह"
+
+#: accounts/models.py:46 templates/accounts/subscriptions.html:15
+#| msgid "Actividad"
+msgid "Activa"
+msgstr "सक्रिय"
+
+#: accounts/models.py:47 templates/accounts/subscriptions.html:44
+msgid "Pendiente de pago"
+msgstr "भुगतान लंबित है"
+
+#: accounts/models.py:48 accounts/models.py:57
+msgid "Expirada"
+msgstr "खत्म हो चुका"
+
+#: accounts/models.py:49
+msgid "Cancelada"
+msgstr "रद्द कर दिया गया"
+
+#: accounts/models.py:54
+msgid "Pendiente de verificación"
+msgstr "सत्यापन लंबित है"
+
+#: accounts/models.py:55 templates/accounts/profile.html:126
+#: templates/accounts/wallet.html:15
+msgid "Verificada"
+msgstr "सत्यापित"
+
+#: accounts/models.py:56
+msgid "Fallida"
+msgstr "असफल"
+
+#: accounts/models.py:63
+#| msgid "Un ecosistema, dos productos"
+msgid "Compra de producto"
+msgstr "उत्पाद खरीद"
+
+#: accounts/models.py:64
+msgid "Propina/Donación"
+msgstr "टिप/दान"
+
+#: accounts/models.py:69
+msgid "Novato"
+msgstr "धोखेबाज़"
+
+#: accounts/models.py:70
+msgid "Aprendiz"
+msgstr "शिक्षु"
+
+#: accounts/models.py:71
+msgid "Guerrero"
+msgstr "योद्धा"
+
+#: accounts/models.py:72
+msgid "Maestro"
+msgstr "अध्यापक"
+
+#: accounts/models.py:73
+#| msgid "Tienda"
+msgid "Leyenda"
+msgstr "दंतकथा"
+
+#: accounts/models.py:95 templates/accounts/profile_edit.html:59
+msgid "Peso (kg)"
+msgstr "वजन (किलो)"
+
+#: accounts/models.py:102 templates/accounts/profile_edit.html:77
+msgid "Altura (cm)"
+msgstr "ऊंचाई (सेमी)"
+
+#: accounts/models.py:109 templates/accounts/profile.html:90
+#: templates/accounts/profile_edit.html:95
+msgid "Fecha de nacimiento"
+msgstr "जन्म तिथि"
+
+#: accounts/models.py:114
+msgid "Género"
+msgstr "लिंग"
+
+#: accounts/models.py:125
+msgid "Biografía"
+msgstr "जीवनी"
+
+#: accounts/models.py:132 accounts/views.py:381
+#: templates/accounts/points.html:114 templates/accounts/points.html:119
+#: templates/accounts/profile_edit.html:21
+#| msgid "Croody · Perfil"
+msgid "Foto de perfil"
+msgstr "खाते की फोटो"
+
+#: accounts/models.py:143 accounts/views.py:382
+#: templates/accounts/inventory.html:57 templates/accounts/points.html:126
+#: templates/accounts/profile.html:33
+msgid "Personaje activo"
+msgstr "सक्रिय चरित्र"
+
+#: accounts/models.py:144
+msgid "Debe ser un item del inventario del usuario"
+msgstr "उपयोगकर्ता की सूची में एक आइटम होना चाहिए"
+
+#: accounts/models.py:149
+msgid "Llave pública Solana"
+msgstr "सोलाना सार्वजनिक कुंजी"
+
+#: accounts/models.py:152
+msgid "Dirección de wallet Solana (base58)"
+msgstr "सोलाना वॉलेट पता (बेस58)"
+
+#: accounts/models.py:155 accounts/views.py:380
+#: templates/accounts/points.html:102 templates/accounts/points.html:107
+#: templates/accounts/profile.html:48
+msgid "Wallet verificada"
+msgstr "सत्यापित बटुआ"
+
+#: accounts/models.py:159
+msgid "Fecha de conexión de wallet"
+msgstr "वॉलेट कनेक्शन की तारीख"
+
+#: accounts/models.py:166 templates/accounts/base_accounts.html:69
+#: templates/accounts/base_accounts.html:76 templates/accounts/profile.html:60
+msgid "Puntos"
+msgstr "अंक"
+
+#: accounts/models.py:176
+msgid "Completitud del perfil (%)"
+msgstr "प्रोफ़ाइल पूर्णता (%)"
+
+#: accounts/models.py:185
+#| msgid "Viajes de usuario"
+msgid "Perfil de usuario"
+msgstr "उपयोगकर्ता रूपरेखा"
+
+#: accounts/models.py:186
+#| msgid "Viajes de usuario"
+msgid "Perfiles de usuario"
+msgstr "उपयोगकर्ता प्रोफ़ाइल"
+
+#: accounts/models.py:289 accounts/models.py:501
+#| msgid "productos"
+msgid "Producto"
+msgstr "उत्पाद"
+
+#: accounts/models.py:292
+msgid "Fecha de adquisición"
+msgstr "अधिग्रहण की तारीख"
+
+#: accounts/models.py:299
+msgid "Signature de la transacción Solana"
+msgstr "सोलाना लेनदेन पर हस्ताक्षर"
+
+#: accounts/models.py:302
+msgid "Descargas"
+msgstr "डाउनलोड"
+
+#: accounts/models.py:306
+msgid "Es regalo"
+msgstr "यह एक उपहार है"
+
+#: accounts/models.py:310
+msgid "Notas"
+msgstr "ग्रेड"
+
+#: accounts/models.py:315
+msgid "Item de inventario"
+msgstr "इन्वेंटरी आइटम"
+
+#: accounts/models.py:316
+msgid "Items de inventario"
+msgstr "इन्वेंटरी आइटम"
+
+#: accounts/models.py:362
+msgid "Fecha de inicio"
+msgstr "आरंभ करने की तिथि"
+
+#: accounts/models.py:367
+msgid "Fecha de expiración"
+msgstr "समाप्ति तिथि"
+
+#: accounts/models.py:372
+msgid "Renovación automática"
+msgstr "स्वचालित नवीनीकरण"
+
+#: accounts/models.py:376
+msgid "Firma de transacción de pago"
+msgstr "भुगतान लेनदेन हस्ताक्षर"
+
+#: accounts/models.py:387 templates/accounts/subscriptions.html:5
+#| msgid "Ver suscripciones"
+msgid "Suscripciones"
+msgstr "सदस्यता"
+
+#: accounts/models.py:460
+msgid "Transaction signature de Solana"
+msgstr "सोलाना लेनदेन हस्ताक्षर"
+
+#: accounts/models.py:463
+msgid "Cantidad (SOL)"
+msgstr "मात्रा (एसओएल)"
+
+#: accounts/models.py:468
+msgid "Cantidad (USD)"
+msgstr "मात्रा (USD)"
+
+#: accounts/models.py:475
+msgid "Propósito"
+msgstr "उद्देश्य"
+
+#: accounts/models.py:506
+msgid "Wallet origen"
+msgstr "मूल बटुआ"
+
+#: accounts/models.py:511
+msgid "Wallet destino"
+msgstr "गंतव्य बटुआ"
+
+#: accounts/models.py:514 templates/accounts/wallet.html:97
+#| msgid "Parleo · Croody"
+msgid "Wallet de Croody"
+msgstr "क्रूडी वॉलेट"
+
+#: accounts/models.py:517
+msgid "Tiempo de bloque"
+msgstr "समय ब्लॉक करें"
+
+#: accounts/models.py:522
+msgid "Datos de verificación"
+msgstr "सत्यापन डेटा"
+
+#: accounts/models.py:530
+msgid "Fecha de verificación"
+msgstr "सत्यापन तिथि"
+
+#: accounts/models.py:536
+msgid "Transacción de wallet"
+msgstr "वॉलेट लेनदेन"
+
+#: accounts/models.py:537
+msgid "Transacciones de wallet"
+msgstr "वॉलेट लेनदेन"
+
+#: accounts/views.py:88
+#| msgid "Perfil actualizado."
+msgid "Perfil actualizado correctamente."
+msgstr "प्रोफ़ाइल सफलतापूर्वक अपडेट की गई."
+
+#: accounts/views.py:135
+#, python-format
+msgid "Descarga iniciada para \"%(name)s\""
+msgstr "\"%(नाम)s\" के लिए डाउनलोड प्रारंभ हुआ"
+
+#: accounts/views.py:156
+#, python-format
+msgid "Personaje activo cambiado a \"%(name)s\""
+msgstr "सक्रिय वर्ण को \"%(नाम)s\" में बदल दिया गया"
+
+#: accounts/views.py:227
+#| msgid "Accesos rápidos"
+msgid "Acceso básico"
+msgstr "बुनियादी पहुंच"
+
+#: accounts/views.py:228
+msgid "5 descargas/mes"
+msgstr "5 डाउनलोड/माह"
+
+#: accounts/views.py:229
+msgid "Soporte por email"
+msgstr "ई - मेल समर्थन"
+
+#: accounts/views.py:237
+#| msgid "Nombre completo"
+msgid "Acceso completo"
+msgstr "पूर्ण पहुँच"
+
+#: accounts/views.py:238
+msgid "Descargas ilimitadas"
+msgstr "असीमित डाउनलोड"
+
+#: accounts/views.py:239 landing/views.py:483
+msgid "Soporte prioritario"
+msgstr "प्राथमिकता समर्थन"
+
+#: accounts/views.py:240
+msgid "Personajes exclusivos"
+msgstr "विशिष्ट पात्र"
+
+#: accounts/views.py:249
+msgid "Todo lo de Pro"
+msgstr "सब कुछ प्रो"
+
+#: accounts/views.py:250
+#| msgid "Solicitar acceso anticipado"
+msgid "Acceso anticipado"
+msgstr "जल्दी पहुँच"
+
+#: accounts/views.py:251
+msgid "NFTs exclusivos"
+msgstr "विशिष्ट एनएफटी"
+
+#: accounts/views.py:252
+msgid "Sesiones 1-on-1"
+msgstr "1-पर-1 सत्र"
+
+#: accounts/views.py:253
+msgid "Badge Elite"
+msgstr "संभ्रांत बैज"
+
+#: accounts/views.py:265
+msgid "Plan de suscripción no válido."
+msgstr "अमान्य सदस्यता योजना."
+
+#: accounts/views.py:279
+msgid "Por favor, completa el pago para activar tu suscripción."
+msgstr "कृपया अपनी सदस्यता सक्रिय करने के लिए भुगतान पूरा करें।"
+
+#: accounts/views.py:290
+msgid "Suscripción cancelada."
+msgstr "सदस्यता रद्द कर दी गई."
+
+#: accounts/views.py:292
+msgid "No tienes una suscripción activa."
+msgstr "आपके पास सक्रिय सदस्यता नहीं है."
+
+#: accounts/views.py:334
+msgid "Wallet conectada. Pendiente de verificación."
+msgstr "जुड़ा हुआ बटुआ. सत्यापन लंबित है."
+
+#: accounts/views.py:336
+msgid "Error al conectar wallet."
+msgstr "वॉलेट कनेक्ट करने में त्रुटि."
+
+#: accounts/views.py:351
+#| msgid "Alertas desactivadas"
+msgid "Wallet desconectada."
+msgstr "बटुआ काट दिया गया."
+
+#: accounts/views.py:379
+#| msgid "Nombre completo"
+msgid "Perfil completo"
+msgstr "संपूर्ण प्रोफ़ाइल"
+
+#: accounts/views.py:383
+msgid "Cada item en inventario"
+msgstr "इन्वेंट्री में प्रत्येक आइटम"
+
+#: accounts/views.py:384
+msgid "Suscripción Starter"
+msgstr "स्टार्टर सदस्यता"
+
+#: accounts/views.py:385
+msgid "Suscripción Pro"
+msgstr "प्रो सदस्यता"
+
+#: accounts/views.py:386
+msgid "Suscripción Elite"
+msgstr "विशिष्ट सदस्यता"
+
+#: croody/navigation.py:14
+msgid "Inicio"
+msgstr "होम"
+
+#: croody/navigation.py:15 landing/views.py:58 templates/landing/about.html:10
+msgid "Nosotros"
+msgstr "हमारे बारे में"
+
+#: croody/navigation.py:16 landing/views.py:95
 msgid "Buddy"
-msgstr ""
+msgstr "बडी"
 
-msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
-msgstr ""
+#: croody/navigation.py:17
+msgid "Luks"
+msgstr "लक्स"
 
+#: croody/navigation.py:18 templates/accounts/base_accounts.html:54
+#: templates/accounts/shop.html:5 templates/accounts/shop.html:6
+msgid "Tienda"
+msgstr "दुकान"
+
+#: croody/navigation.py:26
+msgid "Croody · Inicio"
+msgstr "क्रूडी · होम"
+
+#: croody/navigation.py:27
+msgid "Croody · Ejes"
+msgstr "क्रूडी · धुरी"
+
+#: croody/navigation.py:28
+msgid "Croody · Roadmap"
+msgstr "क्रूडी · रोडमैप"
+
+#: croody/navigation.py:29
+msgid "Buddy · Producto"
+msgstr "बडी · उत्पाद"
+
+#: croody/navigation.py:30 landing/views.py:444
+msgid "Buddy · Suscripciones"
+msgstr "बडी · सदस्यता"
+
+#: croody/navigation.py:31
+msgid "Luks · Infraestructura"
+msgstr "लक्स · बुनियादी ढांचा"
+
+#: croody/navigation.py:32 landing/views.py:411
+#: templates/landing/home.html:262 templates/shop/catalogue.html:14
+msgid "Tienda Buddy"
+msgstr "बडी दुकान"
+
+#: croody/navigation.py:33
+msgid "Buddy Checkout"
+msgstr "बडी चेकआउट"
+
+#: croody/navigation.py:34
+msgid "Croody · Registro"
+msgstr "क्रूडी · पंजीकरण"
+
+#: croody/navigation.py:35
+msgid "Croody · Perfil"
+msgstr "क्रूडी · प्रोफ़ाइल"
+
+#: landing/forms.py:18
+msgid "Usuario o correo"
+msgstr "यूजरनेम या ईमेल"
+
+#: landing/forms.py:30
+msgid "Contraseña"
+msgstr "पासवर्ड"
+
+#: landing/forms.py:54
+msgid "Nombre completo"
+msgstr "पूरा नाम"
+
+#: landing/forms.py:59
+msgid "Nombre y apellidos"
+msgstr "नाम और उपनाम"
+
+#: landing/forms.py:65
+msgid "Correo electrónico"
+msgstr "ईमेल"
+
+#: landing/forms.py:71
+msgid "Idioma preferido"
+msgstr "पसंदीदा भाषा"
+
+#: landing/forms.py:76
+msgid "Tema visual"
+msgstr "विजुअल थीम"
+
+#: landing/forms.py:80
+msgid "Acepto el manifiesto Croody y términos de servicio"
+msgstr "मैं क्रूडी घोषणा और सेवा की शर्तों को स्वीकार करता हूं"
+
+#: landing/forms.py:89
+msgid "Ya existe una cuenta con este correo."
+msgstr "इस ईमेल से पहले से एक खाता मौजूद है।"
+
+#: landing/forms.py:132
+msgid "Nombre"
+msgstr "नाम"
+
+#: landing/forms.py:133
+msgid "Apellidos"
+msgstr "उपनाम"
+
+#: landing/models.py:21
+msgid "Sistema"
+msgstr "सिस्टम"
+
+#: landing/models.py:22
+msgid "Oscuro"
+msgstr "डार्क"
+
+#: landing/models.py:23
+msgid "Claro"
+msgstr "लाइट"
+
+#: landing/views.py:72
+msgid "Buddy AI · Entrena, Progresa, Destaca"
+msgstr "बडी AI · प्रशिक्षण, प्रगति, उभार"
+
+#: landing/views.py:73
+msgid "Tu entrenador AI personal"
+msgstr "आपका व्यक्तिगत AI कोच"
+
+#: landing/views.py:75
+msgid ""
+"Rutinas que se adaptan a ti. Recompensas que te motivan. La tecnología que "
+"conecta."
+msgstr ""
+"दिनचर्या जो आपके अनुकूल हो। पुरस्कार जो आपको प्रेरित करते हैं। वह तकनीक जो "
+"जोड़ती है."
+
+#: landing/views.py:77
+msgid "🛒 Ir a la Tienda"
+msgstr "🛒 दुकान पर जाएं"
+
+#: landing/views.py:78
+msgid "Ver Buddy"
+msgstr "बडी देखें"
+
+#: landing/views.py:79
+msgid "💎 Luks"
+msgstr "💎 लक्स"
+
+#: landing/views.py:82
+msgid "Croody - Tecnología que conecta"
+msgstr "क्रूडी - जोड़ने वाली तकनीक"
+
+#: landing/views.py:87
+msgid "rutinas ajustadas automáticamente cada semana"
+msgstr "साप्ताहिक रूप से स्वचालित समायोजन"
+
+#: landing/views.py:88
+msgid "personas mantienen su plan mensual con Buddy activo"
+msgstr "लोग सक्रिय बडी के साथ मासिक योजना बनाए रखते हैं"
+
+#: landing/views.py:89
+msgid "7 regiones"
+msgstr "7 क्षेत्र"
+
+#: landing/views.py:89
+msgid "operación sincronizada con soporte localizado"
+msgstr "स्थानीयकृत समर्थन के साथ समन्वयित संचालन"
+
+#: landing/views.py:94
+msgid "Fitness & Conexión"
+msgstr "फिटनेस और कनेक्शन"
+
+#: landing/views.py:96
+msgid ""
+"Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, "
+"diseñada para que tanto quien ya entrena como quien apenas empieza encuentre"
+" cada día un porqué claro para construir el físico y los hábitos de salud de"
+" sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr ""
+"उच्च सौंदर्यशास्त्र और महान तरलता के साथ एक सहज, सममित अनुप्रयोग, डिज़ाइन "
+"किया गया है ताकि जो लोग पहले से ही प्रशिक्षण ले रहे हैं और जो अभी शुरुआत कर "
+"रहे हैं वे अपने सपनों की काया और स्वास्थ्य आदतों का निर्माण करने के लिए हर "
+"दिन एक स्पष्ट कारण ढूंढ सकें। अपने दोस्तों से जुड़ें, एक साथ प्रशिक्षण लें "
+"और अलग दिखें।"
+
+#: landing/views.py:97 landing/views.py:99
 msgid "Conecta, Entrena y Destaca"
 msgstr "कनेक्ट करें, प्रशिक्षण लें और अलग दिखें"
 
+#: landing/views.py:102
 msgid "Economía Digital"
-msgstr ""
+msgstr "डिजिटल अर्थव्यवस्था"
 
+#: landing/views.py:103
 msgid "My Luks"
-msgstr ""
+msgstr "मेरे लक्स"
 
-msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
+#: landing/views.py:104
+msgid ""
+"Creamos un mercado con el cual puedes de forma segura incursionar en el "
+"mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen "
+"de una política interna de tu país y prosperar incluso en los entornos "
+"hostiles por decisiones de gobiernos."
 msgstr ""
+"हम एक ऐसा बाजार बनाते हैं जिसके साथ आप क्रिप्टो दुनिया में सुरक्षित रूप से "
+"उद्यम कर सकते हैं, अतिरिक्त आय प्राप्त कर सकते हैं और उन मुद्राओं पर भरोसा "
+"कर सकते हैं जो आपके देश की आंतरिक नीति पर निर्भर नहीं हैं और सरकारी निर्णयों"
+" के कारण प्रतिकूल वातावरण में भी समृद्ध हैं।"
 
+#: landing/views.py:105 landing/views.py:107
 msgid "Seguridad, Abundancia y Proyección"
-msgstr ""
+msgstr "सुरक्षा, प्रचुरता और प्रक्षेपण"
 
+#: landing/views.py:110
 msgid "Alimentación Real"
-msgstr ""
+msgstr "वास्तविक भोजन"
 
+#: landing/views.py:111
 msgid "Comida Real (Próximamente)"
-msgstr ""
+msgstr "वास्तविक भोजन (जल्द ही)"
 
-msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
+#: landing/views.py:112
+msgid ""
+"A través de investigación y compromiso alimenticio ofrecemos comida real y "
+"soluciones eficaces para aquellos que se quieren alimentar bien y carecen de"
+" tiempo, para todas las edades. Promovemos alimentos de origen animal y "
+"vegetal, sin productos químicos dañinos."
 msgstr ""
+"अनुसंधान और पोषण संबंधी प्रतिबद्धता के माध्यम से हम उन सभी उम्र के लोगों के "
+"लिए वास्तविक भोजन और प्रभावी समाधान प्रदान करते हैं जो अच्छा खाना चाहते हैं "
+"और जिनके पास समय की कमी है। हम हानिकारक रसायनों के बिना, पशु और पौधों की "
+"उत्पत्ति के खाद्य पदार्थों को बढ़ावा देते हैं।"
 
+#: landing/views.py:113 landing/views.py:115
 msgid "Alivio, Nostalgia y Satisfacción"
-msgstr ""
+msgstr "राहत, उदासी और संतुष्टि"
 
+#: landing/views.py:121
+msgid "Claridad en cada decisión"
+msgstr "हर फैसले में स्पष्टता"
+
+#: landing/views.py:122
+msgid ""
+"Interfaces limpias, métricas visibles y lenguaje directo para que cualquier "
+"equipo entienda qué sigue."
+msgstr ""
+"स्वच्छ इंटरफ़ेस, दृश्यमान मेट्रिक्स और सीधी भाषा ताकि कोई भी टीम समझ सके कि "
+"आगे क्या है।"
+
+#: landing/views.py:125
+msgid "Motivación sostenible"
+msgstr "सतत प्रेरणा"
+
+#: landing/views.py:126
+msgid ""
+"Personajes, mensajes y animaciones que elevan la energía sin perder "
+"profesionalismo."
+msgstr "पात्र, संदेश और एनिमेशन जो व्यावसायिकता खोए बिना ऊर्जा बढ़ाते हैं।"
+
+#: landing/views.py:129
+#| msgid "Economía Digital"
+msgid "Economía justa"
+msgstr "निष्पक्ष अर्थव्यवस्था"
+
+#: landing/views.py:130
+msgid ""
+"Probabilidades, tarifas y recompensas públicas. Sin sorpresas ni ventajas "
+"pay-to-win."
+msgstr ""
+"सार्वजनिक ऑड्स, दरें और पुरस्कार। कोई आश्चर्य या भुगतान-से-जीत का लाभ नहीं।"
+
+#: landing/views.py:133
+msgid "Accesibilidad real"
+msgstr "वास्तविक पहुंच"
+
+#: landing/views.py:134
+msgid ""
+"Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas"
+" culturas y edades."
+msgstr ""
+"पूर्ण कीबोर्ड समर्थन, एए/एएए कंट्रास्ट और कथा विभिन्न संस्कृतियों और उम्र के"
+" लिए डिज़ाइन की गई है।"
+
+#: landing/views.py:137
+msgid "Vocación de servicio"
+msgstr "सेवा का व्यवसाय"
+
+#: landing/views.py:138
+msgid ""
+"Nos guía una ética de servicio discreta: cuidamos a las personas primero y "
+"dejamos que el diseño lo haga evidente."
+msgstr ""
+"हम विवेकपूर्ण सेवा की नैतिकता द्वारा निर्देशित होते हैं: हम पहले लोगों का "
+"ख्याल रखते हैं और डिज़ाइन को इसे स्पष्ट करने देते हैं।"
+
+#: landing/views.py:144
+msgid "Compras sin fricción"
+msgstr "घर्षण रहित खरीदारी"
+
+#: landing/views.py:145
+msgid ""
+"Checkout Luks en segundos con costos claros y asignación inmediata al "
+"inventario."
+msgstr ""
+"स्पष्ट लागत और इन्वेंट्री के लिए तत्काल असाइनमेंट के साथ सेकंड में लुक्स "
+"चेकआउट करें।"
+
+#: landing/views.py:148
+msgid "Inventario conectado"
+msgstr "कनेक्टेड इन्वेंटरी"
+
+#: landing/views.py:149
+msgid ""
+"Abre packs, equipa rutinas o lista ítems desde web y móvil con el mismo "
+"estado."
+msgstr ""
+"पैक खोलें, रूटीन से लैस करें या वेब और मोबाइल से समान स्थिति के साथ आइटम "
+"सूचीबद्ध करें।"
+
+#: landing/views.py:152
+msgid "Eventos que mueven"
+msgstr "घटनाएँ जो चलती हैं"
+
+#: landing/views.py:153
+msgid ""
+"Temporadas y recompensas tokenizadas con métricas claras para sostener la "
+"constancia."
+msgstr ""
+"निरंतरता बनाए रखने के लिए स्पष्ट मेट्रिक्स के साथ टोकनयुक्त सीज़न और "
+"पुरस्कार।"
+
+#: landing/views.py:159 landing/views.py:318
+msgid "Semana 1"
+msgstr "सप्ताह 1"
+
+#: landing/views.py:160
+msgid "Narrativa alineada"
+msgstr "संरेखित कथा"
+
+#: landing/views.py:162
+msgid "Landing Croody con la historia Buddy + Luks lista para stakeholders."
+msgstr "बडी + लुक्स के साथ लैंडिंग क्रूडी की कहानी हितधारकों के लिए तैयार है।"
+
+#: landing/views.py:163
+msgid ""
+"Formularios conectados y analítica básica para medir interés desde el día "
+"uno."
+msgstr "पहले दिन से रुचि मापने के लिए जुड़े हुए फॉर्म और बुनियादी विश्लेषण।"
+
+#: landing/views.py:167 landing/views.py:325
+msgid "Semana 3"
+msgstr "सप्ताह 3"
+
+#: landing/views.py:168
+#| msgid "Alertas desactivadas"
+msgid "Ventas activas"
+msgstr "सक्रिय बिक्री"
+
+#: landing/views.py:170
+msgid ""
+"Catálogo, PDP y checkout Luks operando con seguimiento de conversiones."
+msgstr ""
+"लुक्स कैटलॉग, पीडीपी और चेकआउट रूपांतरण ट्रैकिंग के साथ काम कर रहे हैं।"
+
+#: landing/views.py:171
+msgid "Inventario y marketplace en beta controlada para refinar procesos."
+msgstr ""
+"प्रक्रियाओं को परिष्कृत करने के लिए नियंत्रित बीटा में इन्वेंटरी और बाज़ार।"
+
+#: landing/views.py:175 landing/views.py:332
+msgid "Semana 6"
+msgstr "सप्ताह 6"
+
+#: landing/views.py:176
+msgid "Expansión tokenizada"
+msgstr "सांकेतिक विस्तार"
+
+#: landing/views.py:178
+msgid ""
+"Eventos temáticos con recompensas en vivo y retos medidos en paneles de "
+"datos."
+msgstr ""
+"डेटा डैशबोर्ड पर मापे गए लाइव पुरस्कारों और चुनौतियों के साथ थीम आधारित "
+"कार्यक्रम।"
+
+#: landing/views.py:179
+msgid "Dashboard de datos listo para alianzas y marcas aliadas."
+msgstr "गठबंधनों और संबद्ध ब्रांडों के लिए डेटा डैशबोर्ड तैयार है।"
+
+#: landing/views.py:237
 msgid "Buddy · Conecta, Entrena y Destaca"
-msgstr ""
+msgstr "बडी · कनेक्ट, प्रशिक्षण और उभार"
 
+#: landing/views.py:238
 msgid "Más que entrenar: una conexión contigo y con los tuyos"
-msgstr ""
+msgstr "प्रशिक्षण से अधिक: आप और आपके प्रियजनों के साथ कनेक्शन"
 
-msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
+#: landing/views.py:240
+msgid ""
+"Buddy es una aplicación intuitiva, simétrica, de alta estética y gran "
+"fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien "
+"apenas empieza a considerar la idea encuentre, cada día, un porqué claro "
+"para enfocarse y construir el físico y los hábitos de salud de sus sueños. "
+"Además de verse y sentirse bien, Buddy cuida que la experiencia sea "
+"coherente, agradable y profundamente motivadora desde el primer contacto, "
+"con una ética inspirada en nuestras convicciones de servicio que priorizan "
+"el cuidado de las personas."
 msgstr ""
+"बडी एक सहज, सममित, अत्यधिक सौंदर्यपूर्ण और तरल अनुप्रयोग है, जिसे इस तरह से "
+"डिज़ाइन किया गया है कि जो लोग पहले से ही जिम में प्रशिक्षण ले रहे हैं और जो "
+"अभी इस विचार पर विचार करना शुरू कर रहे हैं, वे हर दिन, अपने सपनों की काया और"
+" स्वास्थ्य आदतों पर ध्यान केंद्रित करने और निर्माण करने का एक स्पष्ट कारण "
+"ढूंढते हैं। अच्छा दिखने और महसूस करने के अलावा, बडी यह सुनिश्चित करता है कि "
+"अनुभव पहले संपर्क से सुसंगत, सुखद और गहराई से प्रेरित करने वाला हो, हमारी "
+"सेवा प्रतिबद्धताओं से प्रेरित नैतिकता के साथ जो लोगों की देखभाल को "
+"प्राथमिकता देती है।"
 
+#: landing/views.py:242
+msgid "Ir a la tienda Buddy"
+msgstr "बडी दुकान पर जाएं"
+
+#: landing/views.py:243
 msgid "Ver roadmap"
-msgstr ""
+msgstr "रोडमैप देखें"
 
+#: landing/views.py:246
 msgid "365 días"
-msgstr ""
+msgstr "365 दिन"
 
+#: landing/views.py:246
 msgid "de rutinas nuevas sin reciclar combinaciones"
-msgstr ""
+msgstr "नई दिनचर्या बिना कॉम्बिनेशन पुनर्चक्रण के"
 
+#: landing/views.py:247
+#, python-format
+#| msgid "±5% fatiga"
 msgid "±5% fatiga"
-msgstr ""
+msgstr "±5% थकान"
 
+#: landing/views.py:247
 msgid "ajuste automático según tu energía real"
-msgstr ""
+msgstr "आपकी वास्तविक ऊर्जा के अनुसार स्वचालित समायोजन"
 
+#: landing/views.py:248
 msgid "5 estilos"
-msgstr ""
+msgstr "5 शैली"
 
+#: landing/views.py:248
 msgid "personajes con tonos y objetivos definidos"
-msgstr ""
+msgstr "परिभाषित टोन और लक्ष्यों के साथ पात्र"
 
+#: landing/views.py:252
 msgid "Entrenador con IA y rutinas a tu medida"
-msgstr ""
+msgstr "AI कोच और अनुकूलित दिनचर्या"
 
-msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
+#: landing/views.py:253
+msgid ""
+"Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador "
+"personalizado con IA. Cada semana recibes un plan de entrenamiento pensado "
+"exclusivamente para ti, basado en tus entrenamientos previos, datos e "
+"historial. La IA automatiza este proceso a través de conversaciones "
+"naturales, manteniendo siempre el control total de tu entrenamiento."
 msgstr ""
+"बडी एक वैयक्तिकृत एआई ट्रेनर का उपयोग करके दिनचर्या डिजाइन करने का अवसर "
+"प्रदान करता है। प्रत्येक सप्ताह आपको आपके पिछले प्रशिक्षण, डेटा और इतिहास के"
+" आधार पर विशेष रूप से आपके लिए डिज़ाइन की गई एक प्रशिक्षण योजना प्राप्त होती"
+" है। एआई प्राकृतिक बातचीत के माध्यम से इस प्रक्रिया को स्वचालित करता है, "
+"हमेशा आपके प्रशिक्षण पर पूर्ण नियंत्रण बनाए रखता है।"
 
+#: landing/views.py:256
 msgid "Biblioteca de ejercicios segura y consistente"
-msgstr ""
+msgstr "सुरक्षित और सुसंगत व्यायाम पुस्तकालय"
 
-msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
+#: landing/views.py:257
+msgid ""
+"Cada movimiento incluye video-claves cortos con la técnica correcta, pautas "
+"de respiración, puntos de seguridad y errores comunes a evitar. Con "
+"progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una "
+"alternativa acorde a tu nivel y equipo disponible."
 msgstr ""
+"प्रत्येक गतिविधि में सही तकनीक, सांस लेने के दिशानिर्देश, सुरक्षा बिंदु और "
+"बचने के लिए सामान्य गलतियों के साथ लघु वीडियो कुंजियाँ शामिल हैं। सुझाई गई "
+"प्रगति (आसान/मध्यवर्ती/उन्नत) के साथ, आपके पास हमेशा आपके स्तर और उपलब्ध "
+"उपकरणों के अनुसार एक विकल्प होगा।"
 
+#: landing/views.py:260
 msgid "Ecosistema de personajes con carisma"
+msgstr "आकर्षक पात्रों का पारिस्थितिकी तंत्र"
+
+#: landing/views.py:261
+msgid ""
+"Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad "
+"única. Puedes elegir rutinas predeterminadas según el estilo de cada "
+"personaje o configurar que uno solo te entregue todas las rutinas. Cada "
+"personaje ofrece gestos, animaciones y apoyo constante para una experiencia "
+"cercana y estimulante."
+msgstr ""
+"बडी के पास पात्रों का एक पारिस्थितिकी तंत्र है, जिनमें से प्रत्येक का अपना "
+"अद्वितीय व्यक्तित्व है। आप प्रत्येक चरित्र की शैली के अनुसार पूर्व निर्धारित"
+" दिनचर्या चुन सकते हैं या आपको सभी दिनचर्या देने के लिए एक चरित्र को "
+"कॉन्फ़िगर कर सकते हैं। प्रत्येक पात्र करीबी और उत्तेजक अनुभव के लिए हावभाव, "
+"एनिमेशन और निरंतर समर्थन प्रदान करता है।"
+
+#: landing/views.py:266
+msgid "App móvil"
+msgstr "मोबाइल एप्लिकेशन"
+
+#: landing/views.py:268
+msgid "Diálogo natural para crear rutinas y ajustar bloques en segundos."
+msgstr ""
+"दिनचर्या बनाने और ब्लॉकों को सेकंडों में समायोजित करने के लिए प्राकृतिक "
+"संवाद।"
+
+#: landing/views.py:269
+msgid ""
+"Conteo automático de series, descansos inteligentes y feedback háptico."
+msgstr "स्वचालित सेट गिनती, स्मार्ट ब्रेक और हैप्टिक फीडबैक।"
+
+#: landing/views.py:270
+msgid "Modo compañero para entrenar con tus contactos o personaje favorito."
+msgstr "अपने संपर्कों या पसंदीदा चरित्र के साथ प्रशिक्षण के लिए सहयोगी मोड।"
+
+#: landing/views.py:274
+#| msgid "Buddy"
+msgid "Buddy Web"
+msgstr "बडी वेब"
+
+#: landing/views.py:276
+msgid "Inventario vivo para abrir packs, equipar sets y listar ítems."
+msgstr ""
+"पैक खोलने, सेट सुसज्जित करने और आइटम सूचीबद्ध करने के लिए लाइव इन्वेंट्री।"
+
+#: landing/views.py:277
+msgid "Reproductor de sesiones, biblioteca extendida y guardado de favoritos."
+msgstr "सत्र प्लेयर, विस्तारित लाइब्रेरी और पसंदीदा बचत।"
+
+#: landing/views.py:278
+msgid "Telemetría lista para equipos, coaches o marcas aliadas."
+msgstr "टीमों, प्रशिक्षकों या संबद्ध ब्रांडों के लिए टेलीमेट्री तैयार।"
+
+#: landing/views.py:282
+#| msgid "Conocer Buddy"
+msgid "Economía Buddy"
+msgstr "दोस्त अर्थव्यवस्था"
+
+#: landing/views.py:284
+msgid "Sets temáticos, accesorios y cofres con probabilidades públicas."
+msgstr "सार्वजनिक बाधाओं के साथ थीम वाले सेट, सहायक उपकरण और चेस्ट।"
+
+#: landing/views.py:285
+msgid "Luks como moneda única con recompensas por constancia y eventos."
+msgstr "निरंतरता और घटनाओं के लिए पुरस्कार के साथ एकल मुद्रा के रूप में लुक।"
+
+#: landing/views.py:286
+msgid "Marketplace integrado para vender o intercambiar sin salir de Buddy."
+msgstr "बडी को छोड़े बिना बेचने या व्यापार करने के लिए एकीकृत बाज़ार।"
+
+#: landing/views.py:292
+msgid "Antes de entrenar"
+msgstr "प्रशिक्षण से पहले"
+
+#: landing/views.py:294
+msgid "Escaneo rápido de energía y movilidad."
+msgstr "त्वरित ऊर्जा और गतिशीलता स्कैन।"
+
+#: landing/views.py:295
+msgid "Recomendaciones de personajes, sets y accesorios según tu meta."
+msgstr ""
+"आपके लक्ष्य के अनुसार पात्रों, सेटों और सहायक उपकरणों के लिए सिफ़ारिशें।"
+
+#: landing/views.py:296
+msgid ""
+"Recordatorios contextuales desde la app y sincronía con tus calendarios "
+"habituales."
+msgstr ""
+"ऐप से प्रासंगिक अनुस्मारक और आपके सामान्य कैलेंडर के साथ सिंक्रनाइज़ेशन।"
+
+#: landing/views.py:300
+#| msgid "Inicia sesión"
+msgid "Durante la sesión"
+msgstr "सत्र के दौरान"
+
+#: landing/views.py:302
+msgid "Conteo automático de repeticiones y control de tempo."
+msgstr "स्वचालित पुनरावृत्ति गिनती और गति नियंत्रण।"
+
+#: landing/views.py:303
+msgid "Feedback visual y de voz sobre técnica, respiración y seguridad."
+msgstr "तकनीक, श्वास और सुरक्षा पर दृश्य और ध्वनि प्रतिक्रिया।"
+
+#: landing/views.py:304
+msgid "Notas rápidas, clips y variaciones disponibles en un toque."
+msgstr "त्वरित नोट्स, क्लिप और विविधताएं एक स्पर्श में उपलब्ध हैं।"
+
+#: landing/views.py:308
+#| msgid "Después de comprar"
+msgid "Después del entrenamiento"
+msgstr "प्रशिक्षण के बाद"
+
+#: landing/views.py:310
+msgid "Resumen claro con métricas, descanso sugerido y próximos pasos."
+msgstr "मेट्रिक्स, सुझाए गए आराम और अगले चरणों के साथ स्पष्ट सारांश।"
+
+#: landing/views.py:311
+msgid "Recompensas Luks y retos desbloqueados según tu constancia."
+msgstr "आपकी दृढ़ता के आधार पर लक्स पुरस्कार और चुनौतियाँ अनलॉक हो जाती हैं।"
+
+#: landing/views.py:312
+msgid "Historial listo para compartir con tu entrenador o comunidad."
+msgstr "इतिहास आपके कोच या समुदाय के साथ साझा करने के लिए तैयार है।"
+
+#: landing/views.py:320
+msgid "Piloto interno con rutinas adaptativas y biblioteca completa."
+msgstr "अनुकूली दिनचर्या और संपूर्ण पुस्तकालय के साथ आंतरिक पायलट।"
+
+#: landing/views.py:321
+msgid "Configuración de personajes base y mensajes personalizados."
+msgstr "आधार वर्ण विन्यास और कस्टम संदेश।"
+
+#: landing/views.py:327
+msgid "Inventario web conectado para abrir packs y equipar sets."
+msgstr "पैक खोलने और सेट सुसज्जित करने के लिए वेब इन्वेंट्री कनेक्ट की गई।"
+
+#: landing/views.py:328
+msgid "Alertas inteligentes en móvil y correo para mantener la constancia."
+msgstr "निरंतरता बनाए रखने के लिए मोबाइल और ईमेल पर स्मार्ट अलर्ट।"
+
+#: landing/views.py:334
+msgid "Marketplace activo con recompensas y eventos temáticos."
+msgstr "थीम आधारित पुरस्कारों और आयोजनों के साथ सक्रिय बाज़ार।"
+
+#: landing/views.py:335
+msgid "Dashboard de telemetría para coaches, squads y marcas."
+msgstr "कोचों, दस्तों और ब्रांडों के लिए टेलीमेट्री डैशबोर्ड।"
+
+#: landing/views.py:373
+#| msgid "Luks · Croody"
+msgid "Luks · Economía Buddy"
+msgstr "लुक्स इकोनॉमी बडी"
+
+#: landing/views.py:374
+msgid "Token que recompensa la constancia y da confianza a cada transacción."
+msgstr ""
+"टोकन जो निरंतरता को पुरस्कृत करता है और प्रत्येक लेनदेन को आत्मविश्वास देता "
+"है।"
+
+#: landing/views.py:375
+msgid ""
+"Pagos, royalties y telemetría on-chain con una experiencia diseñada para "
+"usuarios reales y equipos regulados. La infraestructura nace de principios "
+"de transparencia y servicio comunicados con un tono ejecutivo."
+msgstr ""
+"वास्तविक उपयोगकर्ताओं और विनियमित टीमों के लिए डिज़ाइन किए गए अनुभव के साथ "
+"ऑन-चेन भुगतान, रॉयल्टी और टेलीमेट्री। बुनियादी ढांचे का जन्म कार्यकारी लहजे "
+"में संप्रेषित पारदर्शिता और सेवा के सिद्धांतों से होता है।"
+
+#: landing/views.py:376
+#| msgid "Tienda Buddy"
+msgid "Ver tienda Buddy"
+msgstr "बडी स्टोर देखें"
+
+#: landing/views.py:377
+#| msgid "Contacta al equipo"
+msgid "Contactar equipo Luks"
+msgstr "लुक्स टीम से संपर्क करें"
+
+#: landing/views.py:380
+msgid "≤2s"
+msgstr "≤2s"
+
+#: landing/views.py:380
+msgid "finalidad promedio de las transacciones"
+msgstr "लेन-देन का औसत उद्देश्य"
+
+#: landing/views.py:381
+msgid "disponibilidad de la bóveda custodial"
+msgstr "कस्टोडियल वॉल्ट की उपलब्धता"
+
+#: landing/views.py:382
+msgid "catálogo con probabilidades visibles"
+msgstr "दृश्य संभावनाओं के साथ कैटलॉग"
+
+#: landing/views.py:386
+#| msgid "🔒 Transparencia"
+msgid "Transparencia total"
+msgstr "पूर्ण पारदर्शिता"
+
+#: landing/views.py:388
+msgid "Probabilidades, tarifas y royalties visibles antes de confirmar."
+msgstr "पुष्टि करने से पहले दिखाई देने वाली ऑड्स, दरें और रॉयल्टी।"
+
+#: landing/views.py:389
+msgid "Recibos con hash verificable y seguimiento en tu panel."
+msgstr "आपके डैशबोर्ड में सत्यापन योग्य हैशिंग और ट्रैकिंग वाली रसीदें।"
+
+#: landing/views.py:390
+msgid "Historial público de drops especiales y ajustes de rareza."
+msgstr "विशेष बूंदों और दुर्लभता समायोजन का सार्वजनिक इतिहास।"
+
+#: landing/views.py:394
+msgid "Seguridad por defecto"
+msgstr "डिफ़ॉल्ट सुरक्षा"
+
+#: landing/views.py:396
+msgid "Custodia con 2FA, límites dinámicos y alertas en tiempo real."
+msgstr "2एफए, गतिशील सीमा और वास्तविक समय अलर्ट के साथ हिरासत।"
+
+#: landing/views.py:397
+msgid "Escrow inteligente y cooldowns para frenar especulación."
+msgstr "अटकलों को रोकने के लिए बुद्धिमान एस्क्रो और कूलडाउन।"
+
+#: landing/views.py:398
+msgid "Monitoreo anti-bot y protección ante picos de red."
+msgstr "एंटी-बॉट निगरानी और नेटवर्क स्पाइक्स से सुरक्षा।"
+
+#: landing/views.py:402
+msgid "Medición constante"
+msgstr "लगातार माप"
+
+#: landing/views.py:404
+msgid "Dashboards con conversión, listados y salud de la red."
+msgstr "रूपांतरण, लिस्टिंग और नेटवर्क स्वास्थ्य के साथ डैशबोर्ड।"
+
+#: landing/views.py:405
+msgid "Eventos trazables para campañas y recompensas por consistencia."
+msgstr "अभियानों के लिए पता लगाने योग्य घटनाएँ और निरंतरता के लिए पुरस्कार।"
+
+#: landing/views.py:406
+msgid "Exportación de datos para socios, auditorías y reguladores."
+msgstr "साझेदारों, ऑडिट और नियामकों के लिए डेटा निर्यात।"
+
+#: landing/views.py:411
+msgid "Checkout en segundos"
+msgstr "सेकंड में चेकआउट करें"
+
+#: landing/views.py:411
+msgid "Packs con pity visible"
+msgstr "दृश्यमान दया से भर जाता है"
+
+#: landing/views.py:411
+msgid "Asignación inmediata al inventario."
+msgstr "इन्वेंट्री को तत्काल असाइनमेंट।"
+
+#: landing/views.py:412
+msgid "Inventario web"
+msgstr "वेब इन्वेंटरी"
+
+#: landing/views.py:412
+#| msgid "Resultados sugeridos"
+msgid "Estados sincronizados"
+msgstr "समकालिक अवस्थाएँ"
+
+#: landing/views.py:412
+msgid "Listado instantáneo"
+msgstr "त्वरित सूची"
+
+#: landing/views.py:412
+msgid "Eventos y bonos por temporada."
+msgstr "घटनाएँ और मौसमी बोनस।"
+
+#: landing/views.py:413
+msgid "Marketplace P2P"
+msgstr "पी2पी बाज़ार"
+
+#: landing/views.py:413
+msgid "Royalties configurables"
+msgstr "विन्यास योग्य रॉयल्टी"
+
+#: landing/views.py:413
+msgid "Escrow automático"
+msgstr "स्वचालित एस्क्रो"
+
+#: landing/views.py:413
+msgid "Historial de precios y volumen."
+msgstr "मूल्य और मात्रा इतिहास."
+
+#: landing/views.py:416
+msgid "KYC/AML opcional para límites de retiro elevados."
+msgstr "उच्च निकासी सीमा के लिए वैकल्पिक केवाईसी/एएमएल।"
+
+#: landing/views.py:417
+msgid "Políticas anti loot-box con fiat: todo pasa primero por Luks."
+msgstr ""
+"फ़िएट के साथ एंटी लूट-बॉक्स नीतियां: सब कुछ पहले लुक्स के माध्यम से होता है।"
+
+#: landing/views.py:418
+msgid "Age gate configurable y reportes regionales listos para reguladores."
+msgstr "नियामकों के लिए विन्यास योग्य आयु गेट और क्षेत्रीय रिपोर्ट तैयार।"
+
+#: landing/views.py:421
+msgid ""
+"SDK ligero para apps y gimnasios que quieran ofrecer recompensas Buddy."
+msgstr ""
+"उन ऐप्स और जिम के लिए लाइटवेट एसडीके जो बडी पुरस्कार प्रदान करना चाहते हैं।"
+
+#: landing/views.py:422
+msgid "Webhooks firmados para sincronizar inventario con partners externos."
+msgstr ""
+"बाहरी साझेदारों के साथ इन्वेंट्री को सिंक्रनाइज़ करने के लिए हस्ताक्षरित "
+"वेबहुक।"
+
+#: landing/views.py:423
+msgid "Panel operativo con métricas de conversión, uso y salud de red."
+msgstr ""
+"रूपांतरण, उपयोग और नेटवर्क स्वास्थ्य मेट्रिक्स के साथ परिचालन डैशबोर्ड।"
+
+#: landing/views.py:445
+msgid "Elige un plan para empezar hoy"
+msgstr "आज ही शुरू करने के लिए एक योजना चुनें"
+
+#: landing/views.py:447
+msgid ""
+"Planes simples que activan rutinas con IA, biblioteca de ejercicios y "
+"progreso vivo. Cámbialos o cancélalos cuando quieras."
+msgstr ""
+"सरल योजनाएं जो एआई रूटीन, व्यायाम लाइब्रेरी और लाइव प्रगति को सक्रिय करती "
+"हैं। जब चाहें उन्हें बदलें या रद्द करें।"
+
+#: landing/views.py:454
+msgid "Starter"
+msgstr "स्टार्टर"
+
+#: landing/views.py:456 landing/views.py:467 landing/views.py:479
+#: templates/accounts/subscriptions.html:70
+msgid "mes"
+msgstr "महीना"
+
+#: landing/views.py:458
+msgid "Rutinas con IA (básico)"
+msgstr "एआई के साथ दिनचर्या (बुनियादी)"
+
+#: landing/views.py:459
+#| msgid "Biblioteca de ejercicios segura y consistente"
+msgid "Biblioteca de ejercicios con video‑claves"
+msgstr "वीडियो कुंजियों के साथ व्यायाम लाइब्रेरी"
+
+#: landing/views.py:460
+msgid "Progreso semanal y temporizador de descansos"
+msgstr "साप्ताहिक प्रगति और ब्रेक टाइमर"
+
+#: landing/views.py:462
+msgid "Comenzar"
+msgstr "शुरू"
+
+#: landing/views.py:465
+msgid "Focus"
+msgstr "केंद्र"
+
+#: landing/views.py:469
+msgid "Rutinas con IA (avanzado)"
+msgstr "एआई के साथ दिनचर्या (उन्नत)"
+
+#: landing/views.py:470
+msgid "Ajustes por personaje y objetivos"
+msgstr "चरित्र और उद्देश्य समायोजन"
+
+#: landing/views.py:471
+msgid "Recordatorios inteligentes y tendencias mensuales"
+msgstr "स्मार्ट अनुस्मारक और मासिक रुझान"
+
+#: landing/views.py:473
+msgid "Activar Focus"
+msgstr "फोकस सक्रिय करें"
+
+#: landing/views.py:474
+msgid "Recomendado"
+msgstr "अनुशंसित"
+
+#: landing/views.py:477
+msgid "Crew"
+msgstr "कर्मी दल"
+
+#: landing/views.py:481
+msgid "Todo Focus + 3 perfiles"
+msgstr "सभी फोकस + 3 प्रोफाइल"
+
+#: landing/views.py:482
+msgid "Retos y tableros para equipo/familia"
+msgstr "टीम/परिवार के लिए चुनौतियाँ और बोर्ड"
+
+#: landing/views.py:485
+#| msgid "Probar predicción"
+msgid "Probar Crew"
+msgstr "क्रू का प्रयास करें"
+
+#: landing/views.py:491
+#| msgid "✓ Cancela cuando quieras"
+msgid "¿Puedo cancelar cuando quiera?"
+msgstr "क्या मैं जब चाहूँ रद्द कर सकता हूँ?"
+
+#: landing/views.py:492
+msgid "Sí, gestionas tu plan desde tu cuenta. Sin permanencias."
+msgstr ""
+"हाँ, आप अपनी योजना को अपने खाते से प्रबंधित करते हैं। कोई स्थायित्व नहीं."
+
+#: landing/views.py:495
+msgid "¿Qué incluye la prueba?"
+msgstr "परीक्षण में क्या शामिल है?"
+
+#: landing/views.py:496
+msgid "7 días con funciones Focus para que sientas el flujo completo."
+msgstr "फोकस फ़ंक्शन के साथ 7 दिन ताकि आप पूर्ण प्रवाह महसूस करें।"
+
+#: landing/views.py:536
+msgid "Bienvenido a Croody. Ajusta tu perfil cuando quieras."
+msgstr "क्रूडी में आपका स्वागत है। जब चाहें अपना प्रोफ़ाइल समायोजित करें।"
+
+#: landing/views.py:542
+msgid "Crear cuenta Croody"
+msgstr "Croody में खोजें"
+
+#: landing/views.py:574
+msgid "Perfil actualizado."
+msgstr "प्रोफ़ाइल अपडेट किया गया।"
+
+#: landing/views.py:576
+msgid "Revisa los campos del perfil."
+msgstr "प्रोफ़ाइल फ़ील्ड की जांच करें।"
+
+#: landing/views.py:581
+msgid "Preferencias guardadas."
+msgstr "प्राथमिकताएं सहेजी गईं।"
+
+#: landing/views.py:583
+msgid "No pudimos guardar las preferencias."
+msgstr "प्राथमिकताएं सहेजने में असमर्थ।"
+
+#: landing/views.py:586
+msgid "Generamos un nuevo token para tus robots."
+msgstr "आपके रोबोट के लिए नया टोकन बनाया।"
+
+#: landing/views.py:588
+msgid "Acción no reconocida."
+msgstr "अपरिचित क्रिया।"
+
+#: landing/views.py:594
+msgid "Token de ingestión listo"
+msgstr "इंजेस्शन टोकन तैयार"
+
+#: landing/views.py:596
+msgid "activo"
+msgstr "सक्रिय"
+
+#: landing/views.py:599
+msgid "Alertas de telemetría"
+msgstr "टेलीमेट्री चेतावनी"
+
+#: landing/views.py:600
+msgid "Recibir notificaciones críticas"
+msgstr "महत्वपूर्ण सूचनाएं प्राप्त करें"
+
+#: landing/views.py:600
+msgid "Alertas desactivadas"
+msgstr "चेतावनी निष्क्रिय"
+
+#: landing/views.py:618
+msgid "Monitoreo en tiempo real"
+msgstr "वास्तविक समय की निगरानी"
+
+#: landing/views.py:619
+msgid ""
+"Visualiza la posición del robot, variables atmosféricas y estados críticos "
+"en un tablero neofuturista listo para operación global."
+msgstr ""
+"वैश्विक संचालन के लिए तैयार नव-भविष्यवादी डैशबोर्ड पर रोबोट की स्थिति, "
+"वायुमंडलीय चर और महत्वपूर्ण स्थितियों की कल्पना करें।"
+
+#: landing/views.py:622 templates/account/profile.html:98
+msgid "Robots activos"
+msgstr "सक्रिय रोबोट"
+
+#: landing/views.py:623 templates/account/profile.html:102
+msgid "Última actualización"
+msgstr "अंतिम अपडेट"
+
+#: landing/views.py:624 templates/account/profile.html:106
+msgid "Alertas"
+msgstr "चेतावनी"
+
+#: landing/views.py:630
+msgid "TCP ASCII · LOGIN/GET_DATA/MOVE"
+msgstr "टीसीपी एएससीआईआई · लॉगइन/डेटा प्राप्त करें/मूव करें"
+
+#: landing/views.py:631
+msgid "Emite cada 15 s y el bridge envía a Telemetry Gateway automáticamente."
+msgstr ""
+"यह हर 15 सेकंड में प्रसारित होता है और ब्रिज स्वचालित रूप से टेलीमेट्री "
+"गेटवे को भेजता है।"
+
+#: templates/account/login.html:5 templates/account/register.html:40
+msgid "Inicia sesión"
+msgstr "साइन इन करें"
+
+#: templates/account/login.html:12
+msgid "Acceso Croody"
+msgstr "क्रूडी पहुंच"
+
+#: templates/account/login.html:13
+msgid "Conecta tu cuenta para continuar."
+msgstr "जारी रखने के लिए अपना खाता कनेक्ट करें।"
+
+#: templates/account/login.html:15
+msgid ""
+"Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener"
+" tu tema oscuro o claro sincronizado."
+msgstr ""
+"बडी स्टोर में खरीदारी करने, अपने आइटम प्रबंधित करने और अपनी डार्क या लाइट "
+"थीम को सिंक में रखने के लिए साइन इन करें।"
+
+#: templates/account/login.html:18
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr "अपनी पहुंच भूल गए? हमें लिखें"
+
+#: templates/account/login.html:19
+msgid ""
+"¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo "
+"Croody."
+msgstr ""
+"अभी तक आपके पास प्रमाण-पत्र नहीं हैं? क्रूडी टीम के साथ अपना खाता सक्रिय "
+"करने का अनुरोध करें।"
+
+#: templates/account/login.html:48
+msgid "Ingresar"
+msgstr "साइन इन करें"
+
+#: templates/account/login.html:49
+msgid "¿Aún no tienes cuenta?"
+msgstr "अभी भी खाता नहीं है?"
+
+#: templates/account/login.html:49
+msgid "Crea una"
+msgstr "एक बनाएं"
+
+#: templates/account/profile.html:5 templates/account/profile.html:12
+#: templates/base.html:219 templates/base.html:259
+msgid "Perfil"
+msgstr "प्रोफ़ाइल"
+
+#: templates/account/profile.html:13
+msgid "Cuida tu identidad Croody y tus robots"
+msgstr "अपनी क्रूडी पहचान और रोबोट का ख्याल रखें"
+
+#: templates/account/profile.html:14
+msgid ""
+"Actualiza datos personales, gestiona tokens de ingestión y revisa la "
+"telemetría más reciente sin salir del dashboard."
+msgstr ""
+"व्यक्तिगत डेटा अपडेट करें, अंतर्ग्रहण टोकन प्रबंधित करें, और डैशबोर्ड छोड़े "
+"बिना नवीनतम टेलीमेट्री की समीक्षा करें।"
+
+#: templates/account/profile.html:17
+msgid "Token activo"
+msgstr "सक्रिय टोकन"
+
+#: templates/account/profile.html:21
+msgid "Modo de alertas"
+msgstr "अलर्ट मोड"
+
+#: templates/account/profile.html:22 templates/accounts/inventory.html:48
+msgid "Activo"
+msgstr "संपत्ति"
+
+#: templates/account/profile.html:22
+msgid "Inactivo"
+msgstr "निठल्ला"
+
+#: templates/account/profile.html:25
+msgid "Idioma"
+msgstr "भाषा"
+
+#: templates/account/profile.html:32
+msgid "Datos personales"
+msgstr "व्यक्तिगत डेटा"
+
+#: templates/account/profile.html:45
+msgid "Guardar"
+msgstr "सहेजें"
+
+#: templates/account/profile.html:50
+msgid "Preferencias"
+msgstr "प्राथमिकताएं"
+
+#: templates/account/profile.html:63
+msgid "Actualizar preferencias"
+msgstr "प्राथमिकताएँ अद्यतन करें"
+
+#: templates/account/profile.html:68
+msgid "Token de ingestión"
+msgstr "अंतर्ग्रहण टोकन"
+
+#: templates/account/profile.html:74
+msgid "Regenerar"
+msgstr "पुनर्जन्म"
+
+#: templates/account/profile.html:76
+msgid "Úsalo como cabecera X-API-Key al enviar telemetría."
+msgstr "टेलीमेट्री भेजते समय इसे एक्स-एपीआई-कुंजी हेडर के रूप में उपयोग करें।"
+
+#: templates/account/profile.html:80
+msgid "Actividad"
+msgstr "गोपनीयता"
+
+#: templates/account/profile.html:95
+msgid "Telemetría en vivo"
+msgstr "लाइव टेलीमेट्री"
+
+#: templates/account/register.html:5 templates/account/register.html:39
+msgid "Crear cuenta"
+msgstr "खाता बनाएं"
+
+#: templates/account/register.html:12
+msgid "Registro Croody"
+msgstr "क्रूडी पंजीकरण"
+
+#: templates/account/register.html:13
+msgid "Activa tu acceso al universo Croody."
+msgstr "क्रूडी ब्रह्मांड तक अपनी पहुंच सक्रिय करें।"
+
+#: templates/account/register.html:14
+msgid ""
+"Configura idioma, tema y recibe un token personal para conectar tus robots "
+"al protocolo."
+msgstr ""
+"अपने रोबोट को प्रोटोकॉल से जोड़ने के लिए भाषा, थीम कॉन्फ़िगर करें और एक "
+"व्यक्तिगत टोकन प्राप्त करें।"
+
+#: templates/account/register.html:16
+msgid "Token de ingestión personal para Telemetry Gateway"
+msgstr "टेलीमेट्री गेटवे के लिए व्यक्तिगत अंतर्ग्रहण टोकन"
+
+#: templates/account/register.html:17
+msgid "Dashboard de perfil y alertas en tiempo real"
+msgstr "प्रोफ़ाइल डैशबोर्ड और वास्तविक समय अलर्ट"
+
+#: templates/account/register.html:18
+msgid "Compatibilidad con Buddy Store y Luks"
+msgstr "बडी स्टोर और लक्स के साथ संगतता"
+
+#: templates/account/register.html:40
+msgid "¿Ya tienes cuenta?"
+msgstr "क्या आपके पास पहले से खाता है?"
+
+#: templates/accounts/base_accounts.html:5
+#: templates/accounts/base_accounts.html:99
+msgid "Mi Cuenta"
+msgstr "मेरा खाता"
+
+#: templates/accounts/base_accounts.html:35
+msgid "Navegaci\\u00f3n de cuenta"
+msgstr "खाता नेविगेशन"
+
+#: templates/accounts/base_accounts.html:39
+#: templates/accounts/dashboard.html:5 templates/accounts/dashboard.html:6
+#| msgid "para dashboards"
+msgid "Dashboard"
+msgstr "डैशबोर्ड"
+
+#: templates/accounts/base_accounts.html:44 templates/accounts/profile.html:5
+#: templates/accounts/profile.html:6
+#| msgid "Perfil"
+msgid "Mi Perfil"
+msgstr "मेरी प्रोफाइल"
+
+#: templates/accounts/base_accounts.html:49
+msgid "Inventario"
+msgstr "भंडार"
+
+#: templates/accounts/base_accounts.html:59
+#: templates/accounts/dashboard.html:75
+msgid "Suscripci\\u00f3n"
+msgstr "सदस्यता"
+
+#: templates/accounts/base_accounts.html:80 templates/accounts/profile.html:68
+msgid "Items"
+msgstr "सामान"
+
+#: templates/accounts/base_accounts.html:92
+#| msgid "Cerrar sesión"
+msgid "Cerrar"
+msgstr "बंद करना"
+
+#: templates/accounts/dashboard.html:13
+#, python-format
+msgid "Hola, %(name)s"
+msgstr "नमस्ते, %(नाम)s"
+
+#: templates/accounts/dashboard.html:14
+msgid "Bienvenido a tu espacio personal en Croody."
+msgstr "क्रूडी पर आपके व्यक्तिगत स्थान में आपका स्वागत है।"
+
+#: templates/accounts/dashboard.html:20 templates/accounts/points.html:30
+#: templates/accounts/points.html:64
+msgid "puntos"
+msgstr "अंक"
+
+#: templates/accounts/dashboard.html:34
+#| msgid "Perfil actualizado."
+msgid "Perfil completado"
+msgstr "पूर्ण प्रोफ़ाइल"
+
+#: templates/accounts/dashboard.html:47 templates/accounts/points.html:134
+msgid "Items en inventario"
+msgstr "इन्वेंट्री में आइटम"
+
+#: templates/accounts/dashboard.html:49 templates/accounts/dashboard.html:87
+#| msgid "Ver Catálogo"
+msgid "Ver todo"
+msgstr "सभी देखें"
+
+#: templates/accounts/dashboard.html:56
+msgid "Conectada"
+msgstr "जुड़े हुए"
+
+#: templates/accounts/dashboard.html:58 templates/accounts/wallet.html:17
+msgid "Pendiente"
+msgstr "कान की बाली"
+
+#: templates/accounts/dashboard.html:60 templates/accounts/wallet.html:19
+#| msgid "✓ Sin contratos"
+msgid "Sin conectar"
+msgstr "जुड़े नहीं हैं"
+
+#: templates/accounts/dashboard.html:64
+msgid "Configurar"
+msgstr "स्थापित करना"
+
+#: templates/accounts/dashboard.html:72
+msgid "d\\u00edas restantes"
+msgstr "शेष दिनों"
+
+#: templates/accounts/dashboard.html:74
+msgid "Sin plan"
+msgstr "कोई योजना नहीं"
+
+#: templates/accounts/dashboard.html:78
+#| msgid "Ver detalles"
+msgid "Ver planes"
+msgstr "योजनाएं देखें"
+
+#: templates/accounts/dashboard.html:86
+#| msgid "Preguntas frecuentes"
+msgid "Items recientes"
+msgstr "हाल के आइटम"
+
+#: templates/accounts/dashboard.html:97
+msgid "Ver"
+msgstr "देखना"
+
+#: templates/accounts/dashboard.html:107
+msgid "Acciones r\\u00e1pidas"
+msgstr "त्वरित कार्रवाई"
+
+#: templates/accounts/dashboard.html:111 templates/accounts/profile.html:10
+msgid "Editar perfil"
+msgstr "प्रोफ़ाइल संपादित करें"
+
+#: templates/accounts/dashboard.html:115 templates/accounts/inventory.html:10
+#: templates/landing/buddy.html:158
+msgid "Ir a la tienda"
+msgstr "दुकान पर जाएं"
+
+#: templates/accounts/dashboard.html:119 templates/accounts/wallet.html:74
+#| msgid "Conectar mi robot"
+msgid "Conectar wallet"
+msgstr "वॉलेट कनेक्ट करें"
+
+#: templates/accounts/dashboard.html:123
+#| msgid "Ver Luks"
+msgid "Ver puntos"
+msgstr "अंक देखें"
+
+#: templates/accounts/inventory.html:5 templates/accounts/inventory.html:6
+msgid "Mi Inventario"
+msgstr "मेरी सूची"
+
+#: templates/accounts/inventory.html:24
+#| msgid "Legal"
+msgid "Regalo"
+msgstr "उपहार"
+
+#: templates/accounts/inventory.html:32
+msgid "Adquirido"
+msgstr "अधिग्रहीत"
+
+#: templates/accounts/inventory.html:36
+msgid "descargas"
+msgstr "डाउनलोड"
+
+#: templates/accounts/inventory.html:43
+#| msgid "✓ Descarga gratuita"
+msgid "Descargar"
+msgstr "स्राव होना"
+
+#: templates/accounts/inventory.html:50
+#| msgid "Robots activos"
+msgid "Usar como activo"
+msgstr "संपत्ति के रूप में उपयोग करें"
+
+#: templates/accounts/inventory.html:66 templates/accounts/shop.html:42
+msgid "Paginaci\\u00f3n"
+msgstr "पृष्ठ पर अंक लगाना"
+
+#: templates/accounts/inventory.html:68 templates/accounts/shop.html:44
+#, python-format
+msgid ""
+"\n"
+"      P\\u00e1gina %(current)s de %(total)s\n"
+"      "
+msgstr ""
+"\n"
+"पृष्ठ %(वर्तमान)%(कुल)s में से\n"
+"      "
+
+#: templates/accounts/inventory.html:75 templates/accounts/shop.html:51
+msgid "Anterior"
+msgstr "पूर्व"
+
+#: templates/accounts/inventory.html:80 templates/accounts/shop.html:56
+#| msgid "Siguientes pasos"
+msgid "Siguiente"
+msgstr "अगले"
+
+#: templates/accounts/inventory.html:91
+msgid "Tu inventario est\\u00e1 vac\\u00edo"
+msgstr "आपकी इन्वेंट्री खाली है"
+
+#: templates/accounts/inventory.html:93
+msgid ""
+"A\\u00fan no has adquirido ning\\u00fan producto. Explora nuestra tienda "
+"para encontrar algo que te guste."
+msgstr ""
+"आपने अभी तक कोई उत्पाद नहीं खरीदा है. अपनी पसंद की कोई चीज़ ढूंढने के लिए "
+"हमारे स्टोर को खोजें।"
+
+#: templates/accounts/inventory.html:96
+#| msgid "Entrar a la tienda"
+msgid "Explorar tienda"
+msgstr "स्टोर का अन्वेषण करें"
+
+#: templates/accounts/points.html:5
+msgid "Mis Puntos"
+msgstr "मेरे अंक"
+
+#: templates/accounts/points.html:6
+msgid "Sistema de Puntos"
+msgstr "अंक प्रणाली"
+
+#: templates/accounts/points.html:15
+#| msgid "Datos personales"
+msgid "puntos totales"
+msgstr "कुल अंक"
+
+#: templates/accounts/points.html:29
+msgid "Progreso hacia"
+msgstr "की ओर प्रगति"
+
+#: templates/accounts/points.html:38
+#, python-format
+msgid "Faltan %(remaining)s puntos"
+msgstr "%(शेष) अंक गायब हैं"
+
+#: templates/accounts/points.html:51
+#| msgid "No hay productos disponibles."
+msgid "Rangos disponibles"
+msgstr "उपलब्ध श्रेणियाँ"
+
+#: templates/accounts/points.html:67
+msgid "Actual"
+msgstr "मौजूदा"
+
+#: templates/accounts/points.html:78
+msgid "C\\u00f3mo ganar puntos"
+msgstr "अंक कैसे अर्जित करें"
+
+#: templates/accounts/points.html:91
+msgid "Desglose de tus puntos"
+msgstr "आपके अंकों का विश्लेषण"
+
+#: templates/accounts/points.html:94
+msgid "Completitud del perfil"
+msgstr "प्रोफ़ाइल पूर्णता"
+
+#: templates/accounts/points.html:108 templates/accounts/points.html:120
+msgid "(pendiente)"
+msgstr "(कान की बाली)"
+
+#: templates/accounts/profile.html:64
+msgid "Completado"
+msgstr "भरा हुआ"
+
+#: templates/accounts/profile.html:75 templates/accounts/profile_edit.html:56
+msgid "Datos f\\u00edsicos"
+msgstr "भौतिक डेटा"
+
+#: templates/accounts/profile.html:78
+msgid "Peso"
+msgstr "वज़न"
+
+#: templates/accounts/profile.html:84
+msgid "Altura"
+msgstr "ऊंचाई"
+
+#: templates/accounts/profile.html:96 templates/accounts/profile_edit.html:109
+msgid "G\\u00e9nero"
+msgstr "लिंग"
+
+#: templates/accounts/profile.html:114
+msgid "No has definido objetivos a\\u00fan."
+msgstr "आपने अभी तक उद्देश्य परिभाषित नहीं किये हैं."
+
+#: templates/accounts/profile.html:128
+msgid "Pendiente de verificaci\\u00f3n"
+msgstr "सत्यापन लंबित है"
+
+#: templates/accounts/profile.html:134
+msgid "No has conectado una wallet a\\u00fan."
+msgstr "आपने अभी तक वॉलेट कनेक्ट नहीं किया है."
+
+#: templates/accounts/profile.html:135
+#| msgid "Comprar ahora"
+msgid "Conectar ahora"
+msgstr "अब जोड़ो"
+
+#: templates/accounts/profile.html:142
+msgid "Informaci\\u00f3n de cuenta"
+msgstr "खाता संबंधी जानकारी"
+
+#: templates/accounts/profile.html:145
+msgid "Miembro desde"
+msgstr "से सदस्य"
+
+#: templates/accounts/profile.html:149
+msgid "\\u00daltimo acceso"
+msgstr "\\u00अंतिम पहुंच"
+
+#: templates/accounts/profile_edit.html:5
+#: templates/accounts/profile_edit.html:6
+#| msgid "Perfil"
+msgid "Editar Perfil"
+msgstr "प्रोफ़ाइल संपादित करें"
+
+#: templates/accounts/profile_edit.html:10
+#: templates/accounts/profile_edit.html:150
+msgid "Cancelar"
+msgstr "रद्द करना"
+
+#: templates/accounts/profile_edit.html:37
+#| msgid "Cambiar tema"
+msgid "Cambiar foto"
+msgstr "छवि बदलो"
+
+#: templates/accounts/profile_edit.html:46
+msgid "JPG, PNG, GIF o WebP. M\\u00e1x 5MB."
+msgstr "जेपीजी, पीएनजी, जीआईएफ या वेबपी। एम\\u00e1x 5एमबी."
+
+#: templates/accounts/profile_edit.html:111
+#| msgid "Seleccionar idioma"
+msgid "Seleccionar..."
+msgstr "चुनना..."
+
+#: templates/accounts/profile_edit.html:126
+msgid "Biograf\\u00eda"
+msgstr "जीवनी"
+
+#: templates/accounts/profile_edit.html:128
+msgid "Cu\\u00e9ntanos sobre ti"
+msgstr "अपने बारे में हमें बताएं"
+
+#: templates/accounts/profile_edit.html:135
+msgid "Cu\\u00e9ntanos sobre ti..."
+msgstr "अपने बारे में हमें बताएं..."
+
+#: templates/accounts/profile_edit.html:137
+msgid "M\\u00e1ximo 500 caracteres"
+msgstr "अधिकतम 500 अक्षर"
+
+#: templates/accounts/profile_edit.html:147
+#| msgid "Guardar"
+msgid "Guardar cambios"
+msgstr "परिवर्तनों को सुरक्षित करें"
+
+#: templates/accounts/shop.html:10
+#| msgid "productos"
+msgid "productos adquiridos"
+msgstr "खरीदे गए उत्पाद"
+
+#: templates/accounts/shop.html:33 templates/shop/detail.html:78
+msgid "Ver detalles"
+msgstr "विवरण देखें"
+
+#: templates/accounts/shop.html:67
+#| msgid "Ver todos los productos →"
+msgid "\\u00a1Tienes todos los productos!"
+msgstr "\\u00a1आपके पास सभी उत्पाद हैं!"
+
+#: templates/accounts/shop.html:69
+msgid ""
+"Ya has adquirido todos los productos disponibles. Vuelve pronto para ver "
+"novedades."
+msgstr ""
+"आपने सभी उपलब्ध उत्पाद पहले ही खरीद लिए हैं. अद्यतन के लिए शीघ्र ही जांच "
+"करें।"
+
+#: templates/accounts/shop.html:72
+msgid "Ver mi inventario"
+msgstr "मेरी सूची देखें"
+
+#: templates/accounts/subscriptions.html:6
+msgid "Planes de Suscripci\\u00f3n"
+msgstr "सदस्यता योजनाएँ"
+
+#: templates/accounts/subscriptions.html:14
+msgid "Tu suscripci\\u00f3n actual"
+msgstr "आपकी वर्तमान सदस्यता"
+
+#: templates/accounts/subscriptions.html:25
+msgid "Expira"
+msgstr "समय-सीमा समाप्त"
+
+#: templates/accounts/subscriptions.html:26
+msgid "D\\u00edas restantes"
+msgstr "शेष दिनों"
+
+#: templates/accounts/subscriptions.html:28
+msgid "Renovaci\\u00f3n autom\\u00e1tica activada"
+msgstr "स्वचालित नवीनीकरण सक्रिय"
+
+#: templates/accounts/subscriptions.html:35
+msgid "\\u00bfEst\\u00e1s seguro de cancelar tu suscripci\\u00f3n?"
+msgstr "क्या आप निश्चित रूप से अपनी सदस्यता रद्द करना चाहते हैं?"
+
+#: templates/accounts/subscriptions.html:36
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripci\\u00f3n"
+msgstr "सदस्यता रद्द करें"
+
+#: templates/accounts/subscriptions.html:43
+msgid "Suscripci\\u00f3n pendiente"
+msgstr "सदस्यता लंबित है"
+
+#: templates/accounts/subscriptions.html:47
+#| msgid "Ver suscripciones"
+msgid "Tu suscripci\\u00f3n"
+msgstr "आपकी सदस्यता"
+
+#: templates/accounts/subscriptions.html:47
+msgid "est\\u00e1 pendiente de pago."
+msgstr "भुगतान लंबित है."
+
+#: templates/accounts/subscriptions.html:49
+#| msgid "Comprar ahora"
+msgid "Completar pago"
+msgstr "पूर्ण भुगतान"
+
+#: templates/accounts/subscriptions.html:57
+msgid "Elige tu plan"
+msgstr "अपनी योजना चुनें"
+
+#: templates/accounts/subscriptions.html:62
+msgid "M\\u00e1s popular"
+msgstr "सबसे लोकप्रिय"
+
+#: templates/accounts/subscriptions.html:85
+#| msgid "Perfil actualizado."
+msgid "Plan actual"
+msgstr "वर्तमान योजना"
+
+#: templates/accounts/subscriptions.html:88
+msgid "Suscribirse"
+msgstr "सदस्यता लें"
+
+#: templates/accounts/subscriptions.html:99
+msgid "Informaci\\u00f3n de pago"
+msgstr "भुगतान जानकारी"
+
+#: templates/accounts/subscriptions.html:104
+msgid "Pago con Solana"
+msgstr "सोलाना के साथ भुगतान"
+
+#: templates/accounts/subscriptions.html:105
+msgid "Aceptamos pagos en SOL a trav\\u00e9s de tu wallet conectada."
+msgstr ""
+"हम आपके कनेक्टेड वॉलेट के माध्यम से एसओएल में भुगतान स्वीकार करते हैं।"
+
+#: templates/accounts/subscriptions.html:109
+msgid ""
+"Al suscribirte, ser\\u00e1s redirigido a la p\\u00e1gina de wallet para "
+"completar el pago."
+msgstr ""
+"सदस्यता लेने पर, आपको भुगतान पूरा करने के लिए वॉलेट पृष्ठ पर पुनः निर्देशित "
+"किया जाएगा।"
+
+#: templates/accounts/wallet.html:5
+msgid "Mi Wallet"
+msgstr "मेरा बटुआ"
+
+#: templates/accounts/wallet.html:13
+msgid "Estado de tu wallet"
+msgstr "आपके बटुए की स्थिति"
+
+#: templates/accounts/wallet.html:26
+msgid "Direcci\\u00f3n p\\u00fablica"
+msgstr "सार्वजनिक संबोधन"
+
+#: templates/accounts/wallet.html:29 templates/accounts/wallet.html:100
+msgid "Copiar"
+msgstr "प्रतिलिपि"
+
+#: templates/accounts/wallet.html:35
+msgid "Conectada el"
+msgstr "को जोड़ा गया"
+
+#: templates/accounts/wallet.html:42
+msgid "\\u00bfDesconectar tu wallet?"
+msgstr "अपना बटुआ डिस्कनेक्ट करें?"
+
+#: templates/accounts/wallet.html:43
+msgid "Desconectar wallet"
+msgstr "वॉलेट डिस्कनेक्ट करें"
+
+#: templates/accounts/wallet.html:51
+msgid ""
+"Conecta tu wallet de Solana para realizar pagos y verificar transacciones."
+msgstr ""
+"भुगतान करने और लेनदेन सत्यापित करने के लिए अपने सोलाना वॉलेट को कनेक्ट करें।"
+
+#: templates/accounts/wallet.html:58
+msgid "Llave p\\u00fablica de Solana"
+msgstr "सोलाना सार्वजनिक कुंजी"
+
+#: templates/accounts/wallet.html:65
+msgid "Tu llave p\\u00fablica de Solana..."
+msgstr "आपकी सोलाना सार्वजनिक कुंजी..."
+
+#: templates/accounts/wallet.html:70
+msgid "32-44 caracteres en formato base58"
+msgstr "बेस58 प्रारूप में 32-44 अक्षर"
+
+#: templates/accounts/wallet.html:79
+msgid "\\u00bfC\\u00f3mo obtener tu llave p\\u00fablica?"
+msgstr "अपनी सार्वजनिक कुंजी कैसे प्राप्त करें?"
+
+#: templates/accounts/wallet.html:81
+msgid "Abre tu wallet de Solana (Phantom, Solflare, etc.)"
+msgstr "अपना सोलाना वॉलेट खोलें (फैंटम, सोलफ्लेयर, आदि)"
+
+#: templates/accounts/wallet.html:82
+msgid "Busca la opci\\u00f3n 'Copiar direcci\\u00f3n' o 'Receive'"
+msgstr "'पता कॉपी करें' या 'प्राप्त करें' विकल्प देखें"
+
+#: templates/accounts/wallet.html:83
+msgid "Pega la direcci\\u00f3n en el campo de arriba"
+msgstr "उपरोक्त फ़ील्ड में पता चिपकाएँ"
+
+#: templates/accounts/wallet.html:93
+msgid "Realizar pago"
+msgstr "भुगतान करें"
+
+#: templates/accounts/wallet.html:95
+msgid "Para completar pagos, env\\u00eda SOL a la siguiente direcci\\u00f3n:"
+msgstr "भुगतान पूरा करने के लिए, निम्नलिखित पते पर SOL भेजें:"
+
+#: templates/accounts/wallet.html:104
+msgid ""
+"Despu\\u00e9s de enviar, guarda la firma de transacci\\u00f3n para "
+"verificaci\\u00f3n."
+msgstr "भेजने के बाद, सत्यापन के लिए लेनदेन हस्ताक्षर सहेजें।"
+
+#: templates/accounts/wallet.html:113
+msgid "Historial de transacciones"
+msgstr "ट्रांजेक्शन इतिहास"
+
+#: templates/accounts/wallet.html:118
+msgid "Firma"
+msgstr "हस्ताक्षर"
+
+#: templates/accounts/wallet.html:119
+msgid "Cantidad"
+msgstr "मात्रा"
+
+#: templates/accounts/wallet.html:120
+msgid "Prop\\u00f3sito"
+msgstr "उद्देश्य"
+
+#: templates/accounts/wallet.html:122
+msgid "Fecha"
+msgstr "तारीख"
+
+#: templates/accounts/wallet.html:149
+msgid "Seguridad"
+msgstr "सुरक्षा"
+
+#: templates/accounts/wallet.html:154
+msgid "Solo llave p\\u00fablica"
+msgstr "केवल सार्वजनिक कुंजी"
+
+#: templates/accounts/wallet.html:155
+msgid "Nunca te pediremos tu llave privada ni frase semilla."
+msgstr "हम आपसे कभी भी आपकी निजी कुंजी या बीज वाक्यांश नहीं मांगेंगे।"
+
+#: templates/accounts/wallet.html:161
+msgid "Verificaci\\u00f3n on-chain"
+msgstr "ऑन-चेन सत्यापन"
+
+#: templates/accounts/wallet.html:162
+msgid ""
+"Todas las transacciones se verifican directamente en la blockchain de "
+"Solana."
+msgstr "सभी लेनदेन सीधे सोलाना ब्लॉकचेन पर सत्यापित किए जाते हैं।"
+
+#: templates/accounts/wallet.html:174
+msgid "Copiado al portapapeles"
+msgstr "क्लिपबोर्ड पर कॉपी किया गया"
+
+#: templates/admin/base_site.html:4
+msgid "Croody Admin"
+msgstr "क्रूडी प्रशासन"
+
+#: templates/admin/base_site.html:25
+msgid "Home"
+msgstr "होम"
+
+#: templates/admin/base_site.html:35
+msgid "Powered by"
+msgstr "द्वारा संचालित"
+
+#: templates/base.html:13 templates/base.html:55
+msgid "Croody · Diseño con propósito"
+msgstr "क्रूडी · उद्देश्यपूर्ण डिजाइन"
+
+#: templates/base.html:86
+msgid "Saltar al contenido principal"
+msgstr "मुख्य सामग्री पर जाएं"
+
+#: templates/base.html:105
+msgid "Abrir menú"
+msgstr "मेनू खोलें"
+
+#: templates/base.html:126 templates/base.html:233
+msgid "Buscar en Croody"
+msgstr "Croody में खोजें"
+
+#: templates/base.html:133 templates/base.html:240
+msgid "Buscar (pulsa /)"
+msgstr "खोजें (/ दबाएं)"
+
+#: templates/base.html:144
+msgid "Seleccionar idioma"
+msgstr "भाषा चुनें"
+
+#: templates/base.html:210
+msgid "Cambiar tema"
+msgstr "थीम बदलें"
+
+#: templates/base.html:217 templates/base.html:258
+msgid "Empezar"
+msgstr "शुरू करें"
+
+#: templates/base.html:220
+msgid "Salir"
+msgstr "लॉग आउट"
+
+#: templates/base.html:223 templates/base.html:264
+msgid "Acceder"
+msgstr "लॉग इन करें"
+
+#: templates/base.html:260
+msgid "Cerrar sesión"
+msgstr "साइन आउट"
+
+#: templates/base.html:268
+msgid "Búsqueda"
+msgstr "खोज"
+
+#: templates/base.html:269
+msgid "Contactar"
+msgstr "संपर्क करें"
+
+#: templates/base.html:282
+msgid "Accesos rápidos"
+msgstr "त्वरित पहुंच"
+
+#: templates/base.html:288
+msgid "Resultados sugeridos"
+msgstr "सुझाए गए परिणाम"
+
+#: templates/base.html:339
+msgid "Inspirados en valores eternos"
+msgstr "शाश्वत मूल्यों से प्रेरित"
+
+#: templates/base.html:340
+msgid "Legal"
+msgstr "कानूनी"
+
+#: templates/base.html:341
+msgid "Privacidad"
+msgstr "गोपनीयता"
+
+#: templates/base.html:342
+msgid "Términos"
+msgstr "शर्तें"
+
+#: templates/base.html:343
+msgid "Cookies"
+msgstr "कुकीज़"
+
+#: templates/landing/about.html:11
+msgid "Cambiar el mundo a través de la tecnología"
+msgstr "प्रौद्योगिकी के माध्यम से दुनिया को बदलें"
+
+#: templates/landing/about.html:12
+msgid ""
+"Somos una empresa fundada en la Universidad EAFIT, Medellín, con la "
+"convicción de que la tecnología debe servir a la humanidad, no reemplazarla."
+msgstr ""
+"हम ईएएफआईटी यूनिवर्सिटी, मेडेलिन में स्थापित एक कंपनी हैं, इस दृढ़ विश्वास "
+"के साथ कि प्रौद्योगिकी को मानवता की सेवा करनी चाहिए, न कि इसे प्रतिस्थापित "
+"करना चाहिए।"
+
+#: templates/landing/about.html:20
+msgid "Nuestra Historia"
+msgstr "हमारा इतिहास"
+
+#: templates/landing/about.html:21
+msgid ""
+"Todo comenzó en 2025, cuando nace Croody con la convicción de que el mundo "
+"del fitness necesitaba una revolución."
+msgstr ""
+"यह सब 2025 में शुरू हुआ, जब क्रूडी का जन्म इस दृढ़ विश्वास के साथ हुआ कि "
+"फिटनेस की दुनिया में एक क्रांति की जरूरत है।"
+
+#: templates/landing/about.html:25
+msgid ""
+"En un mundo cada vez más digital, vimos cómo las personas perdían la "
+"conexión consigo mismas y con sus objetivos de salud. Los gimnasios "
+"tradicionales no se adaptaron a la nueva realidad, y las aplicaciones "
+"existentes trataban a los usuarios como números en lugar de personas."
+msgstr ""
+"तेजी से बढ़ती डिजिटल दुनिया में, हमने देखा है कि लोग खुद से और अपने "
+"स्वास्थ्य लक्ष्यों से नाता तोड़ रहे हैं। पारंपरिक जिम नई वास्तविकता को "
+"अपनाने में विफल रहे, और मौजूदा ऐप्स ने उपयोगकर्ताओं को लोगों के बजाय "
+"संख्याओं के रूप में माना।"
+
+#: templates/landing/about.html:26
+msgid ""
+"Decidimos crear algo diferente: un ecosistema que combina tecnología de "
+"punta con un entendimiento profundo de la motivación humana. Así nació "
+"Croody, una empresa comprometida con transformar la manera en que las "
+"personas se conectan con su bienestar."
+msgstr ""
+"हमने कुछ अलग बनाने का फैसला किया: एक ऐसा पारिस्थितिकी तंत्र जो मानव प्रेरणा "
+"की गहरी समझ के साथ अत्याधुनिक तकनीक को जोड़ता है। इस प्रकार क्रूडी का जन्म "
+"हुआ, एक कंपनी जो लोगों के अपनी भलाई से जुड़ने के तरीके को बदलने के लिए "
+"प्रतिबद्ध है।"
+
+#: templates/landing/about.html:27
+msgid "— El Equipo Croody"
+msgstr "- द क्रूडी टीम"
+
+#: templates/landing/about.html:36
+msgid "Nuestra Misión"
+msgstr "साइन आउट"
+
+#: templates/landing/about.html:37
+msgid ""
+"Transformar la industria del fitness a través de tecnología humanizada."
+msgstr "मानवीकृत प्रौद्योगिकी के माध्यम से फिटनेस उद्योग को बदलें।"
+
+#: templates/landing/about.html:42
+msgid "Buddy AI"
+msgstr "दोस्त ए.आई"
+
+#: templates/landing/about.html:43
+msgid "Tu Entrenador Personal"
+msgstr "आपका निजी प्रशिक्षक"
+
+#: templates/landing/about.html:45
+msgid ""
+"Nuestro asistente de inteligencia artificial comprende tus necesidades "
+"únicas y te guía en cada paso de tu journey fitness. No es solo una app, es "
+"tu compañero digital que entiende tu cuerpo, tu mente y tus objetivos."
+msgstr ""
+"हमारा AI सहायक आपकी विशिष्ट आवश्यकताओं को समझता है और आपकी फिटनेस यात्रा के "
+"हर चरण में आपका मार्गदर्शन करता है। यह सिर्फ एक ऐप नहीं है, यह आपका डिजिटल "
+"साथी है जो आपके शरीर, आपके दिमाग और आपके लक्ष्यों को समझता है।"
+
+#: templates/landing/about.html:47
+msgid "Tecnología:"
+msgstr "तकनीकी:"
+
+#: templates/landing/about.html:47
+msgid "Algoritmos avanzados de personalización que aprenden de tu progreso."
+msgstr "उन्नत अनुकूलन एल्गोरिदम जो आपकी प्रगति से सीखते हैं।"
+
+#: templates/landing/about.html:48
+msgid "Enfoque:"
+msgstr "दृष्टिकोण:"
+
+#: templates/landing/about.html:48
+msgid "Cada rutina es única, diseñada específicamente para ti."
+msgstr ""
+"प्रत्येक दिनचर्या अद्वितीय है, विशेष रूप से आपके लिए डिज़ाइन की गई है।"
+
+#: templates/landing/about.html:49
+msgid "Compromiso:"
+msgstr "प्रतिबद्धता:"
+
+#: templates/landing/about.html:49
+msgid "Resultados reales con motivación humana."
+msgstr "मानवीय प्रेरणा से वास्तविक परिणाम।"
+
+#: templates/landing/about.html:55
+msgid "Luks Rewards"
+msgstr "लक्स रिवार्ड्स"
+
+#: templates/landing/about.html:56
+msgid "Tu Progreso Tiene Valor"
+msgstr "आपकी प्रगति का मूल्य है"
+
+#: templates/landing/about.html:58
+msgid ""
+"Luks es nuestro sistema de recompensas que reconoce tu esfuerzo y "
+"dedicación. Cada entrenamiento no solo mejora tu salud, sino que también "
+"acumula valor real en el ecosistema Croody."
+msgstr ""
+"लुक्स हमारी पुरस्कार प्रणाली है जो आपके प्रयास और समर्पण को पहचानती है। "
+"प्रत्येक कसरत न केवल आपके स्वास्थ्य में सुधार करती है, बल्कि क्रूडी "
+"पारिस्थितिकी तंत्र में वास्तविक मूल्य भी जमा करती है।"
+
+#: templates/landing/about.html:60
+msgid "Innovación:"
+msgstr "नवाचार:"
+
+#: templates/landing/about.html:60
+msgid "Token utility que crea un ciclo de valor real."
+msgstr "टोकन उपयोगिता जो वास्तविक मूल्य का एक चक्र बनाती है।"
+
+#: templates/landing/about.html:61
+msgid "Motivación:"
+msgstr "प्रेरणा:"
+
+#: templates/landing/about.html:61
+msgid "Cada esfuerzo es reconocido y recompensado."
+msgstr "हर प्रयास को मान्यता दी जाती है और पुरस्कृत किया जाता है।"
+
+#: templates/landing/about.html:62
+msgid "Futuro:"
+msgstr "भविष्य:"
+
+#: templates/landing/about.html:62
+msgid "Construye tu legacy fitness mientras transformas tu vida."
+msgstr "अपना जीवन बदलते हुए अपनी फिटनेस विरासत का निर्माण करें।"
+
+#: templates/landing/about.html:68
+msgid "Tecnología Humanizada"
+msgstr "मानवीकृत प्रौद्योगिकी"
+
+#: templates/landing/about.html:69
+msgid "IA al Servicio de la Humanidad"
+msgstr "मानवता की सेवा में एआई"
+
+#: templates/landing/about.html:71
+msgid ""
+"En Croody creemos que la mejor tecnología es aquella que se siente natural. "
+"Nuestra IA no reemplaza el factor humano, lo potencia. Cada interacción está"
+" diseñada para recordarte que eres más que datos: eres una persona única con"
+" objetivos, emociones y sueños."
+msgstr ""
+"क्रूडी में हमारा मानना ​​है कि सबसे अच्छी तकनीक वह है जो प्राकृतिक लगती है। "
+"हमारा एआई मानवीय कारक को प्रतिस्थापित नहीं करता, बल्कि उसे बढ़ाता है। "
+"प्रत्येक इंटरैक्शन आपको यह याद दिलाने के लिए डिज़ाइन किया गया है कि आप डेटा "
+"से कहीं अधिक हैं: आप लक्ष्यों, भावनाओं और सपनों के साथ एक अद्वितीय व्यक्ति "
+"हैं।"
+
+#: templates/landing/about.html:73
+msgid "Filosofía:"
+msgstr "दर्शन:"
+
+#: templates/landing/about.html:73
+msgid "La tecnología debe servir a la humanidad, no reemplazarla."
+msgstr ""
+"प्रौद्योगिकी को मानवता की सेवा करनी चाहिए, न कि उसका प्रतिस्थापन करना चाहिए।"
+
+#: templates/landing/about.html:74
+msgid "Método:"
+msgstr "तरीका:"
+
+#: templates/landing/about.html:74
+msgid "IA invisible que se siente como comprensión humana."
+msgstr "अदृश्य एआई जो मानवीय समझ की तरह महसूस होती है।"
+
+#: templates/landing/about.html:75
+msgid "Impacto:"
+msgstr "प्रभाव:"
+
+#: templates/landing/about.html:75
+msgid "Transformamos vidas, no solo creamos apps."
+msgstr "हम जीवन बदलते हैं, हम सिर्फ ऐप्स नहीं बनाते हैं।"
+
+#: templates/landing/about.html:85
+msgid "Nuestros Valores"
+msgstr "हमारे मूल्य"
+
+#: templates/landing/about.html:86
+msgid "Los principios que guían cada decisión que tomamos."
+msgstr "वे सिद्धांत जो हमारे हर निर्णय का मार्गदर्शन करते हैं।"
+
+#: templates/landing/about.html:90
+msgid "Humanidad Primero"
+msgstr "मानवता पहले"
+
+#: templates/landing/about.html:91
+msgid ""
+"Cada tecnología que construimos tiene como objetivo servir a las personas, "
+"no reemplazarlas. La eficiencia sin humanidad es irrelevante."
+msgstr ""
+"हम जो भी तकनीक बनाते हैं उसका उद्देश्य लोगों की सेवा करना है, न कि उन्हें "
+"प्रतिस्थापित करना। मानवता के बिना दक्षता अप्रासंगिक है।"
+
+#: templates/landing/about.html:94
+msgid "Transparencia Total"
+msgstr "पूर्ण पारदर्शिता"
+
+#: templates/landing/about.html:95
+msgid ""
+"Operamos con claridad radical. Desde nuestros algoritmos hasta nuestros "
+"precios, todo es visible y comprensible."
+msgstr ""
+"हम मौलिक स्पष्टता के साथ काम करते हैं। हमारे एल्गोरिदम से लेकर हमारी कीमतों "
+"तक, सब कुछ दृश्यमान और समझने योग्य है।"
+
+#: templates/landing/about.html:98
+msgid "Excelencia Sin Compromiso"
+msgstr "समझौता किए बिना उत्कृष्टता"
+
+#: templates/landing/about.html:99
+msgid "No nos conformamos con \\"
+msgstr "हम इससे संतुष्ट नहीं हैं \\"
+
+#: templates/landing/about.html:102
+msgid "Impacto Real"
+msgstr "वास्तविक प्रभाव"
+
+#: templates/landing/about.html:103
+msgid ""
+"Medimos nuestro éxito por el cambio positivo que generamos en la vida de "
+"nuestros usuarios, no por métricas vacías."
+msgstr ""
+"हम अपनी सफलता को अपने उपयोगकर्ताओं के जीवन में आए सकारात्मक बदलाव से मापते "
+"हैं, खाली मेट्रिक्स से नहीं।"
+
+#: templates/landing/about.html:106
+msgid "Evolución Constante"
+msgstr "निरंतर विकास"
+
+#: templates/landing/about.html:107
+msgid ""
+"Somos aprendices permanentes. La tecnología y las necesidades humanas "
+"evolucionan, y nosotros evolucionamos con ellas."
+msgstr ""
+"हम आजीवन सीखने वाले हैं। प्रौद्योगिकी और मानवीय ज़रूरतें विकसित होती हैं, और"
+" हम उनके साथ विकसित होते हैं।"
+
+#: templates/landing/about.html:116
+msgid "Nuestra Visión: 3 → 6 → 9 → 12 → 33"
+msgstr "हमारा दृष्टिकोण: 3 → 6 → 9 → 12 → 33"
+
+#: templates/landing/about.html:117
+msgid ""
+"Un roadmap basado en la proporción áurea, porque creemos en la armonía entre"
+" precisión y humanidad."
+msgstr ""
+"सुनहरे अनुपात पर आधारित एक रोडमैप, क्योंकि हम सटीकता और मानवता के बीच "
+"सामंजस्य में विश्वास करते हैं।"
+
+#: templates/landing/about.html:123
+msgid "Fundamentos Sólidos"
+msgstr "ठोस बुनियादी बातें"
+
+#: templates/landing/about.html:124
+msgid ""
+"Establecer las bases técnicas y filosóficas que soportarán todo nuestro "
+"ecosistema. Buddy nace como un asistente de IA que realmente comprende."
+msgstr ""
+"तकनीकी और दार्शनिक आधार स्थापित करें जो हमारे संपूर्ण पारिस्थितिकी तंत्र का "
+"समर्थन करेंगे। बडी का जन्म एक एआई सहायक के रूप में हुआ है जो वास्तव में "
+"समझता है।"
+
+#: templates/landing/about.html:130
+msgid "Ecosistema Conectado"
+msgstr "कनेक्टेड इकोसिस्टम"
+
+#: templates/landing/about.html:131
+msgid ""
+"La integración de Luks como token utility crea un ciclo de valor donde cada "
+"entrenamiento tiene significado y recompensa."
+msgstr ""
+"एक टोकन उपयोगिता के रूप में लुक्स का एकीकरण मूल्य का एक चक्र बनाता है जहां "
+"प्रत्येक कसरत का अर्थ और इनाम होता है।"
+
+#: templates/landing/about.html:137
+msgid "Adopción Global"
+msgstr "वैश्विक दत्तक ग्रहण"
+
+#: templates/landing/about.html:138
+msgid ""
+"Expansión a múltiples mercados con localización cultural profunda y soporte "
+"en 8+ idiomas."
+msgstr ""
+"गहरे सांस्कृतिक स्थानीयकरण और 8+ भाषाओं में समर्थन के साथ कई बाजारों में "
+"विस्तार।"
+
+#: templates/landing/about.html:144
+msgid "Transformación Social"
+msgstr "सामाजिक परिवर्तन"
+
+#: templates/landing/about.html:145
+msgid ""
+"Programas comunitarios, partnerships con gimnasios y ONGs para democratizar "
+"el acceso a tecnología de fitness de calidad."
+msgstr ""
+"गुणवत्तापूर्ण फिटनेस तकनीक तक पहुंच को लोकतांत्रिक बनाने के लिए सामुदायिक "
+"कार्यक्रम, जिम और गैर सरकारी संगठनों के साथ साझेदारी।"
+
+#: templates/landing/about.html:151
+msgid "Legacy"
+msgstr "कानूनी"
+
+#: templates/landing/about.html:152
+msgid ""
+"Haber cambiado fundamentalmente la manera en que la humanidad se conecta con"
+" su bienestar, inspirando a toda una industria a seguir nuestro ejemplo."
+msgstr ""
+"मानवता के अपनी भलाई से जुड़ने के तरीके को मौलिक रूप से बदलकर, पूरे उद्योग को"
+" हमारे उदाहरण का अनुसरण करने के लिए प्रेरित किया है।"
+
+#: templates/landing/about.html:162
+msgid "¿Listo para ser parte del cambio?"
+msgstr "परिवर्तन का हिस्सा बनने के लिए तैयार हैं?"
+
+#: templates/landing/about.html:163
+msgid ""
+"Si compartes nuestra visión de un futuro donde la tecnología sirve a la "
+"humanidad, nos encantaría conocerte."
+msgstr ""
+"यदि आप ऐसे भविष्य के हमारे दृष्टिकोण को साझा करते हैं जहां प्रौद्योगिकी "
+"मानवता की सेवा करेगी, तो हमें आपसे मिलना अच्छा लगेगा।"
+
+#: templates/landing/about.html:166
+msgid "Contáctanos"
+msgstr "हमसे संपर्क करें"
+
+#: templates/landing/about.html:167 templates/landing/home.html:301
+msgid "Volver al inicio"
+msgstr "होम पर वापस जाएं"
+
+#: templates/landing/buddy.html:5
+msgid "Buddy · Croody"
+msgstr "Croody में खोजें"
+
+#: templates/landing/buddy.html:17
+msgid "📱 Descargar App (Beta)"
+msgstr "📱 ऐप डाउनलोड करें (बीटा)"
+
+#: templates/landing/buddy.html:41
+msgid "Así funciona Buddy"
+msgstr "बडी कैसे काम करता है"
+
+#: templates/landing/buddy.html:42
+msgid ""
+"Tu entrenador personal, impulsado por inteligencia artificial, siempre listo"
+" para adaptarte"
+msgstr ""
+"कृत्रिम बुद्धिमत्ता से संचालित आपका निजी प्रशिक्षक हमेशा अनुकूलन के लिए "
+"तैयार रहता है"
+
+#: templates/landing/buddy.html:47
+msgid "Describe tu objetivo"
+msgstr "अपना लक्ष्य वर्णन करें"
+
+#: templates/landing/buddy.html:48
+msgid ""
+"Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar "
+"resistencia... Él entiende tu contexto."
+msgstr ""
+"बडी को बताएं कि आप क्या हासिल करना चाहते हैं: वजन कम करना, मांसपेशियां "
+"बढ़ाना, सहनशक्ति में सुधार करना... वह आपके संदर्भ को समझता है।"
+
+#: templates/landing/buddy.html:52
+msgid "Recibe tu rutina"
+msgstr "अपनी दिनचर्या प्राप्त करें"
+
+#: templates/landing/buddy.html:53
+msgid ""
+"La IA genera ejercicios personalizados basados en tu nivel, equipo "
+"disponible y tiempo que tienes."
+msgstr ""
+"एआई आपके स्तर, उपलब्ध उपकरण और आपके पास मौजूद समय के आधार पर वैयक्तिकृत "
+"अभ्यास तैयार करता है।"
+
+#: templates/landing/buddy.html:57
+msgid "Entrena y progresa"
+msgstr "प्रशिक्षण और प्रगति"
+
+#: templates/landing/buddy.html:58
+msgid ""
+"Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos "
+"según tu evolución."
+msgstr ""
+"वास्तविक समय की निगरानी, ​​आपकी तकनीक पर प्रतिक्रिया और आपके विकास के अनुसार"
+" स्वचालित समायोजन।"
+
+#: templates/landing/buddy.html:67 templates/landing/home.html:147
+#: templates/landing/home.html:163 templates/landing/home.html:179
+#: templates/landing/home.html:202 templates/landing/home.html:211
+#: templates/landing/home.html:220 templates/landing/luks.html:58
+msgid "\\"
 msgstr ""
 
-msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
-msgstr ""
+#: templates/landing/buddy.html:68
+msgid "— Carlos, México, usuario desde 2024"
+msgstr "— कार्लोस, मेक्सिको, 2024 से उपयोगकर्ता"
 
+#: templates/landing/buddy.html:76
+msgid "Tres pilares que sostienen a Buddy"
+msgstr "बडी का समर्थन करने वाले तीन स्तंभ"
+
+#: templates/landing/buddy.html:92
+msgid "Módulos Buddy"
+msgstr "बडी मॉड्यूल"
+
+#: templates/landing/buddy.html:93
+msgid ""
+"Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para "
+"que nada se pierda en el camino."
+msgstr ""
+"वही बडी डीएनए ऐप, वेब और टोकन अर्थव्यवस्था के बीच वितरित किया जाता है ताकि "
+"रास्ते में कुछ भी खो न जाए।"
+
+#: templates/landing/buddy.html:111
+msgid "Viajes de usuario"
+msgstr "उपयोगकर्ता यात्रा"
+
+#: templates/landing/buddy.html:112
+msgid ""
+"Buddy acompaña antes, durante y después de cada sesión para que la rutina no"
+" se rompa."
+msgstr ""
+"बडी प्रत्येक सत्र से पहले, दौरान और बाद में साथ रहता है ताकि दिनचर्या न "
+"टूटे।"
+
+#: templates/landing/buddy.html:130
+msgid "Roadmap corto"
+msgstr "छोटा रोडमैप"
+
+#: templates/landing/buddy.html:138
+msgid "Contacta al equipo"
+msgstr "टीम से संपर्क करें"
+
+#: templates/landing/buddy.html:139
+msgid ""
+"¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma "
+"de bienestar?"
+msgstr ""
+"क्या आप अपने संगठन के लिए बडी को सक्रिय करना चाहते हैं या इसे अपने कल्याण "
+"मंच के साथ एकीकृत करना चाहते हैं?"
+
+#: templates/landing/buddy.html:140
+msgid "Agendar una llamada"
+msgstr "कॉल शेड्यूल करें"
+
+#: templates/landing/buddy.html:143
+msgid "Explora Luks"
+msgstr "लक्स का अन्वेषण करें"
+
+#: templates/landing/buddy.html:144
+msgid ""
+"La capa cripto sostiene compras, inventario y marketplace. Transparencia "
+"total."
+msgstr ""
+"क्रिप्टो परत खरीदारी, इन्वेंट्री और बाज़ार का समर्थन करती है। पूर्ण "
+"पारदर्शिता."
+
+#: templates/landing/buddy.html:145
+msgid "Ver Luks"
+msgstr "लक्स देखें"
+
+#: templates/landing/buddy.html:153
+msgid "Siguientes pasos"
+msgstr "अगले कदम"
+
+#: templates/landing/buddy.html:154
+msgid "Elige tu plan y entra a la tienda cuando estés listo."
+msgstr "अपनी योजना चुनें और तैयार होने पर दुकान में प्रवेश करें।"
+
+#: templates/landing/buddy.html:157
+msgid "Ver suscripciones"
+msgstr "सदस्यता देखें"
+
+#: templates/landing/home.html:26
+msgid "✓ +5,000 usuarios activos"
+msgstr "✓ +5,000 सक्रिय उपयोगकर्ता"
+
+#: templates/landing/home.html:27
+msgid "✓ Descarga gratuita"
+msgstr "✓ निःशुल्क डाउनलोड"
+
+#: templates/landing/home.html:28
+msgid "✓ Disponible en 8 idiomas"
+msgstr "✓ 8 भाषाओं में उपलब्ध"
+
+#: templates/landing/home.html:31
+msgid "✓ Más de 5,000 personas ya entrenan con Buddy"
+msgstr "✓ 5,000 से अधिक लोग पहले से ही बडी के साथ प्रशिक्षण ले रहे हैं"
+
+#: templates/landing/home.html:33
+msgid "✓ Sin contratos"
+msgstr "✓ बिना अनुबंध"
+
+#: templates/landing/home.html:34
+msgid "✓ Cancela cuando quieras"
+msgstr "✓ जब चाहें रद्द करें"
+
+#: templates/landing/home.html:35
+msgid "✓ Soporte 24/7"
+msgstr "✓ 24/7 समर्थन"
+
+#: templates/landing/home.html:57
+msgid "Un ecosistema, dos productos"
+msgstr "एक पारिस्थितिकी तंत्र, दो उत्पाद"
+
+#: templates/landing/home.html:58
+msgid ""
+"Descubre cómo Buddy y Luks trabajan juntos para transformar tu experiencia"
+msgstr ""
+"जानें कि कैसे बडी और लुक्स आपके अनुभव को बदलने के लिए मिलकर काम करते हैं"
+
+#: templates/landing/home.html:68
+msgid "🤖 IA Personalizada"
+msgstr "🤖 व्यक्तिगत AI"
+
+#: templates/landing/home.html:69
+msgid "Tu entrenador que te entiende"
+msgstr "आपका कोच जो आपको समझता है"
+
+#: templates/landing/home.html:70
+msgid ""
+"Rutinas adaptadas a tu nivel, objetivos y tiempo disponible. La IA aprende "
+"de cada sesión para ofrecerte siempre lo mejor."
+msgstr ""
+"आपके स्तर, उद्देश्यों और उपलब्ध समय के अनुसार अनुकूलित दिनचर्या। एआई "
+"प्रत्येक सत्र से आपको हमेशा सर्वश्रेष्ठ प्रदान करना सीखता है।"
+
+#: templates/landing/home.html:71
+msgid "Conocer Buddy"
+msgstr "बडी के बारे में जानें"
+
+#: templates/landing/home.html:74
+msgid "🎮 Gamificación"
+msgstr "🎮 गेमिफिकेशन"
+
+#: templates/landing/home.html:75
+msgid "Entrenar nunca fue tan motivador"
+msgstr "प्रशिक्षण कभी इतना प्रेरणादायक नहीं था"
+
+#: templates/landing/home.html:76
+msgid ""
+"Desafíos diarios, logros desbloqueables y un sistema de recompensas que "
+"mantiene tu motivación al máximo."
+msgstr ""
+"दैनिक चुनौतियाँ, अनलॉक करने योग्य उपलब्धियाँ और एक पुरस्कार प्रणाली जो आपकी "
+"प्रेरणा को उसके चरम पर रखती है।"
+
+#: templates/landing/home.html:77
+msgid "Ver características"
+msgstr "सुविधाएं देखें"
+
+#: templates/landing/home.html:80
+msgid "📱 Multiplataforma"
+msgstr "📱 मल्टी-प्लेटफॉर्म"
+
+#: templates/landing/home.html:81
+msgid "Entrena donde quieras"
+msgstr "जहां चाहें प्रशिक्षण लें"
+
+#: templates/landing/home.html:82
+msgid ""
+"Sincronización perfecta entre web y móvil. Tu progreso siempre disponible, "
+"en cualquier momento."
+msgstr ""
+"वेब और मोबाइल के बीच सही तालमेल। आपकी प्रगति हमेशा, किसी भी समय उपलब्ध है।"
+
+#: templates/landing/home.html:83
+msgid "Más información"
+msgstr "अधिक जानकारी"
+
+#: templates/landing/home.html:90
+msgid "💎 Token Utility"
+msgstr "💎 उपयोगिता टोकन"
+
+#: templates/landing/home.html:91
+msgid "Recompensas reales"
+msgstr "वास्तविक पुरस्कार"
+
+#: templates/landing/home.html:92
+msgid ""
+"Gana Luks entrenando y úsalos para desbloquear contenido premium, accesorios"
+" y productos exclusivos."
+msgstr ""
+"प्रशिक्षण द्वारा लक्स अर्जित करें और प्रीमियम सामग्री, सहायक उपकरण और "
+"विशिष्ट उत्पादों को अनलॉक करने के लिए उनका उपयोग करें।"
+
+#: templates/landing/home.html:93
+msgid "Explorar Luks"
+msgstr "लक्स का अन्वेषण करें"
+
+#: templates/landing/home.html:96
+msgid "🔒 Transparencia"
+msgstr "🔒 पारदर्शिता"
+
+#: templates/landing/home.html:97
+msgid "Todo claro, todo visible"
+msgstr "सब कुछ स्पष्ट, सब कुछ दिखाई दे रहा है"
+
+#: templates/landing/home.html:98
+msgid ""
+"Probabilidades públicas, tarifas conocidas y un sistema de recompensas que "
+"puedes entender y predecir."
+msgstr ""
+"सार्वजनिक बाधाओं, ज्ञात दरों और एक इनाम प्रणाली को आप समझ सकते हैं और "
+"भविष्यवाणी कर सकते हैं।"
+
+#: templates/landing/home.html:99
+msgid "Ver tokenomics"
+msgstr "टोकेनोमिक्स देखें"
+
+#: templates/landing/home.html:102
+msgid "🌍 Economía Digital"
+msgstr "🌍 डिजिटल अर्थव्यवस्था"
+
+#: templates/landing/home.html:103
+msgid "Más que una app"
+msgstr "एक ऐप से अधिक"
+
+#: templates/landing/home.html:104
+msgid ""
+"Participa en una economía digital propia donde tu constancia tiene valor "
+"real y tangible."
+msgstr ""
+"अपनी खुद की डिजिटल अर्थव्यवस्था में भाग लें जहां आपकी दृढ़ता का वास्तविक और "
+"ठोस मूल्य है।"
+
+#: templates/landing/home.html:105
+msgid "Conocer más"
+msgstr "और जानें"
+
+#: templates/landing/home.html:116
+msgid "Capas del ecosistema Croody"
+msgstr "क्रूडी पारिस्थितिकी तंत्र की परतें"
+
+#: templates/landing/home.html:117
+msgid ""
+"Buddy y Luks funcionan como un mismo sistema: entrenas, mides progreso y "
+"recibes recompensas sin perder continuidad ni los valores que nos inspiran."
+msgstr ""
+"बडी और लुक्स एक ही प्रणाली के रूप में काम करते हैं: आप निरंतरता या हमें "
+"प्रेरित करने वाले मूल्यों को खोए बिना प्रशिक्षण देते हैं, प्रगति को मापते "
+"हैं और पुरस्कार प्राप्त करते हैं।"
+
+#: templates/landing/home.html:138
+msgid "Lo que dicen los equipos que usan Croody"
+msgstr "क्रूडी का उपयोग करने वाली टीमों का क्या कहना है"
+
+#: templates/landing/home.html:139
+msgid ""
+"Historias reales de personas que han transformado su forma de entrenar y "
+"conectarse."
+msgstr ""
+"उन लोगों की वास्तविक कहानियाँ जिन्होंने अपने प्रशिक्षण और संपर्क के तरीके को"
+" बदल दिया है।"
+
+#: templates/landing/home.html:152 templates/landing/home.html:204
+msgid "María González"
+msgstr "मारिया गोंजालेज"
+
+#: templates/landing/home.html:153
+msgid "Diseñadora UX, Madrid"
+msgstr "UX डिजाइनर, मैड्रिड"
+
+#: templates/landing/home.html:168 templates/landing/home.html:213
+msgid "Carlos Ruiz"
+msgstr "कार्लोस रुइज़"
+
+#: templates/landing/home.html:169
+msgid "Desarrollador, México"
+msgstr "डेवलपर, मेक्सिको"
+
+#: templates/landing/home.html:184 templates/landing/home.html:222
+msgid "Ana Martínez"
+msgstr "अना मार्टिनेज़"
+
+#: templates/landing/home.html:185
+msgid "Coach Fitness, Barcelona"
+msgstr "फिटनेस कोच, बार्सिलोना"
+
+#: templates/landing/home.html:196
+msgid "Historias reales, resultados reales"
+msgstr "वास्तविक कहानियां, वास्तविक परिणाम"
+
+#: templates/landing/home.html:197
+msgid "Conoce a quienes han transformado su vida con Croody"
+msgstr "क्रूडी के साथ अपने जीवन को बदलने वाले लोगों से मिलें"
+
+#: templates/landing/home.html:205
+msgid "Diseñadora UX, Madrid · Usuario desde Enero 2025"
+msgstr "यूएक्स डिज़ाइनर, मैड्रिड · जनवरी 2025 से उपयोगकर्ता"
+
+#: templates/landing/home.html:214
+msgid "Desarrollador, México · Usuario desde 2024"
+msgstr "डेवलपर, मेक्सिको · 2024 से उपयोगकर्ता"
+
+#: templates/landing/home.html:223
+msgid "Coach Fitness, Barcelona · Usuario desde 2024"
+msgstr "कोच फिटनेस, बार्सिलोना · 2024 से उपयोगकर्ता"
+
+#: templates/landing/home.html:228
+msgid "Comienza tu historia"
+msgstr "अपनी कहानी शुरू करें"
+
+#: templates/landing/home.html:236
+msgid "Nuestros últimos productos"
+msgstr "हमारे नवीनतम उत्पाद"
+
+#: templates/landing/home.html:237
+msgid "Diseñados para transformar tu experiencia"
+msgstr "आपके अनुभव को बदलने के लिए डिज़ाइन किया गया"
+
+#: templates/landing/home.html:249 templates/landing/home.html:285
+msgid "Ver detalle"
+msgstr "विवरण देखें"
+
+#: templates/landing/home.html:254
+msgid "Ver todos los productos →"
+msgstr "सभी उत्पाद देखें →"
+
+#: templates/landing/home.html:263
+msgid "Blueprint listo para implementar"
+msgstr "तैनाती के लिए ब्लूप्रिंट तैयार है"
+
+#: templates/landing/home.html:264
+msgid ""
+"El MVP de tienda y marketplace está listo para entrar a producción con "
+"tiempos, copy y visuales perfectamente definidos, manteniendo un trasfondo "
+"de fe comunicado con sobriedad."
+msgstr ""
+"स्टोर और मार्केटप्लेस एमवीपी पूरी तरह से परिभाषित समय, प्रतिलिपि और दृश्यों "
+"के साथ उत्पादन में जाने के लिए तैयार है, जो संयम के साथ संचारित विश्वास की "
+"पृष्ठभूमि को बनाए रखता है।"
+
+#: templates/landing/home.html:273
+msgid "Entrar a la tienda"
+msgstr "दुकान में प्रवेश करें"
+
+#: templates/landing/home.html:296
+msgid "Conversemos y adaptemos Croody a tu equipo"
+msgstr "आइए बात करें और क्रूडी को अपनी टीम में ढालें"
+
+#: templates/landing/home.html:297
+msgid ""
+"Diseño, copy, economía y analítica integradas en un despliegue que toma "
+"semanas, no meses, reflejando nuestros valores fundacionales con un tono "
+"profesional."
+msgstr ""
+"डिज़ाइन, प्रतिलिपि, अर्थशास्त्र और विश्लेषण को एक तैनाती में एकीकृत किया गया"
+" है जिसमें पेशेवर स्वर के साथ हमारे संस्थापक मूल्यों को प्रतिबिंबित करने में"
+" महीनों नहीं बल्कि सप्ताह लगते हैं।"
+
+#: templates/landing/home.html:300
+msgid "Agendar kickoff"
+msgstr "किकऑफ शेड्यूल करें"
+
+#: templates/landing/integrations.html:11
+msgid "Croody · APIs"
+msgstr "क्रूडी · API"
+
+#: templates/landing/integrations.html:12
+msgid "Prueba los endpoints directamente"
+msgstr "एंडपॉइंट का सीधे परीक्षण करें"
+
+#: templates/landing/integrations.html:13
+msgid ""
+"Ingiere muestras, consulta históricos y obtén predicciones IDS desde la "
+"misma vista."
+msgstr ""
+"नमूने निगलें, इतिहास देखें और उसी दृश्य से आईडीएस पूर्वानुमान प्राप्त करें।"
+
+#: templates/landing/integrations.html:18
+msgid "Ingresa datos en caliente y revisa la última lectura"
+msgstr "हॉट डेटा दर्ज करें और नवीनतम रीडिंग की समीक्षा करें"
+
+#: templates/landing/integrations.html:20
+msgid "Ingerir muestra"
+msgstr "नमूना प्राप्त करें"
+
+#: templates/landing/integrations.html:21
+msgid "Último registro"
+msgstr "अंतिम रिकॉर्ड"
+
+#: templates/landing/integrations.html:28
+msgid "Simula tráfico y recibe la inferencia"
+msgstr "ट्रैफ़िक का अनुकरण करें और अनुमान प्राप्त करें"
+
+#: templates/landing/integrations.html:29
+msgid "Probar predicción"
+msgstr "भविष्यवाणी का परीक्षण करें"
+
+#: templates/landing/luks.html:5
+msgid "Luks · Croody"
+msgstr "Croody में खोजें"
+
+#: templates/landing/luks.html:34
+msgid "¿Cómo funciona Luks?"
+msgstr "लक्स कैसे काम करता है?"
+
+#: templates/landing/luks.html:35
+msgid ""
+"El token que recompensa tu constancia y hace que cada entrenamiento cuente"
+msgstr ""
+"वह टोकन जो आपकी दृढ़ता को पुरस्कृत करता है और प्रत्येक कसरत को महत्वपूर्ण "
+"बनाता है"
+
+#: templates/landing/luks.html:40
+msgid "Entrena con Buddy"
+msgstr "बडी के साथ प्रशिक्षण लें"
+
+#: templates/landing/luks.html:41
+msgid "Completa rutinas, mantén tu constancia y gana Luks automáticamente"
+msgstr "दिनचर्या पूरी करें, सुसंगत रहें और स्वचालित रूप से लक्स अर्जित करें"
+
+#: templates/landing/luks.html:46
+msgid "Gana Recompensas"
+msgstr "पुरस्कार जीतें"
+
+#: templates/landing/luks.html:47
+msgid "Acumula Luks por cada sesión completada, sin límites ni restricciones"
+msgstr ""
+"बिना किसी सीमा या प्रतिबंध के, प्रत्येक पूर्ण सत्र के लिए लक्स जमा करें"
+
+#: templates/landing/luks.html:52
+msgid "Compra en la tienda"
+msgstr "दुकान से खरीदें"
+
+#: templates/landing/luks.html:53
+msgid ""
+"Usa tus Luks para desbloquear productos, accesorios y contenido premium"
+msgstr ""
+"उत्पादों, सहायक उपकरणों और प्रीमियम सामग्री को अनलॉक करने के लिए अपने लुक्स "
+"का उपयोग करें"
+
+#: templates/landing/luks.html:59
+msgid "— Alejandro, Colombia, usuario desde 2024"
+msgstr "— अलेहांद्रो, कोलंबिया, 2024 से उपयोगकर्ता"
+
+#: templates/landing/luks.html:68
+msgid "Pilares de Luks"
+msgstr "लक्स के स्तंभ"
+
+#: templates/landing/luks.html:69
+msgid ""
+"Confianza visible, seguridad activa y métricas listas para auditar cada "
+"movimiento, inspiradas en una ética de servicio discreta."
+msgstr ""
+"दृश्यमान विश्वास, सक्रिय सुरक्षा और आपके हर कदम का ऑडिट करने के लिए तैयार "
+"मेट्रिक्स, एक विवेकशील सेवा नीति से प्रेरित।"
+
+#: templates/landing/luks.html:87
+msgid "Economía sobre Luks"
+msgstr "लक्स पर अर्थव्यवस्था"
+
+#: templates/landing/luks.html:88
+msgid ""
+"Cada módulo del ecosistema Buddy habla el mismo idioma: tokens, "
+"probabilidades y royalties auditables alineados con nuestros valores "
+"fundacionales."
+msgstr ""
+"बडी पारिस्थितिकी तंत्र में प्रत्येक मॉड्यूल एक ही भाषा बोलता है: श्रव्य "
+"टोकन, संभावनाएं, और हमारे संस्थापक मूल्यों के साथ संरेखित रॉयल्टी।"
+
+#: templates/landing/luks.html:106
+msgid "Cumplimiento & operación"
+msgstr "अनुपालन एवं संचालन"
+
+#: templates/landing/luks.html:114
+msgid "Integraciones"
+msgstr "एकीकरण"
+
+#: templates/landing/luks.html:122
+msgid "¿Quieres construir sobre Luks?"
+msgstr "क्या आप लक्स पर बनाना चाहते हैं?"
+
+#: templates/landing/luks.html:123
+msgid ""
+"API, webhooks y paneles están listos. Podemos adaptar los flujos a tu "
+"organización o producto preservando esa visión de servicio que nos "
+"caracteriza."
+msgstr ""
+"एपीआई, वेबहुक और डैशबोर्ड तैयार हैं। हम सेवा के उस दृष्टिकोण को संरक्षित "
+"करते हुए आपके संगठन या उत्पाद के प्रवाह को अनुकूलित कर सकते हैं जो हमारी "
+"विशेषता है।"
+
+#: templates/landing/luks.html:124
+msgid "Habla con nosotros"
+msgstr "हमसे बात करें"
+
+#: templates/landing/monitor.html:11
+msgid "Croody Protocol"
+msgstr "क्रूडी प्रोटोकॉल"
+
+#: templates/landing/monitor.html:15
+msgid "Conectar mi robot"
+msgstr "मेरा रोबोट कनेक्ट करें"
+
+#: templates/landing/monitor.html:16
+msgid "Ver token personal"
+msgstr "व्यक्तिगत टोकन देखें"
+
+#: templates/landing/monitor.html:33
+msgid "Robot de clases en vivo"
+msgstr "लाइव क्लास रोबोट"
+
+#: templates/landing/monitor.html:34
+msgid ""
+"Bridge automático subscribe el servidor TCP de clases y reenvía cada frame "
+"al Telemetry Gateway."
+msgstr ""
+"स्वचालित ब्रिज टीसीपी क्लास सर्वर की सदस्यता लेता है और प्रत्येक फ्रेम को "
+"टेलीमेट्री गेटवे पर भेजता है।"
+
+#: templates/landing/monitor.html:37
+msgid "Protocolo"
+msgstr "प्रोटोकॉल"
+
+#: templates/landing/monitor.html:38
+msgid "Frecuencia"
+msgstr "आवृत्ति"
+
+#: templates/landing/monitor.html:40
+msgid "Ver carpeta original"
+msgstr "मूल फ़ोल्डर देखें"
+
+#: templates/landing/monitor.html:45
+msgid "Modelo IDS-ML entrenado"
+msgstr "प्रशिक्षित IDS-ML मॉडल"
+
+#: templates/landing/monitor.html:46
+msgid "Pipeline NSL-KDD portado desde clases/CiberTelepatia."
+msgstr "एनएसएल-केडीडी पाइपलाइन कक्षाओं/साइबरटेलीपैथी से पोर्ट की गई।"
+
+#: templates/landing/monitor.html:57
+msgid "Entrenado"
+msgstr "प्रशिक्षित"
+
+#: templates/landing/monitor.html:76
+msgid "Robots conectados"
+msgstr "कनेक्टेड रोबोट"
+
+#: templates/landing/monitor.html:77
+msgid ""
+"Cada tarjeta resume posición, atmósfera y estado transmitido por el "
+"protocolo"
+msgstr ""
+"प्रत्येक कार्ड प्रोटोकॉल द्वारा प्रेषित स्थिति, माहौल और स्थिति का सारांश "
+"देता है"
+
+#: templates/landing/monitor.html:86
+msgid "Cómo funciona"
+msgstr "यह कैसे काम करता है"
+
+#: templates/landing/monitor.html:87
+msgid ""
+"El gateway acepta POST JSON seguros con token personal y expone endpoints "
+"GET para visualización y auditoría."
+msgstr ""
+"गेटवे व्यक्तिगत टोकन के साथ सुरक्षित JSON POST को स्वीकार करता है और देखने "
+"और ऑडिटिंग के लिए GET एंडपॉइंट को उजागर करता है।"
+
+#: templates/landing/monitor.html:89
+msgid "para telemetría"
+msgstr "टेलीमेट्री के लिए"
+
+#: templates/landing/monitor.html:90
+msgid "para dashboards"
+msgstr "डैशबोर्ड के लिए"
+
+#: templates/landing/monitor.html:91
+msgid "para históricos"
+msgstr "ऐतिहासिक के लिए"
+
+#: templates/landing/monitor.html:95
+msgid "Ejemplo de carga"
+msgstr "लोड उदाहरण"
+
+#: templates/landing/parleo.html:4
+msgid "Parleo · Croody"
+msgstr "Croody में खोजें"
+
+#: templates/landing/parleo.html:25
+msgid "Lo que define a Parleo"
+msgstr "पार्लियो को परिभाषित करता है"
+
+#: templates/landing/parleo.html:41
+msgid "Hitos hacia el lanzamiento"
+msgstr "लॉन्च की दिशा में मील के पत्थर"
+
+#: templates/landing/parleo.html:42
+msgid ""
+"Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para "
+"mantener todo en sincronía."
+msgstr ""
+"पार्लेओ समान बडी डीएनए साझा करता है और सब कुछ सिंक में रखने के लिए सीधे बडी "
+"और लुक्स से जुड़ता है।"
+
+#: templates/landing/parleo.html:56
+msgid "Casos de uso"
+msgstr "उपयोग के मामले"
+
+#: templates/landing/parleo.html:64
+msgid "¿Quieres sumarte como beta partner?"
+msgstr "क्या आप बीटा पार्टनर बनना चाहते हैं?"
+
+#: templates/landing/parleo.html:65
+msgid ""
+"Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos "
+"y recompensas desde un solo canal."
+msgstr ""
+"हम ऐसी टीमों का चयन कर रहे हैं जिन्हें एक ही चैनल से प्रशिक्षण, चुनौतियों और"
+" पुरस्कारों का समन्वय करने की आवश्यकता है।"
+
+#: templates/landing/parleo.html:66
+msgid "Solicitar acceso anticipado"
+msgstr "प्रारंभिक पहुंच का अनुरोध करें"
+
+#: templates/landing/suscripciones.html:4
+msgid "Suscripciones · Buddy"
+msgstr "सदस्यता · बडी"
+
+#: templates/landing/suscripciones.html:21
+msgid "Planes"
+msgstr "योजनाएं"
+
+#: templates/landing/suscripciones.html:22
+msgid "Pagas mes a mes y puedes cambiar cuando quieras."
+msgstr "आप महीने दर महीने भुगतान करते हैं और जब चाहें बदल सकते हैं।"
+
+#: templates/landing/suscripciones.html:46
+msgid "Preguntas frecuentes"
+msgstr "अक्सर पूछे जाने वाले प्रश्न"
+
+#: templates/shop/cart.html:5
+#| msgid "Tienda Buddy"
+msgid "Carrito · Tienda Buddy"
+msgstr "कार्ट बडी स्टोर"
+
+#: templates/shop/cart.html:12
+msgid "Tu carrito"
+msgstr "आपकी गाड़ी"
+
+#: templates/shop/cart.html:13
+msgid "Revisa tu selección"
+msgstr "अपने चयन की समीक्षा करें"
+
+#: templates/shop/cart.html:14
+msgid "Verifica los productos y continúa al checkout cuando estés listo."
+msgstr "उत्पादों की जांच करें और जब आप तैयार हों तो चेकआउट जारी रखें।"
+
+#: templates/shop/cart.html:31
+msgid "Items en el carrito"
+msgstr "कार्ट में आइटम"
+
+#: templates/shop/cart.html:41
+msgid "Resumen del pedido"
+msgstr "आदेश सारांश"
+
+#: templates/shop/cart.html:44
+msgid "Subtotal"
+msgstr "उप-योग"
+
+#: templates/shop/cart.html:48
+msgid "Envío"
+msgstr "लदान"
+
+#: templates/shop/cart.html:49
+msgid "Gratis"
+msgstr "मुक्त"
+
+#: templates/shop/cart.html:52
+msgid "Total"
+msgstr "कुल"
+
+#: templates/shop/cart.html:59
+msgid "Continuar al checkout"
+msgstr "चेकआउट करना जारी रखें"
+
+#: templates/shop/cart.html:63
+#| msgid "Inicia sesión"
+msgid "Iniciar sesión para comprar"
+msgstr "खरीदने के लिए साइन इन करें"
+
+#: templates/shop/cart.html:68
+msgid "Seguir comprando"
+msgstr "खरीदारी जारी रखें"
+
+#: templates/shop/cart.html:73
+#, python-format
+msgid "Pago 100%% seguro"
+msgstr "100%% सुरक्षित भुगतान"
+
+#: templates/shop/cart.html:74
+msgid "Confirmación instantánea"
+msgstr "त्वरित पुष्टि"
+
+#: templates/shop/cart.html:83
+msgid "Tu carrito está vacío"
+msgstr "आपकी गाड़ी खाली है"
+
+#: templates/shop/cart.html:84
+msgid "Explora nuestros productos y encuentra algo que te guste."
+msgstr "हमारे उत्पादों का अन्वेषण करें और अपनी पसंद की कोई चीज़ ढूंढें।"
+
+#: templates/shop/cart.html:86
+#| msgid "Ver Catálogo"
+msgid "Ver catálogo"
+msgstr "कैटलॉग देखें"
+
+#: templates/shop/catalogue.html:6
+msgid "Tienda Buddy · Croody"
+msgstr "बडी दुकान · क्रूडी"
+
+#: templates/shop/catalogue.html:15
+msgid "Todo lo que necesitas para entrenar"
+msgstr "प्रशिक्षण के लिए आपको जो कुछ चाहिए"
+
+#: templates/shop/catalogue.html:16
+msgid "Cofres, sets, accesorios. Compra directo, recibe al instante."
+msgstr "चेस्ट, सेट, सहायक उपकरण। सीधे खरीदें, तुरंत प्राप्त करें।"
+
+#: templates/shop/catalogue.html:18
+msgid "Ver Catálogo"
+msgstr "कैटलॉग देखें"
+
+#: templates/shop/catalogue.html:21
+msgid "Todo"
+msgstr "सब"
+
+#: templates/shop/catalogue.html:22
+msgid "Cofres"
+msgstr "संदूक"
+
+#: templates/shop/catalogue.html:23
+msgid "Sets"
+msgstr "सेट"
+
+#: templates/shop/catalogue.html:24
+msgid "Accesorios"
+msgstr "त्वरित पहुंच"
+
+#: templates/shop/catalogue.html:32
+msgid "Catálogo Buddy"
+msgstr "बडी कैटलॉग"
+
+#: templates/shop/catalogue.html:52
+msgid "Agregar al carrito"
+msgstr "कार्ट में जोड़ें"
+
+#: templates/shop/catalogue.html:59
+msgid "Mostrando"
+msgstr "दिखाया जा रहा है"
+
+#: templates/shop/catalogue.html:59
+msgid "productos"
+msgstr "उत्पाद"
+
+#: templates/shop/catalogue.html:61
+msgid "Ver más →"
+msgstr "और देखें →"
+
+#: templates/shop/catalogue.html:66
+msgid "No hay productos disponibles."
+msgstr "कोई उत्पाद उपलब्ध नहीं।"
+
+#: templates/shop/checkout_preview.html:4
+msgid "Checkout Buddy · Croody"
+msgstr "बडी चेकआउट · क्रूडी"
+
+#: templates/shop/checkout_preview.html:12
+msgid "Checkout Buddy · Paso a paso"
+msgstr "बडी चेकआउट · चरण-दर-चरण"
+
+#: templates/shop/checkout_preview.html:13
+msgid ""
+"Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash"
+" verificable. Todo sucede en cuestión de segundos."
+msgstr ""
+"अपना वॉलेट कनेक्ट करें, सारांश की समीक्षा करें, हस्ताक्षर करें और सत्यापन "
+"योग्य हैश के साथ रसीद प्राप्त करें। सब कुछ कुछ ही सेकंड में घटित हो जाता है।"
+
+#: templates/shop/checkout_preview.html:47
+msgid "Protecciones del flujo"
+msgstr "प्रवाह सुरक्षा"
+
+#: templates/shop/checkout_preview.html:55
+msgid "Wallet y pagos"
+msgstr "वॉलेट और भुगतान"
+
+#: templates/shop/checkout_preview.html:63
+msgid "Confianza y transparencia"
+msgstr "विश्वास और पारदर्शिता"
+
+#: templates/shop/detail.html:26 templates/shop/detail.html:79
+msgid "Comprar ahora"
+msgstr "अभी खरीदें"
+
+#: templates/shop/detail.html:27
+msgid "Volver a la tienda"
+msgstr "दुकान पर वापस जाएं"
+
+#: templates/shop/detail.html:39
+msgid "Compra con seguridad"
+msgstr "सुरक्षा के साथ खरीदें"
+
+#: templates/shop/detail.html:47
+msgid "Después de comprar"
+msgstr "खरीदने के बाद"
+
+#: templates/shop/detail.html:53
+msgid "Volver al catálogo"
+msgstr "कैटलॉग पर वापस जाएं"
+
+#: templates/shop/detail.html:62
+msgid "También podría interesarte"
+msgstr "यह भी दिलचस्प हो सकता है"
+
+#: templates/shop/detail.html:63
+msgid "Tres recomendaciones para seguir creciendo con tu Buddy."
+msgstr "अपने बडी के साथ बढ़ते रहने के लिए तीन सिफारिशें।"
+
+#~ msgid "Geometría sagrada"
+#~ msgstr "पवित्र ज्यामिति"
+
+#~ msgid "Volvamos a ser humanos"
+#~ msgstr "आइए फिर से इंसान बनें"

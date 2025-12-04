@@ -11,9 +11,11 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
+from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
+from django.utils.translation import check_for_language
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, View
 
 from croody.navigation import global_search_entries, primary_nav_links
 from landing.forms import (
@@ -116,65 +118,65 @@ class HomeView(LandingNavigationMixin, TemplateView):
 
         principles = [
             {
-                'title': 'Claridad en cada decisión',
-                'description': 'Interfaces limpias, métricas visibles y lenguaje directo para que cualquier equipo entienda qué sigue.',
+                'title': _('Claridad en cada decisión'),
+                'description': _('Interfaces limpias, métricas visibles y lenguaje directo para que cualquier equipo entienda qué sigue.'),
             },
             {
-                'title': 'Motivación sostenible',
-                'description': 'Personajes, mensajes y animaciones que elevan la energía sin perder profesionalismo.',
+                'title': _('Motivación sostenible'),
+                'description': _('Personajes, mensajes y animaciones que elevan la energía sin perder profesionalismo.'),
             },
             {
-                'title': 'Economía justa',
-                'description': 'Probabilidades, tarifas y recompensas públicas. Sin sorpresas ni ventajas pay-to-win.',
+                'title': _('Economía justa'),
+                'description': _('Probabilidades, tarifas y recompensas públicas. Sin sorpresas ni ventajas pay-to-win.'),
             },
             {
-                'title': 'Accesibilidad real',
-                'description': 'Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas culturas y edades.',
+                'title': _('Accesibilidad real'),
+                'description': _('Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas culturas y edades.'),
             },
             {
-                'title': 'Vocación de servicio',
-                'description': 'Nos guía una ética de servicio discreta: cuidamos a las personas primero y dejamos que el diseño lo haga evidente.',
+                'title': _('Vocación de servicio'),
+                'description': _('Nos guía una ética de servicio discreta: cuidamos a las personas primero y dejamos que el diseño lo haga evidente.'),
             },
         ]
 
         blueprint_highlights = [
             {
-                'title': 'Compras sin fricción',
-                'details': 'Checkout Luks en segundos con costos claros y asignación inmediata al inventario.',
+                'title': _('Compras sin fricción'),
+                'details': _('Checkout Luks en segundos con costos claros y asignación inmediata al inventario.'),
             },
             {
-                'title': 'Inventario conectado',
-                'details': 'Abre packs, equipa rutinas o lista ítems desde web y móvil con el mismo estado.',
+                'title': _('Inventario conectado'),
+                'details': _('Abre packs, equipa rutinas o lista ítems desde web y móvil con el mismo estado.'),
             },
             {
-                'title': 'Eventos que mueven',
-                'details': 'Temporadas y recompensas tokenizadas con métricas claras para sostener la constancia.',
+                'title': _('Eventos que mueven'),
+                'details': _('Temporadas y recompensas tokenizadas con métricas claras para sostener la constancia.'),
             },
         ]
 
         roadmap = [
             {
-                'badge': 'Semana 1',
-                'title': 'Narrativa alineada',
+                'badge': _('Semana 1'),
+                'title': _('Narrativa alineada'),
                 'points': [
-                    'Landing Croody con la historia Buddy + Luks lista para stakeholders.',
-                    'Formularios conectados y analítica básica para medir interés desde el día uno.',
+                    _('Landing Croody con la historia Buddy + Luks lista para stakeholders.'),
+                    _('Formularios conectados y analítica básica para medir interés desde el día uno.'),
                 ],
             },
             {
-                'badge': 'Semana 3',
-                'title': 'Ventas activas',
+                'badge': _('Semana 3'),
+                'title': _('Ventas activas'),
                 'points': [
-                    'Catálogo, PDP y checkout Luks operando con seguimiento de conversiones.',
-                    'Inventario y marketplace en beta controlada para refinar procesos.',
+                    _('Catálogo, PDP y checkout Luks operando con seguimiento de conversiones.'),
+                    _('Inventario y marketplace en beta controlada para refinar procesos.'),
                 ],
             },
             {
-                'badge': 'Semana 6',
-                'title': 'Expansión tokenizada',
+                'badge': _('Semana 6'),
+                'title': _('Expansión tokenizada'),
                 'points': [
-                    'Eventos temáticos con recompensas en vivo y retos medidos en paneles de datos.',
-                    'Dashboard de datos listo para alianzas y marcas aliadas.',
+                    _('Eventos temáticos con recompensas en vivo y retos medidos en paneles de datos.'),
+                    _('Dashboard de datos listo para alianzas y marcas aliadas.'),
                 ],
             },
         ]
@@ -261,76 +263,76 @@ class BuddyView(LandingNavigationMixin, TemplateView):
         ]
         modules = [
             {
-                'title': 'App móvil',
+                'title': _('App móvil'),
                 'items': [
-                    'Diálogo natural para crear rutinas y ajustar bloques en segundos.',
-                    'Conteo automático de series, descansos inteligentes y feedback háptico.',
-                    'Modo compañero para entrenar con tus contactos o personaje favorito.',
+                    _('Diálogo natural para crear rutinas y ajustar bloques en segundos.'),
+                    _('Conteo automático de series, descansos inteligentes y feedback háptico.'),
+                    _('Modo compañero para entrenar con tus contactos o personaje favorito.'),
                 ],
             },
             {
-                'title': 'Buddy Web',
+                'title': _('Buddy Web'),
                 'items': [
-                    'Inventario vivo para abrir packs, equipar sets y listar ítems.',
-                    'Reproductor de sesiones, biblioteca extendida y guardado de favoritos.',
-                    'Telemetría lista para equipos, coaches o marcas aliadas.',
+                    _('Inventario vivo para abrir packs, equipar sets y listar ítems.'),
+                    _('Reproductor de sesiones, biblioteca extendida y guardado de favoritos.'),
+                    _('Telemetría lista para equipos, coaches o marcas aliadas.'),
                 ],
             },
             {
-                'title': 'Economía Buddy',
+                'title': _('Economía Buddy'),
                 'items': [
-                    'Sets temáticos, accesorios y cofres con probabilidades públicas.',
-                    'Luks como moneda única con recompensas por constancia y eventos.',
-                    'Marketplace integrado para vender o intercambiar sin salir de Buddy.',
+                    _('Sets temáticos, accesorios y cofres con probabilidades públicas.'),
+                    _('Luks como moneda única con recompensas por constancia y eventos.'),
+                    _('Marketplace integrado para vender o intercambiar sin salir de Buddy.'),
                 ],
             },
         ]
         journeys = [
             {
-                'title': 'Antes de entrenar',
+                'title': _('Antes de entrenar'),
                 'items': [
-                    'Escaneo rápido de energía y movilidad.',
-                    'Recomendaciones de personajes, sets y accesorios según tu meta.',
-                    'Recordatorios contextuales desde la app y sincronía con tus calendarios habituales.',
+                    _('Escaneo rápido de energía y movilidad.'),
+                    _('Recomendaciones de personajes, sets y accesorios según tu meta.'),
+                    _('Recordatorios contextuales desde la app y sincronía con tus calendarios habituales.'),
                 ],
             },
             {
-                'title': 'Durante la sesión',
+                'title': _('Durante la sesión'),
                 'items': [
-                    'Conteo automático de repeticiones y control de tempo.',
-                    'Feedback visual y de voz sobre técnica, respiración y seguridad.',
-                    'Notas rápidas, clips y variaciones disponibles en un toque.',
+                    _('Conteo automático de repeticiones y control de tempo.'),
+                    _('Feedback visual y de voz sobre técnica, respiración y seguridad.'),
+                    _('Notas rápidas, clips y variaciones disponibles en un toque.'),
                 ],
             },
             {
-                'title': 'Después del entrenamiento',
+                'title': _('Después del entrenamiento'),
                 'items': [
-                    'Resumen claro con métricas, descanso sugerido y próximos pasos.',
-                    'Recompensas Luks y retos desbloqueados según tu constancia.',
-                    'Historial listo para compartir con tu entrenador o comunidad.',
+                    _('Resumen claro con métricas, descanso sugerido y próximos pasos.'),
+                    _('Recompensas Luks y retos desbloqueados según tu constancia.'),
+                    _('Historial listo para compartir con tu entrenador o comunidad.'),
                 ],
             },
         ]
         roadmap = [
             {
-                'label': 'Semana 1',
+                'label': _('Semana 1'),
                 'items': [
-                    'Piloto interno con rutinas adaptativas y biblioteca completa.',
-                    'Configuración de personajes base y mensajes personalizados.',
+                    _('Piloto interno con rutinas adaptativas y biblioteca completa.'),
+                    _('Configuración de personajes base y mensajes personalizados.'),
                 ],
             },
             {
-                'label': 'Semana 3',
+                'label': _('Semana 3'),
                 'items': [
-                    'Inventario web conectado para abrir packs y equipar sets.',
-                    'Alertas inteligentes en móvil y correo para mantener la constancia.',
+                    _('Inventario web conectado para abrir packs y equipar sets.'),
+                    _('Alertas inteligentes en móvil y correo para mantener la constancia.'),
                 ],
             },
             {
-                'label': 'Semana 6',
+                'label': _('Semana 6'),
                 'items': [
-                    'Marketplace activo con recompensas y eventos temáticos.',
-                    'Dashboard de telemetría para coaches, squads y marcas.',
+                    _('Marketplace activo con recompensas y eventos temáticos.'),
+                    _('Dashboard de telemetría para coaches, squads y marcas.'),
                 ],
             },
         ]
@@ -368,57 +370,57 @@ class LuksView(LandingNavigationMixin, TemplateView):
         # Demostrar funcionalidad de búsqueda global en Luks
         context['show_global_shortcuts'] = True
         hero = {
-            'eyebrow': 'Luks · Economía Buddy',
-            'title': 'Token que recompensa la constancia y da confianza a cada transacción.',
-            'lead': 'Pagos, royalties y telemetría on-chain con una experiencia diseñada para usuarios reales y equipos regulados. La infraestructura nace de principios de transparencia y servicio comunicados con un tono ejecutivo.',
-            'primary_cta': {'label': 'Ver tienda Buddy', 'url': reverse('shop:catalogue')},
-            'secondary_cta': {'label': 'Contactar equipo Luks', 'url': 'mailto:hola@croody.app?subject=Luks'},
+            'eyebrow': _('Luks · Economía Buddy'),
+            'title': _('Token que recompensa la constancia y da confianza a cada transacción.'),
+            'lead': _('Pagos, royalties y telemetría on-chain con una experiencia diseñada para usuarios reales y equipos regulados. La infraestructura nace de principios de transparencia y servicio comunicados con un tono ejecutivo.'),
+            'primary_cta': {'label': _('Ver tienda Buddy'), 'url': reverse('shop:catalogue')},
+            'secondary_cta': {'label': _('Contactar equipo Luks'), 'url': 'mailto:hola@croody.app?subject=Luks'},
         }
         metrics = [
-            {'value': '≤2s', 'caption': 'finalidad promedio de las transacciones'},
-            {'value': '99.9%', 'caption': 'disponibilidad de la bóveda custodial'},
-            {'value': '100%', 'caption': 'catálogo con probabilidades visibles'},
+            {'value': _('≤2s'), 'caption': _('finalidad promedio de las transacciones')},
+            {'value': '99.9%', 'caption': _('disponibilidad de la bóveda custodial')},
+            {'value': '100%', 'caption': _('catálogo con probabilidades visibles')},
         ]
         pillars = [
             {
-                'title': 'Transparencia total',
+                'title': _('Transparencia total'),
                 'items': [
-                    'Probabilidades, tarifas y royalties visibles antes de confirmar.',
-                    'Recibos con hash verificable y seguimiento en tu panel.',
-                    'Historial público de drops especiales y ajustes de rareza.',
+                    _('Probabilidades, tarifas y royalties visibles antes de confirmar.'),
+                    _('Recibos con hash verificable y seguimiento en tu panel.'),
+                    _('Historial público de drops especiales y ajustes de rareza.'),
                 ],
             },
             {
-                'title': 'Seguridad por defecto',
+                'title': _('Seguridad por defecto'),
                 'items': [
-                    'Custodia con 2FA, límites dinámicos y alertas en tiempo real.',
-                    'Escrow inteligente y cooldowns para frenar especulación.',
-                    'Monitoreo anti-bot y protección ante picos de red.',
+                    _('Custodia con 2FA, límites dinámicos y alertas en tiempo real.'),
+                    _('Escrow inteligente y cooldowns para frenar especulación.'),
+                    _('Monitoreo anti-bot y protección ante picos de red.'),
                 ],
             },
             {
-                'title': 'Medición constante',
+                'title': _('Medición constante'),
                 'items': [
-                    'Dashboards con conversión, listados y salud de la red.',
-                    'Eventos trazables para campañas y recompensas por consistencia.',
-                    'Exportación de datos para socios, auditorías y reguladores.',
+                    _('Dashboards con conversión, listados y salud de la red.'),
+                    _('Eventos trazables para campañas y recompensas por consistencia.'),
+                    _('Exportación de datos para socios, auditorías y reguladores.'),
                 ],
             },
         ]
         economy = [
-            {'title': 'Tienda Buddy', 'points': ['Checkout en segundos', 'Packs con pity visible', 'Asignación inmediata al inventario.']},
-            {'title': 'Inventario web', 'points': ['Estados sincronizados', 'Listado instantáneo', 'Eventos y bonos por temporada.']},
-            {'title': 'Marketplace P2P', 'points': ['Royalties configurables', 'Escrow automático', 'Historial de precios y volumen.']},
+            {'title': _('Tienda Buddy'), 'points': [_('Checkout en segundos'), _('Packs con pity visible'), _('Asignación inmediata al inventario.')]},
+            {'title': _('Inventario web'), 'points': [_('Estados sincronizados'), _('Listado instantáneo'), _('Eventos y bonos por temporada.')]},
+            {'title': _('Marketplace P2P'), 'points': [_('Royalties configurables'), _('Escrow automático'), _('Historial de precios y volumen.')]},
         ]
         compliance = [
-            'KYC/AML opcional para límites de retiro elevados.',
-            'Políticas anti loot-box con fiat: todo pasa primero por Luks.',
-            'Age gate configurable y reportes regionales listos para reguladores.',
+            _('KYC/AML opcional para límites de retiro elevados.'),
+            _('Políticas anti loot-box con fiat: todo pasa primero por Luks.'),
+            _('Age gate configurable y reportes regionales listos para reguladores.'),
         ]
         integrations = [
-            'SDK ligero para apps y gimnasios que quieran ofrecer recompensas Buddy.',
-            'Webhooks firmados para sincronizar inventario con partners externos.',
-            'Panel operativo con métricas de conversión, uso y salud de red.',
+            _('SDK ligero para apps y gimnasios que quieran ofrecer recompensas Buddy.'),
+            _('Webhooks firmados para sincronizar inventario con partners externos.'),
+            _('Panel operativo con métricas de conversión, uso y salud de red.'),
         ]
         context.update(
             hero=hero,
@@ -439,9 +441,9 @@ class SuscripcionesView(LandingNavigationMixin, TemplateView):
         context = super().get_context_data(**kwargs)
 
         hero = {
-            'eyebrow': 'Buddy · Suscripciones',
-            'title': 'Elige un plan para empezar hoy',
-            'lead': (
+            'eyebrow': _('Buddy · Suscripciones'),
+            'title': _('Elige un plan para empezar hoy'),
+            'lead': _(
                 'Planes simples que activan rutinas con IA, biblioteca de ejercicios y progreso vivo. '
                 'Cámbialos o cancélalos cuando quieras.'
             ),
@@ -449,49 +451,49 @@ class SuscripcionesView(LandingNavigationMixin, TemplateView):
 
         plans = [
             {
-                'name': 'Starter',
+                'name': _('Starter'),
                 'price': '9.99',
-                'period': 'mes',
+                'period': _('mes'),
                 'features': [
-                    'Rutinas con IA (básico)',
-                    'Biblioteca de ejercicios con video‑claves',
-                    'Progreso semanal y temporizador de descansos',
+                    _('Rutinas con IA (básico)'),
+                    _('Biblioteca de ejercicios con video‑claves'),
+                    _('Progreso semanal y temporizador de descansos'),
                 ],
-                'cta_label': 'Comenzar',
+                'cta_label': _('Comenzar'),
             },
             {
-                'name': 'Focus',
+                'name': _('Focus'),
                 'price': '14.99',
-                'period': 'mes',
+                'period': _('mes'),
                 'features': [
-                    'Rutinas con IA (avanzado)',
-                    'Ajustes por personaje y objetivos',
-                    'Recordatorios inteligentes y tendencias mensuales',
+                    _('Rutinas con IA (avanzado)'),
+                    _('Ajustes por personaje y objetivos'),
+                    _('Recordatorios inteligentes y tendencias mensuales'),
                 ],
-                'cta_label': 'Activar Focus',
-                'badge': 'Recomendado',
+                'cta_label': _('Activar Focus'),
+                'badge': _('Recomendado'),
             },
             {
-                'name': 'Crew',
+                'name': _('Crew'),
                 'price': '29.99',
-                'period': 'mes',
+                'period': _('mes'),
                 'features': [
-                    'Todo Focus + 3 perfiles',
-                    'Retos y tableros para equipo/familia',
-                    'Soporte prioritario',
+                    _('Todo Focus + 3 perfiles'),
+                    _('Retos y tableros para equipo/familia'),
+                    _('Soporte prioritario'),
                 ],
-                'cta_label': 'Probar Crew',
+                'cta_label': _('Probar Crew'),
             },
         ]
 
         faq = [
             {
-                'q': '¿Puedo cancelar cuando quiera?',
-                'a': 'Sí, gestionas tu plan desde tu cuenta. Sin permanencias.',
+                'q': _('¿Puedo cancelar cuando quiera?'),
+                'a': _('Sí, gestionas tu plan desde tu cuenta. Sin permanencias.'),
             },
             {
-                'q': '¿Qué incluye la prueba?',
-                'a': '7 días con funciones Focus para que sientas el flujo completo.',
+                'q': _('¿Qué incluye la prueba?'),
+                'a': _('7 días con funciones Focus para que sientas el flujo completo.'),
             },
         ]
 
@@ -641,3 +643,60 @@ class RobotMonitorView(LandingNavigationMixin, TemplateView):
             return data
         except Exception:
             return None
+
+
+class SetLanguageView(View):
+    """Custom set_language view that redirects to language-prefixed URLs.
+
+    The standard Django set_language view sets a cookie and redirects to 'next',
+    but since our URL patterns have prefix_default_language=False, the root '/'
+    doesn't activate the cookie-based language. This view redirects to the
+    language-prefixed URL instead (e.g., /en/, /fr/) for non-default languages.
+    """
+
+    # All supported language codes
+    LANG_CODES = {lang[0] for lang in settings.LANGUAGES}
+
+    def _strip_language_prefix(self, url: str) -> str:
+        """Remove any existing language prefix from the URL."""
+        if not url.startswith('/'):
+            return url
+
+        parts = url.split('/')
+        # parts[0] is empty string before first /
+        # parts[1] might be a language code like 'en', 'fr', etc.
+        if len(parts) > 1 and parts[1] in self.LANG_CODES:
+            # Remove the language prefix
+            return '/' + '/'.join(parts[2:]) or '/'
+        return url
+
+    def post(self, request, *args, **kwargs):
+        lang_code = request.POST.get('language', settings.LANGUAGE_CODE)
+        next_url = request.POST.get('next', '/')
+
+        # Validate language code
+        if not check_for_language(lang_code):
+            lang_code = settings.LANGUAGE_CODE
+
+        # Strip any existing language prefix from next_url
+        clean_next = self._strip_language_prefix(next_url)
+
+        # Build redirect URL
+        if lang_code == settings.LANGUAGE_CODE:
+            # Default language (es): redirect to unprefixed URL
+            redirect_url = clean_next
+        else:
+            # Non-default language: redirect to prefixed URL
+            redirect_url = f'/{lang_code}{clean_next}'
+
+        response = HttpResponseRedirect(redirect_url)
+
+        # Set the language cookie
+        response.set_cookie(
+            settings.LANGUAGE_COOKIE_NAME,
+            lang_code,
+            max_age=settings.LANGUAGE_COOKIE_AGE,
+            path='/',
+        )
+
+        return response

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Checkout Buddy · Croody{% endblock %}
+{% block title %}{% trans "Checkout Buddy · Croody" %}{% endblock %}
 {% block header_cta_url %}#checkout{% endblock %}
 
 {% block body %}
@@ -8,8 +9,8 @@
     <section class="section" aria-labelledby="checkout-title">
       <div class="container checkout-preview">
         <div class="section__header">
-          <h1 id="checkout-title">Checkout Buddy · Paso a paso</h1>
-          <p>Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash verificable. Todo sucede en cuestión de segundos.</p>
+          <h1 id="checkout-title">{% trans "Checkout Buddy · Paso a paso" %}</h1>
+          <p>{% trans "Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash verificable. Todo sucede en cuestión de segundos." %}</p>
         </div>
         <ol class="step-list" id="checkout">
           {% for step in steps %}
@@ -43,7 +44,7 @@
     <section class="section checkout-notes" aria-labelledby="checkout-notes-title">
       <div class="container checkout-notes__grid">
         <div>
-          <h2 id="checkout-notes-title">Protecciones del flujo</h2>
+          <h2 id="checkout-notes-title">{% trans "Protecciones del flujo" %}</h2>
           <ul>
             {% for item in checkout_notes %}
               <li>{{ item }}</li>
@@ -51,7 +52,7 @@
           </ul>
         </div>
         <div>
-          <h3>Wallet y pagos</h3>
+          <h3>{% trans "Wallet y pagos" %}</h3>
           <ul>
             {% for item in wallet_points %}
               <li>{{ item }}</li>
@@ -59,7 +60,7 @@
           </ul>
         </div>
         <div>
-          <h3>Confianza y transparencia</h3>
+          <h3>{% trans "Confianza y transparencia" %}</h3>
           <ul>
             {% for note in trust_notes %}
               <li>{{ note }}</li>

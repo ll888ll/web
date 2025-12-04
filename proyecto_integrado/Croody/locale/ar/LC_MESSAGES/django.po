@@ -3,10 +3,9 @@
 #
 msgid ""
 msgstr ""
-
 "Project-Id-Version: Croody 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"POT-Creation-Date: 2025-12-04 00:57+0000\n"
 "PO-Revision-Date: 2025-01-06 16:30+0000\n"
 "Last-Translator: Croody Team\n"
 "Language-Team: Arabic <hola@croody.app>\n"
@@ -15,198 +14,3601 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-msgid "Croody · Precisión cósmica con corazón"
-msgstr ""
 
-msgid "Saltar al contenido principal"
-msgstr "انتقل إلى المحتوى الرئيسي"
+#: accounts/admin.py:33 accounts/admin.py:138 accounts/models.py:90
+#: accounts/models.py:283 accounts/models.py:347 accounts/models.py:454
+#| msgid "Usuario o correo"
+msgid "Usuario"
+msgstr "مستخدم"
 
-msgid "Abrir menú"
-msgstr "فتح القائمة"
+#: accounts/admin.py:36
+#| msgid "Datos personales"
+msgid "Datos Físicos"
+msgstr "البيانات المادية"
 
-msgid "Buscar en Croody"
-msgstr "البحث في Croody"
+#: accounts/admin.py:40
+msgid "Avatar"
+msgstr "الصورة الرمزية"
 
-msgid "Buscar (pulsa /)"
-msgstr ""
+#: accounts/admin.py:43 templates/accounts/dashboard.html:62
+#: templates/accounts/profile.html:120 templates/accounts/wallet.html:6
+msgid "Wallet Solana"
+msgstr "محفظة سولانا"
 
-msgid "Seleccionar idioma"
-msgstr "اختر اللغة"
+#: accounts/admin.py:46
+#| msgid "🎮 Gamificación"
+msgid "Gamificación"
+msgstr "التلعيب"
 
-msgid "Cambiar tema"
-msgstr "تغيير المظهر"
+#: accounts/admin.py:49 accounts/admin.py:150 accounts/admin.py:253
+msgid "Metadata"
+msgstr "البيانات الوصفية"
 
-msgid "Empezar"
-msgstr "ابدأ"
+#: accounts/admin.py:70 accounts/models.py:170
+msgid "Rango"
+msgstr "يتراوح"
 
-msgid "Salir"
-msgstr "تسجيل الخروج"
+#: accounts/admin.py:83
+msgid "Completitud"
+msgstr "الاكتمال"
 
-msgid "Acceder"
-msgstr "تسجيل الدخول"
+#: accounts/admin.py:98 templates/accounts/base_accounts.html:64
+#| msgid "Wallet y pagos"
+msgid "Wallet"
+msgstr "محفظة"
 
-msgid "Cerrar sesión"
-msgstr "تسجيل الخروج"
+#: accounts/admin.py:102
+msgid "Recalcular estadísticas de usuarios"
+msgstr "إعادة حساب إحصائيات المستخدم"
 
-msgid "Búsqueda"
-msgstr ""
+#: accounts/admin.py:106
+msgid "Estadísticas recalculadas correctamente."
+msgstr "إعادة حساب الإحصائيات بشكل صحيح."
 
-msgid "Contactar"
-msgstr ""
+#: accounts/admin.py:141 accounts/models.py:62 accounts/models.py:386
+#: accounts/models.py:493
+#| msgid "Ver suscripciones"
+msgid "Suscripción"
+msgstr "الاشتراك"
 
-msgid "Accesos rápidos"
-msgstr "وصول سريع"
+#: accounts/admin.py:144
+msgid "Fechas"
+msgstr "بلح"
 
-msgid "Resultados sugeridos"
-msgstr "نتائج مقترحة"
+#: accounts/admin.py:147
+msgid "Pago"
+msgstr "يدفع"
 
-msgid "Geometría sagrada"
-msgstr "الهندسة المقدسة"
+#: accounts/admin.py:170 accounts/models.py:350
+msgid "Nivel"
+msgstr "مستوى"
 
-msgid "Legal"
-msgstr "قانوني"
+#: accounts/admin.py:186 accounts/admin.py:278 accounts/models.py:356
+#: accounts/models.py:480 templates/accounts/wallet.html:121
+msgid "Estado"
+msgstr "ولاية"
 
-msgid "Privacidad"
-msgstr "الخصوصية"
+#: accounts/admin.py:202
+msgid "Días restantes"
+msgstr "الأيام المتبقية"
 
-msgid "Términos"
-msgstr "الشروط"
+#: accounts/admin.py:206
+msgid "Activar suscripciones seleccionadas"
+msgstr "تفعيل الاشتراكات المحددة"
 
-msgid "Cookies"
-msgstr "ملفات تعريف الارتباط"
+#: accounts/admin.py:210
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones activadas."
+msgstr "تم تفعيل الاشتراكات."
 
-msgid "Inicia sesión"
-msgstr "تسجيل الدخول"
+#: accounts/admin.py:212
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripciones seleccionadas"
+msgstr "إلغاء الاشتراكات المحددة"
 
-msgid "Acceso Croody"
-msgstr ""
+#: accounts/admin.py:216
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones canceladas."
+msgstr "الاشتراكات الملغاة."
 
-msgid "Conecta tu cuenta para continuar."
-msgstr "اربط حسابك للمتابعة."
+#: accounts/admin.py:239
+msgid "Transacción"
+msgstr "عملية"
 
-msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
-msgstr ""
+#: accounts/admin.py:242
+#| msgid "Preferencias"
+msgid "Referencias"
+msgstr "مراجع"
 
-msgid "¿Olvidaste tu acceso? Escríbenos a"
-msgstr ""
+#: accounts/admin.py:246
+#| msgid "Wallet y pagos"
+msgid "Wallets"
+msgstr "محافظ"
 
-msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
-msgstr ""
+#: accounts/admin.py:249
+#| msgid "🎮 Gamificación"
+msgid "Verificación"
+msgstr "تَحَقّق"
 
-msgid "Ingresar"
-msgstr "تسجيل الدخول"
+#: accounts/admin.py:262
+msgid "TX Signature"
+msgstr "توقيع تكساس"
 
-msgid "Croody · Conecta, Entrena y Destaca"
-msgstr ""
+#: accounts/admin.py:282
+msgid "Marcar como verificadas"
+msgstr "وضع علامة على أنه تم التحقق منه"
 
-msgid "Volvamos a ser humanos"
-msgstr "لنعد إنسانيين مرة أخرى"
+#: accounts/admin.py:286
+msgid "Transacciones marcadas como verificadas."
+msgstr "تم وضع علامة على المعاملات على أنها تم التحقق منها."
 
-msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
-msgstr ""
+#: accounts/admin.py:288
+msgid "Marcar como fallidas"
+msgstr "وضع علامة فشل"
 
-msgid "Ir a la tienda Buddy"
-msgstr ""
+#: accounts/admin.py:292
+msgid "Transacciones marcadas como fallidas."
+msgstr "تم وضع علامة على المعاملات بأنها فاشلة."
 
-msgid "Conocer a Buddy"
-msgstr ""
+#: accounts/apps.py:11
+#| msgid "Viajes de usuario"
+msgid "Cuentas de Usuario"
+msgstr "حسابات المستخدمين"
 
-msgid "Logo de Croody representando conexión y tecnología humanizada"
-msgstr ""
+#: accounts/forms.py:43
+msgid "Cuéntanos sobre ti..."
+msgstr "أخبرنا عن نفسك..."
 
-msgid "rutinas ajustadas automáticamente cada semana"
-msgstr ""
+#: accounts/forms.py:49 templates/accounts/profile_edit.html:69
+msgid "Ej: 70.5"
+msgstr "على سبيل المثال: 70.5"
 
-msgid "personas mantienen su plan mensual con Buddy activo"
-msgstr ""
+#: accounts/forms.py:58 templates/accounts/profile_edit.html:87
+msgid "Ej: 175"
+msgstr "مثال: 175"
 
-msgid "7 regiones"
-msgstr ""
+#: accounts/forms.py:77
+msgid "El peso debe estar entre 20 y 300 kg."
+msgstr "يجب أن يتراوح الوزن بين 20 و300 كجم."
 
-msgid "operación sincronizada con soporte localizado"
-msgstr ""
+#: accounts/forms.py:85
+msgid "La altura debe estar entre 100 y 250 cm."
+msgstr "- أن يتراوح الارتفاع بين 100 و250 سم."
 
-msgid "Fitness & Conexión"
-msgstr ""
+#: accounts/forms.py:94
+msgid "La imagen no puede superar 5MB."
+msgstr "لا يمكن أن تتجاوز الصورة 5 ميغابايت."
 
+#: accounts/forms.py:99
+msgid "Solo se permiten imágenes JPEG, PNG, GIF o WebP."
+msgstr "يُسمح فقط بالصور JPEG أو PNG أو GIF أو WebP."
+
+#: accounts/forms.py:114
+msgid "Tu llave pública de Solana..."
+msgstr "مفتاح Solana العام الخاص بك..."
+
+#: accounts/forms.py:130
+msgid "La llave pública debe tener entre 32 y 44 caracteres."
+msgstr "يجب أن يتراوح طول المفتاح العام بين 32 و44 حرفًا."
+
+#: accounts/forms.py:137
+msgid "La llave pública contiene caracteres inválidos."
+msgstr "يحتوي المفتاح العام على أحرف غير صالحة."
+
+#: accounts/forms.py:147 accounts/models.py:296 accounts/models.py:457
+msgid "Firma de transacción"
+msgstr "توقيع الصفقة"
+
+#: accounts/forms.py:152
+msgid "Pega aquí la firma de tu transacción..."
+msgstr "الصق توقيع المعاملة هنا..."
+
+#: accounts/forms.py:155
+msgid "La firma de la transacción de Solana (88 caracteres)."
+msgstr "توقيع معاملة سولانا (88 حرفًا)."
+
+#: accounts/forms.py:163
+msgid "La firma de transacción es requerida."
+msgstr "توقيع المعاملة مطلوب."
+
+#: accounts/forms.py:168
+msgid "La firma debe tener exactamente 88 caracteres."
+msgstr "يجب أن يتكون التوقيع من 88 حرفًا بالضبط."
+
+#: accounts/forms.py:175
+msgid "La firma contiene caracteres inválidos."
+msgstr "يحتوي التوقيع على أحرف غير صالحة."
+
+#: accounts/forms.py:185
+msgid "Perder peso"
+msgstr "فقدان الوزن"
+
+#: accounts/forms.py:186
+msgid "Ganar músculo"
+msgstr "اكتساب العضلات"
+
+#: accounts/forms.py:187
+msgid "Mejorar resistencia"
+msgstr "تحسين المقاومة"
+
+#: accounts/forms.py:188
+msgid "Mejorar flexibilidad"
+msgstr "تحسين المرونة"
+
+#: accounts/forms.py:189
+msgid "Salud general"
+msgstr "الصحة العامة"
+
+#: accounts/forms.py:190
+msgid "Reducir estrés"
+msgstr "تقليل التوتر"
+
+#: accounts/forms.py:191
+msgid "Mejorar sueño"
+msgstr "تحسين النوم"
+
+#: accounts/forms.py:195 accounts/models.py:120
+#: templates/accounts/profile.html:106
+msgid "Objetivos de fitness"
+msgstr "أهداف اللياقة البدنية"
+
+#: accounts/models.py:31 templates/accounts/profile_edit.html:112
+msgid "Masculino"
+msgstr "ذكر"
+
+#: accounts/models.py:32 templates/accounts/profile_edit.html:113
+msgid "Femenino"
+msgstr "أنثى"
+
+#: accounts/models.py:33 templates/accounts/profile_edit.html:114
+msgid "No binario"
+msgstr "غير ثنائي"
+
+#: accounts/models.py:34 templates/accounts/profile_edit.html:115
+#| msgid "Preferencias"
+msgid "Prefiero no decir"
+msgstr "أفضّل ألا أقول"
+
+#: accounts/models.py:39
+msgid "Starter - €19.99/mes"
+msgstr "المبتدئين - 19.99 يورو شهريًا"
+
+#: accounts/models.py:40
+msgid "Pro - €59.99/mes"
+msgstr "للمحترفين - 59.99 يورو شهريًا"
+
+#: accounts/models.py:41
+msgid "Elite - €199.99/mes"
+msgstr "النخبة - 199.99 يورو شهريًا"
+
+#: accounts/models.py:46 templates/accounts/subscriptions.html:15
+#| msgid "Actividad"
+msgid "Activa"
+msgstr "نشيط"
+
+#: accounts/models.py:47 templates/accounts/subscriptions.html:44
+msgid "Pendiente de pago"
+msgstr "في انتظار الدفع"
+
+#: accounts/models.py:48 accounts/models.py:57
+msgid "Expirada"
+msgstr "منتهي الصلاحية"
+
+#: accounts/models.py:49
+msgid "Cancelada"
+msgstr "تم الإلغاء"
+
+#: accounts/models.py:54
+msgid "Pendiente de verificación"
+msgstr "في انتظار التحقق"
+
+#: accounts/models.py:55 templates/accounts/profile.html:126
+#: templates/accounts/wallet.html:15
+msgid "Verificada"
+msgstr "تم التحقق منه"
+
+#: accounts/models.py:56
+msgid "Fallida"
+msgstr "فشل"
+
+#: accounts/models.py:63
+#| msgid "Un ecosistema, dos productos"
+msgid "Compra de producto"
+msgstr "شراء المنتج"
+
+#: accounts/models.py:64
+msgid "Propina/Donación"
+msgstr "نصيحة / التبرع"
+
+#: accounts/models.py:69
+msgid "Novato"
+msgstr "مبتدئ"
+
+#: accounts/models.py:70
+msgid "Aprendiz"
+msgstr "مبتدئ"
+
+#: accounts/models.py:71
+msgid "Guerrero"
+msgstr "محارب"
+
+#: accounts/models.py:72
+msgid "Maestro"
+msgstr "مدرس"
+
+#: accounts/models.py:73
+#| msgid "Tienda"
+msgid "Leyenda"
+msgstr "أسطورة"
+
+#: accounts/models.py:95 templates/accounts/profile_edit.html:59
+msgid "Peso (kg)"
+msgstr "الوزن (كجم)"
+
+#: accounts/models.py:102 templates/accounts/profile_edit.html:77
+msgid "Altura (cm)"
+msgstr "الارتفاع (سم)"
+
+#: accounts/models.py:109 templates/accounts/profile.html:90
+#: templates/accounts/profile_edit.html:95
+msgid "Fecha de nacimiento"
+msgstr "تاريخ الميلاد"
+
+#: accounts/models.py:114
+msgid "Género"
+msgstr "جنس"
+
+#: accounts/models.py:125
+msgid "Biografía"
+msgstr "سيرة"
+
+#: accounts/models.py:132 accounts/views.py:381
+#: templates/accounts/points.html:114 templates/accounts/points.html:119
+#: templates/accounts/profile_edit.html:21
+#| msgid "Croody · Perfil"
+msgid "Foto de perfil"
+msgstr "صورة الملف الشخصي"
+
+#: accounts/models.py:143 accounts/views.py:382
+#: templates/accounts/inventory.html:57 templates/accounts/points.html:126
+#: templates/accounts/profile.html:33
+msgid "Personaje activo"
+msgstr "شخصية نشطة"
+
+#: accounts/models.py:144
+msgid "Debe ser un item del inventario del usuario"
+msgstr "يجب أن يكون عنصرًا في مخزون المستخدم"
+
+#: accounts/models.py:149
+msgid "Llave pública Solana"
+msgstr "سولانا المفتاح العام"
+
+#: accounts/models.py:152
+msgid "Dirección de wallet Solana (base58)"
+msgstr "عنوان محفظة سولانا (base58)"
+
+#: accounts/models.py:155 accounts/views.py:380
+#: templates/accounts/points.html:102 templates/accounts/points.html:107
+#: templates/accounts/profile.html:48
+msgid "Wallet verificada"
+msgstr "محفظة تم التحقق منها"
+
+#: accounts/models.py:159
+msgid "Fecha de conexión de wallet"
+msgstr "تاريخ اتصال المحفظة"
+
+#: accounts/models.py:166 templates/accounts/base_accounts.html:69
+#: templates/accounts/base_accounts.html:76 templates/accounts/profile.html:60
+msgid "Puntos"
+msgstr "نقاط"
+
+#: accounts/models.py:176
+msgid "Completitud del perfil (%)"
+msgstr "اكتمال الملف الشخصي (%)"
+
+#: accounts/models.py:185
+#| msgid "Viajes de usuario"
+msgid "Perfil de usuario"
+msgstr "ملف تعريف المستخدم"
+
+#: accounts/models.py:186
+#| msgid "Viajes de usuario"
+msgid "Perfiles de usuario"
+msgstr "ملفات تعريف المستخدمين"
+
+#: accounts/models.py:289 accounts/models.py:501
+#| msgid "productos"
+msgid "Producto"
+msgstr "منتج"
+
+#: accounts/models.py:292
+msgid "Fecha de adquisición"
+msgstr "تاريخ الاقتناء"
+
+#: accounts/models.py:299
+msgid "Signature de la transacción Solana"
+msgstr "توقيع صفقة سولانا"
+
+#: accounts/models.py:302
+msgid "Descargas"
+msgstr "التنزيلات"
+
+#: accounts/models.py:306
+msgid "Es regalo"
+msgstr "إنها هدية"
+
+#: accounts/models.py:310
+msgid "Notas"
+msgstr "الدرجات"
+
+#: accounts/models.py:315
+msgid "Item de inventario"
+msgstr "عنصر المخزون"
+
+#: accounts/models.py:316
+msgid "Items de inventario"
+msgstr "عناصر المخزون"
+
+#: accounts/models.py:362
+msgid "Fecha de inicio"
+msgstr "تاريخ البدء"
+
+#: accounts/models.py:367
+msgid "Fecha de expiración"
+msgstr "تاريخ انتهاء الصلاحية"
+
+#: accounts/models.py:372
+msgid "Renovación automática"
+msgstr "التجديد التلقائي"
+
+#: accounts/models.py:376
+msgid "Firma de transacción de pago"
+msgstr "توقيع معاملة الدفع"
+
+#: accounts/models.py:387 templates/accounts/subscriptions.html:5
+#| msgid "Ver suscripciones"
+msgid "Suscripciones"
+msgstr "الاشتراكات"
+
+#: accounts/models.py:460
+msgid "Transaction signature de Solana"
+msgstr "توقيع الصفقة سولانا"
+
+#: accounts/models.py:463
+msgid "Cantidad (SOL)"
+msgstr "الكمية (سول)"
+
+#: accounts/models.py:468
+msgid "Cantidad (USD)"
+msgstr "الكمية (بالدولار الأمريكي)"
+
+#: accounts/models.py:475
+msgid "Propósito"
+msgstr "غاية"
+
+#: accounts/models.py:506
+msgid "Wallet origen"
+msgstr "محفظة الأصل"
+
+#: accounts/models.py:511
+msgid "Wallet destino"
+msgstr "محفظة الوجهة"
+
+#: accounts/models.py:514 templates/accounts/wallet.html:97
+#| msgid "Parleo · Croody"
+msgid "Wallet de Croody"
+msgstr "محفظة كرودي"
+
+#: accounts/models.py:517
+msgid "Tiempo de bloque"
+msgstr "حظر الوقت"
+
+#: accounts/models.py:522
+msgid "Datos de verificación"
+msgstr "بيانات التحقق"
+
+#: accounts/models.py:530
+msgid "Fecha de verificación"
+msgstr "تاريخ التحقق"
+
+#: accounts/models.py:536
+msgid "Transacción de wallet"
+msgstr "معاملة المحفظة"
+
+#: accounts/models.py:537
+msgid "Transacciones de wallet"
+msgstr "معاملات المحفظة"
+
+#: accounts/views.py:88
+#| msgid "Perfil actualizado."
+msgid "Perfil actualizado correctamente."
+msgstr "تم تحديث الملف الشخصي بنجاح."
+
+#: accounts/views.py:135
+#, python-format
+msgid "Descarga iniciada para \"%(name)s\""
+msgstr "بدأ التنزيل لـ \"%(name)s\""
+
+#: accounts/views.py:156
+#, python-format
+msgid "Personaje activo cambiado a \"%(name)s\""
+msgstr "تم تغيير الحرف النشط إلى \"%(name)s\""
+
+#: accounts/views.py:227
+#| msgid "Accesos rápidos"
+msgid "Acceso básico"
+msgstr "الوصول الأساسي"
+
+#: accounts/views.py:228
+msgid "5 descargas/mes"
+msgstr "5 التنزيلات / شهر"
+
+#: accounts/views.py:229
+msgid "Soporte por email"
+msgstr "دعم البريد الإلكتروني"
+
+#: accounts/views.py:237
+#| msgid "Nombre completo"
+msgid "Acceso completo"
+msgstr "الوصول الكامل"
+
+#: accounts/views.py:238
+msgid "Descargas ilimitadas"
+msgstr "تنزيلات غير محدودة"
+
+#: accounts/views.py:239 landing/views.py:483
+msgid "Soporte prioritario"
+msgstr "دعم الأولوية"
+
+#: accounts/views.py:240
+msgid "Personajes exclusivos"
+msgstr "شخصيات حصرية"
+
+#: accounts/views.py:249
+msgid "Todo lo de Pro"
+msgstr "كل شيء برو"
+
+#: accounts/views.py:250
+#| msgid "Solicitar acceso anticipado"
+msgid "Acceso anticipado"
+msgstr "الوصول المبكر"
+
+#: accounts/views.py:251
+msgid "NFTs exclusivos"
+msgstr "NFTs الحصرية"
+
+#: accounts/views.py:252
+msgid "Sesiones 1-on-1"
+msgstr "جلسات فردية"
+
+#: accounts/views.py:253
+msgid "Badge Elite"
+msgstr "شارة النخبة"
+
+#: accounts/views.py:265
+msgid "Plan de suscripción no válido."
+msgstr "خطة الاشتراك غير صالحة."
+
+#: accounts/views.py:279
+msgid "Por favor, completa el pago para activar tu suscripción."
+msgstr "يرجى إتمام عملية الدفع لتفعيل اشتراكك."
+
+#: accounts/views.py:290
+msgid "Suscripción cancelada."
+msgstr "تم إلغاء الاشتراك."
+
+#: accounts/views.py:292
+msgid "No tienes una suscripción activa."
+msgstr "ليس لديك اشتراك نشط."
+
+#: accounts/views.py:334
+msgid "Wallet conectada. Pendiente de verificación."
+msgstr "محفظة متصلة. في انتظار التحقق."
+
+#: accounts/views.py:336
+msgid "Error al conectar wallet."
+msgstr "خطأ في ربط المحفظة."
+
+#: accounts/views.py:351
+#| msgid "Alertas desactivadas"
+msgid "Wallet desconectada."
+msgstr "تم قطع اتصال المحفظة."
+
+#: accounts/views.py:379
+#| msgid "Nombre completo"
+msgid "Perfil completo"
+msgstr "الملف الشخصي الكامل"
+
+#: accounts/views.py:383
+msgid "Cada item en inventario"
+msgstr "كل عنصر في المخزون"
+
+#: accounts/views.py:384
+msgid "Suscripción Starter"
+msgstr "الاشتراك المبدئي"
+
+#: accounts/views.py:385
+msgid "Suscripción Pro"
+msgstr "الاشتراك برو"
+
+#: accounts/views.py:386
+msgid "Suscripción Elite"
+msgstr "اشتراك النخبة"
+
+#: croody/navigation.py:14
+msgid "Inicio"
+msgstr "الرئيسية"
+
+#: croody/navigation.py:15 landing/views.py:58 templates/landing/about.html:10
+msgid "Nosotros"
+msgstr "حول"
+
+#: croody/navigation.py:16 landing/views.py:95
 msgid "Buddy"
-msgstr ""
+msgstr "بادي"
 
-msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
-msgstr ""
+#: croody/navigation.py:17
+msgid "Luks"
+msgstr "لوكس"
 
+#: croody/navigation.py:18 templates/accounts/base_accounts.html:54
+#: templates/accounts/shop.html:5 templates/accounts/shop.html:6
+msgid "Tienda"
+msgstr "المتجر"
+
+#: croody/navigation.py:26
+msgid "Croody · Inicio"
+msgstr "كروودي · الرئيسية"
+
+#: croody/navigation.py:27
+msgid "Croody · Ejes"
+msgstr "كروودي · المحاور"
+
+#: croody/navigation.py:28
+msgid "Croody · Roadmap"
+msgstr "كروودي · خارطة الطريق"
+
+#: croody/navigation.py:29
+msgid "Buddy · Producto"
+msgstr "بادي · المنتج"
+
+#: croody/navigation.py:30 landing/views.py:444
+msgid "Buddy · Suscripciones"
+msgstr "بادي · الاشتراكات"
+
+#: croody/navigation.py:31
+msgid "Luks · Infraestructura"
+msgstr "لوكس · البنية التحتية"
+
+#: croody/navigation.py:32 landing/views.py:411
+#: templates/landing/home.html:262 templates/shop/catalogue.html:14
+msgid "Tienda Buddy"
+msgstr "متجر بادي"
+
+#: croody/navigation.py:33
+msgid "Buddy Checkout"
+msgstr "بادي الدفع"
+
+#: croody/navigation.py:34
+msgid "Croody · Registro"
+msgstr "كروودي · التسجيل"
+
+#: croody/navigation.py:35
+msgid "Croody · Perfil"
+msgstr "كروودي · الملف الشخصي"
+
+#: landing/forms.py:18
+msgid "Usuario o correo"
+msgstr "اسم المستخدم أو البريد"
+
+#: landing/forms.py:30
+msgid "Contraseña"
+msgstr "كلمة المرور"
+
+#: landing/forms.py:54
+msgid "Nombre completo"
+msgstr "الاسم الكامل"
+
+#: landing/forms.py:59
+msgid "Nombre y apellidos"
+msgstr "الاسم والكنية"
+
+#: landing/forms.py:65
+msgid "Correo electrónico"
+msgstr "البريد الإلكتروني"
+
+#: landing/forms.py:71
+msgid "Idioma preferido"
+msgstr "اللغة المفضلة"
+
+#: landing/forms.py:76
+msgid "Tema visual"
+msgstr "المظهر البصري"
+
+#: landing/forms.py:80
+msgid "Acepto el manifiesto Croody y términos de servicio"
+msgstr "أوافق على بيان كروودي وشروط الخدمة"
+
+#: landing/forms.py:89
+msgid "Ya existe una cuenta con este correo."
+msgstr "يوجد حساب بهذا البريد بالفعل."
+
+#: landing/forms.py:132
+msgid "Nombre"
+msgstr "الاسم"
+
+#: landing/forms.py:133
+msgid "Apellidos"
+msgstr "الكنية"
+
+#: landing/models.py:21
+msgid "Sistema"
+msgstr "النظام"
+
+#: landing/models.py:22
+msgid "Oscuro"
+msgstr "داكن"
+
+#: landing/models.py:23
+msgid "Claro"
+msgstr "فاتح"
+
+#: landing/views.py:72
+msgid "Buddy AI · Entrena, Progresa, Destaca"
+msgstr "بادي الذكاء الاصطناعي · تدرب، تقدم، تميز"
+
+#: landing/views.py:73
+msgid "Tu entrenador AI personal"
+msgstr "مدربك الشخصي بالذكاء الاصطناعي"
+
+#: landing/views.py:75
+msgid ""
+"Rutinas que se adaptan a ti. Recompensas que te motivan. La tecnología que "
+"conecta."
+msgstr "الروتينات التي تتكيف معك. المكافآت التي تحفزك. التكنولوجيا التي تربط."
+
+#: landing/views.py:77
+msgid "🛒 Ir a la Tienda"
+msgstr "🛒 اذهب إلى المتجر"
+
+#: landing/views.py:78
+msgid "Ver Buddy"
+msgstr "عرض بادي"
+
+#: landing/views.py:79
+msgid "💎 Luks"
+msgstr "💎 لوكس"
+
+#: landing/views.py:82
+msgid "Croody - Tecnología que conecta"
+msgstr "كروودي - تقنية تربط"
+
+#: landing/views.py:87
+msgid "rutinas ajustadas automáticamente cada semana"
+msgstr "تمارين مضبوطة تلقائياً كل أسبوع"
+
+#: landing/views.py:88
+msgid "personas mantienen su plan mensual con Buddy activo"
+msgstr "أشخاص يحافظون على خطتهم الشهرية مع تفعيل بادي"
+
+#: landing/views.py:89
+msgid "7 regiones"
+msgstr "7 مناطق"
+
+#: landing/views.py:89
+msgid "operación sincronizada con soporte localizado"
+msgstr "عملية متزامنة مع دعم محلي"
+
+#: landing/views.py:94
+msgid "Fitness & Conexión"
+msgstr "اللياقة والاتصال"
+
+#: landing/views.py:96
+msgid ""
+"Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, "
+"diseñada para que tanto quien ya entrena como quien apenas empieza encuentre"
+" cada día un porqué claro para construir el físico y los hábitos de salud de"
+" sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr ""
+"تطبيق بديهي ومتناسق، ذو جماليات عالية وسيولة كبيرة، مصمم بحيث يجد كل من "
+"أولئك الذين يتدربون بالفعل وأولئك الذين بدأوا للتو سببًا واضحًا كل يوم لبناء"
+" اللياقة البدنية والعادات الصحية التي يحلمون بها. تواصل مع أصدقائك وتدربوا "
+"معًا وتميزوا."
+
+#: landing/views.py:97 landing/views.py:99
 msgid "Conecta, Entrena y Destaca"
 msgstr "اتصل، تدرب وتميز"
 
+#: landing/views.py:102
 msgid "Economía Digital"
-msgstr ""
+msgstr "الاقتصاد الرقمي"
 
+#: landing/views.py:103
 msgid "My Luks"
-msgstr ""
+msgstr "لوكس الخاص بي"
 
-msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
+#: landing/views.py:104
+msgid ""
+"Creamos un mercado con el cual puedes de forma segura incursionar en el "
+"mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen "
+"de una política interna de tu país y prosperar incluso en los entornos "
+"hostiles por decisiones de gobiernos."
 msgstr ""
+"نقوم بإنشاء سوق يمكنك من خلاله المغامرة بأمان في عالم العملات المشفرة "
+"والحصول على دخل إضافي والاعتماد على العملات التي لا تعتمد على السياسة "
+"الداخلية لبلدك وتزدهر حتى في البيئات المعادية بسبب القرارات الحكومية."
 
+#: landing/views.py:105 landing/views.py:107
 msgid "Seguridad, Abundancia y Proyección"
-msgstr ""
+msgstr "الأمان والوفرة والإسقاط"
 
+#: landing/views.py:110
 msgid "Alimentación Real"
-msgstr ""
+msgstr "التغذية الحقيقية"
 
+#: landing/views.py:111
 msgid "Comida Real (Próximamente)"
-msgstr ""
+msgstr "الطعام الحقيقي (قريباً)"
 
-msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
+#: landing/views.py:112
+msgid ""
+"A través de investigación y compromiso alimenticio ofrecemos comida real y "
+"soluciones eficaces para aquellos que se quieren alimentar bien y carecen de"
+" tiempo, para todas las edades. Promovemos alimentos de origen animal y "
+"vegetal, sin productos químicos dañinos."
 msgstr ""
+"من خلال البحث والالتزام الغذائي، نقدم طعامًا حقيقيًا وحلولًا فعالة لأولئك "
+"الذين يرغبون في تناول الطعام بشكل جيد ويفتقرون إلى الوقت، لجميع الأعمار. نحن"
+" نشجع الأطعمة ذات الأصل الحيواني والنباتي، بدون مواد كيميائية ضارة."
 
+#: landing/views.py:113 landing/views.py:115
 msgid "Alivio, Nostalgia y Satisfacción"
-msgstr ""
+msgstr "الراحة والحنين والرضا"
 
+#: landing/views.py:121
+msgid "Claridad en cada decisión"
+msgstr "الوضوح في كل قرار"
+
+#: landing/views.py:122
+msgid ""
+"Interfaces limpias, métricas visibles y lenguaje directo para que cualquier "
+"equipo entienda qué sigue."
+msgstr "واجهات نظيفة ومقاييس مرئية ولغة مباشرة حتى يفهم أي فريق ما هو التالي."
+
+#: landing/views.py:125
+msgid "Motivación sostenible"
+msgstr "الدافع المستدام"
+
+#: landing/views.py:126
+msgid ""
+"Personajes, mensajes y animaciones que elevan la energía sin perder "
+"profesionalismo."
+msgstr "شخصيات ورسائل ورسوم متحركة ترفع الطاقة دون أن تفقد الاحترافية."
+
+#: landing/views.py:129
+#| msgid "Economía Digital"
+msgid "Economía justa"
+msgstr "الاقتصاد العادل"
+
+#: landing/views.py:130
+msgid ""
+"Probabilidades, tarifas y recompensas públicas. Sin sorpresas ni ventajas "
+"pay-to-win."
+msgstr ""
+"الاحتمالات العامة والأسعار والمكافآت. لا توجد مفاجآت أو مزايا الدفع مقابل "
+"الفوز."
+
+#: landing/views.py:133
+msgid "Accesibilidad real"
+msgstr "إمكانية الوصول الحقيقية"
+
+#: landing/views.py:134
+msgid ""
+"Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas"
+" culturas y edades."
+msgstr ""
+"دعم كامل للوحة المفاتيح، وتباين AA/AAA وسرد مصمم لمختلف الثقافات والأعمار."
+
+#: landing/views.py:137
+msgid "Vocación de servicio"
+msgstr "مهنة الخدمة"
+
+#: landing/views.py:138
+msgid ""
+"Nos guía una ética de servicio discreta: cuidamos a las personas primero y "
+"dejamos que el diseño lo haga evidente."
+msgstr ""
+"نحن نسترشد بأخلاقيات الخدمة السرية: نحن نعتني بالناس أولاً ونترك التصميم "
+"واضحًا."
+
+#: landing/views.py:144
+msgid "Compras sin fricción"
+msgstr "تسوق بلا احتكاك"
+
+#: landing/views.py:145
+msgid ""
+"Checkout Luks en segundos con costos claros y asignación inmediata al "
+"inventario."
+msgstr "قم بالخروج من Luks في ثوانٍ مع تكاليف واضحة وتخصيص فوري للمخزون."
+
+#: landing/views.py:148
+msgid "Inventario conectado"
+msgstr "المخزون المتصل"
+
+#: landing/views.py:149
+msgid ""
+"Abre packs, equipa rutinas o lista ítems desde web y móvil con el mismo "
+"estado."
+msgstr ""
+"افتح الحزم أو قم بتجهيز الإجراءات أو عناصر القائمة من الويب والهاتف المحمول "
+"بنفس الحالة."
+
+#: landing/views.py:152
+msgid "Eventos que mueven"
+msgstr "الأحداث التي تتحرك"
+
+#: landing/views.py:153
+msgid ""
+"Temporadas y recompensas tokenizadas con métricas claras para sostener la "
+"constancia."
+msgstr "مواسم ومكافآت رمزية بمقاييس واضحة للحفاظ على الاتساق."
+
+#: landing/views.py:159 landing/views.py:318
+msgid "Semana 1"
+msgstr "الأسبوع 1"
+
+#: landing/views.py:160
+msgid "Narrativa alineada"
+msgstr "السرد المتوازي"
+
+#: landing/views.py:162
+msgid "Landing Croody con la historia Buddy + Luks lista para stakeholders."
+msgstr "قصة Landing Croody with Buddy + Luks جاهزة لأصحاب المصلحة."
+
+#: landing/views.py:163
+msgid ""
+"Formularios conectados y analítica básica para medir interés desde el día "
+"uno."
+msgstr "النماذج المتصلة والتحليلات الأساسية لقياس الاهتمام من اليوم الأول."
+
+#: landing/views.py:167 landing/views.py:325
+msgid "Semana 3"
+msgstr "الأسبوع 3"
+
+#: landing/views.py:168
+#| msgid "Alertas desactivadas"
+msgid "Ventas activas"
+msgstr "مبيعات نشطة"
+
+#: landing/views.py:170
+msgid ""
+"Catálogo, PDP y checkout Luks operando con seguimiento de conversiones."
+msgstr "يعمل كتالوج Luks وPDP والخروج مع تتبع التحويل."
+
+#: landing/views.py:171
+msgid "Inventario y marketplace en beta controlada para refinar procesos."
+msgstr "المخزون والسوق في إصدار تجريبي خاضع للرقابة لتحسين العمليات."
+
+#: landing/views.py:175 landing/views.py:332
+msgid "Semana 6"
+msgstr "الأسبوع 6"
+
+#: landing/views.py:176
+msgid "Expansión tokenizada"
+msgstr "التوسع المميز"
+
+#: landing/views.py:178
+msgid ""
+"Eventos temáticos con recompensas en vivo y retos medidos en paneles de "
+"datos."
+msgstr ""
+"أحداث ذات طابع خاص مع مكافآت وتحديات مباشرة يتم قياسها على لوحات بيانات "
+"البيانات."
+
+#: landing/views.py:179
+msgid "Dashboard de datos listo para alianzas y marcas aliadas."
+msgstr "لوحة بيانات جاهزة للتحالفات والعلامات التجارية المتحالفة معها."
+
+#: landing/views.py:237
 msgid "Buddy · Conecta, Entrena y Destaca"
-msgstr ""
+msgstr "بادي · اتصل، تدرب وتميز"
 
+#: landing/views.py:238
 msgid "Más que entrenar: una conexión contigo y con los tuyos"
-msgstr ""
+msgstr "أكثر من تدريب: اتصال بك وبأحبابك"
 
-msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
+#: landing/views.py:240
+msgid ""
+"Buddy es una aplicación intuitiva, simétrica, de alta estética y gran "
+"fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien "
+"apenas empieza a considerar la idea encuentre, cada día, un porqué claro "
+"para enfocarse y construir el físico y los hábitos de salud de sus sueños. "
+"Además de verse y sentirse bien, Buddy cuida que la experiencia sea "
+"coherente, agradable y profundamente motivadora desde el primer contacto, "
+"con una ética inspirada en nuestras convicciones de servicio que priorizan "
+"el cuidado de las personas."
 msgstr ""
+"Buddy هو تطبيق بديهي ومتناسق وجمالي للغاية وسلس، وهو مصمم بحيث يجد كل من "
+"أولئك الذين يتدربون بالفعل في صالة الألعاب الرياضية وأولئك الذين بدأوا للتو "
+"في التفكير في الفكرة، كل يوم، سببًا واضحًا للتركيز وبناء اللياقة البدنية "
+"والعادات الصحية التي تحلم بها أحلامهم. بالإضافة إلى المظهر والشعور الجيد، "
+"يضمن Buddy أن تكون التجربة متماسكة وممتعة ومحفزة للغاية منذ الاتصال الأول، "
+"مع أخلاقيات مستوحاة من قناعاتنا الخدمية التي تعطي الأولوية لرعاية الناس."
 
+#: landing/views.py:242
+msgid "Ir a la tienda Buddy"
+msgstr "اذهب إلى متجر بادي"
+
+#: landing/views.py:243
 msgid "Ver roadmap"
-msgstr ""
+msgstr "عرض خارطة الطريق"
 
+#: landing/views.py:246
 msgid "365 días"
-msgstr ""
+msgstr "365 يوماً"
 
+#: landing/views.py:246
 msgid "de rutinas nuevas sin reciclar combinaciones"
-msgstr ""
+msgstr "من التمارين الجديدة بدون إعادة تدوير التركيبات"
 
+#: landing/views.py:247
+#, python-format
+#| msgid "±5% fatiga"
 msgid "±5% fatiga"
-msgstr ""
+msgstr "±5% تعب"
 
+#: landing/views.py:247
 msgid "ajuste automático según tu energía real"
-msgstr ""
+msgstr "ضبط تلقائي وفقاً لطاقتك الحقيقية"
 
+#: landing/views.py:248
 msgid "5 estilos"
-msgstr ""
+msgstr "5 أنماط"
 
+#: landing/views.py:248
 msgid "personajes con tonos y objetivos definidos"
-msgstr ""
+msgstr "شخصيات بألوان وأهداف محددة"
 
+#: landing/views.py:252
 msgid "Entrenador con IA y rutinas a tu medida"
-msgstr ""
+msgstr "مدرب بالذكاء الاصطناعي وتمارين مخصصة لك"
 
-msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
+#: landing/views.py:253
+msgid ""
+"Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador "
+"personalizado con IA. Cada semana recibes un plan de entrenamiento pensado "
+"exclusivamente para ti, basado en tus entrenamientos previos, datos e "
+"historial. La IA automatiza este proceso a través de conversaciones "
+"naturales, manteniendo siempre el control total de tu entrenamiento."
 msgstr ""
+"يوفر Buddy الفرصة لتصميم الإجراءات الروتينية باستخدام مدرب الذكاء الاصطناعي "
+"المخصص. تتلقى كل أسبوع خطة تدريب مصممة خصيصًا لك، بناءً على تدريبك السابق "
+"وبياناتك وتاريخك. يقوم الذكاء الاصطناعي بأتمتة هذه العملية من خلال المحادثات"
+" الطبيعية، مع الحفاظ دائمًا على التحكم الكامل في تدريبك."
 
+#: landing/views.py:256
 msgid "Biblioteca de ejercicios segura y consistente"
-msgstr ""
+msgstr "مكتبة تمارين آمنة ومتسقة"
 
-msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
+#: landing/views.py:257
+msgid ""
+"Cada movimiento incluye video-claves cortos con la técnica correcta, pautas "
+"de respiración, puntos de seguridad y errores comunes a evitar. Con "
+"progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una "
+"alternativa acorde a tu nivel y equipo disponible."
 msgstr ""
+"تتضمن كل حركة مفاتيح فيديو قصيرة مع التقنية الصحيحة وإرشادات التنفس ونقاط "
+"الأمان والأخطاء الشائعة التي يجب تجنبها. مع التقدمات المقترحة "
+"(سهلة/متوسطة/متقدمة)، سيكون لديك دائمًا بديل وفقًا لمستواك والمعدات المتاحة."
 
+#: landing/views.py:260
 msgid "Ecosistema de personajes con carisma"
+msgstr "نظام بيئي للشخصيات الكاريزمية"
+
+#: landing/views.py:261
+msgid ""
+"Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad "
+"única. Puedes elegir rutinas predeterminadas según el estilo de cada "
+"personaje o configurar que uno solo te entregue todas las rutinas. Cada "
+"personaje ofrece gestos, animaciones y apoyo constante para una experiencia "
+"cercana y estimulante."
+msgstr ""
+"يتمتع Buddy بنظام بيئي من الشخصيات، ولكل منها شخصيتها الفريدة. يمكنك اختيار "
+"إجراءات محددة مسبقًا وفقًا لنمط كل شخصية أو تكوين شخصية واحدة لتمنحك جميع "
+"الإجراءات. تقدم كل شخصية الإيماءات والرسوم المتحركة والدعم المستمر لتجربة "
+"قريبة ومحفزة."
+
+#: landing/views.py:266
+msgid "App móvil"
+msgstr "تطبيق الجوال"
+
+#: landing/views.py:268
+msgid "Diálogo natural para crear rutinas y ajustar bloques en segundos."
+msgstr "حوار طبيعي لإنشاء إجراءات روتينية وضبط الكتل في ثوانٍ."
+
+#: landing/views.py:269
+msgid ""
+"Conteo automático de series, descansos inteligentes y feedback háptico."
+msgstr "العد التلقائي للمجموعات والفواصل الذكية والتعليقات اللمسية."
+
+#: landing/views.py:270
+msgid "Modo compañero para entrenar con tus contactos o personaje favorito."
+msgstr "وضع المصاحب للتدريب مع جهات الاتصال الخاصة بك أو شخصيتك المفضلة."
+
+#: landing/views.py:274
+#| msgid "Buddy"
+msgid "Buddy Web"
+msgstr "الأصدقاء ويب"
+
+#: landing/views.py:276
+msgid "Inventario vivo para abrir packs, equipar sets y listar ítems."
+msgstr "المخزون المباشر لفتح الحزم وتجهيز المجموعات وعناصر القائمة."
+
+#: landing/views.py:277
+msgid "Reproductor de sesiones, biblioteca extendida y guardado de favoritos."
+msgstr "مشغل الجلسة والمكتبة الموسعة وحفظ المفضلة."
+
+#: landing/views.py:278
+msgid "Telemetría lista para equipos, coaches o marcas aliadas."
+msgstr "القياس عن بعد جاهز للفرق أو المدربين أو العلامات التجارية الحليفة."
+
+#: landing/views.py:282
+#| msgid "Conocer Buddy"
+msgid "Economía Buddy"
+msgstr "الاقتصاد الصديق"
+
+#: landing/views.py:284
+msgid "Sets temáticos, accesorios y cofres con probabilidades públicas."
+msgstr "مجموعات وإكسسوارات وصناديق تحت عنوان ذات احتمالات عامة."
+
+#: landing/views.py:285
+msgid "Luks como moneda única con recompensas por constancia y eventos."
+msgstr "Luks كعملة واحدة مع مكافآت للاتساق والأحداث."
+
+#: landing/views.py:286
+msgid "Marketplace integrado para vender o intercambiar sin salir de Buddy."
+msgstr "سوق متكامل للبيع أو التجارة دون مغادرة الأصدقاء."
+
+#: landing/views.py:292
+msgid "Antes de entrenar"
+msgstr "قبل التدريب"
+
+#: landing/views.py:294
+msgid "Escaneo rápido de energía y movilidad."
+msgstr "مسح سريع للطاقة والتنقل."
+
+#: landing/views.py:295
+msgid "Recomendaciones de personajes, sets y accesorios según tu meta."
+msgstr "توصيات للشخصيات والمجموعات والملحقات وفقًا لهدفك."
+
+#: landing/views.py:296
+msgid ""
+"Recordatorios contextuales desde la app y sincronía con tus calendarios "
+"habituales."
+msgstr "تذكيرات سياقية من التطبيق والمزامنة مع التقويمات المعتادة."
+
+#: landing/views.py:300
+#| msgid "Inicia sesión"
+msgid "Durante la sesión"
+msgstr "خلال الجلسة"
+
+#: landing/views.py:302
+msgid "Conteo automático de repeticiones y control de tempo."
+msgstr "العد التكرار التلقائي والتحكم في الإيقاع."
+
+#: landing/views.py:303
+msgid "Feedback visual y de voz sobre técnica, respiración y seguridad."
+msgstr "ردود فعل مرئية وصوتية حول التقنية والتنفس والسلامة."
+
+#: landing/views.py:304
+msgid "Notas rápidas, clips y variaciones disponibles en un toque."
+msgstr "ملاحظات سريعة ومقاطع وأشكال مختلفة متاحة بلمسة واحدة."
+
+#: landing/views.py:308
+#| msgid "Después de comprar"
+msgid "Después del entrenamiento"
+msgstr "بعد التدريب"
+
+#: landing/views.py:310
+msgid "Resumen claro con métricas, descanso sugerido y próximos pasos."
+msgstr "ملخص واضح مع المقاييس والراحة المقترحة والخطوات التالية."
+
+#: landing/views.py:311
+msgid "Recompensas Luks y retos desbloqueados según tu constancia."
+msgstr "يتم فتح مكافآت وتحديات Luks بناءً على مثابرتك."
+
+#: landing/views.py:312
+msgid "Historial listo para compartir con tu entrenador o comunidad."
+msgstr "التاريخ جاهز للمشاركة مع مدربك أو مجتمعك."
+
+#: landing/views.py:320
+msgid "Piloto interno con rutinas adaptativas y biblioteca completa."
+msgstr "طيار داخلي مزود بإجراءات تكيفية ومكتبة كاملة."
+
+#: landing/views.py:321
+msgid "Configuración de personajes base y mensajes personalizados."
+msgstr "تكوين الحرف الأساسي والرسائل المخصصة."
+
+#: landing/views.py:327
+msgid "Inventario web conectado para abrir packs y equipar sets."
+msgstr "مخزون الويب المتصل لفتح الحزم وتجهيز المجموعات."
+
+#: landing/views.py:328
+msgid "Alertas inteligentes en móvil y correo para mantener la constancia."
+msgstr ""
+"تنبيهات ذكية على الهاتف المحمول والبريد الإلكتروني للحفاظ على الاتساق."
+
+#: landing/views.py:334
+msgid "Marketplace activo con recompensas y eventos temáticos."
+msgstr "سوق نشط مع مكافآت وأحداث ذات طابع خاص."
+
+#: landing/views.py:335
+msgid "Dashboard de telemetría para coaches, squads y marcas."
+msgstr "لوحة القياس عن بعد للمدربين والفرق والعلامات التجارية."
+
+#: landing/views.py:373
+#| msgid "Luks · Croody"
+msgid "Luks · Economía Buddy"
+msgstr "لوكس الاقتصاد الأصدقاء"
+
+#: landing/views.py:374
+msgid "Token que recompensa la constancia y da confianza a cada transacción."
+msgstr "الرمز المميز الذي يكافئ الاتساق ويمنح الثقة لكل معاملة."
+
+#: landing/views.py:375
+msgid ""
+"Pagos, royalties y telemetría on-chain con una experiencia diseñada para "
+"usuarios reales y equipos regulados. La infraestructura nace de principios "
+"de transparencia y servicio comunicados con un tono ejecutivo."
+msgstr ""
+"المدفوعات عبر السلسلة والإتاوات والقياس عن بعد مع تجربة مصممة للمستخدمين "
+"الحقيقيين والفرق المنظمة. ولدت البنية التحتية من مبادئ الشفافية والخدمة التي"
+" يتم توصيلها بنبرة تنفيذية."
+
+#: landing/views.py:376
+#| msgid "Tienda Buddy"
+msgid "Ver tienda Buddy"
+msgstr "عرض متجر الأصدقاء"
+
+#: landing/views.py:377
+#| msgid "Contacta al equipo"
+msgid "Contactar equipo Luks"
+msgstr "اتصل بفريق لوكس"
+
+#: landing/views.py:380
+msgid "≤2s"
+msgstr "≥2 ثانية"
+
+#: landing/views.py:380
+msgid "finalidad promedio de las transacciones"
+msgstr "متوسط ​​الغرض من المعاملات"
+
+#: landing/views.py:381
+msgid "disponibilidad de la bóveda custodial"
+msgstr "توافر قبو الحراسة"
+
+#: landing/views.py:382
+msgid "catálogo con probabilidades visibles"
+msgstr "كتالوج مع الاحتمالات المرئية"
+
+#: landing/views.py:386
+#| msgid "🔒 Transparencia"
+msgid "Transparencia total"
+msgstr "الشفافية الكاملة"
+
+#: landing/views.py:388
+msgid "Probabilidades, tarifas y royalties visibles antes de confirmar."
+msgstr "الاحتمالات والأسعار والإتاوات مرئية قبل التأكيد."
+
+#: landing/views.py:389
+msgid "Recibos con hash verificable y seguimiento en tu panel."
+msgstr "إيصالات مع تجزئة وتتبع يمكن التحقق منهما في لوحة المعلومات الخاصة بك."
+
+#: landing/views.py:390
+msgid "Historial público de drops especiales y ajustes de rareza."
+msgstr "التاريخ العام للقطرات الخاصة والتعديلات النادرة."
+
+#: landing/views.py:394
+msgid "Seguridad por defecto"
+msgstr "الأمان الافتراضي"
+
+#: landing/views.py:396
+msgid "Custodia con 2FA, límites dinámicos y alertas en tiempo real."
+msgstr ""
+"الحضانة باستخدام المصادقة الثنائية والحدود الديناميكية والتنبيهات في الوقت "
+"الفعلي."
+
+#: landing/views.py:397
+msgid "Escrow inteligente y cooldowns para frenar especulación."
+msgstr "الضمان الذكي وفترات التهدئة لوقف المضاربة."
+
+#: landing/views.py:398
+msgid "Monitoreo anti-bot y protección ante picos de red."
+msgstr "مراقبة مكافحة الروبوتات والحماية من طفرات الشبكة."
+
+#: landing/views.py:402
+msgid "Medición constante"
+msgstr "قياس مستمر"
+
+#: landing/views.py:404
+msgid "Dashboards con conversión, listados y salud de la red."
+msgstr "لوحات المعلومات مع التحويل والقوائم وصحة الشبكة."
+
+#: landing/views.py:405
+msgid "Eventos trazables para campañas y recompensas por consistencia."
+msgstr "أحداث يمكن تتبعها للحملات والمكافآت من أجل الاتساق."
+
+#: landing/views.py:406
+msgid "Exportación de datos para socios, auditorías y reguladores."
+msgstr "تصدير البيانات للشركاء وعمليات التدقيق والمنظمين."
+
+#: landing/views.py:411
+msgid "Checkout en segundos"
+msgstr "الخروج في ثوان"
+
+#: landing/views.py:411
+msgid "Packs con pity visible"
+msgstr "حزم مع الشفقة واضحة"
+
+#: landing/views.py:411
+msgid "Asignación inmediata al inventario."
+msgstr "التنازل الفوري للمخزون."
+
+#: landing/views.py:412
+msgid "Inventario web"
+msgstr "مخزون الويب"
+
+#: landing/views.py:412
+#| msgid "Resultados sugeridos"
+msgid "Estados sincronizados"
+msgstr "الدول المتزامنة"
+
+#: landing/views.py:412
+msgid "Listado instantáneo"
+msgstr "قائمة فورية"
+
+#: landing/views.py:412
+msgid "Eventos y bonos por temporada."
+msgstr "الأحداث والمكافآت الموسمية."
+
+#: landing/views.py:413
+msgid "Marketplace P2P"
+msgstr "سوق P2P"
+
+#: landing/views.py:413
+msgid "Royalties configurables"
+msgstr "الإتاوات شكلي"
+
+#: landing/views.py:413
+msgid "Escrow automático"
+msgstr "الضمان التلقائي"
+
+#: landing/views.py:413
+msgid "Historial de precios y volumen."
+msgstr "تاريخ السعر والحجم."
+
+#: landing/views.py:416
+msgid "KYC/AML opcional para límites de retiro elevados."
+msgstr "KYC/AML اختياري لحدود السحب العالية."
+
+#: landing/views.py:417
+msgid "Políticas anti loot-box con fiat: todo pasa primero por Luks."
+msgstr ""
+"سياسات مكافحة صناديق الغنائم بالعملات الورقية: كل شيء يمر عبر Luks أولاً."
+
+#: landing/views.py:418
+msgid "Age gate configurable y reportes regionales listos para reguladores."
+msgstr "بوابة عمرية قابلة للتكوين وتقارير إقليمية جاهزة للجهات التنظيمية."
+
+#: landing/views.py:421
+msgid ""
+"SDK ligero para apps y gimnasios que quieran ofrecer recompensas Buddy."
+msgstr ""
+"حزمة SDK خفيفة الوزن للتطبيقات والصالات الرياضية التي ترغب في تقديم مكافآت "
+"الأصدقاء."
+
+#: landing/views.py:422
+msgid "Webhooks firmados para sincronizar inventario con partners externos."
+msgstr "خطافات الويب الموقعة لمزامنة المخزون مع الشركاء الخارجيين."
+
+#: landing/views.py:423
+msgid "Panel operativo con métricas de conversión, uso y salud de red."
+msgstr "لوحة تحكم تشغيلية تحتوي على مقاييس التحويل والاستخدام وصحة الشبكة."
+
+#: landing/views.py:445
+msgid "Elige un plan para empezar hoy"
+msgstr "اختر خطة للبدء اليوم"
+
+#: landing/views.py:447
+msgid ""
+"Planes simples que activan rutinas con IA, biblioteca de ejercicios y "
+"progreso vivo. Cámbialos o cancélalos cuando quieras."
+msgstr ""
+"خطط بسيطة تعمل على تنشيط إجراءات الذكاء الاصطناعي ومكتبة التمارين والتقدم "
+"المباشر. قم بتغييرها أو إلغائها وقتما تشاء."
+
+#: landing/views.py:454
+msgid "Starter"
+msgstr "بداية"
+
+#: landing/views.py:456 landing/views.py:467 landing/views.py:479
+#: templates/accounts/subscriptions.html:70
+msgid "mes"
+msgstr "شهر"
+
+#: landing/views.py:458
+msgid "Rutinas con IA (básico)"
+msgstr "إجراءات مع الذكاء الاصطناعي (أساسي)"
+
+#: landing/views.py:459
+#| msgid "Biblioteca de ejercicios segura y consistente"
+msgid "Biblioteca de ejercicios con video‑claves"
+msgstr "مكتبة التمارين مع مفاتيح الفيديو"
+
+#: landing/views.py:460
+msgid "Progreso semanal y temporizador de descansos"
+msgstr "التقدم الأسبوعي وتوقيت الاستراحة"
+
+#: landing/views.py:462
+msgid "Comenzar"
+msgstr "يبدأ"
+
+#: landing/views.py:465
+msgid "Focus"
+msgstr "ركز"
+
+#: landing/views.py:469
+msgid "Rutinas con IA (avanzado)"
+msgstr "الإجراءات الروتينية مع الذكاء الاصطناعي (متقدم)"
+
+#: landing/views.py:470
+msgid "Ajustes por personaje y objetivos"
+msgstr "تعديلات الشخصية والهدف"
+
+#: landing/views.py:471
+msgid "Recordatorios inteligentes y tendencias mensuales"
+msgstr "تذكيرات ذكية واتجاهات شهرية"
+
+#: landing/views.py:473
+msgid "Activar Focus"
+msgstr "تفعيل التركيز"
+
+#: landing/views.py:474
+msgid "Recomendado"
+msgstr "مُستَحسَن"
+
+#: landing/views.py:477
+msgid "Crew"
+msgstr "طاقم"
+
+#: landing/views.py:481
+msgid "Todo Focus + 3 perfiles"
+msgstr "جميع ملفات التركيز + 3"
+
+#: landing/views.py:482
+msgid "Retos y tableros para equipo/familia"
+msgstr "التحديات والمجالس للفريق / الأسرة"
+
+#: landing/views.py:485
+#| msgid "Probar predicción"
+msgid "Probar Crew"
+msgstr "حاول الطاقم"
+
+#: landing/views.py:491
+#| msgid "✓ Cancela cuando quieras"
+msgid "¿Puedo cancelar cuando quiera?"
+msgstr "هل يمكنني الإلغاء وقتما أريد؟"
+
+#: landing/views.py:492
+msgid "Sí, gestionas tu plan desde tu cuenta. Sin permanencias."
+msgstr "نعم، يمكنك إدارة خطتك من حسابك. لا دوام."
+
+#: landing/views.py:495
+msgid "¿Qué incluye la prueba?"
+msgstr "ماذا يشمل الاختبار؟"
+
+#: landing/views.py:496
+msgid "7 días con funciones Focus para que sientas el flujo completo."
+msgstr "7 أيام مع وظائف التركيز حتى تشعر بالتدفق الكامل."
+
+#: landing/views.py:536
+msgid "Bienvenido a Croody. Ajusta tu perfil cuando quieras."
+msgstr "مرحباً بك في كروودي. عدّل ملفك الشخصي عندما تريد."
+
+#: landing/views.py:542
+msgid "Crear cuenta Croody"
+msgstr "البحث في Croody"
+
+#: landing/views.py:574
+msgid "Perfil actualizado."
+msgstr "تم تحديث الملف الشخصي."
+
+#: landing/views.py:576
+msgid "Revisa los campos del perfil."
+msgstr "راجع حقول الملف الشخصي."
+
+#: landing/views.py:581
+msgid "Preferencias guardadas."
+msgstr "تم حفظ التفضيلات."
+
+#: landing/views.py:583
+msgid "No pudimos guardar las preferencias."
+msgstr "لم نتمكن من حفظ التفضيلات."
+
+#: landing/views.py:586
+msgid "Generamos un nuevo token para tus robots."
+msgstr "نقوم بإنشاء رمز جديد لروبوتاتك."
+
+#: landing/views.py:588
+msgid "Acción no reconocida."
+msgstr "إجراء غير معترف به."
+
+#: landing/views.py:594
+msgid "Token de ingestión listo"
+msgstr "رمز الإدخال جاهز"
+
+#: landing/views.py:596
+msgid "activo"
+msgstr "نشط"
+
+#: landing/views.py:599
+msgid "Alertas de telemetría"
+msgstr "تنبيهات قياس عن بعد"
+
+#: landing/views.py:600
+msgid "Recibir notificaciones críticas"
+msgstr "استقبال إشعارات حرجة"
+
+#: landing/views.py:600
+msgid "Alertas desactivadas"
+msgstr "تم إلغاء التنبيهات"
+
+#: landing/views.py:618
+msgid "Monitoreo en tiempo real"
+msgstr "مراقبة في الوقت الفعلي"
+
+#: landing/views.py:619
+msgid ""
+"Visualiza la posición del robot, variables atmosféricas y estados críticos "
+"en un tablero neofuturista listo para operación global."
+msgstr ""
+"تصور موقع الروبوت والمتغيرات الجوية والحالات الحرجة على لوحة معلومات "
+"مستقبلية جديدة جاهزة للتشغيل العالمي."
+
+#: landing/views.py:622 templates/account/profile.html:98
+msgid "Robots activos"
+msgstr "روبوتات نشطة"
+
+#: landing/views.py:623 templates/account/profile.html:102
+msgid "Última actualización"
+msgstr "آخر تحديث"
+
+#: landing/views.py:624 templates/account/profile.html:106
+msgid "Alertas"
+msgstr "تنبيهات"
+
+#: landing/views.py:630
+msgid "TCP ASCII · LOGIN/GET_DATA/MOVE"
+msgstr "TCP ASCII · تسجيل الدخول/GET_DATA/MOVE"
+
+#: landing/views.py:631
+msgid "Emite cada 15 s y el bridge envía a Telemetry Gateway automáticamente."
+msgstr "يبث كل 15 ثانية ويرسل الجسر إلى بوابة القياس عن بعد تلقائيًا."
+
+#: templates/account/login.html:5 templates/account/register.html:40
+msgid "Inicia sesión"
+msgstr "تسجيل الدخول"
+
+#: templates/account/login.html:12
+msgid "Acceso Croody"
+msgstr "الوصول إلى كروودي"
+
+#: templates/account/login.html:13
+msgid "Conecta tu cuenta para continuar."
+msgstr "اربط حسابك للمتابعة."
+
+#: templates/account/login.html:15
+msgid ""
+"Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener"
+" tu tema oscuro o claro sincronizado."
+msgstr ""
+"قم بتسجيل الدخول للتسوق في Buddy Store، وإدارة العناصر الخاصة بك، ومزامنة "
+"المظهر الداكن أو الفاتح."
+
+#: templates/account/login.html:18
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr "هل نسيت طريقة الوصول؟ اكتب لنا إلى"
+
+#: templates/account/login.html:19
+msgid ""
+"¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo "
+"Croody."
+msgstr "ليس لديك أوراق اعتماد حتى الآن؟ اطلب تفعيل حسابك لدى فريق كرودي."
+
+#: templates/account/login.html:48
+msgid "Ingresar"
+msgstr "تسجيل الدخول"
+
+#: templates/account/login.html:49
+msgid "¿Aún no tienes cuenta?"
+msgstr "ليس لديك حساب بعد؟"
+
+#: templates/account/login.html:49
+msgid "Crea una"
+msgstr "أنشئ واحداً"
+
+#: templates/account/profile.html:5 templates/account/profile.html:12
+#: templates/base.html:219 templates/base.html:259
+msgid "Perfil"
+msgstr "الملف الشخصي"
+
+#: templates/account/profile.html:13
+msgid "Cuida tu identidad Croody y tus robots"
+msgstr "اعتن بهويتك كروودي وروبوتاتك"
+
+#: templates/account/profile.html:14
+msgid ""
+"Actualiza datos personales, gestiona tokens de ingestión y revisa la "
+"telemetría más reciente sin salir del dashboard."
+msgstr ""
+"قم بتحديث البيانات الشخصية وإدارة الرموز المميزة للابتلاع ومراجعة أحدث "
+"القياسات عن بعد دون مغادرة لوحة المعلومات."
+
+#: templates/account/profile.html:17
+msgid "Token activo"
+msgstr "رمز نشط"
+
+#: templates/account/profile.html:21
+msgid "Modo de alertas"
+msgstr "وضع التنبيهات"
+
+#: templates/account/profile.html:22 templates/accounts/inventory.html:48
+msgid "Activo"
+msgstr "أصل"
+
+#: templates/account/profile.html:22
+msgid "Inactivo"
+msgstr "عاطل"
+
+#: templates/account/profile.html:25
+msgid "Idioma"
+msgstr "اللغة"
+
+#: templates/account/profile.html:32
+msgid "Datos personales"
+msgstr "البيانات الشخصية"
+
+#: templates/account/profile.html:45
+msgid "Guardar"
+msgstr "حفظ"
+
+#: templates/account/profile.html:50
+msgid "Preferencias"
+msgstr "التفضيلات"
+
+#: templates/account/profile.html:63
+msgid "Actualizar preferencias"
+msgstr "تحديث التفضيلات"
+
+#: templates/account/profile.html:68
+msgid "Token de ingestión"
+msgstr "رمز الابتلاع"
+
+#: templates/account/profile.html:74
+msgid "Regenerar"
+msgstr "إعادة توليد"
+
+#: templates/account/profile.html:76
+msgid "Úsalo como cabecera X-API-Key al enviar telemetría."
+msgstr "استخدمه كرأس X-API-Key عند إرسال القياس عن بعد."
+
+#: templates/account/profile.html:80
+msgid "Actividad"
+msgstr "الخصوصية"
+
+#: templates/account/profile.html:95
+msgid "Telemetría en vivo"
+msgstr "القياس عن بعد المباشر"
+
+#: templates/account/register.html:5 templates/account/register.html:39
+msgid "Crear cuenta"
+msgstr "إنشاء حساب"
+
+#: templates/account/register.html:12
+msgid "Registro Croody"
+msgstr "تسجيل كروودي"
+
+#: templates/account/register.html:13
+msgid "Activa tu acceso al universo Croody."
+msgstr "قم بتنشيط وصولك إلى عالم Croody."
+
+#: templates/account/register.html:14
+msgid ""
+"Configura idioma, tema y recibe un token personal para conectar tus robots "
+"al protocolo."
+msgstr ""
+"قم بتكوين اللغة والموضوع واحصل على رمز شخصي لتوصيل الروبوتات الخاصة بك "
+"بالبروتوكول."
+
+#: templates/account/register.html:16
+msgid "Token de ingestión personal para Telemetry Gateway"
+msgstr "رمز الابتلاع الشخصي لبوابة القياس عن بعد"
+
+#: templates/account/register.html:17
+msgid "Dashboard de perfil y alertas en tiempo real"
+msgstr "لوحة معلومات الملف الشخصي والتنبيهات في الوقت الحقيقي"
+
+#: templates/account/register.html:18
+msgid "Compatibilidad con Buddy Store y Luks"
+msgstr "التوافق مع متجر الأصدقاء وLuks"
+
+#: templates/account/register.html:40
+msgid "¿Ya tienes cuenta?"
+msgstr "لديك حساب بالفعل؟"
+
+#: templates/accounts/base_accounts.html:5
+#: templates/accounts/base_accounts.html:99
+msgid "Mi Cuenta"
+msgstr "حسابي"
+
+#: templates/accounts/base_accounts.html:35
+msgid "Navegaci\\u00f3n de cuenta"
+msgstr "التنقل في الحساب"
+
+#: templates/accounts/base_accounts.html:39
+#: templates/accounts/dashboard.html:5 templates/accounts/dashboard.html:6
+#| msgid "para dashboards"
+msgid "Dashboard"
+msgstr "لوحة القيادة"
+
+#: templates/accounts/base_accounts.html:44 templates/accounts/profile.html:5
+#: templates/accounts/profile.html:6
+#| msgid "Perfil"
+msgid "Mi Perfil"
+msgstr "ملفي الشخصي"
+
+#: templates/accounts/base_accounts.html:49
+msgid "Inventario"
+msgstr "جرد"
+
+#: templates/accounts/base_accounts.html:59
+#: templates/accounts/dashboard.html:75
+msgid "Suscripci\\u00f3n"
+msgstr "الاشتراك"
+
+#: templates/accounts/base_accounts.html:80 templates/accounts/profile.html:68
+msgid "Items"
+msgstr "أغراض"
+
+#: templates/accounts/base_accounts.html:92
+#| msgid "Cerrar sesión"
+msgid "Cerrar"
+msgstr "يغلق"
+
+#: templates/accounts/dashboard.html:13
+#, python-format
+msgid "Hola, %(name)s"
+msgstr "مرحبًا %(الاسم)s"
+
+#: templates/accounts/dashboard.html:14
+msgid "Bienvenido a tu espacio personal en Croody."
+msgstr "مرحبًا بك في مساحتك الشخصية على Croody."
+
+#: templates/accounts/dashboard.html:20 templates/accounts/points.html:30
+#: templates/accounts/points.html:64
+msgid "puntos"
+msgstr "نقاط"
+
+#: templates/accounts/dashboard.html:34
+#| msgid "Perfil actualizado."
+msgid "Perfil completado"
+msgstr "الملف الشخصي المكتمل"
+
+#: templates/accounts/dashboard.html:47 templates/accounts/points.html:134
+msgid "Items en inventario"
+msgstr "العناصر الموجودة في المخزون"
+
+#: templates/accounts/dashboard.html:49 templates/accounts/dashboard.html:87
+#| msgid "Ver Catálogo"
+msgid "Ver todo"
+msgstr "شاهد الكل"
+
+#: templates/accounts/dashboard.html:56
+msgid "Conectada"
+msgstr "متصل"
+
+#: templates/accounts/dashboard.html:58 templates/accounts/wallet.html:17
+msgid "Pendiente"
+msgstr "حلق"
+
+#: templates/accounts/dashboard.html:60 templates/accounts/wallet.html:19
+#| msgid "✓ Sin contratos"
+msgid "Sin conectar"
+msgstr "غير متصل"
+
+#: templates/accounts/dashboard.html:64
+msgid "Configurar"
+msgstr "يثبت"
+
+#: templates/accounts/dashboard.html:72
+msgid "d\\u00edas restantes"
+msgstr "الأيام المتبقية"
+
+#: templates/accounts/dashboard.html:74
+msgid "Sin plan"
+msgstr "لا توجد خطة"
+
+#: templates/accounts/dashboard.html:78
+#| msgid "Ver detalles"
+msgid "Ver planes"
+msgstr "انظر الخطط"
+
+#: templates/accounts/dashboard.html:86
+#| msgid "Preguntas frecuentes"
+msgid "Items recientes"
+msgstr "العناصر الأخيرة"
+
+#: templates/accounts/dashboard.html:97
+msgid "Ver"
+msgstr "يرى"
+
+#: templates/accounts/dashboard.html:107
+msgid "Acciones r\\u00e1pidas"
+msgstr "إجراءات سريعة"
+
+#: templates/accounts/dashboard.html:111 templates/accounts/profile.html:10
+msgid "Editar perfil"
+msgstr "تحرير الملف الشخصي"
+
+#: templates/accounts/dashboard.html:115 templates/accounts/inventory.html:10
+#: templates/landing/buddy.html:158
+msgid "Ir a la tienda"
+msgstr "اذهب إلى المتجر"
+
+#: templates/accounts/dashboard.html:119 templates/accounts/wallet.html:74
+#| msgid "Conectar mi robot"
+msgid "Conectar wallet"
+msgstr "ربط المحفظة"
+
+#: templates/accounts/dashboard.html:123
+#| msgid "Ver Luks"
+msgid "Ver puntos"
+msgstr "انظر النقاط"
+
+#: templates/accounts/inventory.html:5 templates/accounts/inventory.html:6
+msgid "Mi Inventario"
+msgstr "مخزوني"
+
+#: templates/accounts/inventory.html:24
+#| msgid "Legal"
+msgid "Regalo"
+msgstr "هدية"
+
+#: templates/accounts/inventory.html:32
+msgid "Adquirido"
+msgstr "مكتسب"
+
+#: templates/accounts/inventory.html:36
+msgid "descargas"
+msgstr "التنزيلات"
+
+#: templates/accounts/inventory.html:43
+#| msgid "✓ Descarga gratuita"
+msgid "Descargar"
+msgstr "تسريح"
+
+#: templates/accounts/inventory.html:50
+#| msgid "Robots activos"
+msgid "Usar como activo"
+msgstr "استخدم كأصل"
+
+#: templates/accounts/inventory.html:66 templates/accounts/shop.html:42
+msgid "Paginaci\\u00f3n"
+msgstr "ترقيم الصفحات"
+
+#: templates/accounts/inventory.html:68 templates/accounts/shop.html:44
+#, python-format
+msgid ""
+"\n"
+"      P\\u00e1gina %(current)s de %(total)s\n"
+"      "
+msgstr ""
+"\n"
+"الصفحة %(الحالية)s من %(الإجمالي)s\n"
+"      "
+
+#: templates/accounts/inventory.html:75 templates/accounts/shop.html:51
+msgid "Anterior"
+msgstr "سابق"
+
+#: templates/accounts/inventory.html:80 templates/accounts/shop.html:56
+#| msgid "Siguientes pasos"
+msgid "Siguiente"
+msgstr "التالي"
+
+#: templates/accounts/inventory.html:91
+msgid "Tu inventario est\\u00e1 vac\\u00edo"
+msgstr "المخزون الخاص بك فارغ"
+
+#: templates/accounts/inventory.html:93
+msgid ""
+"A\\u00fan no has adquirido ning\\u00fan producto. Explora nuestra tienda "
+"para encontrar algo que te guste."
+msgstr "لم تقم بشراء أي منتجات بعد. استكشف متجرنا للعثور على ما يعجبك."
+
+#: templates/accounts/inventory.html:96
+#| msgid "Entrar a la tienda"
+msgid "Explorar tienda"
+msgstr "اكتشف المتجر"
+
+#: templates/accounts/points.html:5
+msgid "Mis Puntos"
+msgstr "نقاطي"
+
+#: templates/accounts/points.html:6
+msgid "Sistema de Puntos"
+msgstr "نظام النقاط"
+
+#: templates/accounts/points.html:15
+#| msgid "Datos personales"
+msgid "puntos totales"
+msgstr "مجموع النقاط"
+
+#: templates/accounts/points.html:29
+msgid "Progreso hacia"
+msgstr "التقدم نحو"
+
+#: templates/accounts/points.html:38
+#, python-format
+msgid "Faltan %(remaining)s puntos"
+msgstr "%(المتبقي)s من النقاط مفقودة"
+
+#: templates/accounts/points.html:51
+#| msgid "No hay productos disponibles."
+msgid "Rangos disponibles"
+msgstr "النطاقات المتاحة"
+
+#: templates/accounts/points.html:67
+msgid "Actual"
+msgstr "حاضِر"
+
+#: templates/accounts/points.html:78
+msgid "C\\u00f3mo ganar puntos"
+msgstr "كيفية كسب النقاط"
+
+#: templates/accounts/points.html:91
+msgid "Desglose de tus puntos"
+msgstr "تقسيم النقاط الخاصة بك"
+
+#: templates/accounts/points.html:94
+msgid "Completitud del perfil"
+msgstr "اكتمال الملف الشخصي"
+
+#: templates/accounts/points.html:108 templates/accounts/points.html:120
+msgid "(pendiente)"
+msgstr "(حلق)"
+
+#: templates/accounts/profile.html:64
+msgid "Completado"
+msgstr "مملوء"
+
+#: templates/accounts/profile.html:75 templates/accounts/profile_edit.html:56
+msgid "Datos f\\u00edsicos"
+msgstr "البيانات المادية"
+
+#: templates/accounts/profile.html:78
+msgid "Peso"
+msgstr "وزن"
+
+#: templates/accounts/profile.html:84
+msgid "Altura"
+msgstr "ارتفاع"
+
+#: templates/accounts/profile.html:96 templates/accounts/profile_edit.html:109
+msgid "G\\u00e9nero"
+msgstr "جنس"
+
+#: templates/accounts/profile.html:114
+msgid "No has definido objetivos a\\u00fan."
+msgstr "لم تحدد الأهداف بعد."
+
+#: templates/accounts/profile.html:128
+msgid "Pendiente de verificaci\\u00f3n"
+msgstr "في انتظار التحقق"
+
+#: templates/accounts/profile.html:134
+msgid "No has conectado una wallet a\\u00fan."
+msgstr "لم تقم بتوصيل المحفظة بعد."
+
+#: templates/accounts/profile.html:135
+#| msgid "Comprar ahora"
+msgid "Conectar ahora"
+msgstr "اتصل الآن"
+
+#: templates/accounts/profile.html:142
+msgid "Informaci\\u00f3n de cuenta"
+msgstr "معلومات الحساب"
+
+#: templates/accounts/profile.html:145
+msgid "Miembro desde"
+msgstr "عضو منذ"
+
+#: templates/accounts/profile.html:149
+msgid "\\u00daltimo acceso"
+msgstr "\\u00آخر وصول"
+
+#: templates/accounts/profile_edit.html:5
+#: templates/accounts/profile_edit.html:6
+#| msgid "Perfil"
+msgid "Editar Perfil"
+msgstr "تحرير الملف الشخصي"
+
+#: templates/accounts/profile_edit.html:10
+#: templates/accounts/profile_edit.html:150
+msgid "Cancelar"
+msgstr "يلغي"
+
+#: templates/accounts/profile_edit.html:37
+#| msgid "Cambiar tema"
+msgid "Cambiar foto"
+msgstr "تغيير الصورة"
+
+#: templates/accounts/profile_edit.html:46
+msgid "JPG, PNG, GIF o WebP. M\\u00e1x 5MB."
+msgstr "JPG، PNG، GIF أو WebP. م\\u00e1×5 ميجابايت."
+
+#: templates/accounts/profile_edit.html:111
+#| msgid "Seleccionar idioma"
+msgid "Seleccionar..."
+msgstr "يختار..."
+
+#: templates/accounts/profile_edit.html:126
+msgid "Biograf\\u00eda"
+msgstr "سيرة"
+
+#: templates/accounts/profile_edit.html:128
+msgid "Cu\\u00e9ntanos sobre ti"
+msgstr "أخبرنا عن نفسك"
+
+#: templates/accounts/profile_edit.html:135
+msgid "Cu\\u00e9ntanos sobre ti..."
+msgstr "أخبرنا عن نفسك..."
+
+#: templates/accounts/profile_edit.html:137
+msgid "M\\u00e1ximo 500 caracteres"
+msgstr "الحد الأقصى 500 حرف"
+
+#: templates/accounts/profile_edit.html:147
+#| msgid "Guardar"
+msgid "Guardar cambios"
+msgstr "حفظ التغييرات"
+
+#: templates/accounts/shop.html:10
+#| msgid "productos"
+msgid "productos adquiridos"
+msgstr "المنتجات المشتراة"
+
+#: templates/accounts/shop.html:33 templates/shop/detail.html:78
+msgid "Ver detalles"
+msgstr "عرض التفاصيل"
+
+#: templates/accounts/shop.html:67
+#| msgid "Ver todos los productos →"
+msgid "\\u00a1Tienes todos los productos!"
+msgstr "\\u00a1لديك جميع المنتجات!"
+
+#: templates/accounts/shop.html:69
+msgid ""
+"Ya has adquirido todos los productos disponibles. Vuelve pronto para ver "
+"novedades."
+msgstr ""
+"لقد اشتريت بالفعل جميع المنتجات المتاحة. التحقق مرة أخرى قريبا للحصول على "
+"التحديثات."
+
+#: templates/accounts/shop.html:72
+msgid "Ver mi inventario"
+msgstr "انظر المخزون الخاص بي"
+
+#: templates/accounts/subscriptions.html:6
+msgid "Planes de Suscripci\\u00f3n"
+msgstr "خطط الاشتراك"
+
+#: templates/accounts/subscriptions.html:14
+msgid "Tu suscripci\\u00f3n actual"
+msgstr "اشتراكك الحالي"
+
+#: templates/accounts/subscriptions.html:25
+msgid "Expira"
+msgstr "تنتهي"
+
+#: templates/accounts/subscriptions.html:26
+msgid "D\\u00edas restantes"
+msgstr "الأيام المتبقية"
+
+#: templates/accounts/subscriptions.html:28
+msgid "Renovaci\\u00f3n autom\\u00e1tica activada"
+msgstr "تم تفعيل التجديد التلقائي"
+
+#: templates/accounts/subscriptions.html:35
+msgid "\\u00bfEst\\u00e1s seguro de cancelar tu suscripci\\u00f3n?"
+msgstr "هل أنت متأكد من إلغاء اشتراكك؟"
+
+#: templates/accounts/subscriptions.html:36
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripci\\u00f3n"
+msgstr "إلغاء الاشتراك"
+
+#: templates/accounts/subscriptions.html:43
+msgid "Suscripci\\u00f3n pendiente"
+msgstr "الاشتراك معلق"
+
+#: templates/accounts/subscriptions.html:47
+#| msgid "Ver suscripciones"
+msgid "Tu suscripci\\u00f3n"
+msgstr "اشتراكك"
+
+#: templates/accounts/subscriptions.html:47
+msgid "est\\u00e1 pendiente de pago."
+msgstr "الدفع معلق."
+
+#: templates/accounts/subscriptions.html:49
+#| msgid "Comprar ahora"
+msgid "Completar pago"
+msgstr "استكمال الدفع"
+
+#: templates/accounts/subscriptions.html:57
+msgid "Elige tu plan"
+msgstr "اختر خطتك"
+
+#: templates/accounts/subscriptions.html:62
+msgid "M\\u00e1s popular"
+msgstr "الأكثر شعبية"
+
+#: templates/accounts/subscriptions.html:85
+#| msgid "Perfil actualizado."
+msgid "Plan actual"
+msgstr "الخطة الحالية"
+
+#: templates/accounts/subscriptions.html:88
+msgid "Suscribirse"
+msgstr "يشترك"
+
+#: templates/accounts/subscriptions.html:99
+msgid "Informaci\\u00f3n de pago"
+msgstr "معلومات الدفع"
+
+#: templates/accounts/subscriptions.html:104
+msgid "Pago con Solana"
+msgstr "الدفع مع سولانا"
+
+#: templates/accounts/subscriptions.html:105
+msgid "Aceptamos pagos en SOL a trav\\u00e9s de tu wallet conectada."
+msgstr "نحن نقبل الدفع بعملة SOL من خلال محفظتك المتصلة."
+
+#: templates/accounts/subscriptions.html:109
+msgid ""
+"Al suscribirte, ser\\u00e1s redirigido a la p\\u00e1gina de wallet para "
+"completar el pago."
+msgstr "عند الاشتراك، سيتم إعادة توجيهك إلى صفحة المحفظة لإتمام عملية الدفع."
+
+#: templates/accounts/wallet.html:5
+msgid "Mi Wallet"
+msgstr "محفظتي"
+
+#: templates/accounts/wallet.html:13
+msgid "Estado de tu wallet"
+msgstr "حالة محفظتك"
+
+#: templates/accounts/wallet.html:26
+msgid "Direcci\\u00f3n p\\u00fablica"
+msgstr "العنوان العام"
+
+#: templates/accounts/wallet.html:29 templates/accounts/wallet.html:100
+msgid "Copiar"
+msgstr "ينسخ"
+
+#: templates/accounts/wallet.html:35
+msgid "Conectada el"
+msgstr "متصل"
+
+#: templates/accounts/wallet.html:42
+msgid "\\u00bfDesconectar tu wallet?"
+msgstr "\\u00fقطع اتصال محفظتك؟"
+
+#: templates/accounts/wallet.html:43
+msgid "Desconectar wallet"
+msgstr "افصل المحفظة"
+
+#: templates/accounts/wallet.html:51
+msgid ""
+"Conecta tu wallet de Solana para realizar pagos y verificar transacciones."
+msgstr "قم بتوصيل محفظة Solana الخاصة بك لإجراء الدفعات والتحقق من المعاملات."
+
+#: templates/accounts/wallet.html:58
+msgid "Llave p\\u00fablica de Solana"
+msgstr "سولانا المفتاح العام"
+
+#: templates/accounts/wallet.html:65
+msgid "Tu llave p\\u00fablica de Solana..."
+msgstr "مفتاح Solana العام الخاص بك..."
+
+#: templates/accounts/wallet.html:70
+msgid "32-44 caracteres en formato base58"
+msgstr "32-44 حرفًا بتنسيق base58"
+
+#: templates/accounts/wallet.html:79
+msgid "\\u00bfC\\u00f3mo obtener tu llave p\\u00fablica?"
+msgstr "كيف تحصل على مفتاحك العام؟"
+
+#: templates/accounts/wallet.html:81
+msgid "Abre tu wallet de Solana (Phantom, Solflare, etc.)"
+msgstr "افتح محفظة Solana الخاصة بك (Phantom، Solflare، إلخ.)"
+
+#: templates/accounts/wallet.html:82
+msgid "Busca la opci\\u00f3n 'Copiar direcci\\u00f3n' o 'Receive'"
+msgstr "ابحث عن خيار \"نسخ العنوان\" أو \"الاستلام\"."
+
+#: templates/accounts/wallet.html:83
+msgid "Pega la direcci\\u00f3n en el campo de arriba"
+msgstr "الصق العنوان في الحقل أعلاه"
+
+#: templates/accounts/wallet.html:93
+msgid "Realizar pago"
+msgstr "قم بالدفع"
+
+#: templates/accounts/wallet.html:95
+msgid "Para completar pagos, env\\u00eda SOL a la siguiente direcci\\u00f3n:"
+msgstr "لإكمال الدفعات، أرسل SOL إلى العنوان التالي:"
+
+#: templates/accounts/wallet.html:104
+msgid ""
+"Despu\\u00e9s de enviar, guarda la firma de transacci\\u00f3n para "
+"verificaci\\u00f3n."
+msgstr "بعد الإرسال، قم بحفظ توقيع المعاملة للتحقق منها."
+
+#: templates/accounts/wallet.html:113
+msgid "Historial de transacciones"
+msgstr "تاريخ المعاملات"
+
+#: templates/accounts/wallet.html:118
+msgid "Firma"
+msgstr "إمضاء"
+
+#: templates/accounts/wallet.html:119
+msgid "Cantidad"
+msgstr "كمية"
+
+#: templates/accounts/wallet.html:120
+msgid "Prop\\u00f3sito"
+msgstr "غاية"
+
+#: templates/accounts/wallet.html:122
+msgid "Fecha"
+msgstr "تاريخ"
+
+#: templates/accounts/wallet.html:149
+msgid "Seguridad"
+msgstr "حماية"
+
+#: templates/accounts/wallet.html:154
+msgid "Solo llave p\\u00fablica"
+msgstr "المفتاح العام فقط"
+
+#: templates/accounts/wallet.html:155
+msgid "Nunca te pediremos tu llave privada ni frase semilla."
+msgstr "لن نطلب منك أبدًا مفتاحك الخاص أو العبارة الأولية."
+
+#: templates/accounts/wallet.html:161
+msgid "Verificaci\\u00f3n on-chain"
+msgstr "التحقق على السلسلة"
+
+#: templates/accounts/wallet.html:162
+msgid ""
+"Todas las transacciones se verifican directamente en la blockchain de "
+"Solana."
+msgstr "يتم التحقق من جميع المعاملات مباشرة على Solana blockchain."
+
+#: templates/accounts/wallet.html:174
+msgid "Copiado al portapapeles"
+msgstr "تم النسخ إلى الحافظة"
+
+#: templates/admin/base_site.html:4
+msgid "Croody Admin"
+msgstr "إدارة كروودي"
+
+#: templates/admin/base_site.html:25
+msgid "Home"
+msgstr "الرئيسية"
+
+#: templates/admin/base_site.html:35
+msgid "Powered by"
+msgstr "مدعوم من"
+
+#: templates/base.html:13 templates/base.html:55
+msgid "Croody · Diseño con propósito"
+msgstr "كروودي · تصميم بفكرة"
+
+#: templates/base.html:86
+msgid "Saltar al contenido principal"
+msgstr "انتقل إلى المحتوى الرئيسي"
+
+#: templates/base.html:105
+msgid "Abrir menú"
+msgstr "فتح القائمة"
+
+#: templates/base.html:126 templates/base.html:233
+msgid "Buscar en Croody"
+msgstr "البحث في Croody"
+
+#: templates/base.html:133 templates/base.html:240
+msgid "Buscar (pulsa /)"
+msgstr "البحث (اضغط /)"
+
+#: templates/base.html:144
+msgid "Seleccionar idioma"
+msgstr "اختر اللغة"
+
+#: templates/base.html:210
+msgid "Cambiar tema"
+msgstr "تغيير المظهر"
+
+#: templates/base.html:217 templates/base.html:258
+msgid "Empezar"
+msgstr "ابدأ"
+
+#: templates/base.html:220
+msgid "Salir"
+msgstr "تسجيل الخروج"
+
+#: templates/base.html:223 templates/base.html:264
+msgid "Acceder"
+msgstr "تسجيل الدخول"
+
+#: templates/base.html:260
+msgid "Cerrar sesión"
+msgstr "تسجيل الخروج"
+
+#: templates/base.html:268
+msgid "Búsqueda"
+msgstr "البحث"
+
+#: templates/base.html:269
+msgid "Contactar"
+msgstr "اتصال"
+
+#: templates/base.html:282
+msgid "Accesos rápidos"
+msgstr "وصول سريع"
+
+#: templates/base.html:288
+msgid "Resultados sugeridos"
+msgstr "نتائج مقترحة"
+
+#: templates/base.html:339
+msgid "Inspirados en valores eternos"
+msgstr "مستوحى من قيم أبديه"
+
+#: templates/base.html:340
+msgid "Legal"
+msgstr "قانوني"
+
+#: templates/base.html:341
+msgid "Privacidad"
+msgstr "الخصوصية"
+
+#: templates/base.html:342
+msgid "Términos"
+msgstr "الشروط"
+
+#: templates/base.html:343
+msgid "Cookies"
+msgstr "ملفات تعريف الارتباط"
+
+#: templates/landing/about.html:11
+msgid "Cambiar el mundo a través de la tecnología"
+msgstr "تغيير العالم من خلال التكنولوجيا"
+
+#: templates/landing/about.html:12
+msgid ""
+"Somos una empresa fundada en la Universidad EAFIT, Medellín, con la "
+"convicción de que la tecnología debe servir a la humanidad, no reemplazarla."
+msgstr ""
+"نحن شركة تأسست في جامعة EAFIT، ميديلين، مع الاقتناع بأن التكنولوجيا يجب أن "
+"تخدم البشرية، وليس استبدالها."
+
+#: templates/landing/about.html:20
+msgid "Nuestra Historia"
+msgstr "تاريخنا"
+
+#: templates/landing/about.html:21
+msgid ""
+"Todo comenzó en 2025, cuando nace Croody con la convicción de que el mundo "
+"del fitness necesitaba una revolución."
+msgstr ""
+"بدأ كل شيء في عام 2025، عندما ولد كرودي وهو على قناعة بأن عالم اللياقة "
+"البدنية يحتاج إلى ثورة."
+
+#: templates/landing/about.html:25
+msgid ""
+"En un mundo cada vez más digital, vimos cómo las personas perdían la "
+"conexión consigo mismas y con sus objetivos de salud. Los gimnasios "
+"tradicionales no se adaptaron a la nueva realidad, y las aplicaciones "
+"existentes trataban a los usuarios como números en lugar de personas."
+msgstr ""
+"في عالم رقمي متزايد، رأينا الناس يفقدون الاتصال بأنفسهم وبأهدافهم الصحية. "
+"فشلت الصالات الرياضية التقليدية في التكيف مع الواقع الجديد، وتعاملت "
+"التطبيقات الحالية مع المستخدمين كأرقام وليس كأشخاص."
+
+#: templates/landing/about.html:26
+msgid ""
+"Decidimos crear algo diferente: un ecosistema que combina tecnología de "
+"punta con un entendimiento profundo de la motivación humana. Así nació "
+"Croody, una empresa comprometida con transformar la manera en que las "
+"personas se conectan con su bienestar."
+msgstr ""
+"قررنا إنشاء شيء مختلف: نظام بيئي يجمع بين التكنولوجيا المتطورة والفهم العميق"
+" للدوافع البشرية. وهكذا ولدت شركة Croody، وهي شركة ملتزمة بتغيير الطريقة "
+"التي يتواصل بها الناس مع رفاهيتهم."
+
+#: templates/landing/about.html:27
+msgid "— El Equipo Croody"
+msgstr "— فريق كرودي"
+
+#: templates/landing/about.html:36
+msgid "Nuestra Misión"
+msgstr "تسجيل الخروج"
+
+#: templates/landing/about.html:37
+msgid ""
+"Transformar la industria del fitness a través de tecnología humanizada."
+msgstr "تحويل صناعة اللياقة البدنية من خلال التكنولوجيا المتوافقة مع البشر."
+
+#: templates/landing/about.html:42
+msgid "Buddy AI"
+msgstr "الأصدقاء منظمة العفو الدولية"
+
+#: templates/landing/about.html:43
+msgid "Tu Entrenador Personal"
+msgstr "المدرب الشخصي الخاص بك"
+
+#: templates/landing/about.html:45
+msgid ""
+"Nuestro asistente de inteligencia artificial comprende tus necesidades "
+"únicas y te guía en cada paso de tu journey fitness. No es solo una app, es "
+"tu compañero digital que entiende tu cuerpo, tu mente y tus objetivos."
+msgstr ""
+"يفهم مساعد الذكاء الاصطناعي الخاص بنا احتياجاتك الفريدة ويرشدك في كل خطوة من"
+" رحلة اللياقة البدنية الخاصة بك. إنه ليس مجرد تطبيق، إنه رفيقك الرقمي الذي "
+"يفهم جسدك وعقلك وأهدافك."
+
+#: templates/landing/about.html:47
+msgid "Tecnología:"
+msgstr "تكنولوجيا:"
+
+#: templates/landing/about.html:47
+msgid "Algoritmos avanzados de personalización que aprenden de tu progreso."
+msgstr "خوارزميات التخصيص المتقدمة التي تتعلم من تقدمك."
+
+#: templates/landing/about.html:48
+msgid "Enfoque:"
+msgstr "يقترب:"
+
+#: templates/landing/about.html:48
+msgid "Cada rutina es única, diseñada específicamente para ti."
+msgstr "كل روتين فريد من نوعه، ومصمم خصيصًا لك."
+
+#: templates/landing/about.html:49
+msgid "Compromiso:"
+msgstr "التزام:"
+
+#: templates/landing/about.html:49
+msgid "Resultados reales con motivación humana."
+msgstr "نتائج حقيقية مع الدافع البشري."
+
+#: templates/landing/about.html:55
+msgid "Luks Rewards"
+msgstr "مكافآت لوكس"
+
+#: templates/landing/about.html:56
+msgid "Tu Progreso Tiene Valor"
+msgstr "تقدمك له قيمة"
+
+#: templates/landing/about.html:58
+msgid ""
+"Luks es nuestro sistema de recompensas que reconoce tu esfuerzo y "
+"dedicación. Cada entrenamiento no solo mejora tu salud, sino que también "
+"acumula valor real en el ecosistema Croody."
+msgstr ""
+"Luks هو نظام المكافآت الخاص بنا الذي يعترف بجهودك وتفانيك. لا يعمل كل تمرين "
+"على تحسين صحتك فحسب، بل يتراكم أيضًا قيمة حقيقية في نظام Croody البيئي."
+
+#: templates/landing/about.html:60
+msgid "Innovación:"
+msgstr "ابتكار:"
+
+#: templates/landing/about.html:60
+msgid "Token utility que crea un ciclo de valor real."
+msgstr "أداة رمزية تنشئ دورة ذات قيمة حقيقية."
+
+#: templates/landing/about.html:61
+msgid "Motivación:"
+msgstr "تحفيز:"
+
+#: templates/landing/about.html:61
+msgid "Cada esfuerzo es reconocido y recompensado."
+msgstr "يتم الاعتراف بكل جهد ومكافأته."
+
+#: templates/landing/about.html:62
+msgid "Futuro:"
+msgstr "مستقبل:"
+
+#: templates/landing/about.html:62
+msgid "Construye tu legacy fitness mientras transformas tu vida."
+msgstr "قم ببناء إرث اللياقة البدنية الخاص بك أثناء تغيير حياتك."
+
+#: templates/landing/about.html:68
+msgid "Tecnología Humanizada"
+msgstr "التكنولوجيا أنسنة"
+
+#: templates/landing/about.html:69
+msgid "IA al Servicio de la Humanidad"
+msgstr "الذكاء الاصطناعي في خدمة الإنسانية"
+
+#: templates/landing/about.html:71
+msgid ""
+"En Croody creemos que la mejor tecnología es aquella que se siente natural. "
+"Nuestra IA no reemplaza el factor humano, lo potencia. Cada interacción está"
+" diseñada para recordarte que eres más que datos: eres una persona única con"
+" objetivos, emociones y sueños."
+msgstr ""
+"نحن في Croody نؤمن بأن أفضل التقنيات هي تلك التي تبدو طبيعية. الذكاء "
+"الاصطناعي لدينا لا يحل محل العامل البشري، بل يعززه. تم تصميم كل تفاعل ليذكرك"
+" بأنك أكثر من مجرد بيانات: أنت شخص فريد من نوعه لديه أهداف وعواطف وأحلام."
+
+#: templates/landing/about.html:73
+msgid "Filosofía:"
+msgstr "فلسفة:"
+
+#: templates/landing/about.html:73
+msgid "La tecnología debe servir a la humanidad, no reemplazarla."
+msgstr "يجب أن تخدم التكنولوجيا الإنسانية، لا أن تحل محلها."
+
+#: templates/landing/about.html:74
+msgid "Método:"
+msgstr "طريقة:"
+
+#: templates/landing/about.html:74
+msgid "IA invisible que se siente como comprensión humana."
+msgstr "الذكاء الاصطناعي غير المرئي الذي يبدو وكأنه فهم بشري."
+
+#: templates/landing/about.html:75
+msgid "Impacto:"
+msgstr "تأثير:"
+
+#: templates/landing/about.html:75
+msgid "Transformamos vidas, no solo creamos apps."
+msgstr "نحن نغير الحياة، ولا نكتفي بإنشاء التطبيقات."
+
+#: templates/landing/about.html:85
+msgid "Nuestros Valores"
+msgstr "قيمنا"
+
+#: templates/landing/about.html:86
+msgid "Los principios que guían cada decisión que tomamos."
+msgstr "المبادئ التي توجه كل قرار نتخذه."
+
+#: templates/landing/about.html:90
+msgid "Humanidad Primero"
+msgstr "الإنسانية أولاً"
+
+#: templates/landing/about.html:91
+msgid ""
+"Cada tecnología que construimos tiene como objetivo servir a las personas, "
+"no reemplazarlas. La eficiencia sin humanidad es irrelevante."
+msgstr ""
+"تهدف كل تقنية نبنيها إلى خدمة الناس، وليس استبدالهم. الكفاءة بدون الإنسانية "
+"لا أهمية لها."
+
+#: templates/landing/about.html:94
+msgid "Transparencia Total"
+msgstr "الشفافية الكاملة"
+
+#: templates/landing/about.html:95
+msgid ""
+"Operamos con claridad radical. Desde nuestros algoritmos hasta nuestros "
+"precios, todo es visible y comprensible."
+msgstr "نحن نعمل بوضوح جذري. من خوارزمياتنا إلى أسعارنا، كل شيء مرئي ومفهوم."
+
+#: templates/landing/about.html:98
+msgid "Excelencia Sin Compromiso"
+msgstr "التميز بدون تنازلات"
+
+#: templates/landing/about.html:99
+msgid "No nos conformamos con \\"
+msgstr "نحن غير راضين عن \\"
+
+#: templates/landing/about.html:102
+msgid "Impacto Real"
+msgstr "التأثير الحقيقي"
+
+#: templates/landing/about.html:103
+msgid ""
+"Medimos nuestro éxito por el cambio positivo que generamos en la vida de "
+"nuestros usuarios, no por métricas vacías."
+msgstr ""
+"نحن نقيس نجاحنا من خلال التغيير الإيجابي الذي نحدثه في حياة مستخدمينا، وليس "
+"من خلال مقاييس فارغة."
+
+#: templates/landing/about.html:106
+msgid "Evolución Constante"
+msgstr "التطور المستمر"
+
+#: templates/landing/about.html:107
+msgid ""
+"Somos aprendices permanentes. La tecnología y las necesidades humanas "
+"evolucionan, y nosotros evolucionamos con ellas."
+msgstr ""
+"نحن نتعلم مدى الحياة. التكنولوجيا واحتياجات الإنسان تتطور، ونحن نتطور معهم."
+
+#: templates/landing/about.html:116
+msgid "Nuestra Visión: 3 → 6 → 9 → 12 → 33"
+msgstr "رؤيتنا: 3 → 6 → 9 → 12 → 33"
+
+#: templates/landing/about.html:117
+msgid ""
+"Un roadmap basado en la proporción áurea, porque creemos en la armonía entre"
+" precisión y humanidad."
+msgstr ""
+"خارطة طريق مبنية على النسبة الذهبية، لأننا نؤمن بالانسجام بين الدقة "
+"والإنسانية."
+
+#: templates/landing/about.html:123
+msgid "Fundamentos Sólidos"
+msgstr "أساسيات صلبة"
+
+#: templates/landing/about.html:124
+msgid ""
+"Establecer las bases técnicas y filosóficas que soportarán todo nuestro "
+"ecosistema. Buddy nace como un asistente de IA que realmente comprende."
+msgstr ""
+"إنشاء القواعد التقنية والفلسفية التي ستدعم نظامنا البيئي بأكمله. وُلد Buddy "
+"كمساعد ذكاء اصطناعي يفهم حقًا."
+
+#: templates/landing/about.html:130
+msgid "Ecosistema Conectado"
+msgstr "النظام البيئي المتصل"
+
+#: templates/landing/about.html:131
+msgid ""
+"La integración de Luks como token utility crea un ciclo de valor donde cada "
+"entrenamiento tiene significado y recompensa."
+msgstr ""
+"يؤدي دمج Luks كأداة رمزية إلى إنشاء دورة من القيمة حيث يكون لكل تمرين معنى "
+"ومكافأة."
+
+#: templates/landing/about.html:137
+msgid "Adopción Global"
+msgstr "التبني العالمي"
+
+#: templates/landing/about.html:138
+msgid ""
+"Expansión a múltiples mercados con localización cultural profunda y soporte "
+"en 8+ idiomas."
+msgstr "التوسع في أسواق متعددة مع توطين ثقافي عميق ودعم بأكثر من 8 لغات."
+
+#: templates/landing/about.html:144
+msgid "Transformación Social"
+msgstr "التحول الاجتماعي"
+
+#: templates/landing/about.html:145
+msgid ""
+"Programas comunitarios, partnerships con gimnasios y ONGs para democratizar "
+"el acceso a tecnología de fitness de calidad."
+msgstr ""
+"البرامج المجتمعية والشراكات مع الصالات الرياضية والمنظمات غير الحكومية "
+"لإضفاء الطابع الديمقراطي على الوصول إلى تكنولوجيا اللياقة البدنية عالية "
+"الجودة."
+
+#: templates/landing/about.html:151
+msgid "Legacy"
+msgstr "قانوني"
+
+#: templates/landing/about.html:152
+msgid ""
+"Haber cambiado fundamentalmente la manera en que la humanidad se conecta con"
+" su bienestar, inspirando a toda una industria a seguir nuestro ejemplo."
+msgstr ""
+"لقد قمنا بتغيير جذري في الطريقة التي تتواصل بها البشرية مع رفاهيتها، مما "
+"ألهم الصناعة بأكملها لتحذو حذونا."
+
+#: templates/landing/about.html:162
+msgid "¿Listo para ser parte del cambio?"
+msgstr "على استعداد لتكون جزءا من التغيير؟"
+
+#: templates/landing/about.html:163
+msgid ""
+"Si compartes nuestra visión de un futuro donde la tecnología sirve a la "
+"humanidad, nos encantaría conocerte."
+msgstr ""
+"إذا كنت تشاركنا رؤيتنا لمستقبل تخدم فيه التكنولوجيا الإنسانية، فنحن نود أن "
+"نلتقي بك."
+
+#: templates/landing/about.html:166
+msgid "Contáctanos"
+msgstr "اتصل بنا"
+
+#: templates/landing/about.html:167 templates/landing/home.html:301
+msgid "Volver al inicio"
+msgstr "العودة إلى البداية"
+
+#: templates/landing/buddy.html:5
+msgid "Buddy · Croody"
+msgstr "البحث في Croody"
+
+#: templates/landing/buddy.html:17
+msgid "📱 Descargar App (Beta)"
+msgstr "📱 تنزيل التطبيق (تجريبي)"
+
+#: templates/landing/buddy.html:41
+msgid "Así funciona Buddy"
+msgstr "هكذا يعمل بادي"
+
+#: templates/landing/buddy.html:42
+msgid ""
+"Tu entrenador personal, impulsado por inteligencia artificial, siempre listo"
+" para adaptarte"
+msgstr "مدربك الشخصي، المدعوم بالذكاء الاصطناعي، جاهز دائمًا للتكيف"
+
+#: templates/landing/buddy.html:47
+msgid "Describe tu objetivo"
+msgstr "اوصف هدفك"
+
+#: templates/landing/buddy.html:48
+msgid ""
+"Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar "
+"resistencia... Él entiende tu contexto."
+msgstr ""
+"أخبر Buddy بما تريد تحقيقه: فقدان الوزن، واكتساب العضلات، وتحسين القدرة على "
+"التحمل... فهو يفهم سياقك."
+
+#: templates/landing/buddy.html:52
+msgid "Recibe tu rutina"
+msgstr "تلقى تمارينك"
+
+#: templates/landing/buddy.html:53
+msgid ""
+"La IA genera ejercicios personalizados basados en tu nivel, equipo "
+"disponible y tiempo que tienes."
+msgstr ""
+"يقوم الذكاء الاصطناعي بإنشاء تمارين مخصصة بناءً على مستواك والمعدات المتاحة "
+"والوقت المتاح لديك."
+
+#: templates/landing/buddy.html:57
+msgid "Entrena y progresa"
+msgstr "تدرب وتقدم"
+
+#: templates/landing/buddy.html:58
+msgid ""
+"Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos "
+"según tu evolución."
+msgstr ""
+"المراقبة في الوقت الفعلي، والتعليقات على أسلوبك والتعديلات التلقائية وفقًا "
+"لتطورك."
+
+#: templates/landing/buddy.html:67 templates/landing/home.html:147
+#: templates/landing/home.html:163 templates/landing/home.html:179
+#: templates/landing/home.html:202 templates/landing/home.html:211
+#: templates/landing/home.html:220 templates/landing/luks.html:58
+msgid "\\"
 msgstr ""
 
-msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
-msgstr ""
+#: templates/landing/buddy.html:68
+msgid "— Carlos, México, usuario desde 2024"
+msgstr "— كارلوس، المكسيك، مستخدم منذ 2024"
 
+#: templates/landing/buddy.html:76
+msgid "Tres pilares que sostienen a Buddy"
+msgstr "ثلاث ركائز تدعم بادي"
+
+#: templates/landing/buddy.html:92
+msgid "Módulos Buddy"
+msgstr "وحدات بادي"
+
+#: templates/landing/buddy.html:93
+msgid ""
+"Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para "
+"que nada se pierda en el camino."
+msgstr ""
+"يتم توزيع نفس DNA Buddy بين التطبيق والويب والاقتصاد المميز بحيث لا يتم "
+"فقدان أي شيء على طول الطريق."
+
+#: templates/landing/buddy.html:111
+msgid "Viajes de usuario"
+msgstr "رحلات المستخدم"
+
+#: templates/landing/buddy.html:112
+msgid ""
+"Buddy acompaña antes, durante y después de cada sesión para que la rutina no"
+" se rompa."
+msgstr "يرافقك الصديق قبل وأثناء وبعد كل جلسة حتى لا ينكسر الروتين."
+
+#: templates/landing/buddy.html:130
+msgid "Roadmap corto"
+msgstr "خارطة طريق قصيرة"
+
+#: templates/landing/buddy.html:138
+msgid "Contacta al equipo"
+msgstr "اتصل بالفريق"
+
+#: templates/landing/buddy.html:139
+msgid ""
+"¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma "
+"de bienestar?"
+msgstr "هل ترغب في تفعيل Buddy لمؤسستك أو دمجه مع منصة العافية الخاصة بك؟"
+
+#: templates/landing/buddy.html:140
+msgid "Agendar una llamada"
+msgstr "جدولة مكالمة"
+
+#: templates/landing/buddy.html:143
+msgid "Explora Luks"
+msgstr "استكشف لوكس"
+
+#: templates/landing/buddy.html:144
+msgid ""
+"La capa cripto sostiene compras, inventario y marketplace. Transparencia "
+"total."
+msgstr "تدعم طبقة التشفير عمليات الشراء والمخزون والسوق. الشفافية الكاملة."
+
+#: templates/landing/buddy.html:145
+msgid "Ver Luks"
+msgstr "عرض لوكس"
+
+#: templates/landing/buddy.html:153
+msgid "Siguientes pasos"
+msgstr "الخطوات التالية"
+
+#: templates/landing/buddy.html:154
+msgid "Elige tu plan y entra a la tienda cuando estés listo."
+msgstr "اختر خطتك وادخل المتجر عندما تكون مستعداً."
+
+#: templates/landing/buddy.html:157
+msgid "Ver suscripciones"
+msgstr "عرض الاشتراكات"
+
+#: templates/landing/home.html:26
+msgid "✓ +5,000 usuarios activos"
+msgstr "✓ +5,000 مستخدم نشط"
+
+#: templates/landing/home.html:27
+msgid "✓ Descarga gratuita"
+msgstr "✓ تحميل مجاني"
+
+#: templates/landing/home.html:28
+msgid "✓ Disponible en 8 idiomas"
+msgstr "✓ متوفر بـ 8 لغات"
+
+#: templates/landing/home.html:31
+msgid "✓ Más de 5,000 personas ya entrenan con Buddy"
+msgstr "✓ يتدرب بالفعل أكثر من 5000 شخص مع Buddy"
+
+#: templates/landing/home.html:33
+msgid "✓ Sin contratos"
+msgstr "✓ بدون عقود"
+
+#: templates/landing/home.html:34
+msgid "✓ Cancela cuando quieras"
+msgstr "✓ ألغِ عندما تريد"
+
+#: templates/landing/home.html:35
+msgid "✓ Soporte 24/7"
+msgstr "✓ دعم 24/7"
+
+#: templates/landing/home.html:57
+msgid "Un ecosistema, dos productos"
+msgstr "نظام بيئي واحد، منتجان"
+
+#: templates/landing/home.html:58
+msgid ""
+"Descubre cómo Buddy y Luks trabajan juntos para transformar tu experiencia"
+msgstr "اكتشف كيف يعمل Buddy وLuks معًا لتحويل تجربتك"
+
+#: templates/landing/home.html:68
+msgid "🤖 IA Personalizada"
+msgstr "🤖 ذكاء اصطناعي مخصص"
+
+#: templates/landing/home.html:69
+msgid "Tu entrenador que te entiende"
+msgstr "مدربك الذي يفهمك"
+
+#: templates/landing/home.html:70
+msgid ""
+"Rutinas adaptadas a tu nivel, objetivos y tiempo disponible. La IA aprende "
+"de cada sesión para ofrecerte siempre lo mejor."
+msgstr ""
+"إجراءات تتكيف مع مستواك وأهدافك والوقت المتاح. يتعلم الذكاء الاصطناعي من كل "
+"جلسة ليقدم لك الأفضل دائمًا."
+
+#: templates/landing/home.html:71
+msgid "Conocer Buddy"
+msgstr "تعرف على بادي"
+
+#: templates/landing/home.html:74
+msgid "🎮 Gamificación"
+msgstr "🎮 اللعب"
+
+#: templates/landing/home.html:75
+msgid "Entrenar nunca fue tan motivador"
+msgstr "التدريب لم يكن محفزاً أبداً"
+
+#: templates/landing/home.html:76
+msgid ""
+"Desafíos diarios, logros desbloqueables y un sistema de recompensas que "
+"mantiene tu motivación al máximo."
+msgstr ""
+"التحديات اليومية والإنجازات غير القابلة للفتح ونظام المكافآت الذي يبقي "
+"دوافعك في ذروتها."
+
+#: templates/landing/home.html:77
+msgid "Ver características"
+msgstr "عرض المميزات"
+
+#: templates/landing/home.html:80
+msgid "📱 Multiplataforma"
+msgstr "📱 متعدد المنصات"
+
+#: templates/landing/home.html:81
+msgid "Entrena donde quieras"
+msgstr "تدرب حيث تريد"
+
+#: templates/landing/home.html:82
+msgid ""
+"Sincronización perfecta entre web y móvil. Tu progreso siempre disponible, "
+"en cualquier momento."
+msgstr ""
+"تزامن مثالي بين الويب والهاتف المحمول. التقدم المحرز الخاص بك متاح دائما، في"
+" أي وقت."
+
+#: templates/landing/home.html:83
+msgid "Más información"
+msgstr "المزيد من المعلومات"
+
+#: templates/landing/home.html:90
+msgid "💎 Token Utility"
+msgstr "💎 رمز المنفعة"
+
+#: templates/landing/home.html:91
+msgid "Recompensas reales"
+msgstr "مكافآت حقيقية"
+
+#: templates/landing/home.html:92
+msgid ""
+"Gana Luks entrenando y úsalos para desbloquear contenido premium, accesorios"
+" y productos exclusivos."
+msgstr ""
+"اربح Luks من خلال التدريب واستخدمها لفتح المحتوى المتميز والملحقات والمنتجات"
+" الحصرية."
+
+#: templates/landing/home.html:93
+msgid "Explorar Luks"
+msgstr "استكشف لوكس"
+
+#: templates/landing/home.html:96
+msgid "🔒 Transparencia"
+msgstr "🔒 الشفافية"
+
+#: templates/landing/home.html:97
+msgid "Todo claro, todo visible"
+msgstr "كل شيء واضح، كل شيء مرئي"
+
+#: templates/landing/home.html:98
+msgid ""
+"Probabilidades públicas, tarifas conocidas y un sistema de recompensas que "
+"puedes entender y predecir."
+msgstr ""
+"الاحتمالات العامة والمعدلات المعروفة ونظام المكافآت الذي يمكنك فهمه والتنبؤ "
+"به."
+
+#: templates/landing/home.html:99
+msgid "Ver tokenomics"
+msgstr "عرض توكنomics"
+
+#: templates/landing/home.html:102
+msgid "🌍 Economía Digital"
+msgstr "🌍 الاقتصاد الرقمي"
+
+#: templates/landing/home.html:103
+msgid "Más que una app"
+msgstr "أكثر من تطبيق"
+
+#: templates/landing/home.html:104
+msgid ""
+"Participa en una economía digital propia donde tu constancia tiene valor "
+"real y tangible."
+msgstr "شارك في اقتصادك الرقمي حيث يكون لمثابرتك قيمة حقيقية وملموسة."
+
+#: templates/landing/home.html:105
+msgid "Conocer más"
+msgstr "تعرف أكثر"
+
+#: templates/landing/home.html:116
+msgid "Capas del ecosistema Croody"
+msgstr "طبقات نظام كروودي البيئي"
+
+#: templates/landing/home.html:117
+msgid ""
+"Buddy y Luks funcionan como un mismo sistema: entrenas, mides progreso y "
+"recibes recompensas sin perder continuidad ni los valores que nos inspiran."
+msgstr ""
+"يعمل Buddy وLuks بنفس النظام: حيث تقوم بالتدريب وقياس التقدم والحصول على "
+"المكافآت دون فقدان الاستمرارية أو القيم التي تلهمنا."
+
+#: templates/landing/home.html:138
+msgid "Lo que dicen los equipos que usan Croody"
+msgstr "ما تقوله الفرق التي تستخدم كروودي"
+
+#: templates/landing/home.html:139
+msgid ""
+"Historias reales de personas que han transformado su forma de entrenar y "
+"conectarse."
+msgstr "قصص حقيقية من أشخاص غيروا طريقة تدريبهم وتواصلهم."
+
+#: templates/landing/home.html:152 templates/landing/home.html:204
+msgid "María González"
+msgstr "ماريا غونزاليس"
+
+#: templates/landing/home.html:153
+msgid "Diseñadora UX, Madrid"
+msgstr "مصممة تجربة المستخدم، مدريد"
+
+#: templates/landing/home.html:168 templates/landing/home.html:213
+msgid "Carlos Ruiz"
+msgstr "كارلوس رويز"
+
+#: templates/landing/home.html:169
+msgid "Desarrollador, México"
+msgstr "مطور، المكسيك"
+
+#: templates/landing/home.html:184 templates/landing/home.html:222
+msgid "Ana Martínez"
+msgstr "آنا مارتينيث"
+
+#: templates/landing/home.html:185
+msgid "Coach Fitness, Barcelona"
+msgstr "مدرب لياقة، برشلونة"
+
+#: templates/landing/home.html:196
+msgid "Historias reales, resultados reales"
+msgstr "قصص حقيقية، نتائج حقيقية"
+
+#: templates/landing/home.html:197
+msgid "Conoce a quienes han transformado su vida con Croody"
+msgstr "تعرف على من حولوا حياتهم مع كروودي"
+
+#: templates/landing/home.html:205
+msgid "Diseñadora UX, Madrid · Usuario desde Enero 2025"
+msgstr "مصمم UX، مدريد · مستخدم منذ يناير 2025"
+
+#: templates/landing/home.html:214
+msgid "Desarrollador, México · Usuario desde 2024"
+msgstr "مطور، المكسيك · مستخدم منذ 2024"
+
+#: templates/landing/home.html:223
+msgid "Coach Fitness, Barcelona · Usuario desde 2024"
+msgstr "Coach Fitness، برشلونة · مستخدم منذ 2024"
+
+#: templates/landing/home.html:228
+msgid "Comienza tu historia"
+msgstr "ابدأ قصتك"
+
+#: templates/landing/home.html:236
+msgid "Nuestros últimos productos"
+msgstr "منتجاتنا الأخيرة"
+
+#: templates/landing/home.html:237
+msgid "Diseñados para transformar tu experiencia"
+msgstr "مصممة لتجربتك"
+
+#: templates/landing/home.html:249 templates/landing/home.html:285
+msgid "Ver detalle"
+msgstr "عرض التفاصيل"
+
+#: templates/landing/home.html:254
+msgid "Ver todos los productos →"
+msgstr "عرض جميع المنتجات ←"
+
+#: templates/landing/home.html:263
+msgid "Blueprint listo para implementar"
+msgstr "مخطط جاهز للنشر"
+
+#: templates/landing/home.html:264
+msgid ""
+"El MVP de tienda y marketplace está listo para entrar a producción con "
+"tiempos, copy y visuales perfectamente definidos, manteniendo un trasfondo "
+"de fe comunicado con sobriedad."
+msgstr ""
+"المتجر والسوق MVP جاهزان للدخول في مرحلة الإنتاج بأوقات ونسخ ومرئيات محددة "
+"تمامًا، مع الحفاظ على خلفية من الإيمان يتم التواصل معها برصانة."
+
+#: templates/landing/home.html:273
+msgid "Entrar a la tienda"
+msgstr "ادخل المتجر"
+
+#: templates/landing/home.html:296
+msgid "Conversemos y adaptemos Croody a tu equipo"
+msgstr "دعنا نتحدث ونكيف كرودي مع فريقك"
+
+#: templates/landing/home.html:297
+msgid ""
+"Diseño, copy, economía y analítica integradas en un despliegue que toma "
+"semanas, no meses, reflejando nuestros valores fundacionales con un tono "
+"profesional."
+msgstr ""
+"يتم دمج التصميم والنسخ والاقتصاد والتحليلات في عملية نشر تستغرق أسابيع، وليس"
+" أشهر، مما يعكس قيمنا التأسيسية بأسلوب احترافي."
+
+#: templates/landing/home.html:300
+msgid "Agendar kickoff"
+msgstr "جدولة بداية"
+
+#: templates/landing/integrations.html:11
+msgid "Croody · APIs"
+msgstr "كروودي · واجهات برمجة التطبيقات"
+
+#: templates/landing/integrations.html:12
+msgid "Prueba los endpoints directamente"
+msgstr "اختبر نقاط النهاية مباشرة"
+
+#: templates/landing/integrations.html:13
+msgid ""
+"Ingiere muestras, consulta históricos y obtén predicciones IDS desde la "
+"misma vista."
+msgstr "استيعاب العينات وعرض السجل والحصول على تنبؤات IDS من نفس العرض."
+
+#: templates/landing/integrations.html:18
+msgid "Ingresa datos en caliente y revisa la última lectura"
+msgstr "أدخل البيانات الساخنة وراجع القراءة الأخيرة"
+
+#: templates/landing/integrations.html:20
+msgid "Ingerir muestra"
+msgstr "ابتلاع عينة"
+
+#: templates/landing/integrations.html:21
+msgid "Último registro"
+msgstr "آخر سجل"
+
+#: templates/landing/integrations.html:28
+msgid "Simula tráfico y recibe la inferencia"
+msgstr "محاكاة حركة المرور والحصول على الاستدلال"
+
+#: templates/landing/integrations.html:29
+msgid "Probar predicción"
+msgstr "اختبار التنبؤ"
+
+#: templates/landing/luks.html:5
+msgid "Luks · Croody"
+msgstr "البحث في Croody"
+
+#: templates/landing/luks.html:34
+msgid "¿Cómo funciona Luks?"
+msgstr "كيف يعمل لوكس؟"
+
+#: templates/landing/luks.html:35
+msgid ""
+"El token que recompensa tu constancia y hace que cada entrenamiento cuente"
+msgstr "الرمز الذي يكافئ مثابرتك ويجعل كل تمرين مهمًا"
+
+#: templates/landing/luks.html:40
+msgid "Entrena con Buddy"
+msgstr "تدريب مع الأصدقاء"
+
+#: templates/landing/luks.html:41
+msgid "Completa rutinas, mantén tu constancia y gana Luks automáticamente"
+msgstr "أكمل الإجراءات الروتينية، وحافظ على ثباتك واكسب Luks تلقائيًا"
+
+#: templates/landing/luks.html:46
+msgid "Gana Recompensas"
+msgstr "اربح المكافآت"
+
+#: templates/landing/luks.html:47
+msgid "Acumula Luks por cada sesión completada, sin límites ni restricciones"
+msgstr "قم بتجميع Luks لكل جلسة مكتملة، دون حدود أو قيود"
+
+#: templates/landing/luks.html:52
+msgid "Compra en la tienda"
+msgstr "تسوق في المتجر"
+
+#: templates/landing/luks.html:53
+msgid ""
+"Usa tus Luks para desbloquear productos, accesorios y contenido premium"
+msgstr "استخدم Luks الخاص بك لفتح المنتجات والملحقات والمحتوى المتميز"
+
+#: templates/landing/luks.html:59
+msgid "— Alejandro, Colombia, usuario desde 2024"
+msgstr "— أليخاندرو، كولومبيا، مستخدم منذ 2024"
+
+#: templates/landing/luks.html:68
+msgid "Pilares de Luks"
+msgstr "ركائز لوكس"
+
+#: templates/landing/luks.html:69
+msgid ""
+"Confianza visible, seguridad activa y métricas listas para auditar cada "
+"movimiento, inspiradas en una ética de servicio discreta."
+msgstr ""
+"ثقة واضحة وأمان نشط ومقاييس جاهزة لمراجعة كل تحركاتك، مستوحاة من أخلاقيات "
+"الخدمة السرية."
+
+#: templates/landing/luks.html:87
+msgid "Economía sobre Luks"
+msgstr "اقتصاد لوكس"
+
+#: templates/landing/luks.html:88
+msgid ""
+"Cada módulo del ecosistema Buddy habla el mismo idioma: tokens, "
+"probabilidades y royalties auditables alineados con nuestros valores "
+"fundacionales."
+msgstr ""
+"تتحدث كل وحدة في نظام Buddy البيئي اللغة نفسها: الرموز المميزة والاحتمالات "
+"والعائدات القابلة للتدقيق والتي تتماشى مع قيمنا التأسيسية."
+
+#: templates/landing/luks.html:106
+msgid "Cumplimiento & operación"
+msgstr "الامتثال والتشغيل"
+
+#: templates/landing/luks.html:114
+msgid "Integraciones"
+msgstr "التكاملات"
+
+#: templates/landing/luks.html:122
+msgid "¿Quieres construir sobre Luks?"
+msgstr "هل تريد البناء على لوكس؟"
+
+#: templates/landing/luks.html:123
+msgid ""
+"API, webhooks y paneles están listos. Podemos adaptar los flujos a tu "
+"organización o producto preservando esa visión de servicio que nos "
+"caracteriza."
+msgstr ""
+"واجهة برمجة التطبيقات وخطافات الويب ولوحات المعلومات جاهزة. يمكننا تكييف "
+"التدفقات مع مؤسستك أو منتجك مع الحفاظ على رؤية الخدمة التي تميزنا."
+
+#: templates/landing/luks.html:124
+msgid "Habla con nosotros"
+msgstr "تحدث معنا"
+
+#: templates/landing/monitor.html:11
+msgid "Croody Protocol"
+msgstr "بروتوكول كروودي"
+
+#: templates/landing/monitor.html:15
+msgid "Conectar mi robot"
+msgstr "ربط روبوتي"
+
+#: templates/landing/monitor.html:16
+msgid "Ver token personal"
+msgstr "عرض الرمز الشخصي"
+
+#: templates/landing/monitor.html:33
+msgid "Robot de clases en vivo"
+msgstr "روبوت الفصول المباشرة"
+
+#: templates/landing/monitor.html:34
+msgid ""
+"Bridge automático subscribe el servidor TCP de clases y reenvía cada frame "
+"al Telemetry Gateway."
+msgstr ""
+"يشترك الجسر التلقائي في خادم فئة TCP ويعيد توجيه كل إطار إلى بوابة القياس عن"
+" بعد."
+
+#: templates/landing/monitor.html:37
+msgid "Protocolo"
+msgstr "البروتوكول"
+
+#: templates/landing/monitor.html:38
+msgid "Frecuencia"
+msgstr "التكرار"
+
+#: templates/landing/monitor.html:40
+msgid "Ver carpeta original"
+msgstr "عرض المجلد الأصلي"
+
+#: templates/landing/monitor.html:45
+msgid "Modelo IDS-ML entrenado"
+msgstr "نموذج IDS-ML المدرب"
+
+#: templates/landing/monitor.html:46
+msgid "Pipeline NSL-KDD portado desde clases/CiberTelepatia."
+msgstr "تم نقل خط أنابيب NSL-KDD من الفئات/CiberTelepathy."
+
+#: templates/landing/monitor.html:57
+msgid "Entrenado"
+msgstr "مدرب"
+
+#: templates/landing/monitor.html:76
+msgid "Robots conectados"
+msgstr "روبوتات متصلة"
+
+#: templates/landing/monitor.html:77
+msgid ""
+"Cada tarjeta resume posición, atmósfera y estado transmitido por el "
+"protocolo"
+msgstr "تلخص كل بطاقة الموقع والجو والحالة المنقولة بواسطة البروتوكول"
+
+#: templates/landing/monitor.html:86
+msgid "Cómo funciona"
+msgstr "كيف يعمل"
+
+#: templates/landing/monitor.html:87
+msgid ""
+"El gateway acepta POST JSON seguros con token personal y expone endpoints "
+"GET para visualización y auditoría."
+msgstr ""
+"تقبل البوابة منشورات JSON الآمنة باستخدام رمز شخصي وتكشف عن نقاط نهاية GET "
+"للعرض والمراجعة."
+
+#: templates/landing/monitor.html:89
+msgid "para telemetría"
+msgstr "لقياس عن بعد"
+
+#: templates/landing/monitor.html:90
+msgid "para dashboards"
+msgstr "لوحات المعلومات"
+
+#: templates/landing/monitor.html:91
+msgid "para históricos"
+msgstr "للتاريخيات"
+
+#: templates/landing/monitor.html:95
+msgid "Ejemplo de carga"
+msgstr "مثال الحمولة"
+
+#: templates/landing/parleo.html:4
+msgid "Parleo · Croody"
+msgstr "البحث في Croody"
+
+#: templates/landing/parleo.html:25
+msgid "Lo que define a Parleo"
+msgstr "ما يحدد بارليو"
+
+#: templates/landing/parleo.html:41
+msgid "Hitos hacia el lanzamiento"
+msgstr "معالم نحو الإطلاق"
+
+#: templates/landing/parleo.html:42
+msgid ""
+"Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para "
+"mantener todo en sincronía."
+msgstr ""
+"يشترك Parleo في نفس الحمض النووي لـ Buddy ويتصل مباشرة بـ Buddy وLuks للحفاظ"
+" على مزامنة كل شيء."
+
+#: templates/landing/parleo.html:56
+msgid "Casos de uso"
+msgstr "حالات الاستخدام"
+
+#: templates/landing/parleo.html:64
+msgid "¿Quieres sumarte como beta partner?"
+msgstr "هل تريد الانضمام كشريك تجريبي؟"
+
+#: templates/landing/parleo.html:65
+msgid ""
+"Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos "
+"y recompensas desde un solo canal."
+msgstr ""
+"نحن نختار الفرق التي تحتاج إلى تنسيق التدريب والتحديات والمكافآت من قناة "
+"واحدة."
+
+#: templates/landing/parleo.html:66
+msgid "Solicitar acceso anticipado"
+msgstr "طلب وصول مبكر"
+
+#: templates/landing/suscripciones.html:4
+msgid "Suscripciones · Buddy"
+msgstr "الاشتراكات · بادي"
+
+#: templates/landing/suscripciones.html:21
+msgid "Planes"
+msgstr "الخطط"
+
+#: templates/landing/suscripciones.html:22
+msgid "Pagas mes a mes y puedes cambiar cuando quieras."
+msgstr "أنت تدفع شهريًا ويمكنك التغيير وقتما تشاء."
+
+#: templates/landing/suscripciones.html:46
+msgid "Preguntas frecuentes"
+msgstr "الأسئلة الشائعة"
+
+#: templates/shop/cart.html:5
+#| msgid "Tienda Buddy"
+msgid "Carrito · Tienda Buddy"
+msgstr "متجر عربة الأصدقاء"
+
+#: templates/shop/cart.html:12
+msgid "Tu carrito"
+msgstr "عربة التسوق الخاصة بك"
+
+#: templates/shop/cart.html:13
+msgid "Revisa tu selección"
+msgstr "قم بمراجعة اختيارك"
+
+#: templates/shop/cart.html:14
+msgid "Verifica los productos y continúa al checkout cuando estés listo."
+msgstr "تحقق من المنتجات واستمر في الخروج عندما تكون جاهزًا."
+
+#: templates/shop/cart.html:31
+msgid "Items en el carrito"
+msgstr "العناصر الموجودة في سلة التسوق"
+
+#: templates/shop/cart.html:41
+msgid "Resumen del pedido"
+msgstr "ملخص الطلب"
+
+#: templates/shop/cart.html:44
+msgid "Subtotal"
+msgstr "المجموع الفرعي"
+
+#: templates/shop/cart.html:48
+msgid "Envío"
+msgstr "شحنة"
+
+#: templates/shop/cart.html:49
+msgid "Gratis"
+msgstr "حر"
+
+#: templates/shop/cart.html:52
+msgid "Total"
+msgstr "المجموع"
+
+#: templates/shop/cart.html:59
+msgid "Continuar al checkout"
+msgstr "الاستمرار في الخروج"
+
+#: templates/shop/cart.html:63
+#| msgid "Inicia sesión"
+msgid "Iniciar sesión para comprar"
+msgstr "تسجيل الدخول للشراء"
+
+#: templates/shop/cart.html:68
+msgid "Seguir comprando"
+msgstr "مواصلة التسوق"
+
+#: templates/shop/cart.html:73
+#, python-format
+msgid "Pago 100%% seguro"
+msgstr "دفع آمن بنسبة 100%"
+
+#: templates/shop/cart.html:74
+msgid "Confirmación instantánea"
+msgstr "تأكيد فوري"
+
+#: templates/shop/cart.html:83
+msgid "Tu carrito está vacío"
+msgstr "سلة التسوق الخاصة بك فارغة"
+
+#: templates/shop/cart.html:84
+msgid "Explora nuestros productos y encuentra algo que te guste."
+msgstr "استكشف منتجاتنا وابحث عن ما يعجبك."
+
+#: templates/shop/cart.html:86
+#| msgid "Ver Catálogo"
+msgid "Ver catálogo"
+msgstr "انظر الكتالوج"
+
+#: templates/shop/catalogue.html:6
+msgid "Tienda Buddy · Croody"
+msgstr "متجر بادي · كروودي"
+
+#: templates/shop/catalogue.html:15
+msgid "Todo lo que necesitas para entrenar"
+msgstr "كل ما تحتاجه للتدريب"
+
+#: templates/shop/catalogue.html:16
+msgid "Cofres, sets, accesorios. Compra directo, recibe al instante."
+msgstr "الصناديق، مجموعات، الملحقات. شراء مباشر، تلقي على الفور."
+
+#: templates/shop/catalogue.html:18
+msgid "Ver Catálogo"
+msgstr "عرض الكتالوج"
+
+#: templates/shop/catalogue.html:21
+msgid "Todo"
+msgstr "الكل"
+
+#: templates/shop/catalogue.html:22
+msgid "Cofres"
+msgstr "الطماق"
+
+#: templates/shop/catalogue.html:23
+msgid "Sets"
+msgstr "المجموعات"
+
+#: templates/shop/catalogue.html:24
+msgid "Accesorios"
+msgstr "وصول سريع"
+
+#: templates/shop/catalogue.html:32
+msgid "Catálogo Buddy"
+msgstr "كتالوج بادي"
+
+#: templates/shop/catalogue.html:52
+msgid "Agregar al carrito"
+msgstr "أضف إلى العربة"
+
+#: templates/shop/catalogue.html:59
+msgid "Mostrando"
+msgstr "عرض"
+
+#: templates/shop/catalogue.html:59
+msgid "productos"
+msgstr "منتجات"
+
+#: templates/shop/catalogue.html:61
+msgid "Ver más →"
+msgstr "عرض المزيد ←"
+
+#: templates/shop/catalogue.html:66
+msgid "No hay productos disponibles."
+msgstr "لا توجد منتجات متاحة."
+
+#: templates/shop/checkout_preview.html:4
+msgid "Checkout Buddy · Croody"
+msgstr "الدفع بادي · كروودي"
+
+#: templates/shop/checkout_preview.html:12
+msgid "Checkout Buddy · Paso a paso"
+msgstr "الدفع بادي · خطوة بخطوة"
+
+#: templates/shop/checkout_preview.html:13
+msgid ""
+"Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash"
+" verificable. Todo sucede en cuestión de segundos."
+msgstr ""
+"قم بتوصيل محفظتك، ومراجعة الملخص، والتوقيع واستلام إيصال بتجزئة يمكن التحقق "
+"منها. كل شيء يحدث في غضون ثوان."
+
+#: templates/shop/checkout_preview.html:47
+msgid "Protecciones del flujo"
+msgstr "حماية التدفق"
+
+#: templates/shop/checkout_preview.html:55
+msgid "Wallet y pagos"
+msgstr "المحفظة والمدفوعات"
+
+#: templates/shop/checkout_preview.html:63
+msgid "Confianza y transparencia"
+msgstr "الثقة والشفافية"
+
+#: templates/shop/detail.html:26 templates/shop/detail.html:79
+msgid "Comprar ahora"
+msgstr "اشتر الآن"
+
+#: templates/shop/detail.html:27
+msgid "Volver a la tienda"
+msgstr "العودة إلى المتجر"
+
+#: templates/shop/detail.html:39
+msgid "Compra con seguridad"
+msgstr "تسوق بأمان"
+
+#: templates/shop/detail.html:47
+msgid "Después de comprar"
+msgstr "بعد الشراء"
+
+#: templates/shop/detail.html:53
+msgid "Volver al catálogo"
+msgstr "العودة إلى الكتالوج"
+
+#: templates/shop/detail.html:62
+msgid "También podría interesarte"
+msgstr "قد يهمك أيضاً"
+
+#: templates/shop/detail.html:63
+msgid "Tres recomendaciones para seguir creciendo con tu Buddy."
+msgstr "ثلاث توصيات للنمو المستمر مع بادي."
+
+#~ msgid "Geometría sagrada"
+#~ msgstr "الهندسة المقدسة"
+
+#~ msgid "Volvamos a ser humanos"
+#~ msgstr "لنعد إنسانيين مرة أخرى"

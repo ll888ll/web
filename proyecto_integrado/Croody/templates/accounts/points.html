@@ -1,0 +1,142 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Mis Puntos" %}{% endblock %}
+{% block content_title %}{% trans "Sistema de Puntos" %}{% endblock %}
+
+{% block content %}
+<div class="points-page">
+  <!-- Current Status -->
+  <section class="points-status card">
+    <div class="points-status__main">
+      <div class="points-display">
+        <span class="points-display__value">{{ profile.points }}</span>
+        <span class="points-display__label">{% trans "puntos totales" %}</span>
+      </div>
+      <div class="rank-display rank-display--{{ profile.rank }}">
+        <span class="rank-display__badge">{{ profile.get_rank_display }}</span>
+      </div>
+    </div>
+
+    <!-- Progress to next rank -->
+    <div class="points-progress">
+      {% with next_rank=ranks|last %}
+      {% for rank in ranks %}
+        {% if profile.points < rank.min_points %}
+          {% with prev_rank=ranks|slice:forloop.counter0|last %}
+          <div class="points-progress__info">
+            <span>{% trans "Progreso hacia" %} <strong>{{ rank.name }}</strong></span>
+            <span>{{ profile.points }} / {{ rank.min_points }} {% trans "puntos" %}</span>
+          </div>
+          <div class="progress-bar progress-bar--large">
+            {% widthratio profile.points rank.min_points 100 as progress %}
+            <div class="progress-bar__fill" style="width: {{ progress }}%"></div>
+          </div>
+          <p class="points-progress__remaining">
+            {% with remaining=rank.min_points|add:"-"|add:profile.points %}
+            {% blocktrans %}Faltan {{ remaining }} puntos{% endblocktrans %}
+            {% endwith %}
+          </p>
+          {% endwith %}
+          {% if forloop.first %}{% endif %}
+        {% endif %}
+      {% endfor %}
+      {% endwith %}
+    </div>
+  </section>
+
+  <!-- Ranks Overview -->
+  <section class="ranks-section card">
+    <h3>{% trans "Rangos disponibles" %}</h3>
+    <div class="ranks-list">
+      {% for rank in ranks %}
+      <div class="rank-item{% if profile.rank == rank.name|lower %} rank-item--current{% endif %}{% if profile.points >= rank.min_points %} rank-item--achieved{% endif %}">
+        <div class="rank-item__icon">
+          {% if rank.icon == 'seedling' %}&#x1F331;{% endif %}
+          {% if rank.icon == 'leaf' %}&#x1F343;{% endif %}
+          {% if rank.icon == 'tree' %}&#x1F333;{% endif %}
+          {% if rank.icon == 'crown' %}&#x1F451;{% endif %}
+          {% if rank.icon == 'star' %}&#x2B50;{% endif %}
+        </div>
+        <div class="rank-item__info">
+          <span class="rank-item__name">{{ rank.name }}</span>
+          <span class="rank-item__points">{{ rank.min_points }}+ {% trans "puntos" %}</span>
+        </div>
+        {% if profile.rank == rank.name|lower %}
+        <span class="rank-item__badge">{% trans "Actual" %}</span>
+        {% elif profile.points >= rank.min_points %}
+        <span class="rank-item__check">&#x2713;</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- How to earn points -->
+  <section class="earn-points card">
+    <h3>{% trans "C\u00f3mo ganar puntos" %}</h3>
+    <div class="earn-points__list">
+      {% for source in point_sources %}
+      <div class="earn-item">
+        <span class="earn-item__action">{{ source.action }}</span>
+        <span class="earn-item__points">+{{ source.points }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Your breakdown -->
+  <section class="points-breakdown card">
+    <h3>{% trans "Desglose de tus puntos" %}</h3>
+    <div class="breakdown-list">
+      <div class="breakdown-item">
+        <span class="breakdown-item__label">{% trans "Completitud del perfil" %} ({{ profile.profile_completion }}%)</span>
+        <span class="breakdown-item__value">
+          {% if profile.profile_completion == 100 %}+500{% else %}+{% widthratio profile.profile_completion 100 300 %}{% endif %}
+        </span>
+      </div>
+
+      {% if profile.wallet_verified %}
+      <div class="breakdown-item breakdown-item--achieved">
+        <span class="breakdown-item__label">{% trans "Wallet verificada" %}</span>
+        <span class="breakdown-item__value">+200</span>
+      </div>
+      {% else %}
+      <div class="breakdown-item breakdown-item--pending">
+        <span class="breakdown-item__label">{% trans "Wallet verificada" %}</span>
+        <span class="breakdown-item__value">+200 {% trans "(pendiente)" %}</span>
+      </div>
+      {% endif %}
+
+      {% if profile.profile_picture %}
+      <div class="breakdown-item breakdown-item--achieved">
+        <span class="breakdown-item__label">{% trans "Foto de perfil" %}</span>
+        <span class="breakdown-item__value">+100</span>
+      </div>
+      {% else %}
+      <div class="breakdown-item breakdown-item--pending">
+        <span class="breakdown-item__label">{% trans "Foto de perfil" %}</span>
+        <span class="breakdown-item__value">+100 {% trans "(pendiente)" %}</span>
+      </div>
+      {% endif %}
+
+      {% if profile.active_character %}
+      <div class="breakdown-item breakdown-item--achieved">
+        <span class="breakdown-item__label">{% trans "Personaje activo" %}</span>
+        <span class="breakdown-item__value">+50</span>
+      </div>
+      {% endif %}
+
+      {% with inv_count=request.user.inventory_items.count %}
+      {% if inv_count > 0 %}
+      <div class="breakdown-item breakdown-item--achieved">
+        <span class="breakdown-item__label">{% trans "Items en inventario" %} ({{ inv_count }})</span>
+        <span class="breakdown-item__value">+{% widthratio inv_count 1 50 %}</span>
+      </div>
+      {% endif %}
+      {% endwith %}
+    </div>
+  </section>
+</div>
+{% endblock %}

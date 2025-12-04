@@ -1,0 +1,155 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Mi Perfil" %}{% endblock %}
+{% block content_title %}{% trans "Mi Perfil" %}{% endblock %}
+
+{% block content_actions %}
+<a href="{% url 'accounts:profile_edit' %}" class="btn btn--primary btn--sm">
+  {% trans "Editar perfil" %}
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="profile-view">
+  <!-- Profile Header -->
+  <section class="profile-header card">
+    <div class="profile-header__avatar-section">
+      {% if profile.profile_picture %}
+      <img
+        src="{{ profile.profile_picture.url }}"
+        alt="{{ request.user.username }}"
+        class="profile-header__avatar"
+      >
+      {% else %}
+      <div class="profile-header__avatar profile-header__avatar--placeholder">
+        {{ request.user.username|slice:":1"|upper }}
+      </div>
+      {% endif %}
+
+      {% if profile.active_character %}
+      <div class="profile-header__character">
+        <span class="profile-header__character-label">{% trans "Personaje activo" %}</span>
+        <span class="profile-header__character-name">{{ profile.active_character.name }}</span>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="profile-header__info">
+      <h2 class="profile-header__name">{{ request.user.username }}</h2>
+      <p class="profile-header__email">{{ request.user.email }}</p>
+
+      <div class="profile-header__badges">
+        <span class="badge badge--rank badge--{{ profile.rank }}">
+          {{ profile.get_rank_display }}
+        </span>
+        {% if profile.wallet_verified %}
+        <span class="badge badge--verified">{% trans "Wallet verificada" %}</span>
+        {% endif %}
+      </div>
+
+      {% if profile.bio %}
+      <p class="profile-header__bio">{{ profile.bio }}</p>
+      {% endif %}
+    </div>
+
+    <div class="profile-header__stats">
+      <div class="profile-stat">
+        <span class="profile-stat__value">{{ profile.points }}</span>
+        <span class="profile-stat__label">{% trans "Puntos" %}</span>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat__value">{{ profile.profile_completion }}%</span>
+        <span class="profile-stat__label">{% trans "Completado" %}</span>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat__value">{{ request.user.inventory_items.count }}</span>
+        <span class="profile-stat__label">{% trans "Items" %}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Physical Data -->
+  <section class="profile-section card">
+    <h3 class="profile-section__title">{% trans "Datos f\u00edsicos" %}</h3>
+    <div class="profile-grid">
+      <div class="profile-field">
+        <span class="profile-field__label">{% trans "Peso" %}</span>
+        <span class="profile-field__value">
+          {% if profile.weight %}{{ profile.weight }} kg{% else %}—{% endif %}
+        </span>
+      </div>
+      <div class="profile-field">
+        <span class="profile-field__label">{% trans "Altura" %}</span>
+        <span class="profile-field__value">
+          {% if profile.height %}{{ profile.height }} cm{% else %}—{% endif %}
+        </span>
+      </div>
+      <div class="profile-field">
+        <span class="profile-field__label">{% trans "Fecha de nacimiento" %}</span>
+        <span class="profile-field__value">
+          {% if profile.birth_date %}{{ profile.birth_date|date:"d M Y" }}{% else %}—{% endif %}
+        </span>
+      </div>
+      <div class="profile-field">
+        <span class="profile-field__label">{% trans "G\u00e9nero" %}</span>
+        <span class="profile-field__value">
+          {% if profile.gender %}{{ profile.get_gender_display }}{% else %}—{% endif %}
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fitness Goals -->
+  <section class="profile-section card">
+    <h3 class="profile-section__title">{% trans "Objetivos de fitness" %}</h3>
+    {% if profile.fitness_goals %}
+    <div class="tags-list">
+      {% for goal in profile.fitness_goals %}
+      <span class="tag">{{ goal }}</span>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="profile-section__empty">{% trans "No has definido objetivos a\u00fan." %}</p>
+    {% endif %}
+  </section>
+
+  <!-- Wallet Info -->
+  <section class="profile-section card">
+    <h3 class="profile-section__title">{% trans "Wallet Solana" %}</h3>
+    {% if profile.solana_public_key %}
+    <div class="wallet-display">
+      <code class="wallet-display__key">{{ profile.solana_public_key }}</code>
+      <div class="wallet-display__status">
+        {% if profile.wallet_verified %}
+        <span class="status-badge status-badge--success">{% trans "Verificada" %}</span>
+        {% else %}
+        <span class="status-badge status-badge--warning">{% trans "Pendiente de verificaci\u00f3n" %}</span>
+        {% endif %}
+      </div>
+    </div>
+    {% else %}
+    <p class="profile-section__empty">
+      {% trans "No has conectado una wallet a\u00fan." %}
+      <a href="{% url 'accounts:wallet' %}">{% trans "Conectar ahora" %}</a>
+    </p>
+    {% endif %}
+  </section>
+
+  <!-- Account Info -->
+  <section class="profile-section card">
+    <h3 class="profile-section__title">{% trans "Informaci\u00f3n de cuenta" %}</h3>
+    <div class="profile-grid">
+      <div class="profile-field">
+        <span class="profile-field__label">{% trans "Miembro desde" %}</span>
+        <span class="profile-field__value">{{ request.user.date_joined|date:"d M Y" }}</span>
+      </div>
+      <div class="profile-field">
+        <span class="profile-field__label">{% trans "\u00daltimo acceso" %}</span>
+        <span class="profile-field__value">{{ request.user.last_login|date:"d M Y H:i" }}</span>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

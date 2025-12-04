@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Parleo · Croody{% endblock %}
+{% block title %}{% trans "Parleo · Croody" %}{% endblock %}
 
 {% block body %}
   <main id="main" tabindex="-1">
@@ -21,7 +22,7 @@
     <section class="spec-section" aria-labelledby="parleo-signals-title">
       <div class="container">
         <div class="section__header">
-          <h2 id="parleo-signals-title">Lo que define a Parleo</h2>
+          <h2 id="parleo-signals-title">{% trans "Lo que define a Parleo" %}</h2>
         </div>
         <div class="spec-cards">
           {% for signal in signals %}
@@ -37,8 +38,8 @@
     <section class="spec-section" aria-labelledby="parleo-milestones-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="parleo-milestones-title">Hitos hacia el lanzamiento</h2>
-          <p>Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para mantener todo en sincronía.</p>
+          <h2 id="parleo-milestones-title">{% trans "Hitos hacia el lanzamiento" %}</h2>
+          <p>{% trans "Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para mantener todo en sincronía." %}</p>
         </div>
         {% for milestone in milestones %}
           <div>
@@ -52,7 +53,7 @@
     <section class="spec-section" aria-labelledby="parleo-usecases-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="parleo-usecases-title">Casos de uso</h2>
+          <h2 id="parleo-usecases-title">{% trans "Casos de uso" %}</h2>
           <ul>
             {% for item in use_cases %}
               <li>{{ item }}</li>
@@ -60,9 +61,9 @@
           </ul>
         </div>
         <div>
-          <h3>¿Quieres sumarte como beta partner?</h3>
-          <p>Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos y recompensas desde un solo canal.</p>
-          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Parleo%20Beta">Solicitar acceso anticipado</a>
+          <h3>{% trans "¿Quieres sumarte como beta partner?" %}</h3>
+          <p>{% trans "Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos y recompensas desde un solo canal." %}</p>
+          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Parleo%20Beta">{% trans "Solicitar acceso anticipado" %}</a>
         </div>
       </div>
     </section>

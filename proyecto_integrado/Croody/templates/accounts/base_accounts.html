@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% block page_title %}{% trans "Mi Cuenta" %}{% endblock %} | Croody{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block body %}
+<main id="main" class="accounts-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="accounts-sidebar">
+    <div class="accounts-sidebar__user">
+      {% if request.user.profile.profile_picture %}
+      <img
+        src="{{ request.user.profile.profile_picture.url }}"
+        alt="{{ request.user.username }}"
+        class="accounts-sidebar__avatar"
+      >
+      {% else %}
+      <div class="accounts-sidebar__avatar accounts-sidebar__avatar--placeholder">
+        {{ request.user.username|slice:":1"|upper }}
+      </div>
+      {% endif %}
+      <div class="accounts-sidebar__info">
+        <span class="accounts-sidebar__name">{{ request.user.username }}</span>
+        <span class="accounts-sidebar__rank accounts-sidebar__rank--{{ request.user.profile.rank }}">
+          {{ request.user.profile.get_rank_display }}
+        </span>
+      </div>
+    </div>
+
+    <nav class="accounts-nav" aria-label="{% trans 'Navegaci\u00f3n de cuenta' %}">
+      <a href="{% url 'accounts:dashboard' %}"
+         class="accounts-nav__item{% if request.resolver_match.url_name == 'dashboard' %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x1F3E0;</span>
+        <span>{% trans "Dashboard" %}</span>
+      </a>
+      <a href="{% url 'accounts:profile' %}"
+         class="accounts-nav__item{% if 'profile' in request.resolver_match.url_name %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x1F464;</span>
+        <span>{% trans "Mi Perfil" %}</span>
+      </a>
+      <a href="{% url 'accounts:inventory' %}"
+         class="accounts-nav__item{% if 'inventory' in request.resolver_match.url_name %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x1F4E6;</span>
+        <span>{% trans "Inventario" %}</span>
+      </a>
+      <a href="{% url 'accounts:shop' %}"
+         class="accounts-nav__item{% if 'shop' in request.resolver_match.url_name or 'product' in request.resolver_match.url_name %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x1F6D2;</span>
+        <span>{% trans "Tienda" %}</span>
+      </a>
+      <a href="{% url 'accounts:subscriptions' %}"
+         class="accounts-nav__item{% if 'subscription' in request.resolver_match.url_name %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x2B50;</span>
+        <span>{% trans "Suscripci\u00f3n" %}</span>
+      </a>
+      <a href="{% url 'accounts:wallet' %}"
+         class="accounts-nav__item{% if 'wallet' in request.resolver_match.url_name %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x1F4B3;</span>
+        <span>{% trans "Wallet" %}</span>
+      </a>
+      <a href="{% url 'accounts:points' %}"
+         class="accounts-nav__item{% if 'points' in request.resolver_match.url_name %} is-active{% endif %}">
+        <span class="accounts-nav__icon">&#x1F3C6;</span>
+        <span>{% trans "Puntos" %}</span>
+      </a>
+    </nav>
+
+    <div class="accounts-sidebar__stats">
+      <div class="accounts-sidebar__stat">
+        <span class="accounts-sidebar__stat-value">{{ request.user.profile.points }}</span>
+        <span class="accounts-sidebar__stat-label">{% trans "Puntos" %}</span>
+      </div>
+      <div class="accounts-sidebar__stat">
+        <span class="accounts-sidebar__stat-value">{{ request.user.inventory_items.count }}</span>
+        <span class="accounts-sidebar__stat-label">{% trans "Items" %}</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="accounts-content">
+    {% if messages %}
+    <div class="accounts-messages">
+      {% for message in messages %}
+      <div class="accounts-message accounts-message--{{ message.tags|default:'info' }}">
+        {{ message }}
+        <button type="button" class="accounts-message__close" aria-label="{% trans 'Cerrar' %}">&times;</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <header class="accounts-header">
+      <h1 class="accounts-header__title">{% block content_title %}{% trans "Mi Cuenta" %}{% endblock %}</h1>
+      {% block content_actions %}{% endblock %}
+    </header>
+
+    <div class="accounts-main">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block body_scripts %}
+<script>
+// Close message buttons
+document.querySelectorAll('.accounts-message__close').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.parentElement.remove();
+  });
+});
+</script>
+{% block extra_scripts %}{% endblock %}
+{% endblock %}

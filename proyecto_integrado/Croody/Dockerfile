@@ -65,8 +65,10 @@ COPY . .
 RUN mkdir -p /app/staticfiles /app/media /app/logs \
     && chown -R django:django /app
 
-# Permisos
-RUN chmod +x /app/manage.py /app/entrypoint.sh /app/entrypoint.prod.sh
+# Permisos para scripts
+RUN chmod +x /app/manage.py \
+    && if [ -f /app/entrypoint.sh ]; then chmod +x /app/entrypoint.sh; fi \
+    && if [ -f /app/entrypoint.prod.sh ]; then chmod +x /app/entrypoint.prod.sh; fi
 
 # Ejecutar como usuario no-root
 USER django
@@ -75,8 +77,11 @@ USER django
 EXPOSE 8000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=30s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:8000/health/ || exit 1
+
+# Entrypoint para setup inicial (migraciones, collectstatic)
+ENTRYPOINT ["/app/entrypoint.prod.sh"]
 
 # Comando por defecto para producción con gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "--worker-class", "gthread", "--threads", "2", "--max-requests", "1000", "--max-requests-jitter", "100", "--timeout", "120", "--keep-alive", "5", "--access-logfile", "-", "--error-logfile", "-", "croody.wsgi:application"]

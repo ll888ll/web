@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% load i18n_urls %}
 
 {% block title %}{{ product.name }} · Buddy · Croody{% endblock %}
-{% block header_cta_url %}{% url 'shop:checkout-preview' %}?product={{ product.slug }}{% endblock %}
+{% block header_cta_url %}{% lang_url 'shop:checkout-preview' %}?product={{ product.slug }}{% endblock %}
 
 {% block body %}
   <main id="main" tabindex="-1">
@@ -21,8 +23,8 @@
             <span class="product-card__note">{{ product.delivery_estimate }}</span>
           </div>
           <div class="product-detail__actions">
-            <a class="btn btn--primary" href="{% url 'shop:checkout-preview' %}?product={{ product.slug }}">Comprar ahora</a>
-            <a class="btn btn--ghost" href="{% url 'shop:catalogue' %}">Volver a la tienda</a>
+            <a class="btn btn--primary" href="{% lang_url 'shop:checkout-preview' %}?product={{ product.slug }}">{% trans "Comprar ahora" %}</a>
+            <a class="btn btn--ghost" href="{% lang_url 'shop:catalogue' %}">{% trans "Volver a la tienda" %}</a>
           </div>
           {% if product.description %}
             <div class="product-detail__description">{{ product.description|linebreaks }}</div>
@@ -34,7 +36,7 @@
     <section class="section product-extras" aria-labelledby="product-extras-title">
       <div class="container product-extras__grid">
         <div>
-          <h2 id="product-extras-title">Compra con seguridad</h2>
+          <h2 id="product-extras-title">{% trans "Compra con seguridad" %}</h2>
           <ul>
             {% for note in purchase_highlights %}
               <li>{{ note }}</li>
@@ -42,13 +44,13 @@
           </ul>
         </div>
         <div>
-          <h3>Después de comprar</h3>
+          <h3>{% trans "Después de comprar" %}</h3>
           <ul>
             {% for item in post_purchase_steps %}
               <li>{{ item }}</li>
             {% endfor %}
           </ul>
-          <a class="link-inline" href="{% url 'shop:catalogue' %}#catalogo">Volver al catálogo</a>
+          <a class="link-inline" href="{% lang_url 'shop:catalogue' %}#catalogo">{% trans "Volver al catálogo" %}</a>
         </div>
       </div>
     </section>
@@ -57,8 +59,8 @@
       <section class="section" aria-labelledby="related-title">
         <div class="container">
           <div class="section__header">
-            <h2 id="related-title">También podría interesarte</h2>
-            <p>Tres recomendaciones para seguir creciendo con tu Buddy.</p>
+            <h2 id="related-title">{% trans "También podría interesarte" %}</h2>
+            <p>{% trans "Tres recomendaciones para seguir creciendo con tu Buddy." %}</p>
           </div>
           <div class="product-grid product-grid--catalogue">
             {% for item in related_products %}
@@ -73,8 +75,8 @@
                   <span class="product-card__note">{{ item.delivery_estimate }}</span>
                 </div>
                 <div class="product-card__actions">
-                  <a class="btn btn--primary" href="{{ item.get_absolute_url }}">Ver detalles</a>
-                  <a class="btn btn--ghost" href="{% url 'shop:checkout-preview' %}?product={{ item.slug }}">Comprar ahora</a>
+                  <a class="btn btn--primary" href="{{ item.get_absolute_url }}">{% trans "Ver detalles" %}</a>
+                  <a class="btn btn--ghost" href="{% lang_url 'shop:checkout-preview' %}?product={{ item.slug }}">{% trans "Comprar ahora" %}</a>
                 </div>
               </article>
             {% endfor %}

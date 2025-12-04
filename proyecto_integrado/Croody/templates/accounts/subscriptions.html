@@ -1,0 +1,114 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Suscripciones" %}{% endblock %}
+{% block content_title %}{% trans "Planes de Suscripci\u00f3n" %}{% endblock %}
+
+{% block content %}
+<div class="subscriptions">
+  <!-- Current Subscription -->
+  {% if subscription and subscription.is_active %}
+  <section class="current-subscription card">
+    <div class="current-subscription__header">
+      <h3>{% trans "Tu suscripci\u00f3n actual" %}</h3>
+      <span class="badge badge--active">{% trans "Activa" %}</span>
+    </div>
+    <div class="current-subscription__details">
+      <div class="current-subscription__tier">
+        <span class="tier-name tier-name--{{ subscription.tier }}">
+          {{ subscription.get_tier_display|cut:" - "|first }}
+        </span>
+        <span class="tier-price">\u20ac{{ subscription.price }}/mes</span>
+      </div>
+      <div class="current-subscription__meta">
+        <p>{% trans "Expira" %}: {{ subscription.expires_at|date:"d M Y" }}</p>
+        <p>{% trans "D\u00edas restantes" %}: {{ subscription.days_remaining }}</p>
+        {% if subscription.auto_renew %}
+        <p class="meta-positive">{% trans "Renovaci\u00f3n autom\u00e1tica activada" %}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="current-subscription__actions">
+      <a href="{% url 'accounts:cancel_subscription' %}"
+         class="btn btn--danger btn--sm"
+         onclick="return confirm('{% trans "\u00bfEst\u00e1s seguro de cancelar tu suscripci\u00f3n?" %}')">
+        {% trans "Cancelar suscripci\u00f3n" %}
+      </a>
+    </div>
+  </section>
+  {% elif subscription and subscription.status == 'pending' %}
+  <section class="current-subscription card current-subscription--pending">
+    <div class="current-subscription__header">
+      <h3>{% trans "Suscripci\u00f3n pendiente" %}</h3>
+      <span class="badge badge--warning">{% trans "Pendiente de pago" %}</span>
+    </div>
+    <div class="current-subscription__details">
+      <p>{% trans "Tu suscripci\u00f3n" %} <strong>{{ subscription.get_tier_display }}</strong> {% trans "est\u00e1 pendiente de pago." %}</p>
+      <a href="{% url 'accounts:wallet' %}" class="btn btn--primary">
+        {% trans "Completar pago" %}
+      </a>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Plans -->
+  <section class="plans-section">
+    <h3 class="plans-section__title">{% trans "Elige tu plan" %}</h3>
+    <div class="plans-grid">
+      {% for tier in tiers %}
+      <article class="plan-card{% if tier.popular %} plan-card--popular{% endif %}{% if subscription.tier == tier.id %} plan-card--current{% endif %}">
+        {% if tier.popular %}
+        <div class="plan-card__popular-badge">{% trans "M\u00e1s popular" %}</div>
+        {% endif %}
+
+        <header class="plan-card__header">
+          <h4 class="plan-card__name">{{ tier.name }}</h4>
+          <div class="plan-card__price">
+            <span class="plan-card__currency">\u20ac</span>
+            <span class="plan-card__amount">{{ tier.price }}</span>
+            <span class="plan-card__period">/{% trans "mes" %}</span>
+          </div>
+        </header>
+
+        <ul class="plan-card__features">
+          {% for feature in tier.features %}
+          <li class="plan-card__feature">
+            <span class="plan-card__feature-icon">&#x2713;</span>
+            {{ feature }}
+          </li>
+          {% endfor %}
+        </ul>
+
+        <footer class="plan-card__footer">
+          {% if subscription.tier == tier.id and subscription.is_active %}
+          <span class="btn btn--disabled">{% trans "Plan actual" %}</span>
+          {% else %}
+          <a href="{% url 'accounts:subscribe' tier.id %}" class="btn btn--primary">
+            {% trans "Suscribirse" %}
+          </a>
+          {% endif %}
+        </footer>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Payment Info -->
+  <section class="payment-info card">
+    <h3>{% trans "Informaci\u00f3n de pago" %}</h3>
+    <div class="payment-info__content">
+      <div class="payment-info__method">
+        <span class="payment-info__icon">&#x1F4B3;</span>
+        <div>
+          <strong>{% trans "Pago con Solana" %}</strong>
+          <p>{% trans "Aceptamos pagos en SOL a trav\u00e9s de tu wallet conectada." %}</p>
+        </div>
+      </div>
+      <p class="payment-info__note">
+        {% trans "Al suscribirte, ser\u00e1s redirigido a la p\u00e1gina de wallet para completar el pago." %}
+      </p>
+    </div>
+  </section>
+</div>
+{% endblock %}

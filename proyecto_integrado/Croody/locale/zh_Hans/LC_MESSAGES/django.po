@@ -3,10 +3,9 @@
 #
 msgid ""
 msgstr ""
-
 "Project-Id-Version: Croody 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-06 16:30+0000\n"
+"POT-Creation-Date: 2025-12-04 00:57+0000\n"
 "PO-Revision-Date: 2025-01-06 16:30+0000\n"
 "Last-Translator: Croody Team\n"
 "Language-Team: Chinese Simplified <hola@croody.app>\n"
@@ -15,198 +14,3482 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-msgid "Croody · Precisión cósmica con corazón"
-msgstr ""
 
-msgid "Saltar al contenido principal"
-msgstr "跳转到主要内容"
+#: accounts/admin.py:33 accounts/admin.py:138 accounts/models.py:90
+#: accounts/models.py:283 accounts/models.py:347 accounts/models.py:454
+#| msgid "Usuario o correo"
+msgid "Usuario"
+msgstr "用户"
 
-msgid "Abrir menú"
-msgstr "打开菜单"
+#: accounts/admin.py:36
+#| msgid "Datos personales"
+msgid "Datos Físicos"
+msgstr "物理数据"
 
-msgid "Buscar en Croody"
-msgstr "在Croody中搜索"
+#: accounts/admin.py:40
+msgid "Avatar"
+msgstr "阿凡达"
 
-msgid "Buscar (pulsa /)"
-msgstr ""
+#: accounts/admin.py:43 templates/accounts/dashboard.html:62
+#: templates/accounts/profile.html:120 templates/accounts/wallet.html:6
+msgid "Wallet Solana"
+msgstr "Solana 钱包"
 
-msgid "Seleccionar idioma"
-msgstr "选择语言"
+#: accounts/admin.py:46
+#| msgid "🎮 Gamificación"
+msgid "Gamificación"
+msgstr "游戏化"
 
-msgid "Cambiar tema"
-msgstr "更改主题"
+#: accounts/admin.py:49 accounts/admin.py:150 accounts/admin.py:253
+msgid "Metadata"
+msgstr "元数据"
 
-msgid "Empezar"
-msgstr "开始"
+#: accounts/admin.py:70 accounts/models.py:170
+msgid "Rango"
+msgstr "范围"
 
-msgid "Salir"
-msgstr "登出"
+#: accounts/admin.py:83
+msgid "Completitud"
+msgstr "完整性"
 
-msgid "Acceder"
-msgstr "登录"
+#: accounts/admin.py:98 templates/accounts/base_accounts.html:64
+#| msgid "Wallet y pagos"
+msgid "Wallet"
+msgstr "钱包"
 
-msgid "Cerrar sesión"
-msgstr "退出"
+#: accounts/admin.py:102
+msgid "Recalcular estadísticas de usuarios"
+msgstr "重新计算用户统计数据"
 
-msgid "Búsqueda"
-msgstr ""
+#: accounts/admin.py:106
+msgid "Estadísticas recalculadas correctamente."
+msgstr "统计数据重新计算正确。"
 
-msgid "Contactar"
-msgstr ""
+#: accounts/admin.py:141 accounts/models.py:62 accounts/models.py:386
+#: accounts/models.py:493
+#| msgid "Ver suscripciones"
+msgid "Suscripción"
+msgstr "订阅"
 
-msgid "Accesos rápidos"
-msgstr "快速访问"
+#: accounts/admin.py:144
+msgid "Fechas"
+msgstr "枣子"
 
-msgid "Resultados sugeridos"
-msgstr "建议结果"
+#: accounts/admin.py:147
+msgid "Pago"
+msgstr "支付"
 
-msgid "Geometría sagrada"
-msgstr "神圣几何"
+#: accounts/admin.py:170 accounts/models.py:350
+msgid "Nivel"
+msgstr "等级"
 
-msgid "Legal"
-msgstr "法律"
+#: accounts/admin.py:186 accounts/admin.py:278 accounts/models.py:356
+#: accounts/models.py:480 templates/accounts/wallet.html:121
+msgid "Estado"
+msgstr "状态"
 
-msgid "Privacidad"
-msgstr "隐私"
+#: accounts/admin.py:202
+msgid "Días restantes"
+msgstr "剩余天数"
 
-msgid "Términos"
-msgstr "条款"
+#: accounts/admin.py:206
+msgid "Activar suscripciones seleccionadas"
+msgstr "激活选定的订阅"
 
-msgid "Cookies"
-msgstr "Cookies"
+#: accounts/admin.py:210
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones activadas."
+msgstr "订阅已激活。"
 
-msgid "Inicia sesión"
-msgstr "登录"
+#: accounts/admin.py:212
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripciones seleccionadas"
+msgstr "取消选定的订阅"
 
-msgid "Acceso Croody"
-msgstr ""
+#: accounts/admin.py:216
+#| msgid "Suscripciones · Buddy"
+msgid "Suscripciones canceladas."
+msgstr "取消订阅。"
 
-msgid "Conecta tu cuenta para continuar."
-msgstr "连接您的帐户以继续。"
+#: accounts/admin.py:239
+msgid "Transacción"
+msgstr "交易"
 
-msgid "Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener tu tema oscuro o claro sincronizado."
-msgstr ""
+#: accounts/admin.py:242
+#| msgid "Preferencias"
+msgid "Referencias"
+msgstr "参考"
 
-msgid "¿Olvidaste tu acceso? Escríbenos a"
-msgstr ""
+#: accounts/admin.py:246
+#| msgid "Wallet y pagos"
+msgid "Wallets"
+msgstr "钱包"
 
-msgid "¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo Croody."
-msgstr ""
+#: accounts/admin.py:249
+#| msgid "🎮 Gamificación"
+msgid "Verificación"
+msgstr "确认"
 
-msgid "Ingresar"
-msgstr "登录"
+#: accounts/admin.py:262
+msgid "TX Signature"
+msgstr "发送签名"
 
-msgid "Croody · Conecta, Entrena y Destaca"
-msgstr ""
+#: accounts/admin.py:282
+msgid "Marcar como verificadas"
+msgstr "标记为已验证"
 
-msgid "Volvamos a ser humanos"
-msgstr "让我们重新成为人类"
+#: accounts/admin.py:286
+msgid "Transacciones marcadas como verificadas."
+msgstr "交易标记为已验证。"
 
-msgid "Croody es una empresa con la mentalidad de que el mundo tecnológico debe conectar a las personas, no simular una conexión que al final del día realmente nos desconecta incluso de nosotros mismos. A través de propuestas tecnológicas buscamos crear conexiones reales que cambien el mundo para un mejor futuro como especies."
-msgstr ""
+#: accounts/admin.py:288
+msgid "Marcar como fallidas"
+msgstr "标记为失败"
 
-msgid "Ir a la tienda Buddy"
-msgstr ""
+#: accounts/admin.py:292
+msgid "Transacciones marcadas como fallidas."
+msgstr "交易标记为失败。"
 
-msgid "Conocer a Buddy"
-msgstr ""
+#: accounts/apps.py:11
+#| msgid "Viajes de usuario"
+msgid "Cuentas de Usuario"
+msgstr "用户帐户"
 
-msgid "Logo de Croody representando conexión y tecnología humanizada"
-msgstr ""
+#: accounts/forms.py:43
+msgid "Cuéntanos sobre ti..."
+msgstr "告诉我们你自己..."
 
-msgid "rutinas ajustadas automáticamente cada semana"
-msgstr ""
+#: accounts/forms.py:49 templates/accounts/profile_edit.html:69
+msgid "Ej: 70.5"
+msgstr "例如：70.5"
 
-msgid "personas mantienen su plan mensual con Buddy activo"
-msgstr ""
+#: accounts/forms.py:58 templates/accounts/profile_edit.html:87
+msgid "Ej: 175"
+msgstr "例如：175"
 
-msgid "7 regiones"
-msgstr ""
+#: accounts/forms.py:77
+msgid "El peso debe estar entre 20 y 300 kg."
+msgstr "重量必须在 20 至 300 公斤之间。"
 
-msgid "operación sincronizada con soporte localizado"
-msgstr ""
+#: accounts/forms.py:85
+msgid "La altura debe estar entre 100 y 250 cm."
+msgstr "高度应在 100 至 250 厘米之间。"
 
-msgid "Fitness & Conexión"
-msgstr ""
+#: accounts/forms.py:94
+msgid "La imagen no puede superar 5MB."
+msgstr "图片不能超过 5MB。"
 
+#: accounts/forms.py:99
+msgid "Solo se permiten imágenes JPEG, PNG, GIF o WebP."
+msgstr "仅允许使用 JPEG、PNG、GIF 或 WebP 图像。"
+
+#: accounts/forms.py:114
+msgid "Tu llave pública de Solana..."
+msgstr "您的 Solana 公钥..."
+
+#: accounts/forms.py:130
+msgid "La llave pública debe tener entre 32 y 44 caracteres."
+msgstr "公钥必须介于 32 到 44 个字符之间。"
+
+#: accounts/forms.py:137
+msgid "La llave pública contiene caracteres inválidos."
+msgstr "公钥包含无效字符。"
+
+#: accounts/forms.py:147 accounts/models.py:296 accounts/models.py:457
+msgid "Firma de transacción"
+msgstr "交易签名"
+
+#: accounts/forms.py:152
+msgid "Pega aquí la firma de tu transacción..."
+msgstr "将您的交易签名粘贴到此处..."
+
+#: accounts/forms.py:155
+msgid "La firma de la transacción de Solana (88 caracteres)."
+msgstr "Solana 的交易签名（88 个字符）。"
+
+#: accounts/forms.py:163
+msgid "La firma de transacción es requerida."
+msgstr "需要交易签名。"
+
+#: accounts/forms.py:168
+msgid "La firma debe tener exactamente 88 caracteres."
+msgstr "签名必须正好是 88 个字符。"
+
+#: accounts/forms.py:175
+msgid "La firma contiene caracteres inválidos."
+msgstr "签名包含无效字符。"
+
+#: accounts/forms.py:185
+msgid "Perder peso"
+msgstr "减肥"
+
+#: accounts/forms.py:186
+msgid "Ganar músculo"
+msgstr "增加肌肉"
+
+#: accounts/forms.py:187
+msgid "Mejorar resistencia"
+msgstr "提高抵抗力"
+
+#: accounts/forms.py:188
+msgid "Mejorar flexibilidad"
+msgstr "提高灵活性"
+
+#: accounts/forms.py:189
+msgid "Salud general"
+msgstr "一般健康状况"
+
+#: accounts/forms.py:190
+msgid "Reducir estrés"
+msgstr "减轻压力"
+
+#: accounts/forms.py:191
+msgid "Mejorar sueño"
+msgstr "改善睡眠"
+
+#: accounts/forms.py:195 accounts/models.py:120
+#: templates/accounts/profile.html:106
+msgid "Objetivos de fitness"
+msgstr "健身目标"
+
+#: accounts/models.py:31 templates/accounts/profile_edit.html:112
+msgid "Masculino"
+msgstr "男性"
+
+#: accounts/models.py:32 templates/accounts/profile_edit.html:113
+msgid "Femenino"
+msgstr "女性"
+
+#: accounts/models.py:33 templates/accounts/profile_edit.html:114
+msgid "No binario"
+msgstr "非二元"
+
+#: accounts/models.py:34 templates/accounts/profile_edit.html:115
+#| msgid "Preferencias"
+msgid "Prefiero no decir"
+msgstr "我宁愿不说"
+
+#: accounts/models.py:39
+msgid "Starter - €19.99/mes"
+msgstr "入门版 - €19.99/月"
+
+#: accounts/models.py:40
+msgid "Pro - €59.99/mes"
+msgstr "专业版 - €59.99/月"
+
+#: accounts/models.py:41
+msgid "Elite - €199.99/mes"
+msgstr "精英 - €199.99/月"
+
+#: accounts/models.py:46 templates/accounts/subscriptions.html:15
+#| msgid "Actividad"
+msgid "Activa"
+msgstr "积极的"
+
+#: accounts/models.py:47 templates/accounts/subscriptions.html:44
+msgid "Pendiente de pago"
+msgstr "待付款"
+
+#: accounts/models.py:48 accounts/models.py:57
+msgid "Expirada"
+msgstr "已到期"
+
+#: accounts/models.py:49
+msgid "Cancelada"
+msgstr "取消"
+
+#: accounts/models.py:54
+msgid "Pendiente de verificación"
+msgstr "待验证"
+
+#: accounts/models.py:55 templates/accounts/profile.html:126
+#: templates/accounts/wallet.html:15
+msgid "Verificada"
+msgstr "已验证"
+
+#: accounts/models.py:56
+msgid "Fallida"
+msgstr "失败的"
+
+#: accounts/models.py:63
+#| msgid "Un ecosistema, dos productos"
+msgid "Compra de producto"
+msgstr "产品购买"
+
+#: accounts/models.py:64
+msgid "Propina/Donación"
+msgstr "小费/捐赠"
+
+#: accounts/models.py:69
+msgid "Novato"
+msgstr "新秀"
+
+#: accounts/models.py:70
+msgid "Aprendiz"
+msgstr "学徒"
+
+#: accounts/models.py:71
+msgid "Guerrero"
+msgstr "战士"
+
+#: accounts/models.py:72
+msgid "Maestro"
+msgstr "老师"
+
+#: accounts/models.py:73
+#| msgid "Tienda"
+msgid "Leyenda"
+msgstr "传奇"
+
+#: accounts/models.py:95 templates/accounts/profile_edit.html:59
+msgid "Peso (kg)"
+msgstr "重量（公斤）"
+
+#: accounts/models.py:102 templates/accounts/profile_edit.html:77
+msgid "Altura (cm)"
+msgstr "身高（厘米）"
+
+#: accounts/models.py:109 templates/accounts/profile.html:90
+#: templates/accounts/profile_edit.html:95
+msgid "Fecha de nacimiento"
+msgstr "出生日期"
+
+#: accounts/models.py:114
+msgid "Género"
+msgstr "性别"
+
+#: accounts/models.py:125
+msgid "Biografía"
+msgstr "传"
+
+#: accounts/models.py:132 accounts/views.py:381
+#: templates/accounts/points.html:114 templates/accounts/points.html:119
+#: templates/accounts/profile_edit.html:21
+#| msgid "Croody · Perfil"
+msgid "Foto de perfil"
+msgstr "个人资料照片"
+
+#: accounts/models.py:143 accounts/views.py:382
+#: templates/accounts/inventory.html:57 templates/accounts/points.html:126
+#: templates/accounts/profile.html:33
+msgid "Personaje activo"
+msgstr "积极的性格"
+
+#: accounts/models.py:144
+msgid "Debe ser un item del inventario del usuario"
+msgstr "必须是用户库存中的物品"
+
+#: accounts/models.py:149
+msgid "Llave pública Solana"
+msgstr "Solana 公钥"
+
+#: accounts/models.py:152
+msgid "Dirección de wallet Solana (base58)"
+msgstr "Solana 钱包地址（base58）"
+
+#: accounts/models.py:155 accounts/views.py:380
+#: templates/accounts/points.html:102 templates/accounts/points.html:107
+#: templates/accounts/profile.html:48
+msgid "Wallet verificada"
+msgstr "已验证钱包"
+
+#: accounts/models.py:159
+msgid "Fecha de conexión de wallet"
+msgstr "钱包连接日期"
+
+#: accounts/models.py:166 templates/accounts/base_accounts.html:69
+#: templates/accounts/base_accounts.html:76 templates/accounts/profile.html:60
+msgid "Puntos"
+msgstr "积分"
+
+#: accounts/models.py:176
+msgid "Completitud del perfil (%)"
+msgstr "配置文件完整性 (%)"
+
+#: accounts/models.py:185
+#| msgid "Viajes de usuario"
+msgid "Perfil de usuario"
+msgstr "用户资料"
+
+#: accounts/models.py:186
+#| msgid "Viajes de usuario"
+msgid "Perfiles de usuario"
+msgstr "用户资料"
+
+#: accounts/models.py:289 accounts/models.py:501
+#| msgid "productos"
+msgid "Producto"
+msgstr "产品"
+
+#: accounts/models.py:292
+msgid "Fecha de adquisición"
+msgstr "收购日期"
+
+#: accounts/models.py:299
+msgid "Signature de la transacción Solana"
+msgstr "Solana 交易的签名"
+
+#: accounts/models.py:302
+msgid "Descargas"
+msgstr "下载"
+
+#: accounts/models.py:306
+msgid "Es regalo"
+msgstr "这是一份礼物"
+
+#: accounts/models.py:310
+msgid "Notas"
+msgstr "成绩"
+
+#: accounts/models.py:315
+msgid "Item de inventario"
+msgstr "库存项目"
+
+#: accounts/models.py:316
+msgid "Items de inventario"
+msgstr "库存物品"
+
+#: accounts/models.py:362
+msgid "Fecha de inicio"
+msgstr "开始日期"
+
+#: accounts/models.py:367
+msgid "Fecha de expiración"
+msgstr "截止日期"
+
+#: accounts/models.py:372
+msgid "Renovación automática"
+msgstr "自动续订"
+
+#: accounts/models.py:376
+msgid "Firma de transacción de pago"
+msgstr "支付交易签名"
+
+#: accounts/models.py:387 templates/accounts/subscriptions.html:5
+#| msgid "Ver suscripciones"
+msgid "Suscripciones"
+msgstr "订阅"
+
+#: accounts/models.py:460
+msgid "Transaction signature de Solana"
+msgstr "Solana 交易签名"
+
+#: accounts/models.py:463
+msgid "Cantidad (SOL)"
+msgstr "数量 (SOL)"
+
+#: accounts/models.py:468
+msgid "Cantidad (USD)"
+msgstr "数量（美元）"
+
+#: accounts/models.py:475
+msgid "Propósito"
+msgstr "目的"
+
+#: accounts/models.py:506
+msgid "Wallet origen"
+msgstr "起源钱包"
+
+#: accounts/models.py:511
+msgid "Wallet destino"
+msgstr "目的地钱包"
+
+#: accounts/models.py:514 templates/accounts/wallet.html:97
+#| msgid "Parleo · Croody"
+msgid "Wallet de Croody"
+msgstr "克鲁迪钱包"
+
+#: accounts/models.py:517
+msgid "Tiempo de bloque"
+msgstr "区块时间"
+
+#: accounts/models.py:522
+msgid "Datos de verificación"
+msgstr "验证数据"
+
+#: accounts/models.py:530
+msgid "Fecha de verificación"
+msgstr "验证日期"
+
+#: accounts/models.py:536
+msgid "Transacción de wallet"
+msgstr "钱包交易"
+
+#: accounts/models.py:537
+msgid "Transacciones de wallet"
+msgstr "钱包交易"
+
+#: accounts/views.py:88
+#| msgid "Perfil actualizado."
+msgid "Perfil actualizado correctamente."
+msgstr "个人资料更新成功。"
+
+#: accounts/views.py:135
+#, python-format
+msgid "Descarga iniciada para \"%(name)s\""
+msgstr "已开始下载“%(name)s”"
+
+#: accounts/views.py:156
+#, python-format
+msgid "Personaje activo cambiado a \"%(name)s\""
+msgstr "活动字符更改为“%(name)s”"
+
+#: accounts/views.py:227
+#| msgid "Accesos rápidos"
+msgid "Acceso básico"
+msgstr "基本访问权限"
+
+#: accounts/views.py:228
+msgid "5 descargas/mes"
+msgstr "每月 5 次下载"
+
+#: accounts/views.py:229
+msgid "Soporte por email"
+msgstr "电子邮件支持"
+
+#: accounts/views.py:237
+#| msgid "Nombre completo"
+msgid "Acceso completo"
+msgstr "完全访问权限"
+
+#: accounts/views.py:238
+msgid "Descargas ilimitadas"
+msgstr "无限下载"
+
+#: accounts/views.py:239 landing/views.py:483
+msgid "Soporte prioritario"
+msgstr "优先支持"
+
+#: accounts/views.py:240
+msgid "Personajes exclusivos"
+msgstr "专属角色"
+
+#: accounts/views.py:249
+msgid "Todo lo de Pro"
+msgstr "一切专业"
+
+#: accounts/views.py:250
+#| msgid "Solicitar acceso anticipado"
+msgid "Acceso anticipado"
+msgstr "抢先体验"
+
+#: accounts/views.py:251
+msgid "NFTs exclusivos"
+msgstr "独家 NFT"
+
+#: accounts/views.py:252
+msgid "Sesiones 1-on-1"
+msgstr "一对一课程"
+
+#: accounts/views.py:253
+msgid "Badge Elite"
+msgstr "精英徽章"
+
+#: accounts/views.py:265
+msgid "Plan de suscripción no válido."
+msgstr "订阅计划无效。"
+
+#: accounts/views.py:279
+msgid "Por favor, completa el pago para activar tu suscripción."
+msgstr "请完成付款以激活您的订阅。"
+
+#: accounts/views.py:290
+msgid "Suscripción cancelada."
+msgstr "取消订阅。"
+
+#: accounts/views.py:292
+msgid "No tienes una suscripción activa."
+msgstr "您没有有效的订阅。"
+
+#: accounts/views.py:334
+msgid "Wallet conectada. Pendiente de verificación."
+msgstr "连接钱包。待验证。"
+
+#: accounts/views.py:336
+msgid "Error al conectar wallet."
+msgstr "连接钱包时出错。"
+
+#: accounts/views.py:351
+#| msgid "Alertas desactivadas"
+msgid "Wallet desconectada."
+msgstr "钱包已断开连接。"
+
+#: accounts/views.py:379
+#| msgid "Nombre completo"
+msgid "Perfil completo"
+msgstr "完整的个人资料"
+
+#: accounts/views.py:383
+msgid "Cada item en inventario"
+msgstr "库存中的每件商品"
+
+#: accounts/views.py:384
+msgid "Suscripción Starter"
+msgstr "入门订阅"
+
+#: accounts/views.py:385
+msgid "Suscripción Pro"
+msgstr "专业订阅"
+
+#: accounts/views.py:386
+msgid "Suscripción Elite"
+msgstr "精英订阅"
+
+#: croody/navigation.py:14
+msgid "Inicio"
+msgstr "首页"
+
+#: croody/navigation.py:15 landing/views.py:58 templates/landing/about.html:10
+msgid "Nosotros"
+msgstr "关于"
+
+#: croody/navigation.py:16 landing/views.py:95
 msgid "Buddy"
-msgstr ""
+msgstr "Buddy"
 
-msgid "Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena como quien apenas empieza encuentre cada día un porqué claro para construir el físico y los hábitos de salud de sus sueños. Conecta con tus amigos, entrena juntos y destaca."
-msgstr ""
+#: croody/navigation.py:17
+msgid "Luks"
+msgstr "Luks"
 
+#: croody/navigation.py:18 templates/accounts/base_accounts.html:54
+#: templates/accounts/shop.html:5 templates/accounts/shop.html:6
+msgid "Tienda"
+msgstr "商店"
+
+#: croody/navigation.py:26
+msgid "Croody · Inicio"
+msgstr "Croody · 首页"
+
+#: croody/navigation.py:27
+msgid "Croody · Ejes"
+msgstr "Croody · 轴心"
+
+#: croody/navigation.py:28
+msgid "Croody · Roadmap"
+msgstr "Croody · 路线图"
+
+#: croody/navigation.py:29
+msgid "Buddy · Producto"
+msgstr "Buddy · 产品"
+
+#: croody/navigation.py:30 landing/views.py:444
+msgid "Buddy · Suscripciones"
+msgstr "Buddy · 订阅"
+
+#: croody/navigation.py:31
+msgid "Luks · Infraestructura"
+msgstr "Luks · 基础设施"
+
+#: croody/navigation.py:32 landing/views.py:411
+#: templates/landing/home.html:262 templates/shop/catalogue.html:14
+msgid "Tienda Buddy"
+msgstr "Buddy商店"
+
+#: croody/navigation.py:33
+msgid "Buddy Checkout"
+msgstr "Buddy结账"
+
+#: croody/navigation.py:34
+msgid "Croody · Registro"
+msgstr "Croody · 注册"
+
+#: croody/navigation.py:35
+msgid "Croody · Perfil"
+msgstr "Croody · 个人资料"
+
+#: landing/forms.py:18
+msgid "Usuario o correo"
+msgstr "用户名或邮箱"
+
+#: landing/forms.py:30
+msgid "Contraseña"
+msgstr "密码"
+
+#: landing/forms.py:54
+msgid "Nombre completo"
+msgstr "全名"
+
+#: landing/forms.py:59
+msgid "Nombre y apellidos"
+msgstr "名字和姓氏"
+
+#: landing/forms.py:65
+msgid "Correo electrónico"
+msgstr "电子邮件"
+
+#: landing/forms.py:71
+msgid "Idioma preferido"
+msgstr "首选语言"
+
+#: landing/forms.py:76
+msgid "Tema visual"
+msgstr "视觉主题"
+
+#: landing/forms.py:80
+msgid "Acepto el manifiesto Croody y términos de servicio"
+msgstr "我同意Croody宣言和服务条款"
+
+#: landing/forms.py:89
+msgid "Ya existe una cuenta con este correo."
+msgstr "该邮箱已存在账户。"
+
+#: landing/forms.py:132
+msgid "Nombre"
+msgstr "名字"
+
+#: landing/forms.py:133
+msgid "Apellidos"
+msgstr "姓氏"
+
+#: landing/models.py:21
+msgid "Sistema"
+msgstr "系统"
+
+#: landing/models.py:22
+msgid "Oscuro"
+msgstr "深色"
+
+#: landing/models.py:23
+msgid "Claro"
+msgstr "浅色"
+
+#: landing/views.py:72
+msgid "Buddy AI · Entrena, Progresa, Destaca"
+msgstr "Buddy AI · 训练、进步、突出"
+
+#: landing/views.py:73
+msgid "Tu entrenador AI personal"
+msgstr "你的个人AI教练"
+
+#: landing/views.py:75
+msgid ""
+"Rutinas que se adaptan a ti. Recompensas que te motivan. La tecnología que "
+"conecta."
+msgstr "适合您的常规。激励你的奖励。连接技术。"
+
+#: landing/views.py:77
+msgid "🛒 Ir a la Tienda"
+msgstr "🛒 前往商店"
+
+#: landing/views.py:78
+msgid "Ver Buddy"
+msgstr "查看Buddy"
+
+#: landing/views.py:79
+msgid "💎 Luks"
+msgstr "💎 Luks"
+
+#: landing/views.py:82
+msgid "Croody - Tecnología que conecta"
+msgstr "Croody - 连接技术"
+
+#: landing/views.py:87
+msgid "rutinas ajustadas automáticamente cada semana"
+msgstr "每周自动调整训练"
+
+#: landing/views.py:88
+msgid "personas mantienen su plan mensual con Buddy activo"
+msgstr "人们保持月度计划与活跃的Buddy"
+
+#: landing/views.py:89
+msgid "7 regiones"
+msgstr "7个地区"
+
+#: landing/views.py:89
+msgid "operación sincronizada con soporte localizado"
+msgstr "同步运营与本地支持"
+
+#: landing/views.py:94
+msgid "Fitness & Conexión"
+msgstr "健身与连接"
+
+#: landing/views.py:96
+msgid ""
+"Una aplicación intuitiva, simétrica, de alta estética y gran fluidez, "
+"diseñada para que tanto quien ya entrena como quien apenas empieza encuentre"
+" cada día un porqué claro para construir el físico y los hábitos de salud de"
+" sus sueños. Conecta con tus amigos, entrena juntos y destaca."
+msgstr ""
+"直观、对称的应用程序，具有高美感和出色的流动性，旨在让已经训练的人和刚刚开始训练的人每天都能找到明确的理由来建立他们梦想的体格和健康习惯。与您的朋友联系，一起训练并脱颖而出。"
+
+#: landing/views.py:97 landing/views.py:99
 msgid "Conecta, Entrena y Destaca"
 msgstr "连接、训练和脱颖而出"
 
+#: landing/views.py:102
 msgid "Economía Digital"
-msgstr ""
+msgstr "数字经济"
 
+#: landing/views.py:103
 msgid "My Luks"
-msgstr ""
+msgstr "我的Luks"
 
-msgid "Creamos un mercado con el cual puedes de forma segura incursionar en el mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen de una política interna de tu país y prosperar incluso en los entornos hostiles por decisiones de gobiernos."
+#: landing/views.py:104
+msgid ""
+"Creamos un mercado con el cual puedes de forma segura incursionar en el "
+"mundo cripto, obtener ingresos extra y apoyarte en divisas que no dependen "
+"de una política interna de tu país y prosperar incluso en los entornos "
+"hostiles por decisiones de gobiernos."
 msgstr ""
+"我们创建了一个市场，您可以安全地进入加密世界，获得额外收入，并依赖不依赖于您所在国家内部政策的货币，即使在政府决定的敌对环境中也能繁荣发展。"
 
+#: landing/views.py:105 landing/views.py:107
 msgid "Seguridad, Abundancia y Proyección"
-msgstr ""
+msgstr "安全、丰裕与投影"
 
+#: landing/views.py:110
 msgid "Alimentación Real"
-msgstr ""
+msgstr "真实食物"
 
+#: landing/views.py:111
 msgid "Comida Real (Próximamente)"
-msgstr ""
+msgstr "真实食物（即将推出）"
 
-msgid "A través de investigación y compromiso alimenticio ofrecemos comida real y soluciones eficaces para aquellos que se quieren alimentar bien y carecen de tiempo, para todas las edades. Promovemos alimentos de origen animal y vegetal, sin productos químicos dañinos."
-msgstr ""
+#: landing/views.py:112
+msgid ""
+"A través de investigación y compromiso alimenticio ofrecemos comida real y "
+"soluciones eficaces para aquellos que se quieren alimentar bien y carecen de"
+" tiempo, para todas las edades. Promovemos alimentos de origen animal y "
+"vegetal, sin productos químicos dañinos."
+msgstr "通过研究和营养承诺，我们为所有年龄段的想要吃得好但缺乏时间的人们提供真正的食物和有效的解决方案。我们推广不含有害化学物质的动植物食品。"
 
+#: landing/views.py:113 landing/views.py:115
 msgid "Alivio, Nostalgia y Satisfacción"
-msgstr ""
+msgstr "缓解、怀旧与满足"
 
+#: landing/views.py:121
+msgid "Claridad en cada decisión"
+msgstr "每一个决定都清晰明了"
+
+#: landing/views.py:122
+msgid ""
+"Interfaces limpias, métricas visibles y lenguaje directo para que cualquier "
+"equipo entienda qué sigue."
+msgstr "干净的界面、可见的指标和直接的语言，让任何团队都了解接下来会发生什么。"
+
+#: landing/views.py:125
+msgid "Motivación sostenible"
+msgstr "可持续的动力"
+
+#: landing/views.py:126
+msgid ""
+"Personajes, mensajes y animaciones que elevan la energía sin perder "
+"profesionalismo."
+msgstr "人物、信息和动画在提升能量的同时又不失专业精神。"
+
+#: landing/views.py:129
+#| msgid "Economía Digital"
+msgid "Economía justa"
+msgstr "公平经济"
+
+#: landing/views.py:130
+msgid ""
+"Probabilidades, tarifas y recompensas públicas. Sin sorpresas ni ventajas "
+"pay-to-win."
+msgstr "公共赔率、赔率和奖励。没有惊喜或付费获胜的优势。"
+
+#: landing/views.py:133
+msgid "Accesibilidad real"
+msgstr "真正的无障碍"
+
+#: landing/views.py:134
+msgid ""
+"Soporte total a teclado, contraste AA/AAA y narrativa pensada para distintas"
+" culturas y edades."
+msgstr "完整的键盘支持、AA/AAA 对比度和专为不同文化和年龄而设计的叙述。"
+
+#: landing/views.py:137
+msgid "Vocación de servicio"
+msgstr "服务职业"
+
+#: landing/views.py:138
+msgid ""
+"Nos guía una ética de servicio discreta: cuidamos a las personas primero y "
+"dejamos que el diseño lo haga evidente."
+msgstr "我们遵循谨慎服务的道德准则：我们以人为本，让设计显而易见。"
+
+#: landing/views.py:144
+msgid "Compras sin fricción"
+msgstr "无摩擦购物"
+
+#: landing/views.py:145
+msgid ""
+"Checkout Luks en segundos con costos claros y asignación inmediata al "
+"inventario."
+msgstr "几秒钟内即可结账 Luks，清楚成本并立即分配库存。"
+
+#: landing/views.py:148
+msgid "Inventario conectado"
+msgstr "互联库存"
+
+#: landing/views.py:149
+msgid ""
+"Abre packs, equipa rutinas o lista ítems desde web y móvil con el mismo "
+"estado."
+msgstr "打开包装、装备例行程序或列出来自网络和移动设备的具有相同状态的物品。"
+
+#: landing/views.py:152
+msgid "Eventos que mueven"
+msgstr "移动的事件"
+
+#: landing/views.py:153
+msgid ""
+"Temporadas y recompensas tokenizadas con métricas claras para sostener la "
+"constancia."
+msgstr "代币化的季节和奖励具有明确的指标以保持一致性。"
+
+#: landing/views.py:159 landing/views.py:318
+msgid "Semana 1"
+msgstr "第一周"
+
+#: landing/views.py:160
+msgid "Narrativa alineada"
+msgstr "一致的叙述"
+
+#: landing/views.py:162
+msgid "Landing Croody con la historia Buddy + Luks lista para stakeholders."
+msgstr "Landing Croody 与 Buddy + Luks 的故事已为利益相关者做好了准备。"
+
+#: landing/views.py:163
+msgid ""
+"Formularios conectados y analítica básica para medir interés desde el día "
+"uno."
+msgstr "连接表单和基本分析，从第一天起就衡量兴趣。"
+
+#: landing/views.py:167 landing/views.py:325
+msgid "Semana 3"
+msgstr "第三周"
+
+#: landing/views.py:168
+#| msgid "Alertas desactivadas"
+msgid "Ventas activas"
+msgstr "积极销售"
+
+#: landing/views.py:170
+msgid ""
+"Catálogo, PDP y checkout Luks operando con seguimiento de conversiones."
+msgstr "Luks 目录、PDP 和结帐操作可进行转化跟踪。"
+
+#: landing/views.py:171
+msgid "Inventario y marketplace en beta controlada para refinar procesos."
+msgstr "库存和市场处于受控测试阶段，以改进流程。"
+
+#: landing/views.py:175 landing/views.py:332
+msgid "Semana 6"
+msgstr "第 6 周"
+
+#: landing/views.py:176
+msgid "Expansión tokenizada"
+msgstr "代币化扩张"
+
+#: landing/views.py:178
+msgid ""
+"Eventos temáticos con recompensas en vivo y retos medidos en paneles de "
+"datos."
+msgstr "主题活动包含在数据仪表板上衡量的实时奖励和挑战。"
+
+#: landing/views.py:179
+msgid "Dashboard de datos listo para alianzas y marcas aliadas."
+msgstr "为联盟和联盟品牌准备的数据仪表板。"
+
+#: landing/views.py:237
 msgid "Buddy · Conecta, Entrena y Destaca"
-msgstr ""
+msgstr "Buddy · 连接、训练、突出"
 
+#: landing/views.py:238
 msgid "Más que entrenar: una conexión contigo y con los tuyos"
-msgstr ""
+msgstr "不仅仅是训练：与你和亲人的连接"
 
-msgid "Buddy es una aplicación intuitiva, simétrica, de alta estética y gran fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien apenas empieza a considerar la idea encuentre, cada día, un porqué claro para enfocarse y construir el físico y los hábitos de salud de sus sueños. Además de verse y sentirse bien, Buddy cuida que la experiencia sea coherente, agradable y profundamente motivadora desde el primer contacto."
+#: landing/views.py:240
+msgid ""
+"Buddy es una aplicación intuitiva, simétrica, de alta estética y gran "
+"fluidez, diseñada para que tanto quien ya entrena en un gimnasio como quien "
+"apenas empieza a considerar la idea encuentre, cada día, un porqué claro "
+"para enfocarse y construir el físico y los hábitos de salud de sus sueños. "
+"Además de verse y sentirse bien, Buddy cuida que la experiencia sea "
+"coherente, agradable y profundamente motivadora desde el primer contacto, "
+"con una ética inspirada en nuestras convicciones de servicio que priorizan "
+"el cuidado de las personas."
 msgstr ""
+"Buddy "
+"是一款直观、对称、高度美观且流畅的应用程序，其设计目的是让那些已经在健身房训练的人和那些刚刚开始考虑这个想法的人每天都能找到一个明确的理由来集中注意力并建立他们梦想的体格和健康习惯。除了外观和感觉良好之外，Buddy"
+" 还确保从第一次接触开始，体验就连贯、愉快且具有深刻的激励性，其道德规范受到我们优先关心他人的服务信念的启发。"
 
+#: landing/views.py:242
+msgid "Ir a la tienda Buddy"
+msgstr "前往Buddy商店"
+
+#: landing/views.py:243
 msgid "Ver roadmap"
-msgstr ""
+msgstr "查看路线图"
 
+#: landing/views.py:246
 msgid "365 días"
-msgstr ""
+msgstr "365天"
 
+#: landing/views.py:246
 msgid "de rutinas nuevas sin reciclar combinaciones"
-msgstr ""
+msgstr "新训练不重复组合"
 
+#: landing/views.py:247
+#, python-format
+#| msgid "±5% fatiga"
 msgid "±5% fatiga"
-msgstr ""
+msgstr "±5%疲劳"
 
+#: landing/views.py:247
 msgid "ajuste automático según tu energía real"
-msgstr ""
+msgstr "根据你的真实能量自动调整"
 
+#: landing/views.py:248
 msgid "5 estilos"
-msgstr ""
+msgstr "5种风格"
 
+#: landing/views.py:248
 msgid "personajes con tonos y objetivos definidos"
-msgstr ""
+msgstr "具有明确色调和目标的人物"
 
+#: landing/views.py:252
 msgid "Entrenador con IA y rutinas a tu medida"
-msgstr ""
+msgstr "AI教练和定制训练"
 
-msgid "Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador personalizado con IA. Cada semana recibes un plan de entrenamiento pensado exclusivamente para ti, basado en tus entrenamientos previos, datos e historial. La IA automatiza este proceso a través de conversaciones naturales, manteniendo siempre el control total de tu entrenamiento."
+#: landing/views.py:253
+msgid ""
+"Buddy ofrece la oportunidad de diseñar rutinas mediante un entrenador "
+"personalizado con IA. Cada semana recibes un plan de entrenamiento pensado "
+"exclusivamente para ti, basado en tus entrenamientos previos, datos e "
+"historial. La IA automatiza este proceso a través de conversaciones "
+"naturales, manteniendo siempre el control total de tu entrenamiento."
 msgstr ""
+"Buddy "
+"提供了使用个性化人工智能训练器设计例程的机会。每周您都会收到一份根据您之前的训练、数据和历史记录专门为您设计的训练计划。人工智能通过自然对话自动执行此过程，始终保持对您的训练的完全控制。"
 
+#: landing/views.py:256
 msgid "Biblioteca de ejercicios segura y consistente"
-msgstr ""
+msgstr "安全一致的练习库"
 
-msgid "Cada movimiento incluye video-claves cortos con la técnica correcta, pautas de respiración, puntos de seguridad y errores comunes a evitar. Con progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una alternativa acorde a tu nivel y equipo disponible."
+#: landing/views.py:257
+msgid ""
+"Cada movimiento incluye video-claves cortos con la técnica correcta, pautas "
+"de respiración, puntos de seguridad y errores comunes a evitar. Con "
+"progresiones sugeridas (fácil/intermedia/avanzada), siempre tendrás una "
+"alternativa acorde a tu nivel y equipo disponible."
 msgstr ""
+"每个动作都包含简短的视频要点，其中包含正确的技巧、呼吸指南、安全要点和要避免的常见错误。根据建议的进度（简单/中级/高级），您将始终根据您的级别和可用设备找到替代方案。"
 
+#: landing/views.py:260
 msgid "Ecosistema de personajes con carisma"
+msgstr "有魅力的角色生态系统"
+
+#: landing/views.py:261
+msgid ""
+"Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad "
+"única. Puedes elegir rutinas predeterminadas según el estilo de cada "
+"personaje o configurar que uno solo te entregue todas las rutinas. Cada "
+"personaje ofrece gestos, animaciones y apoyo constante para una experiencia "
+"cercana y estimulante."
+msgstr ""
+"Buddy "
+"拥有一个角色生态系统，每个角色都有其独特的个性。您可以根据每个角色的风格选择预定的套路，也可以配置一个角色来为您提供所有套路。每个角色都提供手势、动画和持续支持，以提供近距离且刺激的体验。"
+
+#: landing/views.py:266
+msgid "App móvil"
+msgstr "移动应用程序"
+
+#: landing/views.py:268
+msgid "Diálogo natural para crear rutinas y ajustar bloques en segundos."
+msgstr "自然对话可在几秒钟内创建例程并调整块。"
+
+#: landing/views.py:269
+msgid ""
+"Conteo automático de series, descansos inteligentes y feedback háptico."
+msgstr "自动设定计数、智能休息和触觉反馈。"
+
+#: landing/views.py:270
+msgid "Modo compañero para entrenar con tus contactos o personaje favorito."
+msgstr "同伴模式可与您的联系人或最喜欢的角色一起训练。"
+
+#: landing/views.py:274
+#| msgid "Buddy"
+msgid "Buddy Web"
+msgstr "好友网"
+
+#: landing/views.py:276
+msgid "Inventario vivo para abrir packs, equipar sets y listar ítems."
+msgstr "实时库存以打开包装、装备套装和列出物品。"
+
+#: landing/views.py:277
+msgid "Reproductor de sesiones, biblioteca extendida y guardado de favoritos."
+msgstr "会话播放器、扩展库和收藏夹保存。"
+
+#: landing/views.py:278
+msgid "Telemetría lista para equipos, coaches o marcas aliadas."
+msgstr "为团队、教练或联盟品牌准备的遥测。"
+
+#: landing/views.py:282
+#| msgid "Conocer Buddy"
+msgid "Economía Buddy"
+msgstr "好友经济"
+
+#: landing/views.py:284
+msgid "Sets temáticos, accesorios y cofres con probabilidades públicas."
+msgstr "带有公共赔率的主题套装、配件和宝箱。"
+
+#: landing/views.py:285
+msgid "Luks como moneda única con recompensas por constancia y eventos."
+msgstr "Luks 作为单一货币，具有一致性和事件奖励。"
+
+#: landing/views.py:286
+msgid "Marketplace integrado para vender o intercambiar sin salir de Buddy."
+msgstr "无需离开好友即可进行销售或交易的综合市场。"
+
+#: landing/views.py:292
+msgid "Antes de entrenar"
+msgstr "训练前"
+
+#: landing/views.py:294
+msgid "Escaneo rápido de energía y movilidad."
+msgstr "快速能量和流动性扫描。"
+
+#: landing/views.py:295
+msgid "Recomendaciones de personajes, sets y accesorios según tu meta."
+msgstr "根据您的目标推荐角色、套装和配件。"
+
+#: landing/views.py:296
+msgid ""
+"Recordatorios contextuales desde la app y sincronía con tus calendarios "
+"habituales."
+msgstr "来自应用程序的上下文提醒以及与您常用日历的同步。"
+
+#: landing/views.py:300
+#| msgid "Inicia sesión"
+msgid "Durante la sesión"
+msgstr "会议期间"
+
+#: landing/views.py:302
+msgid "Conteo automático de repeticiones y control de tempo."
+msgstr "自动重复计数和节奏控制。"
+
+#: landing/views.py:303
+msgid "Feedback visual y de voz sobre técnica, respiración y seguridad."
+msgstr "有关技术、呼吸和安全的视觉和声音反馈。"
+
+#: landing/views.py:304
+msgid "Notas rápidas, clips y variaciones disponibles en un toque."
+msgstr "一键即可获得快速笔记、剪辑和变​​奏。"
+
+#: landing/views.py:308
+#| msgid "Después de comprar"
+msgid "Después del entrenamiento"
+msgstr "训练后"
+
+#: landing/views.py:310
+msgid "Resumen claro con métricas, descanso sugerido y próximos pasos."
+msgstr "清晰的总结，包括指标、建议的休息和后续步骤。"
+
+#: landing/views.py:311
+msgid "Recompensas Luks y retos desbloqueados según tu constancia."
+msgstr "Luks 奖励和挑战的解锁取决于您的毅力。"
+
+#: landing/views.py:312
+msgid "Historial listo para compartir con tu entrenador o comunidad."
+msgstr "准备好与您的教练或社区分享历史。"
+
+#: landing/views.py:320
+msgid "Piloto interno con rutinas adaptativas y biblioteca completa."
+msgstr "具有自适应例程和完整库的内部飞行员。"
+
+#: landing/views.py:321
+msgid "Configuración de personajes base y mensajes personalizados."
+msgstr "基本角色配置和自定义消息。"
+
+#: landing/views.py:327
+msgid "Inventario web conectado para abrir packs y equipar sets."
+msgstr "连接网络库存以打开包和装备组。"
+
+#: landing/views.py:328
+msgid "Alertas inteligentes en móvil y correo para mantener la constancia."
+msgstr "移动设备和电子邮件上的智能警报可保持一致性。"
+
+#: landing/views.py:334
+msgid "Marketplace activo con recompensas y eventos temáticos."
+msgstr "活跃的市场，提供主题奖励和活动。"
+
+#: landing/views.py:335
+msgid "Dashboard de telemetría para coaches, squads y marcas."
+msgstr "教练、球队和品牌的遥测仪表板。"
+
+#: landing/views.py:373
+#| msgid "Luks · Croody"
+msgid "Luks · Economía Buddy"
+msgstr "卢克斯经济伙伴"
+
+#: landing/views.py:374
+msgid "Token que recompensa la constancia y da confianza a cada transacción."
+msgstr "奖励一致性并赋予每笔交易信心的代币。"
+
+#: landing/views.py:375
+msgid ""
+"Pagos, royalties y telemetría on-chain con una experiencia diseñada para "
+"usuarios reales y equipos regulados. La infraestructura nace de principios "
+"de transparencia y servicio comunicados con un tono ejecutivo."
+msgstr "链上支付、版税和遥测，以及专为真实用户和受监管团队设计的体验。该基础设施源于透明度和以行政语气传达的服务原则。"
+
+#: landing/views.py:376
+#| msgid "Tienda Buddy"
+msgid "Ver tienda Buddy"
+msgstr "查看好友商店"
+
+#: landing/views.py:377
+#| msgid "Contacta al equipo"
+msgid "Contactar equipo Luks"
+msgstr "联系卢克斯团队"
+
+#: landing/views.py:380
+msgid "≤2s"
+msgstr "≤2秒"
+
+#: landing/views.py:380
+msgid "finalidad promedio de las transacciones"
+msgstr "平均交易目的"
+
+#: landing/views.py:381
+msgid "disponibilidad de la bóveda custodial"
+msgstr "保管库可用性"
+
+#: landing/views.py:382
+msgid "catálogo con probabilidades visibles"
+msgstr "具有可见概率的目录"
+
+#: landing/views.py:386
+#| msgid "🔒 Transparencia"
+msgid "Transparencia total"
+msgstr "完全透明"
+
+#: landing/views.py:388
+msgid "Probabilidades, tarifas y royalties visibles antes de confirmar."
+msgstr "赔率、费率和版税在确认前可见。"
+
+#: landing/views.py:389
+msgid "Recibos con hash verificable y seguimiento en tu panel."
+msgstr "在仪表板中具有可验证哈希和跟踪的收据。"
+
+#: landing/views.py:390
+msgid "Historial público de drops especiales y ajustes de rareza."
+msgstr "特别掉落和稀有度调整的公开历史。"
+
+#: landing/views.py:394
+msgid "Seguridad por defecto"
+msgstr "默认安全性"
+
+#: landing/views.py:396
+msgid "Custodia con 2FA, límites dinámicos y alertas en tiempo real."
+msgstr "通过 2FA、动态限制和实时警报进行托管。"
+
+#: landing/views.py:397
+msgid "Escrow inteligente y cooldowns para frenar especulación."
+msgstr "智能托管和冷却时间以阻止投机。"
+
+#: landing/views.py:398
+msgid "Monitoreo anti-bot y protección ante picos de red."
+msgstr "反机器人监控和网络峰值防护。"
+
+#: landing/views.py:402
+msgid "Medición constante"
+msgstr "恒定测量"
+
+#: landing/views.py:404
+msgid "Dashboards con conversión, listados y salud de la red."
+msgstr "包含转换、列表和网络运行状况的仪表板。"
+
+#: landing/views.py:405
+msgid "Eventos trazables para campañas y recompensas por consistencia."
+msgstr "活动的可追踪事件和奖励的一致性。"
+
+#: landing/views.py:406
+msgid "Exportación de datos para socios, auditorías y reguladores."
+msgstr "为合作伙伴、审计和监管机构导出数据。"
+
+#: landing/views.py:411
+msgid "Checkout en segundos"
+msgstr "几秒钟内结帐"
+
+#: landing/views.py:411
+msgid "Packs con pity visible"
+msgstr "包里有明显的怜悯"
+
+#: landing/views.py:411
+msgid "Asignación inmediata al inventario."
+msgstr "立即分配到库存。"
+
+#: landing/views.py:412
+msgid "Inventario web"
+msgstr "网络库存"
+
+#: landing/views.py:412
+#| msgid "Resultados sugeridos"
+msgid "Estados sincronizados"
+msgstr "同步状态"
+
+#: landing/views.py:412
+msgid "Listado instantáneo"
+msgstr "即时上市"
+
+#: landing/views.py:412
+msgid "Eventos y bonos por temporada."
+msgstr "活动和季节性奖金。"
+
+#: landing/views.py:413
+msgid "Marketplace P2P"
+msgstr "P2P市场"
+
+#: landing/views.py:413
+msgid "Royalties configurables"
+msgstr "可配置的版税"
+
+#: landing/views.py:413
+msgid "Escrow automático"
+msgstr "自动托管"
+
+#: landing/views.py:413
+msgid "Historial de precios y volumen."
+msgstr "价格和数量历史记录。"
+
+#: landing/views.py:416
+msgid "KYC/AML opcional para límites de retiro elevados."
+msgstr "可选 KYC/AML 以实现高提款限额。"
+
+#: landing/views.py:417
+msgid "Políticas anti loot-box con fiat: todo pasa primero por Luks."
+msgstr "法令的反战利品政策：一切都首先经过 Luks。"
+
+#: landing/views.py:418
+msgid "Age gate configurable y reportes regionales listos para reguladores."
+msgstr "可配置的年龄门和区域报告可供监管机构使用。"
+
+#: landing/views.py:421
+msgid ""
+"SDK ligero para apps y gimnasios que quieran ofrecer recompensas Buddy."
+msgstr "适用于想要提供好友奖励的应用程序和健身房的轻量级 SDK。"
+
+#: landing/views.py:422
+msgid "Webhooks firmados para sincronizar inventario con partners externos."
+msgstr "签名的网络钩子以与外部合作伙伴同步库存。"
+
+#: landing/views.py:423
+msgid "Panel operativo con métricas de conversión, uso y salud de red."
+msgstr "包含转化、使用情况和网络运行状况指标的运营仪表板。"
+
+#: landing/views.py:445
+msgid "Elige un plan para empezar hoy"
+msgstr "选择今天开始的计划"
+
+#: landing/views.py:447
+msgid ""
+"Planes simples que activan rutinas con IA, biblioteca de ejercicios y "
+"progreso vivo. Cámbialos o cancélalos cuando quieras."
+msgstr "激活人工智能例程、练习库和实时进度的简单计划。您可以随时更改或取消它们。"
+
+#: landing/views.py:454
+msgid "Starter"
+msgstr "起动机"
+
+#: landing/views.py:456 landing/views.py:467 landing/views.py:479
+#: templates/accounts/subscriptions.html:70
+msgid "mes"
+msgstr "月"
+
+#: landing/views.py:458
+msgid "Rutinas con IA (básico)"
+msgstr "AI 例程（基础）"
+
+#: landing/views.py:459
+#| msgid "Biblioteca de ejercicios segura y consistente"
+msgid "Biblioteca de ejercicios con video‑claves"
+msgstr "带视频键的练习库"
+
+#: landing/views.py:460
+msgid "Progreso semanal y temporizador de descansos"
+msgstr "每周进度和休息计时器"
+
+#: landing/views.py:462
+msgid "Comenzar"
+msgstr "开始"
+
+#: landing/views.py:465
+msgid "Focus"
+msgstr "重点"
+
+#: landing/views.py:469
+msgid "Rutinas con IA (avanzado)"
+msgstr "AI 例程（高级）"
+
+#: landing/views.py:470
+msgid "Ajustes por personaje y objetivos"
+msgstr "性格和目标调整"
+
+#: landing/views.py:471
+msgid "Recordatorios inteligentes y tendencias mensuales"
+msgstr "智能提醒和每月趋势"
+
+#: landing/views.py:473
+msgid "Activar Focus"
+msgstr "激活焦点"
+
+#: landing/views.py:474
+msgid "Recomendado"
+msgstr "受到推崇的"
+
+#: landing/views.py:477
+msgid "Crew"
+msgstr "全体人员"
+
+#: landing/views.py:481
+msgid "Todo Focus + 3 perfiles"
+msgstr "所有焦点 + 3 个配置文件"
+
+#: landing/views.py:482
+msgid "Retos y tableros para equipo/familia"
+msgstr "团队/家庭的挑战和董事会"
+
+#: landing/views.py:485
+#| msgid "Probar predicción"
+msgid "Probar Crew"
+msgstr "尝试船员"
+
+#: landing/views.py:491
+#| msgid "✓ Cancela cuando quieras"
+msgid "¿Puedo cancelar cuando quiera?"
+msgstr "我可以随时取消吗？"
+
+#: landing/views.py:492
+msgid "Sí, gestionas tu plan desde tu cuenta. Sin permanencias."
+msgstr "是的，您可以通过您的帐户管理您的计划。没有持久性。"
+
+#: landing/views.py:495
+msgid "¿Qué incluye la prueba?"
+msgstr "测试内容包括什么？"
+
+#: landing/views.py:496
+msgid "7 días con funciones Focus para que sientas el flujo completo."
+msgstr "7 天的 Focus 功能让您感受全程流畅。"
+
+#: landing/views.py:536
+msgid "Bienvenido a Croody. Ajusta tu perfil cuando quieras."
+msgstr "欢迎来到Croody。随时调整你的个人资料。"
+
+#: landing/views.py:542
+msgid "Crear cuenta Croody"
+msgstr "在Croody中搜索"
+
+#: landing/views.py:574
+msgid "Perfil actualizado."
+msgstr "个人资料已更新。"
+
+#: landing/views.py:576
+msgid "Revisa los campos del perfil."
+msgstr "检查个人资料字段。"
+
+#: landing/views.py:581
+msgid "Preferencias guardadas."
+msgstr "偏好已保存。"
+
+#: landing/views.py:583
+msgid "No pudimos guardar las preferencias."
+msgstr "无法保存偏好。"
+
+#: landing/views.py:586
+msgid "Generamos un nuevo token para tus robots."
+msgstr "为你的机器人生成新令牌。"
+
+#: landing/views.py:588
+msgid "Acción no reconocida."
+msgstr "操作未识别。"
+
+#: landing/views.py:594
+msgid "Token de ingestión listo"
+msgstr "摄取令牌就绪"
+
+#: landing/views.py:596
+msgid "activo"
+msgstr "活跃"
+
+#: landing/views.py:599
+msgid "Alertas de telemetría"
+msgstr "遥测警报"
+
+#: landing/views.py:600
+msgid "Recibir notificaciones críticas"
+msgstr "接收关键通知"
+
+#: landing/views.py:600
+msgid "Alertas desactivadas"
+msgstr "警报已停用"
+
+#: landing/views.py:618
+msgid "Monitoreo en tiempo real"
+msgstr "实时监控"
+
+#: landing/views.py:619
+msgid ""
+"Visualiza la posición del robot, variables atmosféricas y estados críticos "
+"en un tablero neofuturista listo para operación global."
+msgstr "在新未来主义仪表板上可视化机器人的位置、大气变量和关键状态，为全球操作做好准备。"
+
+#: landing/views.py:622 templates/account/profile.html:98
+msgid "Robots activos"
+msgstr "活跃机器人"
+
+#: landing/views.py:623 templates/account/profile.html:102
+msgid "Última actualización"
+msgstr "最后更新"
+
+#: landing/views.py:624 templates/account/profile.html:106
+msgid "Alertas"
+msgstr "警报"
+
+#: landing/views.py:630
+msgid "TCP ASCII · LOGIN/GET_DATA/MOVE"
+msgstr "TCP ASCII · 登录/获取数据/移动"
+
+#: landing/views.py:631
+msgid "Emite cada 15 s y el bridge envía a Telemetry Gateway automáticamente."
+msgstr "它每 15 秒广播一次，网桥自动发送到遥测网关。"
+
+#: templates/account/login.html:5 templates/account/register.html:40
+msgid "Inicia sesión"
+msgstr "登录"
+
+#: templates/account/login.html:12
+msgid "Acceso Croody"
+msgstr "Croody访问"
+
+#: templates/account/login.html:13
+msgid "Conecta tu cuenta para continuar."
+msgstr "连接您的帐户以继续。"
+
+#: templates/account/login.html:15
+msgid ""
+"Inicia sesión para comprar en la Buddy Store, gestionar tus ítems y mantener"
+" tu tema oscuro o claro sincronizado."
+msgstr "登录好友商店购物、管理您的商品并保持深色或浅色主题同步。"
+
+#: templates/account/login.html:18
+msgid "¿Olvidaste tu acceso? Escríbenos a"
+msgstr "忘记访问方式？写信至"
+
+#: templates/account/login.html:19
+msgid ""
+"¿Aún no tienes credenciales? Solicita activar tu cuenta con el equipo "
+"Croody."
+msgstr "还没有凭证？请求激活您在 Croody 团队的帐户。"
+
+#: templates/account/login.html:48
+msgid "Ingresar"
+msgstr "登录"
+
+#: templates/account/login.html:49
+msgid "¿Aún no tienes cuenta?"
+msgstr "还没有账户？"
+
+#: templates/account/login.html:49
+msgid "Crea una"
+msgstr "创建一个"
+
+#: templates/account/profile.html:5 templates/account/profile.html:12
+#: templates/base.html:219 templates/base.html:259
+msgid "Perfil"
+msgstr "个人资料"
+
+#: templates/account/profile.html:13
+msgid "Cuida tu identidad Croody y tus robots"
+msgstr "保护你的Croody身份和机器人"
+
+#: templates/account/profile.html:14
+msgid ""
+"Actualiza datos personales, gestiona tokens de ingestión y revisa la "
+"telemetría más reciente sin salir del dashboard."
+msgstr "无需离开仪表板即可更新个人数据、管理摄取令牌并查看最新的遥测数据。"
+
+#: templates/account/profile.html:17
+msgid "Token activo"
+msgstr "活跃代币"
+
+#: templates/account/profile.html:21
+msgid "Modo de alertas"
+msgstr "警报模式"
+
+#: templates/account/profile.html:22 templates/accounts/inventory.html:48
+msgid "Activo"
+msgstr "资产"
+
+#: templates/account/profile.html:22
+msgid "Inactivo"
+msgstr "闲置的"
+
+#: templates/account/profile.html:25
+msgid "Idioma"
+msgstr "语言"
+
+#: templates/account/profile.html:32
+msgid "Datos personales"
+msgstr "个人数据"
+
+#: templates/account/profile.html:45
+msgid "Guardar"
+msgstr "保存"
+
+#: templates/account/profile.html:50
+msgid "Preferencias"
+msgstr "偏好"
+
+#: templates/account/profile.html:63
+msgid "Actualizar preferencias"
+msgstr "更新偏好设置"
+
+#: templates/account/profile.html:68
+msgid "Token de ingestión"
+msgstr "摄取令牌"
+
+#: templates/account/profile.html:74
+msgid "Regenerar"
+msgstr "重新生成"
+
+#: templates/account/profile.html:76
+msgid "Úsalo como cabecera X-API-Key al enviar telemetría."
+msgstr "发送遥测数据时将其用作 X-API-Key 标头。"
+
+#: templates/account/profile.html:80
+msgid "Actividad"
+msgstr "隐私"
+
+#: templates/account/profile.html:95
+msgid "Telemetría en vivo"
+msgstr "实时遥测"
+
+#: templates/account/register.html:5 templates/account/register.html:39
+msgid "Crear cuenta"
+msgstr "创建账户"
+
+#: templates/account/register.html:12
+msgid "Registro Croody"
+msgstr "Croody注册"
+
+#: templates/account/register.html:13
+msgid "Activa tu acceso al universo Croody."
+msgstr "激活您对 Croody 宇宙的访问权限。"
+
+#: templates/account/register.html:14
+msgid ""
+"Configura idioma, tema y recibe un token personal para conectar tus robots "
+"al protocolo."
+msgstr "配置语言、主题并接收个人令牌以将您的机器人连接到协议。"
+
+#: templates/account/register.html:16
+msgid "Token de ingestión personal para Telemetry Gateway"
+msgstr "遥测网关的个人摄取令牌"
+
+#: templates/account/register.html:17
+msgid "Dashboard de perfil y alertas en tiempo real"
+msgstr "配置文件仪表板和实时警报"
+
+#: templates/account/register.html:18
+msgid "Compatibilidad con Buddy Store y Luks"
+msgstr "与 Buddy Store 和 Luks 的兼容性"
+
+#: templates/account/register.html:40
+msgid "¿Ya tienes cuenta?"
+msgstr "已有账户？"
+
+#: templates/accounts/base_accounts.html:5
+#: templates/accounts/base_accounts.html:99
+msgid "Mi Cuenta"
+msgstr "我的账户"
+
+#: templates/accounts/base_accounts.html:35
+msgid "Navegaci\\u00f3n de cuenta"
+msgstr "账户导航"
+
+#: templates/accounts/base_accounts.html:39
+#: templates/accounts/dashboard.html:5 templates/accounts/dashboard.html:6
+#| msgid "para dashboards"
+msgid "Dashboard"
+msgstr "仪表板"
+
+#: templates/accounts/base_accounts.html:44 templates/accounts/profile.html:5
+#: templates/accounts/profile.html:6
+#| msgid "Perfil"
+msgid "Mi Perfil"
+msgstr "我的个人资料"
+
+#: templates/accounts/base_accounts.html:49
+msgid "Inventario"
+msgstr "存货"
+
+#: templates/accounts/base_accounts.html:59
+#: templates/accounts/dashboard.html:75
+msgid "Suscripci\\u00f3n"
+msgstr "订阅"
+
+#: templates/accounts/base_accounts.html:80 templates/accounts/profile.html:68
+msgid "Items"
+msgstr "项目"
+
+#: templates/accounts/base_accounts.html:92
+#| msgid "Cerrar sesión"
+msgid "Cerrar"
+msgstr "关闭"
+
+#: templates/accounts/dashboard.html:13
+#, python-format
+msgid "Hola, %(name)s"
+msgstr "你好，%(姓名)s"
+
+#: templates/accounts/dashboard.html:14
+msgid "Bienvenido a tu espacio personal en Croody."
+msgstr "欢迎来到您在 Croody 上的个人空间。"
+
+#: templates/accounts/dashboard.html:20 templates/accounts/points.html:30
+#: templates/accounts/points.html:64
+msgid "puntos"
+msgstr "点"
+
+#: templates/accounts/dashboard.html:34
+#| msgid "Perfil actualizado."
+msgid "Perfil completado"
+msgstr "已完成的个人资料"
+
+#: templates/accounts/dashboard.html:47 templates/accounts/points.html:134
+msgid "Items en inventario"
+msgstr "库存中的物品"
+
+#: templates/accounts/dashboard.html:49 templates/accounts/dashboard.html:87
+#| msgid "Ver Catálogo"
+msgid "Ver todo"
+msgstr "查看全部"
+
+#: templates/accounts/dashboard.html:56
+msgid "Conectada"
+msgstr "已连接"
+
+#: templates/accounts/dashboard.html:58 templates/accounts/wallet.html:17
+msgid "Pendiente"
+msgstr "耳环"
+
+#: templates/accounts/dashboard.html:60 templates/accounts/wallet.html:19
+#| msgid "✓ Sin contratos"
+msgid "Sin conectar"
+msgstr "未连接"
+
+#: templates/accounts/dashboard.html:64
+msgid "Configurar"
+msgstr "设置"
+
+#: templates/accounts/dashboard.html:72
+msgid "d\\u00edas restantes"
+msgstr "剩余天数"
+
+#: templates/accounts/dashboard.html:74
+msgid "Sin plan"
+msgstr "没有计划"
+
+#: templates/accounts/dashboard.html:78
+#| msgid "Ver detalles"
+msgid "Ver planes"
+msgstr "查看计划"
+
+#: templates/accounts/dashboard.html:86
+#| msgid "Preguntas frecuentes"
+msgid "Items recientes"
+msgstr "最近的项目"
+
+#: templates/accounts/dashboard.html:97
+msgid "Ver"
+msgstr "看"
+
+#: templates/accounts/dashboard.html:107
+msgid "Acciones r\\u00e1pidas"
+msgstr "快速行动"
+
+#: templates/accounts/dashboard.html:111 templates/accounts/profile.html:10
+msgid "Editar perfil"
+msgstr "编辑个人资料"
+
+#: templates/accounts/dashboard.html:115 templates/accounts/inventory.html:10
+#: templates/landing/buddy.html:158
+msgid "Ir a la tienda"
+msgstr "前往商店"
+
+#: templates/accounts/dashboard.html:119 templates/accounts/wallet.html:74
+#| msgid "Conectar mi robot"
+msgid "Conectar wallet"
+msgstr "连接钱包"
+
+#: templates/accounts/dashboard.html:123
+#| msgid "Ver Luks"
+msgid "Ver puntos"
+msgstr "查看积分"
+
+#: templates/accounts/inventory.html:5 templates/accounts/inventory.html:6
+msgid "Mi Inventario"
+msgstr "我的库存"
+
+#: templates/accounts/inventory.html:24
+#| msgid "Legal"
+msgid "Regalo"
+msgstr "礼物"
+
+#: templates/accounts/inventory.html:32
+msgid "Adquirido"
+msgstr "获得的"
+
+#: templates/accounts/inventory.html:36
+msgid "descargas"
+msgstr "下载"
+
+#: templates/accounts/inventory.html:43
+#| msgid "✓ Descarga gratuita"
+msgid "Descargar"
+msgstr "释放"
+
+#: templates/accounts/inventory.html:50
+#| msgid "Robots activos"
+msgid "Usar como activo"
+msgstr "作为资产使用"
+
+#: templates/accounts/inventory.html:66 templates/accounts/shop.html:42
+msgid "Paginaci\\u00f3n"
+msgstr "分页"
+
+#: templates/accounts/inventory.html:68 templates/accounts/shop.html:44
+#, python-format
+msgid ""
+"\n"
+"      P\\u00e1gina %(current)s de %(total)s\n"
+"      "
+msgstr ""
+"\n"
+"第 %(当前)s 页，共 %(总计)s 页\n"
+"      "
+
+#: templates/accounts/inventory.html:75 templates/accounts/shop.html:51
+msgid "Anterior"
+msgstr "以前的"
+
+#: templates/accounts/inventory.html:80 templates/accounts/shop.html:56
+#| msgid "Siguientes pasos"
+msgid "Siguiente"
+msgstr "下列的"
+
+#: templates/accounts/inventory.html:91
+msgid "Tu inventario est\\u00e1 vac\\u00edo"
+msgstr "您的库存已空"
+
+#: templates/accounts/inventory.html:93
+msgid ""
+"A\\u00fan no has adquirido ning\\u00fan producto. Explora nuestra tienda "
+"para encontrar algo que te guste."
+msgstr "您还没有购买任何产品。探索我们的商店，找到您喜欢的东西。"
+
+#: templates/accounts/inventory.html:96
+#| msgid "Entrar a la tienda"
+msgid "Explorar tienda"
+msgstr "探索商店"
+
+#: templates/accounts/points.html:5
+msgid "Mis Puntos"
+msgstr "我的积分"
+
+#: templates/accounts/points.html:6
+msgid "Sistema de Puntos"
+msgstr "积分制度"
+
+#: templates/accounts/points.html:15
+#| msgid "Datos personales"
+msgid "puntos totales"
+msgstr "总分"
+
+#: templates/accounts/points.html:29
+msgid "Progreso hacia"
+msgstr "取得进展"
+
+#: templates/accounts/points.html:38
+#, python-format
+msgid "Faltan %(remaining)s puntos"
+msgstr "%(剩余)s 点缺失"
+
+#: templates/accounts/points.html:51
+#| msgid "No hay productos disponibles."
+msgid "Rangos disponibles"
+msgstr "可用范围"
+
+#: templates/accounts/points.html:67
+msgid "Actual"
+msgstr "当前的"
+
+#: templates/accounts/points.html:78
+msgid "C\\u00f3mo ganar puntos"
+msgstr "如何赚取积分"
+
+#: templates/accounts/points.html:91
+msgid "Desglose de tus puntos"
+msgstr "您的积分明细"
+
+#: templates/accounts/points.html:94
+msgid "Completitud del perfil"
+msgstr "个人资料完整性"
+
+#: templates/accounts/points.html:108 templates/accounts/points.html:120
+msgid "(pendiente)"
+msgstr "（耳环）"
+
+#: templates/accounts/profile.html:64
+msgid "Completado"
+msgstr "充满"
+
+#: templates/accounts/profile.html:75 templates/accounts/profile_edit.html:56
+msgid "Datos f\\u00edsicos"
+msgstr "物理数据"
+
+#: templates/accounts/profile.html:78
+msgid "Peso"
+msgstr "重量"
+
+#: templates/accounts/profile.html:84
+msgid "Altura"
+msgstr "高度"
+
+#: templates/accounts/profile.html:96 templates/accounts/profile_edit.html:109
+msgid "G\\u00e9nero"
+msgstr "性别"
+
+#: templates/accounts/profile.html:114
+msgid "No has definido objetivos a\\u00fan."
+msgstr "您还没有定义目标。"
+
+#: templates/accounts/profile.html:128
+msgid "Pendiente de verificaci\\u00f3n"
+msgstr "待验证"
+
+#: templates/accounts/profile.html:134
+msgid "No has conectado una wallet a\\u00fan."
+msgstr "您还没有连接钱包。"
+
+#: templates/accounts/profile.html:135
+#| msgid "Comprar ahora"
+msgid "Conectar ahora"
+msgstr "立即连接"
+
+#: templates/accounts/profile.html:142
+msgid "Informaci\\u00f3n de cuenta"
+msgstr "账户信息"
+
+#: templates/accounts/profile.html:145
+msgid "Miembro desde"
+msgstr "会员自"
+
+#: templates/accounts/profile.html:149
+msgid "\\u00daltimo acceso"
+msgstr "\\u00上次访问"
+
+#: templates/accounts/profile_edit.html:5
+#: templates/accounts/profile_edit.html:6
+#| msgid "Perfil"
+msgid "Editar Perfil"
+msgstr "编辑个人资料"
+
+#: templates/accounts/profile_edit.html:10
+#: templates/accounts/profile_edit.html:150
+msgid "Cancelar"
+msgstr "取消"
+
+#: templates/accounts/profile_edit.html:37
+#| msgid "Cambiar tema"
+msgid "Cambiar foto"
+msgstr "更改照片"
+
+#: templates/accounts/profile_edit.html:46
+msgid "JPG, PNG, GIF o WebP. M\\u00e1x 5MB."
+msgstr "JPG、PNG、GIF 或 WebP。 M\\u00e1x 5MB。"
+
+#: templates/accounts/profile_edit.html:111
+#| msgid "Seleccionar idioma"
+msgid "Seleccionar..."
+msgstr "选择..."
+
+#: templates/accounts/profile_edit.html:126
+msgid "Biograf\\u00eda"
+msgstr "传"
+
+#: templates/accounts/profile_edit.html:128
+msgid "Cu\\u00e9ntanos sobre ti"
+msgstr "告诉我们你自己"
+
+#: templates/accounts/profile_edit.html:135
+msgid "Cu\\u00e9ntanos sobre ti..."
+msgstr "告诉我们你自己..."
+
+#: templates/accounts/profile_edit.html:137
+msgid "M\\u00e1ximo 500 caracteres"
+msgstr "最多 500 个字符"
+
+#: templates/accounts/profile_edit.html:147
+#| msgid "Guardar"
+msgid "Guardar cambios"
+msgstr "保存更改"
+
+#: templates/accounts/shop.html:10
+#| msgid "productos"
+msgid "productos adquiridos"
+msgstr "购买的产品"
+
+#: templates/accounts/shop.html:33 templates/shop/detail.html:78
+msgid "Ver detalles"
+msgstr "查看详情"
+
+#: templates/accounts/shop.html:67
+#| msgid "Ver todos los productos →"
+msgid "\\u00a1Tienes todos los productos!"
+msgstr "\\u00a1您拥有所有产品！"
+
+#: templates/accounts/shop.html:69
+msgid ""
+"Ya has adquirido todos los productos disponibles. Vuelve pronto para ver "
+"novedades."
+msgstr "您已经购买了所有可用的产品。请尽快回来查看更新。"
+
+#: templates/accounts/shop.html:72
+msgid "Ver mi inventario"
+msgstr "查看我的库存"
+
+#: templates/accounts/subscriptions.html:6
+msgid "Planes de Suscripci\\u00f3n"
+msgstr "订阅计划"
+
+#: templates/accounts/subscriptions.html:14
+msgid "Tu suscripci\\u00f3n actual"
+msgstr "您当前的订阅"
+
+#: templates/accounts/subscriptions.html:25
+msgid "Expira"
+msgstr "过期"
+
+#: templates/accounts/subscriptions.html:26
+msgid "D\\u00edas restantes"
+msgstr "剩余天数"
+
+#: templates/accounts/subscriptions.html:28
+msgid "Renovaci\\u00f3n autom\\u00e1tica activada"
+msgstr "自动续订已激活"
+
+#: templates/accounts/subscriptions.html:35
+msgid "\\u00bfEst\\u00e1s seguro de cancelar tu suscripci\\u00f3n?"
+msgstr "您确定要取消订阅吗？"
+
+#: templates/accounts/subscriptions.html:36
+#| msgid "Ver suscripciones"
+msgid "Cancelar suscripci\\u00f3n"
+msgstr "取消订阅"
+
+#: templates/accounts/subscriptions.html:43
+msgid "Suscripci\\u00f3n pendiente"
+msgstr "订阅待定"
+
+#: templates/accounts/subscriptions.html:47
+#| msgid "Ver suscripciones"
+msgid "Tu suscripci\\u00f3n"
+msgstr "您的订阅"
+
+#: templates/accounts/subscriptions.html:47
+msgid "est\\u00e1 pendiente de pago."
+msgstr "付款待处理。"
+
+#: templates/accounts/subscriptions.html:49
+#| msgid "Comprar ahora"
+msgid "Completar pago"
+msgstr "完成付款"
+
+#: templates/accounts/subscriptions.html:57
+msgid "Elige tu plan"
+msgstr "选择您的计划"
+
+#: templates/accounts/subscriptions.html:62
+msgid "M\\u00e1s popular"
+msgstr "最受欢迎"
+
+#: templates/accounts/subscriptions.html:85
+#| msgid "Perfil actualizado."
+msgid "Plan actual"
+msgstr "目前计划"
+
+#: templates/accounts/subscriptions.html:88
+msgid "Suscribirse"
+msgstr "订阅"
+
+#: templates/accounts/subscriptions.html:99
+msgid "Informaci\\u00f3n de pago"
+msgstr "付款信息"
+
+#: templates/accounts/subscriptions.html:104
+msgid "Pago con Solana"
+msgstr "使用 Solana 付款"
+
+#: templates/accounts/subscriptions.html:105
+msgid "Aceptamos pagos en SOL a trav\\u00e9s de tu wallet conectada."
+msgstr "我们通过您连接的钱包接受 SOL 付款。"
+
+#: templates/accounts/subscriptions.html:109
+msgid ""
+"Al suscribirte, ser\\u00e1s redirigido a la p\\u00e1gina de wallet para "
+"completar el pago."
+msgstr "订阅后，您将被重定向至钱包页面以完成付款。"
+
+#: templates/accounts/wallet.html:5
+msgid "Mi Wallet"
+msgstr "我的钱包"
+
+#: templates/accounts/wallet.html:13
+msgid "Estado de tu wallet"
+msgstr "您的钱包状态"
+
+#: templates/accounts/wallet.html:26
+msgid "Direcci\\u00f3n p\\u00fablica"
+msgstr "公共广播"
+
+#: templates/accounts/wallet.html:29 templates/accounts/wallet.html:100
+msgid "Copiar"
+msgstr "复制"
+
+#: templates/accounts/wallet.html:35
+msgid "Conectada el"
+msgstr "连接了"
+
+#: templates/accounts/wallet.html:42
+msgid "\\u00bfDesconectar tu wallet?"
+msgstr "\\u00bf断开你的钱包？"
+
+#: templates/accounts/wallet.html:43
+msgid "Desconectar wallet"
+msgstr "断开钱包连接"
+
+#: templates/accounts/wallet.html:51
+msgid ""
+"Conecta tu wallet de Solana para realizar pagos y verificar transacciones."
+msgstr "连接您的 Solana 钱包以进行付款并验证交易。"
+
+#: templates/accounts/wallet.html:58
+msgid "Llave p\\u00fablica de Solana"
+msgstr "Solana 公钥"
+
+#: templates/accounts/wallet.html:65
+msgid "Tu llave p\\u00fablica de Solana..."
+msgstr "您的 Solana 公钥..."
+
+#: templates/accounts/wallet.html:70
+msgid "32-44 caracteres en formato base58"
+msgstr "Base58 格式的 32-44 个字符"
+
+#: templates/accounts/wallet.html:79
+msgid "\\u00bfC\\u00f3mo obtener tu llave p\\u00fablica?"
+msgstr "如何获取你的公钥？"
+
+#: templates/accounts/wallet.html:81
+msgid "Abre tu wallet de Solana (Phantom, Solflare, etc.)"
+msgstr "打开您的 Solana 钱包（Phantom、Solflare 等）"
+
+#: templates/accounts/wallet.html:82
+msgid "Busca la opci\\u00f3n 'Copiar direcci\\u00f3n' o 'Receive'"
+msgstr "查找“复制地址”或“接收”选项"
+
+#: templates/accounts/wallet.html:83
+msgid "Pega la direcci\\u00f3n en el campo de arriba"
+msgstr "将地址粘贴到上面的字段中"
+
+#: templates/accounts/wallet.html:93
+msgid "Realizar pago"
+msgstr "付款"
+
+#: templates/accounts/wallet.html:95
+msgid "Para completar pagos, env\\u00eda SOL a la siguiente direcci\\u00f3n:"
+msgstr "要完成付款，请将 SOL 发送至以下地址："
+
+#: templates/accounts/wallet.html:104
+msgid ""
+"Despu\\u00e9s de enviar, guarda la firma de transacci\\u00f3n para "
+"verificaci\\u00f3n."
+msgstr "发送后，保存交易签名以供验证。"
+
+#: templates/accounts/wallet.html:113
+msgid "Historial de transacciones"
+msgstr "交易记录"
+
+#: templates/accounts/wallet.html:118
+msgid "Firma"
+msgstr "签名"
+
+#: templates/accounts/wallet.html:119
+msgid "Cantidad"
+msgstr "数量"
+
+#: templates/accounts/wallet.html:120
+msgid "Prop\\u00f3sito"
+msgstr "目的"
+
+#: templates/accounts/wallet.html:122
+msgid "Fecha"
+msgstr "日期"
+
+#: templates/accounts/wallet.html:149
+msgid "Seguridad"
+msgstr "安全"
+
+#: templates/accounts/wallet.html:154
+msgid "Solo llave p\\u00fablica"
+msgstr "仅公钥"
+
+#: templates/accounts/wallet.html:155
+msgid "Nunca te pediremos tu llave privada ni frase semilla."
+msgstr "我们绝不会要求您提供私钥或助记词。"
+
+#: templates/accounts/wallet.html:161
+msgid "Verificaci\\u00f3n on-chain"
+msgstr "链上验证"
+
+#: templates/accounts/wallet.html:162
+msgid ""
+"Todas las transacciones se verifican directamente en la blockchain de "
+"Solana."
+msgstr "所有交易均直接在 Solana 区块链上进行验证。"
+
+#: templates/accounts/wallet.html:174
+msgid "Copiado al portapapeles"
+msgstr "已复制到剪贴板"
+
+#: templates/admin/base_site.html:4
+msgid "Croody Admin"
+msgstr "Croody管理"
+
+#: templates/admin/base_site.html:25
+msgid "Home"
+msgstr "首页"
+
+#: templates/admin/base_site.html:35
+msgid "Powered by"
+msgstr "技术支持"
+
+#: templates/base.html:13 templates/base.html:55
+msgid "Croody · Diseño con propósito"
+msgstr "Croody · 有目的的设计"
+
+#: templates/base.html:86
+msgid "Saltar al contenido principal"
+msgstr "跳转到主要内容"
+
+#: templates/base.html:105
+msgid "Abrir menú"
+msgstr "打开菜单"
+
+#: templates/base.html:126 templates/base.html:233
+msgid "Buscar en Croody"
+msgstr "在Croody中搜索"
+
+#: templates/base.html:133 templates/base.html:240
+msgid "Buscar (pulsa /)"
+msgstr "搜索（按/）"
+
+#: templates/base.html:144
+msgid "Seleccionar idioma"
+msgstr "选择语言"
+
+#: templates/base.html:210
+msgid "Cambiar tema"
+msgstr "更改主题"
+
+#: templates/base.html:217 templates/base.html:258
+msgid "Empezar"
+msgstr "开始"
+
+#: templates/base.html:220
+msgid "Salir"
+msgstr "登出"
+
+#: templates/base.html:223 templates/base.html:264
+msgid "Acceder"
+msgstr "登录"
+
+#: templates/base.html:260
+msgid "Cerrar sesión"
+msgstr "退出"
+
+#: templates/base.html:268
+msgid "Búsqueda"
+msgstr "搜索"
+
+#: templates/base.html:269
+msgid "Contactar"
+msgstr "联系"
+
+#: templates/base.html:282
+msgid "Accesos rápidos"
+msgstr "快速访问"
+
+#: templates/base.html:288
+msgid "Resultados sugeridos"
+msgstr "建议结果"
+
+#: templates/base.html:339
+msgid "Inspirados en valores eternos"
+msgstr "受永恒价值观启发"
+
+#: templates/base.html:340
+msgid "Legal"
+msgstr "法律"
+
+#: templates/base.html:341
+msgid "Privacidad"
+msgstr "隐私"
+
+#: templates/base.html:342
+msgid "Términos"
+msgstr "条款"
+
+#: templates/base.html:343
+msgid "Cookies"
+msgstr "Cookies"
+
+#: templates/landing/about.html:11
+msgid "Cambiar el mundo a través de la tecnología"
+msgstr "通过技术改变世界"
+
+#: templates/landing/about.html:12
+msgid ""
+"Somos una empresa fundada en la Universidad EAFIT, Medellín, con la "
+"convicción de que la tecnología debe servir a la humanidad, no reemplazarla."
+msgstr "我们是一家成立于麦德林 EAFIT 大学的公司，我们坚信技术应该服务人类，而不是取代人类。"
+
+#: templates/landing/about.html:20
+msgid "Nuestra Historia"
+msgstr "我们的历史"
+
+#: templates/landing/about.html:21
+msgid ""
+"Todo comenzó en 2025, cuando nace Croody con la convicción de que el mundo "
+"del fitness necesitaba una revolución."
+msgstr "这一切都始于 2025 年，当时 Croody 诞生时就坚信健身世界需要一场革命。"
+
+#: templates/landing/about.html:25
+msgid ""
+"En un mundo cada vez más digital, vimos cómo las personas perdían la "
+"conexión consigo mismas y con sus objetivos de salud. Los gimnasios "
+"tradicionales no se adaptaron a la nueva realidad, y las aplicaciones "
+"existentes trataban a los usuarios como números en lugar de personas."
+msgstr "在日益数字化的世界中，我们看到人们失去了与自己和健康目标的联系。传统的健身房无法适应新的现实，现有的应用程序将用户视为数字而不是人。"
+
+#: templates/landing/about.html:26
+msgid ""
+"Decidimos crear algo diferente: un ecosistema que combina tecnología de "
+"punta con un entendimiento profundo de la motivación humana. Así nació "
+"Croody, una empresa comprometida con transformar la manera en que las "
+"personas se conectan con su bienestar."
+msgstr ""
+"我们决定创造一些不同的东西：一个将尖端技术与对人类动机的深刻理解结合起来的生态系统。 Croody "
+"就这样诞生了，这是一家致力于改变人们与自身福祉联系的方式的公司。"
+
+#: templates/landing/about.html:27
+msgid "— El Equipo Croody"
+msgstr "— 克鲁迪团队"
+
+#: templates/landing/about.html:36
+msgid "Nuestra Misión"
+msgstr "退出"
+
+#: templates/landing/about.html:37
+msgid ""
+"Transformar la industria del fitness a través de tecnología humanizada."
+msgstr "通过人性化技术改变健身行业。"
+
+#: templates/landing/about.html:42
+msgid "Buddy AI"
+msgstr "艾好友"
+
+#: templates/landing/about.html:43
+msgid "Tu Entrenador Personal"
+msgstr "您的私人教练"
+
+#: templates/landing/about.html:45
+msgid ""
+"Nuestro asistente de inteligencia artificial comprende tus necesidades "
+"únicas y te guía en cada paso de tu journey fitness. No es solo una app, es "
+"tu compañero digital que entiende tu cuerpo, tu mente y tus objetivos."
+msgstr "我们的人工智能助手了解您的独特需求，并指导您健身之旅的每一步。它不仅仅是一个应用程序，它是您的数字伴侣，了解您的身体、思想和目标。"
+
+#: templates/landing/about.html:47
+msgid "Tecnología:"
+msgstr "技术："
+
+#: templates/landing/about.html:47
+msgid "Algoritmos avanzados de personalización que aprenden de tu progreso."
+msgstr "先进的定制算法可以从您的进步中学习。"
+
+#: templates/landing/about.html:48
+msgid "Enfoque:"
+msgstr "方法："
+
+#: templates/landing/about.html:48
+msgid "Cada rutina es única, diseñada específicamente para ti."
+msgstr "每个例程都是独一无二的，专为您设计。"
+
+#: templates/landing/about.html:49
+msgid "Compromiso:"
+msgstr "承诺："
+
+#: templates/landing/about.html:49
+msgid "Resultados reales con motivación humana."
+msgstr "具有人类动机的真实结果。"
+
+#: templates/landing/about.html:55
+msgid "Luks Rewards"
+msgstr "卢克斯奖励"
+
+#: templates/landing/about.html:56
+msgid "Tu Progreso Tiene Valor"
+msgstr "你的进步有价值"
+
+#: templates/landing/about.html:58
+msgid ""
+"Luks es nuestro sistema de recompensas que reconoce tu esfuerzo y "
+"dedicación. Cada entrenamiento no solo mejora tu salud, sino que también "
+"acumula valor real en el ecosistema Croody."
+msgstr "Luks 是我们的奖励系统，旨在表彰您的努力和奉献。每次锻炼不仅可以改善您的健康，还可以在 Croody 生态系统中积累真正的价值。"
+
+#: templates/landing/about.html:60
+msgid "Innovación:"
+msgstr "创新："
+
+#: templates/landing/about.html:60
+msgid "Token utility que crea un ciclo de valor real."
+msgstr "创造真实价值循环的代币效用。"
+
+#: templates/landing/about.html:61
+msgid "Motivación:"
+msgstr "动机："
+
+#: templates/landing/about.html:61
+msgid "Cada esfuerzo es reconocido y recompensado."
+msgstr "每一次努力都会得到认可和奖励。"
+
+#: templates/landing/about.html:62
+msgid "Futuro:"
+msgstr "未来："
+
+#: templates/landing/about.html:62
+msgid "Construye tu legacy fitness mientras transformas tu vida."
+msgstr "在改变您的生活的同时，建立您的健身遗产。"
+
+#: templates/landing/about.html:68
+msgid "Tecnología Humanizada"
+msgstr "人性化科技"
+
+#: templates/landing/about.html:69
+msgid "IA al Servicio de la Humanidad"
+msgstr "人工智能为人类服务"
+
+#: templates/landing/about.html:71
+msgid ""
+"En Croody creemos que la mejor tecnología es aquella que se siente natural. "
+"Nuestra IA no reemplaza el factor humano, lo potencia. Cada interacción está"
+" diseñada para recordarte que eres más que datos: eres una persona única con"
+" objetivos, emociones y sueños."
+msgstr ""
+"在 "
+"Croody，我们相信最好的技术是感觉自然的技术。我们的人工智能并没有取代人为因素，而是增强了人为因素。每一次互动都是为了提醒您，您不仅仅是数据：您是一个独特的人，有目标、情感和梦想。"
+
+#: templates/landing/about.html:73
+msgid "Filosofía:"
+msgstr "哲学："
+
+#: templates/landing/about.html:73
+msgid "La tecnología debe servir a la humanidad, no reemplazarla."
+msgstr "技术应该为人类服务，而不是取代人类。"
+
+#: templates/landing/about.html:74
+msgid "Método:"
+msgstr "方法："
+
+#: templates/landing/about.html:74
+msgid "IA invisible que se siente como comprensión humana."
+msgstr "隐形人工智能，感觉就像人类的理解力。"
+
+#: templates/landing/about.html:75
+msgid "Impacto:"
+msgstr "影响："
+
+#: templates/landing/about.html:75
+msgid "Transformamos vidas, no solo creamos apps."
+msgstr "我们改变生活，我们不仅仅是创建应用程序。"
+
+#: templates/landing/about.html:85
+msgid "Nuestros Valores"
+msgstr "我们的价值观"
+
+#: templates/landing/about.html:86
+msgid "Los principios que guían cada decisión que tomamos."
+msgstr "指导我们做出每项决定的原则。"
+
+#: templates/landing/about.html:90
+msgid "Humanidad Primero"
+msgstr "人性至上"
+
+#: templates/landing/about.html:91
+msgid ""
+"Cada tecnología que construimos tiene como objetivo servir a las personas, "
+"no reemplazarlas. La eficiencia sin humanidad es irrelevante."
+msgstr "我们构建的每一项技术都是为了服务人们，而不是取代他们。没有人性的效率是没有意义的。"
+
+#: templates/landing/about.html:94
+msgid "Transparencia Total"
+msgstr "完全透明"
+
+#: templates/landing/about.html:95
+msgid ""
+"Operamos con claridad radical. Desde nuestros algoritmos hasta nuestros "
+"precios, todo es visible y comprensible."
+msgstr "我们的运作非常清晰。从我们的算法到我们的价格，一切都是可见且易于理解的。"
+
+#: templates/landing/about.html:98
+msgid "Excelencia Sin Compromiso"
+msgstr "卓越不妥协"
+
+#: templates/landing/about.html:99
+msgid "No nos conformamos con \\"
+msgstr "我们不满意\\"
+
+#: templates/landing/about.html:102
+msgid "Impacto Real"
+msgstr "真正的影响"
+
+#: templates/landing/about.html:103
+msgid ""
+"Medimos nuestro éxito por el cambio positivo que generamos en la vida de "
+"nuestros usuarios, no por métricas vacías."
+msgstr "我们通过给用户生活带来的积极变化来衡量我们的成功，而不是通过空洞的指标。"
+
+#: templates/landing/about.html:106
+msgid "Evolución Constante"
+msgstr "不断进化"
+
+#: templates/landing/about.html:107
+msgid ""
+"Somos aprendices permanentes. La tecnología y las necesidades humanas "
+"evolucionan, y nosotros evolucionamos con ellas."
+msgstr "我们是终身学习者。技术和人类需求不断发展，我们也随之发展。"
+
+#: templates/landing/about.html:116
+msgid "Nuestra Visión: 3 → 6 → 9 → 12 → 33"
+msgstr "我们的愿景：3 → 6 → 9 → 12 → 33"
+
+#: templates/landing/about.html:117
+msgid ""
+"Un roadmap basado en la proporción áurea, porque creemos en la armonía entre"
+" precisión y humanidad."
+msgstr "基于黄金比例的路线图，因为我们相信精确与人性之间的和谐。"
+
+#: templates/landing/about.html:123
+msgid "Fundamentos Sólidos"
+msgstr "坚实的基础"
+
+#: templates/landing/about.html:124
+msgid ""
+"Establecer las bases técnicas y filosóficas que soportarán todo nuestro "
+"ecosistema. Buddy nace como un asistente de IA que realmente comprende."
+msgstr "建立支持我们整个生态系统的技术和哲学基础。 Buddy 是一个真正理解的 AI 助手。"
+
+#: templates/landing/about.html:130
+msgid "Ecosistema Conectado"
+msgstr "互联生态系统"
+
+#: templates/landing/about.html:131
+msgid ""
+"La integración de Luks como token utility crea un ciclo de valor donde cada "
+"entrenamiento tiene significado y recompensa."
+msgstr "Luks 作为代币实用程序的整合创建了一个价值循环，其中每次锻炼都有意义和奖励。"
+
+#: templates/landing/about.html:137
+msgid "Adopción Global"
+msgstr "全球采用"
+
+#: templates/landing/about.html:138
+msgid ""
+"Expansión a múltiples mercados con localización cultural profunda y soporte "
+"en 8+ idiomas."
+msgstr "通过深入的文化本地化和 8 种以上语言的支持扩展到多个市场。"
+
+#: templates/landing/about.html:144
+msgid "Transformación Social"
+msgstr "社会转型"
+
+#: templates/landing/about.html:145
+msgid ""
+"Programas comunitarios, partnerships con gimnasios y ONGs para democratizar "
+"el acceso a tecnología de fitness de calidad."
+msgstr "社区计划、与健身房和非政府组织的合作，使优质健身技术的普及变得民主化。"
+
+#: templates/landing/about.html:151
+msgid "Legacy"
+msgstr "法律"
+
+#: templates/landing/about.html:152
+msgid ""
+"Haber cambiado fundamentalmente la manera en que la humanidad se conecta con"
+" su bienestar, inspirando a toda una industria a seguir nuestro ejemplo."
+msgstr "从根本上改变了人类与其福祉的联系方式，激励整个行业效仿我们的榜样。"
+
+#: templates/landing/about.html:162
+msgid "¿Listo para ser parte del cambio?"
+msgstr "准备好参与变革了吗？"
+
+#: templates/landing/about.html:163
+msgid ""
+"Si compartes nuestra visión de un futuro donde la tecnología sirve a la "
+"humanidad, nos encantaría conocerte."
+msgstr "如果您与我们一样对科技服务人类的未来抱有同样的愿景，我们很乐意见到您。"
+
+#: templates/landing/about.html:166
+msgid "Contáctanos"
+msgstr "联系我们"
+
+#: templates/landing/about.html:167 templates/landing/home.html:301
+msgid "Volver al inicio"
+msgstr "返回首页"
+
+#: templates/landing/buddy.html:5
+msgid "Buddy · Croody"
+msgstr "在Croody中搜索"
+
+#: templates/landing/buddy.html:17
+msgid "📱 Descargar App (Beta)"
+msgstr "📱 下载应用（测试版）"
+
+#: templates/landing/buddy.html:41
+msgid "Así funciona Buddy"
+msgstr "Buddy的工作原理"
+
+#: templates/landing/buddy.html:42
+msgid ""
+"Tu entrenador personal, impulsado por inteligencia artificial, siempre listo"
+" para adaptarte"
+msgstr "您的私人教练由人工智能提供支持，随时准备适应"
+
+#: templates/landing/buddy.html:47
+msgid "Describe tu objetivo"
+msgstr "描述你的目标"
+
+#: templates/landing/buddy.html:48
+msgid ""
+"Dile a Buddy qué quieres lograr: perder peso, ganar músculo, mejorar "
+"resistencia... Él entiende tu contexto."
+msgstr "告诉巴迪你想要实现什么：减肥、增加肌肉、提高耐力……他了解你的背景。"
+
+#: templates/landing/buddy.html:52
+msgid "Recibe tu rutina"
+msgstr "接收你的训练"
+
+#: templates/landing/buddy.html:53
+msgid ""
+"La IA genera ejercicios personalizados basados en tu nivel, equipo "
+"disponible y tiempo que tienes."
+msgstr "人工智能根据您的水平、可用设备和时间生成个性化练习。"
+
+#: templates/landing/buddy.html:57
+msgid "Entrena y progresa"
+msgstr "训练和进步"
+
+#: templates/landing/buddy.html:58
+msgid ""
+"Seguimiento en tiempo real, feedback sobre tu técnica y ajustes automáticos "
+"según tu evolución."
+msgstr "实时监控、反馈您的技术并根据您的进步自动调整。"
+
+#: templates/landing/buddy.html:67 templates/landing/home.html:147
+#: templates/landing/home.html:163 templates/landing/home.html:179
+#: templates/landing/home.html:202 templates/landing/home.html:211
+#: templates/landing/home.html:220 templates/landing/luks.html:58
+msgid "\\"
 msgstr ""
 
-msgid "Buddy cuenta con un ecosistema de personajes, cada uno con su personalidad única. Puedes elegir rutinas predeterminadas según el estilo de cada personaje o configurar que uno solo te entregue todas las rutinas. Cada personaje ofrece gestos, animaciones y apoyo constante para una experiencia cercana y estimulante."
-msgstr ""
+#: templates/landing/buddy.html:68
+msgid "— Carlos, México, usuario desde 2024"
+msgstr "— Carlos，墨西哥，用户自2024年起"
 
+#: templates/landing/buddy.html:76
+msgid "Tres pilares que sostienen a Buddy"
+msgstr "支撑Buddy的三大支柱"
+
+#: templates/landing/buddy.html:92
+msgid "Módulos Buddy"
+msgstr "Buddy模块"
+
+#: templates/landing/buddy.html:93
+msgid ""
+"Un mismo ADN Buddy se distribuye entre app, web y economía tokenizada para "
+"que nada se pierda en el camino."
+msgstr "相同的 Buddy DNA 分布在应用程序、网络和代币化经济之间，因此在此过程中不会丢失任何内容。"
+
+#: templates/landing/buddy.html:111
+msgid "Viajes de usuario"
+msgstr "用户旅程"
+
+#: templates/landing/buddy.html:112
+msgid ""
+"Buddy acompaña antes, durante y después de cada sesión para que la rutina no"
+" se rompa."
+msgstr "每次训练之前、期间和之后都有 Buddy 陪伴，这样就不会打破常规。"
+
+#: templates/landing/buddy.html:130
+msgid "Roadmap corto"
+msgstr "短期路线图"
+
+#: templates/landing/buddy.html:138
+msgid "Contacta al equipo"
+msgstr "联系团队"
+
+#: templates/landing/buddy.html:139
+msgid ""
+"¿Quieres activar Buddy para tu organización o integrarlo con tu plataforma "
+"de bienestar?"
+msgstr "您想为您的组织激活 Buddy 或将其与您的健康平台集成吗？"
+
+#: templates/landing/buddy.html:140
+msgid "Agendar una llamada"
+msgstr "安排通话"
+
+#: templates/landing/buddy.html:143
+msgid "Explora Luks"
+msgstr "探索Luks"
+
+#: templates/landing/buddy.html:144
+msgid ""
+"La capa cripto sostiene compras, inventario y marketplace. Transparencia "
+"total."
+msgstr "加密层支持购买、库存和市场。完全透明。"
+
+#: templates/landing/buddy.html:145
+msgid "Ver Luks"
+msgstr "查看Luks"
+
+#: templates/landing/buddy.html:153
+msgid "Siguientes pasos"
+msgstr "下一步"
+
+#: templates/landing/buddy.html:154
+msgid "Elige tu plan y entra a la tienda cuando estés listo."
+msgstr "选择你的计划，准备好时进入商店。"
+
+#: templates/landing/buddy.html:157
+msgid "Ver suscripciones"
+msgstr "查看订阅"
+
+#: templates/landing/home.html:26
+msgid "✓ +5,000 usuarios activos"
+msgstr "✓ +5,000活跃用户"
+
+#: templates/landing/home.html:27
+msgid "✓ Descarga gratuita"
+msgstr "✓ 免费下载"
+
+#: templates/landing/home.html:28
+msgid "✓ Disponible en 8 idiomas"
+msgstr "✓ 支持8种语言"
+
+#: templates/landing/home.html:31
+msgid "✓ Más de 5,000 personas ya entrenan con Buddy"
+msgstr "✓ 已有超过 5,000 人接受 Buddy 培训"
+
+#: templates/landing/home.html:33
+msgid "✓ Sin contratos"
+msgstr "✓ 无需合同"
+
+#: templates/landing/home.html:34
+msgid "✓ Cancela cuando quieras"
+msgstr "✓ 随时取消"
+
+#: templates/landing/home.html:35
+msgid "✓ Soporte 24/7"
+msgstr "✓ 24/7支持"
+
+#: templates/landing/home.html:57
+msgid "Un ecosistema, dos productos"
+msgstr "一个生态系统，两个产品"
+
+#: templates/landing/home.html:58
+msgid ""
+"Descubre cómo Buddy y Luks trabajan juntos para transformar tu experiencia"
+msgstr "了解 Buddy 和 Luks 如何共同改变您的体验"
+
+#: templates/landing/home.html:68
+msgid "🤖 IA Personalizada"
+msgstr "🤖 个性化AI"
+
+#: templates/landing/home.html:69
+msgid "Tu entrenador que te entiende"
+msgstr "理解你的教练"
+
+#: templates/landing/home.html:70
+msgid ""
+"Rutinas adaptadas a tu nivel, objetivos y tiempo disponible. La IA aprende "
+"de cada sesión para ofrecerte siempre lo mejor."
+msgstr "适合您的水平、目标和可用时间的日常安排。人工智能会从每次会话中学习，始终为您提供最好的体验。"
+
+#: templates/landing/home.html:71
+msgid "Conocer Buddy"
+msgstr "了解Buddy"
+
+#: templates/landing/home.html:74
+msgid "🎮 Gamificación"
+msgstr "🎮 游戏化"
+
+#: templates/landing/home.html:75
+msgid "Entrenar nunca fue tan motivador"
+msgstr "训练从未如此激励人心"
+
+#: templates/landing/home.html:76
+msgid ""
+"Desafíos diarios, logros desbloqueables y un sistema de recompensas que "
+"mantiene tu motivación al máximo."
+msgstr "每日挑战、可解锁的成就以及让您的动力保持在巅峰的奖励系统。"
+
+#: templates/landing/home.html:77
+msgid "Ver características"
+msgstr "查看功能"
+
+#: templates/landing/home.html:80
+msgid "📱 Multiplataforma"
+msgstr "📱 多平台"
+
+#: templates/landing/home.html:81
+msgid "Entrena donde quieras"
+msgstr "随处训练"
+
+#: templates/landing/home.html:82
+msgid ""
+"Sincronización perfecta entre web y móvil. Tu progreso siempre disponible, "
+"en cualquier momento."
+msgstr "网络和移动设备完美同步。您的进度随时可用。"
+
+#: templates/landing/home.html:83
+msgid "Más información"
+msgstr "更多信息"
+
+#: templates/landing/home.html:90
+msgid "💎 Token Utility"
+msgstr "💎 实用代币"
+
+#: templates/landing/home.html:91
+msgid "Recompensas reales"
+msgstr "真实奖励"
+
+#: templates/landing/home.html:92
+msgid ""
+"Gana Luks entrenando y úsalos para desbloquear contenido premium, accesorios"
+" y productos exclusivos."
+msgstr "通过培训赚取 Luks，并用它们来解锁优质内容、配件和独家产品。"
+
+#: templates/landing/home.html:93
+msgid "Explorar Luks"
+msgstr "探索Luks"
+
+#: templates/landing/home.html:96
+msgid "🔒 Transparencia"
+msgstr "🔒 透明度"
+
+#: templates/landing/home.html:97
+msgid "Todo claro, todo visible"
+msgstr "一切清晰，一切可见"
+
+#: templates/landing/home.html:98
+msgid ""
+"Probabilidades públicas, tarifas conocidas y un sistema de recompensas que "
+"puedes entender y predecir."
+msgstr "公开赔率、已知赔率以及您可以理解和预测的奖励系统。"
+
+#: templates/landing/home.html:99
+msgid "Ver tokenomics"
+msgstr "查看代币经济学"
+
+#: templates/landing/home.html:102
+msgid "🌍 Economía Digital"
+msgstr "🌍 数字经济"
+
+#: templates/landing/home.html:103
+msgid "Más que una app"
+msgstr "不仅仅是应用"
+
+#: templates/landing/home.html:104
+msgid ""
+"Participa en una economía digital propia donde tu constancia tiene valor "
+"real y tangible."
+msgstr "参与您自己的数字经济，您的毅力将具有真正有形的价值。"
+
+#: templates/landing/home.html:105
+msgid "Conocer más"
+msgstr "了解更多"
+
+#: templates/landing/home.html:116
+msgid "Capas del ecosistema Croody"
+msgstr "Croody生态系统层级"
+
+#: templates/landing/home.html:117
+msgid ""
+"Buddy y Luks funcionan como un mismo sistema: entrenas, mides progreso y "
+"recibes recompensas sin perder continuidad ni los valores que nos inspiran."
+msgstr "Buddy 和 Luks 的工作方式相同：您训练、衡量进度并获得奖励，而不会失去连续性或激励我们的价值观。"
+
+#: templates/landing/home.html:138
+msgid "Lo que dicen los equipos que usan Croody"
+msgstr "使用Croody的团队评价"
+
+#: templates/landing/home.html:139
+msgid ""
+"Historias reales de personas que han transformado su forma de entrenar y "
+"conectarse."
+msgstr "来自改变训练和联系方式的人们的真实故事。"
+
+#: templates/landing/home.html:152 templates/landing/home.html:204
+msgid "María González"
+msgstr "María González"
+
+#: templates/landing/home.html:153
+msgid "Diseñadora UX, Madrid"
+msgstr "UX设计师，马德里"
+
+#: templates/landing/home.html:168 templates/landing/home.html:213
+msgid "Carlos Ruiz"
+msgstr "Carlos Ruiz"
+
+#: templates/landing/home.html:169
+msgid "Desarrollador, México"
+msgstr "开发者，墨西哥"
+
+#: templates/landing/home.html:184 templates/landing/home.html:222
+msgid "Ana Martínez"
+msgstr "Ana Martínez"
+
+#: templates/landing/home.html:185
+msgid "Coach Fitness, Barcelona"
+msgstr "健身教练，巴塞罗那"
+
+#: templates/landing/home.html:196
+msgid "Historias reales, resultados reales"
+msgstr "真实故事，真实结果"
+
+#: templates/landing/home.html:197
+msgid "Conoce a quienes han transformado su vida con Croody"
+msgstr "认识通过Croody改变生活的人"
+
+#: templates/landing/home.html:205
+msgid "Diseñadora UX, Madrid · Usuario desde Enero 2025"
+msgstr "用户体验设计师，马德里 · 自 2025 年 1 月起使用"
+
+#: templates/landing/home.html:214
+msgid "Desarrollador, México · Usuario desde 2024"
+msgstr "开发商，墨西哥 · 2024 年以来的用户"
+
+#: templates/landing/home.html:223
+msgid "Coach Fitness, Barcelona · Usuario desde 2024"
+msgstr "Coach Fitness，巴塞罗那 · 2024 年以来的用户"
+
+#: templates/landing/home.html:228
+msgid "Comienza tu historia"
+msgstr "开始你的故事"
+
+#: templates/landing/home.html:236
+msgid "Nuestros últimos productos"
+msgstr "我们的最新产品"
+
+#: templates/landing/home.html:237
+msgid "Diseñados para transformar tu experiencia"
+msgstr "为转变你的体验而设计"
+
+#: templates/landing/home.html:249 templates/landing/home.html:285
+msgid "Ver detalle"
+msgstr "查看详情"
+
+#: templates/landing/home.html:254
+msgid "Ver todos los productos →"
+msgstr "查看所有产品 →"
+
+#: templates/landing/home.html:263
+msgid "Blueprint listo para implementar"
+msgstr "蓝图已准备好部署"
+
+#: templates/landing/home.html:264
+msgid ""
+"El MVP de tienda y marketplace está listo para entrar a producción con "
+"tiempos, copy y visuales perfectamente definidos, manteniendo un trasfondo "
+"de fe comunicado con sobriedad."
+msgstr "商店和市场 MVP 已准备好投入生产，具有完美定义的时间、文案和视觉效果，保持清醒的信仰背景。"
+
+#: templates/landing/home.html:273
+msgid "Entrar a la tienda"
+msgstr "进入商店"
+
+#: templates/landing/home.html:296
+msgid "Conversemos y adaptemos Croody a tu equipo"
+msgstr "让我们谈谈并让 Croody 适应您的团队"
+
+#: templates/landing/home.html:297
+msgid ""
+"Diseño, copy, economía y analítica integradas en un despliegue que toma "
+"semanas, no meses, reflejando nuestros valores fundacionales con un tono "
+"profesional."
+msgstr "将设计、文案、经济和分析集成到部署中，只需数周而不是数月的时间，以专业的语气反映了我们的创始价值观。"
+
+#: templates/landing/home.html:300
+msgid "Agendar kickoff"
+msgstr "安排启动"
+
+#: templates/landing/integrations.html:11
+msgid "Croody · APIs"
+msgstr "Croody · APIs"
+
+#: templates/landing/integrations.html:12
+msgid "Prueba los endpoints directamente"
+msgstr "直接测试端点"
+
+#: templates/landing/integrations.html:13
+msgid ""
+"Ingiere muestras, consulta históricos y obtén predicciones IDS desde la "
+"misma vista."
+msgstr "提取样本、查看历史记录并从同一视图获取 IDS 预测。"
+
+#: templates/landing/integrations.html:18
+msgid "Ingresa datos en caliente y revisa la última lectura"
+msgstr "输入热门数据并查看最新阅读内容"
+
+#: templates/landing/integrations.html:20
+msgid "Ingerir muestra"
+msgstr "摄取样本"
+
+#: templates/landing/integrations.html:21
+msgid "Último registro"
+msgstr "最后记录"
+
+#: templates/landing/integrations.html:28
+msgid "Simula tráfico y recibe la inferencia"
+msgstr "模拟流量并接收推理"
+
+#: templates/landing/integrations.html:29
+msgid "Probar predicción"
+msgstr "测试预测"
+
+#: templates/landing/luks.html:5
+msgid "Luks · Croody"
+msgstr "在Croody中搜索"
+
+#: templates/landing/luks.html:34
+msgid "¿Cómo funciona Luks?"
+msgstr "Luks如何运作？"
+
+#: templates/landing/luks.html:35
+msgid ""
+"El token que recompensa tu constancia y hace que cada entrenamiento cuente"
+msgstr "奖励您坚持不懈并让每次锻炼都有意义的代币"
+
+#: templates/landing/luks.html:40
+msgid "Entrena con Buddy"
+msgstr "和好友一起训练"
+
+#: templates/landing/luks.html:41
+msgid "Completa rutinas, mantén tu constancia y gana Luks automáticamente"
+msgstr "完成例行公事，保持一致并自动赚取 Luks"
+
+#: templates/landing/luks.html:46
+msgid "Gana Recompensas"
+msgstr "赢得奖励"
+
+#: templates/landing/luks.html:47
+msgid "Acumula Luks por cada sesión completada, sin límites ni restricciones"
+msgstr "每次完成的会话都可以累积 Luks，没有任何限制或限制"
+
+#: templates/landing/luks.html:52
+msgid "Compra en la tienda"
+msgstr "在商店购买"
+
+#: templates/landing/luks.html:53
+msgid ""
+"Usa tus Luks para desbloquear productos, accesorios y contenido premium"
+msgstr "使用您的 Luks 解锁产品、配件和优质内容"
+
+#: templates/landing/luks.html:59
+msgid "— Alejandro, Colombia, usuario desde 2024"
+msgstr "— Alejandro，哥伦比亚，用户自2024年起"
+
+#: templates/landing/luks.html:68
+msgid "Pilares de Luks"
+msgstr "Luks支柱"
+
+#: templates/landing/luks.html:69
+msgid ""
+"Confianza visible, seguridad activa y métricas listas para auditar cada "
+"movimiento, inspiradas en una ética de servicio discreta."
+msgstr "受谨慎的服务道德启发，可见的信任、主动的安全性和随时可审核您的一举一动的指标。"
+
+#: templates/landing/luks.html:87
+msgid "Economía sobre Luks"
+msgstr "Luks经济"
+
+#: templates/landing/luks.html:88
+msgid ""
+"Cada módulo del ecosistema Buddy habla el mismo idioma: tokens, "
+"probabilidades y royalties auditables alineados con nuestros valores "
+"fundacionales."
+msgstr "Buddy 生态系统中的每个模块都使用相同的语言：与我们的创始价值观一致的可审计代币、概率和版税。"
+
+#: templates/landing/luks.html:106
+msgid "Cumplimiento & operación"
+msgstr "合规与运营"
+
+#: templates/landing/luks.html:114
+msgid "Integraciones"
+msgstr "集成"
+
+#: templates/landing/luks.html:122
+msgid "¿Quieres construir sobre Luks?"
+msgstr "想在Luks上构建吗？"
+
+#: templates/landing/luks.html:123
+msgid ""
+"API, webhooks y paneles están listos. Podemos adaptar los flujos a tu "
+"organización o producto preservando esa visión de servicio que nos "
+"caracteriza."
+msgstr "API、Webhook 和仪表板已准备就绪。我们可以根据您的组织或产品调整流程，同时保留我们特有的服务愿景。"
+
+#: templates/landing/luks.html:124
+msgid "Habla con nosotros"
+msgstr "与我们交谈"
+
+#: templates/landing/monitor.html:11
+msgid "Croody Protocol"
+msgstr "Croody协议"
+
+#: templates/landing/monitor.html:15
+msgid "Conectar mi robot"
+msgstr "连接我的机器人"
+
+#: templates/landing/monitor.html:16
+msgid "Ver token personal"
+msgstr "查看个人令牌"
+
+#: templates/landing/monitor.html:33
+msgid "Robot de clases en vivo"
+msgstr "直播课机器人"
+
+#: templates/landing/monitor.html:34
+msgid ""
+"Bridge automático subscribe el servidor TCP de clases y reenvía cada frame "
+"al Telemetry Gateway."
+msgstr "自动桥订阅 TCP 类服务器并将每个帧转发到遥测网关。"
+
+#: templates/landing/monitor.html:37
+msgid "Protocolo"
+msgstr "协议"
+
+#: templates/landing/monitor.html:38
+msgid "Frecuencia"
+msgstr "频率"
+
+#: templates/landing/monitor.html:40
+msgid "Ver carpeta original"
+msgstr "查看原始文件夹"
+
+#: templates/landing/monitor.html:45
+msgid "Modelo IDS-ML entrenado"
+msgstr "训练的IDS-ML模型"
+
+#: templates/landing/monitor.html:46
+msgid "Pipeline NSL-KDD portado desde clases/CiberTelepatia."
+msgstr "NSL-KDD 管道从classes/CiberTelepathy 移植。"
+
+#: templates/landing/monitor.html:57
+msgid "Entrenado"
+msgstr "已训练"
+
+#: templates/landing/monitor.html:76
+msgid "Robots conectados"
+msgstr "已连接机器人"
+
+#: templates/landing/monitor.html:77
+msgid ""
+"Cada tarjeta resume posición, atmósfera y estado transmitido por el "
+"protocolo"
+msgstr "每张卡总结了协议传输的位置、气氛和状态"
+
+#: templates/landing/monitor.html:86
+msgid "Cómo funciona"
+msgstr "如何运作"
+
+#: templates/landing/monitor.html:87
+msgid ""
+"El gateway acepta POST JSON seguros con token personal y expone endpoints "
+"GET para visualización y auditoría."
+msgstr "网关接受带有个人令牌的安全 JSON POST，并公开 GET 端点以供查看和审核。"
+
+#: templates/landing/monitor.html:89
+msgid "para telemetría"
+msgstr "用于遥测"
+
+#: templates/landing/monitor.html:90
+msgid "para dashboards"
+msgstr "用于仪表板"
+
+#: templates/landing/monitor.html:91
+msgid "para históricos"
+msgstr "用于历史"
+
+#: templates/landing/monitor.html:95
+msgid "Ejemplo de carga"
+msgstr "负载示例"
+
+#: templates/landing/parleo.html:4
+msgid "Parleo · Croody"
+msgstr "在Croody中搜索"
+
+#: templates/landing/parleo.html:25
+msgid "Lo que define a Parleo"
+msgstr "定义Parleo的因素"
+
+#: templates/landing/parleo.html:41
+msgid "Hitos hacia el lanzamiento"
+msgstr "发布里程碑"
+
+#: templates/landing/parleo.html:42
+msgid ""
+"Parleo comparte el mismo ADN Buddy y se conecta directo a Buddy y Luks para "
+"mantener todo en sincronía."
+msgstr "Parleo 具有相同的 Buddy DNA，并直接连接到 Buddy 和 Luks，以保持一切同步。"
+
+#: templates/landing/parleo.html:56
+msgid "Casos de uso"
+msgstr "用例"
+
+#: templates/landing/parleo.html:64
+msgid "¿Quieres sumarte como beta partner?"
+msgstr "想成为测试版合作伙伴吗？"
+
+#: templates/landing/parleo.html:65
+msgid ""
+"Estamos seleccionando equipos que necesiten coordinar entrenamientos, retos "
+"y recompensas desde un solo canal."
+msgstr "我们正在选择需要通过单一渠道协调培训、挑战和奖励的团队。"
+
+#: templates/landing/parleo.html:66
+msgid "Solicitar acceso anticipado"
+msgstr "请求早期访问"
+
+#: templates/landing/suscripciones.html:4
+msgid "Suscripciones · Buddy"
+msgstr "订阅 · Buddy"
+
+#: templates/landing/suscripciones.html:21
+msgid "Planes"
+msgstr "计划"
+
+#: templates/landing/suscripciones.html:22
+msgid "Pagas mes a mes y puedes cambiar cuando quieras."
+msgstr "您按月付费，并且可以随时更改。"
+
+#: templates/landing/suscripciones.html:46
+msgid "Preguntas frecuentes"
+msgstr "常见问题"
+
+#: templates/shop/cart.html:5
+#| msgid "Tienda Buddy"
+msgid "Carrito · Tienda Buddy"
+msgstr "购物车好友商店"
+
+#: templates/shop/cart.html:12
+msgid "Tu carrito"
+msgstr "你的购物车"
+
+#: templates/shop/cart.html:13
+msgid "Revisa tu selección"
+msgstr "检查您的选择"
+
+#: templates/shop/cart.html:14
+msgid "Verifica los productos y continúa al checkout cuando estés listo."
+msgstr "检查产品并在准备好后继续结帐。"
+
+#: templates/shop/cart.html:31
+msgid "Items en el carrito"
+msgstr "购物车中的商品"
+
+#: templates/shop/cart.html:41
+msgid "Resumen del pedido"
+msgstr "订单摘要"
+
+#: templates/shop/cart.html:44
+msgid "Subtotal"
+msgstr "小计"
+
+#: templates/shop/cart.html:48
+msgid "Envío"
+msgstr "运输"
+
+#: templates/shop/cart.html:49
+msgid "Gratis"
+msgstr "自由的"
+
+#: templates/shop/cart.html:52
+msgid "Total"
+msgstr "全部的"
+
+#: templates/shop/cart.html:59
+msgid "Continuar al checkout"
+msgstr "继续结账"
+
+#: templates/shop/cart.html:63
+#| msgid "Inicia sesión"
+msgid "Iniciar sesión para comprar"
+msgstr "登录购买"
+
+#: templates/shop/cart.html:68
+msgid "Seguir comprando"
+msgstr "继续购物"
+
+#: templates/shop/cart.html:73
+#, python-format
+msgid "Pago 100%% seguro"
+msgstr "100%%安全支付"
+
+#: templates/shop/cart.html:74
+msgid "Confirmación instantánea"
+msgstr "即时确认"
+
+#: templates/shop/cart.html:83
+msgid "Tu carrito está vacío"
+msgstr "您的购物车是空的"
+
+#: templates/shop/cart.html:84
+msgid "Explora nuestros productos y encuentra algo que te guste."
+msgstr "探索我们的产品并找到您喜欢的东西。"
+
+#: templates/shop/cart.html:86
+#| msgid "Ver Catálogo"
+msgid "Ver catálogo"
+msgstr "查看目录"
+
+#: templates/shop/catalogue.html:6
+msgid "Tienda Buddy · Croody"
+msgstr "Buddy商店 · Croody"
+
+#: templates/shop/catalogue.html:15
+msgid "Todo lo que necesitas para entrenar"
+msgstr "训练所需的一切"
+
+#: templates/shop/catalogue.html:16
+msgid "Cofres, sets, accesorios. Compra directo, recibe al instante."
+msgstr "箱子、套装、配件。直接购买，立即收到。"
+
+#: templates/shop/catalogue.html:18
+msgid "Ver Catálogo"
+msgstr "查看目录"
+
+#: templates/shop/catalogue.html:21
+msgid "Todo"
+msgstr "全部"
+
+#: templates/shop/catalogue.html:22
+msgid "Cofres"
+msgstr "宝箱"
+
+#: templates/shop/catalogue.html:23
+msgid "Sets"
+msgstr "套装"
+
+#: templates/shop/catalogue.html:24
+msgid "Accesorios"
+msgstr "快速访问"
+
+#: templates/shop/catalogue.html:32
+msgid "Catálogo Buddy"
+msgstr "Buddy目录"
+
+#: templates/shop/catalogue.html:52
+msgid "Agregar al carrito"
+msgstr "添加到购物车"
+
+#: templates/shop/catalogue.html:59
+msgid "Mostrando"
+msgstr "显示"
+
+#: templates/shop/catalogue.html:59
+msgid "productos"
+msgstr "产品"
+
+#: templates/shop/catalogue.html:61
+msgid "Ver más →"
+msgstr "查看更多 →"
+
+#: templates/shop/catalogue.html:66
+msgid "No hay productos disponibles."
+msgstr "没有可用产品。"
+
+#: templates/shop/checkout_preview.html:4
+msgid "Checkout Buddy · Croody"
+msgstr "Buddy结账 · Croody"
+
+#: templates/shop/checkout_preview.html:12
+msgid "Checkout Buddy · Paso a paso"
+msgstr "Buddy结账 · 逐步"
+
+#: templates/shop/checkout_preview.html:13
+msgid ""
+"Conecta tu wallet, revisa el resumen, firma y recibe un comprobante con hash"
+" verificable. Todo sucede en cuestión de segundos."
+msgstr "连接您的钱包，查看摘要，签署并接收带有可验证哈希值的收据。一切都在几秒钟内发生。"
+
+#: templates/shop/checkout_preview.html:47
+msgid "Protecciones del flujo"
+msgstr "流保护"
+
+#: templates/shop/checkout_preview.html:55
+msgid "Wallet y pagos"
+msgstr "钱包和支付"
+
+#: templates/shop/checkout_preview.html:63
+msgid "Confianza y transparencia"
+msgstr "信任与透明"
+
+#: templates/shop/detail.html:26 templates/shop/detail.html:79
+msgid "Comprar ahora"
+msgstr "立即购买"
+
+#: templates/shop/detail.html:27
+msgid "Volver a la tienda"
+msgstr "返回商店"
+
+#: templates/shop/detail.html:39
+msgid "Compra con seguridad"
+msgstr "安全购买"
+
+#: templates/shop/detail.html:47
+msgid "Después de comprar"
+msgstr "购买后"
+
+#: templates/shop/detail.html:53
+msgid "Volver al catálogo"
+msgstr "返回目录"
+
+#: templates/shop/detail.html:62
+msgid "También podría interesarte"
+msgstr "你可能也感兴趣"
+
+#: templates/shop/detail.html:63
+msgid "Tres recomendaciones para seguir creciendo con tu Buddy."
+msgstr "与Buddy持续成长的三个建议。"
+
+#~ msgid "Geometría sagrada"
+#~ msgstr "神圣几何"
+
+#~ msgid "Volvamos a ser humanos"
+#~ msgstr "让我们重新成为人类"

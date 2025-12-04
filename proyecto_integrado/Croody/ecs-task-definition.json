@@ -4,17 +4,18 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
   "memory": "1024",
-  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskRole",
+  "executionRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/ecsTaskRole",
   "containerDefinitions": [
     {
       "name": "croody-container",
-      "image": "REPLACE_WITH_ECR_IMAGE_URI",
+      "image": "${ECR_IMAGE_URI}",
       "essential": true,
       "portMappings": [
         {
           "containerPort": 8000,
-          "protocol": "tcp"
+          "protocol": "tcp",
+          "appProtocol": "http"
         }
       ],
       "environment": [
@@ -31,38 +32,63 @@
           "value": "croody.settings.production"
         },
         {
-          "name": "DATABASE_URL",
-          "value": "postgresql://postgres:password@rds-endpoint:5432/croody"
-        },
-        {
-          "name": "SECRET_KEY",
-          "value": "REPLACE_WITH_SECRET_KEY"
-        },
-        {
           "name": "DEBUG",
           "value": "false"
         },
         {
           "name": "ALLOWED_HOSTS",
-          "value": "croody.app,*.croody.app"
+          "value": "croody.app,*.croody.app,localhost"
+        },
+        {
+          "name": "SECURE_SSL_REDIRECT",
+          "value": "true"
+        },
+        {
+          "name": "AWS_SES_REGION_NAME",
+          "value": "us-east-1"
+        },
+        {
+          "name": "ENABLE_CLOUDWATCH",
+          "value": "true"
         }
       ],
       "secrets": [
         {
-          "name": "DATABASE_URL",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:croody/database-URL"
+          "name": "SECRET_KEY",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/django-secret-key"
         },
         {
-          "name": "SECRET_KEY",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:croody/secret-key"
+          "name": "DB_NAME",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/database:db_name::"
+        },
+        {
+          "name": "DB_USER",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/database:username::"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/database:password::"
+        },
+        {
+          "name": "DB_HOST",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/database:host::"
+        },
+        {
+          "name": "DB_PORT",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/database:port::"
+        },
+        {
+          "name": "REDIS_URL",
+          "valueFrom": "arn:aws:secretsmanager:${AWS_REGION}:${AWS_ACCOUNT_ID}:secret:croody/redis-url"
         }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/croody-app",
-          "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "ecs"
+          "awslogs-region": "${AWS_REGION}",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-create-group": "true"
         }
       },
       "healthCheck": {
@@ -71,10 +97,32 @@
           "curl -f http://localhost:8000/health/ || exit 1"
         ],
         "interval": 30,
-        "timeout": 5,
+        "timeout": 10,
         "retries": 3,
-        "startPeriod": 60
+        "startPeriod": 120
+      },
+      "mountPoints": [],
+      "volumesFrom": [],
+      "ulimits": [
+        {
+          "name": "nofile",
+          "softLimit": 65536,
+          "hardLimit": 65536
+        }
+      ],
+      "linuxParameters": {
+        "initProcessEnabled": true
       }
+    }
+  ],
+  "tags": [
+    {
+      "key": "Project",
+      "value": "Croody"
+    },
+    {
+      "key": "Environment",
+      "value": "production"
     }
   ]
 }

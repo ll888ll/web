@@ -1,0 +1,178 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Mi Wallet" %}{% endblock %}
+{% block content_title %}{% trans "Wallet Solana" %}{% endblock %}
+
+{% block content %}
+<div class="wallet-page">
+  <!-- Wallet Status -->
+  <section class="wallet-status card">
+    <div class="wallet-status__header">
+      <h3>{% trans "Estado de tu wallet" %}</h3>
+      {% if profile.wallet_verified %}
+      <span class="badge badge--success">{% trans "Verificada" %}</span>
+      {% elif profile.solana_public_key %}
+      <span class="badge badge--warning">{% trans "Pendiente" %}</span>
+      {% else %}
+      <span class="badge badge--muted">{% trans "Sin conectar" %}</span>
+      {% endif %}
+    </div>
+
+    {% if profile.solana_public_key %}
+    <div class="wallet-status__connected">
+      <div class="wallet-address">
+        <span class="wallet-address__label">{% trans "Direcci\u00f3n p\u00fablica" %}</span>
+        <code class="wallet-address__value">{{ profile.solana_public_key }}</code>
+        <button type="button" class="btn btn--ghost btn--sm" onclick="copyToClipboard('{{ profile.solana_public_key }}')">
+          {% trans "Copiar" %}
+        </button>
+      </div>
+
+      {% if profile.wallet_connected_at %}
+      <p class="wallet-status__meta">
+        {% trans "Conectada el" %} {{ profile.wallet_connected_at|date:"d M Y H:i" }}
+      </p>
+      {% endif %}
+
+      <div class="wallet-status__actions">
+        <a href="{% url 'accounts:wallet_disconnect' %}"
+           class="btn btn--danger btn--sm"
+           onclick="return confirm('{% trans "\u00bfDesconectar tu wallet?" %}')">
+          {% trans "Desconectar wallet" %}
+        </a>
+      </div>
+    </div>
+    {% else %}
+    <!-- Connect Wallet Form -->
+    <div class="wallet-connect">
+      <p class="wallet-connect__intro">
+        {% trans "Conecta tu wallet de Solana para realizar pagos y verificar transacciones." %}
+      </p>
+
+      <form method="post" action="{% url 'accounts:wallet_connect' %}" class="wallet-connect__form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_solana_public_key" class="form-label">
+            {% trans "Llave p\u00fablica de Solana" %}
+          </label>
+          <input
+            type="text"
+            name="solana_public_key"
+            id="id_solana_public_key"
+            class="form-input form-input--mono"
+            placeholder="{% trans 'Tu llave p\u00fablica de Solana...' %}"
+            maxlength="44"
+            required
+          >
+          <span class="form-hint">
+            {% trans "32-44 caracteres en formato base58" %}
+          </span>
+        </div>
+        <button type="submit" class="btn btn--primary">
+          {% trans "Conectar wallet" %}
+        </button>
+      </form>
+
+      <div class="wallet-connect__help">
+        <h4>{% trans "\u00bfC\u00f3mo obtener tu llave p\u00fablica?" %}</h4>
+        <ol>
+          <li>{% trans "Abre tu wallet de Solana (Phantom, Solflare, etc.)" %}</li>
+          <li>{% trans "Busca la opci\u00f3n 'Copiar direcci\u00f3n' o 'Receive'" %}</li>
+          <li>{% trans "Pega la direcci\u00f3n en el campo de arriba" %}</li>
+        </ol>
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
+  <!-- Payment Section -->
+  {% if profile.solana_public_key %}
+  <section class="wallet-payment card">
+    <h3>{% trans "Realizar pago" %}</h3>
+    <div class="wallet-payment__info">
+      <p>{% trans "Para completar pagos, env\u00eda SOL a la siguiente direcci\u00f3n:" %}</p>
+      <div class="wallet-address wallet-address--croody">
+        <span class="wallet-address__label">{% trans "Wallet de Croody" %}</span>
+        <code class="wallet-address__value">{{ croody_wallet }}</code>
+        <button type="button" class="btn btn--ghost btn--sm" onclick="copyToClipboard('{{ croody_wallet }}')">
+          {% trans "Copiar" %}
+        </button>
+      </div>
+      <p class="wallet-payment__note">
+        {% trans "Despu\u00e9s de enviar, guarda la firma de transacci\u00f3n para verificaci\u00f3n." %}
+      </p>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Transaction History -->
+  {% if transactions %}
+  <section class="wallet-transactions card">
+    <h3>{% trans "Historial de transacciones" %}</h3>
+    <div class="transactions-table">
+      <table>
+        <thead>
+          <tr>
+            <th>{% trans "Firma" %}</th>
+            <th>{% trans "Cantidad" %}</th>
+            <th>{% trans "Prop\u00f3sito" %}</th>
+            <th>{% trans "Estado" %}</th>
+            <th>{% trans "Fecha" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tx in transactions %}
+          <tr>
+            <td>
+              <code class="tx-signature">{{ tx.tx_signature|slice:":12" }}...</code>
+            </td>
+            <td>{{ tx.amount_sol }} SOL</td>
+            <td>{{ tx.get_purpose_display }}</td>
+            <td>
+              <span class="status-badge status-badge--{{ tx.status }}">
+                {{ tx.get_status_display }}
+              </span>
+            </td>
+            <td>{{ tx.created_at|date:"d M Y" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Security Info -->
+  <section class="wallet-security card">
+    <h3>{% trans "Seguridad" %}</h3>
+    <div class="wallet-security__content">
+      <div class="security-item security-item--safe">
+        <span class="security-item__icon">&#x1F512;</span>
+        <div>
+          <strong>{% trans "Solo llave p\u00fablica" %}</strong>
+          <p>{% trans "Nunca te pediremos tu llave privada ni frase semilla." %}</p>
+        </div>
+      </div>
+      <div class="security-item security-item--safe">
+        <span class="security-item__icon">&#x2713;</span>
+        <div>
+          <strong>{% trans "Verificaci\u00f3n on-chain" %}</strong>
+          <p>{% trans "Todas las transacciones se verifican directamente en la blockchain de Solana." %}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    alert('{% trans "Copiado al portapapeles" %}');
+  });
+}
+</script>
+{% endblock %}

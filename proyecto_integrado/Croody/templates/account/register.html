@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load i18n_urls %}
 
 {% block title %}{% trans "Crear cuenta" %} · Croody{% endblock %}
 
@@ -36,7 +37,7 @@
             </div>
           {% endif %}
           <button type="submit" class="btn btn--primary auth-submit">{% trans "Crear cuenta" %}</button>
-          <p class="auth-alt">{% trans "¿Ya tienes cuenta?" %} <a href="{% url 'landing:login' %}">{% trans "Inicia sesión" %}</a></p>
+          <p class="auth-alt">{% trans "¿Ya tienes cuenta?" %} <a href="{% lang_url 'landing:login' %}">{% trans "Inicia sesión" %}</a></p>
         </form>
       </div>
     </section>

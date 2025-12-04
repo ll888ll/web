@@ -1,0 +1,77 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Tienda" %}{% endblock %}
+{% block content_title %}{% trans "Tienda" %}{% endblock %}
+
+{% block content_actions %}
+<span class="shop-owned-count">
+  {{ owned_count }} {% trans "productos adquiridos" %}
+</span>
+{% endblock %}
+
+{% block content %}
+<div class="shop-internal">
+  {% if products %}
+  <!-- Products Grid -->
+  <div class="products-grid">
+    {% for product in products %}
+    <article class="product-card">
+      {% if product.badge_label %}
+      <span class="product-card__badge">{{ product.badge_label }}</span>
+      {% endif %}
+
+      <div class="product-card__content">
+        <h3 class="product-card__title">{{ product.name }}</h3>
+        <p class="product-card__teaser">{{ product.teaser }}</p>
+      </div>
+
+      <div class="product-card__footer">
+        <span class="product-card__price">\u20ac{{ product.price }}</span>
+        <a href="{% url 'accounts:product_detail' product.slug %}" class="btn btn--primary btn--sm">
+          {% trans "Ver detalles" %}
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if page_obj.has_other_pages %}
+  <nav class="pagination" aria-label="{% trans 'Paginaci\u00f3n' %}">
+    <div class="pagination__info">
+      {% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}
+      P\u00e1gina {{ current }} de {{ total }}
+      {% endblocktrans %}
+    </div>
+    <div class="pagination__controls">
+      {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}" class="pagination__btn">
+        &larr; {% trans "Anterior" %}
+      </a>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}" class="pagination__btn">
+        {% trans "Siguiente" %} &rarr;
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+
+  {% else %}
+  <!-- Empty State / All Owned -->
+  <div class="empty-state">
+    <div class="empty-state__icon">&#x1F389;</div>
+    <h3 class="empty-state__title">{% trans "\u00a1Tienes todos los productos!" %}</h3>
+    <p class="empty-state__text">
+      {% trans "Ya has adquirido todos los productos disponibles. Vuelve pronto para ver novedades." %}
+    </p>
+    <a href="{% url 'accounts:inventory' %}" class="btn btn--primary">
+      {% trans "Ver mi inventario" %}
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Dashboard" %}{% endblock %}
+{% block content_title %}{% trans "Dashboard" %}{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+  <!-- Welcome Card -->
+  <section class="dashboard__welcome card">
+    <div class="dashboard__welcome-content">
+      <h2>{% blocktrans with name=request.user.username %}Hola, {{ name }}{% endblocktrans %}</h2>
+      <p>{% trans "Bienvenido a tu espacio personal en Croody." %}</p>
+    </div>
+    <div class="dashboard__welcome-stats">
+      <div class="stat-pill stat-pill--primary">
+        <span class="stat-pill__icon">&#x1F3C6;</span>
+        <span class="stat-pill__value">{{ profile.points }}</span>
+        <span class="stat-pill__label">{% trans "puntos" %}</span>
+      </div>
+      <div class="stat-pill stat-pill--rank stat-pill--{{ profile.rank }}">
+        <span class="stat-pill__value">{{ profile.get_rank_display }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <div class="dashboard__stats">
+    <div class="stat-card">
+      <div class="stat-card__icon">&#x1F4CA;</div>
+      <div class="stat-card__content">
+        <span class="stat-card__value">{{ profile.profile_completion }}%</span>
+        <span class="stat-card__label">{% trans "Perfil completado" %}</span>
+      </div>
+      <div class="stat-card__progress">
+        <div class="progress-bar">
+          <div class="progress-bar__fill" style="width: {{ profile.profile_completion }}%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card__icon">&#x1F4E6;</div>
+      <div class="stat-card__content">
+        <span class="stat-card__value">{{ inventory_count }}</span>
+        <span class="stat-card__label">{% trans "Items en inventario" %}</span>
+      </div>
+      <a href="{% url 'accounts:inventory' %}" class="stat-card__link">{% trans "Ver todo" %} &rarr;</a>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card__icon">&#x1F4B3;</div>
+      <div class="stat-card__content">
+        {% if profile.wallet_verified %}
+        <span class="stat-card__value stat-card__value--success">{% trans "Conectada" %}</span>
+        {% elif profile.solana_public_key %}
+        <span class="stat-card__value stat-card__value--warning">{% trans "Pendiente" %}</span>
+        {% else %}
+        <span class="stat-card__value stat-card__value--muted">{% trans "Sin conectar" %}</span>
+        {% endif %}
+        <span class="stat-card__label">{% trans "Wallet Solana" %}</span>
+      </div>
+      <a href="{% url 'accounts:wallet' %}" class="stat-card__link">{% trans "Configurar" %} &rarr;</a>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card__icon">&#x2B50;</div>
+      <div class="stat-card__content">
+        {% if subscription and subscription.is_active %}
+        <span class="stat-card__value stat-card__value--success">{{ subscription.get_tier_display|cut:" - "|first }}</span>
+        <span class="stat-card__label">{{ subscription.days_remaining }} {% trans "d\u00edas restantes" %}</span>
+        {% else %}
+        <span class="stat-card__value stat-card__value--muted">{% trans "Sin plan" %}</span>
+        <span class="stat-card__label">{% trans "Suscripci\u00f3n" %}</span>
+        {% endif %}
+      </div>
+      <a href="{% url 'accounts:subscriptions' %}" class="stat-card__link">{% trans "Ver planes" %} &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Recent Items -->
+  {% if recent_items %}
+  <section class="dashboard__section">
+    <div class="dashboard__section-header">
+      <h3>{% trans "Items recientes" %}</h3>
+      <a href="{% url 'accounts:inventory' %}" class="link-subtle">{% trans "Ver todo" %} &rarr;</a>
+    </div>
+    <div class="items-grid items-grid--compact">
+      {% for item in recent_items %}
+      <div class="item-card item-card--compact">
+        <div class="item-card__content">
+          <h4 class="item-card__title">{{ item.product.name }}</h4>
+          <span class="item-card__meta">{{ item.acquired_at|date:"d M Y" }}</span>
+        </div>
+        <a href="{% url 'accounts:inventory_detail' item.pk %}" class="item-card__action">
+          {% trans "Ver" %}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Quick Actions -->
+  <section class="dashboard__section">
+    <h3>{% trans "Acciones r\u00e1pidas" %}</h3>
+    <div class="quick-actions">
+      <a href="{% url 'accounts:profile_edit' %}" class="quick-action">
+        <span class="quick-action__icon">&#x270F;&#xFE0F;</span>
+        <span class="quick-action__label">{% trans "Editar perfil" %}</span>
+      </a>
+      <a href="{% url 'accounts:shop' %}" class="quick-action">
+        <span class="quick-action__icon">&#x1F6D2;</span>
+        <span class="quick-action__label">{% trans "Ir a la tienda" %}</span>
+      </a>
+      <a href="{% url 'accounts:wallet' %}" class="quick-action">
+        <span class="quick-action__icon">&#x1F4B3;</span>
+        <span class="quick-action__label">{% trans "Conectar wallet" %}</span>
+      </a>
+      <a href="{% url 'accounts:points' %}" class="quick-action">
+        <span class="quick-action__icon">&#x1F3C6;</span>
+        <span class="quick-action__label">{% trans "Ver puntos" %}</span>
+      </a>
+    </div>
+  </section>
+</div>
+{% endblock %}

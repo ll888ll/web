@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load i18n_urls %}
 
-{% block title %}Luks · Croody{% endblock %}
+{% block title %}{% trans "Luks · Croody" %}{% endblock %}
 
 {% block body %}
   <main id="main" tabindex="-1">
@@ -29,32 +31,32 @@
     <section id="token-flow" class="section luks-demo" aria-labelledby="token-flow-title">
       <div class="container">
         <div class="section__header">
-          <h2 id="token-flow-title">¿Cómo funciona Luks?</h2>
-          <p>El token que recompensa tu constancia y hace que cada entrenamiento cuente</p>
+          <h2 id="token-flow-title">{% trans "¿Cómo funciona Luks?" %}</h2>
+          <p>{% trans "El token que recompensa tu constancia y hace que cada entrenamiento cuente" %}</p>
         </div>
         <div class="token-flow">
           <div class="flow-step">
             <div class="flow-icon">🏋️</div>
-            <h3>Entrena con Buddy</h3>
-            <p>Completa rutinas, mantén tu constancia y gana Luks automáticamente</p>
+            <h3>{% trans "Entrena con Buddy" %}</h3>
+            <p>{% trans "Completa rutinas, mantén tu constancia y gana Luks automáticamente" %}</p>
             <div class="flow-arrow">→</div>
           </div>
           <div class="flow-step">
             <div class="flow-icon">💎</div>
-            <h3>Gana Recompensas</h3>
-            <p>Acumula Luks por cada sesión completada, sin límites ni restricciones</p>
+            <h3>{% trans "Gana Recompensas" %}</h3>
+            <p>{% trans "Acumula Luks por cada sesión completada, sin límites ni restricciones" %}</p>
             <div class="flow-arrow">→</div>
           </div>
           <div class="flow-step">
             <div class="flow-icon">🛒</div>
-            <h3>Compra en la tienda</h3>
-            <p>Usa tus Luks para desbloquear productos, accesorios y contenido premium</p>
+            <h3>{% trans "Compra en la tienda" %}</h3>
+            <p>{% trans "Usa tus Luks para desbloquear productos, accesorios y contenido premium" %}</p>
           </div>
         </div>
         <div class="user-story-highlight" style="margin-top: var(--space-5);">
           <blockquote>
-            "Logré generar ingresos pasivos con Luks. La transparencia del sistema me dio confianza desde el primer día."
-            <cite>— Alejandro, Colombia, usuario desde 2024</cite>
+            {% trans "\"Logré generar ingresos pasivos con Luks. La transparencia del sistema me dio confianza desde el primer día.\"" %}
+            <cite>{% trans "— Alejandro, Colombia, usuario desde 2024" %}</cite>
           </blockquote>
         </div>
       </div>
@@ -63,8 +65,8 @@
     <section class="spec-section" aria-labelledby="luks-pillars-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="luks-pillars-title">Pilares de Luks</h2>
-          <p>Confianza visible, seguridad activa y métricas listas para auditar cada movimiento, inspiradas en una ética de servicio discreta.</p>
+          <h2 id="luks-pillars-title">{% trans "Pilares de Luks" %}</h2>
+          <p>{% trans "Confianza visible, seguridad activa y métricas listas para auditar cada movimiento, inspiradas en una ética de servicio discreta." %}</p>
         </div>
         {% for pillar in pillars %}
           <div>
@@ -82,8 +84,8 @@
     <section class="spec-section" aria-labelledby="luks-economy-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="luks-economy-title">Economía sobre Luks</h2>
-          <p>Cada módulo del ecosistema Buddy habla el mismo idioma: tokens, probabilidades y royalties auditables alineados con nuestros valores fundacionales.</p>
+          <h2 id="luks-economy-title">{% trans "Economía sobre Luks" %}</h2>
+          <p>{% trans "Cada módulo del ecosistema Buddy habla el mismo idioma: tokens, probabilidades y royalties auditables alineados con nuestros valores fundacionales." %}</p>
         </div>
         {% for block in economy %}
           <div>
@@ -101,7 +103,7 @@
     <section class="spec-section" aria-labelledby="luks-compliance-title">
       <div class="container spec-grid">
         <div>
-          <h2 id="luks-compliance-title">Cumplimiento & operación</h2>
+          <h2 id="luks-compliance-title">{% trans "Cumplimiento & operación" %}</h2>
           <ul>
             {% for item in compliance %}
               <li>{{ item }}</li>
@@ -109,7 +111,7 @@
           </ul>
         </div>
         <div>
-          <h3>Integraciones</h3>
+          <h3>{% trans "Integraciones" %}</h3>
           <ul>
             {% for item in integrations %}
               <li>{{ item }}</li>
@@ -117,9 +119,9 @@
           </ul>
         </div>
         <div>
-          <h3>¿Quieres construir sobre Luks?</h3>
-          <p>API, webhooks y paneles están listos. Podemos adaptar los flujos a tu organización o producto preservando esa visión de servicio que nos caracteriza.</p>
-          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Integraciones%20Luks">Habla con nosotros</a>
+          <h3>{% trans "¿Quieres construir sobre Luks?" %}</h3>
+          <p>{% trans "API, webhooks y paneles están listos. Podemos adaptar los flujos a tu organización o producto preservando esa visión de servicio que nos caracteriza." %}</p>
+          <a class="btn btn--primary" href="mailto:hola@croody.app?subject=Integraciones%20Luks">{% trans "Habla con nosotros" %}</a>
         </div>
       </div>
     </section>

@@ -11,7 +11,12 @@ def _generate_ingest_token() -> str:
     return secrets.token_hex(16)
 
 
-class UserProfile(models.Model):
+class LegacyUserProfile(models.Model):
+    """Perfil de usuario legacy - usar accounts.UserProfile en su lugar.
+
+    DEPRECATED: Este modelo se mantiene por compatibilidad con migraciones existentes.
+    Para nuevas funcionalidades, usar accounts.models.UserProfile.
+    """
     THEME_CHOICES = (
         ("system", _("Sistema")),
         ("dark", _("Oscuro")),
@@ -21,7 +26,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="profile",
+        related_name="legacy_profile",
     )
     display_name = models.CharField(max_length=120, blank=True)
     preferred_language = models.CharField(max_length=10, default="es")
@@ -36,8 +41,9 @@ class UserProfile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Perfil de usuario"
-        verbose_name_plural = "Perfiles de usuario"
+        verbose_name = "Perfil de usuario (legacy)"
+        verbose_name_plural = "Perfiles de usuario (legacy)"
+        db_table = 'landing_userprofile'  # Mantener tabla existente
 
     def __str__(self) -> str:  # pragma: no cover - representación legible
         return f"Perfil {self.user.get_username()}"
@@ -45,3 +51,7 @@ class UserProfile(models.Model):
     def regenerate_token(self) -> None:
         self.ingest_token = _generate_ingest_token()
         self.save(update_fields=["ingest_token"])
+
+
+# Alias para compatibilidad con código existente
+UserProfile = LegacyUserProfile

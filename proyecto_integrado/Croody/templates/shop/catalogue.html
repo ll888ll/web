@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% load i18n_urls %}
 
-{% block title %}Tienda Buddy · Croody{% endblock %}
-{% block header_cta_url %}{% url 'shop:checkout-preview' %}{% endblock %}
+{% block title %}{% trans "Tienda Buddy · Croody" %}{% endblock %}
+{% block header_cta_url %}{% lang_url 'shop:checkout-preview' %}{% endblock %}
 
 {% block body %}
   <main id="main" tabindex="-1">
     <section class="page-hero" aria-labelledby="store-title">
       <div class="container page-hero__grid">
         <div class="page-hero__content">
-          <div class="chip">Tienda Buddy</div>
-          <h1 id="store-title">Todo lo que necesitas para entrenar</h1>
-          <p>Cofres, sets, accesorios. Compra directo, recibe al instante.</p>
+          <div class="chip">{% trans "Tienda Buddy" %}</div>
+          <h1 id="store-title">{% trans "Todo lo que necesitas para entrenar" %}</h1>
+          <p>{% trans "Cofres, sets, accesorios. Compra directo, recibe al instante." %}</p>
           <div class="page-hero__cta">
-            <a class="btn btn--primary" href="#catalogo">Ver Catálogo</a>
+            <a class="btn btn--primary" href="#catalogo">{% trans "Ver Catálogo" %}</a>
           </div>
           <div class="category-chips" style="margin-top: var(--space-3); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-            <button class="chip active" data-filter="all">Todo</button>
-            <button class="chip" data-filter="cofre">Cofres</button>
-            <button class="chip" data-filter="set">Sets</button>
-            <button class="chip" data-filter="accesorio">Accesorios</button>
+            <button class="chip active" data-filter="all">{% trans "Todo" %}</button>
+            <button class="chip" data-filter="cofre">{% trans "Cofres" %}</button>
+            <button class="chip" data-filter="set">{% trans "Sets" %}</button>
+            <button class="chip" data-filter="accesorio">{% trans "Accesorios" %}</button>
           </div>
         </div>
       </div>
@@ -27,7 +29,7 @@
 
     <section id="catalogo" class="section store-catalog-ultra" aria-labelledby="catalogue-title">
       <div class="container">
-        <h2 id="catalogue-title">Catálogo Buddy</h2>
+        <h2 id="catalogue-title">{% trans "Catálogo Buddy" %}</h2>
         {% if products %}
           <div class="product-grid-ultra">
             {% for product in products %}
@@ -47,21 +49,21 @@
                   <span class="product-delivery">{{ product.delivery_estimate }}</span>
                 </div>
                 <button class="btn btn--primary add-to-cart-btn" data-product-id="{{ product.id }}" data-product-slug="{{ product.slug }}">
-                  Agregar al carrito
+                  {% trans "Agregar al carrito" %}
                 </button>
               </article>
             {% endfor %}
           </div>
           {% if is_paginated %}
           <nav aria-label="Paginación" class="catalog-pagination">
-            <div>Mostrando {{ products|length }} productos</div>
+            <div>{% trans "Mostrando" %} {{ products|length }} {% trans "productos" %}</div>
             {% if page_obj.has_next %}
-              <a class="btn btn--ghost" href="?page={{ page_obj.next_page_number }}">Ver más →</a>
+              <a class="btn btn--ghost" href="?page={{ page_obj.next_page_number }}">{% trans "Ver más →" %}</a>
             {% endif %}
           </nav>
           {% endif %}
         {% else %}
-          <p>No hay productos disponibles.</p>
+          <p>{% trans "No hay productos disponibles." %}</p>
         {% endif %}
       </div>
     </section>
@@ -77,7 +79,7 @@
           const productId = btn.dataset.productId;
           const productSlug = btn.dataset.productSlug;
           const originalText = btn.textContent;
-          btn.textContent = '✓ Agregado';
+          btn.textContent = '✓ ' + gettext('Agregado');
           btn.disabled = true;
 
           try {
@@ -91,7 +93,7 @@
             });
 
             if (response.ok) {
-              showCartToast('Producto agregado al carrito');
+              showCartToast(gettext('Producto agregado al carrito'));
               setTimeout(() => {
                 btn.textContent = originalText;
                 btn.disabled = false;

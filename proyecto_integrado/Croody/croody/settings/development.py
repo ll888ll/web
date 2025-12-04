@@ -24,6 +24,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '0.0.0.0']
 INSTALLED_APPS += [
     # 'debug_toolbar',  # Deshabilitado temporalmente
     'django_extensions',
+    # 'rosetta',  # Translation interface - deshabilitado temporalmente
     # 'silk',  # Deshabilitado temporalmente
 ]
 

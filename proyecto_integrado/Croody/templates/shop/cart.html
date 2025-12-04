@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Carrito · Tienda Buddy" %}{% endblock %}
+
+{% block body %}
+  <main id="main" tabindex="-1">
+    <section class="section page-hero" aria-labelledby="cart-title">
+      <div class="container">
+        <div class="page-hero__content">
+          <div class="chip">{% trans "Tu carrito" %}</div>
+          <h1 id="cart-title">{% trans "Revisa tu selección" %}</h1>
+          <p>{% trans "Verifica los productos y continúa al checkout cuando estés listo." %}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cart-items-title">
+      <div class="container">
+        <div id="cart-container" 
+             hx-get="{% url 'shop:cart' %}" 
+             hx-trigger="refresh-cart from:body"
+             hx-target="#cart-container"
+             hx-swap="outerHTML">
+          
+          {% if cart_items %}
+            <div class="cart-layout">
+              <!-- Items del carrito -->
+              <div class="cart-items">
+                <h2 id="cart-items-title" class="visually-hidden">{% trans "Items en el carrito" %}</h2>
+                
+                <div id="cart-items-list">
+                  {% include 'shop/partials/cart-items.html' %}
+                </div>
+              </div>
+
+              <!-- Resumen del pedido -->
+              <aside class="cart-summary" aria-labelledby="summary-title">
+                <div class="summary-card">
+                  <h2 id="summary-title">{% trans "Resumen del pedido" %}</h2>
+                  
+                  <div class="summary-row">
+                    <span>{% trans "Subtotal" %}</span>
+                    <span>${{ cart_total|floatformat:2 }}</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>{% trans "Envío" %}</span>
+                    <span>{% trans "Gratis" %}</span>
+                  </div>
+                  <div class="summary-row summary-row--total">
+                    <span>{% trans "Total" %}</span>
+                    <span>${{ cart_total|floatformat:2 }}</span>
+                  </div>
+
+                  <div class="summary-actions">
+                    {% if request.user.is_authenticated %}
+                      <a href="{% url 'shop:checkout' %}" class="btn btn--primary btn--full">
+                        {% trans "Continuar al checkout" %}
+                      </a>
+                    {% else %}
+                      <a href="{% url 'landing:login' %}?next={% url 'shop:checkout' %}" class="btn btn--primary btn--full">
+                        {% trans "Iniciar sesión para comprar" %}
+                      </a>
+                    {% endif %}
+                    
+                    <a href="{% url 'shop:catalogue' %}" class="btn btn--ghost btn--full">
+                      {% trans "Seguir comprando" %}
+                    </a>
+                  </div>
+
+                  <div class="summary-trust">
+                    <p>🔒 {% trans "Pago 100% seguro" %}</p>
+                    <p>⚡ {% trans "Confirmación instantánea" %}</p>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          {% else %}
+            <!-- Carrito vacío -->
+            <div class="empty-state">
+              <div class="empty-state__icon">🛒</div>
+              <h2>{% trans "Tu carrito está vacío" %}</h2>
+              <p>{% trans "Explora nuestros productos y encuentra algo que te guste." %}</p>
+              <a href="{% url 'shop:catalogue' %}" class="btn btn--primary">
+                {% trans "Ver catálogo" %}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

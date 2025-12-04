@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load i18n_urls %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}" data-theme="auto" data-brand="{{ brand|default:'gator' }}">
   <head>
@@ -113,7 +114,7 @@
               role="menuitem"
               class="nav-link{% if request.path == link.url %} is-active{% endif %}"
               {% if request.path == link.url %}aria-current="page"{% endif %}
-              href="{{ link.url }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
+              href="{{ link.url|add_lang_prefix }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
               >{{ link.label }}</a
             >
           </li>
@@ -148,40 +149,61 @@
               <span class="language-selector__current">{{ LANGUAGE_CODE|upper }}</span>
             </button>
             <div class="language-selector__dropdown" hidden>
-              <div class="language-selector__list">
-                <a href="/es/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'es' %}active{% endif %}">
-                  <span class="language-selector__flag">🇪🇸</span>
-                  <span>Español</span>
-                </a>
-                <a href="/en/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'en' %}active{% endif %}">
-                  <span class="language-selector__flag">🇬🇧</span>
-                  <span>English</span>
-                </a>
-                <a href="/fr/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'fr' %}active{% endif %}">
-                  <span class="language-selector__flag">🇫🇷</span>
-                  <span>Français</span>
-                </a>
-                <a href="/pt/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'pt' %}active{% endif %}">
-                  <span class="language-selector__flag">🇵🇹</span>
-                  <span>Português</span>
-                </a>
-                <a href="/ar/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'ar' %}active{% endif %}">
-                  <span class="language-selector__flag">🇸🇦</span>
-                  <span>العربية</span>
-                </a>
-                <a href="/zh-hans/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'zh-hans' %}active{% endif %}">
-                  <span class="language-selector__flag">🇨🇳</span>
-                  <span>简体中文</span>
-                </a>
-                <a href="/ja/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'ja' %}active{% endif %}">
-                  <span class="language-selector__flag">🇯🇵</span>
-                  <span>日本語</span>
-                </a>
-                <a href="/hi/{{ request.get_full_path|slice:'3:' }}" class="language-selector__option {% if LANGUAGE_CODE == 'hi' %}active{% endif %}">
-                  <span class="language-selector__flag">🇮🇳</span>
-                  <span>हिन्दी</span>
-                </a>
-              </div>
+              <form action="{% url 'set_language' %}" method="post" id="language-form">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <input type="hidden" name="language" id="language-input" value="{{ LANGUAGE_CODE }}">
+                <div class="language-selector__list">
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'es' %}active{% endif %}"
+                          data-lang="es">
+                    <span class="language-selector__flag">🇪🇸</span>
+                    <span>Español</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'en' %}active{% endif %}"
+                          data-lang="en">
+                    <span class="language-selector__flag">🇬🇧</span>
+                    <span>English</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'fr' %}active{% endif %}"
+                          data-lang="fr">
+                    <span class="language-selector__flag">🇫🇷</span>
+                    <span>Français</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'pt' %}active{% endif %}"
+                          data-lang="pt">
+                    <span class="language-selector__flag">🇵🇹</span>
+                    <span>Português</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'ar' %}active{% endif %}"
+                          data-lang="ar">
+                    <span class="language-selector__flag">🇸🇦</span>
+                    <span>العربية</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'zh-hans' %}active{% endif %}"
+                          data-lang="zh-hans">
+                    <span class="language-selector__flag">🇨🇳</span>
+                    <span>简体中文</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'ja' %}active{% endif %}"
+                          data-lang="ja">
+                    <span class="language-selector__flag">🇯🇵</span>
+                    <span>日本語</span>
+                  </button>
+                  <button type="button"
+                          class="language-selector__option {% if LANGUAGE_CODE == 'hi' %}active{% endif %}"
+                          data-lang="hi">
+                    <span class="language-selector__flag">🇮🇳</span>
+                    <span>हिन्दी</span>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           
@@ -191,13 +213,13 @@
           {% if request.user.is_authenticated %}
           <a
             class="btn btn--primary"
-            href="{% block header_cta_url %}{% url 'shop:catalogue' %}{% endblock %}"
+            href="{% block header_cta_url %}{% lang_url 'shop:catalogue' %}{% endblock %}"
             >{% trans "Empezar" %}</a
           >
-          <a class="btn btn--ghost" href="{% url 'landing:profile' %}">{% trans "Perfil" %}</a>
-          <a class="btn btn--ghost" href="{% url 'landing:logout' %}">{% trans "Salir" %}</a>
+          <a class="btn btn--ghost" href="{% lang_url 'landing:profile' %}">{% trans "Perfil" %}</a>
+          <a class="btn btn--ghost" href="{% lang_url 'landing:logout' %}">{% trans "Salir" %}</a>
           {% else %}
-          <a class="btn btn--ghost" href="{% url 'landing:login' %}?next={% url 'shop:catalogue' %}"
+          <a class="btn btn--ghost" href="{% lang_url 'landing:login' %}?next={% lang_url 'shop:catalogue' %}"
             >{% trans "Acceder" %}</a
           >
           {% endif %}
@@ -227,24 +249,24 @@
           <a
             class="nav-link{% if request.path == link.url %} is-active{% endif %}"
             {% if request.path == link.url %}aria-current="page"{% endif %}
-            href="{{ link.url }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
+            href="{{ link.url|add_lang_prefix }}{% if link.fragment %}#{{ link.fragment }}{% endif %}"
             >{{ link.label }}</a
           >
         </li>
         {% endfor %}
         {% if request.user.is_authenticated %}
-        <li><a href="{% url 'shop:catalogue' %}">{% trans "Empezar" %}</a></li>
-        <li><a href="{% url 'landing:profile' %}">{% trans "Perfil" %}</a></li>
-        <li><a href="{% url 'landing:logout' %}">{% trans "Cerrar sesión" %}</a></li>
+        <li><a href="{% lang_url 'shop:catalogue' %}">{% trans "Empezar" %}</a></li>
+        <li><a href="{% lang_url 'landing:profile' %}">{% trans "Perfil" %}</a></li>
+        <li><a href="{% lang_url 'landing:logout' %}">{% trans "Cerrar sesión" %}</a></li>
         {% else %}
         <li>
-          <a href="{% url 'landing:login' %}?next={% url 'shop:catalogue' %}"
+          <a href="{% lang_url 'landing:login' %}?next={% lang_url 'shop:catalogue' %}"
             >{% trans "Acceder" %}</a
           >
         </li>
         {% endif %}
-        <li><a href="{% url 'landing:home' %}#search">{% trans "Búsqueda" %}</a></li>
-        <li><a href="{% url 'landing:home' %}#cta-final">{% trans "Contactar" %}</a></li>
+        <li><a href="{% lang_url 'landing:home' %}#search">{% trans "Búsqueda" %}</a></li>
+        <li><a href="{% lang_url 'landing:home' %}#cta-final">{% trans "Contactar" %}</a></li>
       </ul>
     </div>
 
@@ -323,8 +345,8 @@
       </div>
     </footer>
 
-    <script src="{% static 'js/theme.js' %}" defer></script>
-    <script src="{% static 'js/language-selector.js' %}" defer></script>
+    <script src="{% static 'js/theme.js' %}?v=3" defer></script>
+    <script src="{% static 'js/language-selector.js' %}?v=3" defer></script>
     {% block body_scripts %}{% endblock %}
   </body>
 </html>
