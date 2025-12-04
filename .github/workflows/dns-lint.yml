@@ -59,6 +59,15 @@ jobs:
 
       - name: dig @localhost (SOA)
         run: |
+          # Stop systemd-resolved to free port 53 on GitHub Actions runners
+          sudo systemctl stop systemd-resolved || true
+          # Override environment for docker compose
+          export DNS_DOMAIN="${DOMAIN}"
+          export NS1_FQDN="${NS1_FQDN}"
+          export NS2_FQDN="${NS2_FQDN}"
+          export TSIG_KEY_NAME="${TSIG_KEY_NAME}"
+          export TSIG_KEY_SECRET="${TSIG_KEY_SECRET}"
           docker compose -f infra/dns/docker-compose.yml up -d bind-master
           sleep 5
           dig @127.0.0.1 "${DOMAIN}" SOA
+          docker compose -f infra/dns/docker-compose.yml down
