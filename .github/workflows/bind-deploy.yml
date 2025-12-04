@@ -51,6 +51,16 @@ jobs:
           echo "MASTER_IMAGE=${ECR_REGISTRY}/${MASTER_REPO}:${GITHUB_SHA}" >> "$GITHUB_ENV"
           echo "SLAVE_IMAGE=${ECR_REGISTRY}/${SLAVE_REPO}:${GITHUB_SHA}" >> "$GITHUB_ENV"
 
+      - name: Check ECR configuration
+        id: ecr-check
+        run: |
+          if [[ -n "${{ secrets.AWS_ECR_REGISTRY }}" && -n "${{ secrets.AWS_ACCESS_KEY_ID }}" && -n "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]]; then
+            echo "ecr_configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ecr_configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::ECR not configured - skipping image push. Set AWS_ECR_REGISTRY, AWS_ACCESS_KEY_ID, and AWS_SECRET_ACCESS_KEY secrets to enable."
+          fi
+
       # 2) Validación temprana: se requiere que exista la zona maestra con registros reales.
       - name: Ensure zone file exists
         run: |
@@ -59,17 +69,21 @@ jobs:
             exit 1
           fi
 
-      # 3) Inicio de sesión en Amazon ECR (si se configuró un registro privado).
+      # 3) Configure AWS credentials and login to ECR (if properly configured).
+      - name: Configure AWS credentials
+        if: steps.ecr-check.outputs.ecr_configured == 'true'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
       - name: Login to Amazon ECR
-        if: env.ECR_REGISTRY != ''
+        if: steps.ecr-check.outputs.ecr_configured == 'true'
         uses: aws-actions/amazon-ecr-login@v2
         with:
           registry-type: private
           mask-password: true
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
 
       # 4) Construcción de la imagen maestro.
       - name: Build master image
@@ -133,15 +147,16 @@ jobs:
 
       # 8) Publicar imágenes en ECR si corresponde (opcional).
       - name: Push master image to ECR
-        if: env.ECR_REGISTRY != ''
+        if: steps.ecr-check.outputs.ecr_configured == 'true'
         run: docker push "$MASTER_IMAGE"
 
       - name: Push slave image to ECR
-        if: env.ECR_REGISTRY != ''
+        if: steps.ecr-check.outputs.ecr_configured == 'true'
         run: docker push "$SLAVE_IMAGE"
 
       # 9) Despliegue remoto en el maestro: pull de imagen, recrear contenedor, recargar zona vía rndc.
       - name: Deploy to master host via SSH (pull from ECR)
+        if: steps.ecr-check.outputs.ecr_configured == 'true'
         uses: appleboy/ssh-action@v1.1.0
         with:
           host: ${{ secrets.BIND_MASTER_HOST }}
@@ -176,6 +191,7 @@ jobs:
 
       # 10) Despliegue remoto del esclavo y recarga de zona.
       - name: Deploy to slave host via SSH (pull from ECR)
+        if: steps.ecr-check.outputs.ecr_configured == 'true'
         uses: appleboy/ssh-action@v1.1.0
         with:
           host: ${{ secrets.BIND_SLAVE_HOST }}
