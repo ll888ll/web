@@ -1,4 +1,4 @@
- 3600
+$TTL 3600
 @   IN  SOA ns1.croody.app. hostmaster.croody.app. (
         2025111800   ; Serial
         3600        ; Refresh

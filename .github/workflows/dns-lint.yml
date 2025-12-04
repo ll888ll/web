@@ -7,11 +7,11 @@ on:
     branches: [main, dev]
 
 env:
-  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}
+  DOMAIN: ${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}
   TSIG_KEY_NAME: ${{ secrets.BIND_TSIG_KEY_NAME != '' && secrets.BIND_TSIG_KEY_NAME || 'lint-key' }}
   TSIG_KEY_SECRET: ${{ secrets.BIND_TSIG_KEY_SECRET != '' && secrets.BIND_TSIG_KEY_SECRET || 'ZmFrZQ==' }}
-  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
-  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'example.com' }}.
+  NS1_FQDN: ns1.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}.
+  NS2_FQDN: ns2.${{ secrets.BIND_DOMAIN != '' && secrets.BIND_DOMAIN || 'croody.app' }}.
   SLAVE_IP: ${{ secrets.BIND_SLAVE_PRIVATE_IP != '' && secrets.BIND_SLAVE_PRIVATE_IP || '127.0.0.1' }}
 
 jobs:
