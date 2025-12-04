@@ -111,29 +111,17 @@ LOGGING = {
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-        },
-        'file': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'django.log',
-            'formatter': 'verbose',
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'filters': ['require_debug_false'],
             'formatter': 'verbose',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': True,
         },
         'croody': {
-            'handlers': ['console', 'file', 'mail_admins'],
+            'handlers': ['console'],
             'level': 'INFO',
             'propagate': True,
         },
