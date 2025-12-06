@@ -34,15 +34,20 @@ services:
     container_name: croody_new
     restart: unless-stopped
     environment:
-      - DJANGO_SETTINGS_MODULE=croody.settings
+      - DJANGO_SETTINGS_MODULE=croody.settings.development
       - DATABASE_URL=sqlite:////data/croody.db
+      - DEBUG=True
     volumes:
       - ./Croody:/app
       - croody_data:/data
     expose:
       - "8000"
+    ports:
+      - "8000:8000"
     mem_limit: 512m
     cpus: "0.50"
+    entrypoint: ["/app/entrypoint.sh"]
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:8000/"]
       interval: 10s

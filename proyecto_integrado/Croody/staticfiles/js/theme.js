@@ -7,21 +7,18 @@
 
   const debounce = (fn,ms)=>{ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),ms);} };
 
-  // Aplicar tema INMEDIATAMENTE para evitar FOUC
-  (function initTheme(){
-    const savedTheme = localStorage.getItem(KEY);
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    setTheme(initialTheme);
-  })();
-
   document.addEventListener('DOMContentLoaded',()=>{
 
     // Toggle de tema
     const themeToggle = document.querySelector('.theme-toggle__checkbox');
     if(themeToggle){
-      themeToggle.checked = getTheme()==='light';
-      themeToggle.addEventListener('change',()=> setTheme(themeToggle.checked?'light':'dark'));
+      // Sincronizar checkbox con tema actual
+      const currentTheme = localStorage.getItem(KEY) || 'light';
+      themeToggle.checked = (currentTheme === 'dark');
+      themeToggle.addEventListener('change',()=>{
+        const newTheme = themeToggle.checked ? 'dark' : 'light';
+        setTheme(newTheme);
+      });
     }
 
     // Navegación móvil

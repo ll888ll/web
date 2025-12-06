@@ -122,9 +122,11 @@ SECURE_HSTS_PRELOAD = False
 # CACHING (Development)
 # ========================================
 
+# Use LocMemCache for replay attack prevention to work
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'croody-dev-cache',
     }
 }
 
@@ -195,3 +197,26 @@ REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
 
 REST_FRAMEWORK['DEFAULT_PAGINATION_CLASS'] = 'rest_framework.pagination.PageNumberPagination'
 REST_FRAMEWORK['PAGE_SIZE'] = 20
+
+
+# ========================================
+# FIREBASE (Development - Emulator)
+# ========================================
+
+FIREBASE_USE_EMULATOR = True
+FIREBASE_EMULATOR_HOST = 'localhost:8080'
+FIREBASE_AUTH_EMULATOR_HOST = 'localhost:9099'
+
+
+# ========================================
+# SOLANA (Development - Localnet)
+# ========================================
+
+SOLANA_RPC_URL = 'http://127.0.0.1:8899'
+
+
+# ========================================
+# RATE LIMITING (Development - Disabled)
+# ========================================
+
+RATELIMIT_ENABLE = False

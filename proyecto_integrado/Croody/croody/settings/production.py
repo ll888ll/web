@@ -228,3 +228,32 @@ HEALTH_CHECK = {
     'MEMORY_MIN': 100,  # MB
     'DISK_MIN': 1000,  # MB
 }
+
+
+# ========================================
+# FIREBASE (Production)
+# ========================================
+
+FIREBASE_USE_EMULATOR = False
+
+if not os.getenv('FIREBASE_ADMIN_CREDENTIALS') and not os.getenv('FIREBASE_ADMIN_CREDENTIALS_PATH'):
+    import warnings
+    warnings.warn('Firebase Admin credentials not configured for production')
+
+
+# ========================================
+# SOLANA (Production - Mainnet)
+# ========================================
+
+SOLANA_RPC_URL = os.getenv('SOLANA_RPC_URL', 'https://api.mainnet-beta.solana.com')
+
+if not os.getenv('SOLANA_TREASURY_WALLET'):
+    import warnings
+    warnings.warn('Solana treasury wallet not configured for production')
+
+
+# ========================================
+# RATE LIMITING (Production - Enabled)
+# ========================================
+
+RATELIMIT_ENABLE = True

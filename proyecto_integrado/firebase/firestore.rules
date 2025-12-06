@@ -1,0 +1,143 @@
+rules_version = '2';
+
+// ============================================================================
+// CROODY - FIRESTORE SECURITY RULES
+// ============================================================================
+//
+// Arquitectura de Seguridad (5 Capas):
+// - Capa 5: Estas reglas - última línea de defensa
+// - Capa 4: Admin SDK credentials solo en servidor Django
+// - Capa 3: Verificación blockchain antes de escribir
+// - Capa 2: Validación de ownership en Django
+// - Capa 1: Rate limiting en Django
+//
+// Principio: "El usuario solo puede LEER su propia data, nunca ESCRIBIR"
+// Escritura: Solo Admin SDK desde Django (server-to-server)
+// ============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ========================================
+    // HELPER FUNCTIONS
+    // ========================================
+
+    // Verifica si el usuario está autenticado
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Verifica si el usuario es el dueño del documento
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Verifica si la request viene de Admin SDK (write attempts)
+    // Admin SDK bypasses rules, pero esto documenta la intención
+    function isAdminWrite() {
+      return false; // Admin SDK bypasses, esto nunca se evalúa para admin
+    }
+
+    // ========================================
+    // USER PROFILES
+    // ========================================
+
+    match /users/{userId} {
+      // Lectura: Solo el dueño puede leer su perfil completo
+      allow read: if isOwner(userId);
+
+      // Escritura: NUNCA desde cliente
+      // Solo Admin SDK puede escribir (sync desde Django)
+      allow write: if false;
+
+      // ----------------------------------------
+      // SUBSCRIPTION (Subcolección)
+      // ----------------------------------------
+      match /subscription/{document=**} {
+        // Lectura: Usuario puede leer su suscripción
+        // Buddy app usa esto para mostrar tier y features
+        allow read: if isOwner(userId);
+
+        // Escritura: NUNCA desde cliente
+        // Solo Django puede activar/modificar suscripciones
+        allow write: if false;
+      }
+
+      // ----------------------------------------
+      // INVENTORY (Subcolección)
+      // ----------------------------------------
+      match /inventory/{itemId} {
+        // Lectura: Usuario puede leer su inventario
+        // Buddy app usa esto para mostrar personajes/items
+        allow read: if isOwner(userId);
+
+        // Escritura: NUNCA desde cliente
+        // Solo Django puede agregar items después de verificar pago
+        allow write: if false;
+      }
+
+      // ----------------------------------------
+      // WALLET INFO (Campo en documento principal)
+      // ----------------------------------------
+      // La wallet está en el documento /users/{userId}
+      // No es subcolección, se hereda la regla de arriba
+
+      // ----------------------------------------
+      // TRANSACTIONS HISTORY (Subcolección)
+      // ----------------------------------------
+      match /transactions/{txId} {
+        // Lectura: Usuario puede ver su historial de transacciones
+        allow read: if isOwner(userId);
+
+        // Escritura: NUNCA desde cliente
+        allow write: if false;
+      }
+    }
+
+    // ========================================
+    // PRODUCTOS PÚBLICOS (Read-only)
+    // ========================================
+
+    match /products/{productId} {
+      // Lectura: Cualquier usuario autenticado puede ver productos
+      allow read: if isAuthenticated();
+
+      // Escritura: NUNCA desde cliente (solo admin panel de Django)
+      allow write: if false;
+    }
+
+    // ========================================
+    // PRECIOS DE SUSCRIPCIÓN (Read-only)
+    // ========================================
+
+    match /subscription_tiers/{tierId} {
+      // Lectura: Pública para mostrar precios en la app
+      allow read: if true;
+
+      // Escritura: NUNCA desde cliente
+      allow write: if false;
+    }
+
+    // ========================================
+    // CONFIGURACIÓN GLOBAL (Read-only)
+    // ========================================
+
+    match /config/{document=**} {
+      // Lectura: Usuarios autenticados pueden leer config
+      allow read: if isAuthenticated();
+
+      // Escritura: NUNCA desde cliente
+      allow write: if false;
+    }
+
+    // ========================================
+    // CATCH-ALL: Denegar todo lo demás
+    // ========================================
+
+    match /{document=**} {
+      // Por defecto, denegar todo acceso
+      // Esto previene acceso a colecciones no definidas
+      allow read, write: if false;
+    }
+  }
+}

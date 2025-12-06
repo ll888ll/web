@@ -297,6 +297,54 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # ========================================
+# FIREBASE ADMIN SDK
+# ========================================
+
+# Option 1: JSON credentials as env var (for Docker/AWS secrets)
+FIREBASE_ADMIN_CREDENTIALS = os.getenv('FIREBASE_ADMIN_CREDENTIALS', '')
+
+# Option 2: Path to credentials file (for local development)
+FIREBASE_ADMIN_CREDENTIALS_PATH = os.getenv('FIREBASE_ADMIN_CREDENTIALS_PATH', '')
+
+# Firebase project ID
+FIREBASE_PROJECT_ID = os.getenv('FIREBASE_PROJECT_ID', '')
+
+# Use Firebase Emulator (for development)
+FIREBASE_USE_EMULATOR = os.getenv('FIREBASE_USE_EMULATOR', 'false').lower() == 'true'
+FIREBASE_EMULATOR_HOST = os.getenv('FIREBASE_EMULATOR_HOST', 'localhost:8080')
+FIREBASE_AUTH_EMULATOR_HOST = os.getenv('FIREBASE_AUTH_EMULATOR_HOST', 'localhost:9099')
+
+
+# ========================================
+# SOLANA BLOCKCHAIN
+# ========================================
+
+# RPC endpoint (default: devnet for safety)
+SOLANA_RPC_URL = os.getenv('SOLANA_RPC_URL', 'https://api.devnet.solana.com')
+
+# Treasury wallet address (receives payments)
+SOLANA_TREASURY_WALLET = os.getenv('SOLANA_TREASURY_WALLET', '')
+
+# USDT SPL Token mint address
+# Mainnet: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+# Devnet: Use test token or empty for SOL-only verification
+SOLANA_USDT_MINT = os.getenv('SOLANA_USDT_MINT', '')
+
+# Transaction cache timeout (seconds) - for replay attack prevention
+SOLANA_TX_CACHE_TIMEOUT = int(os.getenv('SOLANA_TX_CACHE_TIMEOUT', '604800'))  # 7 days
+
+
+# ========================================
+# RATE LIMITING
+# ========================================
+
+RATELIMIT_ENABLE = os.getenv('RATELIMIT_ENABLE', 'true').lower() == 'true'
+RATELIMIT_USE_CACHE = 'default'
+RATELIMIT_VIEW = 'croody.views.ratelimit_error'
+RATELIMIT_FAIL_OPEN = False  # Deny if rate limit check fails
+
+
+# ========================================
 # LOGGING
 # ========================================
 

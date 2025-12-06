@@ -1,6 +1,10 @@
 """Vistas del ecosistema post-login de Croody."""
 from __future__ import annotations
 
+import logging
+from decimal import Decimal
+
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,6 +14,7 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.views import View
+from django.views.decorators.http import require_POST
 from django.views.generic import (
     DetailView,
     ListView,
@@ -28,6 +33,22 @@ from .models import (
     UserProfile,
     WalletTransaction,
 )
+
+# Rate limiting - import conditionally
+try:
+    from django_ratelimit.decorators import ratelimit
+
+    RATELIMIT_AVAILABLE = True
+except ImportError:
+    RATELIMIT_AVAILABLE = False
+
+    def ratelimit(*args, **kwargs):
+        """Dummy decorator when django-ratelimit not installed."""
+        def decorator(func):
+            return func
+        return decorator
+
+logger = logging.getLogger(__name__)
 
 
 # ========================================
@@ -259,8 +280,13 @@ class SubscriptionView(LoginRequiredMixin, TemplateView):
 
 
 @login_required
+@ratelimit(key='user', rate='10/h', method='ALL', block=True)
 def subscribe(request, tier):
-    """Iniciar proceso de suscripción."""
+    """
+    Iniciar proceso de suscripción.
+
+    Rate limited: 10 intentos por hora por usuario.
+    """
     if tier not in [t[0] for t in SubscriptionTier.choices]:
         messages.error(request, _('Plan de suscripción no válido.'))
         return redirect('accounts:subscriptions')
@@ -282,8 +308,13 @@ def subscribe(request, tier):
 
 
 @login_required
+@ratelimit(key='user', rate='5/h', method='ALL', block=True)
 def cancel_subscription(request):
-    """Cancelar suscripción actual."""
+    """
+    Cancelar suscripción actual.
+
+    Rate limited: 5 intentos por hora por usuario.
+    """
     try:
         subscription = request.user.subscription
         subscription.cancel()
@@ -291,6 +322,170 @@ def cancel_subscription(request):
     except Subscription.DoesNotExist:
         messages.error(request, _('No tienes una suscripción activa.'))
 
+    return redirect('accounts:subscriptions')
+
+
+# Precios de suscripción en USDT
+SUBSCRIPTION_PRICES = {
+    SubscriptionTier.STARTER: Decimal('19.99'),
+    SubscriptionTier.PRO: Decimal('59.99'),
+    SubscriptionTier.ELITE: Decimal('199.99'),
+}
+
+
+@login_required
+@require_POST
+@ratelimit(key='user', rate='10/h', method='POST', block=True)
+def activate_subscription(request):
+    """
+    Activa una suscripción después de verificar el pago en Solana.
+
+    Rate limited: 10 intentos por hora por usuario.
+
+    Expects POST data:
+        tx_signature: Firma de transacción Solana (base58)
+
+    Security checks implemented:
+        1. signature_format - Formato de firma válido
+        2. tx_exists - Transacción existe en blockchain
+        3. tx_confirmed - Transacción confirmada
+        4. destination - Destino es treasury wallet
+        5. amount - Monto suficiente para el tier
+        6. token - Token correcto (USDT-SPL)
+        7. timestamp - Transacción reciente (< 1 hora)
+        8. replay - No procesada anteriormente
+    """
+    from croody.services import (
+        firebase_service,
+        solana_service,
+        TransactionVerificationError,
+    )
+
+    # Get pending subscription
+    try:
+        subscription = request.user.subscription
+        if subscription.status != SubscriptionStatus.PENDING:
+            messages.error(request, _('No tienes una suscripción pendiente de activación.'))
+            return redirect('accounts:subscriptions')
+    except Subscription.DoesNotExist:
+        messages.error(request, _('No tienes una suscripción. Por favor selecciona un plan.'))
+        return redirect('accounts:subscriptions')
+
+    # Get transaction signature from POST
+    tx_signature = request.POST.get('tx_signature', '').strip()
+    if not tx_signature:
+        messages.error(request, _('Firma de transacción requerida.'))
+        return redirect('accounts:wallet')
+
+    # Get user's wallet
+    profile = request.user.profile
+    if not profile.solana_public_key:
+        messages.error(request, _('Por favor conecta tu wallet antes de activar la suscripción.'))
+        return redirect('accounts:wallet')
+
+    # Get expected price for the tier
+    expected_amount = SUBSCRIPTION_PRICES.get(subscription.tier)
+    if expected_amount is None:
+        logger.error(f'Unknown subscription tier: {subscription.tier}')
+        messages.error(request, _('Error interno. Por favor contacta soporte.'))
+        return redirect('accounts:subscriptions')
+
+    # Verify the transaction on Solana
+    if not solana_service.is_available:
+        logger.warning('Solana service unavailable for subscription activation')
+        messages.error(
+            request,
+            _('Servicio de verificación de pagos no disponible. Por favor intenta más tarde.')
+        )
+        return redirect('accounts:wallet')
+
+    try:
+        result = solana_service.verify_subscription_payment(
+            tx_signature=tx_signature,
+            expected_amount=expected_amount,
+            user_wallet=profile.solana_public_key,
+        )
+    except Exception as e:
+        logger.exception(f'Error verifying payment for user {request.user.pk}')
+        messages.error(request, _('Error verificando el pago. Por favor intenta de nuevo.'))
+        return redirect('accounts:wallet')
+
+    if not result.is_valid:
+        logger.warning(
+            f'Payment verification failed for user {request.user.pk}: '
+            f'{result.error} (check: {result.check_failed})'
+        )
+        # User-friendly error messages
+        error_messages = {
+            'signature_format': _('Formato de firma de transacción inválido.'),
+            'tx_exists': _('Transacción no encontrada en la blockchain.'),
+            'tx_confirmed': _('Transacción aún no confirmada. Por favor espera unos minutos.'),
+            'destination': _('El pago no fue enviado a la wallet correcta.'),
+            'amount': _('El monto del pago es insuficiente.'),
+            'token': _('El pago debe realizarse en USDT.'),
+            'timestamp': _('La transacción es muy antigua. Por favor realiza un nuevo pago.'),
+            'replay': _('Esta transacción ya fue utilizada.'),
+        }
+        error_msg = error_messages.get(
+            result.check_failed,
+            _('Error de verificación: %(error)s') % {'error': result.error}
+        )
+        messages.error(request, error_msg)
+        return redirect('accounts:wallet')
+
+    # Payment verified! Activate subscription
+    now = timezone.now()
+    subscription.status = SubscriptionStatus.ACTIVE
+    subscription.started_at = now
+    subscription.expires_at = now + timezone.timedelta(days=30)  # 1 month
+    subscription.payment_tx_signature = tx_signature
+    subscription.save()
+
+    # Record wallet transaction
+    WalletTransaction.objects.create(
+        user=request.user,
+        tx_signature=tx_signature,
+        amount_sol=Decimal('0'),  # Not a SOL payment
+        amount_usd=result.amount,  # USDT amount as USD equivalent
+        purpose='subscription',
+        status='verified',
+        subscription=subscription,
+        from_wallet=result.from_wallet or '',
+        to_wallet=result.to_wallet or '',
+        block_time=result.block_time,
+        verified_at=now,
+        verification_data={
+            'token_mint': result.token_mint,
+            'check_passed': 'all',
+        },
+    )
+
+    # Mark wallet as verified (they successfully made a payment)
+    if not profile.wallet_verified:
+        profile.wallet_verified = True
+        profile.save(update_fields=['wallet_verified', 'updated_at'])
+
+    # Sync to Firebase (if available and user has firebase_uid)
+    if profile.firebase_uid and firebase_service.is_available:
+        try:
+            firebase_service.sync_subscription(
+                firebase_uid=profile.firebase_uid,
+                tier=subscription.tier,
+                status='active',
+                started_at=subscription.started_at.isoformat(),
+                expires_at=subscription.expires_at.isoformat(),
+                payment_tx_signature=tx_signature,
+                payment_method='usdt-spl',
+            )
+            logger.info(f'Subscription synced to Firebase for user {request.user.pk}')
+        except Exception as e:
+            # Log but don't fail - subscription is already active in Django
+            logger.error(f'Failed to sync subscription to Firebase: {e}')
+
+    messages.success(
+        request,
+        _('¡Suscripción %(tier)s activada exitosamente!') % {'tier': subscription.get_tier_display()}
+    )
     return redirect('accounts:subscriptions')
 
 
