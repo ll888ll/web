@@ -161,6 +161,17 @@ class UserProfile(models.Model):
         blank=True
     )
 
+    # ---- Firebase Integration ----
+    firebase_uid = models.CharField(
+        _('Firebase UID'),
+        max_length=128,
+        unique=True,
+        null=True,
+        blank=True,
+        db_index=True,
+        help_text=_('Identificador unico de Firebase Auth para sincronizacion con Buddy app')
+    )
+
     # ---- Gamificación ----
     points = models.PositiveIntegerField(
         _('Puntos'),

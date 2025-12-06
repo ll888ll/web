@@ -34,8 +34,8 @@
   color-scheme: light dark;
 }
 
-/* Tema oscuro por defecto */
-:root, html[data-theme="dark"]{
+/* SOLUCIÓN FOUC: Separar :root de temas - Los temas SOLO aplican cuando data-theme está presente */
+html[data-theme="dark"]{
   --bg:var(--jungle-950);
   --surface-1:var(--jungle-900);
   --surface-2:var(--jungle-800);
@@ -49,7 +49,7 @@
   --brand-base:var(--gator-500);
   --brand-soft:var(--gator-300);
 
-  --focus-ring:var(--orchid-500); /* efímero */
+  --focus-ring:var(--orchid-500);
   --shadow-strong:0 21px 55px rgba(95,175,72,.25);
   --shadow:0 13px 34px rgba(95,175,72,.16);
 

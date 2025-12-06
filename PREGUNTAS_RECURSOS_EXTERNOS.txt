@@ -1,0 +1,327 @@
+================================================================================
+                    PREGUNTAS PARA RECURSOS EXTERNOS
+                    Croody Web - Configuración Completa
+================================================================================
+
+Este archivo contiene las preguntas que necesito que respondas cuando consultes
+recursos externos (proveedores, documentación, configuraciones de servicios).
+
+Completa las secciones relevantes y compártelas conmigo para poder configurar
+correctamente el ecosistema Croody Web.
+
+================================================================================
+                           1. DOMINIO Y DNS
+================================================================================
+
+1.1. ¿Cuál es el dominio principal del proyecto?
+     Ejemplo: croody.app, croody.com
+     Respuesta: croody.app
+
+1.2. ¿Tienes subdominios configurados? ¿Cuáles?
+     Ejemplo: api.croody.app, admin.croody.app, telemetry.croody.app
+     Respuesta: no pero estaria muy bien
+
+1.3. ¿Quién es el registrador del dominio (registrar)?
+     Ejemplo: Namecheap, GoDaddy, Cloudflare, Route53
+     Respuesta: name.com
+
+1.4. ¿Usas Cloudflare u otro CDN/proxy?
+     [x] Cloudflare  [ ] AWS CloudFront  [ ] Fastly  [ ] Ninguno  [ ] Otro: ____
+
+1.5. Si usas Cloudflare, ¿está en modo "Full (strict)" SSL?
+     [x] Sí  [ ] No  [ ] No aplica
+
+
+================================================================================
+                        2. HOSTING / SERVIDOR
+================================================================================
+
+2.1. ¿Dónde está hosteado el proyecto?
+     [ ] AWS EC2  [ ] DigitalOcean  [ ] Linode  [ ] VPS propio  [x] Otro: estaba en aws pero la idea es que ahora esté en google para que pueda hacer las conexiones con firebase de la app y tener la info de la app y de la web actualizada en tiempo real y hacer esto: 
+
+
+    Usuario ──request──► Django ──Admin SDK──► Firebase
+                           ↑
+                           └── Credenciales NUNCA salen del servidor
+                               Usuario solo envía datos de negocio
+
+
+2.2. IP pública del servidor de producción:
+     Respuesta: aun no hay, se espera un agente de IA con claude code que permita hacerlo rapidamente cumpliendo la respuesta del 2.1 y que esté en todo momento para que sea algo automatizado y de facil cambios y modificaciones, modular.
+
+2.3. IP pública del servidor de staging (si existe):
+     Respuesta: n/a
+
+2.4. Sistema operativo del servidor:
+     [ ] Ubuntu 22.04  [ ] Ubuntu 24.04  [ ] Debian 12  [ ] Otro: n/a
+
+2.5. ¿Cuánta RAM tiene el servidor de producción?
+     [ ] 1GB  [ ] 2GB  [ ] 4GB  [ ] 8GB  [ ] 16GB+
+
+2.6. Usuario SSH para deploy (NO root):
+     Respuesta: _____________________________________________
+
+
+================================================================================
+                          3. BASE DE DATOS
+================================================================================
+
+3.1. ¿Dónde está PostgreSQL?
+     [ ] Mismo servidor  [ ] RDS  [ ] DigitalOcean Managed  [ ] Otro: ________
+
+3.2. Nombre de la base de datos de producción:
+     Respuesta: _____________________________________________
+
+3.3. Usuario de base de datos (NO postgres):
+     Respuesta: _____________________________________________
+
+3.4. ¿Tienes backups automáticos configurados?
+     [ ] Sí, diarios  [ ] Sí, semanales  [ ] No
+
+3.5. ¿Retención de backups (días)?
+     Respuesta: _____________________________________________
+
+
+================================================================================
+                         4. CERTIFICADOS SSL
+================================================================================
+
+4.1. ¿Cómo gestionas los certificados SSL?
+     [ ] Let's Encrypt (certbot)  [ ] Cloudflare Origin  [ ] AWS ACM  [ ] Otro
+
+4.2. ¿Email para notificaciones de Let's Encrypt?
+     Respuesta: _____________________________________________
+
+4.3. ¿Fecha de expiración del certificado actual?
+     Respuesta: _____________________________________________
+
+
+================================================================================
+                           5. EMAIL / SMTP
+================================================================================
+
+5.1. ¿Qué servicio usas para envío de emails?
+     [ ] AWS SES  [ ] SendGrid  [ ] Mailgun  [ ] Postmark  [ ] Gmail SMTP  [ ] Otro
+
+5.2. Email "from" por defecto (para Django):
+     Ejemplo: noreply@croody.app
+     Respuesta: _____________________________________________
+
+5.3. ¿Tienes configurado SPF/DKIM/DMARC en tu dominio?
+     [ ] Sí, todos  [ ] Solo SPF  [ ] No estoy seguro
+
+
+================================================================================
+                         6. PAGOS (E-COMMERCE)
+================================================================================
+
+6.1. ¿Qué procesador de pagos usas?
+     [ ] Stripe  [ ] PayPal  [ ] MercadoPago  [ ] Ninguno aún  [ ] Otro: ______
+
+6.2. ¿Tienes cuenta de producción activa o solo sandbox?
+     [ ] Producción  [ ] Solo sandbox/test
+
+6.3. ¿Requieres cumplimiento PCI-DSS?
+     [ ] Sí, almaceno datos de tarjeta  [ ] No, uso tokenización del proveedor
+
+6.4. Moneda principal de la tienda:
+     [ ] USD  [ ] EUR  [ ] MXN  [ ] ARS  [ ] Otra: ____________
+
+
+================================================================================
+                    7. ALMACENAMIENTO DE ARCHIVOS
+================================================================================
+
+7.1. ¿Dónde almacenas archivos estáticos y media?
+     [ ] Servidor local  [ ] AWS S3  [ ] DigitalOcean Spaces  [ ] Cloudflare R2
+
+7.2. Nombre del bucket (si aplica):
+     Respuesta: _____________________________________________
+
+7.3. URL pública de CDN para archivos (si existe):
+     Ejemplo: https://static.croody.app
+     Respuesta: _____________________________________________
+
+
+================================================================================
+                      8. MONITOREO Y LOGGING
+================================================================================
+
+8.1. ¿Usas algún servicio de monitoreo de errores?
+     [ ] Sentry  [ ] Rollbar  [ ] Bugsnag  [ ] Ninguno  [ ] Otro: ____________
+
+8.2. DSN de Sentry (si usas):
+     Respuesta: _____________________________________________
+
+8.3. ¿Tienes APM (Application Performance Monitoring)?
+     [ ] New Relic  [ ] Datadog  [ ] AWS X-Ray  [ ] Ninguno
+
+8.4. ¿Dónde centralizas logs?
+     [ ] CloudWatch  [ ] ELK Stack  [ ] Loki/Grafana  [ ] Solo en servidor
+
+
+================================================================================
+                         9. CI/CD PIPELINE
+================================================================================
+
+9.1. ¿Qué sistema de CI/CD usas?
+     [ ] GitHub Actions  [ ] GitLab CI  [ ] Jenkins  [ ] CircleCI  [ ] Ninguno
+
+9.2. ¿Tienes deploy automático a producción?
+     [ ] Sí, en push a main  [ ] Solo manual  [ ] Staging auto, prod manual
+
+9.3. ¿Ejecutas tests automáticos en CI?
+     [ ] Sí  [ ] No
+
+9.4. ¿Tienes secrets configurados en el CI (API keys, etc)?
+     [ ] Sí  [ ] No, los pongo en .env del servidor
+
+
+================================================================================
+                      10. AUTENTICACIÓN EXTERNA
+================================================================================
+
+10.1. ¿Usas login social (OAuth)?
+      [ ] Google  [ ] GitHub  [ ] Apple  [ ] Facebook  [ ] Ninguno
+
+10.2. ¿Usas Firebase Authentication?
+      [ ] Sí  [ ] No
+
+10.3. ¿Tienes integraciones con otros servicios que requieran auth?
+      Respuesta: _____________________________________________
+
+
+================================================================================
+                         11. ANALYTICS
+================================================================================
+
+11.1. ¿Qué analytics usas?
+      [ ] Google Analytics 4  [ ] Plausible  [ ] Umami  [ ] PostHog  [ ] Ninguno
+
+11.2. ID de Google Analytics (si aplica):
+      Ejemplo: G-XXXXXXXXXX
+      Respuesta: _____________________________________________
+
+11.3. ¿Necesitas cumplir GDPR para analytics (banner de cookies)?
+      [ ] Sí  [ ] No aplica (no tengo usuarios en EU)
+
+
+================================================================================
+                    12. INTEGRACIÓN CON BUDDY (MOBILE)
+================================================================================
+
+12.1. ¿La app Buddy consume APIs de Croody Web?
+      [ ] Sí, en producción  [ ] Sí, en desarrollo  [ ] No
+
+12.2. ¿Hay autenticación compartida entre Buddy y Web?
+      [ ] Sí, via Firebase  [ ] Sí, via JWT propio  [ ] No, son independientes
+
+12.3. ¿Qué endpoints de Web usa Buddy?
+      Respuesta: _____________________________________________
+
+
+================================================================================
+                    13. INTEGRACIÓN CON LUKS (BLOCKCHAIN)
+================================================================================
+
+13.1. ¿Croody Web tiene integración con wallets crypto?
+      [ ] Sí  [ ] Planeado  [ ] No
+
+13.2. ¿Qué blockchain/red usas?
+      [ ] Solana Mainnet  [ ] Solana Devnet  [ ] Ethereum  [ ] No aplica
+
+13.3. ¿Tienes smart contracts deployados?
+      [ ] Sí, en producción  [ ] Solo devnet  [ ] No
+
+
+================================================================================
+                         14. SECRETS ACTUALES
+================================================================================
+
+IMPORTANTE: NO escribas los valores reales aquí. Solo confirma qué secrets
+tienes configurados para que pueda ayudarte a gestionarlos correctamente.
+
+¿Cuáles de estos secrets tienes configurados en tu .env?
+
+[ ] DJANGO_SECRET_KEY
+[ ] DATABASE_URL
+[ ] REDIS_URL
+[ ] AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
+[ ] STRIPE_SECRET_KEY / STRIPE_PUBLISHABLE_KEY
+[ ] SENTRY_DSN
+[ ] EMAIL_HOST_PASSWORD
+[ ] FIREBASE_CREDENTIALS
+[ ] MAPBOX_ACCESS_TOKEN
+[ ] GOOGLE_ANALYTICS_ID
+[ ] Otros: _____________________________________________
+
+
+================================================================================
+                       15. COMPLIANCE Y LEGAL
+================================================================================
+
+15.1. ¿En qué países/regiones opera el e-commerce?
+      Respuesta: _____________________________________________
+
+15.2. ¿Necesitas cumplir GDPR (usuarios en Europa)?
+      [ ] Sí  [ ] No  [ ] No estoy seguro
+
+15.3. ¿Necesitas cumplir LOPD-GDD (usuarios en España)?
+      [ ] Sí  [ ] No
+
+15.4. ¿Tienes política de privacidad publicada?
+      [ ] Sí, en /privacy  [ ] No
+
+15.5. ¿Tienes términos y condiciones publicados?
+      [ ] Sí, en /terms  [ ] No
+
+
+================================================================================
+                          16. PRIORIDADES
+================================================================================
+
+¿Qué es más urgente para ti ahora?
+
+[ ] Seguridad (SSL, headers, firewall)
+[ ] Performance (optimización, caching)
+[ ] Funcionalidades nuevas (features)
+[ ] Documentación
+[ ] Testing
+[ ] Deploy/CI-CD
+[ ] Otro: _____________________________________________
+
+
+================================================================================
+                           NOTAS ADICIONALES
+================================================================================
+
+Usa este espacio para agregar cualquier información relevante que no haya
+preguntado, como:
+- Problemas actuales que estás enfrentando
+- Limitaciones técnicas conocidas
+- Decisiones arquitectónicas ya tomadas
+- Integraciones específicas que necesitas
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+
+================================================================================
+                              FIN DEL CUESTIONARIO
+================================================================================
+
+Una vez completado, comparte este archivo conmigo y podré:
+1. Configurar correctamente los archivos de entorno
+2. Ajustar la documentación de DevOps
+3. Crear scripts de deploy específicos para tu infraestructura
+4. Configurar monitoring y alertas
+5. Asegurar compliance con las regulaciones aplicables
+
+================================================================================

@@ -19,8 +19,10 @@
 
     const trigger = selector.querySelector('.language-selector__trigger');
     const dropdown = selector.querySelector('.language-selector__dropdown');
+    const form = document.getElementById('language-form');
+    const hiddenInput = document.getElementById('language-input');
 
-    if (!trigger || !dropdown) return;
+    if (!trigger || !dropdown || !form || !hiddenInput) return;
 
     // Toggle dropdown al hacer click en el trigger
     trigger.addEventListener('click', function(e) {
@@ -90,11 +92,27 @@
       }
     });
 
-    // Cerrar dropdown al hacer click en un enlace de idioma
-    const links = dropdown.querySelectorAll('.language-selector__option');
-    links.forEach(link => {
-      link.addEventListener('click', function() {
+    // Handle language switching - SIMPLE FORM SUBMIT
+    const buttons = dropdown.querySelectorAll('.language-selector__option');
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const lang = this.getAttribute('data-lang');
+        if (!lang) return;
+
+        // Set the language value
+        hiddenInput.value = lang;
+
+        // Add visual feedback
+        this.classList.add('changing');
+
+        // Close dropdown
         closeDropdown();
+
+        // Submit the form directly
+        form.submit();
       });
     });
   }

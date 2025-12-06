@@ -26,6 +26,7 @@ urlpatterns = [
     # Subscriptions
     path('subscriptions/', views.SubscriptionView.as_view(), name='subscriptions'),
     path('subscriptions/subscribe/<str:tier>/', views.subscribe, name='subscribe'),
+    path('subscriptions/activate/', views.activate_subscription, name='activate_subscription'),
     path('subscriptions/cancel/', views.cancel_subscription, name='cancel_subscription'),
 
     # Wallet
